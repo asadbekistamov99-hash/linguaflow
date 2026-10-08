@@ -1,0 +1,19 @@
+{
+  "name": "linguaflow",
+  "version": "1.0.0",
+  "description": "Multi-language learning platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "test": "node --disable-warning=ExperimentalWarning --test",
+    "make-admin": "node --disable-warning=ExperimentalWarning scripts/make-admin.js",
+    "validate-seed": "node scripts/validate-seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "engines": {
+    "node": ">=22.5"
+  }
+}

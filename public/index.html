@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>LinguaFlow — Tillarni mukammal o'rganing</title>
+<meta name="description" content="Ingliz, rus, nemis, fransuz, ispan, arab va boshqa tillarni A1 dan C2 gacha o'rganing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080d;--bg2:#0d0f17;--card:#12141f;--card2:#171a28;
+  --line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);
+  --text:#eef0f7;--muted:#9aa0b4;--dim:#6b7188;
+  --a1:#7c5cff;--a2:#00d4ff;--a3:#ff4fa3;--ok:#22d39a;--bad:#ff5d6c;
+  --grad:linear-gradient(120deg,var(--a1),var(--a2));
+  --grad2:linear-gradient(120deg,var(--a3),var(--a1) 50%,var(--a2));
+  --r:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.logo{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.grad-text{background:var(--grad2);-webkit-background-clip:text;background-clip:text;color:transparent}
+section{padding:110px 0;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--a2);margin-bottom:14px}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--grad)}
+.sec-head{max-width:680px;margin-bottom:56px}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-head h2{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin-bottom:16px}
+.sec-head p{color:var(--muted);font-size:1.1rem}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:600;transition:.25s;white-space:nowrap}
+.btn-main{background:var(--grad);color:#fff;box-shadow:0 10px 30px -10px rgba(124,92,255,.7)}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px rgba(0,212,255,.6)}
+.btn-ghost{border:1px solid var(--line2);background:rgba(255,255,255,.03)}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:.3s}
+.nav.scrolled{background:rgba(7,8,13,.75);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.4rem;font-weight:700}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:var(--grad2);display:grid;place-items:center;font-size:1rem;color:#fff}
+.nav-links{display:flex;gap:34px;font-size:.95rem;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{display:flex;gap:12px;align-items:center}
+.nav-cta .btn{padding:10px 20px;font-size:.92rem}
+.burger{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line2)}
+.burger span{display:block;width:18px;height:2px;background:var(--text);margin:4px auto;transition:.3s}
+.mobile-menu{display:none}
+
+/* hero */
+.hero{padding:170px 0 100px;overflow:clip}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.45;pointer-events:none;animation:float 14s ease-in-out infinite}
+.blob.b1{width:520px;height:520px;background:var(--a1);top:-120px;left:-140px}
+.blob.b2{width:440px;height:440px;background:var(--a2);top:80px;right:-160px;animation-delay:-5s;opacity:.3}
+.blob.b3{width:360px;height:360px;background:var(--a3);bottom:-180px;left:40%;animation-delay:-9s;opacity:.25}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-30px) scale(1.08)}}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 50% 30%,#000 20%,transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;position:relative}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 6px;border-radius:999px;border:1px solid var(--line2);background:rgba(255,255,255,.04);font-size:.85rem;color:var(--muted);margin-bottom:28px}
+.pill b{background:var(--grad);color:#fff;padding:3px 10px;border-radius:999px;font-size:.75rem}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.02;margin-bottom:24px}
+.rotator{display:inline-block;min-width:4ch;transition:opacity .35s,transform .35s}
+.rotator.out{opacity:0;transform:translateY(16px)}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:540px;margin-bottom:36px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+.trust{display:flex;align-items:center;gap:16px;color:var(--muted);font-size:.9rem}
+.avatars{display:flex}
+.avatars span{width:36px;height:36px;border-radius:50%;border:2px solid var(--bg);margin-left:-10px;display:grid;place-items:center;font-size:.8rem;font-weight:700;color:#fff}
+.avatars span:first-child{margin-left:0}
+.stars{color:#ffc94d;letter-spacing:2px}
+
+/* hero card */
+.hero-card{position:relative;background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line2);border-radius:28px;padding:28px;box-shadow:0 40px 80px -30px rgba(0,0,0,.8)}
+.hero-card::before{content:"";position:absolute;inset:-1px;border-radius:28px;padding:1px;background:var(--grad2);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.6;pointer-events:none}
+.hc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.hc-lang{display:flex;align-items:center;gap:10px;font-weight:600}
+.hc-lang .flag{font-size:1.6rem}
+.streak{font-size:.85rem;padding:6px 12px;border-radius:999px;background:rgba(255,140,50,.12);color:#ffad5c;font-weight:600}
+.progress{height:8px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden;margin-bottom:26px}
+.progress i{display:block;height:100%;width:68%;background:var(--grad);border-radius:99px}
+.q-label{font-size:.8rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.q-word{display:flex;align-items:center;gap:14px;font-family:"Space Grotesk",Inter,sans-serif;font-size:2.2rem;font-weight:700;margin-bottom:22px}
+.speak{width:44px;height:44px;border-radius:12px;background:rgba(0,212,255,.12);color:var(--a2);display:grid;place-items:center;transition:.2s;flex-shrink:0}
+.speak:hover{background:rgba(0,212,255,.22);transform:scale(1.06)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{padding:14px;border-radius:14px;border:1px solid var(--line2);background:rgba(255,255,255,.03);text-align:left;font-weight:500;transition:.2s}
+.opt:hover:not(:disabled){border-color:var(--a1);background:rgba(124,92,255,.1)}
+.opt.ok{border-color:var(--ok);background:rgba(34,211,154,.14);color:var(--ok)}
+.opt.bad{border-color:var(--bad);background:rgba(255,93,108,.12);color:var(--bad)}
+.hc-foot{display:flex;justify-content:space-between;align-items:center;margin-top:20px;font-size:.9rem;color:var(--muted)}
+.hc-foot button{color:var(--a2);font-weight:600}
+.float-chip{position:absolute;padding:10px 14px;border-radius:14px;background:var(--card2);border:1px solid var(--line2);font-size:.85rem;font-weight:600;box-shadow:0 20px 40px -15px rgba(0,0,0,.7);animation:bob 5s ease-in-out infinite}
+.float-chip.c1{top:-22px;right:30px}
+.float-chip.c2{bottom:-24px;left:-26px;animation-delay:-2.5s}
+@keyframes bob{50%{transform:translateY(-10px)}}
+
+/* marquee langs */
+.marquee{border-block:1px solid var(--line);padding:26px 0;overflow:hidden;background:var(--bg2)}
+.track{display:flex;gap:56px;width:max-content;animation:scroll 40s linear infinite}
+.track span{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk",Inter,sans-serif;font-size:1.3rem;color:var(--muted);white-space:nowrap}
+.track span em{font-style:normal;font-size:1.6rem}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* languages */
+.lang-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.lang{position:relative;padding:24px;border-radius:var(--r);background:var(--card);border:1px solid var(--line);transition:.3s;overflow:hidden}
+.lang::after{content:"";position:absolute;inset:auto -40% -60% auto;width:180px;height:180px;border-radius:50%;background:var(--c,var(--a1));filter:blur(60px);opacity:0;transition:.4s}
+.lang:hover{transform:translateY(-6px);border-color:var(--line2)}
+.lang:hover::after{opacity:.35}
+.lang .flag{font-size:2.2rem;margin-bottom:14px}
+.lang h3{font-size:1.2rem;margin-bottom:2px}
+.lang .native{color:var(--muted);font-size:.9rem;margin-bottom:16px}
+.lang .meta{display:flex;justify-content:space-between;font-size:.8rem;color:var(--dim);border-top:1px solid var(--line);padding-top:14px}
+.lang .meta b{color:var(--text);font-weight:600}
+.lang.more{display:grid;place-items:center;text-align:center;background:transparent;border-style:dashed}
+.lang.more h3{font-size:2rem}
+
+/* bento features */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;position:relative;overflow:hidden}
+.tile h3{font-size:1.35rem;margin:16px 0 8px}
+.tile p{color:var(--muted)}
+.ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;background:rgba(124,92,255,.14);border:1px solid rgba(124,92,255,.3)}
+.t-ai{grid-column:span 4;grid-row:span 2;background:radial-gradient(circle at 80% 0%,rgba(124,92,255,.25),transparent 60%),var(--card)}
+.t-2{grid-column:span 2}
+.t-3{grid-column:span 2}
+.t-4,.t-5,.t-6{grid-column:span 2}
+.chat{margin-top:28px;display:flex;flex-direction:column;gap:12px;max-width:520px}
+.msg{padding:12px 16px;border-radius:16px;max-width:85%;font-size:.95rem}
+.msg.ai{background:var(--card2);border:1px solid var(--line2);border-bottom-left-radius:4px}
+.msg.me{align-self:flex-end;background:var(--grad);color:#fff;border-bottom-right-radius:4px}
+.msg .fix{display:block;margin-top:6px;font-size:.8rem;color:var(--ok)}
+.wave{display:flex;align-items:center;gap:3px;height:40px;margin-top:20px}
+.wave i{width:4px;border-radius:4px;background:var(--grad);animation:wv 1.2s ease-in-out infinite}
+@keyframes wv{0%,100%{height:20%}50%{height:100%}}
+.score{display:flex;align-items:baseline;gap:6px;margin-top:18px;font-family:"Space Grotesk"}
+.score b{font-size:2.4rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* path */
+.path{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;position:relative}
+.path::before{content:"";position:absolute;top:38px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,var(--a1),var(--a2),var(--a3))}
+.step{text-align:center;position:relative}
+.step .dot{width:76px;height:76px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;font-family:"Space Grotesk",Inter,sans-serif;font-weight:700;font-size:1.3rem;background:var(--bg);border:2px solid var(--line2);transition:.3s;position:relative;z-index:1}
+.step:hover .dot{background:var(--grad);border-color:transparent;transform:scale(1.08)}
+.step h4{font-size:1rem;margin-bottom:4px}
+.step p{font-size:.85rem;color:var(--muted)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:40px;border-radius:28px;background:linear-gradient(135deg,rgba(124,92,255,.12),rgba(0,212,255,.06));border:1px solid var(--line2)}
+.stat{text-align:center}
+.stat b{display:block;font-family:"Space Grotesk",Inter,sans-serif;font-size:clamp(2rem,4vw,3rem);line-height:1}
+.stat span{color:var(--muted);font-size:.95rem}
+
+/* testimonials */
+.t-track{display:flex;gap:18px;width:max-content;animation:scroll 60s linear infinite}
+.t-track:hover{animation-play-state:paused}
+.t-wrap{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.review{width:360px;padding:26px;border-radius:20px;background:var(--card);border:1px solid var(--line)}
+.review p{color:#cfd3e2;margin:12px 0 20px}
+.who{display:flex;align-items:center;gap:12px}
+.who .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff}
+.who small{display:block;color:var(--dim)}
+
+/* pricing */
+.toggle{display:inline-flex;padding:5px;border-radius:999px;background:var(--card);border:1px solid var(--line2);margin:0 auto 48px}
+.toggle button{padding:10px 22px;border-radius:999px;font-weight:600;color:var(--muted);transition:.25s}
+.toggle button.on{background:var(--grad);color:#fff}
+.toggle small{color:var(--ok);margin-left:6px}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plan{padding:34px;border-radius:24px;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column}
+.plan.hot{background:linear-gradient(180deg,rgba(124,92,255,.18),var(--card) 60%);border-color:rgba(124,92,255,.6);position:relative}
+.plan.hot .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--grad);padding:5px 14px;border-radius:999px;font-size:.78rem;font-weight:700}
+.plan h3{font-size:1.3rem}
+.plan .desc{color:var(--muted);font-size:.92rem;margin:6px 0 22px}
+.amount{font-family:"Space Grotesk",Inter,sans-serif;font-size:3rem;font-weight:700;line-height:1}
+.amount small{font-size:1rem;color:var(--muted);font-weight:500}
+.plan ul{list-style:none;margin:26px 0 30px;display:grid;gap:12px;flex:1}
+.plan li{display:flex;gap:10px;color:#cfd3e2;font-size:.95rem}
+.plan li::before{content:"✓";color:var(--ok);font-weight:700}
+.plan .btn{justify-content:center}
+
+/* faq */
+.faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
+details{border-radius:18px;background:var(--card);border:1px solid var(--line);padding:6px 24px;transition:.3s}
+details[open]{border-color:var(--line2)}
+summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:600;font-size:1.05rem;display:flex;justify-content:space-between;align-items:center;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;color:var(--a2);transition:.3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);padding-bottom:20px}
+
+/* cta */
+.cta-box{position:relative;overflow:hidden;text-align:center;padding:80px 30px;border-radius:32px;background:var(--grad2)}
+.cta-box::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.25),transparent 40%)}
+.cta-box h2{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin-bottom:16px;position:relative}
+.cta-box p{font-size:1.15rem;opacity:.9;margin-bottom:34px;position:relative}
+.cta-form{display:flex;gap:10px;max-width:480px;margin:0 auto;position:relative}
+.cta-form input{flex:1;min-width:0;padding:15px 22px;border-radius:999px;border:0;font:inherit;outline:none}
+.cta-form .btn{background:#0b0c12;color:#fff}
+.cta-note{margin-top:14px;font-size:.88rem;opacity:.85;position:relative}
+
+/* footer */
+footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
+.f-grid{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:40px;margin-bottom:56px}
+.f-grid p{color:var(--muted);margin-top:14px;max-width:300px}
+.f-grid h5{font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;color:var(--dim);margin-bottom:16px}
+.f-grid ul{list-style:none;display:grid;gap:10px;color:var(--muted)}
+.f-grid a:hover{color:var(--text)}
+.f-bot{display:flex;justify-content:space-between;color:var(--dim);font-size:.88rem;flex-wrap:wrap;gap:12px}
+.socials{display:flex;gap:10px}
+.socials a{width:38px;height:38px;border-radius:10px;border:1px solid var(--line2);display:grid;place-items:center;font-size:.85rem;font-weight:700}
+.socials a:hover{background:var(--card2)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* responsive */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-card{max-width:520px}
+  .lang-grid{grid-template-columns:repeat(3,1fr)}
+  .t-ai{grid-column:span 6;grid-row:auto}
+  .t-2,.t-3,.t-4,.t-5,.t-6{grid-column:span 3}
+  .plans{grid-template-columns:1fr;max-width:460px;margin:0 auto}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  section{padding:80px 0}
+  .wrap{padding:0 16px}
+  .nav-links,.nav-cta .btn-ghost{display:none}
+  .burger{display:block}
+  .logo{font-size:1.15rem}.logo-mark{width:30px;height:30px}
+  .nav-cta{gap:8px}.nav-cta .btn{padding:9px 14px;font-size:.85rem}
+  .mobile-menu{position:fixed;inset:74px 0 auto;background:rgba(7,8,13,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:20px 16px;flex-direction:column;gap:6px;z-index:49}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{padding:12px 4px;border-bottom:1px solid var(--line)}
+  .hero{padding:130px 0 70px}
+  .lang-grid{grid-template-columns:1fr 1fr}
+  .t-2,.t-3,.t-4,.t-5,.t-6{grid-column:span 6}
+  .path{grid-template-columns:repeat(3,1fr);row-gap:34px}
+  .path::before{display:none}
+  .stats{grid-template-columns:1fr 1fr;padding:28px 16px;row-gap:28px}
+  .cta-form{flex-direction:column}
+  .f-grid{grid-template-columns:1fr}
+  .float-chip.c2{left:0}
+  .review{width:290px}
+  .opts{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#" class="logo"><span class="logo-mark">L</span>LinguaFlow</a>
+    <nav class="nav-links">
+      <a href="#tillar">Tillar</a>
+      <a href="#imkoniyatlar">Imkoniyatlar</a>
+      <a href="#yol">Daraja yo'li</a>
+      <a href="#narxlar">Narxlar</a>
+      <a href="#savollar">Savollar</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="/app#/login" class="btn btn-ghost">Kirish</a>
+      <a href="/app#/register" class="btn btn-main">Bepul boshlash</a>
+      <button class="burger" id="burger" aria-label="Menyu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#tillar">Tillar</a>
+  <a href="#imkoniyatlar">Imkoniyatlar</a>
+  <a href="#yol">Daraja yo'li</a>
+  <a href="#narxlar">Narxlar</a>
+  <a href="#savollar">Savollar</a>
+  <a href="/app#/login">Kirish</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="grid-bg"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="pill"><b>YANGI</b> AI suhbatdosh bilan jonli nutq amaliyoti</div>
+      <h1><span class="rotator grad-text" id="rotator">Hello</span><br>Har qanday tilni mukammal o'rganing</h1>
+      <p class="lead">Ingliz, rus, nemis, fransuz, ispan, arab va yana 14 ta til — A1 dan C2 gacha. Sun'iy intellekt, jonli ustozlar va shaxsiy o'quv rejasi bir joyda.</p>
+      <div class="hero-actions">
+        <a href="/app#/register" class="btn btn-main">Bepul boshlash →</a>
+        <a href="#demo" class="btn btn-ghost">▶ Darsni sinab ko'rish</a>
+      </div>
+      <div class="trust">
+        <div class="avatars">
+          <span style="background:#7c5cff">A</span><span style="background:#00b3d6">D</span><span style="background:#ff4fa3">M</span><span style="background:#22b583">S</span>
+        </div>
+        <div><span class="stars">★★★★★</span><br>O'quvchilar tomonidan 4.9 baho</div>
+      </div>
+    </div>
+
+    <div class="hero-card reveal" id="demo">
+      <div class="float-chip c1">🔥 12 kunlik seriya</div>
+      <div class="float-chip c2">🎯 +25 XP</div>
+      <div class="hc-top">
+        <div class="hc-lang"><span class="flag" id="dFlag">🇬🇧</span><span id="dLang">Ingliz tili · B1</span></div>
+        <span class="streak" id="dScore">0 / 0</span>
+      </div>
+      <div class="progress"><i id="dBar"></i></div>
+      <div class="q-label">Bu so'z nimani anglatadi?</div>
+      <div class="q-word"><span id="dWord">Opportunity</span>
+        <button class="speak" id="dSpeak" aria-label="Talaffuzni eshitish">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+        </button>
+      </div>
+      <div class="opts" id="dOpts"></div>
+      <div class="hc-foot"><span id="dHint">Javobni tanlang</span><button id="dNext">Keyingisi →</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="track" id="track"></div>
+</div>
+
+<!-- LANGUAGES -->
+<section id="tillar">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Tillar</div>
+      <h2>20+ til. Har biri <span class="grad-text">ona tili egalari</span> bilan tuzilgan.</h2>
+      <p>Har bir kurs CEFR standarti asosida qurilgan va xalqaro imtihonlarga (IELTS, TOEFL, TORFL, Goethe, DELF, DELE) tayyorlaydi.</p>
+    </div>
+    <div class="lang-grid" id="langGrid"></div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="imkoniyatlar">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow">Imkoniyatlar</div>
+      <h2>O'rganish uchun kerak bo'lgan <span class="grad-text">hamma narsa</span></h2>
+      <p>Darsdan tortib real suhbatgacha — barcha 4 ko'nikma: tinglash, gapirish, o'qish va yozish.</p>
+    </div>
+    <div class="bento">
+      <div class="tile t-ai reveal">
+        <div class="ico">🤖</div>
+        <h3>AI suhbatdosh — 24/7</h3>
+        <p>Istalgan mavzuda erkin gaplashing. AI xatolaringizni darhol tuzatadi va tushuntiradi.</p>
+        <div class="chat">
+          <div class="msg ai">Hi! What did you do last weekend? 😊</div>
+          <div class="msg me">I go to the cinema with my friends.</div>
+          <div class="msg ai">Sounds fun! Which movie did you see?<span class="fix">✓ To'g'risi: "I <b>went</b> to the cinema" — o'tgan zamon</span></div>
+        </div>
+      </div>
+      <div class="tile t-2 reveal">
+        <div class="ico">🎙️</div>
+        <h3>Talaffuz tahlili</h3>
+        <p>Har bir tovushingiz baholanadi.</p>
+        <div class="wave" id="wave"></div>
+        <div class="score"><b>94%</b><span style="color:var(--muted)">aniqlik</span></div>
+      </div>
+      <div class="tile t-3 reveal">
+        <div class="ico">👩‍🏫</div>
+        <h3>Jonli ustozlar</h3>
+        <p>Sertifikatlangan ustozlar bilan 1:1 video darslar — o'zingizga qulay vaqtda.</p>
+      </div>
+      <div class="tile t-4 reveal">
+        <div class="ico">🧠</div>
+        <h3>Aqlli takrorlash</h3>
+        <p>Spaced repetition tizimi so'zlarni aynan unutishdan oldin qaytaradi.</p>
+      </div>
+      <div class="tile t-5 reveal">
+        <div class="ico">📝</div>
+        <h3>Imtihonga tayyorgarlik</h3>
+        <p>IELTS, TOEFL, DELF va boshqalar uchun mock testlar va band score bashorati.</p>
+      </div>
+      <div class="tile t-6 reveal">
+        <div class="ico">🏆</div>
+        <h3>Liga va mukofotlar</h3>
+        <p>XP, seriyalar va haftalik ligalar motivatsiyani yo'qotmaslikka yordam beradi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATH -->
+<section id="yol">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow">Daraja yo'li</div>
+      <h2>Noldan <span class="grad-text">C2 gacha</span> aniq yo'l xaritasi</h2>
+      <p>Har bir bosqich oxirida sertifikat. Darajangizni 10 daqiqalik test bilan aniqlang.</p>
+    </div>
+    <div class="path reveal">
+      <div class="step"><div class="dot">A1</div><h4>Boshlang'ich</h4><p>Tanishuv, oddiy iboralar</p></div>
+      <div class="step"><div class="dot">A2</div><h4>Elementar</h4><p>Kundalik muloqot</p></div>
+      <div class="step"><div class="dot">B1</div><h4>O'rta</h4><p>Sayohat, ish, fikr bildirish</p></div>
+      <div class="step"><div class="dot">B2</div><h4>O'rtadan yuqori</h4><p>Erkin muhokama</p></div>
+      <div class="step"><div class="dot">C1</div><h4>Ilg'or</h4><p>Akademik va kasbiy til</p></div>
+      <div class="step"><div class="dot">C2</div><h4>Mukammal</h4><p>Ona tili darajasi</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><b data-count="20" data-suffix="+">0</b><span>til</span></div>
+      <div class="stat"><b data-count="12000" data-suffix="+">0</b><span>interaktiv dars</span></div>
+      <div class="stat"><b data-count="350" data-suffix="+">0</b><span>jonli ustoz</span></div>
+      <div class="stat"><b data-count="98" data-suffix="%">0</b><span>mamnun o'quvchi</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow">Fikrlar</div>
+      <h2>O'quvchilarimiz <span class="grad-text">nima deydi</span></h2>
+    </div>
+  </div>
+  <div class="t-wrap"><div class="t-track" id="tTrack"></div></div>
+</section>
+
+<!-- PRICING -->
+<section id="narxlar">
+  <div class="wrap" style="text-align:center">
+    <div class="sec-head center reveal">
+      <div class="eyebrow">Narxlar</div>
+      <h2>Sodda va <span class="grad-text">shaffof</span> narxlar</h2>
+      <p>Start tarifi doimo bepul. Istalgan vaqtda tarifni o'zgartirish mumkin.</p>
+    </div>
+    <div class="toggle" id="toggle">
+      <button class="on" data-p="m">Oylik</button>
+      <button data-p="y">Yillik <small>−40%</small></button>
+    </div>
+    <div class="plans" style="text-align:left">
+      <div class="plan reveal">
+        <h3>Start</h3>
+        <div class="desc">Tanishib chiqish uchun</div>
+        <div class="amount">0 <small>so'm</small></div>
+        <ul><li>1 ta til</li><li>Kuniga 5 ta dars</li><li>Asosiy mashqlar</li><li>Hamjamiyat forumi</li></ul>
+        <a href="/app#/register" class="btn btn-ghost">Boshlash</a>
+      </div>
+      <div class="plan hot reveal">
+        <span class="tag">ENG MASHHUR</span>
+        <h3>Pro</h3>
+        <div class="desc">Jiddiy o'rganuvchilar uchun</div>
+        <div class="amount" data-m="99 000" data-y="59 000"><span class="v">99 000</span> <small>so'm/oy</small></div>
+        <ul><li>Barcha 20+ til</li><li>Cheksiz darslar</li><li>AI suhbatdosh 24/7</li><li>Talaffuz tahlili</li><li>Oflayn rejim</li><li>Daraja sertifikatlari</li></ul>
+        <a href="/app#/register" class="btn btn-main">Bepul boshlash</a>
+      </div>
+      <div class="plan reveal">
+        <h3>Ustoz+</h3>
+        <div class="desc">Tez natija xohlaganlar uchun</div>
+        <div class="amount" data-m="349 000" data-y="209 000"><span class="v">349 000</span> <small>so'm/oy</small></div>
+        <ul><li>Pro'dagi hammasi</li><li>Oyiga 8 ta jonli dars</li><li>IELTS / TOEFL mock testlar</li><li>Shaxsiy o'quv rejasi</li><li>Ustuvor yordam</li></ul>
+        <a href="/app#/register" class="btn btn-ghost">Tanlash</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="savollar" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow">Savollar</div>
+      <h2>Ko'p beriladigan <span class="grad-text">savollar</span></h2>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>Haqiqatan ham noldan C2 gacha o'rganish mumkinmi?</summary><p>Ha. Kurslar CEFR standartiga asoslangan va har bir darajada 4 ko'nikma — tinglash, gapirish, o'qish, yozish — muvozanatli rivojlantiriladi. Kuniga 20–30 daqiqa bilan B1 darajasiga odatda 6–9 oyda yetiladi.</p></details>
+      <details><summary>Bir vaqtda bir nechta tilni o'rgansam bo'ladimi?</summary><p>Albatta. Pro va Ustoz+ tariflarida barcha tillar ochiq, har biri uchun alohida progress yuritiladi.</p></details>
+      <details><summary>IELTS imtihoniga tayyorlay olasizmi?</summary><p>Ha. Alohida IELTS yo'nalishida Listening, Reading, Writing va Speaking bo'yicha mock testlar, AI tomonidan Writing baholash va band score bashorati mavjud.</p></details>
+      <details><summary>Internet bo'lmasa ham o'qish mumkinmi?</summary><p>Pro tarifida darslarni yuklab olib, oflayn rejimda o'rganishingiz mumkin. Progress internet ulanganda sinxronlanadi.</p></details>
+      <details><summary>To'lovni qanday amalga oshiraman?</summary><p>Payme, Click, Uzcard, Humo va Visa/Mastercard orqali. Obunani istalgan vaqtda bir tugma bilan bekor qilasiz.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="boshlash" style="padding-top:0;padding-bottom:0">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <h2>Yangi til — yangi imkoniyatlar.<br>Bugundan boshlang.</h2>
+      <p>Darajangizni bepul aniqlang va shaxsiy o'quv rejangizni oling.</p>
+      <form class="cta-form" id="ctaForm">
+        <input type="email" placeholder="Email manzilingiz" required aria-label="Email">
+        <button class="btn" type="submit">Boshlash →</button>
+      </form>
+      <div class="cta-note" id="ctaNote">Karta talab qilinmaydi · Bepul boshlang</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a href="#" class="logo"><span class="logo-mark">L</span>LinguaFlow</a>
+        <p>Dunyo tillarini har kim uchun ochiq va qiziqarli qilamiz.</p>
+      </div>
+      <div><h5>Platforma</h5><ul><li><a href="#tillar">Tillar</a></li><li><a href="#imkoniyatlar">Imkoniyatlar</a></li><li><a href="#narxlar">Narxlar</a></li><li><a href="#">Mobil ilova</a></li></ul></div>
+      <div><h5>Kompaniya</h5><ul><li><a href="#">Biz haqimizda</a></li><li><a href="#">Ustoz bo'lish</a></li><li><a href="#">Blog</a></li><li><a href="#">Bog'lanish</a></li></ul></div>
+      <div><h5>Yordam</h5><ul><li><a href="#savollar">FAQ</a></li><li><a href="#">Maxfiylik siyosati</a></li><li><a href="#">Foydalanish shartlari</a></li></ul></div>
+    </div>
+    <div class="f-bot">
+      <span>© 2026 LinguaFlow. Barcha huquqlar himoyalangan.</span>
+      <div class="socials"><a href="#" aria-label="Telegram">TG</a><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="YouTube">YT</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Hero greeting rotator
+const greets=["Hello","Привет","Hallo","Bonjour","¡Hola!","مرحبا","Ciao","こんにちは","你好","Olá","Merhaba","안녕"];
+let gi=0;const rot=document.getElementById("rotator");
+setInterval(()=>{rot.classList.add("out");setTimeout(()=>{gi=(gi+1)%greets.length;rot.textContent=greets[gi];rot.classList.remove("out")},350)},2200);
+
+// Data
+const langs=[
+ {f:"🇬🇧",n:"Ingliz tili",nat:"English",l:"1 240",c:"#7c5cff",code:"en-GB"},
+ {f:"🇷🇺",n:"Rus tili",nat:"Русский",l:"980",c:"#00d4ff",code:"ru-RU"},
+ {f:"🇩🇪",n:"Nemis tili",nat:"Deutsch",l:"860",c:"#ffc94d",code:"de-DE"},
+ {f:"🇫🇷",n:"Fransuz tili",nat:"Français",l:"820",c:"#4f8bff",code:"fr-FR"},
+ {f:"🇪🇸",n:"Ispan tili",nat:"Español",l:"790",c:"#ff4fa3",code:"es-ES"},
+ {f:"🇸🇦",n:"Arab tili",nat:"العربية",l:"710",c:"#22d39a",code:"ar-SA"},
+ {f:"🇹🇷",n:"Turk tili",nat:"Türkçe",l:"640",c:"#ff5d6c",code:"tr-TR"},
+ {f:"🇨🇳",n:"Xitoy tili",nat:"中文",l:"690",c:"#ff8a3d",code:"zh-CN"},
+ {f:"🇯🇵",n:"Yapon tili",nat:"日本語",l:"610",c:"#e45cff",code:"ja-JP"},
+ {f:"🇰🇷",n:"Koreys tili",nat:"한국어",l:"580",c:"#5cffd6",code:"ko-KR"},
+ {f:"🇮🇹",n:"Italyan tili",nat:"Italiano",l:"540",c:"#9dff5c",code:"it-IT"},
+];
+const grid=document.getElementById("langGrid");
+grid.innerHTML=langs.map(x=>`<div class="lang reveal" style="--c:${x.c}"><div class="flag">${x.f}</div><h3>${x.n}</h3><div class="native">${x.nat}</div><div class="meta"><span><b>${x.l}</b> dars</span><span>A1 → C2</span></div></div>`).join("")+
+ `<div class="lang more reveal"><div><h3 class="grad-text">+9</h3><div class="native">yana tillar</div></div></div>`;
+
+const track=document.getElementById("track");
+const tItems=langs.map(x=>`<span><em>${x.f}</em>${x.nat}</span>`).join("");
+track.innerHTML=tItems+tItems;
+
+// Reviews (namuna matnlar — real fikrlar bilan almashtiring)
+const reviews=[
+ ["Dilnoza R.","IELTS 7.5","#7c5cff","3 oyda IELTS'dan 6.0 dan 7.5 ga chiqdim. Writing'ni AI tekshirishi juda foydali bo'ldi."],
+ ["Aziz K.","Nemis tili · B2","#00b3d6","Germaniyaga ishga ketish uchun nemis tilini noldan o'rgandim. Jonli ustozlar zo'r!"],
+ ["Madina S.","Arab tili · B1","#ff4fa3","Arab yozuvini o'rganish qo'rqinchli edi, lekin bosqichma-bosqich darslar hammasini oson qildi."],
+ ["Jasur T.","Rus tili · C1","#22b583","AI suhbatdosh bilan har kuni gaplashaman — nutqim ancha erkin bo'ldi."],
+ ["Nilufar A.","Fransuz tili · A2","#ff8a3d","Seriya va ligalar meni har kuni o'qishga majbur qiladi. 90 kun ketma-ket!"],
+ ["Bekzod M.","Ispan tili · B1","#4f8bff","Talaffuz tahlili aksentimni ancha yaxshiladi. Ispanlar endi tushunishadi :)"],
+];
+const tTrack=document.getElementById("tTrack");
+const rHTML=reviews.map(r=>`<div class="review"><span class="stars">★★★★★</span><p>"${r[3]}"</p><div class="who"><div class="av" style="background:${r[2]}">${r[0][0]}</div><div><b>${r[0]}</b><small>${r[1]}</small></div></div></div>`).join("");
+tTrack.innerHTML=rHTML+rHTML;
+
+// Waveform
+const wave=document.getElementById("wave");
+for(let i=0;i<34;i++){const b=document.createElement("i");b.style.animationDelay=(i*0.06)+"s";wave.appendChild(b)}
+
+// Interactive demo
+const quiz=[
+ {f:"🇬🇧",lang:"Ingliz tili · B1",code:"en-GB",w:"Opportunity",a:"Imkoniyat",o:["Imkoniyat","Muammo","Qaror","Tajriba"]},
+ {f:"🇷🇺",lang:"Rus tili · A2",code:"ru-RU",w:"Путешествие",a:"Sayohat",o:["Uy","Sayohat","Do'stlik","Ish"]},
+ {f:"🇩🇪",lang:"Nemis tili · A2",code:"de-DE",w:"Wissenschaft",a:"Fan",o:["Do'kon","Ob-havo","Fan","Kitob"]},
+ {f:"🇫🇷",lang:"Fransuz tili · A1",code:"fr-FR",w:"Bibliothèque",a:"Kutubxona",o:["Kutubxona","Bog'","Kasalxona","Maktab"]},
+ {f:"🇪🇸",lang:"Ispan tili · A1",code:"es-ES",w:"Mariposa",a:"Kapalak",o:["Gul","Daryo","Kapalak","Quyosh"]},
+ {f:"🇸🇦",lang:"Arab tili · A1",code:"ar-SA",w:"كتاب",a:"Kitob",o:["Qalam","Kitob","Eshik","Suv"]},
+];
+let qi=0,right=0,total=0;
+const $=id=>document.getElementById(id);
+function shuffle(a){return a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(v=>v[1])}
+function render(){
+  const q=quiz[qi];
+  $("dFlag").textContent=q.f;$("dLang").textContent=q.lang;$("dWord").textContent=q.w;
+  $("dWord").dir=q.code.startsWith("ar")?"rtl":"ltr";
+  $("dHint").textContent="Javobni tanlang";$("dHint").style.color="";
+  $("dBar").style.width=((qi)/quiz.length*100+8)+"%";
+  $("dOpts").innerHTML="";
+  shuffle(q.o).forEach(o=>{
+    const b=document.createElement("button");b.className="opt";b.textContent=o;
+    b.onclick=()=>{
+      total++;const ok=o===q.a;if(ok)right++;
+      [...$("dOpts").children].forEach(x=>{x.disabled=true;if(x.textContent===q.a)x.classList.add("ok")});
+      if(!ok)b.classList.add("bad");
+      $("dHint").textContent=ok?"Barakalla! +25 XP 🎉":"To'g'ri javob: "+q.a;
+      $("dHint").style.color=ok?"var(--ok)":"var(--bad)";
+      $("dScore").textContent=right+" / "+total;
+    };
+    $("dOpts").appendChild(b);
+  });
+}
+$("dNext").onclick=()=>{qi=(qi+1)%quiz.length;render()};
+$("dSpeak").onclick=()=>{
+  if(!("speechSynthesis" in window))return;
+  const u=new SpeechSynthesisUtterance(quiz[qi].w);u.lang=quiz[qi].code;u.rate=.85;
+  speechSynthesis.cancel();speechSynthesis.speak(u);
+};
+render();
+
+// Nav
+const nav=$("nav");
+addEventListener("scroll",()=>nav.classList.toggle("scrolled",scrollY>20),{passive:true});
+$("burger").onclick=()=>$("mobileMenu").classList.toggle("open");
+document.querySelectorAll("#mobileMenu a").forEach(a=>a.onclick=()=>$("mobileMenu").classList.remove("open"));
+
+// Pricing toggle
+document.querySelectorAll("#toggle button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll("#toggle button").forEach(x=>x.classList.remove("on"));b.classList.add("on");
+  document.querySelectorAll(".amount[data-m]").forEach(a=>a.querySelector(".v").textContent=a.dataset[b.dataset.p]);
+});
+
+// CTA form
+$("ctaForm").onsubmit=e=>{e.preventDefault();location.href="/app#/register?email="+encodeURIComponent(e.target.querySelector("input").value)};
+
+// Reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add("in");
+  e.target.querySelectorAll("[data-count]").forEach(el=>{
+    const end=+el.dataset.count,suf=el.dataset.suffix||"",t0=performance.now(),d=1600;
+    const step=t=>{const p=Math.min((t-t0)/d,1),v=Math.floor(end*(1-Math.pow(1-p,3)));el.textContent=v.toLocaleString("en-US").replace(/,/g," ")+suf;if(p<1)requestAnimationFrame(step)};
+    requestAnimationFrame(step);
+  });
+  io.unobserve(e.target);
+}),{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

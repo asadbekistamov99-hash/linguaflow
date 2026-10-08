@@ -1,0 +1,12 @@
+{
+  "name": "LinguaFlow",
+  "short_name": "LinguaFlow",
+  "description": "Tillarni mukammal o'rganing",
+  "start_url": "/app",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#07080d",
+  "theme_color": "#07080d",
+  "lang": "uz",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

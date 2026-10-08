@@ -1,0 +1,46 @@
+'use strict';
+const { DAY } = require('./db');
+
+// SM-2 style scheduling per concept.
+function nextState(prev, ok, now = Date.now()) {
+  let { reps, ease, interval_days: interval, lapses } = prev;
+  if (ok) {
+    reps += 1;
+    interval = reps === 1 ? 1 : reps === 2 ? 3 : Math.round(interval * ease);
+    ease = Math.min(2.8, ease + 0.08);
+  } else {
+    reps = 0;
+    lapses += 1;
+    interval = 0;
+    ease = Math.max(1.3, ease - 0.2);
+  }
+  const due_at = ok ? now + interval * DAY : now + 10 * 60000;
+  return { reps, ease, interval_days: interval, lapses, due_at };
+}
+
+function recordResults(db, userId, lang, results, now = Date.now()) {
+  const get = db.prepare('SELECT reps, ease, interval_days, lapses, due_at FROM word_progress WHERE user_id=? AND lang=? AND concept_id=?');
+  const upsert = db.prepare(`
+    INSERT INTO word_progress (user_id, lang, concept_id, reps, ease, interval_days, due_at, lapses)
+    VALUES (?,?,?,?,?,?,?,?)
+    ON CONFLICT(user_id, lang, concept_id) DO UPDATE SET
+      reps=excluded.reps, ease=excluded.ease, interval_days=excluded.interval_days,
+      due_at=excluded.due_at, lapses=excluded.lapses`);
+  for (const [cid, ok] of results) {
+    const prev = get.get(userId, lang, cid) || { reps: 0, ease: 2.3, interval_days: 0, lapses: 0 };
+    if (ok && prev.due_at !== undefined && prev.due_at > now) continue; // not due yet: replaying must not inflate the schedule
+    const s = nextState(prev, ok, now);
+    upsert.run(userId, lang, cid, s.reps, s.ease, s.interval_days, s.due_at, s.lapses);
+  }
+}
+
+function dueConcepts(db, userId, lang, limit = 10, now = Date.now()) {
+  return db.prepare('SELECT concept_id FROM word_progress WHERE user_id=? AND lang=? AND due_at<=? ORDER BY due_at LIMIT ?')
+    .all(userId, lang, now, limit).map((r) => r.concept_id);
+}
+
+function dueCount(db, userId, lang, now = Date.now()) {
+  return db.prepare('SELECT COUNT(*) n FROM word_progress WHERE user_id=? AND lang=? AND due_at<=?').get(userId, lang, now).n;
+}
+
+module.exports = { nextState, recordResults, dueConcepts, dueCount };

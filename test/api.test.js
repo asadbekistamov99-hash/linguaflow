@@ -535,7 +535,9 @@ test('curriculum and international certification exam flow', async () => {
   assert.equal(certRes.status, 404);
 
   const afterSum = await c('GET', '/api/exams/summary?lang=en');
-  assert.ok(afterSum.data.certificates.length >= 1);
+  // a certificate exists exactly when the (random) exam attempt was passed
+  assert.equal(afterSum.data.certificates.length, sub.data.passed ? 1 : 0);
+  assert.equal(Boolean(sub.data.certificate), sub.data.passed);
 
   // JARVIS voice tutor mode
   const jarvisRes = await c('POST', '/api/tutor', {

@@ -54,9 +54,11 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
   const sessions = new Map();
   const loginLimiter = auth.createLimiter(10, 15 * 60000);
   const registerLimiter = auth.createLimiter(10, 60 * 60000);
+  const guestLimiter = auth.createLimiter(10, 60 * 60000);
+  const examLimiter = auth.createLimiter(12, 60 * 60000);
   const loginIpLimiter = auth.createLimiter(40, 15 * 60000);
   const tutorLimiter = auth.createLimiter(30, 60 * 60000);
-  const adminEmails = new Set(String(process.env.ADMIN_EMAILS || 'asadbekistamov99@gmail.com').split(',').map((s) => s.trim().toLowerCase()).filter(Boolean));
+  const adminEmails = new Set(String(process.env.ADMIN_EMAILS || '').split(',').map((s) => s.trim().toLowerCase()).filter(Boolean));
 
   const q = {
     userById: db.prepare('SELECT * FROM users WHERE id=?'),
@@ -323,7 +325,8 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     'X-Content-Type-Options': 'nosniff',
     'Referrer-Policy': 'strict-origin-when-cross-origin',
     'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
-    'Content-Security-Policy': "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; frame-ancestors *",
+    'X-Frame-Options': 'DENY',
+    'Content-Security-Policy': "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; frame-ancestors 'none'",
   };
 
   function send(res, status, body, extra = {}) {
@@ -342,7 +345,8 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
 
   const emailOk = (e) => typeof e === 'string' && e.length <= 120 && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e);
   const cleanName = (n) => String(n ?? '').replace(/\s+/g, ' ').trim().slice(0, 40);
-  const ipOf = (req) => (req.headers && req.headers['x-forwarded-for'] ? String(req.headers['x-forwarded-for']).split(',')[0].trim() : (req.socket && req.socket.remoteAddress) || 'x');
+  // Behind a reverse proxy set TRUST_PROXY=1 so the real client address (X-Forwarded-For) is rate-limited.
+  const ipOf = (req) => (process.env.TRUST_PROXY === '1' && req.headers && req.headers['x-forwarded-for'] ? String(req.headers['x-forwarded-for']).split(',')[0].trim() : (req.socket && req.socket.remoteAddress) || 'x');
   const isSecure = (req) => (req.headers && req.headers['x-forwarded-proto'] === 'https') || (req.socket && req.socket.encrypted === true);
 
   route('GET', '/api/health', async () => ({ ok: true }));
@@ -379,19 +383,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     if (!loginIpLimiter(ipOf(req)) || !loginLimiter(`${ipOf(req)}|${email}`)) throw new HttpError(429, "Juda ko'p urinish, keyinroq qayta urinib ko'ring");
     let u = q.userByEmail.get(email);
 
-    // Auto-create initial account if database has 0 users or if this is the designated admin email
-    if (!u && (q.userCount.get().n === 0 || adminEmails.has(email)) && emailOk(email) && password.length >= 8) {
-      const firstRole = process.env.FIRST_USER_ADMIN !== '0' || adminEmails.has(email) ? 'admin' : 'user';
-      const name = email.split('@')[0].replace(/[._]/g, ' ');
-      const hash = await auth.hashPasswordAsync(password);
-      const info = q.insertUser.run(email, name, hash, Date.now(), firstRole);
-      u = q.userById.get(Number(info.lastInsertRowid));
-      const token = auth.sign(secret, u.id, u.created_at);
-      res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
-      return { user: publicUser(u), token };
-    }
-
-    if (!u) throw new HttpError(401, "Bunday hisob topilmadi. Avval ro'yxatdan o'ting yoki 'Parolni unutdingizmi?' orqali yangilang");
+    if (!u) throw new HttpError(401, "Email yoki parol noto'g'ri");
 
     let ok = await auth.verifyPasswordAsync(password, u.pass_hash);
     if (!ok && password.trim() !== password) {
@@ -405,30 +397,8 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     return { user: publicUser(u), token };
   });
 
-  route('POST', '/api/auth/reset-password', async ({ req, res, body }) => {
-    const email = String(body.email ?? '').trim().toLowerCase();
-    const newPassword = String(body.newPassword ?? body.password ?? '');
-    if (!emailOk(email)) throw new HttpError(400, "Email noto'g'ri");
-    if (newPassword.length < 8 || newPassword.length > 100) throw new HttpError(400, "Yangi parol kamida 8 belgidan iborat bo'lsin");
-    let u = q.userByEmail.get(email);
-    const hash = await auth.hashPasswordAsync(newPassword);
-    if (!u) {
-      const first = q.userCount.get().n === 0 && process.env.FIRST_USER_ADMIN !== '0';
-      const role = first || adminEmails.has(email) ? 'admin' : 'user';
-      const name = email.split('@')[0].replace(/[._]/g, ' ');
-      const info = q.insertUser.run(email, name, hash, Date.now(), role);
-      u = q.userById.get(Number(info.lastInsertRowid));
-    } else {
-      if (u.banned) throw new HttpError(403, 'Hisobingiz bloklangan');
-      db.prepare('UPDATE users SET pass_hash=? WHERE id=?').run(hash, u.id);
-      u = q.userById.get(u.id);
-    }
-    const token = auth.sign(secret, u.id, u.created_at);
-    res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
-    return { ok: true, user: publicUser(u), token };
-  });
-
   route('POST', '/api/auth/guest', async ({ req, res }) => {
+    if (!guestLimiter(ipOf(req))) throw new HttpError(429, "Juda ko'p urinish, keyinroq qayta urinib ko'ring");
     const guestId = Math.floor(1000 + Math.random() * 9000);
     const email = `mehmon_${Date.now()}_${guestId}@linguaflow.uz`;
     const name = `Mehmon #${guestId}`;
@@ -674,8 +644,12 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     const u = requireUser(req);
     const lang = url.searchParams.get('lang') || validLang(u.current_lang);
     const level = (url.searchParams.get('level') || 'B2').toUpperCase();
+    if (!['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].includes(level)) throw new HttpError(400, "Noto'g'ri daraja");
     const L = content.lang(lang);
     if (!L) throw new HttpError(400, "Noto'g'ri til");
+    if (!examLimiter(String(u.id))) throw new HttpError(429, "Soatlik imtihon limiti tugadi");
+    const open = [...activeMockExams.entries()].filter(([, v]) => v.userId === u.id);
+    if (open.length >= 3) for (const [k] of open.slice(0, open.length - 2)) activeMockExams.delete(k);
 
     const mock = buildMockExam(L.code, level, content);
     const examToken = `exam_${Date.now()}_${crypto.randomBytes(6).toString('hex')}`;
@@ -776,7 +750,8 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
       `).run(certId, u.id, u.name, L.code, level, examTitle, String(bandScore), accuracy, now);
 
-      awardProgress(u, { xp: 120, lang: L.code, source: 'certificate', ctx: { cert: true, level } });
+      const had = db.prepare('SELECT COUNT(*) n FROM user_certificates WHERE user_id=? AND lang=? AND cefr_level=? AND cert_id<>?').get(u.id, L.code, level, certId).n;
+      awardProgress(u, { xp: had ? 0 : 120, lang: L.code, source: 'certificate', ctx: { cert: true, level } });
 
       certificate = {
         certId,
@@ -814,44 +789,10 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     };
   });
 
-  route('POST', '/api/exams/certify', async ({ req, body }) => {
-    const u = requireUser(req);
-    const lang = content.lang(body.lang) ? body.lang : validLang(u.current_lang);
-    const L = content.lang(lang);
-    const cefrLevel = String(body.level || 'B2').toUpperCase();
-    const accuracy = Math.min(100, Math.max(70, Number(body.accuracy) || 85));
-    const bandScore = body.bandScore || (cefrLevel === 'C1' ? '7.5' : cefrLevel === 'B2' ? '6.5' : cefrLevel === 'B1' ? '5.5' : '4.5');
-    const examTitle = body.examTitle || (L.code === 'en' ? `IELTS ${bandScore} Ekvivalenti` : `${L.name} ${cefrLevel} Sertifikati`);
-
-    const certId = `LF-${Date.now().toString(36).toUpperCase()}-${crypto.randomBytes(3).toString('hex').toUpperCase()}`;
-    const now = Date.now();
-    db.prepare(`
-      INSERT INTO user_certificates (cert_id, user_id, user_name, lang, cefr_level, exam_title, band_score, accuracy, issued_at)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `).run(certId, u.id, u.name, L.code, cefrLevel, examTitle, String(bandScore), accuracy, now);
-
-    awardProgress(u, { xp: 50, lang: L.code, source: 'certificate', ctx: { cert: true } });
-
-    return {
-      ok: true,
-      certificate: {
-        certId,
-        userName: u.name,
-        lang: L.name,
-        langNative: L.native,
-        flag: L.flag,
-        cefrLevel,
-        examTitle,
-        bandScore,
-        accuracy,
-        issuedAt: now,
-      },
-    };
-  });
-
   route('POST', '/api/tutor', async ({ req, body }) => {
     const u = requireUser(req);
     if (!tutorLimiter(String(u.id))) throw new HttpError(429, 'Soatlik limit tugadi');
+    const uname = String(u.name).replace(/[^\p{L}\p{N} '.-]/gu, '').slice(0, 40) || 'student';
     const lang = content.lang(body.lang) ? body.lang : validLang(u.current_lang);
     const L = content.lang(lang);
     const msgs = (Array.isArray(body.messages) ? body.messages : []).slice(-12)
@@ -863,10 +804,10 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     let system = `Siz LinguaFlow ilovasining professional til ustozisiz. O'quvchi o'zbek tilida so'zlashadi va ${L.name} (${L.native}) ni xalqaro sertifikat (IELTS, CEFR, Goethe, TRKI, DELF, DELE) darajasida o'rganmoqchi. `;
     if (body.mode === 'jarvis') {
       system = `You are J.A.R.V.I.S., Tony Stark's legendary hyper-intelligent AI companion, now serving as the elite voice tutor and spoken conversation mentor in LinguaFlow.
-You are conversing with ${u.name} via real-time spoken audio VOICE.
+You are conversing with ${uname} via real-time spoken audio VOICE.
 Target language: ${L.name} (${L.native}). The user's native tongue is Uzbek.
 JARVIS Spoken Voice Protocols:
-1. Persona: Highly intelligent, polite, witty, confident and supportive. Address the student with dignity (e.g. 'Sir' or by name '${u.name.split(' ')[0]}').
+1. Persona: Highly intelligent, polite, witty, confident and supportive. Address the student with dignity (e.g. 'Sir' or by name '${uname.split(' ')[0]}').
 2. Voice Brevity: Keep responses concise (strictly 1 to 3 short sentences), as your answer is spoken out loud through speech synthesis. Long text ruins voice conversation.
 3. Language learning: Converse primarily in ${L.native}. If the student makes a language slip or speaks in Uzbek, understand them perfectly, provide the natural ${L.native} correction in 1 quick sentence, and keep the spoken dialogue moving with an engaging question.
 4. IELTS & Fluency: Integrate authentic natural idioms and clear sentence structures.`;
@@ -893,9 +834,9 @@ Javobni o'qishga qulay, tushunarli va ruhlantiruvchi qilib bering.`;
       let reply = await tutor.ask({ system, messages: msgs });
       if (!reply) {
         if (body.mode === 'jarvis') {
-          reply = generateJarvisReply({ lang, userName: u.name, messages: msgs, mode: body.mode });
+          reply = generateJarvisReply({ lang, userName: uname, messages: msgs, mode: body.mode });
         } else if (body.mode === 'pronunciation' || body.isAudioPractice) {
-          reply = generatePronunciationFeedback({ lang, userName: u.name, userText: msgs[msgs.length - 1].content });
+          reply = generatePronunciationFeedback({ lang, userName: uname, userText: msgs[msgs.length - 1].content });
         } else {
           return { reply: "AI ustoz hozircha o'chiq. Serverda GEMINI_API_KEY, OPENAI_API_KEY yoki ANTHROPIC_API_KEY ni sozlang.", disabled: true };
         }
@@ -904,11 +845,11 @@ Javobni o'qishga qulay, tushunarli va ruhlantiruvchi qilib bering.`;
     } catch (e) {
       console.error('tutor error:', e.message);
       if (body.mode === 'jarvis') {
-        const reply = generateJarvisReply({ lang, userName: u.name, messages: msgs, mode: body.mode });
+        const reply = generateJarvisReply({ lang, userName: uname, messages: msgs, mode: body.mode });
         return { reply };
       }
       if (body.mode === 'pronunciation' || body.isAudioPractice) {
-        const reply = generatePronunciationFeedback({ lang, userName: u.name, userText: msgs[msgs.length - 1].content });
+        const reply = generatePronunciationFeedback({ lang, userName: uname, userText: msgs[msgs.length - 1].content });
         return { reply };
       }
       throw new HttpError(502, "AI ustoz hozir javob bera olmadi, keyinroq urinib ko'ring");

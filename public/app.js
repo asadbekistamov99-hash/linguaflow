@@ -968,9 +968,11 @@
 
     const form = h('form', {
       onsubmit: async (e) => {
-        e.preventDefault(); err.textContent = ''; btn.disabled = true;
+        e.preventDefault(); err.textContent = '';
+        if (isReset) { err.textContent = "Parolni tiklash uchun administratorga murojaat qiling: u admin paneldan yangi parol beradi."; return; }
+        btn.disabled = true;
         try {
-          const endpoint = isReg ? '/api/auth/register' : isReset ? '/api/auth/reset-password' : '/api/auth/login';
+          const endpoint = isReg ? '/api/auth/register' : '/api/auth/login';
           const body = { email: email.value, password: pass.value, ...(isReg ? { name: name.value } : {}) };
           const res = await api('POST', endpoint, body);
           await onAuthSuccess(res);
@@ -984,7 +986,7 @@
       err, btn, (!isReg && !isReset) ? guestBtn : null);
 
     const title = isReg ? 'Hisob yarating' : isReset ? 'Parolni tiklash' : 'Xush kelibsiz!';
-    const sub = isReg ? "Bepul boshlang va 6 ta tilni o'rganing." : isReset ? "Email va yangi parolingizni kiriting." : 'Davom etish uchun hisobingizga kiring.';
+    const sub = isReg ? "Bepul boshlang va 6 ta tilni o'rganing." : isReset ? "Parolni administrator tiklab beradi. Unga email manzilingizni yuboring." : 'Davom etish uchun hisobingizga kiring.';
 
     const forgotLink = (!isReg && !isReset) ? h('div', { style: { textAlign: 'right', marginTop: '8px', fontSize: '.88rem' } }, h('a', { href: '#/reset', style: { color: 'var(--muted)' } }, 'Parolni unutdingizmi?')) : null;
 

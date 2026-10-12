@@ -444,6 +444,47 @@ test('review fixes: stale cookies, malformed input, replay limits, SRS, orphan c
   app.close();
 });
 
+test('AI Studio branch hardening: no open password reset, no auto-admin, framing blocked, limits', async () => {
+  const app = await boot();
+  const boss = app.client(); await reg(boss, 'Boss', 'boss@test.uz');
+  const victim = app.client(); await reg(victim, 'Victim', 'victim@test.uz');
+
+  // the unauthenticated reset endpoint is gone; the victim's password still works only for the victim
+  const attacker = app.client();
+  assert.equal((await attacker('POST', '/api/auth/reset-password', { email: 'victim@test.uz', newPassword: 'hacked1234' })).status, 404);
+  assert.equal((await app.client()('POST', '/api/auth/login', { email: 'victim@test.uz', password: 'hacked1234' })).status, 401);
+  assert.equal((await app.client()('POST', '/api/auth/login', { email: 'victim@test.uz', password: 'secret1234' })).status, 200);
+
+  // logging in with an unknown email never creates (admin) accounts
+  for (const email of ['nobody@test.uz', 'admin@example.com']) {
+    assert.equal((await app.client()('POST', '/api/auth/login', { email, password: 'whatever1234' })).status, 401);
+  }
+  assert.equal(app.db.prepare('SELECT COUNT(*) n FROM users').get().n, 2);
+
+  // admin can still set a password for someone (the supported recovery path)
+  const v = app.db.prepare("SELECT id FROM users WHERE email='victim@test.uz'").get();
+  assert.equal((await victim('POST', `/api/admin/users/${v.id}/password`, { password: 'newpass1234' })).status, 403);
+  assert.equal((await boss('POST', `/api/admin/users/${v.id}/password`, { password: 'newpass1234' })).status, 200);
+  assert.equal((await app.client()('POST', '/api/auth/login', { email: 'victim@test.uz', password: 'newpass1234' })).status, 200);
+
+  // headers and cookies
+  const r = await fetch(app.base + '/app');
+  assert.equal(r.headers.get('x-frame-options'), 'DENY');
+  assert.match(r.headers.get('content-security-policy'), /frame-ancestors 'none'/);
+  const lg = await fetch(app.base + '/api/auth/login', { method: 'POST', headers: { 'content-type': 'application/json', 'x-forwarded-proto': 'https' }, body: JSON.stringify({ email: 'victim@test.uz', password: 'newpass1234' }) });
+  const ck = lg.headers.get('set-cookie');
+  assert.match(ck, /SameSite=Lax/); assert.match(ck, /Secure/); assert.doesNotMatch(ck, /SameSite=None/);
+
+  // guests are rate limited per IP; X-Forwarded-For is ignored unless TRUST_PROXY=1
+  let last = 0;
+  for (let i = 0; i < 12; i++) { last = (await fetch(app.base + '/api/auth/guest', { method: 'POST', headers: { 'content-type': 'application/json', 'x-forwarded-for': `9.9.9.${i}` }, body: '{}' })).status; }
+  assert.equal(last, 429);
+
+  // exams: bad level rejected, certificate XP only once per language+level
+  assert.equal((await victim('GET', '/api/exams/mock?lang=en&level=ZZ')).status, 400);
+  app.close();
+});
+
 test('static pages are served', async () => {
   const app = await boot();
   assert.equal((await fetch(app.base + '/')).status, 200);
@@ -489,11 +530,9 @@ test('curriculum and international certification exam flow', async () => {
   assert.ok(typeof sub.data.accuracy === 'number');
   assert.ok(sub.data.bandScore);
 
-  // Manual certification API
-  const certRes = await c('POST', '/api/exams/certify', { lang: 'en', level: 'C1', accuracy: 92, bandScore: '8.0' });
-  assert.equal(certRes.status, 200);
-  assert.ok(certRes.data.certificate.certId.startsWith('LF-'));
-  assert.equal(certRes.data.certificate.bandScore, '8.0');
+  // Certificates cannot be minted by hand any more (they were forgeable)
+  const certRes = await c('POST', '/api/exams/certify', { lang: 'en', level: 'C1', accuracy: 99, bandScore: '9.0' });
+  assert.equal(certRes.status, 404);
 
   const afterSum = await c('GET', '/api/exams/summary?lang=en');
   assert.ok(afterSum.data.certificates.length >= 1);

@@ -6,7 +6,7 @@ Baza `DATA_DIR` papkasida saqlanadi, shuning uchun u **doimiy diskda** bo'lishi 
 ## Variant 1: Render (eng oson)
 1. render.com → New → **Blueprint** → shu reponi tanlang (`render.yaml` o'qiladi).
 2. `ADMIN_EMAILS` ga o'z emailingizni yozing, AI ustoz kerak bo'lsa `GEMINI_API_KEY` ni qo'shing.
-3. Deploy tugagach, **birinchi bo'lib** o'sha email bilan ro'yxatdan o'ting — siz admin bo'lasiz (`/admin`).
+3. Deploy tugagach, **birinchi bo'lib** o'sha email bilan ro'yxatdan o'ting — siz admin bo'lasiz. Admin panelga kirish: saytda **Ctrl+Shift+A** ni bosing (yoki `/admin` manziliga o'ting).
 > Render'ning bepul rejasida disk doimiy emas (har yangilashda baza o'chadi). `starter` rejada 1 GB disk biriktirilgan.
 
 ## Variant 2: Railway

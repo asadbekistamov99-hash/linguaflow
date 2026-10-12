@@ -20,15 +20,31 @@
   let toastTimer;
   function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 2400); }
 
+  const memStore = new Map();
+  const LS = {
+    get: (k) => { try { return localStorage.getItem(k) ?? memStore.get(k) ?? null; } catch { return memStore.get(k) ?? null; } },
+    set: (k, v) => { try { localStorage.setItem(k, v); } catch {} memStore.set(k, v); },
+    remove: (k) => { try { localStorage.removeItem(k); } catch {} memStore.delete(k); },
+  };
+
   async function api(method, url, body) {
-    const r = await fetch(url, { method, headers: method !== 'GET' ? { 'content-type': 'application/json' } : {}, body: method !== 'GET' ? JSON.stringify(body ?? {}) : undefined, credentials: 'same-origin' });
+    const headers = {};
+    if (method !== 'GET') headers['content-type'] = 'application/json';
+    const token = LS.get('lf_token');
+    if (token) headers['authorization'] = `Bearer ${token}`;
+    const r = await fetch(url, {
+      method,
+      headers,
+      body: method !== 'GET' ? JSON.stringify(body ?? {}) : undefined,
+      credentials: 'include',
+    });
     const data = await r.json().catch(() => ({}));
     if (!r.ok) { const e = new Error(data.error || 'Xatolik'); e.status = r.status; throw e; }
     return data;
   }
   const guard = (fn) => async (...a) => { try { return await fn(...a); } catch (e) { toast(e.message); } };
 
-  try { const m = localStorage.getItem('lf_theme') || 'dark'; document.documentElement.dataset.theme = m === 'light' ? 'light' : m === 'auto' && !matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark'; } catch { /* ignore */ }
+  try { const m = LS.get('lf_theme') || 'dark'; document.documentElement.dataset.theme = m === 'light' ? 'light' : m === 'auto' && !matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark'; } catch { /* ignore */ }
 
   const S = { me: null };
   const fmtDate = (ms) => (ms ? new Date(ms).toLocaleString('uz-UZ', { dateStyle: 'short', timeStyle: 'short' }) : '—');
@@ -44,7 +60,14 @@
       h('div', { class: 'logo' }, h('span', { class: 'logo-mark' }, 'L'), 'LinguaFlow Admin'),
       h('h1', {}, 'Admin panelga kirish'), h('p', { class: 'sub' }, 'Faqat administratorlar uchun.'),
       h('form', {
-        onsubmit: async (e) => { e.preventDefault(); err.textContent = ''; try { await api('POST', '/api/auth/login', { email: email.value, password: pass.value }); boot(); } catch (ex) { err.textContent = ex.message; } },
+        onsubmit: async (e) => {
+          e.preventDefault(); err.textContent = '';
+          try {
+            const res = await api('POST', '/api/auth/login', { email: email.value, password: pass.value });
+            if (res.token) LS.set('lf_token', res.token);
+            boot();
+          } catch (ex) { err.textContent = ex.message; }
+        },
       }, h('label', { class: 'field' }, h('span', {}, 'Email'), email), h('label', { class: 'field' }, h('span', {}, 'Parol'), pass), err, h('button', { class: 'btn btn-main btn-block', type: 'submit' }, 'Kirish')),
       h('div', { class: 'auth-switch' }, h('a', { href: '/app' }, '← Ilovaga qaytish')))));
   }
@@ -172,9 +195,17 @@
       h('div', { class: 'row-actions' },
         !self ? act(u.isAdmin ? 'Adminlikni olib tashlash' : 'Admin qilish', 'btn-ghost', () => api('PATCH', `/api/admin/users/${u.id}`, { role: u.isAdmin ? 'user' : 'admin' })) : null,
         !self && !u.isAdmin ? act(u.banned ? 'Blokdan chiqarish' : 'Bloklash', 'btn-ghost', () => api('PATCH', `/api/admin/users/${u.id}`, { banned: !u.banned })) : null,
-        act('Progressni tozalash', 'btn-ghost', async () => { if (!confirm('Barcha dars va so\'z progressi o\'chiriladi. Davom etasizmi?')) throw new Error('Bekor qilindi'); await api('POST', `/api/admin/users/${u.id}/reset`, { what: 'progress' }); }),
-        act('XP va nishonlarni tozalash', 'btn-ghost', async () => { if (!confirm('XP, seriya va nishonlar o\'chiriladi. Davom etasizmi?')) throw new Error('Bekor qilindi'); await api('POST', `/api/admin/users/${u.id}/reset`, { what: 'xp' }); }),
-        !self && !u.isAdmin ? act("Hisobni o'chirish", 'btn-danger', async () => { if (!confirm(`${u.email} hisobi butunlay o'chiriladi. Bu qaytarilmaydi!`)) throw new Error('Bekor qilindi'); await api('DELETE', `/api/admin/users/${u.id}`); }) : null),
+        act('Progressni tozalash', 'btn-ghost', async () => { await api('POST', `/api/admin/users/${u.id}/reset`, { what: 'progress' }); }),
+        act('XP va nishonlarni tozalash', 'btn-ghost', async () => { await api('POST', `/api/admin/users/${u.id}/reset`, { what: 'xp' }); }),
+        !self && !u.isAdmin ? act("Hisobni o'chirish", 'btn-danger', async () => { await api('DELETE', `/api/admin/users/${u.id}`); }) : null),
+      h('div', { style: { display: 'flex', gap: '8px', alignItems: 'center', marginTop: '12px' } },
+        h('input', { id: 'adminNewPass', type: 'password', placeholder: 'Yangi parol (kamida 8 belgi)', class: 't-input', style: { flex: 1, padding: '8px 12px', fontSize: '.9rem' } }),
+        h('button', { class: 'btn btn-ghost btn-sm', onclick: guard(async () => {
+          const inp = $('#adminNewPass');
+          if (!inp || inp.value.length < 8) throw new Error("Parol kamida 8 ta belgidan iborat bo'lsin");
+          await api('POST', `/api/admin/users/${u.id}/password`, { password: inp.value });
+          inp.value = ''; toast('Parol yangilandi ✓');
+        }) }, "Parolni o'zgartirish")),
       h('button', { class: 'btn btn-ghost btn-block', style: { marginTop: '16px' }, onclick: m.close }, 'Yopish'));
   });
 
@@ -333,11 +364,11 @@
 
   // ---------- boot ----------
   async function boot() {
-    try { S.me = (await api('GET', '/api/me')).user; } catch { S.me = null; }
+    try { S.me = (await api('GET', '/api/me')).user; } catch { S.me = null; LS.remove('lf_token'); }
     if (!S.me) return renderLogin();
     if (!S.me.isAdmin) {
       return mount(h('div', { class: 'auth-wrap' }, h('div', { class: 'auth-card' }, h('h1', {}, 'Ruxsat yo\'q'), h('p', { class: 'sub' }, `${S.me.email} hisobi admin emas.`),
-        h('a', { class: 'btn btn-main btn-block', href: '/app' }, 'Ilovaga qaytish'), h('button', { class: 'btn btn-ghost btn-block', style: { marginTop: '10px' }, onclick: async () => { await api('POST', '/api/auth/logout', {}); renderLogin(); } }, 'Boshqa hisob bilan kirish'))));
+        h('a', { class: 'btn btn-main btn-block', href: '/app' }, 'Ilovaga qaytish'), h('button', { class: 'btn btn-ghost btn-block', style: { marginTop: '10px' }, onclick: async () => { LS.remove('lf_token'); try { await api('POST', '/api/auth/logout', {}); } catch {} renderLogin(); } }, 'Boshqa hisob bilan kirish'))));
     }
     if (!location.hash) location.hash = '#/dashboard';
     route();

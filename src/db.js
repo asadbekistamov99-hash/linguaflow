@@ -93,6 +93,19 @@ function open(file) {
       id INTEGER PRIMARY KEY, admin_id INTEGER, action TEXT NOT NULL, detail TEXT, created_at INTEGER NOT NULL
     );
     CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS user_certificates (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      cert_id TEXT UNIQUE NOT NULL,
+      user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      user_name TEXT NOT NULL,
+      lang TEXT NOT NULL,
+      cefr_level TEXT NOT NULL,
+      exam_title TEXT NOT NULL,
+      band_score TEXT NOT NULL,
+      accuracy INTEGER NOT NULL,
+      issued_at INTEGER NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_cert_user ON user_certificates(user_id, lang);
   `);
   ensureColumn(db, 'users', 'role', "TEXT NOT NULL DEFAULT 'user'");
   ensureColumn(db, 'users', 'banned', 'INTEGER NOT NULL DEFAULT 0');

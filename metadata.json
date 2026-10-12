@@ -1,0 +1,7 @@
+{
+  "name": "LinguaFlow",
+  "description": "Ingliz, rus, nemis, fransuz, ispan, arab va boshqa tillarni A1 dan C2 gacha o'rganing.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

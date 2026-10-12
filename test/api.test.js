@@ -219,6 +219,17 @@ test('games: words, score validation, daily cap, rate limit, highscores', async 
   const w = await api('GET', '/api/games/words?lang=en&n=16');
   assert.equal(w.status, 200);
   assert.ok(w.data.words.length >= 8 && w.data.words[0].target && w.data.words[0].uz);
+
+  // 5-word level batching: level 1 and level 2 must have distinct words
+  const l1 = await api('GET', '/api/games/words?lang=en&level=1');
+  const l2 = await api('GET', '/api/games/words?lang=en&level=2');
+  assert.equal(l1.status, 200);
+  assert.equal(l2.status, 200);
+  assert.equal(l1.data.words.length, 5);
+  assert.equal(l2.data.words.length, 5);
+  const ids1 = new Set(l1.data.words.map((x) => x.id));
+  assert.ok(l2.data.words.every((x) => !ids1.has(x.id)), 'level 2 must contain different words than level 1');
+
   const sn = await api('GET', '/api/games/sentences?lang=en');
   assert.ok(sn.data.sentences.length >= 3);
   assert.deepEqual([...sn.data.sentences[0].words].sort(), [...sn.data.sentences[0].shuffled].sort());
@@ -262,6 +273,28 @@ test('tutor degrades gracefully without API key', async () => {
   const r = await api('POST', '/api/tutor', { lang: 'en', messages: [{ role: 'user', content: 'Hello' }] });
   assert.equal(r.status, 200);
   assert.equal(r.data.disabled, true);
+  app.close();
+});
+
+test('tutor: pronunciation practice mode and jarvis voice tutor', async () => {
+  const app = await boot();
+  const api = app.client(); await reg(api, 'Speaker', 'speaker@test.uz');
+  const rPronunc = await api('POST', '/api/tutor', {
+    lang: 'en',
+    mode: 'pronunciation',
+    isAudioPractice: true,
+    messages: [{ role: 'user', content: '🎙️ "Good morning, how are you today?"' }]
+  });
+  assert.equal(rPronunc.status, 200);
+  assert.ok(rPronunc.data.reply);
+
+  const rJarvis = await api('POST', '/api/tutor', {
+    lang: 'en',
+    mode: 'jarvis',
+    messages: [{ role: 'user', content: 'Hello Jarvis' }]
+  });
+  assert.equal(rJarvis.status, 200);
+  assert.ok(rJarvis.data.reply);
   app.close();
 });
 
@@ -417,6 +450,63 @@ test('static pages are served', async () => {
   assert.equal((await fetch(app.base + '/app')).status, 200);
   assert.equal((await fetch(app.base + '/admin')).status, 200);
   assert.equal((await fetch(app.base + '/nope.txt')).status, 404);
+  app.close();
+});
+
+test('curriculum and international certification exam flow', async () => {
+  const app = await boot();
+  const c = app.client();
+  await reg(c, 'Ielts Candidate', 'candidate@ielts.uz');
+
+  // Curriculum returns 5 CEFR stages and IELTS roadmap
+  const cur = await c('GET', '/api/curriculum?lang=en');
+  assert.equal(cur.status, 200);
+  assert.equal(cur.data.stages.length, 5);
+  assert.equal(cur.data.stages[0].level, 'A1');
+  assert.equal(cur.data.stages[4].level, 'C1');
+  assert.ok(cur.data.stages[4].ieltsBand.includes('7.0'));
+
+  // Exam summary
+  const sum = await c('GET', '/api/exams/summary?lang=en');
+  assert.equal(sum.status, 200);
+  assert.equal(sum.data.stages.length, 5);
+
+  // Mock exam generation
+  const mock = await c('GET', '/api/exams/mock?lang=en&level=B2');
+  assert.equal(mock.status, 200);
+  assert.ok(mock.data.examToken);
+  assert.ok(mock.data.listening.length > 0);
+  assert.ok(mock.data.reading.length > 0);
+  assert.ok(mock.data.grammar.length > 0);
+
+  // Submit exam answers
+  const answers = {};
+  [...mock.data.listening, ...mock.data.reading, ...mock.data.grammar].forEach((q) => {
+    answers[q.id] = q.options ? q.options[0] : 'Sample answer';
+  });
+  const sub = await c('POST', '/api/exams/submit', { examToken: mock.data.examToken, answers });
+  assert.equal(sub.status, 200);
+  assert.ok(typeof sub.data.accuracy === 'number');
+  assert.ok(sub.data.bandScore);
+
+  // Manual certification API
+  const certRes = await c('POST', '/api/exams/certify', { lang: 'en', level: 'C1', accuracy: 92, bandScore: '8.0' });
+  assert.equal(certRes.status, 200);
+  assert.ok(certRes.data.certificate.certId.startsWith('LF-'));
+  assert.equal(certRes.data.certificate.bandScore, '8.0');
+
+  const afterSum = await c('GET', '/api/exams/summary?lang=en');
+  assert.ok(afterSum.data.certificates.length >= 1);
+
+  // JARVIS voice tutor mode
+  const jarvisRes = await c('POST', '/api/tutor', {
+    lang: 'en',
+    mode: 'jarvis',
+    messages: [{ role: 'user', content: 'Hello Jarvis, how are you?' }],
+  });
+  assert.equal(jarvisRes.status, 200);
+  assert.ok(typeof jarvisRes.data.reply === 'string' && jarvisRes.data.reply.length > 0);
+
   app.close();
 });
 

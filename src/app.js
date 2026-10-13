@@ -645,8 +645,8 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
       title: un.title,
       emoji: un.emoji,
       position: idx + 1,
-      stageLevel: idx < 4 ? 'A1' : idx < 8 ? 'A2' : idx < 12 ? 'B1' : idx < 16 ? 'B2' : 'C1',
-      ieltsTarget: idx < 4 ? 'Band 3.5' : idx < 8 ? 'Band 4.5' : idx < 12 ? 'Band 5.5' : idx < 16 ? 'Band 6.5' : 'Band 7.5 - 8.5',
+      stageLevel: un.level,
+      ieltsTarget: ({ A1: 'Band 3.5', A2: 'Band 4.5', B1: 'Band 5.5', B2: 'Band 6.5' })[un.level] || 'Band 7.5 - 8.5',
       conceptsCount: un.concepts.filter((c) => c.t[L.code]).length,
       sentencesCount: un.sentences.filter((s) => s.t[L.code]).length,
     }));

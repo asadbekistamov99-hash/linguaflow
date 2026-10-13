@@ -126,12 +126,24 @@ function open(file) {
   ensureColumn(db, 'users', 'role', "TEXT NOT NULL DEFAULT 'user'");
   ensureColumn(db, 'users', 'banned', 'INTEGER NOT NULL DEFAULT 0');
   ensureColumn(db, 'users', 'session_ver', 'INTEGER NOT NULL DEFAULT 0');
+  ensureColumn(db, 'units', 'level', "TEXT NOT NULL DEFAULT 'A1'");
   seedIfEmpty(db);
+  syncSeed(db);
   return db;
 }
 
 function ensureColumn(db, table, col, def) {
   if (!db.prepare(`PRAGMA table_info(${table})`).all().some((c) => c.name === col)) db.exec(`ALTER TABLE ${table} ADD COLUMN ${col} ${def}`);
+}
+
+const SEED_COLS = ['en', 'ru', 'de', 'fr', 'es', 'ar'];
+
+function insertUnit(db, u, enabled, position) {
+  db.prepare('INSERT INTO units (key,title,emoji,enabled,position,level) VALUES (?,?,?,?,?,?)').run(u.key, u.title, u.emoji, enabled ? 1 : 0, position, u.level || 'A1');
+  const insC = db.prepare('INSERT INTO concepts (id,unit_key,position,uz,t,tr) VALUES (?,?,?,?,?,?)');
+  const insS = db.prepare('INSERT INTO sentences (unit_key,position,uz,t) VALUES (?,?,?,?)');
+  u.rows.forEach((r, i) => insC.run(`${u.key}.${i}`, u.key, i, r[0], JSON.stringify(Object.fromEntries(SEED_COLS.map((c, j) => [c, r[j + 1]]))), JSON.stringify({ ar: r[7] })));
+  (u.sentences || []).forEach((s, i) => insS.run(u.key, i, s[0], JSON.stringify(Object.fromEntries(SEED_COLS.map((c, j) => [c, s[j + 1]])))));
 }
 
 function seedIfEmpty(db) {
@@ -144,16 +156,30 @@ function seedIfEmpty(db) {
       Object.values(seed.LANGS).forEach((l, i) => ins.run(l.code, l.name, l.native, l.flag, l.tts, l.dir, l.color, i));
     }
     if (!db.prepare('SELECT COUNT(*) n FROM units').get().n) {
-      const cols = ['en', 'ru', 'de', 'fr', 'es', 'ar'];
-      const insU = db.prepare('INSERT INTO units (key,title,emoji,enabled,position) VALUES (?,?,?,1,?)');
-      const insC = db.prepare('INSERT INTO concepts (id,unit_key,position,uz,t,tr) VALUES (?,?,?,?,?,?)');
-      const insS = db.prepare('INSERT INTO sentences (unit_key,position,uz,t) VALUES (?,?,?,?)');
-      seed.units.forEach((u, ui) => {
-        insU.run(u.key, u.title, u.emoji, ui);
-        u.rows.forEach((r, i) => insC.run(`${u.key}.${i}`, u.key, i, r[0], JSON.stringify(Object.fromEntries(cols.map((c, j) => [c, r[j + 1]]))), JSON.stringify({ ar: r[7] })));
-        (u.sentences || []).forEach((s, i) => insS.run(u.key, i, s[0], JSON.stringify(Object.fromEntries(cols.map((c, j) => [c, s[j + 1]])))));
-      });
+      // A1 units are live at once; A2/B1 drafts stay hidden until a reviewer enables them in the admin panel.
+      seed.units.forEach((u, ui) => insertUnit(db, u, (u.level || 'A1') === 'A1', ui));
+      db.prepare("INSERT OR REPLACE INTO settings (key,value) VALUES ('seed_units_applied',?)").run(JSON.stringify(seed.units.map((u) => u.key)));
     }
+    db.exec('COMMIT');
+  } catch (e) { db.exec('ROLLBACK'); throw e; }
+}
+
+// Existing databases receive units added to the seed later (disabled). Units an admin deleted are not resurrected.
+function syncSeed(db) {
+  const { loadSeed } = require('./seed');
+  const seed = loadSeed();
+  const row = db.prepare("SELECT value FROM settings WHERE key='seed_units_applied'").get();
+  const applied = new Set(row ? JSON.parse(row.value) : seed.units.filter((u) => (u.level || 'A1') === 'A1').map((u) => u.key));
+  const fresh = seed.units.filter((u) => !applied.has(u.key));
+  if (row && !fresh.length) return;
+  db.exec('BEGIN');
+  try {
+    let pos = db.prepare('SELECT COALESCE(MAX(position),-1)+1 n FROM units').get().n;
+    for (const u of fresh) {
+      if (!db.prepare('SELECT 1 FROM units WHERE key=?').get(u.key)) insertUnit(db, u, false, pos++);
+      applied.add(u.key);
+    }
+    db.prepare("INSERT OR REPLACE INTO settings (key,value) VALUES ('seed_units_applied',?)").run(JSON.stringify([...applied]));
     db.exec('COMMIT');
   } catch (e) { db.exec('ROLLBACK'); throw e; }
 }

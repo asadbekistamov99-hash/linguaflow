@@ -1,0 +1,692 @@
+[
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "كان الجوّ ___ أمس.",
+   "answers": [
+    "جميلًا",
+    "جميلا"
+   ],
+   "explanation_uz": "«كان» ning xabari mansub (fathali) bo'ladi: كان الجوّ جميلًا."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "أصبح الطالبُ ___ في الامتحان.",
+   "answers": [
+    "ناجحًا",
+    "ناجحا"
+   ],
+   "explanation_uz": "«أصبح» kana oilasidan; uning xabari mansub bo'ladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "ليس الطقسُ ___ اليوم.",
+   "answers": [
+    "باردًا",
+    "باردا"
+   ],
+   "explanation_uz": "«ليس» kana singlisi: ismi marfu', xabari mansub."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "إنّ أخي ___ في المكتبة.",
+   "answers": [
+    "جالسٌ",
+    "جالس"
+   ],
+   "explanation_uz": "«إنّ» dan keyin ism mansub, xabar esa marfu' qoladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "أريد أن ___ إلى المدرسة.",
+   "answers": [
+    "أذهبَ",
+    "أذهب"
+   ],
+   "explanation_uz": "«أن» dan keyin muzori' mansub (fatha) bo'ladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "لن ___ الطالبُ متأخرًا.",
+   "answers": [
+    "يأتيَ",
+    "يأتي"
+   ],
+   "explanation_uz": "«لن» dan keyin muzori' mansub bo'ladi: لن يأتيَ."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "درستُ كي ___ في الامتحان.",
+   "answers": [
+    "أنجحَ",
+    "أنجح"
+   ],
+   "explanation_uz": "«كي» dan keyin muzori' mansub bo'ladi: كي أنجحَ."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "لم ___ أحمدُ إلى الحفلة.",
+   "answers": [
+    "يذهبْ",
+    "يذهب"
+   ],
+   "explanation_uz": "«لم» dan keyin muzori' majzum (sukun) bo'ladi: لم يذهبْ."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "لا ___ في الصف! (نهي)",
+   "answers": [
+    "تتكلمْ",
+    "تتكلم"
+   ],
+   "explanation_uz": "«لا» nahiya dan keyin muzori' majzum bo'ladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "___ الدرسَ يا محمد! (كتب)",
+   "answers": [
+    "اكتبْ",
+    "اكتب"
+   ],
+   "explanation_uz": "Buyruq fe'li muzori'ning majzum shaklidan yasaladi: اكتبْ."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "يا فاطمة، ___ الباب! (فتح)",
+   "answers": [
+    "افتحي"
+   ],
+   "explanation_uz": "Muannas yakka shaxsga buyruqda oxiri «ي» bilan keladi: افتحي."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "رأيتُ ___ في السوق. (أخ + كَ)",
+   "answers": [
+    "أخاك"
+   ],
+   "explanation_uz": "Asmo' xamsa mansub holatda alif bilan keladi: أخاك."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "سلّمتُ على ___ الطالبِ. (أب)",
+   "answers": [
+    "أبي"
+   ],
+   "explanation_uz": "Asmo' xamsa majrur holatda «ي» bilan keladi: أبي."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "إذا درستَ جيدًا ___.",
+   "answers": [
+    "نجحتَ",
+    "ستنجحُ"
+   ],
+   "explanation_uz": "«إذا» shartida javob ko'pincha o'tgan zamon yoki kelasi zamonda keladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "إن تدرسْ ___ في الامتحان.",
+   "answers": [
+    "تنجحْ",
+    "تنجح"
+   ],
+   "explanation_uz": "«إن» sharti fe'li ham javobi ham majzum bo'ladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "لو ___ غنيًّا لسافرتُ حول العالم.",
+   "answers": [
+    "كنتُ"
+   ],
+   "explanation_uz": "«لو» shartida o'tgan zamon fe'li keladi, javob «ل» bilan boshlanadi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "هذه البنت ___ تسكن بجانبنا.",
+   "answers": [
+    "التي"
+   ],
+   "explanation_uz": "Muannas yakka ot uchun ism mavsul «التي» ishlatiladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "هذا الكتاب ___ اشتريتُه أمس.",
+   "answers": [
+    "الذي"
+   ],
+   "explanation_uz": "Muzakkar yakka ot uchun ism mavsul «الذي» ishlatiladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "انتظرتُ صديقي ___ طويلًا.",
+   "answers": [
+    "انتظارًا",
+    "انتظارا"
+   ],
+   "explanation_uz": "Mafu'l mutlaq fe'lning masdari bo'lib, mansub bo'ladi va ma'noni kuchaytiradi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "عندي خمسةَ عشرَ ___.",
+   "answers": [
+    "كتابًا",
+    "كتابا"
+   ],
+   "explanation_uz": "11-99 sonlaridan keyin tamyiz birlikda va mansub bo'ladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "في الصف عشرون ___.",
+   "answers": [
+    "طالبًا",
+    "طالبا"
+   ],
+   "explanation_uz": "20-99 sonlaridan keyin tamyiz yakka va mansub bo'ladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "اسم الفاعل من الفعل «كتب» هو ___.",
+   "answers": [
+    "كاتب",
+    "كاتبٌ"
+   ],
+   "explanation_uz": "Uch harfli fe'ldan ism foil «فاعل» vazni bilan yasaladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "اسم المفعول من الفعل «فتح» هو ___.",
+   "answers": [
+    "مفتوح",
+    "مفتوحٌ"
+   ],
+   "explanation_uz": "Uch harfli fe'ldan ism mafu'l «مفعول» vazni bilan yasaladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "اسم الفاعل من الفعل «استخدم» هو ___.",
+   "answers": [
+    "مستخدِم",
+    "مستخدم"
+   ],
+   "explanation_uz": "Ziyodali fe'ldan ism foil muzori'dan «ي» o'rniga «م» qo'yib yasaladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "وقفتُ للمعلم ___ له.",
+   "answers": [
+    "احترامًا",
+    "احتراما"
+   ],
+   "explanation_uz": "Mafu'l li-ajlih sababni bildiradi va mansub masdar bo'ladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "كانت المعلمةُ ___ في الصف.",
+   "answers": [
+    "جالسةً",
+    "جالسة"
+   ],
+   "explanation_uz": "«كانت» ning xabari mansub bo'ladi: جالسةً."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "أيُّ جملة صحيحة؟",
+   "options": [
+    "كان الولدُ مريضٌ",
+    "كان الولدُ مريضًا",
+    "كان الولدَ مريضِ",
+    "كان الولدُ مريضان"
+   ],
+   "answer": 1,
+   "explanation_uz": "«كان» ning ismi marfu', xabari mansub: مريضًا."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "أكمل: إنّ ___ في الحديقة.",
+   "options": [
+    "الأولادُ",
+    "الأولادَ",
+    "الأولادِ",
+    "الأولادون"
+   ],
+   "answer": 1,
+   "explanation_uz": "«إنّ» ismni mansub qiladi: الأولادَ."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "أكمل: يجب أن ___ الواجب.",
+   "options": [
+    "تكتبُ",
+    "تكتبَ",
+    "تكتبْ",
+    "تكتبون"
+   ],
+   "answer": 1,
+   "explanation_uz": "«أن» dan keyin muzori' mansub bo'ladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "أكمل: لم ___ الرسالة.",
+   "options": [
+    "أكتبُ",
+    "أكتبَ",
+    "أكتبْ",
+    "كتبتُ"
+   ],
+   "answer": 2,
+   "explanation_uz": "«لم» dan keyin muzori' majzum bo'ladi: لم أكتبْ."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "أكمل (نهي): لا ___ هنا!",
+   "options": [
+    "تدخّنُ",
+    "تدخّنَ",
+    "تدخّنْ",
+    "دخّنْ"
+   ],
+   "answer": 2,
+   "explanation_uz": "«لا» nahiya dan keyin muzori' majzum bo'ladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "أكمل: مررتُ بـ ___.",
+   "options": [
+    "أخوك",
+    "أخاك",
+    "أخيك",
+    "أخٍ"
+   ],
+   "answer": 2,
+   "explanation_uz": "Asmo' xamsa jar holatida «ي» bilan keladi: بأخيك."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "أكمل: لو عرفتُ الجواب ___.",
+   "options": [
+    "لأجبتُ",
+    "سأجيبُ",
+    "أجيبْ",
+    "فأجبْ"
+   ],
+   "answer": 0,
+   "explanation_uz": "«لو» shartining javobi o'tgan zamon fe'li va «ل» bilan keladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "أكمل: هذان الطالبان ___ نجحا.",
+   "options": [
+    "الذي",
+    "التي",
+    "اللذان",
+    "الذين"
+   ],
+   "answer": 2,
+   "explanation_uz": "Ikkilik muzakkar uchun ism mavsul «اللذان» ishlatiladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "ما المفعول المطلق في «نمتُ نومًا عميقًا»؟",
+   "options": [
+    "نمتُ",
+    "نومًا",
+    "عميقًا",
+    "لا يوجد"
+   ],
+   "answer": 1,
+   "explanation_uz": "Mafu'l mutlaq fe'l masdaridan iborat: نومًا."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "ما المفعول لأجله في «درس الطالبُ رغبةً في النجاح»؟",
+   "options": [
+    "الطالبُ",
+    "رغبةً",
+    "النجاح",
+    "درس"
+   ],
+   "answer": 1,
+   "explanation_uz": "Mafu'l li-ajlih harakat sababini bildiruvchi mansub masdar: رغبةً."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "أكمل: في الصف أربعةَ عشرَ ___.",
+   "options": [
+    "طالبًا",
+    "طالبٌ",
+    "طلابِ",
+    "طالبين"
+   ],
+   "answer": 0,
+   "explanation_uz": "11-99 sonlaridan keyin tamyiz yakka va mansub bo'ladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "أكمل: عندي ___ سيارةً.",
+   "options": [
+    "أحدَ عشرَ",
+    "إحدى عشرةَ",
+    "اثنا عشرَ",
+    "إحدى عشرَ"
+   ],
+   "answer": 1,
+   "explanation_uz": "«سيارة» muannas, shuning uchun «إحدى عشرة» ishlatiladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "الفعل «علّم» على وزن:",
+   "options": [
+    "فعَّل",
+    "فاعل",
+    "تفعّل",
+    "استفعل"
+   ],
+   "answer": 0,
+   "explanation_uz": "Ikkinchi harf shaddali bo'lsa, bu II shakl: فعَّل."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "الفعل «استخرج» على وزن:",
+   "options": [
+    "افتعل",
+    "استفعل",
+    "تفاعل",
+    "فاعل"
+   ],
+   "answer": 1,
+   "explanation_uz": "«است» bilan boshlangan fe'l X shakl: استفعل."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "اسم المفعول من «كتب» هو:",
+   "options": [
+    "كاتب",
+    "مكتوب",
+    "مكتب",
+    "كتاب"
+   ],
+   "answer": 1,
+   "explanation_uz": "Ism mafu'l «مفعول» vazni: مكتوب."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "ما إعراب «الكتابَ» في «قرأتُ الكتابَ»؟",
+   "options": [
+    "مرفوع",
+    "منصوب",
+    "مجرور",
+    "مجزوم"
+   ],
+   "answer": 1,
+   "explanation_uz": "Fe'lning to'ldiruvchisi (mafu'l bih) mansub bo'ladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "الفعل «تعلّم» على وزن:",
+   "options": [
+    "فعَّل",
+    "فاعل",
+    "تفعّل",
+    "افتعل"
+   ],
+   "answer": 2,
+   "explanation_uz": "«ت» bilan boshlanib, ikkinchi harf shaddali bo'lsa, V shakl: تفعّل."
+  }
+ }
+]

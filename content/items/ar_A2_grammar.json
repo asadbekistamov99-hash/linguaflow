@@ -1,0 +1,622 @@
+[
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "ذهب الولد ___ المدرسة.",
+   "answers": [
+    "إلى"
+   ],
+   "explanation_uz": "Harakat yo'nalishi (\"ga\") uchun «إلى» predlogi ishlatiladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "الكتاب ___ الطاولة. (ustida)",
+   "answers": [
+    "على"
+   ],
+   "explanation_uz": "«على» \"ustida\" ma'nosini beradi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "أنا أسكن ___ القاهرة.",
+   "answers": [
+    "في"
+   ],
+   "explanation_uz": "Joy (\"da\") uchun «في» predlogi ishlatiladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "جاء الطالب ___ الجامعة. (universitetdan)",
+   "answers": [
+    "من"
+   ],
+   "explanation_uz": "«من» \"dan\" (kelib chiqish) ma'nosini beradi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "أذهب ___ صديقي إلى السوق. (do'stim bilan)",
+   "answers": [
+    "مع"
+   ],
+   "explanation_uz": "«مع» \"bilan, birga\" ma'nosini beradi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "___ الكتاب جديد. (bu)",
+   "answers": [
+    "هذا"
+   ],
+   "explanation_uz": "Yaqin ko'rsatish olmoshi muzakkar (erkak jins) otga «هذا» bo'ladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "___ البنت طالبة. (bu)",
+   "answers": [
+    "هذه"
+   ],
+   "explanation_uz": "Muannas (ayol jins) otga «هذه» ishlatiladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "هذه مدرسة ___. (yangi)",
+   "answers": [
+    "جديدة"
+   ],
+   "explanation_uz": "Sifat otga jins jihatdan moslashadi: مدرسة muannas, shuning uchun «جديدة»."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "أنا ___ الدرس أمس. (كتب)",
+   "answers": [
+    "كتبت"
+   ],
+   "explanation_uz": "O'tgan zamonda 1-shaxs birlik uchun fe'lga «ـتُ» qo'shiladi: كتبتُ."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "هي ___ إلى البيت. (ذهب)",
+   "answers": [
+    "ذهبت"
+   ],
+   "explanation_uz": "3-shaxs ayol jins birlikda o'tgan zamon fe'liga «ـتْ» qo'shiladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "أنا ___ القهوة. (شرب)",
+   "answers": [
+    "أشرب"
+   ],
+   "explanation_uz": "Hozirgi zamonda 1-shaxs birlik uchun fe'l oldiga «أ» qo'yiladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "نحن ___ العربية. (درس)",
+   "answers": [
+    "ندرس"
+   ],
+   "explanation_uz": "Hozirgi zamonda «نحن» uchun fe'l oldiga «ن» qo'yiladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "هو ___ الجريدة. (قرأ)",
+   "answers": [
+    "يقرأ"
+   ],
+   "explanation_uz": "Hozirgi zamonda «هو» uchun fe'l oldiga «ي» qo'yiladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "___ أذهب إلى المدرسة يوم الجمعة. (bormayman)",
+   "answers": [
+    "لا"
+   ],
+   "explanation_uz": "Hozirgi zamon fe'lini inkor qilish uchun «لا» ishlatiladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "أحمد ___ يذهب إلى العمل أمس.",
+   "answers": [
+    "لم"
+   ],
+   "explanation_uz": "«لم» + hozirgi zamon (majzum) shakli o'tgan zamon inkorini bildiradi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "ما ___ الولد الدرس أمس. (كتب)",
+   "answers": [
+    "كتب"
+   ],
+   "explanation_uz": "«ما» + o'tgan zamon fe'li o'tgan zamon inkorini bildiradi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "عندي ___ كتب. (3)",
+   "answers": [
+    "ثلاثة"
+   ],
+   "explanation_uz": "3-10 sonlari sanalgan otning jinsiga teskari keladi: كتاب muzakkar, shuning uchun «ثلاثة»."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "في الصف ___ طالبات. (5)",
+   "answers": [
+    "خمس"
+   ],
+   "explanation_uz": "3-10 sonlari jinsga teskari keladi: طالبات muannas, shuning uchun «خمس»."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "في المدرسة سبع ___. (معلمة)",
+   "answers": [
+    "معلمات"
+   ],
+   "explanation_uz": "Muannas ismning sog' ko'plik shakli «ـات» qo'shimchasi bilan yasaladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "هذه معلمتي، واسم___ فاطمة.",
+   "answers": [
+    "ها"
+   ],
+   "explanation_uz": "«ها» — 3-shaxs ayol jins birikuvchi olmosh (uning)."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "هذا أخي، وهذه حقيبة___.",
+   "answers": [
+    "ه"
+   ],
+   "explanation_uz": "«ـه» — 3-shaxs erkak jins birikuvchi olmosh (uning)."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "هذه حقيبة ___. (o'qituvchi, erkak)",
+   "answers": [
+    "المعلم"
+   ],
+   "explanation_uz": "Idofada ikkinchi so'z (mudof ilayh) aniqlik artikli bilan keladi: حقيبة المعلم."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "الولد ___ في الصف. (katta)",
+   "answers": [
+    "الكبير"
+   ],
+   "explanation_uz": "Aniq otning sifati ham aniq bo'ladi: الولد الكبير."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "الطالبات ___ في الصف. (جلس)",
+   "answers": [
+    "يجلسن"
+   ],
+   "explanation_uz": "Hozirgi zamonda ayol jins ko'plik (هن) uchun fe'l «يـ...ن» shaklida keladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "أنتِ ___ في دبي. (سكن)",
+   "answers": [
+    "تسكنين"
+   ],
+   "explanation_uz": "Hozirgi zamonda «أنتِ» (ayol) uchun fe'l oxiriga «ـين» qo'shiladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "«الشمس» so'zida ال qanday o'qiladi?",
+   "options": [
+    "ash-shams",
+    "al-shams",
+    "as-shams",
+    "an-shams"
+   ],
+   "answer": 0,
+   "explanation_uz": "ش — quyosh harfi, shuning uchun ال «ل»si assimilyatsiya bo'ladi: ash-shams."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Qaysi so'z oy harfi bilan boshlanadi?",
+   "options": [
+    "الشمس",
+    "النور",
+    "القمر",
+    "الرجل"
+   ],
+   "answer": 2,
+   "explanation_uz": "ق — oy harfi, ال «ل» o'qiladi; ش، ن، ر — quyosh harflari."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Qaysi so'z muannas (ayol jins)?",
+   "options": [
+    "كتاب",
+    "مدرسة",
+    "قلم",
+    "باب"
+   ],
+   "answer": 1,
+   "explanation_uz": "«ـة» (ta marbuta) bilan tugaydigan so'zlar odatda muannas bo'ladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "«هذه سيارة ___.» Bo'sh joyga qaysi sifat mos?",
+   "options": [
+    "جديد",
+    "جديدة",
+    "الجديد",
+    "جدد"
+   ],
+   "answer": 1,
+   "explanation_uz": "سيارة muannas va noaniq, shuning uchun sifat ham muannas va noaniq: جديدة."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Qaysi gap fe'l gapi (جملة فعلية)?",
+   "options": [
+    "الولد في البيت",
+    "ذهب الولد إلى البيت",
+    "البيت كبير",
+    "أنا طالب"
+   ],
+   "answer": 1,
+   "explanation_uz": "Fe'l gapi fe'l bilan boshlanadi: ذهب الولد."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "«نحن ___ الدرس أمس.» Qaysi shakl to'g'ri?",
+   "options": [
+    "كتبنا",
+    "كتبت",
+    "كتبوا",
+    "كتب"
+   ],
+   "answer": 0,
+   "explanation_uz": "O'tgan zamonda «نحن» uchun fe'lga «ـنا» qo'shiladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "«أنتم ___ إلى الجامعة.» Qaysi shakl to'g'ri?",
+   "options": [
+    "تذهبين",
+    "تذهبون",
+    "يذهبون",
+    "أذهب"
+   ],
+   "answer": 1,
+   "explanation_uz": "Hozirgi zamonda «أنتم» uchun «تـ...ون» shakli ishlatiladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "«___ الأولاد في الصف.» Qaysi ko'rsatish olmoshi to'g'ri?",
+   "options": [
+    "هذا",
+    "هذه",
+    "ذلك",
+    "هؤلاء"
+   ],
+   "answer": 3,
+   "explanation_uz": "Ko'plikdagi insonlar uchun yaqin ko'rsatish olmoshi «هؤلاء»."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Qaysi gap to'g'ri inkor qilingan (kecha kofe ichmadim)?",
+   "options": [
+    "لا شربت القهوة",
+    "لم أشرب القهوة",
+    "ما أشرب القهوة أمس",
+    "لم شربت القهوة"
+   ],
+   "answer": 1,
+   "explanation_uz": "«لم» dan keyin hozirgi zamon (majzum) fe'li keladi: لم أشرب."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "«3 ta talaba» arabchada qanday?",
+   "options": [
+    "ثلاثة طلاب",
+    "ثلاث طلاب",
+    "ثلاثة طالب",
+    "ثلاث طالب"
+   ],
+   "answer": 0,
+   "explanation_uz": "3-10 sonlari ko'plik ot bilan keladi va muzakkar otga teskari (ta marbuta bilan) bo'ladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "«To'rtta qiz» arabchada qanday?",
+   "options": [
+    "أربع بنات",
+    "أربعة بنات",
+    "أربعين بنات",
+    "رابع بنات"
+   ],
+   "answer": 0,
+   "explanation_uz": "بنات muannas, 3-10 sonlari teskari keladi, shuning uchun «أربع»."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "«مهندس» so'zining sog' erkak ko'pligi qaysi?",
+   "options": [
+    "مهندسات",
+    "مهندسون",
+    "مهندسا",
+    "مهانس"
+   ],
+   "answer": 1,
+   "explanation_uz": "Sog' muzakkar ko'plik «ـون» (ravn holatida) qo'shimchasi bilan yasaladi."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "«كتاب» so'zining sinq (broken) ko'pligi qaysi?",
+   "options": [
+    "كتابات",
+    "كتابون",
+    "كتب",
+    "كتابين"
+   ],
+   "answer": 2,
+   "explanation_uz": "Ko'p ismlar sinq ko'plik shaklini oladi: كتاب - كتب."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "«O'qituvchining kitobi» arabchada qanday?",
+   "options": [
+    "الكتاب المعلم",
+    "كتاب المعلم",
+    "المعلم كتاب",
+    "كتاب معلم ال"
+   ],
+   "answer": 1,
+   "explanation_uz": "Idofada birinchi so'z (mudof) artikl olmaydi, ikkinchisi aniq bo'ladi: كتاب المعلم."
+  }
+ },
+ {
+  "lang": "ar",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "«Men shaharda yashayman» — bo'sh joyga mos predlog: أسكن ___ المدينة.",
+   "options": [
+    "في",
+    "على",
+    "مع",
+    "من"
+   ],
+   "answer": 0,
+   "explanation_uz": "Joy bildirish uchun «في» ishlatiladi."
+  }
+ }
+]

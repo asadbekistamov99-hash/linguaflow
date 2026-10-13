@@ -1,0 +1,623 @@
+[
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Hier, nous ___ (aller) au cinéma.",
+   "answers": [
+    "sommes allés",
+    "sommes allées"
+   ],
+   "explanation_uz": "Aller passé composéda être yordamchi fe'li bilan keladi va ega bilan jins va son jihatidan moslashadi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Elle ___ (finir) ses devoirs hier soir.",
+   "answers": [
+    "a fini"
+   ],
+   "explanation_uz": "Ko'pchilik fe'llar passé composéda avoir bilan tuziladi: avoir + participe passé (a fini)."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Ils ___ (prendre) le train ce matin.",
+   "answers": [
+    "ont pris"
+   ],
+   "explanation_uz": "Prendre fe'li avoir bilan tuziladi; participe passé — pris."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Marie est ___ (partir) à huit heures.",
+   "answers": [
+    "partie"
+   ],
+   "explanation_uz": "Être bilan tuzilgan passé composéda participe passé egaga moslashadi: Marie ayol, shuning uchun partie."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Quand j'étais petit, je ___ (jouer) dehors tous les jours.",
+   "answers": [
+    "jouais"
+   ],
+   "explanation_uz": "Imparfait odatiy, takrorlanuvchi o'tgan harakatni bildiradi: je jouais."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Il ___ (pleuvoir) quand nous sommes sortis.",
+   "answers": [
+    "pleuvait"
+   ],
+   "explanation_uz": "Imparfait o'tgandagi fon yoki holatni tasvirlaydi: il pleuvait."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Demain, je ___ (aller) visiter le musée.",
+   "answers": [
+    "vais"
+   ],
+   "explanation_uz": "Futur proche: aller (hozirgi zamon) + infinitif; je vais visiter."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Nous ___ (aller) manger au restaurant ce soir.",
+   "answers": [
+    "allons"
+   ],
+   "explanation_uz": "Futur proche: nous allons + infinitif."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Je bois ___ eau tous les matins.",
+   "answers": [
+    "de l'"
+   ],
+   "explanation_uz": "Partitiv artikl unli harf bilan boshlanuvchi so'z oldida de l' shaklida bo'ladi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Elle mange ___ pain avec du fromage.",
+   "answers": [
+    "du"
+   ],
+   "explanation_uz": "Erkak rodidagi sanalmaydigan ot oldida partitiv artikl du ishlatiladi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Je ne mange pas ___ viande.",
+   "answers": [
+    "de"
+   ],
+   "explanation_uz": "Inkor gapda du/de la/des o'rniga de (d') ishlatiladi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Tu connais Paul ? Oui, je ___ connais bien.",
+   "answers": [
+    "le"
+   ],
+   "explanation_uz": "Aniqlovchi vositasiz to'ldiruvchi (COD) erkak uchun le, fe'l oldida turadi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Je téléphone à ma mère. Je ___ téléphone tous les jours.",
+   "answers": [
+    "lui"
+   ],
+   "explanation_uz": "à + shaxs (birlik) o'rniga bilvosita to'ldiruvchi olmoshi lui ishlatiladi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Les enfants ? Je ___ parle souvent.",
+   "answers": [
+    "leur"
+   ],
+   "explanation_uz": "à + shaxslar (ko'plik) o'rniga bilvosita to'ldiruvchi olmoshi leur ishlatiladi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Tu vas à Paris ? Oui, j'___ vais demain.",
+   "answers": [
+    "y"
+   ],
+   "explanation_uz": "Olmosh y joy predlogi (à + joy) o'rnini bosadi: j'y vais."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Tu veux du café ? Oui, j'___ veux.",
+   "answers": [
+    "en"
+   ],
+   "explanation_uz": "Olmosh en partitiv artikl bilan kelgan otni almashtiradi: j'en veux."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Paul et Anne habitent avec ___ parents.",
+   "answers": [
+    "leurs"
+   ],
+   "explanation_uz": "Ko'plikdagi egalar (ular) uchun egalik sifatdoshi leur/leurs; parents ko'plik, shuning uchun leurs."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Regarde ___ homme là-bas !",
+   "answers": [
+    "cet"
+   ],
+   "explanation_uz": "Ko'rsatish sifatdoshi ce unli yoki h bilan boshlanuvchi erkak ot oldida cet bo'ladi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Paul est ___ grand que Marc. (Paul Marcdan balandroq)",
+   "answers": [
+    "plus"
+   ],
+   "explanation_uz": "Ustunlik qiyosi: plus + sifat + que."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Ce gâteau est ___ que l'autre. (bon + ustunlik)",
+   "answers": [
+    "meilleur"
+   ],
+   "explanation_uz": "Bon sifatining ustunlik qiyosi meilleur (plus bon emas)."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Je ___ (se lever) à sept heures chaque matin.",
+   "answers": [
+    "me lève"
+   ],
+   "explanation_uz": "Reflexiv fe'llarda olmosh ega bilan mos keladi: je me lève."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Hier, elle ___ (se coucher) très tard.",
+   "answers": [
+    "s'est couchée"
+   ],
+   "explanation_uz": "Reflexiv fe'llar passé composéda être bilan tuziladi va ega bilan moslashadi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Je ne bois ___ de café le soir. (hech qachon)",
+   "answers": [
+    "jamais"
+   ],
+   "explanation_uz": "Ne … jamais — «hech qachon» degan inkor shakli."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Nous n'avons ___ vu.",
+   "answers": [
+    "rien"
+   ],
+   "explanation_uz": "Ne … rien — «hech narsa» degan inkor; passé composéda rien participe passé oldida turadi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Le livre est ___ la table.",
+   "answers": [
+    "sur"
+   ],
+   "explanation_uz": "Sur — «ustida» ma'nosidagi joy predlogi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Quelle phrase est correcte ?",
+   "options": [
+    "Il a tombé.",
+    "Il est tombé.",
+    "Il a tombée.",
+    "Il est tombe."
+   ],
+   "answer": 1,
+   "explanation_uz": "Tomber harakat fe'li bo'lib, passé composéda être bilan tuziladi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Les filles sont ___.",
+   "options": [
+    "arrivé",
+    "arrivés",
+    "arrivées",
+    "arrivée"
+   ],
+   "answer": 2,
+   "explanation_uz": "Être bilan participe passé ega bilan moslashadi: ayol, ko'plik — arrivées."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Tu as vu mes clés ? Oui, je les ai ___.",
+   "options": [
+    "vu",
+    "vue",
+    "vus",
+    "vues"
+   ],
+   "answer": 3,
+   "explanation_uz": "COD olmoshi fe'l oldida kelsa, participe passé unga moslashadi: les clés (ayol, ko'plik) — vues."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Quand j'étais enfant, nous ___ chez mes grands-parents.",
+   "options": [
+    "allons",
+    "sommes allés",
+    "allions",
+    "irons"
+   ],
+   "answer": 2,
+   "explanation_uz": "Odat bo'lgan o'tgan harakat imparfaitda ifodalanadi: nous allions."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Regarde le ciel : il ___ pleuvoir.",
+   "options": [
+    "va",
+    "vas",
+    "vais",
+    "vont"
+   ],
+   "answer": 0,
+   "explanation_uz": "Futur proche: aller + infinitif; il uchun va."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Je voudrais ___ salade.",
+   "options": [
+    "du",
+    "de la",
+    "des",
+    "de l'"
+   ],
+   "answer": 1,
+   "explanation_uz": "Salade ayol rodidagi ot, partitiv artikl — de la."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Il n'y a plus ___ lait.",
+   "options": [
+    "du",
+    "de la",
+    "de",
+    "des"
+   ],
+   "answer": 2,
+   "explanation_uz": "Inkor gapda (ne … plus) partitiv artikl de (d') ga almashadi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Tu parles à Julie ? — Oui, je ___ parle.",
+   "options": [
+    "la",
+    "lui",
+    "leur",
+    "le"
+   ],
+   "answer": 1,
+   "explanation_uz": "Parler à quelqu'un — bilvosita to'ldiruvchi; birlikda lui."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Vous avez des frères ? — Oui, j'___ ai deux.",
+   "options": [
+    "y",
+    "en",
+    "les",
+    "le"
+   ],
+   "answer": 1,
+   "explanation_uz": "Miqdor bilan kelgan des + ot o'rniga en ishlatiladi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Tu vas chez le médecin ? — Oui, j'___ vais.",
+   "options": [
+    "en",
+    "y",
+    "le",
+    "lui"
+   ],
+   "answer": 1,
+   "explanation_uz": "Joy ifodasi o'rniga y olmoshi ishlatiladi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "___ chaussures sont chères.",
+   "options": [
+    "Ce",
+    "Cet",
+    "Cette",
+    "Ces"
+   ],
+   "answer": 3,
+   "explanation_uz": "Chaussures ko'plik, ko'rsatish sifatdoshi — ces."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Cette pizza est ___ que celle-là.",
+   "options": [
+    "plus bonne",
+    "meilleure",
+    "mieux",
+    "plus meilleure"
+   ],
+   "answer": 1,
+   "explanation_uz": "Bon sifatining ustunlik qiyosi meilleur(e) bo'lib, ot bilan jinsda moslashadi."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Nous habitons ___ États-Unis.",
+   "options": [
+    "en",
+    "au",
+    "aux",
+    "à"
+   ],
+   "answer": 2,
+   "explanation_uz": "États-Unis ko'plikdagi mamlakat nomi, predlog — aux."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "___ heure est-il ?",
+   "options": [
+    "Quel",
+    "Quelle",
+    "Quels",
+    "Quelles"
+   ],
+   "answer": 1,
+   "explanation_uz": "Heure ayol rodida, birlikda — quelle."
+  }
+ },
+ {
+  "lang": "fr",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Quelle phrase est correcte ?",
+   "options": [
+    "Je mange ne rien.",
+    "Je ne mange rien.",
+    "Je ne rien mange.",
+    "Je mange rien ne."
+   ],
+   "answer": 1,
+   "explanation_uz": "Inkor ne fe'ldan oldin, rien fe'ldan keyin turadi: ne … rien."
+  }
+ }
+]

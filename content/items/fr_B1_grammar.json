@@ -1,0 +1,623 @@
+[
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Il faut que tu ___ (venir) demain.",
+      "answers": [
+        "viennes"
+      ],
+      "explanation_uz": "«Il faut que» dan keyin subjonctif présent ishlatiladi: que tu viennes."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Je veux que vous ___ (faire) vos devoirs.",
+      "answers": [
+        "fassiez"
+      ],
+      "explanation_uz": "«Vouloir que» dan keyin subjonctif keladi: faire fe'lining subjonctif shakli — que vous fassiez."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Il faut que nous ___ (aller) chez le médecin.",
+      "answers": [
+        "allions"
+      ],
+      "explanation_uz": "«Il faut que» subjonctif talab qiladi; aller — que nous allions."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Quand j'étais petit, je ___ (jouer) souvent au foot.",
+      "answers": [
+        "jouais"
+      ],
+      "explanation_uz": "O'tmishdagi takrorlanuvchi odat imparfait bilan ifodalanadi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Pendant que je dormais, le téléphone ___ (sonner).",
+      "answers": [
+        "a sonné"
+      ],
+      "explanation_uz": "Fon holati imparfait, qisqa voqea passé composé: le téléphone a sonné."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Si j'avais plus de temps, je ___ (voyager) davantage.",
+      "answers": [
+        "voyagerais"
+      ],
+      "explanation_uz": "Si + imparfait bo'lsa, asosiy gapda conditionnel présent keladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Si tu viens demain, nous ___ (aller) au cinéma.",
+      "answers": [
+        "irons"
+      ],
+      "explanation_uz": "Si + présent bo'lsa, asosiy gapda futur simple ishlatiladi: nous irons."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Demain, il ___ (faire) beau.",
+      "answers": [
+        "fera"
+      ],
+      "explanation_uz": "Faire fe'lining futur simple shakli tartibsiz: il fera."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "L'année prochaine, nous ___ (avoir) un nouvel appartement.",
+      "answers": [
+        "aurons"
+      ],
+      "explanation_uz": "Avoir fe'lining futur simple shakli: nous aurons."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Le livre ___ je te parle est excellent.",
+      "answers": [
+        "dont"
+      ],
+      "explanation_uz": "«Parler de» konstruksiyasi uchun nisbiy olmosh «dont» ishlatiladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "La ville ___ je suis né est très petite.",
+      "answers": [
+        "où"
+      ],
+      "explanation_uz": "Joyni bildiruvchi nisbiy olmosh «où» dir."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "L'homme ___ habite à côté est médecin.",
+      "answers": [
+        "qui"
+      ],
+      "explanation_uz": "Nisbiy olmosh «qui» gapda ega vazifasini bajaradi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Le film ___ nous avons vu hier était long.",
+      "answers": [
+        "que"
+      ],
+      "explanation_uz": "Nisbiy olmosh «que» to'ldiruvchi (COD) vazifasini bajaradi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Tu vas à Paris ? — Oui, j'___ vais en juin.",
+      "answers": [
+        "y"
+      ],
+      "explanation_uz": "Joy bildiruvchi «à + joy» o'rniga olmosh «y» ishlatiladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Tu veux du pain ? — Oui, j'___ veux.",
+      "answers": [
+        "en"
+      ],
+      "explanation_uz": "Bo'lak artikl «du/de la» o'rniga olmosh «en» ishlatiladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Quand je suis arrivé, le film ___ (déjà commencer).",
+      "answers": [
+        "avait déjà commencé"
+      ],
+      "explanation_uz": "Boshqa o'tgan voqeadan oldingi harakat plus-que-parfait bilan ifodalanadi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Elle a dit qu'elle ___ (être) fatiguée.",
+      "answers": [
+        "était"
+      ],
+      "explanation_uz": "Bilvosita nutqda o'tgan zamon fe'lidan keyin hozirgi zamon imparfait ga o'zgaradi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ce roman ___ (écrire) par Victor Hugo en 1862.",
+      "answers": [
+        "a été écrit",
+        "fut écrit"
+      ],
+      "explanation_uz": "Majhul nisbat (voix passive): être + participe passé, ega bilan moslashadi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Il écoute de la musique ___ (travailler).",
+      "answers": [
+        "en travaillant"
+      ],
+      "explanation_uz": "Gérondif = en + -ant shakli, ikki harakat bir vaqtda sodir bo'lganini bildiradi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Les fleurs que j'ai ___ (acheter) sont belles.",
+      "answers": [
+        "achetées"
+      ],
+      "explanation_uz": "Avoir bilan participe passé oldinda turgan to'ldiruvchi (les fleurs) bilan moslashadi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Elle s'est ___ (laver) les mains.",
+      "answers": [
+        "lavé"
+      ],
+      "explanation_uz": "To'ldiruvchi (les mains) fe'ldan keyin kelgani uchun participe passé moslashmaydi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Bien qu'il ___ (être) malade, il est venu au travail.",
+      "answers": [
+        "soit"
+      ],
+      "explanation_uz": "«Bien que» dan keyin subjonctif ishlatiladi: qu'il soit."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Il faut que je ___ (savoir) la vérité.",
+      "answers": [
+        "sache"
+      ],
+      "explanation_uz": "Savoir fe'lining subjonctif shakli tartibsiz: que je sache."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "À ta place, je ___ (prendre) un taxi.",
+      "answers": [
+        "prendrais"
+      ],
+      "explanation_uz": "Maslahat va taxminiy vaziyat conditionnel présent bilan ifodalanadi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Il m'a demandé si je ___ (vouloir) un café.",
+      "answers": [
+        "voulais"
+      ],
+      "explanation_uz": "Bilvosita savolda o'tgan zamondan keyin hozirgi zamon imparfait ga o'tadi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Il ___ quand le téléphone a sonné.",
+      "options": [
+        "dormait",
+        "a dormi",
+        "dormira",
+        "avait dormi"
+      ],
+      "answer": 0,
+      "explanation_uz": "Davom etayotgan fon harakati imparfait, uni to'xtatgan voqea passé composé."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Je suis content que tu ___ là.",
+      "options": [
+        "sois",
+        "es",
+        "seras",
+        "étais"
+      ],
+      "answer": 0,
+      "explanation_uz": "His-tuyg'u bildiruvchi iboradan keyin «que» bilan subjonctif ishlatiladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Si elle ___ riche, elle achèterait une villa.",
+      "options": [
+        "était",
+        "sera",
+        "serait",
+        "soit"
+      ],
+      "answer": 0,
+      "explanation_uz": "Si + imparfait, asosiy gapda conditionnel présent: si-gapda conditionnel ishlatilmaydi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "C'est la femme à ___ j'ai parlé.",
+      "options": [
+        "qui",
+        "que",
+        "dont",
+        "où"
+      ],
+      "answer": 0,
+      "explanation_uz": "Shaxsga nisbatan «parler à» bilan «à qui» ishlatiladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Voilà le professeur ___ je t'ai parlé.",
+      "options": [
+        "que",
+        "qui",
+        "dont",
+        "où"
+      ],
+      "answer": 2,
+      "explanation_uz": "«Parler de qqn» konstruksiyasi uchun «dont» nisbiy olmoshi kerak."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Tu as des frères ? — Oui, j'___ ai deux.",
+      "options": [
+        "en",
+        "y",
+        "le",
+        "les"
+      ],
+      "answer": 0,
+      "explanation_uz": "Miqdor bilan kelgan ot o'rniga «en» olmoshi ishlatiladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Quand je suis arrivé, elle ___ déjà partie.",
+      "options": [
+        "était",
+        "est",
+        "avait",
+        "sera"
+      ],
+      "answer": 0,
+      "explanation_uz": "Partir fe'li être bilan tuziladi: plus-que-parfait — elle était partie."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Il a dit : « Je viendrai demain. » → Il a dit qu'il ___ le lendemain.",
+      "options": [
+        "viendrait",
+        "viendra",
+        "vient",
+        "est venu"
+      ],
+      "answer": 0,
+      "explanation_uz": "Bilvosita nutqda futur o'tgan zamon konteksida conditionnel présent ga o'zgaradi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "La Tour Eiffel ___ en 1889.",
+      "options": [
+        "a été construite",
+        "a construit",
+        "a été construit",
+        "avait construite"
+      ],
+      "answer": 0,
+      "explanation_uz": "Majhul nisbat: être + participe passé, «la Tour» ayol jinsida bo'lgani uchun construite."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Il s'est blessé ___ au football.",
+      "options": [
+        "en jouant",
+        "en joué",
+        "pour jouant",
+        "à jouer"
+      ],
+      "answer": 0,
+      "explanation_uz": "Bir vaqtdagi harakat uchun gérondif (en + -ant) ishlatiladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Les lettres qu'elle a ___ sont arrivées.",
+      "options": [
+        "écrit",
+        "écrites",
+        "écrite",
+        "écrits"
+      ],
+      "answer": 1,
+      "explanation_uz": "Avoir bilan participe passé oldingi to'ldiruvchi (les lettres) bilan ko'plik va ayol jinsida moslashadi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Il est malade, ___ il va travailler.",
+      "options": [
+        "pourtant",
+        "donc",
+        "car",
+        "parce qu'"
+      ],
+      "answer": 0,
+      "explanation_uz": "«Pourtant» qarama-qarshilik (zid ma'no) bildiruvchi bog'lovchi so'z."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Nous sommes restés à la maison ___ il pleuvait.",
+      "options": [
+        "parce qu'",
+        "bien qu'",
+        "pour qu'",
+        "malgré"
+      ],
+      "answer": 0,
+      "explanation_uz": "«Parce que» sabab bildiradi va indicatif bilan ishlatiladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Je ne pense pas que tu ___ raison.",
+      "options": [
+        "aies",
+        "as",
+        "avais",
+        "auras"
+      ],
+      "answer": 0,
+      "explanation_uz": "Inkor shaklidagi «penser que» dan keyin subjonctif ishlatiladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "À ta place, je ___ le médecin.",
+      "options": [
+        "consulterais",
+        "consulte",
+        "consulterai",
+        "consultais"
+      ],
+      "answer": 0,
+      "explanation_uz": "Maslahat berishda conditionnel présent ishlatiladi: à ta place, je ...rais."
+    }
+  }
+]

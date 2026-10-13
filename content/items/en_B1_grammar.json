@@ -1,0 +1,630 @@
+[
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "I ___ to London three times in my life.",
+   "answers": [
+    "have been"
+   ],
+   "explanation_uz": "Hayotdagi tajriba aniq vaqtsiz Present Perfect (have + V3) bilan ifodalanadi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "She ___ her keys yesterday and had to call a locksmith.",
+   "answers": [
+    "lost"
+   ],
+   "explanation_uz": "'yesterday' aniq o'tgan vaqtni bildiradi, shuning uchun Past Simple ishlatiladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "I ___ for two hours, so I'm really tired.",
+   "answers": [
+    "have been working"
+   ],
+   "explanation_uz": "Hozirgacha davom etgan va natijasi seziladigan harakat Present Perfect Continuous (have been + V-ing) bilan ifodalanadi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "If it rains tomorrow, we ___ at home.",
+   "answers": [
+    "will stay",
+    "'ll stay"
+   ],
+   "explanation_uz": "Birinchi shartli gapda if-qismi Present Simple, natija qismi will + fe'l bo'ladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "If I ___ more time, I would learn Spanish.",
+   "answers": [
+    "had"
+   ],
+   "explanation_uz": "Ikkinchi shartli gapda if-qismi Past Simple, natija qismi would + fe'l bo'ladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "English ___ all over the world.",
+   "answers": [
+    "is spoken"
+   ],
+   "explanation_uz": "Hozirgi zamon majhul nisbati: am/is/are + V3."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "This bridge ___ in 1995.",
+   "answers": [
+    "was built"
+   ],
+   "explanation_uz": "O'tgan zamon majhul nisbati: was/were + V3."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "He said that he ___ very tired.",
+   "answers": [
+    "was"
+   ],
+   "explanation_uz": "Ko'chirma gapda Present Simple odatda Past Simple ga o'tadi (am -> was)."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "She asked me where I ___.",
+   "answers": [
+    "lived"
+   ],
+   "explanation_uz": "Ko'chirma so'roq gapda so'z tartibi darak gapdagidek bo'ladi va zamon bir pog'ona orqaga suriladi (live -> lived)."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "The woman ___ lives next door is a doctor.",
+   "answers": [
+    "who",
+    "that"
+   ],
+   "explanation_uz": "Odamlarga nisbatan ega vazifasidagi nisbiy olmosh who (yoki that) ishlatiladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "This is the restaurant ___ we had dinner last week.",
+   "answers": [
+    "where"
+   ],
+   "explanation_uz": "Joyni bildiruvchi nisbiy gapda where ishlatiladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "When I was a child, I ___ play football every day.",
+   "answers": [
+    "used to"
+   ],
+   "explanation_uz": "O'tmishdagi odat yoki holat 'used to + fe'l' bilan ifodalanadi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "The lights are off. They ___ be at home.",
+   "answers": [
+    "can't",
+    "cannot"
+   ],
+   "explanation_uz": "Faraz qilishda: kuchli ishonch bilan inkor 'can't be', ijob 'must be' bilan ifodalanadi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "You ___ wear a seat belt in the car; it's the law.",
+   "answers": [
+    "must",
+    "have to"
+   ],
+   "explanation_uz": "Majburiyat (qonun, qoida) must yoki have to bilan ifodalanadi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "I enjoy ___ to music in the evening.",
+   "answers": [
+    "listening"
+   ],
+   "explanation_uz": "enjoy fe'lidan keyin gerund (V-ing) ishlatiladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "She decided ___ a new job.",
+   "answers": [
+    "to find"
+   ],
+   "explanation_uz": "decide fe'lidan keyin infinitive (to + fe'l) ishlatiladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "I ___ TV when the phone rang.",
+   "answers": [
+    "was watching"
+   ],
+   "explanation_uz": "Boshqa harakat bilan to'xtatilgan davomli harakat Past Continuous (was/were + V-ing) bilan beriladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "While we ___ dinner, the lights went out.",
+   "answers": [
+    "were having",
+    "were eating"
+   ],
+   "explanation_uz": "'While' bilan uzoq davom etgan fon harakati Past Continuous da, qisqa harakat Past Simple da bo'ladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "There isn't ___ milk in the fridge.",
+   "answers": [
+    "much"
+   ],
+   "explanation_uz": "Sanalmaydigan otlar bilan inkor gapda much ishlatiladi (many sanaladigan otlar uchun)."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "How ___ students are there in your class?",
+   "answers": [
+    "many"
+   ],
+   "explanation_uz": "Sanaladigan ko'plik otlar bilan 'how many' so'raladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Please turn ___ the music; it's too loud.",
+   "answers": [
+    "down"
+   ],
+   "explanation_uz": "'turn down' - ovozni pasaytirish ma'nosidagi phrasal verb."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "We couldn't go out ___ the rain.",
+   "answers": [
+    "because of",
+    "due to"
+   ],
+   "explanation_uz": "Ot oldidan sabab bildirish uchun 'because of' (yoki 'due to') ishlatiladi, 'because' esa gap bilan keladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "He is very tired, ___ he is still working.",
+   "answers": [
+    "but",
+    "yet"
+   ],
+   "explanation_uz": "Zid ma'noni bog'lash uchun but yoki yet bog'lovchisi ishlatiladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "I've lived here ___ 2015.",
+   "answers": [
+    "since"
+   ],
+   "explanation_uz": "Boshlanish nuqtasi (aniq yil) bilan Present Perfect da since ishlatiladi, davr bilan esa for."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "I don't know ___ he will come.",
+   "answers": [
+    "if",
+    "whether"
+   ],
+   "explanation_uz": "Ha/yo'q savolini ko'chirma yoki bilvosita gapga aylantirishda if yoki whether ishlatiladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "I ___ my homework yet.",
+   "options": [
+    "haven't finished",
+    "hadn't finish",
+    "am not finish",
+    "didn't finished"
+   ],
+   "answer": 0,
+   "explanation_uz": "'yet' bilan inkor gapda Present Perfect (haven't + V3) ishlatiladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "We ___ to the cinema last night.",
+   "options": [
+    "went",
+    "have gone",
+    "have been",
+    "go"
+   ],
+   "answer": 0,
+   "explanation_uz": "'last night' aniq o'tgan vaqt, shuning uchun Past Simple (went) kerak."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "If she ___ harder, she would pass the exam.",
+   "options": [
+    "studies",
+    "studied",
+    "will study",
+    "has studied"
+   ],
+   "answer": 1,
+   "explanation_uz": "Ikkinchi shartli gap: if + Past Simple, would + fe'l."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Bread ___ in this bakery every morning.",
+   "options": [
+    "is baked",
+    "bakes",
+    "is baking",
+    "baked"
+   ],
+   "answer": 0,
+   "explanation_uz": "Bread harakatni bajarmaydi, unga harakat qilinadi; hozirgi majhul nisbat: is + V3."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "'I will call you,' he said. -> He said that he ___ me.",
+   "options": [
+    "would call",
+    "will call",
+    "calls",
+    "called"
+   ],
+   "answer": 0,
+   "explanation_uz": "Ko'chirma gapda will -> would ga o'zgaradi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "The book ___ I bought yesterday is great.",
+   "options": [
+    "which",
+    "who",
+    "where",
+    "whose"
+   ],
+   "answer": 0,
+   "explanation_uz": "Narsaga nisbatan nisbiy olmosh which (yoki that) ishlatiladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "I ___ smoke, but I stopped last year.",
+   "options": [
+    "used to",
+    "use to",
+    "was used to",
+    "am used to"
+   ],
+   "answer": 0,
+   "explanation_uz": "O'tmishdagi, endi mavjud bo'lmagan odat 'used to + fe'l' bilan beriladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "She has been working all day. She ___ be exhausted.",
+   "options": [
+    "must",
+    "can't",
+    "mustn't",
+    "shouldn't"
+   ],
+   "answer": 0,
+   "explanation_uz": "Kuchli ijobiy faraz modal 'must be' bilan ifodalanadi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "He suggested ___ to the beach.",
+   "options": [
+    "going",
+    "to go",
+    "go",
+    "gone"
+   ],
+   "answer": 0,
+   "explanation_uz": "suggest fe'lidan keyin gerund (V-ing) ishlatiladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "I'm used to ___ up early.",
+   "options": [
+    "getting",
+    "get",
+    "got",
+    "to get"
+   ],
+   "answer": 0,
+   "explanation_uz": "'be used to' dan keyin gerund (V-ing) keladi va 'ko'nikkan' ma'nosini beradi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "I ___ home when I saw an old friend.",
+   "options": [
+    "was walking",
+    "walk",
+    "have walked",
+    "had walk"
+   ],
+   "answer": 0,
+   "explanation_uz": "Boshqa qisqa voqea bilan kesilgan harakat Past Continuous bilan ifodalanadi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "We have ___ time, so let's hurry.",
+   "options": [
+    "little",
+    "few",
+    "a few",
+    "many"
+   ],
+   "answer": 0,
+   "explanation_uz": "time sanalmaydigan ot; 'little' kam, yetarli emas ma'nosini beradi (few/many sanaladigan otlar uchun)."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "He decided to ___ smoking.",
+   "options": [
+    "give up",
+    "give in",
+    "give out",
+    "give off"
+   ],
+   "answer": 0,
+   "explanation_uz": "'give up' - biror odatni tashlash ma'nosidagi phrasal verb."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "___ it was raining, we went for a walk.",
+   "options": [
+    "Although",
+    "Because",
+    "So",
+    "Despite"
+   ],
+   "answer": 0,
+   "explanation_uz": "Although + to'liq gap zid ma'noni bildiradi; despite dan keyin gap emas, ot yoki V-ing keladi."
+  }
+ },
+ {
+  "lang": "en",
+  "skill": "grammar",
+  "level": "B1",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "You ___ pay to enter; it's free.",
+   "options": [
+    "don't have to",
+    "mustn't",
+    "can't",
+    "shouldn't"
+   ],
+   "answer": 0,
+   "explanation_uz": "'don't have to' - majburiyat yo'qligini bildiradi, mustn't esa taqiqlaydi."
+  }
+ }
+]

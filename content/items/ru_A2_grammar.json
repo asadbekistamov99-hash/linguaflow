@@ -1,0 +1,623 @@
+[
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Я живу в ___ (Москва).",
+   "answers": [
+    "Москве"
+   ],
+   "explanation_uz": "«В» + joylashuv bildirganda predlojniy kelishik (-е) ishlatiladi: в Москве."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Вчера мы были в ___ (театр).",
+   "answers": [
+    "театре"
+   ],
+   "explanation_uz": "Qayerda? savoliga predlojniy kelishik javob beradi: в театре."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Я вижу ___ (сестра).",
+   "answers": [
+    "сестру"
+   ],
+   "explanation_uz": "Vinitelniy kelishikda -а bilan tugaydigan ayol jinsidagi so'zlar -у ga o'zgaradi: сестру."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Он читает интересную ___ (книга).",
+   "answers": [
+    "книгу"
+   ],
+   "explanation_uz": "To'g'ri to'ldiruvchi vinitelniy kelishikda turadi, -а → -у: книгу."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "У меня нет ___ (брат).",
+   "answers": [
+    "брата"
+   ],
+   "explanation_uz": "«Нет» dan keyin roditelniy kelishik ishlatiladi: нет брата."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "В нашем городе много ___ (парк).",
+   "answers": [
+    "парков"
+   ],
+   "explanation_uz": "«Много» dan keyin ko'plik roditelniy kelishik keladi: много парков."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Я дал книгу ___ (друг).",
+   "answers": [
+    "другу"
+   ],
+   "explanation_uz": "Kimga? savoliga datelniy kelishik (-у/-ю) javob beradi: другу."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Она часто звонит ___ (мама).",
+   "answers": [
+    "маме"
+   ],
+   "explanation_uz": "«Звонить» fe'li datelniy kelishikni talab qiladi: звонить маме."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Я работаю с ___ (брат).",
+   "answers": [
+    "братом"
+   ],
+   "explanation_uz": "«С» (bilan) predlogidan keyin tvoritelniy kelishik keladi: с братом."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Я пью чай с ___ (лимон).",
+   "answers": [
+    "лимоном"
+   ],
+   "explanation_uz": "«С» (bilan) predlogidan keyin tvoritelniy kelishik: с лимоном."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Вчера я ___ (читать) интересную книгу.",
+   "answers": [
+    "читал"
+   ],
+   "explanation_uz": "O'tgan zamon erkak jinsida fe'l o'zagiga -л qo'shiladi: читал."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Завтра мы ___ (быть) дома.",
+   "answers": [
+    "будем"
+   ],
+   "explanation_uz": "«Быть» fe'lining kelasi zamoni: я буду, мы будем."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Завтра я ___ (написать) письмо.",
+   "answers": [
+    "напишу"
+   ],
+   "explanation_uz": "Tugallangan fe'l (совершенный вид) hozirgi shaklda kelasi zamonni bildiradi: напишу."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Вчера я весь вечер ___ (смотреть) фильм.",
+   "answers": [
+    "смотрел"
+   ],
+   "explanation_uz": "Davomiylikni bildirganda (весь вечер) nesovershenniy vid ishlatiladi: смотрел."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Каждый день я ___ (ходить) в университет.",
+   "answers": [
+    "хожу"
+   ],
+   "explanation_uz": "Takroriy harakat uchun «ходить» (ko'p yo'nalishli fe'l) ishlatiladi: я хожу."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Сейчас я ___ (идти) в магазин.",
+   "answers": [
+    "иду"
+   ],
+   "explanation_uz": "Hozir sodir bo'layotgan bir yo'nalishli harakat uchun «идти» ishlatiladi: я иду."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Прошлым летом мы часто ___ (ездить) на море.",
+   "answers": [
+    "ездили"
+   ],
+   "explanation_uz": "Takroriy harakat uchun «ездить» ishlatiladi; o'tgan zamon ko'plik: ездили."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Это ___ (я) книга.",
+   "answers": [
+    "моя"
+   ],
+   "explanation_uz": "Egalik olmoshi otning jinsiga mos keladi: книга (ayol jinsi) → моя."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Это Анна, а это ___ (она) муж.",
+   "answers": [
+    "её",
+    "ее"
+   ],
+   "explanation_uz": "«Uning» (ayolniki) egalik olmoshi o'zgarmaydi: её."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Это ___ (красивый) платье.",
+   "answers": [
+    "красивое"
+   ],
+   "explanation_uz": "Sifat otning jinsiga mos keladi: платье (o'rta jins) → красивое."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Ташкент меньше ___ (Москва).",
+   "answers": [
+    "Москвы"
+   ],
+   "explanation_uz": "Qiyosiy darajadan keyin roditelniy kelishik ishlatilishi mumkin: меньше Москвы."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "У меня два ___ (брат).",
+   "answers": [
+    "брата"
+   ],
+   "explanation_uz": "2, 3, 4 sonlaridan keyin birlik roditelniy kelishik keladi: два брата."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "У неё пять ___ (книга).",
+   "answers": [
+    "книг"
+   ],
+   "explanation_uz": "5 va undan ortiq sonlardan keyin ko'plik roditelniy kelishik: пять книг."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Каждое утро я ___ (умываться).",
+   "answers": [
+    "умываюсь"
+   ],
+   "explanation_uz": "Qaytim fe'llarida -ся/-сь qo'shimchasi bor; «я» bilan -сь: умываюсь."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "gap",
+  "exam": "general",
+  "payload": {
+   "text": "Я не пошёл на работу, ___ я заболел.",
+   "answers": [
+    "потому что"
+   ],
+   "explanation_uz": "Sabab bildiruvchi bog'lovchi «потому что» (chunki) ishlatiladi."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Мы едем ___ работу.",
+   "options": [
+    "на",
+    "в",
+    "к",
+    "из"
+   ],
+   "answer": 0,
+   "explanation_uz": "«Работа» so'zi bilan yo'nalishda «на» ishlatiladi: на работу."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Я иду ___ врачу.",
+   "options": [
+    "к",
+    "в",
+    "на",
+    "у"
+   ],
+   "answer": 0,
+   "explanation_uz": "Odam oldiga borishda «к» + datelniy kelishik ishlatiladi: к врачу."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Завтра мы ___ в кино.",
+   "options": [
+    "пошли",
+    "пойдём",
+    "ходили",
+    "шли"
+   ],
+   "answer": 1,
+   "explanation_uz": "Kelasi zamon uchun «пойти» fe'lining kelasi shakli kerak: мы пойдём."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Я каждый день ___ газету.",
+   "options": [
+    "читаю",
+    "прочитаю",
+    "прочитал",
+    "прочитать"
+   ],
+   "answer": 0,
+   "explanation_uz": "Har kuni takrorlanadigan ish uchun nesovershenniy vid hozirgi zamonda: читаю."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Вчера я ___ задание за час.",
+   "options": [
+    "сделал",
+    "делал",
+    "делаю",
+    "буду делать"
+   ],
+   "answer": 0,
+   "explanation_uz": "Natija va tugallanganlik (за час) uchun sovershenniy vid: сделал."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Этот дом ___, чем тот.",
+   "options": [
+    "высокий",
+    "выше",
+    "самый высокий",
+    "высоко"
+   ],
+   "answer": 1,
+   "explanation_uz": "Qiyosiy daraja «чем» bilan ishlatiladi: выше, чем тот."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Я люблю ___ маму.",
+   "options": [
+    "мою",
+    "мой",
+    "моя",
+    "моей"
+   ],
+   "answer": 0,
+   "explanation_uz": "Vinitelniy kelishikda ayol jinsidagi egalik olmoshi: мою маму."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Какая фраза правильная?",
+   "options": [
+    "новый книга",
+    "новая книга",
+    "новое книга",
+    "новые книга"
+   ],
+   "answer": 1,
+   "explanation_uz": "Sifat otning jinsiga mos keladi: книга ayol jinsi → новая книга."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Я живу в большом ___.",
+   "options": [
+    "городе",
+    "город",
+    "города",
+    "городу"
+   ],
+   "answer": 0,
+   "explanation_uz": "«В» + joylashuv bo'lsa predlojniy kelishik: в большом городе."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "В классе двадцать один ___.",
+   "options": [
+    "студент",
+    "студента",
+    "студентов",
+    "студенты"
+   ],
+   "answer": 0,
+   "explanation_uz": "21 bilan tugaydigan sonlardan keyin birlik nominativ ishlatiladi: двадцать один студент."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "На столе три ___.",
+   "options": [
+    "книга",
+    "книги",
+    "книг",
+    "книгу"
+   ],
+   "answer": 1,
+   "explanation_uz": "3 sonidan keyin birlik roditelniy kelishik: три книги."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Он ___ каждое утро в семь часов.",
+   "options": [
+    "просыпается",
+    "просыпаюсь",
+    "просыпаешься",
+    "просыпаться"
+   ],
+   "answer": 0,
+   "explanation_uz": "«Он» bilan qaytim fe'li -ется shaklida: просыпается."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Мой брат работает ___.",
+   "options": [
+    "врачом",
+    "врач",
+    "врача",
+    "врачу"
+   ],
+   "answer": 0,
+   "explanation_uz": "Kasb bildirganda «работать» dan keyin tvoritelniy kelishik: врачом."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "Я знаю, ___ он живёт в Ташкенте.",
+   "options": [
+    "что",
+    "чтобы",
+    "если",
+    "потому"
+   ],
+   "answer": 0,
+   "explanation_uz": "Gapga qo'shma gap qismini bog'lovchi «что» (ki) ishlatiladi."
+  }
+ },
+ {
+  "lang": "ru",
+  "skill": "grammar",
+  "level": "A2",
+  "type": "mcq",
+  "exam": "general",
+  "payload": {
+   "question": "В холодильнике нет ___.",
+   "options": [
+    "молока",
+    "молоко",
+    "молоком",
+    "молоке"
+   ],
+   "answer": 0,
+   "explanation_uz": "«Нет» dan keyin roditelniy kelishik: нет молока."
+  }
+ }
+]

@@ -118,7 +118,7 @@ module.exports = function registerAdmin({ db, q, route, content, HttpError, requ
     const newPass = String(body.password ?? '');
     if (newPass.length < 8 || newPass.length > 100) throw bad("Parol kamida 8 belgidan iborat bo'lsin");
     const hash = await auth.hashPasswordAsync(newPass);
-    db.prepare('UPDATE users SET pass_hash=? WHERE id=?').run(hash, u.id);
+    db.prepare('UPDATE users SET pass_hash=?, session_ver=session_ver+1 WHERE id=?').run(hash, u.id);
     logAudit(admin.id, 'user.password_reset', `#${u.id} ${u.email}`);
     return { ok: true };
   }));

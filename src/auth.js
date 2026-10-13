@@ -45,8 +45,8 @@ function verifyPassword(pw, stored) {
 
 const b64 = (b) => Buffer.from(b).toString('base64url');
 
-function sign(secret, userId, createdAt) {
-  const payload = b64(JSON.stringify({ uid: userId, ca: createdAt, exp: Date.now() + TTL_MS }));
+function sign(secret, userId, createdAt, ver = 0) {
+  const payload = b64(JSON.stringify({ uid: userId, ca: createdAt, sv: ver, exp: Date.now() + TTL_MS }));
   const mac = crypto.createHmac('sha256', secret).update(payload).digest('base64url');
   return `${payload}.${mac}`;
 }
@@ -60,7 +60,7 @@ function verify(secret, token) {
   if (given.length !== expected.length || !crypto.timingSafeEqual(given, expected)) return null;
   try {
     const data = JSON.parse(Buffer.from(payload, 'base64url').toString());
-    return data.exp > Date.now() ? { uid: data.uid, ca: data.ca } : null;
+    return data.exp > Date.now() ? { uid: data.uid, ca: data.ca, sv: data.sv || 0 } : null;
   } catch { return null; }
 }
 
@@ -74,15 +74,11 @@ function parseCookies(header) {
 }
 
 function sessionCookie(token, { secure } = {}) {
-  const attrs = [`${COOKIE}=${token}`, 'Path=/', 'HttpOnly', `Max-Age=${TTL_MS / 1000}`];
-  if (secure) {
-    attrs.push('SameSite=None', 'Secure', 'Partitioned');
-  } else {
-    attrs.push('SameSite=Lax');
-  }
+  const attrs = [`${COOKIE}=${token}`, 'Path=/', 'HttpOnly', 'SameSite=Lax', `Max-Age=${TTL_MS / 1000}`];
+  if (secure) attrs.push('Secure');
   return attrs.join('; ');
 }
-const clearCookie = ({ secure } = {}) => `${COOKIE}=; Path=/; HttpOnly; ${secure ? 'SameSite=None; Secure; Partitioned' : 'SameSite=Lax'}; Max-Age=0`;
+const clearCookie = ({ secure } = {}) => `${COOKIE}=; Path=/; HttpOnly; SameSite=Lax;${secure ? ' Secure;' : ''} Max-Age=0`;
 
 // Simple fixed-window limiter, in memory.
 function createLimiter(max, windowMs) {

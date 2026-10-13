@@ -884,7 +884,8 @@
     const name = h('input', { type: 'text', autocomplete: 'name', required: true, maxlength: 40, placeholder: 'Ismingiz' });
     const email = h('input', { type: 'email', autocomplete: 'email', required: true, placeholder: 'email@example.com', value: presetEmail });
     const pass = h('input', { type: 'password', autocomplete: isReg || isReset ? 'new-password' : 'current-password', required: true, minlength: 8, placeholder: isReg ? 'Kamida 8 belgi' : isReset ? 'Yangi parol (kamida 8 belgi)' : 'Parol' });
-    const submitText = isReg ? "Ro'yxatdan o'tish" : isReset ? "Parolni yangilash va kirish" : 'Kirish';
+    const recoveryKey = h('input', { type: 'password', autocomplete: 'off', required: true, placeholder: 'Tiklash kaliti (sayt egasidan)' });
+    const submitText = isReg ? "Ro'yxatdan o'tish" : isReset ? "Parolni yangilash" : 'Kirish';
     const btn = h('button', { class: 'btn btn-main btn-block', type: 'submit' }, submitText);
 
     // Language selector badge for auth
@@ -968,9 +969,16 @@
 
     const form = h('form', {
       onsubmit: async (e) => {
-        e.preventDefault(); err.textContent = ''; btn.disabled = true;
+        e.preventDefault(); err.textContent = '';
+        btn.disabled = true;
         try {
-          const endpoint = isReg ? '/api/auth/register' : isReset ? '/api/auth/reset-password' : '/api/auth/login';
+          if (isReset) {
+            await api('POST', '/api/auth/reset-password', { email: email.value, newPassword: pass.value, recoveryKey: recoveryKey.value });
+            toast("Parol yangilandi. Endi yangi parol bilan kiring.");
+            location.hash = '#/login';
+            return;
+          }
+          const endpoint = isReg ? '/api/auth/register' : '/api/auth/login';
           const body = { email: email.value, password: pass.value, ...(isReg ? { name: name.value } : {}) };
           const res = await api('POST', endpoint, body);
           await onAuthSuccess(res);
@@ -981,10 +989,11 @@
       isReg ? h('label', { class: 'field' }, h('span', {}, 'Ism'), name) : null,
       h('label', { class: 'field' }, h('span', {}, 'Email'), email),
       h('label', { class: 'field' }, h('span', {}, isReset ? 'Yangi parol' : 'Parol'), pass),
+      isReset ? h('label', { class: 'field' }, h('span', {}, 'Tiklash kaliti'), recoveryKey) : null,
       err, btn, (!isReg && !isReset) ? guestBtn : null);
 
     const title = isReg ? 'Hisob yarating' : isReset ? 'Parolni tiklash' : 'Xush kelibsiz!';
-    const sub = isReg ? "Bepul boshlang va 6 ta tilni o'rganing." : isReset ? "Email va yangi parolingizni kiriting." : 'Davom etish uchun hisobingizga kiring.';
+    const sub = isReg ? "Bepul boshlang va 6 ta tilni o'rganing." : isReset ? "Tiklash kaliti faqat sayt egasida bor. Oddiy foydalanuvchilar administratorga murojaat qilsin: u admin paneldan yangi parol beradi." : 'Davom etish uchun hisobingizga kiring.';
 
     const forgotLink = (!isReg && !isReset) ? h('div', { style: { textAlign: 'right', marginTop: '8px', fontSize: '.88rem' } }, h('a', { href: '#/reset', style: { color: 'var(--muted)' } }, 'Parolni unutdingizmi?')) : null;
 
@@ -1015,7 +1024,7 @@
   // ---------- shell ----------
   async function shell(active, content, { wide = false } = {}) {
     const due = S.course ? S.course.due : 0;
-    const items = [...NAV, ...(S.user.isAdmin ? [['/admin', '🛠️', 'Admin panel']] : [])];
+    const items = NAV;
     const link = (p, cls, kids) => (p === '/admin' ? h('a', { href: '/admin', class: cls }, kids) : h('a', { href: '#' + p, class: cls + (active === p ? ' on' : '') }, kids));
     const sideTheme = h('div', { class: 'side-theme-wrap' },
       createThemeToggleBtn({ showLabel: true, extraClass: 'side-theme-btn' }));
@@ -3528,7 +3537,6 @@
         h('div', { class: 'stat-tile' }, h('b', {}, u.xp), h('span', {}, 'Jami XP')),
         h('div', { class: 'stat-tile' }, h('b', {}, `🔥${u.streak}`), h('span', {}, 'Seriya')),
         h('div', { class: 'stat-tile' }, h('b', {}, u.bestStreak), h('span', {}, 'Eng uzun'))),
-      u.isAdmin ? h('a', { class: 'btn btn-main', href: '/admin', style: { marginTop: '16px' } }, '🛠️ Admin panelga o\'tish') : null,
       h('h3', { class: 'section-title' }, 'Kunlik maqsad'), goals,
       h('h3', { class: 'section-title' }, 'Nishonlar'),
       h('div', { class: 'badges' }, badges.map((b) => h('div', { class: 'badge' + (b.earned ? '' : ' off'), title: b.desc }, h('span', { class: 'em' }, b.emoji), h('b', {}, b.title), h('small', {}, b.desc)))),
@@ -3543,6 +3551,14 @@
         } }, 'Chiqish')),
     ]);
   }
+
+  // Admin panel shortcut: Ctrl+Shift+A (Cmd+Shift+A on Mac). Only a convenience; /admin still enforces the admin role on the server.
+  addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && !e.altKey && (e.code === 'KeyA' || String(e.key).toLowerCase() === 'a')) {
+      e.preventDefault();
+      location.href = '/admin';
+    }
+  });
 
   // ---------- boot ----------
   (async function boot() {

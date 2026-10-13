@@ -1,0 +1,30 @@
+# Render Blueprint: Dashboard -> New -> Blueprint -> shu reponi tanlang.
+services:
+  - type: web
+    name: linguaflow
+    runtime: node
+    plan: starter            # doimiy disk (baza) uchun pullik reja kerak; free rejada ma'lumotlar yo'qoladi
+    buildCommand: node scripts/validate-seed.js
+    startCommand: npm start
+    healthCheckPath: /api/health
+    disk:
+      name: linguaflow-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION    # node:sqlite uchun 22.5+ kerak
+        value: "22"
+      - key: DATA_DIR
+        value: /var/data
+      - key: TRUST_PROXY
+        value: "1"
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: RECOVERY_KEY    # parol tiklash uchun maxfiy kalit (kamida 12 belgi); bo'sh qoldirsangiz tiklash o'chirilgan
+        sync: false
+      - key: ADMIN_EMAILS    # o'zingizning emailingiz (vergul bilan bir nechta)
+        sync: false
+      - key: GEMINI_API_KEY  # AI ustoz uchun (ixtiyoriy)
+        sync: false
+      - key: AI_PROVIDER
+        value: gemini

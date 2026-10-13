@@ -74,11 +74,15 @@ function parseCookies(header) {
 }
 
 function sessionCookie(token, { secure } = {}) {
-  const attrs = [`${COOKIE}=${token}`, 'Path=/', 'HttpOnly', 'SameSite=Lax', `Max-Age=${TTL_MS / 1000}`];
-  if (secure) attrs.push('Secure');
+  const attrs = [`${COOKIE}=${token}`, 'Path=/', 'HttpOnly', `Max-Age=${TTL_MS / 1000}`];
+  if (secure) {
+    attrs.push('SameSite=None', 'Secure', 'Partitioned');
+  } else {
+    attrs.push('SameSite=Lax');
+  }
   return attrs.join('; ');
 }
-const clearCookie = ({ secure } = {}) => `${COOKIE}=; Path=/; HttpOnly; SameSite=Lax;${secure ? ' Secure;' : ''} Max-Age=0`;
+const clearCookie = ({ secure } = {}) => `${COOKIE}=; Path=/; HttpOnly; ${secure ? 'SameSite=None; Secure; Partitioned' : 'SameSite=Lax'}; Max-Age=0`;
 
 // Simple fixed-window limiter, in memory.
 function createLimiter(max, windowMs) {

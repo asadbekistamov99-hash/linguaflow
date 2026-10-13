@@ -1414,13 +1414,6 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{
   io.unobserve(e.target);
 }),{threshold:.15});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
-// Admin panel shortcut: Ctrl+Shift+A (Cmd+Shift+A on Mac). Only a convenience; /admin still enforces the admin role on the server.
-addEventListener('keydown', (e) => {
-  if ((e.ctrlKey || e.metaKey) && e.shiftKey && !e.altKey && (e.code === 'KeyA' || String(e.key).toLowerCase() === 'a')) {
-    e.preventDefault();
-    location.href = '/admin';
-  }
-});
 </script>
 </body>
 </html>

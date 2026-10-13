@@ -968,11 +968,9 @@
 
     const form = h('form', {
       onsubmit: async (e) => {
-        e.preventDefault(); err.textContent = '';
-        if (isReset) { err.textContent = "Parolni tiklash uchun administratorga murojaat qiling: u admin paneldan yangi parol beradi."; return; }
-        btn.disabled = true;
+        e.preventDefault(); err.textContent = ''; btn.disabled = true;
         try {
-          const endpoint = isReg ? '/api/auth/register' : '/api/auth/login';
+          const endpoint = isReg ? '/api/auth/register' : isReset ? '/api/auth/reset-password' : '/api/auth/login';
           const body = { email: email.value, password: pass.value, ...(isReg ? { name: name.value } : {}) };
           const res = await api('POST', endpoint, body);
           await onAuthSuccess(res);
@@ -986,7 +984,7 @@
       err, btn, (!isReg && !isReset) ? guestBtn : null);
 
     const title = isReg ? 'Hisob yarating' : isReset ? 'Parolni tiklash' : 'Xush kelibsiz!';
-    const sub = isReg ? "Bepul boshlang va 6 ta tilni o'rganing." : isReset ? "Parolni administrator tiklab beradi. Unga email manzilingizni yuboring." : 'Davom etish uchun hisobingizga kiring.';
+    const sub = isReg ? "Bepul boshlang va 6 ta tilni o'rganing." : isReset ? "Email va yangi parolingizni kiriting." : 'Davom etish uchun hisobingizga kiring.';
 
     const forgotLink = (!isReg && !isReset) ? h('div', { style: { textAlign: 'right', marginTop: '8px', fontSize: '.88rem' } }, h('a', { href: '#/reset', style: { color: 'var(--muted)' } }, 'Parolni unutdingizmi?')) : null;
 
@@ -1017,7 +1015,7 @@
   // ---------- shell ----------
   async function shell(active, content, { wide = false } = {}) {
     const due = S.course ? S.course.due : 0;
-    const items = NAV;
+    const items = [...NAV, ...(S.user.isAdmin ? [['/admin', '🛠️', 'Admin panel']] : [])];
     const link = (p, cls, kids) => (p === '/admin' ? h('a', { href: '/admin', class: cls }, kids) : h('a', { href: '#' + p, class: cls + (active === p ? ' on' : '') }, kids));
     const sideTheme = h('div', { class: 'side-theme-wrap' },
       createThemeToggleBtn({ showLabel: true, extraClass: 'side-theme-btn' }));
@@ -3530,6 +3528,7 @@
         h('div', { class: 'stat-tile' }, h('b', {}, u.xp), h('span', {}, 'Jami XP')),
         h('div', { class: 'stat-tile' }, h('b', {}, `🔥${u.streak}`), h('span', {}, 'Seriya')),
         h('div', { class: 'stat-tile' }, h('b', {}, u.bestStreak), h('span', {}, 'Eng uzun'))),
+      u.isAdmin ? h('a', { class: 'btn btn-main', href: '/admin', style: { marginTop: '16px' } }, '🛠️ Admin panelga o\'tish') : null,
       h('h3', { class: 'section-title' }, 'Kunlik maqsad'), goals,
       h('h3', { class: 'section-title' }, 'Nishonlar'),
       h('div', { class: 'badges' }, badges.map((b) => h('div', { class: 'badge' + (b.earned ? '' : ' off'), title: b.desc }, h('span', { class: 'em' }, b.emoji), h('b', {}, b.title), h('small', {}, b.desc)))),
@@ -3544,14 +3543,6 @@
         } }, 'Chiqish')),
     ]);
   }
-
-  // Admin panel shortcut: Ctrl+Shift+A (Cmd+Shift+A on Mac). Only a convenience; /admin still enforces the admin role on the server.
-  addEventListener('keydown', (e) => {
-    if ((e.ctrlKey || e.metaKey) && e.shiftKey && !e.altKey && (e.code === 'KeyA' || String(e.key).toLowerCase() === 'a')) {
-      e.preventDefault();
-      location.href = '/admin';
-    }
-  });
 
   // ---------- boot ----------
   (async function boot() {

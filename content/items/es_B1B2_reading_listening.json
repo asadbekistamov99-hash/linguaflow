@@ -53,7 +53,7 @@
         "Que le envíe una receta"
       ],
       "answer": 0,
-      "explanation_uz": "Matnda: «me gustaría que vinieras a visitarme en agosto» — avgust yozda, ya'ni uni yozda ziyorat qilishni taklif qiladi."
+      "explanation_uz": "Matnda: «me gustaría que vinieras a visitarme en agosto» — avgust yoz oyi, ya'ni uni yozda ziyorat qilishni taklif qiladi."
     }
   },
   {
@@ -931,7 +931,8 @@
       "transcript": "A: Laura, ¿has visto el correo del cliente? Quieren adelantar la entrega una semana.\nB: Sí, y me parece una locura, porque todavía no hemos terminado las pruebas.\nA: Lo sé, pero si nos negamos, podrían cancelar el contrato. ¿Y si contratamos a un técnico externo para acelerar?\nB: Saldría caro y, además, tardaría días en conocer el sistema. Yo propondría entregar una versión básica en la fecha pedida y completar el resto después.\nA: No está mal. Así cumplimos sin sacrificar la calidad.\nB: Exacto. Redacto yo una respuesta para el cliente y se la paso a Víctor para que la revise antes de enviarla.",
       "text": "Laura escribirá la respuesta y se la pasará a ___ para que la revise.",
       "answers": [
-        "Víctor"
+        "Víctor",
+        "Victor"
       ],
       "explanation_uz": "Laura: «se la paso a Víctor para que la revise»."
     }
@@ -943,7 +944,7 @@
     "type": "mcq",
     "exam": "general",
     "payload": {
-      "transcript": "Cada septiembre, mi pueblo celebra la fiesta de la vendimia. Durante tres días, los vecinos pisan la uva en grandes barreras de madera. Aunque hoy casi nadie trabaja así en el campo, la tradición se mantiene gracias a las asociaciones juveniles. Lo que más sorprende a los visitantes es el desfile del domingo, en el que cada barrio construye una carroza con materiales reciclados. Este año, además, habrá un concurso de cocina con productos de la huerta. Si piensan venir, les recomiendo reservar alojamiento con antelación, ya que las pocas pensiones que hay se llenan en cuanto se anuncian las fechas.",
+      "transcript": "Cada septiembre, mi pueblo celebra la fiesta de la vendimia. Durante tres días, los vecinos pisan la uva en grandes lagares de madera. Aunque hoy casi nadie trabaja así en el campo, la tradición se mantiene gracias a las asociaciones juveniles. Lo que más sorprende a los visitantes es el desfile del domingo, en el que cada barrio construye una carroza con materiales reciclados. Este año, además, habrá un concurso de cocina con productos de la huerta. Si piensan venir, les recomiendo reservar alojamiento con antelación, ya que las pocas pensiones que hay se llenan en cuanto se anuncian las fechas.",
       "question": "¿Por qué sigue viva la tradición?",
       "options": [
         "Porque todavía se pisa la uva en el campo",
@@ -962,7 +963,7 @@
     "type": "mcq",
     "exam": "general",
     "payload": {
-      "transcript": "Cada septiembre, mi pueblo celebra la fiesta de la vendimia. Durante tres días, los vecinos pisan la uva en grandes barreras de madera. Aunque hoy casi nadie trabaja así en el campo, la tradición se mantiene gracias a las asociaciones juveniles. Lo que más sorprende a los visitantes es el desfile del domingo, en el que cada barrio construye una carroza con materiales reciclados. Este año, además, habrá un concurso de cocina con productos de la huerta. Si piensan venir, les recomiendo reservar alojamiento con antelación, ya que las pocas pensiones que hay se llenan en cuanto se anuncian las fechas.",
+      "transcript": "Cada septiembre, mi pueblo celebra la fiesta de la vendimia. Durante tres días, los vecinos pisan la uva en grandes lagares de madera. Aunque hoy casi nadie trabaja así en el campo, la tradición se mantiene gracias a las asociaciones juveniles. Lo que más sorprende a los visitantes es el desfile del domingo, en el que cada barrio construye una carroza con materiales reciclados. Este año, además, habrá un concurso de cocina con productos de la huerta. Si piensan venir, les recomiendo reservar alojamiento con antelación, ya que las pocas pensiones que hay se llenan en cuanto se anuncian las fechas.",
       "question": "¿Qué es lo que más llama la atención de los visitantes?",
       "options": [
         "El desfile de carrozas hechas con material reciclado",
@@ -981,11 +982,10 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "transcript": "Cada septiembre, mi pueblo celebra la fiesta de la vendimia. Durante tres días, los vecinos pisan la uva en grandes barreras de madera. Aunque hoy casi nadie trabaja así en el campo, la tradición se mantiene gracias a las asociaciones juveniles. Lo que más sorprende a los visitantes es el desfile del domingo, en el que cada barrio construye una carroza con materiales reciclados. Este año, además, habrá un concurso de cocina con productos de la huerta. Si piensan venir, les recomiendo reservar alojamiento con antelación, ya que las pocas pensiones que hay se llenan en cuanto se anuncian las fechas.",
+      "transcript": "Cada septiembre, mi pueblo celebra la fiesta de la vendimia. Durante tres días, los vecinos pisan la uva en grandes lagares de madera. Aunque hoy casi nadie trabaja así en el campo, la tradición se mantiene gracias a las asociaciones juveniles. Lo que más sorprende a los visitantes es el desfile del domingo, en el que cada barrio construye una carroza con materiales reciclados. Este año, además, habrá un concurso de cocina con productos de la huerta. Si piensan venir, les recomiendo reservar alojamiento con antelación, ya que las pocas pensiones que hay se llenan en cuanto se anuncian las fechas.",
       "text": "El hablante recomienda reservar el ___ con antelación.",
       "answers": [
         "alojamiento",
-        "hotel",
         "hospedaje"
       ],
       "explanation_uz": "«les recomiendo reservar alojamiento con antelación»."

@@ -274,9 +274,9 @@
     "exam": "general",
     "payload": {
       "passage": "Wichtige Information für alle Mieter\n\nWegen Reparaturarbeiten an der Heizung wird am Donnerstag, dem 12. November, von 8 bis 16 Uhr das Warmwasser im ganzen Haus abgestellt. Auch die Heizkörper bleiben in dieser Zeit kalt. Bitte halten Sie Ihre Fenster geschlossen, damit die Wohnungen nicht zu stark auskühlen. Die Arbeiter müssen in die Kellerräume. Wer einen Kellerschlüssel hat, gibt ihn bitte bis Mittwoch beim Hausmeister, Herrn Yilmaz, ab. Er ist von Montag bis Freitag zwischen 9 und 12 Uhr in Raum 0.3 zu erreichen. Wir bitten um Ihr Verständnis für die Unannehmlichkeiten. Nach Ende der Arbeiten funktioniert alles wieder normal.\n\nIhre Hausverwaltung",
-      "statement": "Die Arbeiter müssen in die Kellerräume kommen.",
+      "statement": "Die Handwerker haben für ihre Arbeit auch Zugang zum Keller nötig.",
       "answer": "true",
-      "explanation_uz": "Matnda: «Die Arbeiter müssen in die Kellerräume» – ishchilar yerto'lalarga kirishi kerak."
+      "explanation_uz": "Matnda: «Die Arbeiter müssen in die Kellerräume» – ishchilar yerto'laga kirishi kerak, ya'ni ularga yerto'laga kirish imkoni kerak."
     }
   },
   {
@@ -346,7 +346,7 @@
       "passage": "Seit der Pandemie arbeiten viele Beschäftigte zumindest zeitweise von zu Hause aus. Was zunächst als Notlösung begann, ist für zahlreiche Unternehmen inzwischen zur festen Einrichtung geworden. Eine aktuelle Studie des Instituts für Arbeitsmarktforschung zeigt jedoch, dass die Bilanz gemischt ausfällt. Einerseits schätzen drei Viertel der Befragten, dass sie sich den langen Weg zur Arbeit sparen und ihre Zeit flexibler einteilen können. Andererseits klagen viele darüber, dass die Grenze zwischen Beruf und Privatleben verschwimmt: Wer abends noch schnell eine E-Mail beantwortet, findet oft nur schwer wieder Ruhe. Besonders junge Mitarbeiter, die noch am Anfang ihrer Karriere stehen, vermissen den spontanen Austausch mit Kollegen. Die Forscher empfehlen deshalb ein Mischmodell, bei dem man zwei bis drei Tage pro Woche im Büro verbringt. Wichtig sei außerdem, dass Firmen klare Regeln zur Erreichbarkeit aufstellen. Nur so lasse sich verhindern, dass die gewonnene Freiheit zur ständigen Verfügbarkeit wird.",
       "statement": "Mehr als die Hälfte der Befragten findet die flexible Zeiteinteilung positiv.",
       "answer": "true",
-      "explanation_uz": "Matnda: «drei Viertel der Befragten schätzen ... ihre Zeit flexibler einteilen» – 75 foiz yarmidan ko'p."
+      "explanation_uz": "Matnda: «drei Viertel der Befragten schätzen ... ihre Zeit flexibler einteilen» – 75 foiz, ya'ni yarmidan ko'p."
     }
   },
   {
@@ -435,7 +435,7 @@
         "Handwerker bieten kostenlose Hilfe an."
       ],
       "answer": 1,
-      "explanation_uz": "Matnda: «Gegenstände, die man nur selten braucht» ni ijaraga olish mumkin – narsalar birgalikda ishlatiladi."
+      "explanation_uz": "Matnda «Gegenstände, die man nur selten braucht» (kamdan-kam kerak bo'ladigan narsalar) ijaraga beriladi – narsalar birgalikda ishlatiladi."
     }
   },
   {
@@ -766,7 +766,7 @@
     "exam": "general",
     "payload": {
       "transcript": "A: Hast du schon etwas für Sonjas Geburtstag?\nB: Noch nicht. Ich wollte ihr ein Buch schenken, aber sie liest kaum.\nA: Wie wäre es mit Konzertkarten? Sie mag doch Jazz.\nB: Gute Idee! Im Stadttheater spielt nächsten Monat eine bekannte Band. Die Karten kosten aber vierzig Euro pro Stück.\nA: Dann legen wir zusammen. Wir sind ja mindestens vier Leute.\nB: Stimmt. Dann zahlt jeder nur zwanzig Euro, denn wir kaufen zwei Karten, eine für Sonja und eine für ihren Freund.\nA: Perfekt. Ich bestelle die Karten heute Abend im Internet.\nB: Super, ich überweise dir das Geld am Wochenende.",
-      "text": "Jeder der vier Freunde zahlt ___ Euro.",
+      "text": "Die Freunde teilen die Kosten für die Karten: Jeder zahlt ___ Euro.",
       "answers": [
         "20",
         "zwanzig"
@@ -946,12 +946,12 @@
       "question": "Was ist laut der Sprecherin oder dem Sprecher wichtiger als die Schlafdauer?",
       "options": [
         "Die Zimmertemperatur",
-        "Die Güte des Schlafs",
+        "Wie gut man schläft",
         "Die Uhrzeit des Zubettgehens",
         "Die Größe des Bettes"
       ],
       "answer": 1,
-      "explanation_uz": "Matn: «Entscheidend ist weniger die Dauer als die Qualität» – asosiysi uyqu sifati."
+      "explanation_uz": "Matn: «Entscheidend ist weniger die Dauer als die Qualität» – asosiysi uyqu davomiyligi emas, sifati."
     }
   },
   {

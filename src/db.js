@@ -93,6 +93,22 @@ function open(file) {
       id INTEGER PRIMARY KEY, admin_id INTEGER, action TEXT NOT NULL, detail TEXT, created_at INTEGER NOT NULL
     );
     CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS items (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      lang TEXT NOT NULL, skill TEXT NOT NULL, level TEXT NOT NULL, exam TEXT NOT NULL DEFAULT 'general',
+      type TEXT NOT NULL, payload TEXT NOT NULL,
+      status TEXT NOT NULL DEFAULT 'draft', source TEXT NOT NULL DEFAULT 'manual',
+      author_id INTEGER, reviewer_id INTEGER, review_note TEXT,
+      created_at INTEGER NOT NULL, updated_at INTEGER NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_items_main ON items(lang, level, skill, status);
+    CREATE TABLE IF NOT EXISTS reviewer_langs (
+      user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE, lang TEXT NOT NULL, PRIMARY KEY (user_id, lang)
+    );
+    CREATE TABLE IF NOT EXISTS ai_usage (
+      user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE, day INTEGER NOT NULL, feature TEXT NOT NULL,
+      count INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (user_id, day, feature)
+    );
     CREATE TABLE IF NOT EXISTS user_certificates (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       cert_id TEXT UNIQUE NOT NULL,

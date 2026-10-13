@@ -526,6 +526,162 @@ test('password recovery works only with the server-side RECOVERY_KEY', async () 
   app.close();
 });
 
+const mcq = (over = {}) => ({ lang: 'en', skill: 'reading', level: 'B2', exam: 'ielts', type: 'mcq', payload: { question: 'What is the main idea?', options: ['A', 'B', 'C', 'D'], answer: 2 }, ...over });
+
+test('item bank: validation, import, filters, coverage summary', async () => {
+  const app = await boot();
+  const admin = app.client(); await reg(admin, 'Boss', 'boss@test.uz');
+  const user = app.client(); await reg(user, 'User', 'user@test.uz');
+
+  // plain users and anonymous visitors have no access
+  for (const [m, u] of [['GET', '/api/admin/items'], ['GET', '/api/admin/items/summary'], ['POST', '/api/admin/items'], ['POST', '/api/admin/items/import']]) {
+    assert.equal((await user(m, u, {})).status, 403, u);
+    assert.equal((await app.client()(m, u, {})).status, 401, u);
+  }
+
+  const ok = await admin('POST', '/api/admin/items', mcq());
+  assert.equal(ok.status, 200);
+  const bad = async (body) => (await admin('POST', '/api/admin/items', body)).status;
+  assert.equal(await bad(mcq({ payload: { question: 'Q', options: ['A', 'B'], answer: 5 } })), 400, 'answer out of range');
+  assert.equal(await bad(mcq({ payload: { question: 'Q', options: ['A', 'A'], answer: 0 } })), 400, 'duplicate options');
+  assert.equal(await bad(mcq({ lang: 'xx' })), 400, 'unknown language');
+  assert.equal(await bad(mcq({ skill: 'writing' })), 400, 'writing needs an essay prompt');
+  assert.equal(await bad(mcq({ level: 'D9' })), 400);
+  assert.equal(await bad(mcq({ payload: { question: 'Q', options: ['A', 'B'], answer: 0, audio_url: 'javascript:alert(1)' } })), 400, 'unsafe audio url');
+  assert.equal(await bad({ lang: 'ru', skill: 'writing', level: 'B2', type: 'essay_prompt', payload: { prompt: 'Опишите свой город.', min_words: 150 } }), 200);
+  assert.equal(await bad({ lang: 'ru', skill: 'speaking', level: 'B1', type: 'speaking_prompt', payload: { prompt: 'Расскажите о семье.', part: 1 } }), 200);
+  assert.equal(await bad({ lang: 'en', skill: 'grammar', level: 'B1', type: 'gap', payload: { text: 'She ___ to school yesterday.', answer: 'went' } }), 200);
+  assert.equal(await bad({ lang: 'en', skill: 'grammar', level: 'B1', type: 'gap', payload: { text: 'No gap here', answer: 'x' } }), 400);
+
+  // bulk import: partial failures are reported, dry run writes nothing
+  const batch = { defaults: { lang: 'de', skill: 'vocab', level: 'A2', type: 'mcq' }, items: [
+    { payload: { question: 'Hund?', options: ['dog', 'cat'], answer: 'dog' } },
+    { payload: { question: 'Katze?', options: ['dog', 'cat'], answer: 1 } },
+    { payload: { question: 'Broken', options: ['only one'], answer: 0 } },
+    { lang: 'zz', payload: { question: 'x', options: ['a', 'b'], answer: 0 } },
+  ] };
+  const before = app.db.prepare('SELECT COUNT(*) n FROM items').get().n;
+  const dry = await admin('POST', '/api/admin/items/import', { ...batch, dryRun: true });
+  assert.deepEqual([dry.data.valid, dry.data.created, dry.data.failed], [2, 0, 2]);
+  assert.equal(app.db.prepare('SELECT COUNT(*) n FROM items').get().n, before);
+  const real = await admin('POST', '/api/admin/items/import', batch);
+  assert.deepEqual([real.data.created, real.data.failed], [2, 2]);
+  assert.deepEqual(real.data.errors.map((e) => e.index), [2, 3]);
+  assert.equal((await admin('POST', '/api/admin/items/import', { items: new Array(501).fill({}) })).status, 400);
+
+  const list = (await admin('GET', '/api/admin/items?lang=de&level=A2')).data;
+  assert.equal(list.total, 2);
+  assert.ok(list.items.every((i) => i.status === 'draft' && i.source === 'import'));
+  assert.equal((await admin('GET', '/api/admin/items?status=nope')).status, 400);
+  assert.equal((await admin('GET', '/api/admin/items?q=Katze')).data.total, 1);
+  assert.equal((await admin('GET', '/api/admin/items?q=%25')).data.total, 0, 'LIKE wildcards are escaped');
+
+  const sum = (await admin('GET', '/api/admin/items/summary')).data;
+  assert.equal(sum.langs.find((l) => l.code === 'en').target, 'C2');
+  assert.equal(sum.langs.find((l) => l.code === 'ru').target, 'B2');
+  assert.equal(sum.rows.find((r) => r.lang === 'de' && r.level === 'A2' && r.status === 'draft').n, 2);
+  app.close();
+});
+
+test('item bank: review workflow and reviewer permissions per language', async () => {
+  const app = await boot();
+  const admin = app.client(); await reg(admin, 'Boss', 'boss@test.uz');
+  const rev = app.client(); const r = (await reg(rev, 'Reviewer', 'rev@test.uz')).data.user;
+  const user = app.client(); await reg(user, 'User', 'user@test.uz');
+
+  assert.equal((await admin('PATCH', `/api/admin/users/${r.id}`, { role: 'reviewer', reviewerLangs: ['en', 'zz'] })).status, 400, 'unknown language');
+  assert.equal((await admin('PATCH', `/api/admin/users/${r.id}`, { role: 'reviewer', reviewerLangs: ['en'] })).status, 200);
+  const me = (await rev('GET', '/api/me')).data.user;
+  assert.deepEqual([me.isStaff, me.isAdmin, me.reviewerLangs], [true, false, ['en']]);
+  // reviewers get items but nothing else from the admin panel
+  assert.equal((await rev('GET', '/api/admin/stats')).status, 403);
+  assert.equal((await rev('GET', '/api/admin/users')).status, 403);
+
+  const en = (await admin('POST', '/api/admin/items', mcq())).data.id;
+  const ru = (await admin('POST', '/api/admin/items', mcq({ lang: 'ru' }))).data.id;
+  const list = (await rev('GET', '/api/admin/items')).data;
+  assert.deepEqual(list.items.map((i) => i.lang), ['en'], 'reviewer sees only assigned languages');
+  assert.equal((await rev('GET', `/api/admin/items/${ru}`)).status, 403);
+  assert.equal((await rev('POST', '/api/admin/items', mcq({ lang: 'ru' }))).status, 403);
+  assert.equal((await rev('GET', '/api/admin/items/summary')).data.langs.length, 1);
+  assert.deepEqual((await rev('GET', '/api/admin/items/meta')).data.languages.map((l) => l.code), ['en']);
+
+  const st = (c, id, status, note) => c('POST', `/api/admin/items/${id}/status`, { status, note });
+  assert.equal((await st(rev, en, 'approved')).status, 400, 'draft cannot jump to approved');
+  assert.equal((await st(admin, en, 'review')).status, 200);
+  assert.equal((await st(rev, en, 'rejected')).status, 400, 'rejection needs a reason');
+  assert.equal((await st(rev, en, 'rejected', 'Wrong key')).status, 200);
+  assert.equal((await rev('GET', `/api/admin/items/${en}`)).data.item.reviewNote, 'Wrong key');
+  assert.equal((await st(rev, en, 'review')).status, 200);
+  assert.equal((await st(rev, en, 'approved', 'OK')).status, 200);
+
+  // editing an approved item sends it back to draft
+  const patched = await rev('PATCH', `/api/admin/items/${en}`, { payload: { question: 'Fixed?', options: ['A', 'B', 'C'], answer: 1 } });
+  assert.deepEqual([patched.status, patched.data.status], [200, 'draft']);
+  await st(rev, en, 'review'); await st(rev, en, 'approved');
+  assert.equal((await rev('DELETE', `/api/admin/items/${en}`)).status, 403, 'approved items are deleted by admins only');
+  assert.equal((await admin('DELETE', `/api/admin/items/${en}`)).status, 200);
+
+  // four eyes: a reviewer cannot approve what they wrote themselves
+  const own = (await rev('POST', '/api/admin/items', mcq())).data.id;
+  await st(rev, own, 'review');
+  assert.equal((await st(rev, own, 'approved')).status, 403);
+  assert.equal((await st(admin, own, 'approved')).status, 200);
+
+  // demoting a reviewer clears the language assignment and the access
+  assert.equal((await admin('PATCH', `/api/admin/users/${r.id}`, { role: 'user' })).status, 200);
+  assert.equal(app.db.prepare('SELECT COUNT(*) n FROM reviewer_langs WHERE user_id=?').get(r.id).n, 0);
+  assert.equal((await rev('GET', '/api/admin/items')).status, 403);
+  assert.equal((await user('GET', '/api/admin/items')).status, 403);
+  app.close();
+});
+
+test('AI free-tier limits: per feature per day, admin configurable, admins exempt', async () => {
+  const realFetch = global.fetch;
+  global.fetch = async (url, opts) => (String(url).startsWith('https://generativelanguage.googleapis.com')
+    ? { ok: true, status: 200, json: async () => ({ candidates: [{ content: { parts: [{ text: 'Nice sentence!' }] } }] }) }
+    : realFetch(url, opts));
+  process.env.GEMINI_API_KEY = 'test-key';
+  try {
+    const app = await boot();
+    const admin = app.client(); await reg(admin, 'Boss', 'boss@test.uz');
+    const user = app.client(); await reg(user, 'User', 'user@test.uz');
+    const ask = (c, mode) => c('POST', '/api/tutor', { lang: 'en', mode, messages: [{ role: 'user', content: 'Hello there' }] });
+
+    assert.equal((await admin('PUT', '/api/admin/limits', { limits: { tutor: 2, writing: 0, speaking: 1 } })).status, 200);
+    assert.equal((await admin('PUT', '/api/admin/limits', { limits: { tutor: -1 } })).status, 400);
+    assert.equal((await user('PUT', '/api/admin/limits', { limits: { tutor: 999 } })).status, 403);
+
+    assert.deepEqual([(await ask(user)).status, (await ask(user)).status], [200, 200]);
+    const third = await ask(user);
+    assert.equal(third.status, 429);
+    assert.match(third.data.error, /limit/i);
+    // each feature has its own counter; limit 0 switches a feature off
+    assert.equal((await ask(user, 'ielts_speaking')).status, 200);
+    assert.equal((await ask(user, 'jarvis')).status, 429);
+    const off = await ask(user, 'ielts_writing');
+    assert.equal(off.status, 429);
+    assert.match(off.data.error, /o'chirilgan/);
+    // admins are exempt
+    for (let i = 0; i < 5; i++) assert.equal((await ask(admin)).status, 200);
+
+    const usage = (await user('GET', '/api/quota')).data.usage;
+    assert.deepEqual(usage.tutor, { used: 2, limit: 2 });
+    assert.deepEqual(usage.speaking, { used: 1, limit: 1 });
+    const totals = (await admin('GET', '/api/admin/limits')).data;
+    assert.equal(totals.limits.tutor, 2);
+    assert.equal(totals.top[0].email, 'user@test.uz');
+    assert.ok(totals.features.find((f) => f.feature === 'tutor').calls >= 2);
+
+    // without a configured AI provider nothing is counted
+    delete process.env.GEMINI_API_KEY;
+    const free = app.client(); await reg(free, 'Free', 'free@test.uz');
+    assert.equal((await ask(free)).data.disabled, true);
+    assert.equal((await free('GET', '/api/quota')).data.usage.tutor.used, 0);
+    app.close();
+  } finally { global.fetch = realFetch; delete process.env.GEMINI_API_KEY; }
+});
+
 test('static pages are served', async () => {
   const app = await boot();
   assert.equal((await fetch(app.base + '/')).status, 200);
@@ -570,6 +726,11 @@ test('curriculum and international certification exam flow', async () => {
   assert.equal(sub.status, 200);
   assert.ok(typeof sub.data.accuracy === 'number');
   assert.ok(sub.data.bandScore);
+  // results never claim to be an official or equivalent certificate
+  assert.match(sub.data.disclaimer, /rasmiy IELTS, CEFR/);
+  assert.doesNotMatch(sub.data.examTitle, /Ekvivalent|Xalqaro|Rasmiy/i);
+  assert.match(sub.data.examTitle, /tayyorgarlik/i);
+  if (sub.data.certificate) assert.match(sub.data.certificate.disclaimer, /ichki tayyorgarlik sertifikati/);
 
   // Certificates cannot be minted by hand any more (they were forgeable)
   const certRes = await c('POST', '/api/exams/certify', { lang: 'en', level: 'C1', accuracy: 99, bandScore: '9.0' });

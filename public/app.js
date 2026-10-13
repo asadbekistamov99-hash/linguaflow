@@ -246,7 +246,7 @@
     // Middle Eastern (3 languages)
     { code: 'ar', category: 'middle_eastern', categoryName: 'Yaqin Sharq', cert: '🎓 ALPT / Fasih Arab tili (A1 - C1)', sub: 'Fasih arab tili, Yaqin Sharq va xalqaro attestatsiya', badge: 'ALPT / Fasih', name: 'Arab tili', native: 'العربية', flag: '🇸🇦', color: '#22d39a', lessons: 30, active: true },
     { code: 'fa', category: 'middle_eastern', categoryName: 'Yaqin Sharq', cert: '🎓 AMFA / Samt Attestatsiya', sub: 'Sharq adabiyoti, Fors tarixi va mumtoz madaniyati', badge: 'AMFA', name: 'Fors tili', native: 'فارسی', flag: '🇮🇷', color: '#f59e0b', lessons: 18, active: false },
-    { code: 'az', category: 'middle_eastern', categoryName: 'Yaqin Sharq', cert: '🎓 Rasmiy sertifikat', sub: 'Qardosh turkiy til, Kavkaz va Kasbiy muloqot', badge: 'Azərbaycan', name: 'Ozarbayjon tili', native: 'Azərbaycan', flag: '🇦🇿', color: '#06b6d4', lessons: 18, active: false },
+    { code: 'az', category: 'middle_eastern', categoryName: 'Yaqin Sharq', cert: '🎓 Sertifikatga tayyorgarlik', sub: 'Qardosh turkiy til, Kavkaz va Kasbiy muloqot', badge: 'Azərbaycan', name: 'Ozarbayjon tili', native: 'Azərbaycan', flag: '🇦🇿', color: '#06b6d4', lessons: 18, active: false },
   ];
 
   const getLangObj = (code) => {
@@ -265,7 +265,7 @@
       active: true,
     };
     if (fromCat) return { ...fromCat, lessons: fromCat.lessons || 30, done: 0, active: false };
-    if (fromS) return { ...fromS, cert: 'Xalqaro sertifikat', sub: `${fromS.lessons} interaktiv dars`, badge: 'Til', category: 'european', categoryName: 'Yevropa', lessons: fromS.lessons || 30, done: fromS.done || 0, active: true };
+    if (fromS) return { ...fromS, cert: 'Sertifikatga tayyorgarlik', sub: `${fromS.lessons} interaktiv dars`, badge: 'Til', category: 'european', categoryName: 'Yevropa', lessons: fromS.lessons || 30, done: fromS.done || 0, active: true };
     return { code: 'en', name: 'Ingliz tili', native: 'English', flag: '🇬🇧', color: '#7c5cff', cert: 'IELTS Band 4.0 - 8.5+', sub: 'Xalqaro kurs', category: 'european', categoryName: 'Yevropa', lessons: 30, done: 0, active: true };
   };
 
@@ -1308,7 +1308,7 @@
       h('a', { class: 'q-btn', href: '#/dictionary' }, h('span', {}, '📚'), "Lug'at"),
       h('a', { class: 'q-btn', href: '#/tutor' }, h('span', {}, '🎙️'), 'JARVIS Ustoz'));
     const placeBanner = doneN === 0 ? h('div', { class: 'banner place' }, h('span', { class: 'em' }, '🧭'),
-      h('div', { class: 'tx' }, h('b', {}, "Bilasizmi? Daraja testidan o'ting"), h('small', {}, "Biladigan mavzularni o'tkazib yuborasiz va rasmiy CEFR sertifikatiga ega bo'lasiz")),
+      h('div', { class: 'tx' }, h('b', {}, "Bilasizmi? Daraja testidan o'ting"), h('small', {}, "Biladigan mavzularni o'tkazib yuborasiz va darajangizni bilib olasiz")),
       h('button', { class: 'btn btn-ghost', onclick: startPlacement }, 'Boshlash')) : null;
     const banner = c.due ? h('div', { class: 'banner' }, h('span', { class: 'em' }, '🧠'),
       h('div', { class: 'tx' }, h('b', {}, `${c.due} ta so'z takrorlashni kutyapti`), h('small', {}, 'Unutishdan oldin qisqa takrorlang')),
@@ -1436,16 +1436,17 @@
       h('div', { class: 'modal cert-modal', role: 'dialog', 'aria-modal': 'true' },
         h('div', { class: 'cert-paper' },
           h('div', { class: 'cert-seal' }, '🏆'),
-          h('div', { class: 'cert-org' }, 'LinguaFlow International Language Academy'),
-          h('h2', { class: 'cert-headline' }, 'RASMIY SERTIFIKAT'),
-          h('div', { class: 'cert-sub' }, 'Xalqaro CEFR & IELTS Ekvivalent Standarti bo\'yicha berildi'),
+          h('div', { class: 'cert-org' }, 'LinguaFlow'),
+          h('h2', { class: 'cert-headline' }, 'TAYYORGARLIK SERTIFIKATI'),
+          h('div', { class: 'cert-sub' }, 'LinguaFlow ichki tayyorgarlik sertifikati (rasmiy xalqaro sertifikat emas)'),
           h('div', { class: 'cert-name' }, cert.user_name || cert.userName || S.user.name),
           h('p', { class: 'cert-desc' },
-            `Ushbu sertifikat egasi ${cert.lang || (S.course && S.course.lang && S.course.lang.name) || 'Ingliz tili'} bo'yicha ${cert.cefr_level || cert.cefrLevel || 'B2'} (${cert.exam_title || cert.examTitle || 'IELTS Ekvivalenti'}) darajasidagi xalqaro imtihon sinovini ${cert.accuracy || 85}% aniqlik bilan muvaffaqiyatli topshirganligini tasdiqlaydi.`),
+            `Ushbu sertifikat egasi ${cert.lang || (S.course && S.course.lang && S.course.lang.name) || 'Ingliz tili'} bo'yicha ${cert.cefr_level || cert.cefrLevel || 'B2'} (${cert.exam_title || cert.examTitle || 'Tayyorgarlik darajasi'}) darajasidagi LinguaFlow tayyorgarlik imtihonini ${cert.accuracy || 85}% aniqlik bilan muvaffaqiyatli topshirganligini tasdiqlaydi.`),
           h('div', { class: 'cert-badge-row' },
             h('div', { class: 'cert-stat' }, h('b', {}, cert.cefr_level || cert.cefrLevel || 'B2'), h('span', {}, 'CEFR Darajasi')),
-            h('div', { class: 'cert-stat' }, h('b', {}, `Band ${cert.band_score || cert.bandScore || '6.5'}`), h('span', {}, 'IELTS / Band Balli')),
+            h('div', { class: 'cert-stat' }, h('b', {}, `Band ${cert.band_score || cert.bandScore || '6.5'}`), h('span', {}, 'IELTS (taxminiy)')),
             h('div', { class: 'cert-stat' }, h('b', {}, `${cert.accuracy || 85}%`), h('span', {}, 'Imtihon Aniqligi'))),
+          h('p', { class: 'cert-disclaimer' }, cert.disclaimer || "Bu LinguaFlow ichki tayyorgarlik sertifikati. U rasmiy IELTS, CEFR yoki boshqa xalqaro imtihon sertifikati emas; ball taxminiy."),
           h('div', { class: 'cert-foot' },
             h('span', {}, `Sertifikat ID: ${cert.cert_id || cert.certId}`),
             h('span', {}, `Berilgan sana: ${new Date(cert.issued_at || cert.issuedAt || Date.now()).toLocaleDateString('uz-UZ')}`)),
@@ -1481,8 +1482,8 @@
       contentBox.replaceChildren(
         h('div', { class: 'stage-detail-box' },
           h('div', { class: 'stage-meta-row' },
-            h('div', { class: 'stage-meta-item' }, h('small', {}, 'IELTS Ekvivalenti'), h('b', {}, `Band ${st.ieltsBand}`)),
-            h('div', { class: 'stage-meta-item' }, h('small', {}, 'Xalqaro Sertifikat'), h('b', {}, st.certTarget)),
+            h('div', { class: 'stage-meta-item' }, h('small', {}, 'IELTS (taxminiy)'), h('b', {}, `Band ${st.ieltsBand}`)),
+            h('div', { class: 'stage-meta-item' }, h('small', {}, 'Maqsad imtihon'), h('b', {}, st.certTarget)),
             h('div', { class: 'stage-meta-item' }, h('small', {}, 'Faol So\'z Boyligi'), h('b', {}, st.targetWords)),
             h('div', { class: 'stage-meta-item' }, h('small', {}, 'Mavzular diapazoni'), h('b', {}, st.unitsRange))),
           h('div', {},
@@ -1684,7 +1685,8 @@
               res.passed ? 'Tabriklaymiz! Imtihondan o\'tdingiz!' : 'Imtihon yakunlandi'),
             h('div', { class: 'exam-result-score' }, `${res.accuracy}% Aniqlik`),
             h('p', { class: 'lead', style: { color: '#ffc94d', fontWeight: '700' } },
-              `${res.examTitle} · IELTS Band ${res.bandScore}`),
+              `${res.examTitle} · IELTS taxminiy ${res.bandScore}`),
+            h('p', { class: 'cert-disclaimer' }, res.disclaimer || "Bu LinguaFlow ichki tayyorgarlik sertifikati. U rasmiy IELTS, CEFR yoki boshqa xalqaro imtihon sertifikati emas; ball taxminiy."),
             h('div', { class: 'exam-result-breakdown' },
               h('div', { class: 'exam-breakdown-col' }, h('b', {}, `${res.sectionBreakdown.listening}%`), h('span', {}, 'Listening')),
               h('div', { class: 'exam-breakdown-col' }, h('b', {}, `${res.sectionBreakdown.reading}%`), h('span', {}, 'Reading')),

@@ -12,6 +12,8 @@ const srs = require('./srs');
 const tutor = require('./tutor');
 const registerGames = require('./games');
 const registerAdmin = require('./admin');
+const registerItems = require('./items');
+const { createQuota } = require('./quota');
 const { STAGES, buildMockExam } = require('./curriculum');
 const { generateJarvisReply, generatePronunciationFeedback } = require('./jarvis');
 
@@ -44,6 +46,7 @@ class HttpError extends Error {
 }
 
 const REPEAT_XP_CAP = 60;
+const CERT_DISCLAIMER = "Bu LinguaFlow ichki tayyorgarlik sertifikati. U rasmiy IELTS, CEFR yoki boshqa xalqaro imtihon sertifikati emas; ball taxminiy.";
 const levelOf = (xp) => Math.floor(Math.sqrt(xp / 50)) + 1;
 const starsFor = (acc, kind) => (kind === 'test' ? (acc >= 0.95 ? 3 : acc >= 0.85 ? 2 : acc >= 0.8 ? 1 : 0) : (acc >= 0.9 ? 3 : acc >= 0.75 ? 2 : acc >= 0.6 ? 1 : 0));
 
@@ -54,11 +57,11 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
   const sessions = new Map();
   const loginLimiter = auth.createLimiter(10, 15 * 60000);
   const registerLimiter = auth.createLimiter(10, 60 * 60000);
+  const quota = createQuota(db);
   const recoveryLimiter = auth.createLimiter(5, 60 * 60000);
   const guestLimiter = auth.createLimiter(10, 60 * 60000);
   const examLimiter = auth.createLimiter(12, 60 * 60000);
   const loginIpLimiter = auth.createLimiter(40, 15 * 60000);
-  const tutorLimiter = auth.createLimiter(30, 60 * 60000);
   const adminEmails = new Set(String(process.env.ADMIN_EMAILS || '').split(',').map((s) => s.trim().toLowerCase()).filter(Boolean));
 
   const q = {
@@ -142,8 +145,9 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     const goalStreak = Math.max(consecutiveMet, todayMet ? Math.max(1, currentStreak) : currentStreak);
     const bestGoalStreak = Math.max(goalStreak, u.best_streak || 0);
 
+    const reviewerLangs = u.role === 'reviewer' ? db.prepare('SELECT lang FROM reviewer_langs WHERE user_id=?').all(u.id).map((r) => r.lang) : [];
     return {
-      id: u.id, name: u.name, email: u.email, role: u.role, isAdmin: u.role === 'admin', xp: u.xp, level: levelOf(u.xp),
+      id: u.id, name: u.name, email: u.email, role: u.role, isAdmin: u.role === 'admin', isStaff: u.role === 'admin' || u.role === 'reviewer', reviewerLangs, xp: u.xp, level: levelOf(u.xp),
       streak: currentStreak, bestStreak: u.best_streak, dailyGoal: goal,
       dailyXp, doneToday: u.last_active === today, currentLang: validLang(u.current_lang),
       goalMetToday: todayMet,
@@ -576,7 +580,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
       },
       {
         key: 'a2', level: 'A2', title: 'A2: Elementar muloqot',
-        examTarget: 'CEFR A2 · IELTS 4.0 Ekvivalenti',
+        examTarget: 'CEFR A2 · IELTS taxminiy 4.0',
         equivalents: { en: 'IELTS 3.5 - 4.5', de: 'Goethe A2', ru: 'ТРКИ Базовый', fr: 'DELF A2', es: 'DELE A2', ar: 'ALPT A2' },
         lessonsNeed: 16,
       },
@@ -757,7 +761,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
       bandScore = accuracy >= 70 ? '3.5' : '3.0';
     }
 
-    const examTitle = L.code === 'en' ? `IELTS Band ${bandScore} Ekvivalenti` : `${L.name} ${level} Xalqaro Imtihoni`;
+    const examTitle = L.code === 'en' ? `Tayyorgarlik darajasi ${level} · IELTS taxminiy ${bandScore}` : `${L.name} ${level} tayyorgarlik darajasi`;
     const passed = accuracy >= (session.meta.passThresholdPercent || 65);
 
     let certificate = null;
@@ -773,6 +777,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
       awardProgress(u, { xp: had ? 0 : 120, lang: L.code, source: 'certificate', ctx: { cert: true, level } });
 
       certificate = {
+        disclaimer: CERT_DISCLAIMER,
         certId,
         userName: u.name,
         lang: L.name,
@@ -804,13 +809,13 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
         grammar: sectionCounts.grammar.total ? Math.round((sectionCounts.grammar.ok / sectionCounts.grammar.total) * 100) : 100,
       },
       certificate,
+      disclaimer: CERT_DISCLAIMER,
       review,
     };
   });
 
   route('POST', '/api/tutor', async ({ req, body }) => {
     const u = requireUser(req);
-    if (!tutorLimiter(String(u.id))) throw new HttpError(429, 'Soatlik limit tugadi');
     const uname = String(u.name).replace(/[^\p{L}\p{N} '.-]/gu, '').slice(0, 40) || 'student';
     const lang = content.lang(body.lang) ? body.lang : validLang(u.current_lang);
     const L = content.lang(lang);
@@ -819,6 +824,13 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
       .map((m) => ({ role: m.role === 'assistant' ? 'assistant' : 'user', content: String(m.content ?? '').slice(0, 1000) }))
       .filter((m) => m.content.trim());
     if (!msgs.length || msgs[msgs.length - 1].role !== 'user') throw new HttpError(400, 'Xabar kerak');
+
+    // Free-tier quota per feature (counted only when a real AI provider will answer).
+    const feature = body.mode === 'ielts_writing' ? 'writing' : ['ielts_speaking', 'jarvis', 'pronunciation'].includes(body.mode) || body.isAudioPractice ? 'speaking' : 'tutor';
+    if (tutor.activeProvider()) {
+      const qr = quota.consume(u, feature);
+      if (!qr.ok) throw new HttpError(429, qr.limit === 0 ? `Bu imkoniyat hozircha o'chirilgan.` : `Bugungi bepul limit tugadi (${qr.limit} ta). Ertaga qayta urinib ko'ring.`);
+    }
 
     let system = `Siz LinguaFlow ilovasining professional til ustozisiz. O'quvchi o'zbek tilida so'zlashadi va ${L.name} (${L.native}) ni xalqaro sertifikat (IELTS, CEFR, Goethe, TRKI, DELF, DELE) darajasida o'rganmoqchi. `;
     if (body.mode === 'jarvis') {
@@ -875,9 +887,12 @@ Javobni o'qishga qulay, tushunarli va ruhlantiruvchi qilib bering.`;
     }
   });
 
-  const ctx = { db, q, route, content, HttpError, requireUser, requireAdmin, publicUser, awardProgress, lessonStates, logAudit, BADGES, validLang, cleanName };
+  route('GET', '/api/quota', async ({ req }) => ({ usage: quota.usage(requireUser(req).id) }));
+
+  const ctx = { quota, db, q, route, content, HttpError, requireUser, requireAdmin, publicUser, awardProgress, lessonStates, logAudit, BADGES, validLang, cleanName };
   registerGames(ctx);
   registerAdmin(ctx);
+  registerItems(ctx);
 
   // ---------- static ----------
   function serveStatic(req, res, pathname) {

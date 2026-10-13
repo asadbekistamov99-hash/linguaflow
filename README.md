@@ -71,3 +71,21 @@ Kontent birinchi ishga tushganda `src/seed/` dan bazaga ko'chadi, shundan keyin 
 - To'g'ri javoblar mijozga yuborilmaydi; o'yin natijalari server tomonda tekshiriladi va XP cheklangan
 - Productionda HTTPS orqasida ishlating (proksi `X-Forwarded-Proto: https` yuborsa cookie `Secure` bo'ladi)
 - `data/` papkasini zaxiralang (baza + `.secret`)
+
+## Sertifikatlar haqida (muhim)
+
+LinguaFlow bergan sertifikat **ichki tayyorgarlik sertifikati**: u rasmiy IELTS, TOEFL, CEFR, Goethe, DELF, DELE, TORFL va boshqa
+xalqaro imtihon sertifikati emas. Ballar (masalan "IELTS taxminiy 6.5") faqat taxminiy ko'rsatkich. Ilovadagi barcha matnlar shunga mos yozilgan.
+
+## Savollar banki, tekshiruvchilar va AI limitlari (admin panel)
+
+- **Savollar banki** (`/admin` → Savollar banki): imtihon formatidagi savollar til, CEFR darajasi (A1–C2), ko'nikma
+  (lug'at, grammatika, o'qish, eshitish, yozish, gapirish) va imtihon formati bo'yicha belgilanadi.
+  Turlar: `mcq`, `gap`, `tf_ng`, `matching`, `short`, `essay_prompt`, `speaking_prompt`. Qamrov jadvali maqsadga nisbatan
+  nima yetishmayotganini ko'rsatadi (ingliz tili C2 gacha, qolgan tillar B2 gacha).
+- **Tekshiruv oqimi:** qoralama → tekshiruvda → tasdiqlangan / rad etilgan. Tasdiqlangan savol tahrirlansa, qayta qoralamaga qaytadi.
+  Tekshiruvchi o'z savolini o'zi tasdiqlay olmaydi. **Tekshiruvchi** rolini admin Foydalanuvchilar bo'limida beradi va tillarni tanlaydi;
+  tekshiruvchi faqat o'sha tillardagi savollarni ko'radi (boshqa admin sahifalariga kira olmaydi).
+- **Ommaviy import:** JSON massiv (bir martada 500 tagacha), avval "Tekshirish" (dry run), so'ng "Import qilish". Hammasi qoralama bo'lib tushadi.
+- **AI limitlari (bepul rejim):** Sozlamalar → AI limitlari. Har foydalanuvchiga kunlik chegara: AI ustoz, yozishni tekshirish, gapirish
+  (0 = o'chirilgan; adminlarga qo'llanmaydi). Bugungi foydalanish va eng faol foydalanuvchilar ko'rinadi.

@@ -153,11 +153,11 @@
   // ---------- router ----------
   const routes = {
     '/start': renderStart,
-    '/learn': renderLearn, '/exams': renderExams, '/review': renderReview, '/games': renderGames, '/dictionary': renderDictionary,
+    '/learn': renderLearn, '/exams': renderExams, '/review': renderReview, '/games': renderGames, '/practice': renderPractice, '/dictionary': renderDictionary,
     '/tutor': renderTutor, '/leaderboard': renderLeaderboard, '/profile': renderProfile,
   };
   const NAV = [
-    ['/learn', '🏠', "O'rganish"], ['/exams', '🎓', 'Sertifikatlar'], ['/review', '🧠', 'Takrorlash'], ['/games', '🎮', "O'yinlar"], ['/dictionary', '📚', "Lug'at"],
+    ['/learn', '🏠', "O'rganish"], ['/exams', '🎓', 'Sertifikatlar'], ['/review', '🧠', 'Takrorlash'], ['/practice', '📝', 'Mashq'], ['/games', '🎮', "O'yinlar"], ['/dictionary', '📚', "Lug'at"],
     ['/tutor', '🎙️', 'JARVIS Ustoz'], ['/leaderboard', '🏆', 'Reyting'], ['/profile', '👤', 'Profil'],
   ];
   const TABS = ['/learn', '/exams', '/games', '/review', '/profile'];
@@ -744,7 +744,6 @@
       updateSelection();
     }
 
-    refreshGrid();
 
     // Goals
     const goals = [
@@ -856,7 +855,7 @@
         c.classList.toggle('active', isMatch);
       });
     }
-    updateSelection();
+    refreshGrid();
 
     const ctaBar = h('div', { class: 'start-cta-bar' }, ctaBtn, regBtn);
 
@@ -2121,6 +2120,92 @@
         h('div', { class: 'stat-tile' }, h('b', {}, `🔥 ${res.streak}`), h('span', {}, 'Seriya'))),
       badgeList(res.badges),
       h('button', { class: 'btn btn-main btn-block', onclick: () => { closePlayer(); route(); } }, 'Davom etish'))));
+  }
+
+
+  // ---------- exam-style practice (approved item bank) ----------
+  const PRACTICE_SKILLS = [
+    ['reading', '📖', "O'qish"], ['listening', '🎧', 'Eshitish'], ['grammar', '✍️', 'Grammatika'], ['vocab', '🔤', "Lug'at"],
+  ];
+
+  async function renderPractice() {
+    await loadCourse();
+    const lang = S.user.currentLang;
+    const sum = await api('GET', `/api/practice/summary?lang=${lang}`);
+    const count = (skill, level) => sum.counts.filter((c) => c.skill === skill && (!level || c.level === level)).reduce((a, c) => a + c.n, 0);
+    let level = '';
+    const grid = h('div', { class: 'games-grid' });
+    const draw = () => {
+      grid.replaceChildren(...PRACTICE_SKILLS.map(([skill, emoji, title]) => {
+        const n = count(skill, level);
+        return h('div', { class: 'card' },
+          h('div', { style: { fontSize: '2rem' } }, emoji), h('h3', {}, title),
+          h('p', { class: 'muted' }, n ? `${n} ta savol` : 'Hozircha tasdiqlangan savollar yo\'q'),
+          h('button', { class: 'btn btn-main', disabled: !n, onclick: () => startPractice(skill, level) }, 'Boshlash'));
+      }));
+    };
+    const levelBar = h('div', { class: 'toolbar', style: { display: 'flex', gap: '8px', flexWrap: 'wrap', margin: '14px 0' } },
+      ['', ...sum.levels].map((lv) => h('button', { class: 'btn btn-ghost btn-sm', onclick: (e) => { level = lv; levelBar.querySelectorAll('button').forEach((b) => b.classList.remove('btn-main')); e.currentTarget.classList.add('btn-main'); draw(); } }, lv || 'Hammasi')));
+    draw();
+    await shell('/practice', [
+      h('h1', {}, 'Imtihon mashqlari'),
+      h('p', { class: 'lead' }, `${S.course.lang.flag} ${S.course.lang.name}: tekshiruvchilar tasdiqlagan imtihon formatidagi savollar. Kuniga 60 XP gacha.`),
+      levelBar, grid,
+    ], { wide: true });
+  }
+
+  async function startPractice(skill, level) {
+    let sess;
+    try { sess = await api('POST', '/api/practice/start', { lang: S.user.currentLang, skill, level: level || undefined, count: 10 }); }
+    catch (e) { toast(e.message); return; }
+    let i = 0;
+    const stage = h('div', { class: 'card', style: { maxWidth: '760px', margin: '0 auto' } });
+    mount(h('div', { style: { padding: '24px 12px' } }, stage));
+    const next = async () => {
+      if (i >= sess.items.length) return finish();
+      show(sess.items[i]);
+    };
+    const finish = async () => {
+      const r = await api('POST', `/api/practice/${sess.sessionId}/finish`, {}).catch((e) => ({ error: e.message }));
+      if (r.user) S.user = r.user;
+      stage.replaceChildren(
+        h('h2', {}, r.error ? 'Xatolik' : 'Natija'),
+        r.error ? h('p', {}, r.error) : h('p', { class: 'lead' }, `${r.correct}/${r.total} to'g'ri · +${r.xp} XP`),
+        h('button', { class: 'btn btn-main', onclick: () => route() }, 'Orqaga'));
+    };
+    const show = (it) => {
+      const state = { done: false };
+      const fb = h('div', { style: { marginTop: '14px' } });
+      const nextBtn = h('button', { class: 'btn btn-main', style: { display: 'none', marginTop: '14px' }, onclick: () => { i++; next(); } }, i + 1 === sess.items.length ? 'Yakunlash' : 'Keyingisi');
+      const submit = async (answer, mark) => {
+        if (state.done) return;
+        state.done = true;
+        let r;
+        try { r = await api('POST', `/api/practice/${sess.sessionId}/answer`, { itemId: it.id, answer }); }
+        catch (e) { toast(e.message); state.done = false; return; }
+        (r.correct ? sfx.ok : sfx.bad)();
+        if (mark) mark(r);
+        fb.replaceChildren(h('b', { style: { color: r.correct ? 'var(--ok)' : 'var(--bad)' } }, r.correct ? "✓ To'g'ri" : `✗ To'g'ri javob: ${r.answer}`), r.explanation ? h('p', { class: 'muted' }, r.explanation) : null);
+        nextBtn.style.display = '';
+      };
+      const body = [];
+      if (it.passage) body.push(h('div', { class: 'card', style: { background: 'var(--soft)', marginBottom: '14px', whiteSpace: 'pre-wrap', lineHeight: 1.6 }, dir: sess.lang.dir }, it.passage));
+      if (it.speak) body.push(h('button', { class: 'btn btn-ghost', style: { marginBottom: '14px' }, onclick: () => speak(it.speak, sess.lang.tts, { rate: 0.85 }) }, '🔊 Tinglash (qayta tinglash mumkin)'));
+      const prompt = it.question || it.statement || it.text;
+      body.push(h('h3', { dir: sess.lang.dir, style: { marginBottom: '14px' } }, prompt));
+      if (it.type === 'mcq' || it.type === 'tf_ng') {
+        const opts = it.type === 'mcq' ? it.options.map((o, idx) => ({ value: idx, label: o })) : it.options;
+        const btns = opts.map((o, k) => h('button', { class: 'opt', dir: it.type === 'mcq' ? sess.lang.dir : 'ltr', onclick: () => submit(o.value, (r) => { btns[k].classList.add(r.correct ? 'ok' : 'bad'); btns.forEach((b) => { b.disabled = true; }); }) }, h('span', { class: 'k' }, String.fromCharCode(65 + k)), o.label));
+        body.push(h('div', { class: 'opts' }, btns));
+      } else {
+        const inp = h('input', { class: 't-input', dir: sess.lang.dir, autocomplete: 'off', placeholder: 'Javobingiz' });
+        const go = () => inp.value.trim() && submit(inp.value, () => { inp.disabled = true; });
+        inp.addEventListener('keydown', (e) => { if (e.key === 'Enter') go(); });
+        body.push(inp, h('button', { class: 'btn btn-main', style: { marginTop: '10px' }, onclick: go }, 'Tekshirish'));
+      }
+      stage.replaceChildren(h('div', { class: 'muted', style: { marginBottom: '10px' } }, `${i + 1} / ${sess.items.length}`), ...body, fb, nextBtn);
+    };
+    next();
   }
 
   // ---------- games ----------

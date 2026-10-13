@@ -817,3 +817,44 @@ test('import-items CLI validates, dry-runs and is idempotent', () => {
   assert.equal(r.status, 1);
   assert.match(r.stdout, /xato: 1/);
 });
+
+test('practice: only approved items, answers hidden until answered, XP capped, no cross-user access', async () => {
+  const app = await boot();
+  const admin = app.client(); await reg(admin, 'Boss', 'prac@test.uz');
+  const u = app.client(); await reg(u, 'Student', 'prac-s@test.uz');
+  const mk = (skill, type, payload, extra = {}) => admin('POST', '/api/admin/items', { lang: 'en', skill, level: 'B1', type, payload, ...extra });
+  const items = [];
+  for (let i = 0; i < 4; i++) items.push((await mk('reading', 'mcq', { passage: `Text ${i}`, question: `Q${i}?`, options: ['a', 'b', 'c'], answer: 1, explanation_uz: 'Izoh' })).data.id);
+  items.push((await mk('reading', 'tf_ng', { passage: 'P', statement: 'S', answer: 'not_given' })).data.id);
+  items.push((await mk('listening', 'gap', { transcript: 'Secret transcript', text: 'I ___ it.', answers: ['hear'] })).data.id);
+  const draftOnly = (await mk('reading', 'mcq', { question: 'Draft?', options: ['x', 'y'], answer: 0 })).data.id;
+  for (const id of items) for (const status of ['review', 'approved']) assert.equal((await admin('POST', `/api/admin/items/${id}/status`, { status })).status, 200);
+
+  assert.equal((await u('POST', '/api/practice/start', { skill: 'reading' })).status, 200);
+  assert.equal((await u('POST', '/api/practice/start', { skill: 'speaking' })).status, 400);
+  assert.equal((await u('POST', '/api/practice/start', { skill: 'vocab' })).status, 404);
+  const st = (await u('POST', '/api/practice/start', { skill: 'reading', lang: 'en', count: 15 })).data;
+  assert.equal(st.items.length, 5);
+  assert.ok(!st.items.some((i) => i.id === draftOnly));
+  assert.ok(st.items.every((i) => i.answer === undefined && i.answers === undefined && i.explanation_uz === undefined));
+  const ls = (await u('POST', '/api/practice/start', { skill: 'listening' })).data;
+  assert.equal(ls.items[0].speak, 'Secret transcript');
+  assert.equal(ls.items[0].text, 'I ___ it.');
+
+  const intruder = app.client(); await reg(intruder, 'Eve', 'eve@test.uz');
+  assert.equal((await intruder('POST', `/api/practice/${st.sessionId}/answer`, { itemId: st.items[0].id, answer: 0 })).status, 404);
+  const first = st.items[0];
+  const right = first.type === 'tf_ng' ? 'not_given' : 1;
+  const a1 = (await u('POST', `/api/practice/${st.sessionId}/answer`, { itemId: first.id, answer: right })).data;
+  assert.equal(a1.correct, true);
+  assert.equal((await u('POST', `/api/practice/${st.sessionId}/answer`, { itemId: first.id, answer: right })).status, 409);
+  assert.equal((await u('POST', `/api/practice/${st.sessionId}/answer`, { itemId: 999999, answer: 0 })).status, 400);
+  for (const it of st.items.slice(1)) await u('POST', `/api/practice/${st.sessionId}/answer`, { itemId: it.id, answer: it.type === 'tf_ng' ? 'not_given' : 1 });
+  const fin = (await u('POST', `/api/practice/${st.sessionId}/finish`, {})).data;
+  assert.equal(fin.correct, 5);
+  assert.equal(fin.xp, 10);
+  assert.equal((await u('POST', `/api/practice/${st.sessionId}/finish`, {})).status, 404);
+  const sum = (await u('GET', '/api/practice/summary?lang=en')).data;
+  assert.equal(sum.counts.find((c) => c.skill === 'reading' && c.level === 'B1').n, 5);
+  app.close();
+});

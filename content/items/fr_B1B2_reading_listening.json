@@ -1,0 +1,991 @@
+[
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Objet : Week-end à Lyon\n\nSalut Karim,\n\nMerci pour ton invitation ! Je suis très content de venir à Lyon le week-end prochain. Mon train arrive samedi à 10 h 20 à la gare Part-Dieu, mais je préfère prendre le métro pour aller chez toi, donc ne viens pas me chercher. Je voudrais visiter le vieux quartier et goûter la cuisine locale. Ma sœur Nadia aimerait nous rejoindre dimanche midi, si c'est possible. Elle ne mange pas de viande, alors il faudra choisir un restaurant avec des plats végétariens. Pour le soir, j'apporterai un gâteau de chez moi. Réponds-moi vite pour confirmer.\n\nÀ bientôt,\nFarid",
+      "question": "Pourquoi Farid demande-t-il à Karim de ne pas venir à la gare ?",
+      "options": [
+        "Il choisit un autre moyen de transport.",
+        "Son train arrive trop tard dans la nuit.",
+        "Il ne connaît pas l'adresse de Karim.",
+        "Il préfère rester dormir dans le train."
+      ],
+      "answer": 0,
+      "explanation_uz": "Matn: \"je préfère prendre le métro ... ne viens pas me chercher\". Farid metroda borishni afzal ko'radi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Objet : Week-end à Lyon\n\nSalut Karim,\n\nMerci pour ton invitation ! Je suis très content de venir à Lyon le week-end prochain. Mon train arrive samedi à 10 h 20 à la gare Part-Dieu, mais je préfère prendre le métro pour aller chez toi, donc ne viens pas me chercher. Je voudrais visiter le vieux quartier et goûter la cuisine locale. Ma sœur Nadia aimerait nous rejoindre dimanche midi, si c'est possible. Elle ne mange pas de viande, alors il faudra choisir un restaurant avec des plats végétariens. Pour le soir, j'apporterai un gâteau de chez moi. Réponds-moi vite pour confirmer.\n\nÀ bientôt,\nFarid",
+      "question": "Qu'est-ce que Farid veut faire pendant sa visite ?",
+      "options": [
+        "Acheter des vêtements dans les grands magasins.",
+        "Découvrir un ancien quartier et les spécialités de la ville.",
+        "Faire du sport dans les montagnes proches.",
+        "Assister à un concert le samedi soir."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matn: \"visiter le vieux quartier et goûter la cuisine locale\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Objet : Week-end à Lyon\n\nSalut Karim,\n\nMerci pour ton invitation ! Je suis très content de venir à Lyon le week-end prochain. Mon train arrive samedi à 10 h 20 à la gare Part-Dieu, mais je préfère prendre le métro pour aller chez toi, donc ne viens pas me chercher. Je voudrais visiter le vieux quartier et goûter la cuisine locale. Ma sœur Nadia aimerait nous rejoindre dimanche midi, si c'est possible. Elle ne mange pas de viande, alors il faudra choisir un restaurant avec des plats végétariens. Pour le soir, j'apporterai un gâteau de chez moi. Réponds-moi vite pour confirmer.\n\nÀ bientôt,\nFarid",
+      "question": "Pourquoi faut-il bien choisir le restaurant du dimanche ?",
+      "options": [
+        "Le restaurant doit être près de la gare.",
+        "Karim déteste les endroits bruyants.",
+        "Une des personnes invitées est végétarienne.",
+        "Le déjeuner doit être très bon marché."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matn: \"Elle ne mange pas de viande, alors il faudra choisir un restaurant avec des plats végétariens\". Nodiya go'sht yemaydi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Objet : Week-end à Lyon\n\nSalut Karim,\n\nMerci pour ton invitation ! Je suis très content de venir à Lyon le week-end prochain. Mon train arrive samedi à 10 h 20 à la gare Part-Dieu, mais je préfère prendre le métro pour aller chez toi, donc ne viens pas me chercher. Je voudrais visiter le vieux quartier et goûter la cuisine locale. Ma sœur Nadia aimerait nous rejoindre dimanche midi, si c'est possible. Elle ne mange pas de viande, alors il faudra choisir un restaurant avec des plats végétariens. Pour le soir, j'apporterai un gâteau de chez moi. Réponds-moi vite pour confirmer.\n\nÀ bientôt,\nFarid",
+      "statement": "Farid prévoit d'amener quelque chose à manger pour le dîner.",
+      "answer": "true",
+      "explanation_uz": "Matn: \"Pour le soir, j'apporterai un gâteau\" - Farid tort olib keladi, demak to'g'ri."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "La mairie de Bordeaux a annoncé que dix nouvelles pistes cyclables seront construites d'ici la fin de l'année. Selon le maire, de plus en plus d'habitants utilisent le vélo pour aller au travail : leur nombre a augmenté de 30 % en deux ans. Les travaux commenceront en septembre dans le centre-ville et dureront environ trois mois. Pendant cette période, certaines rues seront fermées aux voitures et les bus changeront de trajet. La mairie conseille aux habitants de partir plus tôt le matin. Les commerçants, eux, sont inquiets : ils craignent de perdre des clients. Pour les rassurer, la mairie propose des places de parking gratuites à côté du marché pendant les travaux.",
+      "question": "Combien de temps les travaux vont-ils durer ?",
+      "options": [
+        "Pendant un mois seulement.",
+        "Pendant une année entière.",
+        "Pendant quinze jours.",
+        "Pendant un quart de l'année."
+      ],
+      "answer": 3,
+      "explanation_uz": "Matn: \"dureront environ trois mois\" - uch oy yilning chorak qismi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "La mairie de Bordeaux a annoncé que dix nouvelles pistes cyclables seront construites d'ici la fin de l'année. Selon le maire, de plus en plus d'habitants utilisent le vélo pour aller au travail : leur nombre a augmenté de 30 % en deux ans. Les travaux commenceront en septembre dans le centre-ville et dureront environ trois mois. Pendant cette période, certaines rues seront fermées aux voitures et les bus changeront de trajet. La mairie conseille aux habitants de partir plus tôt le matin. Les commerçants, eux, sont inquiets : ils craignent de perdre des clients. Pour les rassurer, la mairie propose des places de parking gratuites à côté du marché pendant les travaux.",
+      "question": "Pourquoi la ville construit-elle de nouvelles pistes ?",
+      "options": [
+        "Il y a trop de bus dans le centre.",
+        "Les commerçants l'ont demandé.",
+        "Beaucoup de personnes se rendent au travail à bicyclette.",
+        "Le maire veut organiser une course."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matn: \"de plus en plus d'habitants utilisent le vélo pour aller au travail\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "La mairie de Bordeaux a annoncé que dix nouvelles pistes cyclables seront construites d'ici la fin de l'année. Selon le maire, de plus en plus d'habitants utilisent le vélo pour aller au travail : leur nombre a augmenté de 30 % en deux ans. Les travaux commenceront en septembre dans le centre-ville et dureront environ trois mois. Pendant cette période, certaines rues seront fermées aux voitures et les bus changeront de trajet. La mairie conseille aux habitants de partir plus tôt le matin. Les commerçants, eux, sont inquiets : ils craignent de perdre des clients. Pour les rassurer, la mairie propose des places de parking gratuites à côté du marché pendant les travaux.",
+      "question": "De quoi les commerçants ont-ils peur ?",
+      "options": [
+        "De devoir fermer le dimanche.",
+        "D'une augmentation des loyers.",
+        "De voir arriver plus de touristes.",
+        "D'une baisse de leur clientèle."
+      ],
+      "answer": 3,
+      "explanation_uz": "Matn: \"ils craignent de perdre des clients\" - mijozlarni yo'qotishdan qo'rqishadi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "La mairie de Bordeaux a annoncé que dix nouvelles pistes cyclables seront construites d'ici la fin de l'année. Selon le maire, de plus en plus d'habitants utilisent le vélo pour aller au travail : leur nombre a augmenté de 30 % en deux ans. Les travaux commenceront en septembre dans le centre-ville et dureront environ trois mois. Pendant cette période, certaines rues seront fermées aux voitures et les bus changeront de trajet. La mairie conseille aux habitants de partir plus tôt le matin. Les commerçants, eux, sont inquiets : ils craignent de perdre des clients. Pour les rassurer, la mairie propose des places de parking gratuites à côté du marché pendant les travaux.",
+      "statement": "Pendant les travaux, les bus suivront le même itinéraire que d'habitude.",
+      "answer": "false",
+      "explanation_uz": "Matn: \"les bus changeront de trajet\" - avtobuslar marshrutini o'zgartiradi, demak noto'g'ri."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Mon premier mois en colocation\n\nIl y a un mois, j'ai quitté la maison de mes parents pour partager un appartement avec deux étudiants à Lille. Au début, ce n'était pas facile : nous n'avions pas les mêmes habitudes. Théo se couche très tard et fait souvent de la musique, alors que Camille se lève à six heures pour aller à la piscine. Nous avons donc décidé de faire un tableau pour organiser le ménage et les courses. Maintenant, chaque dimanche soir, on prépare un grand repas ensemble. C'est devenu mon moment préféré de la semaine. Le seul problème, c'est le prix du loyer : 380 euros par mois, c'est beaucoup pour mon petit budget. Je cherche un petit travail le week-end.",
+      "question": "Pourquoi les premiers jours ont-ils été compliqués ?",
+      "options": [
+        "Les trois personnes vivaient à des rythmes différents.",
+        "L'appartement était très sale.",
+        "Les parents rendaient souvent visite.",
+        "Il n'y avait pas de cuisine."
+      ],
+      "answer": 0,
+      "explanation_uz": "Matn: \"nous n'avions pas les mêmes habitudes\" - Teo kech yotadi, Kamil erta turadi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Mon premier mois en colocation\n\nIl y a un mois, j'ai quitté la maison de mes parents pour partager un appartement avec deux étudiants à Lille. Au début, ce n'était pas facile : nous n'avions pas les mêmes habitudes. Théo se couche très tard et fait souvent de la musique, alors que Camille se lève à six heures pour aller à la piscine. Nous avons donc décidé de faire un tableau pour organiser le ménage et les courses. Maintenant, chaque dimanche soir, on prépare un grand repas ensemble. C'est devenu mon moment préféré de la semaine. Le seul problème, c'est le prix du loyer : 380 euros par mois, c'est beaucoup pour mon petit budget. Je cherche un petit travail le week-end.",
+      "question": "Comment les colocataires ont-ils résolu leurs problèmes d'organisation ?",
+      "options": [
+        "Ils ont engagé une femme de ménage.",
+        "Ils ont réparti les tâches sur un planning.",
+        "Ils ont changé d'appartement.",
+        "Ils ont acheté une machine à laver."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matn: \"faire un tableau pour organiser le ménage et les courses\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Mon premier mois en colocation\n\nIl y a un mois, j'ai quitté la maison de mes parents pour partager un appartement avec deux étudiants à Lille. Au début, ce n'était pas facile : nous n'avions pas les mêmes habitudes. Théo se couche très tard et fait souvent de la musique, alors que Camille se lève à six heures pour aller à la piscine. Nous avons donc décidé de faire un tableau pour organiser le ménage et les courses. Maintenant, chaque dimanche soir, on prépare un grand repas ensemble. C'est devenu mon moment préféré de la semaine. Le seul problème, c'est le prix du loyer : 380 euros par mois, c'est beaucoup pour mon petit budget. Je cherche un petit travail le week-end.",
+      "question": "Quel moment la semaine l'auteur préfère-t-il ?",
+      "options": [
+        "Le réveil matinal avant la piscine.",
+        "La soirée musicale de Théo.",
+        "Le déjeuner chez ses parents.",
+        "Le dîner collectif de la fin du week-end."
+      ],
+      "answer": 3,
+      "explanation_uz": "Matn: \"chaque dimanche soir, on prépare un grand repas ensemble. C'est devenu mon moment préféré\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Mon premier mois en colocation\n\nIl y a un mois, j'ai quitté la maison de mes parents pour partager un appartement avec deux étudiants à Lille. Au début, ce n'était pas facile : nous n'avions pas les mêmes habitudes. Théo se couche très tard et fait souvent de la musique, alors que Camille se lève à six heures pour aller à la piscine. Nous avons donc décidé de faire un tableau pour organiser le ménage et les courses. Maintenant, chaque dimanche soir, on prépare un grand repas ensemble. C'est devenu mon moment préféré de la semaine. Le seul problème, c'est le prix du loyer : 380 euros par mois, c'est beaucoup pour mon petit budget. Je cherche un petit travail le week-end.",
+      "statement": "L'auteur cherche un appartement moins cher.",
+      "answer": "not_given",
+      "explanation_uz": "Matn: u ijara haqida shikoyat qiladi va \"un petit travail\" qidiradi, lekin yangi kvartira qidirishi haqida hech narsa aytilmagan."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "AVIS AUX HABITANTS DE LA RÉSIDENCE LES TILLEULS\n\nDu lundi 4 au vendredi 8 mars, l'ascenseur du bâtiment B sera en réparation. Les techniciens travailleront de 8 h à 17 h. Pendant cette période, les personnes qui ont des difficultés pour marcher peuvent téléphoner au gardien, M. Lambert, qui les aidera à porter leurs courses. Par ailleurs, l'eau chaude sera coupée mardi matin entre 9 h et 12 h. Nous vous demandons de ne pas laisser de vélos ou de poussettes dans l'escalier, pour des raisons de sécurité. Nous vous remercions de votre patience. Une réunion d'information aura lieu le jeudi 14 mars à 18 h 30 dans la salle commune.\n\nLa direction",
+      "question": "Qui peut demander l'aide de M. Lambert ?",
+      "options": [
+        "Les habitants qui ont du mal à se déplacer.",
+        "Les techniciens de l'ascenseur.",
+        "Les nouveaux habitants du bâtiment.",
+        "Les enfants qui rentrent de l'école."
+      ],
+      "answer": 0,
+      "explanation_uz": "Matn: \"les personnes qui ont des difficultés pour marcher peuvent téléphoner au gardien\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "AVIS AUX HABITANTS DE LA RÉSIDENCE LES TILLEULS\n\nDu lundi 4 au vendredi 8 mars, l'ascenseur du bâtiment B sera en réparation. Les techniciens travailleront de 8 h à 17 h. Pendant cette période, les personnes qui ont des difficultés pour marcher peuvent téléphoner au gardien, M. Lambert, qui les aidera à porter leurs courses. Par ailleurs, l'eau chaude sera coupée mardi matin entre 9 h et 12 h. Nous vous demandons de ne pas laisser de vélos ou de poussettes dans l'escalier, pour des raisons de sécurité. Nous vous remercions de votre patience. Une réunion d'information aura lieu le jeudi 14 mars à 18 h 30 dans la salle commune.\n\nLa direction",
+      "question": "Qu'est-ce que la direction interdit dans l'escalier ?",
+      "options": [
+        "Y faire du bruit après 20 h.",
+        "Y laisser des objets à roues.",
+        "Y fumer.",
+        "Y discuter avec les voisins."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matn: \"ne pas laisser de vélos ou de poussettes dans l'escalier\" - g'ildirakli narsalar."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "AVIS AUX HABITANTS DE LA RÉSIDENCE LES TILLEULS\n\nDu lundi 4 au vendredi 8 mars, l'ascenseur du bâtiment B sera en réparation. Les techniciens travailleront de 8 h à 17 h. Pendant cette période, les personnes qui ont des difficultés pour marcher peuvent téléphoner au gardien, M. Lambert, qui les aidera à porter leurs courses. Par ailleurs, l'eau chaude sera coupée mardi matin entre 9 h et 12 h. Nous vous demandons de ne pas laisser de vélos ou de poussettes dans l'escalier, pour des raisons de sécurité. Nous vous remercions de votre patience. Une réunion d'information aura lieu le jeudi 14 mars à 18 h 30 dans la salle commune.\n\nLa direction",
+      "question": "Quand l'eau chaude sera-t-elle coupée ?",
+      "options": [
+        "Le lundi, toute la journée.",
+        "Le jeudi, en fin de journée.",
+        "Le deuxième jour des travaux, avant midi.",
+        "Le vendredi soir."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matn: \"l'eau chaude sera coupée mardi matin entre 9 h et 12 h\"; ishlar dushanba kuni boshlanadi, seshanba - ikkinchi kun."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "AVIS AUX HABITANTS DE LA RÉSIDENCE LES TILLEULS\n\nDu lundi 4 au vendredi 8 mars, l'ascenseur du bâtiment B sera en réparation. Les techniciens travailleront de 8 h à 17 h. Pendant cette période, les personnes qui ont des difficultés pour marcher peuvent téléphoner au gardien, M. Lambert, qui les aidera à porter leurs courses. Par ailleurs, l'eau chaude sera coupée mardi matin entre 9 h et 12 h. Nous vous demandons de ne pas laisser de vélos ou de poussettes dans l'escalier, pour des raisons de sécurité. Nous vous remercions de votre patience. Une réunion d'information aura lieu le jeudi 14 mars à 18 h 30 dans la salle commune.\n\nLa direction",
+      "statement": "La réunion d'information se tiendra pendant la semaine des travaux.",
+      "answer": "false",
+      "explanation_uz": "Matn: ishlar 4-8 mart, yig'ilish esa \"jeudi 14 mars\" - ishlar haftasidan keyin, demak noto'g'ri."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Bonjour, je voudrais un billet pour Toulouse, s'il vous plaît.\nB: Pour quand ?\nA: Pour demain matin, vers huit heures.\nB: Il y a un train à 7 h 45, mais il est complet. Le suivant part à 9 h 10 et arrive à 12 h 30.\nA: Et le prix ?\nB: Quarante-deux euros en deuxième classe. Avec la carte jeune, vous avez vingt pour cent de réduction.\nA: Parfait, j'ai ma carte. Je prends le train de 9 h 10.\nB: Très bien. Le départ est voie 6. N'oubliez pas de composter votre billet.",
+      "question": "Pourquoi le client ne prend-il pas le premier train ?",
+      "options": [
+        "Il part trop tôt pour lui.",
+        "Il n'y a plus de places libres.",
+        "Il est trop cher.",
+        "Il ne va pas à Toulouse."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matn: \"il est complet\" - birinchi poyezd to'la."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Bonjour, je voudrais un billet pour Toulouse, s'il vous plaît.\nB: Pour quand ?\nA: Pour demain matin, vers huit heures.\nB: Il y a un train à 7 h 45, mais il est complet. Le suivant part à 9 h 10 et arrive à 12 h 30.\nA: Et le prix ?\nB: Quarante-deux euros en deuxième classe. Avec la carte jeune, vous avez vingt pour cent de réduction.\nA: Parfait, j'ai ma carte. Je prends le train de 9 h 10.\nB: Très bien. Le départ est voie 6. N'oubliez pas de composter votre billet.",
+      "text": "Le train de 9 h 10 part de la voie ___.",
+      "answers": [
+        "6",
+        "six"
+      ],
+      "explanation_uz": "Matn: \"Le départ est voie 6\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Bonjour, je voudrais un billet pour Toulouse, s'il vous plaît.\nB: Pour quand ?\nA: Pour demain matin, vers huit heures.\nB: Il y a un train à 7 h 45, mais il est complet. Le suivant part à 9 h 10 et arrive à 12 h 30.\nA: Et le prix ?\nB: Quarante-deux euros en deuxième classe. Avec la carte jeune, vous avez vingt pour cent de réduction.\nA: Parfait, j'ai ma carte. Je prends le train de 9 h 10.\nB: Très bien. Le départ est voie 6. N'oubliez pas de composter votre billet.",
+      "question": "Comment le client peut-il payer moins cher ?",
+      "options": [
+        "En voyageant en première classe.",
+        "En réservant une semaine à l'avance.",
+        "En achetant un billet aller-retour.",
+        "Grâce à un document réservé aux jeunes."
+      ],
+      "answer": 3,
+      "explanation_uz": "Matn: \"Avec la carte jeune, vous avez vingt pour cent de réduction\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Bonjour à tous, voici la météo pour ce week-end. Samedi, le temps sera très agréable dans tout le pays, avec du soleil et des températures autour de vingt-deux degrés. Attention, dimanche, les nuages arriveront par l'ouest dès le matin et il pleuvra sur la Bretagne et la Normandie. Dans le sud, il fera encore chaud, jusqu'à vingt-huit degrés à Marseille, mais le vent sera fort le soir. Lundi, la pluie touchera Paris, et les températures baisseront de dix degrés. Si vous voulez faire une promenade ou un pique-nique, profitez bien de la journée de samedi. Bon week-end !",
+      "question": "Quel jour le beau temps sera-t-il présent partout ?",
+      "options": [
+        "Le premier jour du week-end.",
+        "Le deuxième jour du week-end.",
+        "Le lundi.",
+        "Aucun jour."
+      ],
+      "answer": 0,
+      "explanation_uz": "Matn: \"Samedi, le temps sera très agréable dans tout le pays\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Bonjour à tous, voici la météo pour ce week-end. Samedi, le temps sera très agréable dans tout le pays, avec du soleil et des températures autour de vingt-deux degrés. Attention, dimanche, les nuages arriveront par l'ouest dès le matin et il pleuvra sur la Bretagne et la Normandie. Dans le sud, il fera encore chaud, jusqu'à vingt-huit degrés à Marseille, mais le vent sera fort le soir. Lundi, la pluie touchera Paris, et les températures baisseront de dix degrés. Si vous voulez faire une promenade ou un pique-nique, profitez bien de la journée de samedi. Bon week-end !",
+      "text": "Dimanche, il pleuvra sur la Bretagne et la ___.",
+      "answers": [
+        "Normandie"
+      ],
+      "explanation_uz": "Matn: \"il pleuvra sur la Bretagne et la Normandie\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Bonjour à tous, voici la météo pour ce week-end. Samedi, le temps sera très agréable dans tout le pays, avec du soleil et des températures autour de vingt-deux degrés. Attention, dimanche, les nuages arriveront par l'ouest dès le matin et il pleuvra sur la Bretagne et la Normandie. Dans le sud, il fera encore chaud, jusqu'à vingt-huit degrés à Marseille, mais le vent sera fort le soir. Lundi, la pluie touchera Paris, et les températures baisseront de dix degrés. Si vous voulez faire une promenade ou un pique-nique, profitez bien de la journée de samedi. Bon week-end !",
+      "question": "Que se passera-t-il à Paris lundi ?",
+      "options": [
+        "Il fera très chaud et sec.",
+        "Il y aura beaucoup de vent mais pas de pluie.",
+        "Il pleuvra et il fera beaucoup plus frais.",
+        "Il neigera toute la journée."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matn: \"Lundi, la pluie touchera Paris, et les températures baisseront de dix degrés\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Tu viens déjeuner avec nous ? On va au nouveau restaurant près de la poste.\nB: Je ne sais pas, j'ai beaucoup de travail. Je dois finir un rapport avant deux heures.\nA: Ce n'est pas grave, on peut y aller à midi et demi. Tu auras le temps.\nB: Et c'est cher ?\nA: Non, le menu coûte douze euros, avec une entrée, un plat et un dessert.\nB: D'accord, mais je préfère ne pas prendre de dessert, je suis au régime.\nA: Comme tu veux. Je réserve pour quatre personnes : toi, moi, Sophie et Marc.\nB: Parfait, à midi et demi alors.",
+      "question": "Pourquoi B hésite-t-il à venir ?",
+      "options": [
+        "Il n'aime pas ce restaurant.",
+        "Il n'a pas faim.",
+        "Il a un rendez-vous chez le médecin.",
+        "Il doit terminer un document pour son travail."
+      ],
+      "answer": 3,
+      "explanation_uz": "Matn: \"Je dois finir un rapport avant deux heures\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Tu viens déjeuner avec nous ? On va au nouveau restaurant près de la poste.\nB: Je ne sais pas, j'ai beaucoup de travail. Je dois finir un rapport avant deux heures.\nA: Ce n'est pas grave, on peut y aller à midi et demi. Tu auras le temps.\nB: Et c'est cher ?\nA: Non, le menu coûte douze euros, avec une entrée, un plat et un dessert.\nB: D'accord, mais je préfère ne pas prendre de dessert, je suis au régime.\nA: Comme tu veux. Je réserve pour quatre personnes : toi, moi, Sophie et Marc.\nB: Parfait, à midi et demi alors.",
+      "text": "Le menu coûte ___ euros.",
+      "answers": [
+        "12",
+        "douze"
+      ],
+      "explanation_uz": "Matn: \"le menu coûte douze euros\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Tu viens déjeuner avec nous ? On va au nouveau restaurant près de la poste.\nB: Je ne sais pas, j'ai beaucoup de travail. Je dois finir un rapport avant deux heures.\nA: Ce n'est pas grave, on peut y aller à midi et demi. Tu auras le temps.\nB: Et c'est cher ?\nA: Non, le menu coûte douze euros, avec une entrée, un plat et un dessert.\nB: D'accord, mais je préfère ne pas prendre de dessert, je suis au régime.\nA: Comme tu veux. Je réserve pour quatre personnes : toi, moi, Sophie et Marc.\nB: Parfait, à midi et demi alors.",
+      "question": "Pourquoi B ne prendra-t-il pas de dessert ?",
+      "options": [
+        "Il n'y a pas de dessert au menu.",
+        "Il fait attention à son alimentation.",
+        "Il est allergique au sucre.",
+        "Il n'aura plus assez d'argent."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matn: \"je préfère ne pas prendre de dessert, je suis au régime\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Mesdames et messieurs, bonsoir. Le musée de la Marine fermera ses portes dans quinze minutes. Nous vous prions de bien vouloir vous diriger vers la sortie principale, située au rez-de-chaussée. Les visiteurs qui ont laissé un manteau ou un sac au vestiaire peuvent le récupérer jusqu'à dix-huit heures trente. Nous vous rappelons que le musée est ouvert tous les jours, sauf le mardi, de dix heures à dix-huit heures, et que l'entrée est gratuite le premier dimanche de chaque mois. Nous vous remercions de votre visite et nous espérons vous revoir bientôt. Bonne soirée à tous !",
+      "question": "Que demande-t-on aux visiteurs ?",
+      "options": [
+        "De rester dans leur salle.",
+        "De monter à l'étage.",
+        "De quitter le bâtiment par la porte principale.",
+        "De rendre leur billet à l'accueil."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matn: \"vous diriger vers la sortie principale\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Mesdames et messieurs, bonsoir. Le musée de la Marine fermera ses portes dans quinze minutes. Nous vous prions de bien vouloir vous diriger vers la sortie principale, située au rez-de-chaussée. Les visiteurs qui ont laissé un manteau ou un sac au vestiaire peuvent le récupérer jusqu'à dix-huit heures trente. Nous vous rappelons que le musée est ouvert tous les jours, sauf le mardi, de dix heures à dix-huit heures, et que l'entrée est gratuite le premier dimanche de chaque mois. Nous vous remercions de votre visite et nous espérons vous revoir bientôt. Bonne soirée à tous !",
+      "text": "Le musée est fermé le ___.",
+      "answers": [
+        "mardi"
+      ],
+      "explanation_uz": "Matn: \"ouvert tous les jours, sauf le mardi\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Mesdames et messieurs, bonsoir. Le musée de la Marine fermera ses portes dans quinze minutes. Nous vous prions de bien vouloir vous diriger vers la sortie principale, située au rez-de-chaussée. Les visiteurs qui ont laissé un manteau ou un sac au vestiaire peuvent le récupérer jusqu'à dix-huit heures trente. Nous vous rappelons que le musée est ouvert tous les jours, sauf le mardi, de dix heures à dix-huit heures, et que l'entrée est gratuite le premier dimanche de chaque mois. Nous vous remercions de votre visite et nous espérons vous revoir bientôt. Bonne soirée à tous !",
+      "question": "Dans quel cas ne paie-t-on pas l'entrée ?",
+      "options": [
+        "Un dimanche par mois.",
+        "Tous les mardis.",
+        "Après dix-huit heures.",
+        "Pour les enfants de moins de douze ans."
+      ],
+      "answer": 0,
+      "explanation_uz": "Matn: \"l'entrée est gratuite le premier dimanche de chaque mois\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Le télétravail, une révolution tranquille ?\n\nDepuis la pandémie, le télétravail s'est installé durablement dans le paysage professionnel français. Selon une enquête récente, près d'un salarié sur trois travaille désormais au moins un jour par semaine à distance. Les avantages sont connus : moins de temps perdu dans les transports, une meilleure concentration pour certaines tâches et une plus grande autonomie. Pourtant, des psychologues du travail mettent en garde contre certains effets pervers. L'isolement, d'abord, qui touche surtout les jeunes recrues, privées des échanges informels autour de la machine à café. La frontière entre vie privée et vie professionnelle, ensuite, qui devient floue : beaucoup de télétravailleurs répondent à des courriels tard le soir. Face à ces risques, plusieurs entreprises ont choisi un compromis : deux ou trois jours au bureau, le reste à la maison, avec des règles claires sur les horaires de connexion. Les syndicats, eux, réclament que ce droit à la déconnexion soit inscrit dans la loi et respecté par tous les managers.",
+      "question": "Quelle catégorie de salariés souffre le plus de l'isolement ?",
+      "options": [
+        "Les personnes récemment embauchées.",
+        "Les managers expérimentés.",
+        "Les employés proches de la retraite.",
+        "Les salariés qui vivent en famille."
+      ],
+      "answer": 0,
+      "explanation_uz": "Matn: isolyatsiya \"surtout les jeunes recrues\" - yangi ishga olinganlarga ko'proq ta'sir qiladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Le télétravail, une révolution tranquille ?\n\nDepuis la pandémie, le télétravail s'est installé durablement dans le paysage professionnel français. Selon une enquête récente, près d'un salarié sur trois travaille désormais au moins un jour par semaine à distance. Les avantages sont connus : moins de temps perdu dans les transports, une meilleure concentration pour certaines tâches et une plus grande autonomie. Pourtant, des psychologues du travail mettent en garde contre certains effets pervers. L'isolement, d'abord, qui touche surtout les jeunes recrues, privées des échanges informels autour de la machine à café. La frontière entre vie privée et vie professionnelle, ensuite, qui devient floue : beaucoup de télétravailleurs répondent à des courriels tard le soir. Face à ces risques, plusieurs entreprises ont choisi un compromis : deux ou trois jours au bureau, le reste à la maison, avec des règles claires sur les horaires de connexion. Les syndicats, eux, réclament que ce droit à la déconnexion soit inscrit dans la loi et respecté par tous les managers.",
+      "question": "Quel compromis certaines entreprises ont-elles adopté ?",
+      "options": [
+        "La suppression totale du travail à distance.",
+        "Une alternance entre le domicile et les locaux de la société.",
+        "Un salaire plus élevé pour les télétravailleurs.",
+        "Des bureaux ouverts toute la nuit."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matn: \"deux ou trois jours au bureau, le reste à la maison\" - gibrid ish tartibi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Le télétravail, une révolution tranquille ?\n\nDepuis la pandémie, le télétravail s'est installé durablement dans le paysage professionnel français. Selon une enquête récente, près d'un salarié sur trois travaille désormais au moins un jour par semaine à distance. Les avantages sont connus : moins de temps perdu dans les transports, une meilleure concentration pour certaines tâches et une plus grande autonomie. Pourtant, des psychologues du travail mettent en garde contre certains effets pervers. L'isolement, d'abord, qui touche surtout les jeunes recrues, privées des échanges informels autour de la machine à café. La frontière entre vie privée et vie professionnelle, ensuite, qui devient floue : beaucoup de télétravailleurs répondent à des courriels tard le soir. Face à ces risques, plusieurs entreprises ont choisi un compromis : deux ou trois jours au bureau, le reste à la maison, avec des règles claires sur les horaires de connexion. Les syndicats, eux, réclament que ce droit à la déconnexion soit inscrit dans la loi et respecté par tous les managers.",
+      "question": "Que souhaitent les syndicats ?",
+      "options": [
+        "Une interdiction complète du télétravail.",
+        "Des réunions plus fréquentes au bureau.",
+        "Une protection légale contre les sollicitations en dehors des horaires de travail.",
+        "La création de nouveaux emplois à distance."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matn: \"droit à la déconnexion soit inscrit dans la loi\" - ish vaqtidan tashqari aloqadan qonuniy himoya."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Le télétravail, une révolution tranquille ?\n\nDepuis la pandémie, le télétravail s'est installé durablement dans le paysage professionnel français. Selon une enquête récente, près d'un salarié sur trois travaille désormais au moins un jour par semaine à distance. Les avantages sont connus : moins de temps perdu dans les transports, une meilleure concentration pour certaines tâches et une plus grande autonomie. Pourtant, des psychologues du travail mettent en garde contre certains effets pervers. L'isolement, d'abord, qui touche surtout les jeunes recrues, privées des échanges informels autour de la machine à café. La frontière entre vie privée et vie professionnelle, ensuite, qui devient floue : beaucoup de télétravailleurs répondent à des courriels tard le soir. Face à ces risques, plusieurs entreprises ont choisi un compromis : deux ou trois jours au bureau, le reste à la maison, avec des règles claires sur les horaires de connexion. Les syndicats, eux, réclament que ce droit à la déconnexion soit inscrit dans la loi et respecté par tous les managers.",
+      "statement": "La plupart des salariés français travaillent chez eux à plein temps.",
+      "answer": "false",
+      "explanation_uz": "Matn: \"près d'un salarié sur trois travaille ... au moins un jour par semaine à distance\" - ko'pchilik emas, taxminan uchdan biri, va to'liq vaqt emas."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Objet : Réclamation – commande n° 48215\n\nMadame, Monsieur,\n\nLe 3 octobre, j'ai commandé sur votre site une table de salon en chêne, livraison prévue sous huit jours. Or, le colis n'est arrivé que le 25, soit deux semaines après la date annoncée, sans que personne ne m'ait prévenu. Pire encore, en ouvrant le carton, j'ai constaté qu'un des pieds était fendu. J'ai immédiatement contacté votre service client par téléphone, mais on m'a simplement conseillé de renvoyer le meuble à mes frais, ce qui me paraît inacceptable, étant donné que le défaut ne vient pas de moi. Je vous demande donc soit un remplacement rapide de la table, soit un remboursement intégral, y compris les frais de livraison. À défaut de réponse sous dix jours, je saisirai une association de consommateurs.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\nJulien Moreau",
+      "question": "Quel second problème l'auteur a-t-il rencontré, en plus du retard ?",
+      "options": [
+        "Le prix était supérieur à celui du site.",
+        "La couleur du meuble était différente.",
+        "Le colis contenait un autre article.",
+        "Le produit livré était abîmé."
+      ],
+      "answer": 3,
+      "explanation_uz": "Matn: \"un des pieds était fendu\" - mebelning oyog'i yorilgan, ya'ni buyum shikastlangan."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Objet : Réclamation – commande n° 48215\n\nMadame, Monsieur,\n\nLe 3 octobre, j'ai commandé sur votre site une table de salon en chêne, livraison prévue sous huit jours. Or, le colis n'est arrivé que le 25, soit deux semaines après la date annoncée, sans que personne ne m'ait prévenu. Pire encore, en ouvrant le carton, j'ai constaté qu'un des pieds était fendu. J'ai immédiatement contacté votre service client par téléphone, mais on m'a simplement conseillé de renvoyer le meuble à mes frais, ce qui me paraît inacceptable, étant donné que le défaut ne vient pas de moi. Je vous demande donc soit un remplacement rapide de la table, soit un remboursement intégral, y compris les frais de livraison. À défaut de réponse sous dix jours, je saisirai une association de consommateurs.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\nJulien Moreau",
+      "question": "Qu'est-ce qui irrite l'auteur dans la réponse du service client ?",
+      "options": [
+        "L'employé a raccroché brusquement.",
+        "Le service était fermé le jour de l'appel.",
+        "On lui a proposé de payer lui-même le retour d'un article défectueux.",
+        "On lui a promis un remboursement trop tardif."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matn: \"renvoyer le meuble à mes frais, ce qui me paraît inacceptable\" - nuqsonli buyumni o'z hisobidan qaytarish."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Objet : Réclamation – commande n° 48215\n\nMadame, Monsieur,\n\nLe 3 octobre, j'ai commandé sur votre site une table de salon en chêne, livraison prévue sous huit jours. Or, le colis n'est arrivé que le 25, soit deux semaines après la date annoncée, sans que personne ne m'ait prévenu. Pire encore, en ouvrant le carton, j'ai constaté qu'un des pieds était fendu. J'ai immédiatement contacté votre service client par téléphone, mais on m'a simplement conseillé de renvoyer le meuble à mes frais, ce qui me paraît inacceptable, étant donné que le défaut ne vient pas de moi. Je vous demande donc soit un remplacement rapide de la table, soit un remboursement intégral, y compris les frais de livraison. À défaut de réponse sous dix jours, je saisirai une association de consommateurs.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\nJulien Moreau",
+      "question": "Que fera l'auteur si l'entreprise ne répond pas à temps ?",
+      "options": [
+        "Il cessera de commander en ligne.",
+        "Il se rendra directement au magasin.",
+        "Il laissera un commentaire sur les réseaux sociaux.",
+        "Il demandera l'aide d'un organisme de défense des clients."
+      ],
+      "answer": 3,
+      "explanation_uz": "Matn: \"À défaut de réponse sous dix jours, je saisirai une association de consommateurs\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Objet : Réclamation – commande n° 48215\n\nMadame, Monsieur,\n\nLe 3 octobre, j'ai commandé sur votre site une table de salon en chêne, livraison prévue sous huit jours. Or, le colis n'est arrivé que le 25, soit deux semaines après la date annoncée, sans que personne ne m'ait prévenu. Pire encore, en ouvrant le carton, j'ai constaté qu'un des pieds était fendu. J'ai immédiatement contacté votre service client par téléphone, mais on m'a simplement conseillé de renvoyer le meuble à mes frais, ce qui me paraît inacceptable, étant donné que le défaut ne vient pas de moi. Je vous demande donc soit un remplacement rapide de la table, soit un remboursement intégral, y compris les frais de livraison. À défaut de réponse sous dix jours, je saisirai une association de consommateurs.\n\nVeuillez agréer, Madame, Monsieur, mes salutations distinguées.\n\nJulien Moreau",
+      "statement": "Julien Moreau a déjà téléphoné à l'entreprise pour se plaindre.",
+      "answer": "true",
+      "explanation_uz": "Matn: \"J'ai immédiatement contacté votre service client par téléphone\" - u allaqachon qo'ng'iroq qilgan."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Les abeilles de Paris en pleine forme\n\nParadoxalement, les abeilles se portent mieux en ville qu'à la campagne. C'est le constat d'une étude menée par des chercheurs de l'université de Strasbourg, qui ont suivi pendant trois ans plus de deux cents ruches installées sur des toits parisiens et dans des zones agricoles voisines. Leur production de miel est en moyenne supérieure de 20 % en ville. L'explication tient à la diversité des fleurs : jardins, balcons et parcs offrent de la nourriture de mars à octobre, alors que les grandes cultures céréalières ne fleurissent que quelques semaines et sont souvent traitées avec des pesticides. Les scientifiques invitent toutefois à la prudence. Si les ruches urbaines prospèrent, leur multiplication pourrait provoquer une concurrence avec les abeilles sauvages, plus fragiles et moins visibles. Certains chercheurs plaident donc pour limiter le nombre de ruches par quartier et pour planter davantage d'espèces locales.",
+      "question": "Selon l'étude, pourquoi les abeilles urbaines produisent-elles davantage ?",
+      "options": [
+        "Elles trouvent des ressources florales pendant une longue période.",
+        "Les apiculteurs de la ville sont plus expérimentés.",
+        "Le climat de Paris est plus chaud que celui des campagnes.",
+        "Il y a moins d'insectes concurrents en ville."
+      ],
+      "answer": 0,
+      "explanation_uz": "Matn: shaharda \"de mars à octobre\" oziq-ovqat bor, dalalarda esa ekinlar bir necha hafta gullaydi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Les abeilles de Paris en pleine forme\n\nParadoxalement, les abeilles se portent mieux en ville qu'à la campagne. C'est le constat d'une étude menée par des chercheurs de l'université de Strasbourg, qui ont suivi pendant trois ans plus de deux cents ruches installées sur des toits parisiens et dans des zones agricoles voisines. Leur production de miel est en moyenne supérieure de 20 % en ville. L'explication tient à la diversité des fleurs : jardins, balcons et parcs offrent de la nourriture de mars à octobre, alors que les grandes cultures céréalières ne fleurissent que quelques semaines et sont souvent traitées avec des pesticides. Les scientifiques invitent toutefois à la prudence. Si les ruches urbaines prospèrent, leur multiplication pourrait provoquer une concurrence avec les abeilles sauvages, plus fragiles et moins visibles. Certains chercheurs plaident donc pour limiter le nombre de ruches par quartier et pour planter davantage d'espèces locales.",
+      "question": "Quel risque est évoqué pour l'avenir ?",
+      "options": [
+        "Les ruches pourraient devenir trop chères.",
+        "Les espèces non domestiquées pourraient être désavantagées.",
+        "Le miel de ville pourrait perdre son goût.",
+        "Les pesticides pourraient envahir les parcs."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matn: ko'p uyalar \"concurrence avec les abeilles sauvages\" - yovvoyi asalarilar bilan raqobat."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Les abeilles de Paris en pleine forme\n\nParadoxalement, les abeilles se portent mieux en ville qu'à la campagne. C'est le constat d'une étude menée par des chercheurs de l'université de Strasbourg, qui ont suivi pendant trois ans plus de deux cents ruches installées sur des toits parisiens et dans des zones agricoles voisines. Leur production de miel est en moyenne supérieure de 20 % en ville. L'explication tient à la diversité des fleurs : jardins, balcons et parcs offrent de la nourriture de mars à octobre, alors que les grandes cultures céréalières ne fleurissent que quelques semaines et sont souvent traitées avec des pesticides. Les scientifiques invitent toutefois à la prudence. Si les ruches urbaines prospèrent, leur multiplication pourrait provoquer une concurrence avec les abeilles sauvages, plus fragiles et moins visibles. Certains chercheurs plaident donc pour limiter le nombre de ruches par quartier et pour planter davantage d'espèces locales.",
+      "question": "Que proposent certains chercheurs ?",
+      "options": [
+        "Supprimer les ruches des toits.",
+        "Importer des abeilles étrangères.",
+        "Installer davantage de ruches dans les champs de céréales.",
+        "Encadrer le nombre de ruches et favoriser la flore du pays."
+      ],
+      "answer": 3,
+      "explanation_uz": "Matn: \"limiter le nombre de ruches par quartier et ... planter davantage d'espèces locales\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Les abeilles de Paris en pleine forme\n\nParadoxalement, les abeilles se portent mieux en ville qu'à la campagne. C'est le constat d'une étude menée par des chercheurs de l'université de Strasbourg, qui ont suivi pendant trois ans plus de deux cents ruches installées sur des toits parisiens et dans des zones agricoles voisines. Leur production de miel est en moyenne supérieure de 20 % en ville. L'explication tient à la diversité des fleurs : jardins, balcons et parcs offrent de la nourriture de mars à octobre, alors que les grandes cultures céréalières ne fleurissent que quelques semaines et sont souvent traitées avec des pesticides. Les scientifiques invitent toutefois à la prudence. Si les ruches urbaines prospèrent, leur multiplication pourrait provoquer une concurrence avec les abeilles sauvages, plus fragiles et moins visibles. Certains chercheurs plaident donc pour limiter le nombre de ruches par quartier et pour planter davantage d'espèces locales.",
+      "statement": "La plupart des ruches parisiennes de l'étude appartiennent à des restaurants.",
+      "answer": "not_given",
+      "explanation_uz": "Matn: uyalar tomlarda joylashgani aytiladi, lekin ularning egalari haqida hech narsa aytilmagan."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Apprendre une langue à trente ans : mon expérience\n\nQuand j'ai décidé d'apprendre l'espagnol à trente ans, tout le monde m'a dit que j'étais trop âgé. Pourtant, après deux ans, je me débrouille plutôt bien. Mon secret n'est pas un don particulier, mais une routine : vingt minutes chaque matin, sans exception. J'ai vite compris que les longues séances du week-end ne servaient à rien, car j'oubliais presque tout d'une semaine à l'autre. Par ailleurs, j'ai cessé de craindre l'erreur. Au début, je n'osais pas parler avec mes collègues mexicains de peur d'être ridicule ; aujourd'hui, je fais des fautes tous les jours et personne ne s'en offusque. Certes, mon accent reste loin d'être parfait et j'ai encore du mal à comprendre les films sans sous-titres. Mais j'ai appris que la régularité compte davantage que le talent, et que les adultes disposent d'un atout que les enfants n'ont pas : la motivation.",
+      "question": "Quel est, selon l'auteur, le principal facteur de sa réussite ?",
+      "options": [
+        "Une pratique brève mais quotidienne.",
+        "Un talent naturel pour les langues.",
+        "Des cours intensifs le samedi.",
+        "Un séjour prolongé au Mexique."
+      ],
+      "answer": 0,
+      "explanation_uz": "Matn: \"une routine : vingt minutes chaque matin, sans exception\" - har kuni qisqa mashq."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Apprendre une langue à trente ans : mon expérience\n\nQuand j'ai décidé d'apprendre l'espagnol à trente ans, tout le monde m'a dit que j'étais trop âgé. Pourtant, après deux ans, je me débrouille plutôt bien. Mon secret n'est pas un don particulier, mais une routine : vingt minutes chaque matin, sans exception. J'ai vite compris que les longues séances du week-end ne servaient à rien, car j'oubliais presque tout d'une semaine à l'autre. Par ailleurs, j'ai cessé de craindre l'erreur. Au début, je n'osais pas parler avec mes collègues mexicains de peur d'être ridicule ; aujourd'hui, je fais des fautes tous les jours et personne ne s'en offusque. Certes, mon accent reste loin d'être parfait et j'ai encore du mal à comprendre les films sans sous-titres. Mais j'ai appris que la régularité compte davantage que le talent, et que les adultes disposent d'un atout que les enfants n'ont pas : la motivation.",
+      "question": "Pourquoi les longues séances du week-end étaient-elles inefficaces ?",
+      "options": [
+        "Elles étaient trop coûteuses.",
+        "Les connaissances ne restaient pas en mémoire.",
+        "Elles fatiguaient trop ses collègues.",
+        "Elles ne comprenaient pas de conversation."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matn: \"j'oubliais presque tout d'une semaine à l'autre\" - bir haftadan keyin deyarli hammasini unutardi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Apprendre une langue à trente ans : mon expérience\n\nQuand j'ai décidé d'apprendre l'espagnol à trente ans, tout le monde m'a dit que j'étais trop âgé. Pourtant, après deux ans, je me débrouille plutôt bien. Mon secret n'est pas un don particulier, mais une routine : vingt minutes chaque matin, sans exception. J'ai vite compris que les longues séances du week-end ne servaient à rien, car j'oubliais presque tout d'une semaine à l'autre. Par ailleurs, j'ai cessé de craindre l'erreur. Au début, je n'osais pas parler avec mes collègues mexicains de peur d'être ridicule ; aujourd'hui, je fais des fautes tous les jours et personne ne s'en offusque. Certes, mon accent reste loin d'être parfait et j'ai encore du mal à comprendre les films sans sous-titres. Mais j'ai appris que la régularité compte davantage que le talent, et que les adultes disposent d'un atout que les enfants n'ont pas : la motivation.",
+      "question": "Quelle activité reste encore difficile pour l'auteur ?",
+      "options": [
+        "Parler avec ses collègues.",
+        "Lire un journal.",
+        "Suivre un film sans aide écrite.",
+        "Écrire un courriel court."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matn: \"j'ai encore du mal à comprendre les films sans sous-titres\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Apprendre une langue à trente ans : mon expérience\n\nQuand j'ai décidé d'apprendre l'espagnol à trente ans, tout le monde m'a dit que j'étais trop âgé. Pourtant, après deux ans, je me débrouille plutôt bien. Mon secret n'est pas un don particulier, mais une routine : vingt minutes chaque matin, sans exception. J'ai vite compris que les longues séances du week-end ne servaient à rien, car j'oubliais presque tout d'une semaine à l'autre. Par ailleurs, j'ai cessé de craindre l'erreur. Au début, je n'osais pas parler avec mes collègues mexicains de peur d'être ridicule ; aujourd'hui, je fais des fautes tous les jours et personne ne s'en offusque. Certes, mon accent reste loin d'être parfait et j'ai encore du mal à comprendre les films sans sous-titres. Mais j'ai appris que la régularité compte davantage que le talent, et que les adultes disposent d'un atout que les enfants n'ont pas : la motivation.",
+      "statement": "L'auteur pense que la motivation est un avantage pour les adultes.",
+      "answer": "true",
+      "explanation_uz": "Matn: \"les adultes disposent d'un atout que les enfants n'ont pas : la motivation\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Madame Roche, vous avez lancé une association pour encourager le vélo au travail. Pourquoi ?\nB: Parce que beaucoup de gens hésitent par peur du danger ou de la sueur en arrivant au bureau. Nous organisons donc des formations et nous négocions avec les entreprises l'installation de douches et de garages à vélos.\nA: Et les résultats ?\nB: Dans les sociétés partenaires, la part des cyclistes est passée de cinq à dix-huit pour cent en deux ans. Ce n'est pas encore suffisant, mais c'est encourageant.\nA: Quel est le principal obstacle aujourd'hui ?\nB: Sans doute le manque de pistes sécurisées en périphérie.",
+      "question": "Selon Mme Roche, qu'est-ce qui décourage certains salariés ?",
+      "options": [
+        "Le prix élevé des vélos.",
+        "Des craintes liées à la sécurité et au confort.",
+        "L'interdiction de la part des patrons.",
+        "La longueur des journées de travail."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matn: \"peur du danger ou de la sueur en arrivant au bureau\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Madame Roche, vous avez lancé une association pour encourager le vélo au travail. Pourquoi ?\nB: Parce que beaucoup de gens hésitent par peur du danger ou de la sueur en arrivant au bureau. Nous organisons donc des formations et nous négocions avec les entreprises l'installation de douches et de garages à vélos.\nA: Et les résultats ?\nB: Dans les sociétés partenaires, la part des cyclistes est passée de cinq à dix-huit pour cent en deux ans. Ce n'est pas encore suffisant, mais c'est encourageant.\nA: Quel est le principal obstacle aujourd'hui ?\nB: Sans doute le manque de pistes sécurisées en périphérie.",
+      "text": "Dans les entreprises partenaires, la part des cyclistes est passée de cinq à ___ pour cent.",
+      "answers": [
+        "18",
+        "dix-huit"
+      ],
+      "explanation_uz": "Matn: \"de cinq à dix-huit pour cent en deux ans\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Madame Roche, vous avez lancé une association pour encourager le vélo au travail. Pourquoi ?\nB: Parce que beaucoup de gens hésitent par peur du danger ou de la sueur en arrivant au bureau. Nous organisons donc des formations et nous négocions avec les entreprises l'installation de douches et de garages à vélos.\nA: Et les résultats ?\nB: Dans les sociétés partenaires, la part des cyclistes est passée de cinq à dix-huit pour cent en deux ans. Ce n'est pas encore suffisant, mais c'est encourageant.\nA: Quel est le principal obstacle aujourd'hui ?\nB: Sans doute le manque de pistes sécurisées en périphérie.",
+      "question": "Quel est le principal obstacle actuel ?",
+      "options": [
+        "Le manque de douches dans les entreprises.",
+        "Le désintérêt des jeunes.",
+        "Le coût des formations.",
+        "L'insuffisance d'aménagements sûrs hors du centre."
+      ],
+      "answer": 3,
+      "explanation_uz": "Matn: \"le manque de pistes sécurisées en périphérie\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Bienvenue au château de Chambord. Avant de commencer la visite, quelques informations utiles. Ce château a été construit à partir de 1519 à la demande de François Ier, qui voulait un pavillon de chasse impressionnant plutôt qu'une véritable résidence. D'ailleurs, il n'y a séjourné que quelques semaines au total. L'architecture est célèbre pour son escalier à double révolution : deux spirales s'entrelacent de sorte que deux personnes peuvent monter sans jamais se croiser. Certains historiens pensent que Léonard de Vinci en a inspiré le dessin, mais aucun document ne le prouve formellement. Nous allons maintenant commencer par les cuisines. Merci de rester groupés et de ne pas utiliser de flash.",
+      "question": "Pourquoi François Ier a-t-il fait construire ce château ?",
+      "options": [
+        "Pour disposer d'un lieu prestigieux dédié à la chasse.",
+        "Pour y vivre toute l'année.",
+        "Pour y accueillir des artistes italiens.",
+        "Pour défendre la région contre des attaques."
+      ],
+      "answer": 0,
+      "explanation_uz": "Matn: \"un pavillon de chasse impressionnant plutôt qu'une véritable résidence\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Bienvenue au château de Chambord. Avant de commencer la visite, quelques informations utiles. Ce château a été construit à partir de 1519 à la demande de François Ier, qui voulait un pavillon de chasse impressionnant plutôt qu'une véritable résidence. D'ailleurs, il n'y a séjourné que quelques semaines au total. L'architecture est célèbre pour son escalier à double révolution : deux spirales s'entrelacent de sorte que deux personnes peuvent monter sans jamais se croiser. Certains historiens pensent que Léonard de Vinci en a inspiré le dessin, mais aucun document ne le prouve formellement. Nous allons maintenant commencer par les cuisines. Merci de rester groupés et de ne pas utiliser de flash.",
+      "text": "Le château a été construit à partir de ___.",
+      "answers": [
+        "1519"
+      ],
+      "explanation_uz": "Matn: \"construit à partir de 1519\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Bienvenue au château de Chambord. Avant de commencer la visite, quelques informations utiles. Ce château a été construit à partir de 1519 à la demande de François Ier, qui voulait un pavillon de chasse impressionnant plutôt qu'une véritable résidence. D'ailleurs, il n'y a séjourné que quelques semaines au total. L'architecture est célèbre pour son escalier à double révolution : deux spirales s'entrelacent de sorte que deux personnes peuvent monter sans jamais se croiser. Certains historiens pensent que Léonard de Vinci en a inspiré le dessin, mais aucun document ne le prouve formellement. Nous allons maintenant commencer par les cuisines. Merci de rester groupés et de ne pas utiliser de flash.",
+      "question": "Que dit le guide à propos de Léonard de Vinci ?",
+      "options": [
+        "Il a dirigé tous les travaux.",
+        "Il a vécu dans le château.",
+        "Son influence est possible mais non démontrée.",
+        "Il n'a jamais visité la France."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matn: \"Certains historiens pensent ... mais aucun document ne le prouve formellement\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Alors, tu as finalement donné ta démission ?\nB: Oui, vendredi dernier. Après huit ans dans la banque, j'avais besoin d'autre chose.\nA: Tu n'as pas peur ? Quitter un salaire stable pour ouvrir une boulangerie, c'est un sacré pari.\nB: Si, bien sûr. Mais j'ai suivi une formation de six mois et j'ai trouvé un local en centre-ville à un loyer raisonnable. Et puis, mon frère, qui est pâtissier, me donne un coup de main au début.\nA: Et tes parents, qu'en pensent-ils ?\nB: Ma mère est enthousiaste, mon père beaucoup moins. Il trouve que c'est trop risqué.",
+      "question": "Pourquoi B a-t-il quitté son emploi ?",
+      "options": [
+        "Il a été licencié par sa banque.",
+        "Il a hérité d'une boulangerie.",
+        "Il a déménagé dans une autre ville.",
+        "Il voulait changer d'activité après de longues années dans un même secteur."
+      ],
+      "answer": 3,
+      "explanation_uz": "Matn: \"Après huit ans dans la banque, j'avais besoin d'autre chose\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Alors, tu as finalement donné ta démission ?\nB: Oui, vendredi dernier. Après huit ans dans la banque, j'avais besoin d'autre chose.\nA: Tu n'as pas peur ? Quitter un salaire stable pour ouvrir une boulangerie, c'est un sacré pari.\nB: Si, bien sûr. Mais j'ai suivi une formation de six mois et j'ai trouvé un local en centre-ville à un loyer raisonnable. Et puis, mon frère, qui est pâtissier, me donne un coup de main au début.\nA: Et tes parents, qu'en pensent-ils ?\nB: Ma mère est enthousiaste, mon père beaucoup moins. Il trouve que c'est trop risqué.",
+      "text": "B a travaillé ___ ans dans la banque.",
+      "answers": [
+        "8",
+        "huit"
+      ],
+      "explanation_uz": "Matn: \"Après huit ans dans la banque\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Alors, tu as finalement donné ta démission ?\nB: Oui, vendredi dernier. Après huit ans dans la banque, j'avais besoin d'autre chose.\nA: Tu n'as pas peur ? Quitter un salaire stable pour ouvrir une boulangerie, c'est un sacré pari.\nB: Si, bien sûr. Mais j'ai suivi une formation de six mois et j'ai trouvé un local en centre-ville à un loyer raisonnable. Et puis, mon frère, qui est pâtissier, me donne un coup de main au début.\nA: Et tes parents, qu'en pensent-ils ?\nB: Ma mère est enthousiaste, mon père beaucoup moins. Il trouve que c'est trop risqué.",
+      "question": "Comment réagit le père de B ?",
+      "options": [
+        "Il propose de financer la boulangerie.",
+        "Il redoute les dangers financiers du projet.",
+        "Il est ravi de cette décision.",
+        "Il veut travailler avec son fils."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matn: \"mon père beaucoup moins. Il trouve que c'est trop risqué\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Dans notre chronique santé, parlons du sommeil. Les spécialistes recommandent entre sept et neuf heures par nuit pour un adulte, or un Français sur trois dort moins de six heures en semaine. Les conséquences ne se limitent pas à la fatigue : le manque de sommeil affaiblit la mémoire, augmente l'irritabilité et favorise la prise de poids. Pour mieux dormir, les médecins conseillent de se coucher à heure fixe, d'éviter les écrans dans l'heure qui précède et de ne pas boire de café après quinze heures. Contrairement à une idée reçue, le sport tard le soir n'est pas forcément nuisible, à condition de ne pas s'entraîner juste avant de dormir.",
+      "question": "Quel constat est fait à propos des Français ?",
+      "options": [
+        "Presque tous dorment plus de neuf heures.",
+        "Ils se couchent tous à heure fixe.",
+        "Une part importante d'entre eux dort insuffisamment.",
+        "Ils boivent moins de café qu'avant."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matn: \"un Français sur trois dort moins de six heures\", tavsiya esa 7-9 soat."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Dans notre chronique santé, parlons du sommeil. Les spécialistes recommandent entre sept et neuf heures par nuit pour un adulte, or un Français sur trois dort moins de six heures en semaine. Les conséquences ne se limitent pas à la fatigue : le manque de sommeil affaiblit la mémoire, augmente l'irritabilité et favorise la prise de poids. Pour mieux dormir, les médecins conseillent de se coucher à heure fixe, d'éviter les écrans dans l'heure qui précède et de ne pas boire de café après quinze heures. Contrairement à une idée reçue, le sport tard le soir n'est pas forcément nuisible, à condition de ne pas s'entraîner juste avant de dormir.",
+      "text": "Il est conseillé de ne pas boire de café après ___ heures.",
+      "answers": [
+        "15",
+        "quinze"
+      ],
+      "explanation_uz": "Matn: \"ne pas boire de café après quinze heures\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Dans notre chronique santé, parlons du sommeil. Les spécialistes recommandent entre sept et neuf heures par nuit pour un adulte, or un Français sur trois dort moins de six heures en semaine. Les conséquences ne se limitent pas à la fatigue : le manque de sommeil affaiblit la mémoire, augmente l'irritabilité et favorise la prise de poids. Pour mieux dormir, les médecins conseillent de se coucher à heure fixe, d'éviter les écrans dans l'heure qui précède et de ne pas boire de café après quinze heures. Contrairement à une idée reçue, le sport tard le soir n'est pas forcément nuisible, à condition de ne pas s'entraîner juste avant de dormir.",
+      "question": "Que dit la chronique sur le sport en soirée ?",
+      "options": [
+        "Il est acceptable s'il ne se pratique pas juste avant le coucher.",
+        "Il est toujours à éviter.",
+        "Il remplace plusieurs heures de sommeil.",
+        "Il est recommandé exactement avant de dormir."
+      ],
+      "answer": 0,
+      "explanation_uz": "Matn: \"n'est pas forcément nuisible, à condition de ne pas s'entraîner juste avant de dormir\"."
+    }
+  }
+]

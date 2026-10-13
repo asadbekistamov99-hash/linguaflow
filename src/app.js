@@ -13,6 +13,7 @@ const tutor = require('./tutor');
 const registerGames = require('./games');
 const registerAdmin = require('./admin');
 const registerItems = require('./items');
+const registerPractice = require('./practice');
 const { createQuota } = require('./quota');
 const { STAGES, buildMockExam } = require('./curriculum');
 const { generateJarvisReply, generatePronunciationFeedback } = require('./jarvis');
@@ -893,6 +894,7 @@ Javobni o'qishga qulay, tushunarli va ruhlantiruvchi qilib bering.`;
   registerGames(ctx);
   registerAdmin(ctx);
   registerItems(ctx);
+  registerPractice(ctx);
 
   // ---------- static ----------
   function serveStatic(req, res, pathname) {

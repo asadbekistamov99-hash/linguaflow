@@ -1,0 +1,991 @@
+[
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Liebe Katrin,\n\nwie geht es dir? Ich schreibe dir, weil ich nächste Woche in Hamburg bin und dich gern besuchen würde. Mein Zug kommt am Dienstag um 14.20 Uhr am Hauptbahnhof an. Leider muss ich schon am Mittwochmorgen wieder zurückfahren, weil ich einen wichtigen Termin bei meiner Firma habe. Hast du am Dienstagabend Zeit? Wir könnten zusammen essen gehen. Ich habe gehört, dass es in deiner Nähe ein neues italienisches Restaurant gibt. Wenn du lieber zu Hause kochen möchtest, bringe ich einen Nachtisch mit. Übernachten möchte ich im Hotel, du musst dir also keine Sorgen machen. Schreib mir bitte kurz, ob es bei dir passt.\n\nLiebe Grüße\nJonas",
+      "question": "Warum muss Jonas am Mittwochmorgen wieder abreisen?",
+      "options": [
+        "Er fühlt sich nicht gut.",
+        "Er hat einen beruflichen Termin.",
+        "Das Hotel ist dann ausgebucht.",
+        "Katrin hat am Mittwoch keine Zeit."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: «ich einen wichtigen Termin bei meiner Firma habe» – Jonas ishdagi muhim uchrashuv sababli qaytadi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Liebe Katrin,\n\nwie geht es dir? Ich schreibe dir, weil ich nächste Woche in Hamburg bin und dich gern besuchen würde. Mein Zug kommt am Dienstag um 14.20 Uhr am Hauptbahnhof an. Leider muss ich schon am Mittwochmorgen wieder zurückfahren, weil ich einen wichtigen Termin bei meiner Firma habe. Hast du am Dienstagabend Zeit? Wir könnten zusammen essen gehen. Ich habe gehört, dass es in deiner Nähe ein neues italienisches Restaurant gibt. Wenn du lieber zu Hause kochen möchtest, bringe ich einen Nachtisch mit. Übernachten möchte ich im Hotel, du musst dir also keine Sorgen machen. Schreib mir bitte kurz, ob es bei dir passt.\n\nLiebe Grüße\nJonas",
+      "question": "Wo wird Jonas in Hamburg schlafen?",
+      "options": [
+        "Bei Katrin zu Hause",
+        "Bei seiner Familie",
+        "In einem Hotel",
+        "In einer Jugendherberge"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: «Übernachten möchte ich im Hotel» – u mehmonxonada tunaydi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Liebe Katrin,\n\nwie geht es dir? Ich schreibe dir, weil ich nächste Woche in Hamburg bin und dich gern besuchen würde. Mein Zug kommt am Dienstag um 14.20 Uhr am Hauptbahnhof an. Leider muss ich schon am Mittwochmorgen wieder zurückfahren, weil ich einen wichtigen Termin bei meiner Firma habe. Hast du am Dienstagabend Zeit? Wir könnten zusammen essen gehen. Ich habe gehört, dass es in deiner Nähe ein neues italienisches Restaurant gibt. Wenn du lieber zu Hause kochen möchtest, bringe ich einen Nachtisch mit. Übernachten möchte ich im Hotel, du musst dir also keine Sorgen machen. Schreib mir bitte kurz, ob es bei dir passt.\n\nLiebe Grüße\nJonas",
+      "question": "Was passiert, wenn Katrin lieber zu Hause essen möchte?",
+      "options": [
+        "Jonas bringt etwas Süßes mit.",
+        "Jonas kocht für sie.",
+        "Jonas bestellt eine Pizza.",
+        "Jonas bringt Getränke mit."
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: «bringe ich einen Nachtisch mit» – Nachtisch shirinlik degani."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Liebe Katrin,\n\nwie geht es dir? Ich schreibe dir, weil ich nächste Woche in Hamburg bin und dich gern besuchen würde. Mein Zug kommt am Dienstag um 14.20 Uhr am Hauptbahnhof an. Leider muss ich schon am Mittwochmorgen wieder zurückfahren, weil ich einen wichtigen Termin bei meiner Firma habe. Hast du am Dienstagabend Zeit? Wir könnten zusammen essen gehen. Ich habe gehört, dass es in deiner Nähe ein neues italienisches Restaurant gibt. Wenn du lieber zu Hause kochen möchtest, bringe ich einen Nachtisch mit. Übernachten möchte ich im Hotel, du musst dir also keine Sorgen machen. Schreib mir bitte kurz, ob es bei dir passt.\n\nLiebe Grüße\nJonas",
+      "statement": "Katrin wohnt schon seit vielen Jahren in Hamburg.",
+      "answer": "not_given",
+      "explanation_uz": "Matnda Katrin Gamburgda qancha vaqtdan beri yashashi haqida hech narsa aytilmagan."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "In Freiburg eröffnet am 1. April ein neues Fahrradparkhaus am Bahnhof. Das Gebäude hat Platz für 1.000 Fahrräder und ist rund um die Uhr geöffnet. In den ersten drei Monaten ist das Parken kostenlos, danach zahlen die Nutzer einen Euro pro Woche. Bürgermeisterin Anna Weber sagt, dass immer mehr Menschen mit dem Rad zur Arbeit fahren und deshalb dringend mehr sichere Abstellplätze nötig sind. Im Parkhaus gibt es außerdem eine kleine Werkstatt, in der man Reifen aufpumpen und einfache Reparaturen machen kann. Das Gebäude hat rund vier Millionen Euro gekostet. Die Stadt plant, bis 2027 zwei weitere Parkhäuser zu bauen.",
+      "question": "Wann kann man das Fahrradparkhaus benutzen?",
+      "options": [
+        "Nur tagsüber",
+        "Nur an Werktagen",
+        "Nur bis Mitternacht",
+        "Zu jeder Tages- und Nachtzeit"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: «rund um die Uhr geöffnet» – to'xtovsiz, kechayu kunduz ochiq."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "In Freiburg eröffnet am 1. April ein neues Fahrradparkhaus am Bahnhof. Das Gebäude hat Platz für 1.000 Fahrräder und ist rund um die Uhr geöffnet. In den ersten drei Monaten ist das Parken kostenlos, danach zahlen die Nutzer einen Euro pro Woche. Bürgermeisterin Anna Weber sagt, dass immer mehr Menschen mit dem Rad zur Arbeit fahren und deshalb dringend mehr sichere Abstellplätze nötig sind. Im Parkhaus gibt es außerdem eine kleine Werkstatt, in der man Reifen aufpumpen und einfache Reparaturen machen kann. Das Gebäude hat rund vier Millionen Euro gekostet. Die Stadt plant, bis 2027 zwei weitere Parkhäuser zu bauen.",
+      "question": "Warum braucht die Stadt laut der Bürgermeisterin mehr Abstellplätze?",
+      "options": [
+        "Weil viele Berufstätige mit dem Fahrrad fahren.",
+        "Weil es zu viele Touristen gibt.",
+        "Weil Autos in der Stadt verboten sind.",
+        "Weil der Bahnhof umgebaut wird."
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: «immer mehr Menschen mit dem Rad zur Arbeit fahren» – ishga velosipedda boradiganlar ko'paymoqda."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "In Freiburg eröffnet am 1. April ein neues Fahrradparkhaus am Bahnhof. Das Gebäude hat Platz für 1.000 Fahrräder und ist rund um die Uhr geöffnet. In den ersten drei Monaten ist das Parken kostenlos, danach zahlen die Nutzer einen Euro pro Woche. Bürgermeisterin Anna Weber sagt, dass immer mehr Menschen mit dem Rad zur Arbeit fahren und deshalb dringend mehr sichere Abstellplätze nötig sind. Im Parkhaus gibt es außerdem eine kleine Werkstatt, in der man Reifen aufpumpen und einfache Reparaturen machen kann. Das Gebäude hat rund vier Millionen Euro gekostet. Die Stadt plant, bis 2027 zwei weitere Parkhäuser zu bauen.",
+      "question": "Was kann man in der kleinen Werkstatt machen?",
+      "options": [
+        "Fahrräder mieten",
+        "Neue Reifen kaufen",
+        "Kleine Reparaturen am Rad erledigen",
+        "Fahrradkurse besuchen"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: «einfache Reparaturen machen» – oddiy ta'mirlash mumkin."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "In Freiburg eröffnet am 1. April ein neues Fahrradparkhaus am Bahnhof. Das Gebäude hat Platz für 1.000 Fahrräder und ist rund um die Uhr geöffnet. In den ersten drei Monaten ist das Parken kostenlos, danach zahlen die Nutzer einen Euro pro Woche. Bürgermeisterin Anna Weber sagt, dass immer mehr Menschen mit dem Rad zur Arbeit fahren und deshalb dringend mehr sichere Abstellplätze nötig sind. Im Parkhaus gibt es außerdem eine kleine Werkstatt, in der man Reifen aufpumpen und einfache Reparaturen machen kann. Das Gebäude hat rund vier Millionen Euro gekostet. Die Stadt plant, bis 2027 zwei weitere Parkhäuser zu bauen.",
+      "statement": "Es sollen noch weitere Fahrradparkhäuser in der Stadt entstehen.",
+      "answer": "true",
+      "explanation_uz": "Matnda: «bis 2027 zwei weitere Parkhäuser zu bauen» – yana ikkita bino rejalashtirilgan."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Seit sechs Monaten lerne ich Deutsch, und ich muss sagen: Es ist schwieriger, als ich gedacht habe! Besonders die Artikel machen mich verrückt. Warum heißt es „der Tisch“, aber „die Lampe“? Anfangs habe ich versucht, alle Wörter einfach auswendig zu lernen. Das hat nicht gut funktioniert. Jetzt schreibe ich jedes neue Wort mit dem Artikel auf eine Karte und hänge die Karten in meiner Wohnung auf. Auf dem Kühlschrank hängt „der Kühlschrank“, an der Tür „die Tür“. Außerdem höre ich jeden Abend zwanzig Minuten einen deutschen Podcast, auch wenn ich nicht alles verstehe. Meine Lehrerin sagt, dass ich dadurch viel schneller ein Gefühl für die Sprache bekomme. Im Sommer möchte ich zum ersten Mal nach Österreich reisen und dort nur Deutsch sprechen.",
+      "question": "Was fällt dem Schreiber beim Deutschlernen besonders schwer?",
+      "options": [
+        "Die Aussprache schwieriger Wörter",
+        "Das Schreiben langer Briefe",
+        "Das Lernen der Zahlen",
+        "Die richtigen Artikel für die Wörter zu finden"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: «Besonders die Artikel machen mich verrückt» – eng qiyini artikllar."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Seit sechs Monaten lerne ich Deutsch, und ich muss sagen: Es ist schwieriger, als ich gedacht habe! Besonders die Artikel machen mich verrückt. Warum heißt es „der Tisch“, aber „die Lampe“? Anfangs habe ich versucht, alle Wörter einfach auswendig zu lernen. Das hat nicht gut funktioniert. Jetzt schreibe ich jedes neue Wort mit dem Artikel auf eine Karte und hänge die Karten in meiner Wohnung auf. Auf dem Kühlschrank hängt „der Kühlschrank“, an der Tür „die Tür“. Außerdem höre ich jeden Abend zwanzig Minuten einen deutschen Podcast, auch wenn ich nicht alles verstehe. Meine Lehrerin sagt, dass ich dadurch viel schneller ein Gefühl für die Sprache bekomme. Im Sommer möchte ich zum ersten Mal nach Österreich reisen und dort nur Deutsch sprechen.",
+      "question": "Wie lernt der Schreiber jetzt neue Wörter?",
+      "options": [
+        "Er schreibt sie in eine lange Liste.",
+        "Er beschriftet Gegenstände zu Hause mit Karten.",
+        "Er lernt sie nur mit einer App.",
+        "Er liest jeden Tag ein Buch."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: «schreibe jedes neue Wort ... auf eine Karte und hänge die Karten in meiner Wohnung auf» – uyidagi narsalarga kartochka osadi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Seit sechs Monaten lerne ich Deutsch, und ich muss sagen: Es ist schwieriger, als ich gedacht habe! Besonders die Artikel machen mich verrückt. Warum heißt es „der Tisch“, aber „die Lampe“? Anfangs habe ich versucht, alle Wörter einfach auswendig zu lernen. Das hat nicht gut funktioniert. Jetzt schreibe ich jedes neue Wort mit dem Artikel auf eine Karte und hänge die Karten in meiner Wohnung auf. Auf dem Kühlschrank hängt „der Kühlschrank“, an der Tür „die Tür“. Außerdem höre ich jeden Abend zwanzig Minuten einen deutschen Podcast, auch wenn ich nicht alles verstehe. Meine Lehrerin sagt, dass ich dadurch viel schneller ein Gefühl für die Sprache bekomme. Im Sommer möchte ich zum ersten Mal nach Österreich reisen und dort nur Deutsch sprechen.",
+      "question": "Welchen Vorteil hat das tägliche Zuhören laut seiner Lehrerin?",
+      "options": [
+        "Man bekommt schneller ein Gefühl für die Sprache.",
+        "Man verbessert seine Aussprache.",
+        "Man braucht keinen Unterricht mehr.",
+        "Man lernt sofort alle Artikel."
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: «viel schneller ein Gefühl für die Sprache bekomme» – o'qituvchi shunday deydi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Seit sechs Monaten lerne ich Deutsch, und ich muss sagen: Es ist schwieriger, als ich gedacht habe! Besonders die Artikel machen mich verrückt. Warum heißt es „der Tisch“, aber „die Lampe“? Anfangs habe ich versucht, alle Wörter einfach auswendig zu lernen. Das hat nicht gut funktioniert. Jetzt schreibe ich jedes neue Wort mit dem Artikel auf eine Karte und hänge die Karten in meiner Wohnung auf. Auf dem Kühlschrank hängt „der Kühlschrank“, an der Tür „die Tür“. Außerdem höre ich jeden Abend zwanzig Minuten einen deutschen Podcast, auch wenn ich nicht alles verstehe. Meine Lehrerin sagt, dass ich dadurch viel schneller ein Gefühl für die Sprache bekomme. Im Sommer möchte ich zum ersten Mal nach Österreich reisen und dort nur Deutsch sprechen.",
+      "statement": "Der Schreiber war schon einmal in Österreich.",
+      "answer": "false",
+      "explanation_uz": "Matnda: «zum ersten Mal nach Österreich reisen» – demak u hali Avstriyada bo'lmagan."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Wichtige Information für alle Mieter\n\nWegen Reparaturarbeiten an der Heizung wird am Donnerstag, dem 12. November, von 8 bis 16 Uhr das Warmwasser im ganzen Haus abgestellt. Auch die Heizkörper bleiben in dieser Zeit kalt. Bitte halten Sie Ihre Fenster geschlossen, damit die Wohnungen nicht zu stark auskühlen. Die Arbeiter müssen in die Kellerräume. Wer einen Kellerschlüssel hat, gibt ihn bitte bis Mittwoch beim Hausmeister, Herrn Yilmaz, ab. Er ist von Montag bis Freitag zwischen 9 und 12 Uhr in Raum 0.3 zu erreichen. Wir bitten um Ihr Verständnis für die Unannehmlichkeiten. Nach Ende der Arbeiten funktioniert alles wieder normal.\n\nIhre Hausverwaltung",
+      "question": "Was passiert am 12. November im Haus?",
+      "options": [
+        "Alle Fenster werden erneuert.",
+        "Mehrere Stunden lang gibt es kein warmes Wasser.",
+        "Der Strom fällt den ganzen Tag aus.",
+        "Der Hausmeister macht Urlaub."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: «von 8 bis 16 Uhr das Warmwasser ... abgestellt» – bir necha soat issiq suv bo'lmaydi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Wichtige Information für alle Mieter\n\nWegen Reparaturarbeiten an der Heizung wird am Donnerstag, dem 12. November, von 8 bis 16 Uhr das Warmwasser im ganzen Haus abgestellt. Auch die Heizkörper bleiben in dieser Zeit kalt. Bitte halten Sie Ihre Fenster geschlossen, damit die Wohnungen nicht zu stark auskühlen. Die Arbeiter müssen in die Kellerräume. Wer einen Kellerschlüssel hat, gibt ihn bitte bis Mittwoch beim Hausmeister, Herrn Yilmaz, ab. Er ist von Montag bis Freitag zwischen 9 und 12 Uhr in Raum 0.3 zu erreichen. Wir bitten um Ihr Verständnis für die Unannehmlichkeiten. Nach Ende der Arbeiten funktioniert alles wieder normal.\n\nIhre Hausverwaltung",
+      "question": "Was sollen Mieter mit einem Kellerschlüssel tun?",
+      "options": [
+        "Sie sollen am Donnerstag im Keller warten.",
+        "Sie sollen den Schlüssel per Post schicken.",
+        "Sie sollen ihn vorher beim Hausmeister abgeben.",
+        "Sie sollen den Keller aufräumen."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: «gibt ihn bitte bis Mittwoch beim Hausmeister ... ab» – kalitni ustaga topshirish kerak."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Wichtige Information für alle Mieter\n\nWegen Reparaturarbeiten an der Heizung wird am Donnerstag, dem 12. November, von 8 bis 16 Uhr das Warmwasser im ganzen Haus abgestellt. Auch die Heizkörper bleiben in dieser Zeit kalt. Bitte halten Sie Ihre Fenster geschlossen, damit die Wohnungen nicht zu stark auskühlen. Die Arbeiter müssen in die Kellerräume. Wer einen Kellerschlüssel hat, gibt ihn bitte bis Mittwoch beim Hausmeister, Herrn Yilmaz, ab. Er ist von Montag bis Freitag zwischen 9 und 12 Uhr in Raum 0.3 zu erreichen. Wir bitten um Ihr Verständnis für die Unannehmlichkeiten. Nach Ende der Arbeiten funktioniert alles wieder normal.\n\nIhre Hausverwaltung",
+      "question": "Warum sollen die Mieter ihre Fenster geschlossen halten?",
+      "options": [
+        "Wegen des Baulärms",
+        "Wegen des Staubs im Treppenhaus",
+        "Damit niemand einbrechen kann",
+        "Damit es in den Wohnungen nicht zu kalt wird."
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: «damit die Wohnungen nicht zu stark auskühlen» – xonalar juda sovib ketmasligi uchun."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Wichtige Information für alle Mieter\n\nWegen Reparaturarbeiten an der Heizung wird am Donnerstag, dem 12. November, von 8 bis 16 Uhr das Warmwasser im ganzen Haus abgestellt. Auch die Heizkörper bleiben in dieser Zeit kalt. Bitte halten Sie Ihre Fenster geschlossen, damit die Wohnungen nicht zu stark auskühlen. Die Arbeiter müssen in die Kellerräume. Wer einen Kellerschlüssel hat, gibt ihn bitte bis Mittwoch beim Hausmeister, Herrn Yilmaz, ab. Er ist von Montag bis Freitag zwischen 9 und 12 Uhr in Raum 0.3 zu erreichen. Wir bitten um Ihr Verständnis für die Unannehmlichkeiten. Nach Ende der Arbeiten funktioniert alles wieder normal.\n\nIhre Hausverwaltung",
+      "statement": "Die Arbeiter müssen in die Kellerräume kommen.",
+      "answer": "true",
+      "explanation_uz": "Matnda: «Die Arbeiter müssen in die Kellerräume» – ishchilar yerto'lalarga kirishi kerak."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Seit der Pandemie arbeiten viele Beschäftigte zumindest zeitweise von zu Hause aus. Was zunächst als Notlösung begann, ist für zahlreiche Unternehmen inzwischen zur festen Einrichtung geworden. Eine aktuelle Studie des Instituts für Arbeitsmarktforschung zeigt jedoch, dass die Bilanz gemischt ausfällt. Einerseits schätzen drei Viertel der Befragten, dass sie sich den langen Weg zur Arbeit sparen und ihre Zeit flexibler einteilen können. Andererseits klagen viele darüber, dass die Grenze zwischen Beruf und Privatleben verschwimmt: Wer abends noch schnell eine E-Mail beantwortet, findet oft nur schwer wieder Ruhe. Besonders junge Mitarbeiter, die noch am Anfang ihrer Karriere stehen, vermissen den spontanen Austausch mit Kollegen. Die Forscher empfehlen deshalb ein Mischmodell, bei dem man zwei bis drei Tage pro Woche im Büro verbringt. Wichtig sei außerdem, dass Firmen klare Regeln zur Erreichbarkeit aufstellen. Nur so lasse sich verhindern, dass die gewonnene Freiheit zur ständigen Verfügbarkeit wird.",
+      "question": "Welches Fazit zieht die Studie zum Homeoffice?",
+      "options": [
+        "Es bringt ausschließlich Vorteile.",
+        "Die meisten Firmen schaffen es wieder ab.",
+        "Es hat sowohl positive als auch negative Seiten.",
+        "Es macht die Beschäftigten weniger leistungsfähig."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: «die Bilanz gemischt ausfällt» – natija aralash: ham yaxshi, ham yomon tomonlari bor."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Seit der Pandemie arbeiten viele Beschäftigte zumindest zeitweise von zu Hause aus. Was zunächst als Notlösung begann, ist für zahlreiche Unternehmen inzwischen zur festen Einrichtung geworden. Eine aktuelle Studie des Instituts für Arbeitsmarktforschung zeigt jedoch, dass die Bilanz gemischt ausfällt. Einerseits schätzen drei Viertel der Befragten, dass sie sich den langen Weg zur Arbeit sparen und ihre Zeit flexibler einteilen können. Andererseits klagen viele darüber, dass die Grenze zwischen Beruf und Privatleben verschwimmt: Wer abends noch schnell eine E-Mail beantwortet, findet oft nur schwer wieder Ruhe. Besonders junge Mitarbeiter, die noch am Anfang ihrer Karriere stehen, vermissen den spontanen Austausch mit Kollegen. Die Forscher empfehlen deshalb ein Mischmodell, bei dem man zwei bis drei Tage pro Woche im Büro verbringt. Wichtig sei außerdem, dass Firmen klare Regeln zur Erreichbarkeit aufstellen. Nur so lasse sich verhindern, dass die gewonnene Freiheit zur ständigen Verfügbarkeit wird.",
+      "question": "Was kritisieren viele Befragte am Arbeiten zu Hause?",
+      "options": [
+        "Berufliches und Privates lassen sich schlechter trennen.",
+        "Die Technik funktioniert oft nicht.",
+        "Das Gehalt wird niedriger.",
+        "Die Wohnungen sind zu klein."
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: «die Grenze zwischen Beruf und Privatleben verschwimmt» – ish va shaxsiy hayot chegarasi xiralashadi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Seit der Pandemie arbeiten viele Beschäftigte zumindest zeitweise von zu Hause aus. Was zunächst als Notlösung begann, ist für zahlreiche Unternehmen inzwischen zur festen Einrichtung geworden. Eine aktuelle Studie des Instituts für Arbeitsmarktforschung zeigt jedoch, dass die Bilanz gemischt ausfällt. Einerseits schätzen drei Viertel der Befragten, dass sie sich den langen Weg zur Arbeit sparen und ihre Zeit flexibler einteilen können. Andererseits klagen viele darüber, dass die Grenze zwischen Beruf und Privatleben verschwimmt: Wer abends noch schnell eine E-Mail beantwortet, findet oft nur schwer wieder Ruhe. Besonders junge Mitarbeiter, die noch am Anfang ihrer Karriere stehen, vermissen den spontanen Austausch mit Kollegen. Die Forscher empfehlen deshalb ein Mischmodell, bei dem man zwei bis drei Tage pro Woche im Büro verbringt. Wichtig sei außerdem, dass Firmen klare Regeln zur Erreichbarkeit aufstellen. Nur so lasse sich verhindern, dass die gewonnene Freiheit zur ständigen Verfügbarkeit wird.",
+      "question": "Was empfehlen die Forscher den Unternehmen?",
+      "options": [
+        "Das Homeoffice ganz abzuschaffen",
+        "Das Homeoffice nur für junge Mitarbeiter",
+        "Die Arbeit ausschließlich zu Hause",
+        "Eine Kombination aus Büro- und Heimarbeit"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: «ein Mischmodell ... zwei bis drei Tage pro Woche im Büro» – aralash model tavsiya etiladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Seit der Pandemie arbeiten viele Beschäftigte zumindest zeitweise von zu Hause aus. Was zunächst als Notlösung begann, ist für zahlreiche Unternehmen inzwischen zur festen Einrichtung geworden. Eine aktuelle Studie des Instituts für Arbeitsmarktforschung zeigt jedoch, dass die Bilanz gemischt ausfällt. Einerseits schätzen drei Viertel der Befragten, dass sie sich den langen Weg zur Arbeit sparen und ihre Zeit flexibler einteilen können. Andererseits klagen viele darüber, dass die Grenze zwischen Beruf und Privatleben verschwimmt: Wer abends noch schnell eine E-Mail beantwortet, findet oft nur schwer wieder Ruhe. Besonders junge Mitarbeiter, die noch am Anfang ihrer Karriere stehen, vermissen den spontanen Austausch mit Kollegen. Die Forscher empfehlen deshalb ein Mischmodell, bei dem man zwei bis drei Tage pro Woche im Büro verbringt. Wichtig sei außerdem, dass Firmen klare Regeln zur Erreichbarkeit aufstellen. Nur so lasse sich verhindern, dass die gewonnene Freiheit zur ständigen Verfügbarkeit wird.",
+      "statement": "Mehr als die Hälfte der Befragten findet die flexible Zeiteinteilung positiv.",
+      "answer": "true",
+      "explanation_uz": "Matnda: «drei Viertel der Befragten schätzen ... ihre Zeit flexibler einteilen» – 75 foiz yarmidan ko'p."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Sehr geehrte Damen und Herren,\n\nam 3. Oktober habe ich in Ihrem Online-Shop einen Schreibtisch des Modells „Nordic“ bestellt, der laut Website innerhalb von fünf Werktagen geliefert werden sollte. Tatsächlich ist die Lieferung erst nach drei Wochen eingetroffen, und das, obwohl ich mehrfach telefonisch nachgefragt hatte. Hinzu kommt, dass die Tischplatte an einer Ecke beschädigt war. Der Fahrer hat zwar angeboten, den Schaden auf dem Lieferschein zu vermerken, die Ware aber nicht wieder mitgenommen, da er angeblich keine Anweisung dazu hatte. Ich bitte Sie daher, mir entweder innerhalb von 14 Tagen kostenlos einen Ersatz zu liefern oder den Kaufpreis zu erstatten. Fotos des Schadens habe ich dieser E-Mail beigefügt. Sollte ich bis zum 5. November keine Antwort erhalten, werde ich mich an die Verbraucherzentrale wenden. Ich hoffe jedoch auf eine schnelle und einvernehmliche Lösung.\n\nMit freundlichen Grüßen\nMiriam Köhler",
+      "question": "Was war an der Bestellung von Frau Köhler problematisch?",
+      "options": [
+        "Es wurde ein falsches Modell geliefert.",
+        "Die Lieferung kam viel zu spät und der Tisch war beschädigt.",
+        "Der Preis war höher als angegeben.",
+        "Es fehlten wichtige Teile."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: «erst nach drei Wochen eingetroffen» va «Tischplatte ... beschädigt» – kech yetkazilgan va shikastlangan."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Sehr geehrte Damen und Herren,\n\nam 3. Oktober habe ich in Ihrem Online-Shop einen Schreibtisch des Modells „Nordic“ bestellt, der laut Website innerhalb von fünf Werktagen geliefert werden sollte. Tatsächlich ist die Lieferung erst nach drei Wochen eingetroffen, und das, obwohl ich mehrfach telefonisch nachgefragt hatte. Hinzu kommt, dass die Tischplatte an einer Ecke beschädigt war. Der Fahrer hat zwar angeboten, den Schaden auf dem Lieferschein zu vermerken, die Ware aber nicht wieder mitgenommen, da er angeblich keine Anweisung dazu hatte. Ich bitte Sie daher, mir entweder innerhalb von 14 Tagen kostenlos einen Ersatz zu liefern oder den Kaufpreis zu erstatten. Fotos des Schadens habe ich dieser E-Mail beigefügt. Sollte ich bis zum 5. November keine Antwort erhalten, werde ich mich an die Verbraucherzentrale wenden. Ich hoffe jedoch auf eine schnelle und einvernehmliche Lösung.\n\nMit freundlichen Grüßen\nMiriam Köhler",
+      "question": "Warum nahm der Fahrer den beschädigten Tisch nicht mit?",
+      "options": [
+        "Er hatte keinen Platz im Wagen.",
+        "Er fand den Schaden nicht schlimm.",
+        "Frau Köhler wollte den Tisch behalten.",
+        "Er hatte nach eigener Aussage keine entsprechende Anweisung."
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: «da er angeblich keine Anweisung dazu hatte» – haydovchi buyruq yo'qligini aytgan."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Sehr geehrte Damen und Herren,\n\nam 3. Oktober habe ich in Ihrem Online-Shop einen Schreibtisch des Modells „Nordic“ bestellt, der laut Website innerhalb von fünf Werktagen geliefert werden sollte. Tatsächlich ist die Lieferung erst nach drei Wochen eingetroffen, und das, obwohl ich mehrfach telefonisch nachgefragt hatte. Hinzu kommt, dass die Tischplatte an einer Ecke beschädigt war. Der Fahrer hat zwar angeboten, den Schaden auf dem Lieferschein zu vermerken, die Ware aber nicht wieder mitgenommen, da er angeblich keine Anweisung dazu hatte. Ich bitte Sie daher, mir entweder innerhalb von 14 Tagen kostenlos einen Ersatz zu liefern oder den Kaufpreis zu erstatten. Fotos des Schadens habe ich dieser E-Mail beigefügt. Sollte ich bis zum 5. November keine Antwort erhalten, werde ich mich an die Verbraucherzentrale wenden. Ich hoffe jedoch auf eine schnelle und einvernehmliche Lösung.\n\nMit freundlichen Grüßen\nMiriam Köhler",
+      "question": "Was verlangt Frau Köhler vom Unternehmen?",
+      "options": [
+        "Einen neuen Tisch oder das Geld zurück",
+        "Eine Entschuldigung per Telefon",
+        "Einen Rabatt auf die nächste Bestellung",
+        "Eine Reparatur durch einen Techniker"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: «einen Ersatz zu liefern oder den Kaufpreis zu erstatten» – almashtirish yoki pulni qaytarish."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Sehr geehrte Damen und Herren,\n\nam 3. Oktober habe ich in Ihrem Online-Shop einen Schreibtisch des Modells „Nordic“ bestellt, der laut Website innerhalb von fünf Werktagen geliefert werden sollte. Tatsächlich ist die Lieferung erst nach drei Wochen eingetroffen, und das, obwohl ich mehrfach telefonisch nachgefragt hatte. Hinzu kommt, dass die Tischplatte an einer Ecke beschädigt war. Der Fahrer hat zwar angeboten, den Schaden auf dem Lieferschein zu vermerken, die Ware aber nicht wieder mitgenommen, da er angeblich keine Anweisung dazu hatte. Ich bitte Sie daher, mir entweder innerhalb von 14 Tagen kostenlos einen Ersatz zu liefern oder den Kaufpreis zu erstatten. Fotos des Schadens habe ich dieser E-Mail beigefügt. Sollte ich bis zum 5. November keine Antwort erhalten, werde ich mich an die Verbraucherzentrale wenden. Ich hoffe jedoch auf eine schnelle und einvernehmliche Lösung.\n\nMit freundlichen Grüßen\nMiriam Köhler",
+      "statement": "Frau Köhler hat die Verbraucherzentrale bereits kontaktiert.",
+      "answer": "false",
+      "explanation_uz": "Matnda: «werde ich mich an die Verbraucherzentrale wenden» – bu kelajakdagi ehtimol, hali murojaat qilmagan."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "In immer mehr deutschen Städten entstehen sogenannte „Bibliotheken der Dinge“. Hier kann man nicht nur Bücher ausleihen, sondern auch Gegenstände, die man nur selten braucht: Bohrmaschinen, Zelte, Nähmaschinen oder sogar Beamer. Die Idee dahinter ist einfach: Warum soll jeder Haushalt eine Leiter besitzen, die im Schnitt nur wenige Minuten pro Jahr benutzt wird? In Köln hat eine solche Einrichtung vor zwei Jahren eröffnet und zählt heute rund 2.000 Mitglieder. Der Jahresbeitrag liegt bei 30 Euro, Studierende zahlen die Hälfte. Initiatorin Lena Hartmann betont, dass es nicht nur ums Sparen gehe. „Wir wollen Ressourcen schonen und Nachbarn miteinander ins Gespräch bringen“, sagt sie. Tatsächlich treffen sich viele Mitglieder regelmäßig in der angeschlossenen Werkstatt, um gemeinsam zu reparieren. Kritiker bemängeln allerdings, dass beliebte Geräte oft wochenlang vergeben seien. Die Betreiber wollen deshalb ihr Angebot im nächsten Jahr erweitern.",
+      "question": "Welche Idee steckt hinter einer Bibliothek der Dinge?",
+      "options": [
+        "Man soll möglichst viele neue Geräte kaufen.",
+        "Selten gebrauchte Gegenstände werden gemeinsam genutzt.",
+        "Bücher werden dort günstiger verkauft.",
+        "Handwerker bieten kostenlose Hilfe an."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: «Gegenstände, die man nur selten braucht» ni ijaraga olish mumkin – narsalar birgalikda ishlatiladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "In immer mehr deutschen Städten entstehen sogenannte „Bibliotheken der Dinge“. Hier kann man nicht nur Bücher ausleihen, sondern auch Gegenstände, die man nur selten braucht: Bohrmaschinen, Zelte, Nähmaschinen oder sogar Beamer. Die Idee dahinter ist einfach: Warum soll jeder Haushalt eine Leiter besitzen, die im Schnitt nur wenige Minuten pro Jahr benutzt wird? In Köln hat eine solche Einrichtung vor zwei Jahren eröffnet und zählt heute rund 2.000 Mitglieder. Der Jahresbeitrag liegt bei 30 Euro, Studierende zahlen die Hälfte. Initiatorin Lena Hartmann betont, dass es nicht nur ums Sparen gehe. „Wir wollen Ressourcen schonen und Nachbarn miteinander ins Gespräch bringen“, sagt sie. Tatsächlich treffen sich viele Mitglieder regelmäßig in der angeschlossenen Werkstatt, um gemeinsam zu reparieren. Kritiker bemängeln allerdings, dass beliebte Geräte oft wochenlang vergeben seien. Die Betreiber wollen deshalb ihr Angebot im nächsten Jahr erweitern.",
+      "question": "Welches Ziel nennt Lena Hartmann neben dem Sparen?",
+      "options": [
+        "Es sollen mehr Touristen in die Stadt kommen.",
+        "Es sollen neue Arbeitsplätze entstehen.",
+        "Die Nachbarn sollen miteinander in Kontakt kommen.",
+        "Der Verkauf von Werkzeug soll steigen."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: «Nachbarn miteinander ins Gespräch bringen» – qo'shnilarni bir-biri bilan gaplashtirish."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "In immer mehr deutschen Städten entstehen sogenannte „Bibliotheken der Dinge“. Hier kann man nicht nur Bücher ausleihen, sondern auch Gegenstände, die man nur selten braucht: Bohrmaschinen, Zelte, Nähmaschinen oder sogar Beamer. Die Idee dahinter ist einfach: Warum soll jeder Haushalt eine Leiter besitzen, die im Schnitt nur wenige Minuten pro Jahr benutzt wird? In Köln hat eine solche Einrichtung vor zwei Jahren eröffnet und zählt heute rund 2.000 Mitglieder. Der Jahresbeitrag liegt bei 30 Euro, Studierende zahlen die Hälfte. Initiatorin Lena Hartmann betont, dass es nicht nur ums Sparen gehe. „Wir wollen Ressourcen schonen und Nachbarn miteinander ins Gespräch bringen“, sagt sie. Tatsächlich treffen sich viele Mitglieder regelmäßig in der angeschlossenen Werkstatt, um gemeinsam zu reparieren. Kritiker bemängeln allerdings, dass beliebte Geräte oft wochenlang vergeben seien. Die Betreiber wollen deshalb ihr Angebot im nächsten Jahr erweitern.",
+      "question": "Welche Kritik gibt es an dem Angebot?",
+      "options": [
+        "Gefragte Geräte sind häufig lange nicht verfügbar.",
+        "Die Mitgliedsbeiträge sind zu hoch.",
+        "Die Öffnungszeiten sind zu kurz.",
+        "Die Geräte sind oft kaputt."
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: «beliebte Geräte oft wochenlang vergeben» – mashhur asboblar haftalab band bo'ladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "In immer mehr deutschen Städten entstehen sogenannte „Bibliotheken der Dinge“. Hier kann man nicht nur Bücher ausleihen, sondern auch Gegenstände, die man nur selten braucht: Bohrmaschinen, Zelte, Nähmaschinen oder sogar Beamer. Die Idee dahinter ist einfach: Warum soll jeder Haushalt eine Leiter besitzen, die im Schnitt nur wenige Minuten pro Jahr benutzt wird? In Köln hat eine solche Einrichtung vor zwei Jahren eröffnet und zählt heute rund 2.000 Mitglieder. Der Jahresbeitrag liegt bei 30 Euro, Studierende zahlen die Hälfte. Initiatorin Lena Hartmann betont, dass es nicht nur ums Sparen gehe. „Wir wollen Ressourcen schonen und Nachbarn miteinander ins Gespräch bringen“, sagt sie. Tatsächlich treffen sich viele Mitglieder regelmäßig in der angeschlossenen Werkstatt, um gemeinsam zu reparieren. Kritiker bemängeln allerdings, dass beliebte Geräte oft wochenlang vergeben seien. Die Betreiber wollen deshalb ihr Angebot im nächsten Jahr erweitern.",
+      "statement": "Die Bibliothek in Köln war die erste ihrer Art in Deutschland.",
+      "answer": "not_given",
+      "explanation_uz": "Matnda Kyolndagi kutubxona Germaniyada birinchi bo'lgani haqida hech narsa aytilmagan."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Letzte Woche habe ich zum ersten Mal den Nachtzug von Wien nach Hamburg genommen, und ich muss zugeben: Ich war skeptisch. Normalerweise fliege ich, weil es schneller und meist auch billiger ist. Doch nach den Berichten über die Umweltbelastung des Flugverkehrs wollte ich es einmal anders versuchen. Das Abteil, das ich mir mit zwei Fremden teilte, war eng, aber überraschend sauber. Natürlich schläft man im Zug nicht so tief wie im eigenen Bett, und gegen drei Uhr morgens weckte mich ein langer Halt in Nürnberg. Trotzdem kam ich ausgeruhter an, als ich es nach einem frühen Flug je gewesen bin. Kein Warten am Flughafen, keine Sicherheitskontrolle, stattdessen ein Frühstück mit Blick auf die Elbe. Der Preis war mit 89 Euro allerdings höher als bei meinem letzten Flug. Wiederholen werde ich die Reise trotzdem, vielleicht dann mit einem Schlafwagen für mich allein, falls das Budget es zulässt.",
+      "question": "Warum entschied sich der Autor für den Nachtzug?",
+      "options": [
+        "Er hatte Angst vor dem Fliegen.",
+        "Die Fahrt war billiger als ein Flug.",
+        "Er wollte die Umwelt weniger belasten.",
+        "Er musste dienstlich mit dem Zug fahren."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: «nach den Berichten über die Umweltbelastung des Flugverkehrs» – ekologik sabab."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Letzte Woche habe ich zum ersten Mal den Nachtzug von Wien nach Hamburg genommen, und ich muss zugeben: Ich war skeptisch. Normalerweise fliege ich, weil es schneller und meist auch billiger ist. Doch nach den Berichten über die Umweltbelastung des Flugverkehrs wollte ich es einmal anders versuchen. Das Abteil, das ich mir mit zwei Fremden teilte, war eng, aber überraschend sauber. Natürlich schläft man im Zug nicht so tief wie im eigenen Bett, und gegen drei Uhr morgens weckte mich ein langer Halt in Nürnberg. Trotzdem kam ich ausgeruhter an, als ich es nach einem frühen Flug je gewesen bin. Kein Warten am Flughafen, keine Sicherheitskontrolle, stattdessen ein Frühstück mit Blick auf die Elbe. Der Preis war mit 89 Euro allerdings höher als bei meinem letzten Flug. Wiederholen werde ich die Reise trotzdem, vielleicht dann mit einem Schlafwagen für mich allein, falls das Budget es zulässt.",
+      "question": "Was störte den Autor in der Nacht?",
+      "options": [
+        "Zwei Mitreisende waren sehr laut.",
+        "Ein langer Halt in einem Bahnhof weckte ihn.",
+        "Das Abteil war schmutzig.",
+        "Im Zug war es zu kalt."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: «gegen drei Uhr morgens weckte mich ein langer Halt in Nürnberg» – bekatda uzoq to'xtash uyg'otgan."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Letzte Woche habe ich zum ersten Mal den Nachtzug von Wien nach Hamburg genommen, und ich muss zugeben: Ich war skeptisch. Normalerweise fliege ich, weil es schneller und meist auch billiger ist. Doch nach den Berichten über die Umweltbelastung des Flugverkehrs wollte ich es einmal anders versuchen. Das Abteil, das ich mir mit zwei Fremden teilte, war eng, aber überraschend sauber. Natürlich schläft man im Zug nicht so tief wie im eigenen Bett, und gegen drei Uhr morgens weckte mich ein langer Halt in Nürnberg. Trotzdem kam ich ausgeruhter an, als ich es nach einem frühen Flug je gewesen bin. Kein Warten am Flughafen, keine Sicherheitskontrolle, stattdessen ein Frühstück mit Blick auf die Elbe. Der Preis war mit 89 Euro allerdings höher als bei meinem letzten Flug. Wiederholen werde ich die Reise trotzdem, vielleicht dann mit einem Schlafwagen für mich allein, falls das Budget es zulässt.",
+      "question": "Wie fällt sein Gesamturteil über die Reise aus?",
+      "options": [
+        "Er will nie wieder mit dem Zug fahren.",
+        "Er hält das Fliegen weiterhin für besser.",
+        "Er fand die Reise enttäuschend und anstrengend.",
+        "Trotz kleiner Nachteile würde er wieder so reisen."
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: «Wiederholen werde ich die Reise trotzdem» – kamchiliklarga qaramay yana shunday sayohat qiladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Letzte Woche habe ich zum ersten Mal den Nachtzug von Wien nach Hamburg genommen, und ich muss zugeben: Ich war skeptisch. Normalerweise fliege ich, weil es schneller und meist auch billiger ist. Doch nach den Berichten über die Umweltbelastung des Flugverkehrs wollte ich es einmal anders versuchen. Das Abteil, das ich mir mit zwei Fremden teilte, war eng, aber überraschend sauber. Natürlich schläft man im Zug nicht so tief wie im eigenen Bett, und gegen drei Uhr morgens weckte mich ein langer Halt in Nürnberg. Trotzdem kam ich ausgeruhter an, als ich es nach einem frühen Flug je gewesen bin. Kein Warten am Flughafen, keine Sicherheitskontrolle, stattdessen ein Frühstück mit Blick auf die Elbe. Der Preis war mit 89 Euro allerdings höher als bei meinem letzten Flug. Wiederholen werde ich die Reise trotzdem, vielleicht dann mit einem Schlafwagen für mich allein, falls das Budget es zulässt.",
+      "statement": "Die Zugfahrt war teurer als sein letzter Flug.",
+      "answer": "true",
+      "explanation_uz": "Matnda: «Der Preis war ... höher als bei meinem letzten Flug» – poyezd qimmatroq bo'lgan."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Praxis Dr. Meier, guten Tag.\nB: Guten Tag, hier ist Paul Schmidt. Ich hätte gern einen Termin, weil ich seit drei Tagen starke Rückenschmerzen habe.\nA: Das tut mir leid. Wann haben Sie denn Zeit?\nB: Am liebsten morgen Vormittag. Nachmittags arbeite ich immer.\nA: Morgen Vormittag ist leider alles voll. Ich könnte Ihnen Donnerstag um halb zehn anbieten.\nB: Donnerstag geht auch. Muss ich etwas mitbringen?\nA: Ja, bitte Ihre Versichertenkarte und, wenn Sie welche haben, alte Röntgenbilder. Und kommen Sie zehn Minuten früher, weil Sie noch einen Fragebogen ausfüllen müssen.\nB: Alles klar. Dann bis Donnerstag.\nA: Auf Wiederhören, Herr Schmidt.",
+      "question": "Warum möchte Herr Schmidt keinen Termin am Nachmittag?",
+      "options": [
+        "Er ist dann bei der Arbeit.",
+        "Er ist nachmittags krank.",
+        "Die Praxis ist dann geschlossen.",
+        "Er fährt nachmittags weg."
+      ],
+      "answer": 0,
+      "explanation_uz": "B: «Nachmittags arbeite ich immer» – tushdan keyin ishda bo'ladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Praxis Dr. Meier, guten Tag.\nB: Guten Tag, hier ist Paul Schmidt. Ich hätte gern einen Termin, weil ich seit drei Tagen starke Rückenschmerzen habe.\nA: Das tut mir leid. Wann haben Sie denn Zeit?\nB: Am liebsten morgen Vormittag. Nachmittags arbeite ich immer.\nA: Morgen Vormittag ist leider alles voll. Ich könnte Ihnen Donnerstag um halb zehn anbieten.\nB: Donnerstag geht auch. Muss ich etwas mitbringen?\nA: Ja, bitte Ihre Versichertenkarte und, wenn Sie welche haben, alte Röntgenbilder. Und kommen Sie zehn Minuten früher, weil Sie noch einen Fragebogen ausfüllen müssen.\nB: Alles klar. Dann bis Donnerstag.\nA: Auf Wiederhören, Herr Schmidt.",
+      "text": "Herr Schmidt bekommt einen Termin am ___ um halb zehn.",
+      "answers": [
+        "Donnerstag"
+      ],
+      "explanation_uz": "A: «Ich könnte Ihnen Donnerstag um halb zehn anbieten» – payshanba."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Praxis Dr. Meier, guten Tag.\nB: Guten Tag, hier ist Paul Schmidt. Ich hätte gern einen Termin, weil ich seit drei Tagen starke Rückenschmerzen habe.\nA: Das tut mir leid. Wann haben Sie denn Zeit?\nB: Am liebsten morgen Vormittag. Nachmittags arbeite ich immer.\nA: Morgen Vormittag ist leider alles voll. Ich könnte Ihnen Donnerstag um halb zehn anbieten.\nB: Donnerstag geht auch. Muss ich etwas mitbringen?\nA: Ja, bitte Ihre Versichertenkarte und, wenn Sie welche haben, alte Röntgenbilder. Und kommen Sie zehn Minuten früher, weil Sie noch einen Fragebogen ausfüllen müssen.\nB: Alles klar. Dann bis Donnerstag.\nA: Auf Wiederhören, Herr Schmidt.",
+      "question": "Warum soll Herr Schmidt zehn Minuten früher kommen?",
+      "options": [
+        "Er muss die Rechnung bezahlen.",
+        "Er soll zuerst Röntgenbilder machen.",
+        "Er muss ein Formular ausfüllen.",
+        "Der Arzt hat dann mehr Zeit."
+      ],
+      "answer": 2,
+      "explanation_uz": "A: «weil Sie noch einen Fragebogen ausfüllen müssen» – so'rovnoma to'ldirish kerak."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Achtung, eine Durchsage für die Reisenden nach München. Der ICE 593 hat voraussichtlich zwanzig Minuten Verspätung. Grund dafür ist eine Störung an den Signalen auf der Strecke. Der Zug fährt nicht wie geplant von Gleis 7, sondern von Gleis 12 ab. Bitte beachten Sie, dass der Speisewagen heute leider geschlossen bleibt. Reisende mit einer Sitzplatzreservierung finden die Wagenreihung auf den Anzeigetafeln. Wer seinen Anschlusszug in Nürnberg nicht mehr erreicht, erhält am Service-Schalter in der Haupthalle kostenlos eine Ersatzverbindung. Wir bitten um Ihr Verständnis und wünschen Ihnen trotzdem eine angenehme Reise.",
+      "question": "Warum hat der Zug Verspätung?",
+      "options": [
+        "Wegen schlechten Wetters",
+        "Wegen eines Streiks",
+        "Wegen eines Unfalls im Bahnhof",
+        "Wegen eines technischen Problems an den Signalen"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matn: «eine Störung an den Signalen auf der Strecke» – signal tizimidagi nosozlik."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Achtung, eine Durchsage für die Reisenden nach München. Der ICE 593 hat voraussichtlich zwanzig Minuten Verspätung. Grund dafür ist eine Störung an den Signalen auf der Strecke. Der Zug fährt nicht wie geplant von Gleis 7, sondern von Gleis 12 ab. Bitte beachten Sie, dass der Speisewagen heute leider geschlossen bleibt. Reisende mit einer Sitzplatzreservierung finden die Wagenreihung auf den Anzeigetafeln. Wer seinen Anschlusszug in Nürnberg nicht mehr erreicht, erhält am Service-Schalter in der Haupthalle kostenlos eine Ersatzverbindung. Wir bitten um Ihr Verständnis und wünschen Ihnen trotzdem eine angenehme Reise.",
+      "text": "Der Zug fährt von Gleis ___ ab.",
+      "answers": [
+        "12",
+        "zwölf"
+      ],
+      "explanation_uz": "Matn: «sondern von Gleis 12 ab» – 12-yo'l."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Achtung, eine Durchsage für die Reisenden nach München. Der ICE 593 hat voraussichtlich zwanzig Minuten Verspätung. Grund dafür ist eine Störung an den Signalen auf der Strecke. Der Zug fährt nicht wie geplant von Gleis 7, sondern von Gleis 12 ab. Bitte beachten Sie, dass der Speisewagen heute leider geschlossen bleibt. Reisende mit einer Sitzplatzreservierung finden die Wagenreihung auf den Anzeigetafeln. Wer seinen Anschlusszug in Nürnberg nicht mehr erreicht, erhält am Service-Schalter in der Haupthalle kostenlos eine Ersatzverbindung. Wir bitten um Ihr Verständnis und wünschen Ihnen trotzdem eine angenehme Reise.",
+      "question": "Was können Reisende tun, die ihren Anschlusszug verpassen?",
+      "options": [
+        "Das Ticket verkaufen",
+        "Am Schalter eine andere Verbindung bekommen",
+        "Im Zug übernachten",
+        "Ein Taxi auf Kosten der Bahn nehmen"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matn: «am Service-Schalter ... kostenlos eine Ersatzverbindung» – xizmat peshtaxtasidan boshqa qatnov olinadi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Und jetzt das Wetter für das Wochenende. Am Samstag bleibt es im Norden meist trocken, bei Temperaturen um 18 Grad. Im Süden müssen Sie dagegen mit Regen rechnen, und in den Alpen kann es am Nachmittag sogar gewittern. Am Sonntag zieht ein Tief von Westen heran, dann regnet es fast überall. Nur am Alpenrand scheint zeitweise die Sonne. Der Wind weht schwach bis mäßig, an der Nordsee kann er allerdings stürmisch werden. Wer am Wochenende wandern oder grillen möchte, sollte das also lieber auf Samstag legen, und zwar im Norden. Zum Wochenbeginn wird es dann kühler, die Temperaturen sinken auf etwa zwölf Grad.",
+      "question": "Wo kann man am Samstag am ehesten draußen grillen?",
+      "options": [
+        "Im Süden des Landes",
+        "Im Norden des Landes",
+        "In den Alpen",
+        "Überall im Land"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matn: «Am Samstag bleibt es im Norden meist trocken» – shimolda quruq ob-havo."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Und jetzt das Wetter für das Wochenende. Am Samstag bleibt es im Norden meist trocken, bei Temperaturen um 18 Grad. Im Süden müssen Sie dagegen mit Regen rechnen, und in den Alpen kann es am Nachmittag sogar gewittern. Am Sonntag zieht ein Tief von Westen heran, dann regnet es fast überall. Nur am Alpenrand scheint zeitweise die Sonne. Der Wind weht schwach bis mäßig, an der Nordsee kann er allerdings stürmisch werden. Wer am Wochenende wandern oder grillen möchte, sollte das also lieber auf Samstag legen, und zwar im Norden. Zum Wochenbeginn wird es dann kühler, die Temperaturen sinken auf etwa zwölf Grad.",
+      "text": "Am Samstag hat es im Norden etwa ___ Grad.",
+      "answers": [
+        "18",
+        "achtzehn"
+      ],
+      "explanation_uz": "Matn: «bei Temperaturen um 18 Grad» – taxminan 18 daraja."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Und jetzt das Wetter für das Wochenende. Am Samstag bleibt es im Norden meist trocken, bei Temperaturen um 18 Grad. Im Süden müssen Sie dagegen mit Regen rechnen, und in den Alpen kann es am Nachmittag sogar gewittern. Am Sonntag zieht ein Tief von Westen heran, dann regnet es fast überall. Nur am Alpenrand scheint zeitweise die Sonne. Der Wind weht schwach bis mäßig, an der Nordsee kann er allerdings stürmisch werden. Wer am Wochenende wandern oder grillen möchte, sollte das also lieber auf Samstag legen, und zwar im Norden. Zum Wochenbeginn wird es dann kühler, die Temperaturen sinken auf etwa zwölf Grad.",
+      "question": "Wie wird das Wetter am Sonntag?",
+      "options": [
+        "Überall sonnig und warm",
+        "Nur im Süden nass",
+        "Im ganzen Land stürmisch",
+        "In fast ganz Deutschland regnerisch"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matn: «Am Sonntag ... regnet es fast überall» – deyarli hamma joyda yomg'ir."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Hast du schon etwas für Sonjas Geburtstag?\nB: Noch nicht. Ich wollte ihr ein Buch schenken, aber sie liest kaum.\nA: Wie wäre es mit Konzertkarten? Sie mag doch Jazz.\nB: Gute Idee! Im Stadttheater spielt nächsten Monat eine bekannte Band. Die Karten kosten aber vierzig Euro pro Stück.\nA: Dann legen wir zusammen. Wir sind ja mindestens vier Leute.\nB: Stimmt. Dann zahlt jeder nur zwanzig Euro, denn wir kaufen zwei Karten, eine für Sonja und eine für ihren Freund.\nA: Perfekt. Ich bestelle die Karten heute Abend im Internet.\nB: Super, ich überweise dir das Geld am Wochenende.",
+      "question": "Warum schenkt B kein Buch?",
+      "options": [
+        "Bücher sind zu teuer.",
+        "Sonja hat schon viele Bücher.",
+        "Sonja liest nur selten.",
+        "B findet Bücher langweilig."
+      ],
+      "answer": 2,
+      "explanation_uz": "B: «sie liest kaum» – Sonja deyarli kitob o'qimaydi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Hast du schon etwas für Sonjas Geburtstag?\nB: Noch nicht. Ich wollte ihr ein Buch schenken, aber sie liest kaum.\nA: Wie wäre es mit Konzertkarten? Sie mag doch Jazz.\nB: Gute Idee! Im Stadttheater spielt nächsten Monat eine bekannte Band. Die Karten kosten aber vierzig Euro pro Stück.\nA: Dann legen wir zusammen. Wir sind ja mindestens vier Leute.\nB: Stimmt. Dann zahlt jeder nur zwanzig Euro, denn wir kaufen zwei Karten, eine für Sonja und eine für ihren Freund.\nA: Perfekt. Ich bestelle die Karten heute Abend im Internet.\nB: Super, ich überweise dir das Geld am Wochenende.",
+      "question": "Wer bestellt die Karten?",
+      "options": [
+        "Sprecher A",
+        "Sonja selbst",
+        "Sprecher B",
+        "Sonjas Freund"
+      ],
+      "answer": 0,
+      "explanation_uz": "A: «Ich bestelle die Karten heute Abend» – biletlarni A buyurtma qiladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Hast du schon etwas für Sonjas Geburtstag?\nB: Noch nicht. Ich wollte ihr ein Buch schenken, aber sie liest kaum.\nA: Wie wäre es mit Konzertkarten? Sie mag doch Jazz.\nB: Gute Idee! Im Stadttheater spielt nächsten Monat eine bekannte Band. Die Karten kosten aber vierzig Euro pro Stück.\nA: Dann legen wir zusammen. Wir sind ja mindestens vier Leute.\nB: Stimmt. Dann zahlt jeder nur zwanzig Euro, denn wir kaufen zwei Karten, eine für Sonja und eine für ihren Freund.\nA: Perfekt. Ich bestelle die Karten heute Abend im Internet.\nB: Super, ich überweise dir das Geld am Wochenende.",
+      "text": "Jeder der vier Freunde zahlt ___ Euro.",
+      "answers": [
+        "20",
+        "zwanzig"
+      ],
+      "explanation_uz": "B: «Dann zahlt jeder nur zwanzig Euro» – har biri 20 yevro."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Frau Brandt, Sie leiten das Projekt „Urban Gardening“ in Leipzig. Worum geht es?\nB: Wir verwandeln leere Flächen in der Stadt in Gemeinschaftsgärten. Jeder, der mitmachen möchte, kann ein Beet bepflanzen.\nA: Und wer bezahlt das Ganze?\nB: Anfangs hat die Stadt das Saatgut finanziert, inzwischen decken wir die Kosten fast komplett durch Spenden und Mitgliedsbeiträge.\nA: Gab es auch Widerstand?\nB: Anfangs schon. Einige Anwohner befürchteten Lärm und Schmutz. Doch als sie gesehen haben, wie viele Nachbarn zusammenkommen, haben die meisten ihre Meinung geändert. Heute haben wir sogar eine Warteliste.",
+      "question": "Woher kommt heute der größte Teil des Geldes für das Projekt?",
+      "options": [
+        "Von der Stadt Leipzig",
+        "Vom Verkauf des Gemüses",
+        "Von großen Supermärkten",
+        "Von Privatpersonen und Vereinsmitgliedern"
+      ],
+      "answer": 3,
+      "explanation_uz": "B: «durch Spenden und Mitgliedsbeiträge» – xayriya va a'zolik badallari hisobiga."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Frau Brandt, Sie leiten das Projekt „Urban Gardening“ in Leipzig. Worum geht es?\nB: Wir verwandeln leere Flächen in der Stadt in Gemeinschaftsgärten. Jeder, der mitmachen möchte, kann ein Beet bepflanzen.\nA: Und wer bezahlt das Ganze?\nB: Anfangs hat die Stadt das Saatgut finanziert, inzwischen decken wir die Kosten fast komplett durch Spenden und Mitgliedsbeiträge.\nA: Gab es auch Widerstand?\nB: Anfangs schon. Einige Anwohner befürchteten Lärm und Schmutz. Doch als sie gesehen haben, wie viele Nachbarn zusammenkommen, haben die meisten ihre Meinung geändert. Heute haben wir sogar eine Warteliste.",
+      "question": "Warum waren einige Anwohner zuerst gegen das Projekt?",
+      "options": [
+        "Sie wollten die Fläche selbst kaufen.",
+        "Sie rechneten mit Belästigungen in der Nachbarschaft.",
+        "Sie hielten Gärten für zu teuer.",
+        "Sie hatten Angst vor Dieben."
+      ],
+      "answer": 1,
+      "explanation_uz": "B: «Einige Anwohner befürchteten Lärm und Schmutz» – shovqin va iflosliqdan qo'rqishgan."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Frau Brandt, Sie leiten das Projekt „Urban Gardening“ in Leipzig. Worum geht es?\nB: Wir verwandeln leere Flächen in der Stadt in Gemeinschaftsgärten. Jeder, der mitmachen möchte, kann ein Beet bepflanzen.\nA: Und wer bezahlt das Ganze?\nB: Anfangs hat die Stadt das Saatgut finanziert, inzwischen decken wir die Kosten fast komplett durch Spenden und Mitgliedsbeiträge.\nA: Gab es auch Widerstand?\nB: Anfangs schon. Einige Anwohner befürchteten Lärm und Schmutz. Doch als sie gesehen haben, wie viele Nachbarn zusammenkommen, haben die meisten ihre Meinung geändert. Heute haben wir sogar eine Warteliste.",
+      "text": "Heute gibt es für die Beete sogar eine ___.",
+      "answers": [
+        "Warteliste"
+      ],
+      "explanation_uz": "B: «Heute haben wir sogar eine Warteliste» – kutish ro'yxati."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Herzlich willkommen zur Einführungsveranstaltung für Erstsemester. Bevor wir beginnen, noch ein paar organisatorische Hinweise. Die Bibliothek ist ab diesem Semester auch sonntags von zehn bis achtzehn Uhr geöffnet, allerdings nur in der Prüfungsphase. Wer einen Studentenausweis braucht, muss im Sekretariat ein Passfoto abgeben; das Foto darf nicht älter als ein Jahr sein. Bitte beachten Sie außerdem, dass sich die Anmeldung für die Seminare dieses Jahr geändert hat. Sie läuft nicht mehr über Papierformulare, sondern ausschließlich online, und zwar bis zum 20. Oktober. Wer die Frist verpasst, kann erst im nächsten Semester teilnehmen. Bei Fragen wenden Sie sich bitte an die Studienberatung im zweiten Stock.",
+      "question": "Wann ist die Bibliothek sonntags geöffnet?",
+      "options": [
+        "Nur während der Prüfungszeit",
+        "Das ganze Semester über",
+        "Nur im ersten Semester",
+        "Nur am Vormittag"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matn: «auch sonntags ... allerdings nur in der Prüfungsphase» – yakshanba faqat imtihon davrida."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Herzlich willkommen zur Einführungsveranstaltung für Erstsemester. Bevor wir beginnen, noch ein paar organisatorische Hinweise. Die Bibliothek ist ab diesem Semester auch sonntags von zehn bis achtzehn Uhr geöffnet, allerdings nur in der Prüfungsphase. Wer einen Studentenausweis braucht, muss im Sekretariat ein Passfoto abgeben; das Foto darf nicht älter als ein Jahr sein. Bitte beachten Sie außerdem, dass sich die Anmeldung für die Seminare dieses Jahr geändert hat. Sie läuft nicht mehr über Papierformulare, sondern ausschließlich online, und zwar bis zum 20. Oktober. Wer die Frist verpasst, kann erst im nächsten Semester teilnehmen. Bei Fragen wenden Sie sich bitte an die Studienberatung im zweiten Stock.",
+      "text": "Das Passfoto für den Ausweis darf nicht älter als ein ___ sein.",
+      "answers": [
+        "Jahr"
+      ],
+      "explanation_uz": "Matn: «nicht älter als ein Jahr sein» – bir yildan eski bo'lmasligi kerak."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Herzlich willkommen zur Einführungsveranstaltung für Erstsemester. Bevor wir beginnen, noch ein paar organisatorische Hinweise. Die Bibliothek ist ab diesem Semester auch sonntags von zehn bis achtzehn Uhr geöffnet, allerdings nur in der Prüfungsphase. Wer einen Studentenausweis braucht, muss im Sekretariat ein Passfoto abgeben; das Foto darf nicht älter als ein Jahr sein. Bitte beachten Sie außerdem, dass sich die Anmeldung für die Seminare dieses Jahr geändert hat. Sie läuft nicht mehr über Papierformulare, sondern ausschließlich online, und zwar bis zum 20. Oktober. Wer die Frist verpasst, kann erst im nächsten Semester teilnehmen. Bei Fragen wenden Sie sich bitte an die Studienberatung im zweiten Stock.",
+      "question": "Was passiert, wenn man die Anmeldefrist verpasst?",
+      "options": [
+        "Man zahlt eine Strafe.",
+        "Man muss ein Papierformular abgeben.",
+        "Man muss ein Semester warten.",
+        "Man wird in ein anderes Seminar eingeteilt."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matn: «Wer die Frist verpasst, kann erst im nächsten Semester teilnehmen» – keyingi semestrni kutish kerak."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Das ist das Wohnzimmer, es hat einen Balkon nach Süden.\nB: Schön hell. Und die Küche?\nA: Die ist im Mietpreis nicht enthalten. Die Vormieter nehmen ihre Einbauküche mit, Sie müssten also selbst eine kaufen. Dafür liegt die Kaltmiete mit 780 Euro etwas unter dem Durchschnitt.\nB: Und die Nebenkosten?\nA: Etwa 150 Euro im Monat, inklusive Heizung. Strom müssen Sie separat bezahlen. Außerdem verlangt der Vermieter eine Kaution von drei Monatsmieten.\nB: Das ist ziemlich viel. Wie sieht es mit Haustieren aus? Ich habe eine Katze.\nA: Katzen sind erlaubt, Hunde nur nach Absprache.",
+      "question": "Was muss der Interessent selbst besorgen?",
+      "options": [
+        "Eine Heizung",
+        "Neue Fenster",
+        "Eine Küche",
+        "Einen Balkon"
+      ],
+      "answer": 2,
+      "explanation_uz": "A: «Die Vormieter nehmen ihre Einbauküche mit, Sie müssten also selbst eine kaufen» – oshxonani o'zi sotib olishi kerak."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Das ist das Wohnzimmer, es hat einen Balkon nach Süden.\nB: Schön hell. Und die Küche?\nA: Die ist im Mietpreis nicht enthalten. Die Vormieter nehmen ihre Einbauküche mit, Sie müssten also selbst eine kaufen. Dafür liegt die Kaltmiete mit 780 Euro etwas unter dem Durchschnitt.\nB: Und die Nebenkosten?\nA: Etwa 150 Euro im Monat, inklusive Heizung. Strom müssen Sie separat bezahlen. Außerdem verlangt der Vermieter eine Kaution von drei Monatsmieten.\nB: Das ist ziemlich viel. Wie sieht es mit Haustieren aus? Ich habe eine Katze.\nA: Katzen sind erlaubt, Hunde nur nach Absprache.",
+      "text": "Die Nebenkosten betragen ungefähr ___ Euro pro Monat.",
+      "answers": [
+        "150",
+        "hundertfünfzig",
+        "einhundertfünfzig"
+      ],
+      "explanation_uz": "A: «Etwa 150 Euro im Monat» – oyiga taxminan 150 yevro."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Das ist das Wohnzimmer, es hat einen Balkon nach Süden.\nB: Schön hell. Und die Küche?\nA: Die ist im Mietpreis nicht enthalten. Die Vormieter nehmen ihre Einbauküche mit, Sie müssten also selbst eine kaufen. Dafür liegt die Kaltmiete mit 780 Euro etwas unter dem Durchschnitt.\nB: Und die Nebenkosten?\nA: Etwa 150 Euro im Monat, inklusive Heizung. Strom müssen Sie separat bezahlen. Außerdem verlangt der Vermieter eine Kaution von drei Monatsmieten.\nB: Das ist ziemlich viel. Wie sieht es mit Haustieren aus? Ich habe eine Katze.\nA: Katzen sind erlaubt, Hunde nur nach Absprache.",
+      "question": "Wie reagiert B auf die Kaution?",
+      "options": [
+        "B findet sie ziemlich hoch.",
+        "B findet sie angemessen.",
+        "B hat sie schon bezahlt.",
+        "B möchte darüber nicht sprechen."
+      ],
+      "answer": 0,
+      "explanation_uz": "B: «Das ist ziemlich viel» – B garov summasini baland deb topadi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Viele Menschen glauben, dass man jede Nacht acht Stunden schlafen muss. Aktuelle Studien zeigen jedoch, dass der Schlafbedarf individuell sehr unterschiedlich ist. Entscheidend ist weniger die Dauer als die Qualität. Wer abends lange auf den Bildschirm schaut, schläft oft schlechter ein, weil das blaue Licht die Produktion des Schlafhormons Melatonin hemmt. Experten raten deshalb, mindestens eine Stunde vor dem Zubettgehen auf Handy und Fernseher zu verzichten. Auch ein regelmäßiger Rhythmus hilft: Wer jeden Tag zur gleichen Zeit aufsteht, auch am Wochenende, gewöhnt seinen Körper an feste Zeiten. Kaffee sollte man nach dem Mittag möglichst nicht mehr trinken, da das Koffein viele Stunden wirkt.",
+      "question": "Was ist laut der Sprecherin oder dem Sprecher wichtiger als die Schlafdauer?",
+      "options": [
+        "Die Zimmertemperatur",
+        "Die Güte des Schlafs",
+        "Die Uhrzeit des Zubettgehens",
+        "Die Größe des Bettes"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matn: «Entscheidend ist weniger die Dauer als die Qualität» – asosiysi uyqu sifati."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Viele Menschen glauben, dass man jede Nacht acht Stunden schlafen muss. Aktuelle Studien zeigen jedoch, dass der Schlafbedarf individuell sehr unterschiedlich ist. Entscheidend ist weniger die Dauer als die Qualität. Wer abends lange auf den Bildschirm schaut, schläft oft schlechter ein, weil das blaue Licht die Produktion des Schlafhormons Melatonin hemmt. Experten raten deshalb, mindestens eine Stunde vor dem Zubettgehen auf Handy und Fernseher zu verzichten. Auch ein regelmäßiger Rhythmus hilft: Wer jeden Tag zur gleichen Zeit aufsteht, auch am Wochenende, gewöhnt seinen Körper an feste Zeiten. Kaffee sollte man nach dem Mittag möglichst nicht mehr trinken, da das Koffein viele Stunden wirkt.",
+      "text": "Das blaue Licht von Bildschirmen hemmt die Produktion des Hormons ___.",
+      "answers": [
+        "Melatonin"
+      ],
+      "explanation_uz": "Matn: «die Produktion des Schlafhormons Melatonin hemmt» – melatonin gormoni."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Viele Menschen glauben, dass man jede Nacht acht Stunden schlafen muss. Aktuelle Studien zeigen jedoch, dass der Schlafbedarf individuell sehr unterschiedlich ist. Entscheidend ist weniger die Dauer als die Qualität. Wer abends lange auf den Bildschirm schaut, schläft oft schlechter ein, weil das blaue Licht die Produktion des Schlafhormons Melatonin hemmt. Experten raten deshalb, mindestens eine Stunde vor dem Zubettgehen auf Handy und Fernseher zu verzichten. Auch ein regelmäßiger Rhythmus hilft: Wer jeden Tag zur gleichen Zeit aufsteht, auch am Wochenende, gewöhnt seinen Körper an feste Zeiten. Kaffee sollte man nach dem Mittag möglichst nicht mehr trinken, da das Koffein viele Stunden wirkt.",
+      "question": "Was empfehlen Experten für einen regelmäßigen Rhythmus?",
+      "options": [
+        "Am Wochenende immer lange schlafen",
+        "Abends noch lange fernsehen",
+        "Nach dem Mittag viel Kaffee trinken",
+        "Täglich ungefähr zur gleichen Uhrzeit aus dem Bett steigen"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matn: «jeden Tag zur gleichen Zeit aufsteht, auch am Wochenende» – har kuni bir vaqtda turish."
+    }
+  }
+]

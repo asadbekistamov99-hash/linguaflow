@@ -1373,3 +1373,5 @@ button.chip:hover{border-color:var(--line2);background:var(--card2)}
 
 
 
+
+.cert-disclaimer{font-size:.78rem;color:var(--muted);line-height:1.4;margin:10px 0 0;text-align:center}

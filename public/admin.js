@@ -73,25 +73,31 @@
   }
 
   // ---------- shell & router ----------
-  const NAV = [['/dashboard', '📊', 'Boshqaruv'], ['/users', '👥', 'Foydalanuvchilar'], ['/content', '📚', 'Kontent'], ['/settings', '📢', "E'lon"], ['/audit', '🧾', 'Audit jurnali']];
+  const NAV_ADMIN = [['/dashboard', '📊', 'Boshqaruv'], ['/users', '👥', 'Foydalanuvchilar'], ['/content', '📚', 'Kontent'], ['/items', '🗂️', 'Savollar banki'], ['/settings', '⚙️', 'Sozlamalar'], ['/audit', '🧾', 'Audit jurnali']];
+  const NAV_REVIEWER = [['/items', '🗂️', 'Savollar banki']];
+  const navItems = () => (S.me && S.me.isAdmin ? NAV_ADMIN : NAV_REVIEWER);
   function shell(active, ...content) {
     const side = h('aside', { class: 'side' },
       h('a', { href: '#/dashboard', class: 'logo' }, h('span', { class: 'logo-mark' }, 'L'), 'Admin'),
-      NAV.map(([p, ic, l]) => h('a', { href: '#' + p, class: 'nav-item' + (active === p ? ' on' : '') }, h('span', { class: 'ic' }, ic), l)),
+      navItems().map(([p, ic, l]) => h('a', { href: '#' + p, class: 'nav-item' + (active === p ? ' on' : '') }, h('span', { class: 'ic' }, ic), l)),
       h('div', { style: { flex: 1 } }),
       h('a', { href: '/app#/learn', class: 'nav-item' }, h('span', { class: 'ic' }, '↩️'), 'Ilovaga qaytish'));
     const top = h('header', { class: 'topbar' }, h('div', { class: 'logo-sm' }, h('span', { class: 'logo-mark' }, 'L'), ' Admin'),
       h('div', { style: { display: 'flex', gap: '8px', alignItems: 'center' } }, h('span', { class: 'chip' }, '🛡️ ', S.me.name),
         h('button', { class: 'btn btn-ghost btn-sm', onclick: async () => { await api('POST', '/api/auth/logout', {}); S.me = null; renderLogin(); } }, 'Chiqish')));
-    const tabs = h('nav', { class: 'tabbar' }, NAV.map(([p, ic, l]) => h('a', { href: '#' + p, class: 'tab' + (active === p ? ' on' : '') }, h('span', { class: 'ic' }, ic), l.split(' ')[0])));
+    const tabs = h('nav', { class: 'tabbar' }, navItems().map(([p, ic, l]) => h('a', { href: '#' + p, class: 'tab' + (active === p ? ' on' : '') }, h('span', { class: 'ic' }, ic), l.split(' ')[0])));
     mount(h('div', { class: 'shell' }, side, h('div', { class: 'main' }, top, h('main', { class: 'adm-page' }, content)), tabs));
   }
 
-  const pages = { '/dashboard': pageDashboard, '/users': pageUsers, '/content': pageContent, '/settings': pageSettings, '/audit': pageAudit };
+  const pages = { '/dashboard': pageDashboard, '/users': pageUsers, '/content': pageContent, '/items': pageItems, '/settings': pageSettings, '/audit': pageAudit };
   async function route() {
     if (!S.me) return;
-    const path = (location.hash.slice(1) || '/dashboard').split('?')[0];
-    try { await (pages[path] || pageDashboard)(path in pages ? path : '/dashboard'); } catch (e) {
+    const home = S.me.isAdmin ? '/dashboard' : '/items';
+    const path = (location.hash.slice(1) || home).split('?')[0];
+    // reviewers only get the item bank; everything else is admin-only (and enforced by the server too)
+    const allowed = S.me.isAdmin ? pages : { '/items': pageItems };
+    const target = path in allowed ? path : home;
+    try { await allowed[target](target); } catch (e) {
       if (e.status === 401 || e.status === 403) { S.me = null; return renderLogin(e.message); }
       toast(e.message);
     }
@@ -154,7 +160,7 @@
     const sort = h('select', { class: 'sel', 'aria-label': 'Saralash', onchange: (e) => { usersState.sort = e.target.value; usersState.page = 1; pageUsers(active); } },
       [['new', "Yangilari avval"], ['xp', "Eng ko'p XP"], ['active', 'Oxirgi faollik']].map(([v, l]) => h('option', { value: v, selected: usersState.sort === v }, l)));
     const rows = data.users.map((u) => h('tr', { class: 'click', onclick: () => openUser(u.id) },
-      h('td', {}, h('b', {}, u.name), ' ', u.role === 'admin' ? h('span', { class: 'tag admin' }, 'admin') : null, u.banned ? h('span', { class: 'tag ban' }, 'bloklangan') : null),
+      h('td', {}, h('b', {}, u.name), ' ', u.role === 'admin' ? h('span', { class: 'tag admin' }, 'admin') : null, u.role === 'reviewer' ? h('span', { class: 'tag review' }, 'tekshiruvchi') : null, u.banned ? h('span', { class: 'tag ban' }, 'bloklangan') : null),
       h('td', {}, u.email), h('td', {}, num(u.xp)), h('td', {}, u.streak), h('td', {}, fmtDate(u.created_at)), h('td', {}, fmtDay(u.last_active))));
     shell(active, h('h1', {}, 'Foydalanuvchilar'), h('p', { class: 'lead' }, `Jami: ${num(data.total)}`),
       h('div', { class: 'toolbar' }, search, sort),
@@ -181,7 +187,7 @@
     const act = (label, cls, fn) => h('button', { class: `btn btn-sm ${cls}`, onclick: guard(async () => { await fn(); m.close(); toast('Bajarildi ✓'); route(); }) }, label);
     m.el.firstChild.replaceChildren(
       h('div', { style: { display: 'flex', alignItems: 'center', gap: '14px' } }, h('div', { class: 'avatar', style: { width: '54px', height: '54px', fontSize: '1.4rem' } }, u.name[0].toUpperCase()),
-        h('div', {}, h('h2', { style: { marginBottom: 0 } }, u.name, ' ', u.isAdmin ? h('span', { class: 'tag admin' }, 'admin') : null, u.banned ? h('span', { class: 'tag ban' }, 'bloklangan') : null), h('div', { class: 'muted' }, u.email))),
+        h('div', {}, h('h2', { style: { marginBottom: 0 } }, u.name, ' ', u.isAdmin ? h('span', { class: 'tag admin' }, 'admin') : null, u.role === 'reviewer' ? h('span', { class: 'tag review' }, 'tekshiruvchi ' + (u.reviewerLangs || []).join('/').toUpperCase()) : null, u.banned ? h('span', { class: 'tag ban' }, 'bloklangan') : null), h('div', { class: 'muted' }, u.email))),
       h('div', { class: 'detail-grid' },
         h('div', { class: 'stat-tile' }, h('b', {}, u.level), h('span', {}, 'Daraja')), h('div', { class: 'stat-tile' }, h('b', {}, num(u.xp)), h('span', {}, 'XP')),
         h('div', { class: 'stat-tile' }, h('b', {}, u.streak), h('span', {}, 'Seriya')), h('div', { class: 'stat-tile' }, h('b', {}, d.words), h('span', {}, "So'zlar"))),
@@ -194,6 +200,8 @@
       h('h3', { class: 'sub' }, 'Amallar'),
       h('div', { class: 'row-actions' },
         !self ? act(u.isAdmin ? 'Adminlikni olib tashlash' : 'Admin qilish', 'btn-ghost', () => api('PATCH', `/api/admin/users/${u.id}`, { role: u.isAdmin ? 'user' : 'admin' })) : null,
+        !self && !u.isAdmin ? h('button', { class: 'btn btn-sm btn-ghost', onclick: () => { m.close(); reviewerModal(u); } }, u.role === 'reviewer' ? 'Tekshiruvchi tillarini o\'zgartirish' : 'Tekshiruvchi qilish') : null,
+        !self && u.role === 'reviewer' ? act('Tekshiruvchilikni olib tashlash', 'btn-ghost', () => api('PATCH', `/api/admin/users/${u.id}`, { role: 'user' })) : null,
         !self && !u.isAdmin ? act(u.banned ? 'Blokdan chiqarish' : 'Bloklash', 'btn-ghost', () => api('PATCH', `/api/admin/users/${u.id}`, { banned: !u.banned })) : null,
         act('Progressni tozalash', 'btn-ghost', async () => { await api('POST', `/api/admin/users/${u.id}/reset`, { what: 'progress' }); }),
         act('XP va nishonlarni tozalash', 'btn-ghost', async () => { await api('POST', `/api/admin/users/${u.id}/reset`, { what: 'xp' }); }),
@@ -345,14 +353,24 @@
 
   // ---------- settings & audit ----------
   async function pageSettings(active) {
-    const { announcement: a } = await api('GET', '/api/admin/settings');
+    const [{ announcement: a }, lim] = await Promise.all([api('GET', '/api/admin/settings'), api('GET', '/api/admin/limits')]);
     const en = h('input', { type: 'checkbox', checked: a.enabled });
     const text = h('textarea', { class: 't-input', rows: 3, maxlength: 240, placeholder: "Masalan: Yangi darslar qo'shildi! 🎉", style: { width: '100%', fontSize: '1rem' } }, a.text || '');
     const level = h('select', { class: 'sel' }, [['info', "Oddiy (ko'k)"], ['warn', 'Muhim (sariq)']].map(([v, t]) => h('option', { value: v, selected: a.level === v }, t)));
-    shell(active, h('h1', {}, "E'lon"), h('p', { class: 'lead' }, "Foydalanuvchilarga ilovaning yuqorisida ko'rsatiladi."),
+    const FEATURE = { tutor: ['AI ustoz (suhbat)', 'Kuniga har bir foydalanuvchi uchun xabarlar soni'], writing: ['Yozishni tekshirish', 'IELTS Writing va insho tekshiruvi'], speaking: ['Gapirish / talaffuz', 'Ovozli ustoz, Speaking va talaffuz mashqlari'] };
+    const inputs = Object.fromEntries(Object.keys(FEATURE).map((k) => [k, h('input', { type: 'number', min: 0, max: 100000, class: 't-input', value: lim.limits[k], style: { padding: '8px 12px', maxWidth: '140px' } })]));
+    const limitsCard = h('div', { class: 'card', style: { display: 'grid', gap: '14px', maxWidth: '640px', marginTop: '18px' } },
+      h('h3', { style: { margin: 0 } }, 'AI limitlari (bepul rejim)'), h('p', { class: 'muted', style: { margin: 0 } }, "Har bir foydalanuvchi uchun kunlik chegara. 0 = imkoniyat o'chirilgan. Adminlarga limit qo'llanmaydi. Foydalanuvchilar ko'payganda shu yerdan pullik rejaga o'tish uchun qiymatlarni kamaytirasiz yoki xizmat kalitini almashtirasiz."),
+      Object.entries(FEATURE).map(([k, [t, d]]) => h('label', { class: 'field', style: { margin: 0 } }, h('span', {}, `${t} — ${d}`), inputs[k])),
+      h('div', {}, h('button', { class: 'btn btn-main', onclick: guard(async () => { await api('PUT', '/api/admin/limits', { limits: Object.fromEntries(Object.entries(inputs).map(([k, el]) => [k, Number(el.value)])) }); toast('Limitlar saqlandi ✓'); route(); }) }, 'Saqlash')),
+      h('h3', { class: 'sub', style: { margin: '6px 0 0' } }, 'Bugungi foydalanish'),
+      lim.features.length ? h('div', { class: 'mini-list' }, lim.features.map((f) => h('div', {}, `${(FEATURE[f.feature] || [f.feature])[0]}: ${f.calls} ta so'rov, ${f.users} ta foydalanuvchi`))) : h('p', { class: 'muted', style: { margin: 0 } }, "Bugun hali foydalanilmagan"),
+      lim.top.length ? h('div', { class: 'mini-list' }, h('b', {}, 'Eng faol:'), lim.top.map((u) => h('div', {}, `${u.name} (${u.email}): ${u.calls} ta`))) : null);
+    shell(active, h('h1', {}, 'Sozlamalar'), h('p', { class: 'lead' }, "E'lon banneri va AI limitlari."),
       h('div', { class: 'card', style: { display: 'grid', gap: '14px', maxWidth: '640px' } },
         h('label', { class: 'switch' }, en, "E'lon faol"), h('label', { class: 'field' }, h('span', {}, 'Matn (240 belgigacha)'), text), h('label', { class: 'field' }, h('span', {}, 'Turi'), level),
-        h('div', {}, h('button', { class: 'btn btn-main', onclick: guard(async () => { await api('PUT', '/api/admin/settings', { announcement: { enabled: en.checked, text: text.value, level: level.value } }); toast('Saqlandi ✓'); }) }, 'Saqlash'))));
+        h('div', {}, h('button', { class: 'btn btn-main', onclick: guard(async () => { await api('PUT', '/api/admin/settings', { announcement: { enabled: en.checked, text: text.value, level: level.value } }); toast('Saqlandi ✓'); }) }, 'Saqlash'))),
+      limitsCard);
   }
 
   async function pageAudit(active) {
@@ -363,14 +381,186 @@
   }
 
   // ---------- boot ----------
+  // ---------- reviewers ----------
+  async function reviewerModal(u) {
+    const meta = await api('GET', '/api/admin/items/meta');
+    const picked = new Set(u.reviewerLangs || []);
+    const boxes = meta.languages.map((l) => h('label', { class: 'switch', style: { display: 'flex', margin: '6px 0' } },
+      h('input', { type: 'checkbox', checked: picked.has(l.code), onchange: (e) => { if (e.target.checked) picked.add(l.code); else picked.delete(l.code); } }), `${l.flag} ${l.name}`));
+    const m = modal(h('h2', {}, `${u.name}: tekshiruvchi`), h('p', { class: 'muted' }, 'Tekshiruvchi faqat tanlangan tillardagi savollarni ko\'radi, tahrirlaydi va tasdiqlaydi. O\'z savolini o\'zi tasdiqlay olmaydi.'), boxes,
+      h('div', { style: { display: 'flex', gap: '10px', marginTop: '14px' } },
+        h('button', { class: 'btn btn-main', onclick: guard(async () => { await api('PATCH', `/api/admin/users/${u.id}`, { role: 'reviewer', reviewerLangs: [...picked] }); m.close(); toast('Saqlandi ✓'); route(); }) }, 'Saqlash'),
+        h('button', { class: 'btn btn-ghost', onclick: () => m.close() }, 'Bekor qilish')));
+  }
+
+  // ---------- item bank ----------
+  const IT = { meta: null, f: { lang: '', level: '', skill: '', status: '', q: '', page: 1 } };
+  const STATUS_LABEL = { draft: 'qoralama', review: 'tekshiruvda', approved: 'tasdiqlangan', rejected: 'rad etilgan' };
+  const SKILL_LABEL = { vocab: "Lug'at", grammar: 'Grammatika', reading: "O'qish", listening: 'Eshitish', writing: 'Yozish', speaking: 'Gapirish' };
+  const statusTag = (st) => h('span', { class: `tag ${st}` }, STATUS_LABEL[st] || st);
+  const snippet = (it) => { const p = it.payload; return String(p.question || p.statement || p.text || p.prompt || (p.pairs && p.pairs.map((x) => x.l).join(', ')) || '').slice(0, 90); };
+  const lines = (s) => String(s || '').split('\n').map((x) => x.trim()).filter(Boolean);
+
+  async function pageItems(active) {
+    IT.meta = IT.meta || await api('GET', '/api/admin/items/meta');
+    const meta = IT.meta;
+    const qs = new URLSearchParams(Object.entries(IT.f).filter(([, v]) => v !== '' && v != null).map(([k, v]) => [k, String(v)]));
+    const [sum, data] = await Promise.all([api('GET', '/api/admin/items/summary'), api('GET', `/api/admin/items?${qs}`)]);
+    const cell = (lang, level) => {
+      const rows = sum.rows.filter((r) => r.lang === lang.code && r.level === level);
+      const by = Object.fromEntries(rows.map((r) => [r.status, r.n]));
+      const total = rows.reduce((a, r) => a + r.n, 0), ok = by.approved || 0;
+      const beyond = sum.levels.indexOf(level) > sum.levels.indexOf(lang.target);
+      return h('td', { class: `cov-cell ${beyond ? 'beyond' : total ? (ok ? 'ok' : 'some') : 'empty'}`, title: `qoralama ${by.draft || 0} · tekshiruvda ${by.review || 0} · tasdiqlangan ${ok} · rad ${by.rejected || 0}`,
+        onclick: () => { IT.f = { ...IT.f, lang: lang.code, level, page: 1 }; pageItems(active); } }, total ? `${ok}/${total}` : '—');
+    };
+    const matrix = h('div', { class: 'tbl-wrap' }, h('table', { class: 'tbl covmx' },
+      h('thead', {}, h('tr', {}, h('th', {}, 'Til (maqsad)'), sum.levels.map((l) => h('th', {}, l)))),
+      h('tbody', {}, sum.langs.map((l) => h('tr', {}, h('td', {}, `${l.flag} ${l.name} → ${l.target}`), sum.levels.map((lv) => cell(l, lv)))))));
+
+    const sel = (key, label, opts) => h('select', { class: 'sel', 'aria-label': label, onchange: (e) => { IT.f[key] = e.target.value; IT.f.page = 1; pageItems(active); } },
+      h('option', { value: '' }, label), opts.map(([v, t]) => h('option', { value: v, selected: IT.f[key] === v }, t)));
+    const search = h('input', { type: 'search', class: 't-input', placeholder: 'Savol matnidan qidirish…', value: IT.f.q, 'aria-label': 'Qidiruv' });
+    let timer; search.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(() => { IT.f.q = search.value; IT.f.page = 1; pageItems(active); }, 350); });
+
+    const rows = data.items.map((it) => h('tr', { class: 'click', onclick: () => itemModal(it, active) },
+      h('td', { class: 'muted' }, `#${it.id}`), h('td', {}, it.lang.toUpperCase()), h('td', {}, h('span', { class: 'tag' }, it.level)), h('td', {}, SKILL_LABEL[it.skill] || it.skill),
+      h('td', { class: 'muted' }, it.type), h('td', {}, statusTag(it.status)), h('td', {}, snippet(it)), h('td', { class: 'muted' }, it.author || '—')));
+
+    shell(active, h('h1', {}, 'Savollar banki'),
+      h('p', { class: 'lead' }, "Imtihon formatidagi savollar: qoralama → tekshiruv → tasdiqlash. Faqat tasdiqlangan savollar o'quvchilarga chiqariladi (keyingi sprintlarda). Maqsad: ingliz tili C2 gacha, qolganlari B2 gacha."),
+      h('div', { class: 'toolbar' }, h('button', { class: 'btn btn-main btn-sm', onclick: () => itemModal(null, active) }, '+ Savol qo\'shish'), h('button', { class: 'btn btn-ghost btn-sm', onclick: () => importModal(active) }, '⬆ Ommaviy import (JSON)')),
+      matrix, h('p', { class: 'muted' }, "Katakdagi son: tasdiqlangan/jami. Bosib shu til va daraja bo'yicha filtrlang."),
+      h('div', { class: 'toolbar', style: { marginTop: '16px' } }, search,
+        sel('lang', 'Til', meta.languages.map((l) => [l.code, `${l.flag} ${l.name}`])), sel('level', 'Daraja', meta.levels.map((x) => [x, x])),
+        sel('skill', "Ko'nikma", meta.skills.map((x) => [x, SKILL_LABEL[x]])), sel('status', 'Holat', meta.statuses.map((x) => [x, STATUS_LABEL[x]])),
+        h('button', { class: 'btn btn-ghost btn-sm', onclick: () => { IT.f = { lang: '', level: '', skill: '', status: '', q: '', page: 1 }; pageItems(active); } }, 'Tozalash')),
+      h('div', { class: 'tbl-wrap' }, h('table', { class: 'tbl' }, h('thead', {}, h('tr', {}, ['ID', 'Til', 'Daraja', "Ko'nikma", 'Tur', 'Holat', 'Savol', 'Muallif'].map((x) => h('th', {}, x)))),
+        h('tbody', {}, rows.length ? rows : h('tr', {}, h('td', { colspan: 8, class: 'center muted', style: { padding: '30px' } }, `Savollar yo'q (jami ${data.total})`))))),
+      h('div', { class: 'pager' }, h('button', { class: 'btn btn-ghost btn-sm', disabled: data.page <= 1, onclick: () => { IT.f.page--; pageItems(active); } }, '← Oldingi'),
+        h('span', {}, `${data.page} / ${data.pages} · jami ${data.total}`), h('button', { class: 'btn btn-ghost btn-sm', disabled: data.page >= data.pages, onclick: () => { IT.f.page++; pageItems(active); } }, 'Keyingi →')));
+  }
+
+  function itemModal(it, active) {
+    const meta = IT.meta, isNew = !it;
+    const m = modal();
+    m.el.firstChild.style.maxWidth = '860px';
+    const field = (label, el) => h('label', { class: 'field' }, h('span', {}, label), el);
+    const select = (opts, value) => h('select', { class: 'sel', style: { width: '100%' } }, opts.map(([v, t]) => h('option', { value: v, selected: v === value }, t)));
+    const area = (value, rows = 3, ph = '') => h('textarea', { class: 't-input', rows, placeholder: ph, style: { width: '100%', fontSize: '.95rem', padding: '10px 12px' } }, value || '');
+    const lang = select(meta.languages.map((l) => [l.code, `${l.flag} ${l.name}`]), it ? it.lang : (IT.f.lang || meta.languages[0].code));
+    const level = select(meta.levels.map((x) => [x, x]), it ? it.level : (IT.f.level || 'B2'));
+    const skill = select(meta.skills.map((x) => [x, SKILL_LABEL[x]]), it ? it.skill : (IT.f.skill || 'reading'));
+    const exam = select(meta.exams.map((x) => [x, x]), it ? it.exam : 'general');
+    const type = select([], '');
+    const P = (it && it.payload) || {};
+    const box = h('div');
+    const fx = {};
+
+    const typesFor = () => (skill.value === 'writing' ? ['essay_prompt'] : skill.value === 'speaking' ? ['speaking_prompt'] : meta.closedTypes);
+    const refreshTypes = () => { const cur = it && typesFor().includes(it.type) && !type.dataset.touched ? it.type : type.value; type.replaceChildren(...typesFor().map((v) => h('option', { value: v, selected: v === cur }, v))); renderPayload(); };
+    function renderPayload() {
+      box.replaceChildren(); for (const k of Object.keys(fx)) delete fx[k];
+      const t = type.value, g = (k, el) => { fx[k] = el; return el; };
+      const parts = [];
+      if (t === 'mcq') parts.push(field('Savol', g('question', area(P.question))), field('Variantlar (har qatorda bittadan, 2-6 ta)', g('options', area((P.options || []).join('\n'), 5))), field("To'g'ri javob raqami (1 dan boshlab)", g('answer', h('input', { type: 'number', min: 1, max: 6, class: 't-input', value: P.answer != null ? P.answer + 1 : 1, style: { padding: '8px 12px' } }))));
+      if (t === 'gap') parts.push(field("Matn (bo'sh joy: ___)", g('text', area(P.text))), field("To'g'ri javob(lar) (har qatorda bittadan)", g('answers', area((P.answers || []).join('\n'), 2))));
+      if (t === 'tf_ng') parts.push(field('Gap (tasdiq)', g('statement', area(P.statement, 2))), field('Javob', g('answer', select([['true', 'True'], ['false', 'False'], ['not_given', 'Not given']], P.answer || 'true'))));
+      if (t === 'matching') parts.push(field("Juftliklar (har qatorda: chap | o'ng)", g('pairs', area((P.pairs || []).map((x) => `${x.l} | ${x.r}`).join('\n'), 5))));
+      if (t === 'short') parts.push(field('Savol', g('question', area(P.question))), field("Qabul qilinadigan javob(lar) (har qatorda bittadan)", g('answers', area((P.answers || []).join('\n'), 2))));
+      if (t === 'essay_prompt') parts.push(field('Topshiriq matni', g('prompt', area(P.prompt, 4))), field("Eng kam so'z soni", g('min_words', h('input', { type: 'number', min: 20, max: 1000, class: 't-input', value: P.min_words || 150, style: { padding: '8px 12px' } }))), field('Task (IELTS)', g('task', select([['', '—'], ['task1', 'Task 1'], ['task2', 'Task 2']], P.task || ''))));
+      if (t === 'speaking_prompt') parts.push(field('Savol / topshiriq', g('prompt', area(P.prompt, 3))), field('Part (IELTS)', g('part', select([['', '—'], ['1', 'Part 1'], ['2', 'Part 2'], ['3', 'Part 3']], P.part ? String(P.part) : ''))), field('Tayyorlanish vaqti (soniya)', g('prep_seconds', h('input', { type: 'number', min: 0, max: 300, class: 't-input', value: P.prep_seconds != null ? P.prep_seconds : '', style: { padding: '8px 12px' } }))));
+      parts.push(field("Matn / parcha (o'qish uchun, ixtiyoriy)", g('passage', area(P.passage, 4))), field('Eshitish matni (transcript, ixtiyoriy)', g('transcript', area(P.transcript, 3))),
+        field('Audio havola (https://… yoki /audio/…)', g('audio_url', h('input', { class: 't-input', value: P.audio_url || '', style: { padding: '8px 12px' } }))), field("Tushuntirish (o'zbekcha, ixtiyoriy)", g('explanation_uz', area(P.explanation_uz, 2))));
+      box.append(...parts);
+    }
+    function readPayload() {
+      const t = type.value, v = (k) => fx[k].value, p = {};
+      if (t === 'mcq') { p.question = v('question'); p.options = lines(v('options')); p.answer = Number(v('answer')) - 1; }
+      if (t === 'gap') { p.text = v('text'); p.answers = lines(v('answers')); }
+      if (t === 'tf_ng') { p.statement = v('statement'); p.answer = v('answer'); }
+      if (t === 'matching') p.pairs = lines(v('pairs')).map((x) => { const [l, ...r] = x.split('|'); return { l: (l || '').trim(), r: r.join('|').trim() }; });
+      if (t === 'short') { p.question = v('question'); p.answers = lines(v('answers')); }
+      if (t === 'essay_prompt') { p.prompt = v('prompt'); p.min_words = Number(v('min_words')) || 150; if (v('task')) p.task = v('task'); }
+      if (t === 'speaking_prompt') { p.prompt = v('prompt'); if (v('part')) p.part = Number(v('part')); if (v('prep_seconds') !== '') p.prep_seconds = Number(v('prep_seconds')); }
+      for (const k of ['passage', 'transcript', 'audio_url', 'explanation_uz']) if (v(k).trim()) p[k] = v(k).trim();
+      return p;
+    }
+    type.addEventListener('change', () => { type.dataset.touched = '1'; renderPayload(); });
+    skill.addEventListener('change', () => { type.dataset.touched = ''; refreshTypes(); });
+    refreshTypes();
+    if (it) type.value = it.type;
+
+    const done = (msg) => { m.close(); toast(msg || 'Saqlandi ✓'); route(); };
+    const save = guard(async () => {
+      const body = { lang: lang.value, level: level.value, skill: skill.value, exam: exam.value, type: type.value, payload: readPayload() };
+      if (isNew) await api('POST', '/api/admin/items', body); else await api('PATCH', `/api/admin/items/${it.id}`, body);
+      done();
+    });
+    const note = h('input', { class: 't-input', placeholder: 'Izoh (rad etishda majburiy)', value: it && it.reviewNote ? it.reviewNote : '', style: { padding: '8px 12px', flex: 1, minWidth: '180px' } });
+    const move = (to, label, cls = 'btn-ghost') => h('button', { class: `btn btn-sm ${cls}`, onclick: guard(async () => { await api('POST', `/api/admin/items/${it.id}/status`, { status: to, note: note.value }); done('Holat yangilandi ✓'); }) }, label);
+    const own = it && IT.meta.role === 'reviewer' && it.authorId === S.me.id;
+    const flow = !it ? null : h('div', { class: 'card', style: { marginTop: '14px' } },
+      h('div', { style: { display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' } }, h('b', {}, 'Holat:'), statusTag(it.status), it.reviewNote ? h('span', { class: 'muted' }, `Izoh: ${it.reviewNote}`) : null),
+      h('div', { class: 'row-actions', style: { marginTop: '10px', alignItems: 'center' } }, note,
+        it.status === 'draft' ? move('review', 'Tekshiruvga yuborish', 'btn-main') : null,
+        it.status === 'review' && !own ? move('approved', '✓ Tasdiqlash', 'btn-main') : null,
+        it.status === 'review' && !own ? move('rejected', '✕ Rad etish', 'btn-danger') : null,
+        it.status === 'review' ? move('draft', 'Qoralamaga qaytarish') : null,
+        it.status === 'approved' ? move('draft', 'Qoralamaga qaytarish') : null,
+        it.status === 'rejected' ? move('review', 'Qayta tekshiruvga') : null,
+        it.status === 'rejected' ? move('draft', 'Qoralamaga qaytarish') : null),
+      own && it.status === 'review' ? h('p', { class: 'muted' }, "Bu sizning savolingiz: uni boshqa tekshiruvchi yoki admin tasdiqlaydi.") : null);
+
+    m.el.firstChild.replaceChildren(h('h2', {}, isNew ? 'Yangi savol' : `Savol #${it.id}`),
+      h('div', { class: 'form-grid' }, field('Til', lang), field('Daraja (CEFR)', level), field("Ko'nikma", skill), field('Imtihon formati', exam)),
+      field('Savol turi', type), box,
+      it && it.status === 'approved' ? h('p', { class: 'muted' }, "Diqqat: tasdiqlangan savolni tahrirlasangiz, u qoralamaga qaytadi va qayta tekshiriladi.") : null,
+      h('div', { style: { display: 'flex', gap: '10px', marginTop: '10px', flexWrap: 'wrap' } }, h('button', { class: 'btn btn-main', onclick: save }, 'Saqlash'),
+        !isNew ? h('button', { class: 'btn btn-danger', onclick: guard(async () => { if (!confirm(`#${it.id} savol o'chirilsinmi?`)) return; await api('DELETE', `/api/admin/items/${it.id}`); done("O'chirildi"); }) }, "O'chirish") : null,
+        h('button', { class: 'btn btn-ghost', onclick: () => m.close() }, 'Yopish')),
+      flow);
+  }
+
+  function importModal(active) {
+    const meta = IT.meta;
+    const m = modal();
+    m.el.firstChild.style.maxWidth = '860px';
+    const sel = (opts, def) => h('select', { class: 'sel', style: { width: '100%' } }, h('option', { value: '' }, def), opts.map(([v, t]) => h('option', { value: v }, t)));
+    const lang = sel(meta.languages.map((l) => [l.code, `${l.flag} ${l.name}`]), 'Til (hammasi uchun)');
+    const level = sel(meta.levels.map((x) => [x, x]), 'Daraja (hammasi uchun)');
+    const skill = sel(meta.skills.map((x) => [x, SKILL_LABEL[x]]), "Ko'nikma (hammasi uchun)");
+    const type = sel(meta.types.map((x) => [x, x]), 'Tur (hammasi uchun)');
+    const exam = sel(meta.exams.map((x) => [x, x]), 'Imtihon (hammasi uchun)');
+    const text = h('textarea', { class: 't-input', rows: 12, placeholder: '[ { "payload": { "question": "...", "options": ["A","B","C"], "answer": 1 } }, … ]', style: { width: '100%', fontFamily: 'monospace', fontSize: '.85rem', padding: '10px 12px' } });
+    const out = h('div');
+    const sample = () => { text.value = JSON.stringify([
+      { lang: 'en', skill: 'reading', level: 'B2', exam: 'ielts', type: 'mcq', payload: { question: 'What is the writer\'s main purpose?', options: ['To inform', 'To persuade', 'To entertain'], answer: 1, passage: 'Paste the passage here…', explanation_uz: 'Muallif o\'quvchini ishontirmoqchi.' } },
+      { lang: 'en', skill: 'grammar', level: 'B1', type: 'gap', payload: { text: 'If I ___ rich, I would travel more.', answers: ['were', 'was'] } },
+    ], null, 2); };
+    const run = (dryRun) => guard(async () => {
+      let items; try { items = JSON.parse(text.value); } catch { throw new Error("JSON noto'g'ri: massiv [ … ] kerak"); }
+      const defaults = Object.fromEntries([['lang', lang], ['level', level], ['skill', skill], ['type', type], ['exam', exam]].filter(([, el]) => el.value).map(([k, el]) => [k, el.value]));
+      const r = await api('POST', '/api/admin/items/import', { items, defaults, dryRun });
+      out.replaceChildren(h('div', { class: 'card', style: { marginTop: '12px' } },
+        h('b', {}, dryRun ? `Tekshiruv: ${r.valid} ta to'g'ri, ${r.failed} ta xato` : `Import: ${r.created} ta qoralama qo'shildi, ${r.failed} ta xato`),
+        r.errors.length ? h('div', { class: 'mini-list' }, r.errors.map((e) => h('div', {}, `#${e.index + 1}: ${e.error}`))) : null));
+      if (!dryRun && r.created) { toast('Import tugadi ✓'); route(); }
+    });
+    m.el.firstChild.replaceChildren(h('h2', {}, 'Ommaviy import (JSON)'),
+      h('p', { class: 'muted' }, "Savollar qoralama holatida qo'shiladi va tekshiruvchi tasdiqlagandan keyingina ishlatiladi. Bir martada 500 tagacha. Yuqoridagi tanlovlar har bir savoldagi bo'sh maydonlarni to'ldiradi."),
+      h('div', { class: 'form-grid' }, lang, level, skill, type, exam), h('div', { style: { height: '10px' } }), text, out,
+      h('div', { style: { display: 'flex', gap: '10px', marginTop: '12px', flexWrap: 'wrap' } }, h('button', { class: 'btn btn-ghost', onclick: sample }, 'Namuna'), h('button', { class: 'btn btn-ghost', onclick: run(true) }, 'Tekshirish'), h('button', { class: 'btn btn-main', onclick: run(false) }, 'Import qilish'), h('button', { class: 'btn btn-ghost', onclick: () => m.close() }, 'Yopish')));
+  }
+
   async function boot() {
     try { S.me = (await api('GET', '/api/me')).user; } catch { S.me = null; LS.remove('lf_token'); }
     if (!S.me) return renderLogin();
-    if (!S.me.isAdmin) {
-      return mount(h('div', { class: 'auth-wrap' }, h('div', { class: 'auth-card' }, h('h1', {}, 'Ruxsat yo\'q'), h('p', { class: 'sub' }, `${S.me.email} hisobi admin emas.`),
+    if (!S.me.isStaff) {
+      return mount(h('div', { class: 'auth-wrap' }, h('div', { class: 'auth-card' }, h('h1', {}, 'Ruxsat yo\'q'), h('p', { class: 'sub' }, `${S.me.email} hisobi admin yoki tekshiruvchi emas.`),
         h('a', { class: 'btn btn-main btn-block', href: '/app' }, 'Ilovaga qaytish'), h('button', { class: 'btn btn-ghost btn-block', style: { marginTop: '10px' }, onclick: async () => { LS.remove('lf_token'); try { await api('POST', '/api/auth/logout', {}); } catch {} renderLogin(); } }, 'Boshqa hisob bilan kirish'))));
     }
-    if (!location.hash) location.hash = '#/dashboard';
+    if (!location.hash) location.hash = S.me.isAdmin ? '#/dashboard' : '#/items';
     route();
   }
   boot();

@@ -53,3 +53,15 @@ table.tbl{width:100%;border-collapse:collapse;font-size:.9rem}
 @media(max-width:860px){.adm-page{padding:18px 12px 100px}.form-grid{grid-template-columns:1fr}}
 .ed-layout>*,.two>*,.charts>*{min-width:0}
 .adm-page{min-width:0}
+
+/* item bank */
+.tag.draft{background:var(--soft2);color:var(--muted)}
+.tag.review{background:rgba(255,173,92,.18);color:var(--warn)}
+.tag.approved{background:rgba(34,211,154,.16);color:var(--ok)}
+.tag.rejected{background:rgba(255,93,108,.18);color:var(--bad)}
+.covmx th,.covmx td{text-align:center;white-space:nowrap}
+.covmx th:first-child,.covmx td:first-child{text-align:left!important;padding-left:18px;min-width:190px}
+.cov-cell{cursor:pointer;font-variant-numeric:tabular-nums;transition:.15s}
+.cov-cell:hover{background:var(--soft2)}
+.cov-cell.empty{color:var(--bad)}.cov-cell.some{color:var(--warn)}.cov-cell.ok{color:var(--ok);font-weight:700}
+.cov-cell.beyond{color:var(--dim);opacity:.45;cursor:default}

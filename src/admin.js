@@ -9,7 +9,7 @@ const str = (v, max, name, { required = true } = {}) => {
   return s;
 };
 
-module.exports = function registerAdmin({ db, q, route, content, HttpError, requireAdmin, logAudit, BADGES, publicUser }) {
+module.exports = function registerAdmin({ quota, db, q, route, content, HttpError, requireAdmin, logAudit, BADGES, publicUser }) {
   const bad = (m) => new HttpError(400, m);
   const adm = (fn) => async (c) => { const admin = requireAdmin(c.req); try { return await fn({ ...c, admin }); } catch (e) { if (e.status && !(e instanceof HttpError)) throw new HttpError(e.status, e.message); throw e; } };
   const val = (sql, ...p) => db.prepare(sql).get(...p);
@@ -80,7 +80,7 @@ module.exports = function registerAdmin({ db, q, route, content, HttpError, requ
     let { role, banned, name } = u;
     if (body.name !== undefined) { name = str(body.name, 40, 'Ism'); if (name.length < 2) throw bad('Ism juda qisqa'); }
     if (body.role !== undefined) {
-      if (!['user', 'admin'].includes(body.role)) throw bad("Noto'g'ri rol");
+      if (!['user', 'reviewer', 'admin'].includes(body.role)) throw bad("Noto'g'ri rol");
       if (body.role !== u.role) {
         if (self) throw bad("O'z rolingizni o'zgartira olmaysiz");
         role = body.role; changes.push(`role=${role}`);
@@ -94,7 +94,16 @@ module.exports = function registerAdmin({ db, q, route, content, HttpError, requ
         banned = b; changes.push(b ? 'banned' : 'unbanned');
       }
     }
+    let langsToSet = null;
+    if (role === 'reviewer' && body.reviewerLangs !== undefined) {
+      if (!Array.isArray(body.reviewerLangs)) throw bad('reviewerLangs massiv bo\'lsin');
+      const known = new Set(content.langs({ all: true }).map((l) => l.code));
+      langsToSet = [...new Set(body.reviewerLangs.map(String))];
+      if (langsToSet.some((l) => !known.has(l))) throw bad("Noma'lum til kodi");
+    }
     db.prepare('UPDATE users SET name=?, role=?, banned=? WHERE id=?').run(name, role, banned, u.id);
+    if (role !== 'reviewer') db.prepare('DELETE FROM reviewer_langs WHERE user_id=?').run(u.id);
+    else if (langsToSet) { db.prepare('DELETE FROM reviewer_langs WHERE user_id=?').run(u.id); for (const l of langsToSet) db.prepare('INSERT INTO reviewer_langs (user_id, lang) VALUES (?,?)').run(u.id, l); changes.push(`langs=${langsToSet.join('/')}`); }
     if (name !== u.name) changes.push('name');
     logAudit(admin.id, 'user.update', `#${u.id} ${u.email}: ${changes.join(', ') || 'no changes'}`);
     return { ok: true };
@@ -321,6 +330,14 @@ module.exports = function registerAdmin({ db, q, route, content, HttpError, requ
     db.prepare('DELETE FROM sentences WHERE id=?').run(s.id);
     reload(); logAudit(admin.id, 'sentence.delete', `#${s.id}`);
     return { ok: true };
+  }));
+
+  // ---------- AI limits (free tier) ----------
+  route('GET', '/api/admin/limits', adm(async () => quota.totals()));
+  route('PUT', '/api/admin/limits', adm(async ({ body, admin }) => {
+    const next = quota.setLimits(body.limits && typeof body.limits === 'object' ? body.limits : {});
+    logAudit(admin.id, 'settings.ai_limits', JSON.stringify(next));
+    return { ok: true, limits: next };
   }));
 
   // ---------- settings & audit ----------

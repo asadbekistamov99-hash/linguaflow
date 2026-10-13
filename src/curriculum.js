@@ -403,7 +403,7 @@ function buildMockExam(langCode, levelCode, contentHelper) {
       lang: { code: lang.code, name: lang.name, native: lang.native, flag: lang.flag, tts: lang.tts },
       level,
       ieltsBand: stageMeta.ieltsBand,
-      examTitle: lang.code === 'en' ? `IELTS Band ${stageMeta.ieltsBand.split('-')[1]?.trim() || '7.5'} Ekvivalent Sinovi` : `${lang.name} ${level} Xalqaro Imtihoni`,
+      examTitle: lang.code === 'en' ? `${level} tayyorgarlik imtihoni · IELTS taxminiy ${stageMeta.ieltsBand.split('-')[1]?.trim() || '7.5'}` : `${lang.name} ${level} tayyorgarlik imtihoni`,
       timeLimitMinutes: 20,
       totalQuestions: allGradedQuestions.length,
       passThresholdPercent: 70,

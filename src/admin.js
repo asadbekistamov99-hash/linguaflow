@@ -167,14 +167,14 @@ module.exports = function registerAdmin({ quota, db, q, route, content, HttpErro
         ...l, concepts: units.reduce((a, u) => a + u.concepts.filter((c) => c.t[l.code]).length, 0), sentences: units.reduce((a, u) => a + u.sentences.filter((s) => s.t[l.code]).length, 0),
         playable: content.lessons(l.code).length > 0,
       })),
-      units: units.map((u) => ({ key: u.key, title: u.title, emoji: u.emoji, enabled: u.enabled, concepts: u.concepts, sentences: u.sentences })),
+      units: units.map((u) => ({ key: u.key, title: u.title, emoji: u.emoji, level: u.level, enabled: u.enabled, concepts: u.concepts, sentences: u.sentences })),
       totals: { concepts: totalC, sentences: totalS },
     };
   }));
 
   route('GET', '/api/admin/export', adm(async () => ({
     exportedAt: new Date().toISOString(), languages: content.langs({ all: true }),
-    units: content.units().map((u) => ({ key: u.key, title: u.title, emoji: u.emoji, enabled: u.enabled, concepts: u.concepts, sentences: u.sentences })),
+    units: content.units().map((u) => ({ key: u.key, title: u.title, emoji: u.emoji, level: u.level, enabled: u.enabled, concepts: u.concepts, sentences: u.sentences })),
   })));
 
   route('PUT', '/api/admin/languages/:code', adm(async ({ params, body, admin }) => {
@@ -210,9 +210,20 @@ module.exports = function registerAdmin({ quota, db, q, route, content, HttpErro
     const title = body.title !== undefined ? str(body.title, 60, 'Sarlavha') : u.title;
     const emoji = body.emoji !== undefined ? str(body.emoji, 8, 'Emoji') : u.emoji;
     const enabled = body.enabled !== undefined ? (body.enabled ? 1 : 0) : (u.enabled ? 1 : 0);
-    db.prepare('UPDATE units SET title=?, emoji=?, enabled=? WHERE key=?').run(title, emoji, enabled, u.key);
+    const level = body.level !== undefined ? String(body.level) : u.level;
+    if (!['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].includes(level)) throw bad('Daraja noto\'g\'ri');
+    db.prepare('UPDATE units SET title=?, emoji=?, enabled=?, level=? WHERE key=?').run(title, emoji, enabled, level, u.key);
     reload(); logAudit(admin.id, 'unit.update', u.key);
     return { ok: true };
+  }));
+
+  // Publish (or hide) every unit of one CEFR level at once, after native reviewers signed them off.
+  route('POST', '/api/admin/units-level/:level', adm(async ({ params, body, admin }) => {
+    if (!['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].includes(params.level)) throw bad('Daraja noto\'g\'ri');
+    const enabled = body.enabled ? 1 : 0;
+    const r = db.prepare('UPDATE units SET enabled=? WHERE level=?').run(enabled, params.level);
+    reload(); logAudit(admin.id, enabled ? 'units.enable' : 'units.disable', `${params.level} x${r.changes}`);
+    return { ok: true, changed: Number(r.changes) };
   }));
 
   route('POST', '/api/admin/units/:key/move', adm(async ({ params, body, admin }) => {

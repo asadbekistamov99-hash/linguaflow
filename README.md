@@ -29,7 +29,7 @@ npm test                 # backend testlari
 ## Imkoniyatlar
 
 **O'quvchi uchun**
-- 6 til × 20 mavzu × 200 so'z/ibora, 120 jumla; har tilda 40 dars + 20 mavzu testi
+- 6 til × 20 faol mavzu (A1) × 200 so'z/ibora, 120 jumla; har tilda 40 dars + 20 mavzu testi. Qo'shimcha **40 ta A2/B1 mavzu** (har tilda 400 so'z, 240 jumla) tayyor, lekin tekshiruvchilar tasdiqlamaguncha **yashirin**
 - Mashqlar kontentdan avtomatik yaratiladi: tanishtiruv, test, eshitib topish (brauzer ovozi), yozish, juftlarni topish, **jumla tuzish**
 - **Mavzu testlari** (80% dan o'tish, toj), **daraja testi** (biladigan mavzularni o'tkazib yuborish)
 - **4 ta o'yin**: Xotira, Blitz, So'z tuzish, Jumla quruvchi (kunlik XP limiti, haftalik reyting)
@@ -89,3 +89,14 @@ xalqaro imtihon sertifikati emas. Ballar (masalan "IELTS taxminiy 6.5") faqat ta
 - **Ommaviy import:** JSON massiv (bir martada 500 tagacha), avval "Tekshirish" (dry run), so'ng "Import qilish". Hammasi qoralama bo'lib tushadi.
 - **AI limitlari (bepul rejim):** Sozlamalar → AI limitlari. Har foydalanuvchiga kunlik chegara: AI ustoz, yozishni tekshirish, gapirish
   (0 = o'chirilgan; adminlarga qo'llanmaydi). Bugungi foydalanish va eng faol foydalanuvchilar ko'rinadi.
+
+## A2–B1 kontent va grammatika (Sprint 2)
+
+- **Mavzular darajasi:** har mavzuning `level` maydoni bor (A1/A2/B1...). Yangi (A2/B1) mavzular bazaga **o'chirilgan holda** qo'shiladi;
+  mavjud bazalar ham ishga tushganda avtomatik yangilanadi (`settings.seed_units_applied`), admin o'chirgan mavzu qayta tiklanmaydi.
+- **Nashr qilish:** Admin → Kontent → "A2: hammasini yoqish" (yoki mavzuni alohida yoqish). Avval ona tilida so'zlashuvchi tekshiruvchi
+  tarjimalarni ko'rib chiqishi kerak: kontentning AI qoralamasi, tekshirilmagan.
+- **Grammatika savollari:** `content/items/<til>_<daraja>_grammar.json` (har fayl ~40 ta `gap`/`mcq`, `explanation_uz` bilan).
+  Bazaga qoralama sifatida yuklash: `npm run import-items -- --dry-run content/items/*.json`, so'ng `--dry-run`siz.
+  Qayta ishga tushirish xavfsiz (takrorlar o'tkazib yuboriladi). Savollar **Savollar banki**da tekshiruvchi tasdiqlashini kutadi.
+- Kontent tekshiruvi: `npm run validate-seed`.

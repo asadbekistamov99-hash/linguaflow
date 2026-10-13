@@ -1,0 +1,630 @@
+[
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Мы познакомились с ___ (иностранные студенты) на конференции.",
+      "answers": [
+        "иностранными студентами"
+      ],
+      "explanation_uz": "«С» (bilan) predlogidan keyin vositali kelishik (творительный падеж) ko'plikda: с иностранными студентами."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Я позвонил ___ (брат) вчера вечером.",
+      "answers": [
+        "брату"
+      ],
+      "explanation_uz": "«Позвонить» fe'li jo'nalish kelishigini (дательный падеж) talab qiladi: брату."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Она работает ___ (врач) в больнице.",
+      "answers": [
+        "врачом"
+      ],
+      "explanation_uz": "«Работать кем?» kasb nomi vositali kelishikda (творительный падеж) keladi: врачом."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Мы много говорили о наших ___ (друг).",
+      "answers": [
+        "друзьях"
+      ],
+      "explanation_uz": "«О» predlogi ko'plikda predlojniy падеж (o'rin-payt kelishigi) bilan keladi: о друзьях."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Я вижу ___ (твоя сестра) каждый день.",
+      "answers": [
+        "твою сестру"
+      ],
+      "explanation_uz": "Harakat obyekti tushum kelishigida (винительный падеж) bo'ladi: -а/-я oxirli ayol so'zlari -у/-ю ga o'zgaradi."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Мы очень благодарны ___ (наша учительница) за помощь.",
+      "answers": [
+        "нашей учительнице"
+      ],
+      "explanation_uz": "«Благодарен кому?» — jo'nalish kelishigi (дательный падеж) talab qilinadi: нашей учительнице."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "У меня нет ___ (время).",
+      "answers": [
+        "времени"
+      ],
+      "explanation_uz": "«Нет» dan keyin qaratqich kelishigi keladi; «время» so'zi -мя bilan tugaydigan o'zgacha turlanadi: времени."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Преподаватель помогает ___ (студенты).",
+      "answers": [
+        "студентам"
+      ],
+      "explanation_uz": "«Помогать кому?» jo'nalish kelishigi ko'plikda -ам/-ям qo'shimchasini oladi: студентам."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Он гордится своими ___ (дети).",
+      "answers": [
+        "детьми"
+      ],
+      "explanation_uz": "«Гордиться кем?» vositali kelishikni talab qiladi; «дети» ning ko'plik shakli: детьми."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Вчера я весь вечер ___ (решать/решить) задачи.",
+      "answers": [
+        "решал",
+        "решала"
+      ],
+      "explanation_uz": "Davomiylik («весь вечер») ko'rsatilsa, o'tgan zamonda nosovershenniy vid (несовершенный вид) ishlatiladi: решал."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Наконец я ___ (решать/решить) эту трудную задачу.",
+      "answers": [
+        "решил",
+        "решила"
+      ],
+      "explanation_uz": "Natija erishilganda («наконец») o'tgan zamonda sovershenniy vid (совершенный вид) ishlatiladi: решил."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Завтра я ___ (написать) тебе письмо.",
+      "answers": [
+        "напишу"
+      ],
+      "explanation_uz": "Sovershenniy vid fe'lining oddiy kelasi zamon shakli: напишу (alohida «буду» kerak emas)."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Завтра весь день я ___ (писать) отчёт.",
+      "answers": [
+        "буду писать"
+      ],
+      "explanation_uz": "Nosovershenniy vid kelasi zamoni «буду» + infinitiv bilan yasaladi: буду писать."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Вчера мой друг ___ (приехать) из Самарканда.",
+      "answers": [
+        "приехал"
+      ],
+      "explanation_uz": "При- old qo'shimchali harakat fe'li kelib yetishni bildiradi; o'tgan zamon, erkak jinsi: приехал."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Когда я пришёл на остановку, автобус уже ___ (уйти).",
+      "answers": [
+        "ушёл",
+        "ушел"
+      ],
+      "explanation_uz": "У- old qo'shimchasi uzoqlashishni bildiradi: автобус ушёл (ketib bo'lgan)."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Я зашёл в магазин и через пять минут ___ (выйти) оттуда.",
+      "answers": [
+        "вышел",
+        "вышла"
+      ],
+      "explanation_uz": "Вы- old qo'shimchasi ichkaridan tashqariga chiqishni bildiradi: вышел."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Если бы у меня было время, я ___ в театр (пойти).",
+      "answers": [
+        "пошёл бы",
+        "пошла бы",
+        "пошел бы"
+      ],
+      "explanation_uz": "Shart gapida «если бы» bilan o'tgan zamon, bosh gapda «бы» zarrachali o'tgan zamon fe'li keladi: пошёл бы."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ я знал это раньше, я бы помог тебе.",
+      "answers": [
+        "Если бы"
+      ],
+      "explanation_uz": "Real bo'lmagan shart «если бы» + o'tgan zamon fe'li bilan ifodalanadi."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Это фильм, ___ я смотрел вчера.",
+      "answers": [
+        "который"
+      ],
+      "explanation_uz": "Bog'lovchi so'z «который» tushum kelishigida (фильм — erkak jinsi, jonsiz) shakli o'zgarmaydi: который."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Девушка, с ___ я познакомился, учится в университете.",
+      "answers": [
+        "которой"
+      ],
+      "explanation_uz": "«С» predlogidan keyin «который» vositali kelishikda, ayol jinsida: с которой."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Он спросил, приду ___ я.",
+      "answers": [
+        "ли"
+      ],
+      "explanation_uz": "Egar yo'q so'roq (ha/yo'q) bilvosita nutqda «ли» yuklamasi bilan beriladi."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Я прочитал книгу, автор ___ — мой друг.",
+      "answers": [
+        "которой"
+      ],
+      "explanation_uz": "«Автор» ga egalik ma'nosi qaratqich kelishigi bilan beriladi; «книга» ayol jinsida: автор которой."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Мой брат старше меня ___ три года.",
+      "answers": [
+        "на"
+      ],
+      "explanation_uz": "Farq miqdori «на» + tushum kelishigi bilan ifodalanadi: старше на три года."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ (Открыть) окно, пожалуйста!",
+      "answers": [
+        "Открой",
+        "Откройте"
+      ],
+      "explanation_uz": "Buyruq mayli «ты» ga: sovershenniy vid fe'lining o'zagi + -й: открой."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Я пришёл, ___ помочь тебе.",
+      "answers": [
+        "чтобы"
+      ],
+      "explanation_uz": "Maqsad bildiruvchi bog'lovchi «чтобы» + infinitiv ishlatiladi."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Я часто думаю о ___.",
+      "options": [
+        "родителей",
+        "родителям",
+        "родителях",
+        "родителями"
+      ],
+      "answer": 2,
+      "explanation_uz": "«О» predlogi predlojniy padejni talab qiladi; ko'plikda -ях: о родителях."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "options": [
+        "находил",
+        "нашёл",
+        "находит",
+        "найдёт"
+      ],
+      "answer": 1,
+      "explanation_uz": "Natija erishilganda («наконец») o'tgan zamonda sovershenniy vid ishlatiladi: нашёл.",
+      "question": "Он долго думал и наконец ___ ответ."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Когда я ___ домой, я позвоню тебе.",
+      "options": [
+        "приду",
+        "прихожу",
+        "пришёл",
+        "буду приходить"
+      ],
+      "answer": 0,
+      "explanation_uz": "Bir martalik kelasi harakat sovershenniy vid fe'li bilan beriladi: приду."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Мы ___ из дома в восемь часов.",
+      "options": [
+        "вошли",
+        "вышли",
+        "подошли",
+        "перешли"
+      ],
+      "answer": 1,
+      "explanation_uz": "Вы- old qo'shimchasi «ichkaridan chiqish»ni bildiradi (из дома): вышли."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Он ___ к окну и посмотрел на улицу.",
+      "options": [
+        "отошёл",
+        "подошёл",
+        "вошёл",
+        "ушёл"
+      ],
+      "answer": 1,
+      "explanation_uz": "По- + до- : «к» bilan yaqinlashish — подойти: подошёл."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Если бы я был богатым, я ___ дом.",
+      "options": [
+        "куплю",
+        "купил",
+        "купил бы",
+        "покупал"
+      ],
+      "answer": 2,
+      "explanation_uz": "«Если бы» li real bo'lmagan shartda bosh gapda ham «бы» li o'tgan zamon: купил бы."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Город, ___ я родился, очень красивый.",
+      "options": [
+        "который",
+        "в котором",
+        "котором",
+        "которого"
+      ],
+      "answer": 1,
+      "explanation_uz": "«Родиться где?» — predlog kerak: в котором (o'rin-payt kelishigi)."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Она сказала: «Я устала». — Она сказала, что ___ устала.",
+      "options": [
+        "я",
+        "она",
+        "ты",
+        "мы"
+      ],
+      "answer": 1,
+      "explanation_uz": "Bilvosita nutqda olmosh gap egasiga moslanadi: «я» → она."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "options": [
+        "хотя",
+        "потому что",
+        "поэтому",
+        "чтобы"
+      ],
+      "answer": 0,
+      "explanation_uz": "Qarama-qarshilik bildiruvchi bog'lovchi «хотя» (garchi): хотя погода была плохая.",
+      "question": "Мы поехали на дачу, ___ погода была плохая."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Ташкент — один из ___ городов Узбекистана.",
+      "options": [
+        "самых больших",
+        "самые большие",
+        "самый большой",
+        "самых большими"
+      ],
+      "answer": 0,
+      "explanation_uz": "«Один из» dan keyin qaratqich kelishigi ko'plikda: самых больших городов."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Не ___ окно, здесь жарко!",
+      "options": [
+        "открой",
+        "открывай",
+        "откроет",
+        "открыть"
+      ],
+      "answer": 1,
+      "explanation_uz": "Inkor buyruqda nosovershenniy vid ishlatiladi: не открывай.",
+      "text": "Не ___ окно, здесь холодно!"
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Я позвонил, ___ узнать, когда ты придёшь.",
+      "options": [
+        "чтобы",
+        "что",
+        "потому что",
+        "если"
+      ],
+      "answer": 0,
+      "explanation_uz": "Maqsadni «чтобы» + infinitiv bildiradi (egalar bir xil)."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "options": [
+        "старый",
+        "старого",
+        "старому",
+        "старым"
+      ],
+      "answer": 1,
+      "explanation_uz": "Jonli otlarda erkak jinsida tushum kelishigi qaratqich kelishigi bilan bir xil: своего старого друга.",
+      "question": "Вчера я встретил своего ___ друга."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Девочка, ___ у окна, — моя сестра.",
+      "options": [
+        "сидящая",
+        "сидящий",
+        "сидящую",
+        "сидящей"
+      ],
+      "answer": 0,
+      "explanation_uz": "Faol sifatdosh (причастие) «девочка» bilan jinsda, kelishikda moslashadi: сидящая."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Я видел студентов, ___ вернулись из Москвы.",
+      "options": [
+        "который",
+        "которые",
+        "которых",
+        "которым"
+      ],
+      "answer": 1,
+      "explanation_uz": "Bog'lovchi «который» bosh so'z bilan son-jins moslashadi va gapda ega: которые."
+    }
+  }
+]

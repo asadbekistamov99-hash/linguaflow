@@ -240,3 +240,4 @@ module.exports = function registerItems({ db, route, content, HttpError, require
 };
 
 module.exports.constants = { SKILLS, LEVELS, EXAMS, TYPES, STATUSES, targetLevel };
+module.exports.normalizeItem = normalizeItem;

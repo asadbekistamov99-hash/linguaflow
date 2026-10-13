@@ -1,0 +1,622 @@
+[
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich habe gestern einen Film ___ (sehen).",
+      "answers": [
+        "gesehen"
+      ],
+      "explanation_uz": "Perfekt: haben + Partizip II. «sehen» fe'lining Partizip II shakli «gesehen»."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Wir sind letzte Woche nach Berlin ___ (fahren).",
+      "answers": [
+        "gefahren"
+      ],
+      "explanation_uz": "Harakat bildiruvchi fe'llar Perfektda «sein» bilan keladi: sind + gefahren."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Gestern ___ ich krank. (sein)",
+      "answers": [
+        "war"
+      ],
+      "explanation_uz": "«sein» fe'lining Präteritum shakli: ich war, du warst, er war."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Als Kind ___ er viele Haustiere. (haben)",
+      "answers": [
+        "hatte"
+      ],
+      "explanation_uz": "«haben» fe'lining Präteritum shakli: ich hatte, du hattest, er hatte."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Du ___ hier nicht rauchen. (dürfen)",
+      "answers": [
+        "darfst"
+      ],
+      "explanation_uz": "«dürfen» modal fe'li du bilan «darfst» shaklida o'zgaradi (ruxsat/taqiq)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich ___ gestern nicht kommen. (können)",
+      "answers": [
+        "konnte"
+      ],
+      "explanation_uz": "Modal fe'llarning Präteritumi: können → ich konnte (umlautsiz)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Er ist gestern sehr früh ___ (aufstehen).",
+      "answers": [
+        "aufgestanden"
+      ],
+      "explanation_uz": "Trennbar fe'llarda Partizip II: auf + ge + standen = «aufgestanden». «sein» bilan: ist aufgestanden."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich stehe jeden Tag um sechs Uhr ___.",
+      "answers": [
+        "auf"
+      ],
+      "explanation_uz": "Trennbar fe'llarda old qo'shimcha (auf) jumla oxiriga o'tadi: Ich stehe ... auf."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich kaufe ___ Mantel. (ein)",
+      "answers": [
+        "einen"
+      ],
+      "explanation_uz": "«kaufen» Akkusativ talab qiladi; erkak jinsdagi (der Mantel) so'z oldida «einen» keladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich gebe ___ Frau das Buch. (die)",
+      "answers": [
+        "der"
+      ],
+      "explanation_uz": "«geben» fe'lida shaxs Dativda turadi; ayol jinsi (die Frau) Dativda «der» bo'ladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Das Buch liegt auf ___ Tisch. (der)",
+      "answers": [
+        "dem"
+      ],
+      "explanation_uz": "Wechselpräposition + «Wo?» savoli (joy, harakatsiz) → Dativ: auf dem Tisch."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich lege das Buch auf ___ Tisch. (der)",
+      "answers": [
+        "den"
+      ],
+      "explanation_uz": "Wechselpräposition + «Wohin?» savoli (harakat yo'nalishi) → Akkusativ: auf den Tisch."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Das ist Anna. ___ Mutter ist Lehrerin. (sie)",
+      "answers": [
+        "Ihre"
+      ],
+      "explanation_uz": "Possessivartikel: sie → ihr-; «Mutter» ayol jinsi, shuning uchun «Ihre»."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich besuche ___ Großeltern. (ich)",
+      "answers": [
+        "meine"
+      ],
+      "explanation_uz": "Ko'plikdagi ot oldida Possessivartikel «-e» qo'shimchasini oladi: meine Großeltern."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Berlin ist ___ als Hamburg. (groß)",
+      "answers": [
+        "größer"
+      ],
+      "explanation_uz": "Komparativ: sifat + -er, ko'p hollarda umlaut bilan: groß → größer, keyin «als»."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Das ist der ___ Berg in Deutschland. (hoch)",
+      "answers": [
+        "höchste"
+      ],
+      "explanation_uz": "Superlativ: sifat + -st + sifat qo'shimchasi; hoch → höchst-, «der höchste Berg»."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich esse ___ Pizza als Pasta. (gern)",
+      "answers": [
+        "lieber"
+      ],
+      "explanation_uz": "«gern» ning Komparativi tartibsiz: gern – lieber – am liebsten."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich bleibe zu Hause, weil ich krank ___. (sein)",
+      "answers": [
+        "bin"
+      ],
+      "explanation_uz": "«weil» Nebensatzida tuzilgan fe'l gap oxiriga o'tadi: ..., weil ich krank bin."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich weiß, dass sie gut Deutsch ___. (sprechen)",
+      "answers": [
+        "spricht"
+      ],
+      "explanation_uz": "«dass» Nebensatzida fe'l oxirida turadi va shaxsga qarab tuslanadi: sie spricht."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Wenn es regnet, ___ ich zu Hause. (bleiben)",
+      "answers": [
+        "bleibe"
+      ],
+      "explanation_uz": "Nebensatz birinchi kelsa, Hauptsatzda fe'l birinchi o'rinda turadi (inversiya): ..., bleibe ich."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Obwohl er müde ist, ___ er noch. (arbeiten)",
+      "answers": [
+        "arbeitet"
+      ],
+      "explanation_uz": "«obwohl» Nebensatzidan keyin Hauptsatzda fe'l darhol keladi (fe'l-subyekt tartibi): ..., arbeitet er."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich freue ___ auf das Wochenende.",
+      "answers": [
+        "mich"
+      ],
+      "explanation_uz": "«sich freuen» reflexiv fe'l; ich bilan reflexiv olmosh «mich» (Akkusativ) keladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Er interessiert ___ für Musik.",
+      "answers": [
+        "sich"
+      ],
+      "explanation_uz": "«sich interessieren für» reflexiv fe'l; er/sie/es bilan «sich» ishlatiladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "In meiner Stadt ___ es einen Bahnhof.",
+      "answers": [
+        "gibt"
+      ],
+      "explanation_uz": "«es gibt» + Akkusativ: «mavjud, bor» ma'nosini beradi (einen Bahnhof)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich trage eine ___ Jacke. (neu)",
+      "answers": [
+        "neue"
+      ],
+      "explanation_uz": "Noaniq artikl (eine) + ayol jinsi Akkusativda sifat «-e» oladi: eine neue Jacke."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Welcher Satz ist richtig?",
+      "options": [
+        "Ich bin ein Buch gelesen.",
+        "Ich habe ein Buch gelesen.",
+        "Ich habe ein Buch gelest.",
+        "Ich bin ein Buch gelesen habe."
+      ],
+      "answer": 1,
+      "explanation_uz": "«lesen» Perfektda «haben» bilan keladi va Partizip II «gelesen» bo'ladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Wir ___ nach Wien gefahren.",
+      "options": [
+        "haben",
+        "sind",
+        "hat",
+        "ist"
+      ],
+      "answer": 1,
+      "explanation_uz": "«fahren» harakat fe'li, Perfektda «sein» bilan keladi; wir → «sind»."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Letztes Jahr ___ wir in Spanien.",
+      "options": [
+        "waren",
+        "sind",
+        "haben",
+        "wart"
+      ],
+      "answer": 0,
+      "explanation_uz": "«sein» ning Präteritum shakli: wir waren."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "___ hängt das Bild? – An der Wand.",
+      "options": [
+        "Wo",
+        "Wohin",
+        "Woher",
+        "Was"
+      ],
+      "answer": 0,
+      "explanation_uz": "Javob Dativ (an der Wand), ya'ni joy so'raladi: «Wo?»"
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Er geht in ___ Kino.",
+      "options": [
+        "dem",
+        "das",
+        "der",
+        "den"
+      ],
+      "answer": 1,
+      "explanation_uz": "«gehen» yo'nalishni bildiradi (Wohin?) → Akkusativ; das Kino → «in das Kino»."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Ich helfe ___ Kind.",
+      "options": [
+        "das",
+        "dem",
+        "den",
+        "der"
+      ],
+      "answer": 1,
+      "explanation_uz": "«helfen» Dativ talab qiladi; das Kind Dativda «dem Kind»."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Welcher Satz ist richtig?",
+      "options": [
+        "Ich lerne Deutsch, weil ich in Deutschland arbeiten will.",
+        "Ich lerne Deutsch, weil ich will in Deutschland arbeiten.",
+        "Ich lerne Deutsch, weil will ich in Deutschland arbeiten.",
+        "Ich lerne Deutsch, weil ich arbeiten in Deutschland will."
+      ],
+      "answer": 0,
+      "explanation_uz": "«weil» Nebensatzida tuzilgan (modal) fe'l eng oxirida turadi: ... arbeiten will."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Ich hoffe, ___ du morgen kommst.",
+      "options": [
+        "weil",
+        "dass",
+        "obwohl",
+        "wenn"
+      ],
+      "answer": 1,
+      "explanation_uz": "«hoffen» dan keyin fikr mazmunini bog'lash uchun «dass» ishlatiladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "___ es kalt war, gingen wir spazieren.",
+      "options": [
+        "Weil",
+        "Obwohl",
+        "Dass",
+        "Damit"
+      ],
+      "answer": 1,
+      "explanation_uz": "«obwohl» qarama-qarshilik bildiradi (sovuq bo'lsa ham)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Mein Bruder ist ___ als ich.",
+      "options": [
+        "älter",
+        "alt",
+        "ältest",
+        "am ältesten"
+      ],
+      "answer": 0,
+      "explanation_uz": "«als» bilan taqqoslashda Komparativ ishlatiladi: alt → älter."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Sie singt am ___.",
+      "options": [
+        "schönsten",
+        "schöner",
+        "schön",
+        "schönste"
+      ],
+      "answer": 0,
+      "explanation_uz": "Fe'lga bog'langan Superlativ «am + -sten» shaklida: am schönsten."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Wir treffen ___ um fünf Uhr.",
+      "options": [
+        "uns",
+        "sich",
+        "euch",
+        "mich"
+      ],
+      "answer": 0,
+      "explanation_uz": "«sich treffen» reflexiv fe'l; wir bilan reflexiv olmosh «uns»."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Als Kind ___ ich nicht schwimmen.",
+      "options": [
+        "konnte",
+        "kann",
+        "könnte",
+        "gekonnt"
+      ],
+      "answer": 0,
+      "explanation_uz": "Modal fe'lning Präteritumi: ich konnte (o'tgan zamon, hikoya)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Welcher Satz ist richtig?",
+      "options": [
+        "Der Bus kommt um 8 Uhr an.",
+        "Der Bus ankommt um 8 Uhr.",
+        "Der Bus an kommt um 8 Uhr.",
+        "Der Bus um 8 Uhr kommt an."
+      ],
+      "answer": 0,
+      "explanation_uz": "Trennbar fe'l: asosiy qism ikkinchi o'rinda, «an» oxirda: kommt ... an."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Ich habe einen ___ Hund.",
+      "options": [
+        "klein",
+        "kleinen",
+        "kleine",
+        "kleines"
+      ],
+      "answer": 1,
+      "explanation_uz": "Einen + erkak jinsi Akkusativda sifat «-en» oladi: einen kleinen Hund."
+    }
+  }
+]

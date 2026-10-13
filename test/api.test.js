@@ -65,9 +65,14 @@ async function play(app, api, lessonId, { wrong = false } = {}) {
   return api('POST', `/api/sessions/${start.data.sid}/finish`, {});
 }
 
-test('content: 20 units, 6 languages, lessons and tests per unit', async () => {
+test('content: 60 units (20 live A1, A2/B1 hidden), 6 languages, lessons and tests per unit', async () => {
   const app = await boot();
-  assert.equal(app.content.units().length, 20);
+  assert.equal(app.content.units().length, 60);
+  const live = app.content.units().filter((u) => u.enabled);
+  assert.equal(live.length, 20);
+  assert.ok(live.every((u) => u.level === 'A1'));
+  assert.equal(app.content.units().filter((u) => u.level === 'A2' && !u.enabled).length, 20);
+  assert.equal(app.content.units().filter((u) => u.level === 'B1' && !u.enabled).length, 20);
   assert.equal(app.content.langs().length, 6);
   for (const l of app.content.langs()) {
     const ls = app.content.lessons(l.code);
@@ -348,8 +353,8 @@ test('admin: content editing flows into lessons, new language and unit work', as
   const u = app.client(); await reg(u, 'Student', 'student@test.uz');
 
   const content = (await admin('GET', '/api/admin/content')).data;
-  assert.equal(content.units.length, 20);
-  assert.equal(content.languages.find((l) => l.code === 'en').concepts, 200);
+  assert.equal(content.units.length, 60);
+  assert.equal(content.languages.find((l) => l.code === 'en').concepts, 600);
 
   // new unit + concepts: 6 words -> 1 lesson (+ test), 12 words -> 2 lessons
   assert.equal((await admin('POST', '/api/admin/units', { key: 'space', title: 'Kosmos', emoji: '🚀' })).status, 200);
@@ -375,7 +380,7 @@ test('admin: content editing flows into lessons, new language and unit work', as
 
   // reorder + disable
   assert.equal((await admin('POST', '/api/admin/units/space/move', { dir: 'up' })).status, 200);
-  assert.equal(app.content.units().findIndex((x) => x.key === 'space'), 19);
+  assert.equal(app.content.units().findIndex((x) => x.key === 'space'), 59);
   assert.equal((await admin('PATCH', '/api/admin/units/space', { enabled: false })).status, 200);
   assert.ok(!(await u('GET', '/api/courses/en')).data.units.some((x) => x.key === 'space'));
 
@@ -389,7 +394,7 @@ test('admin: content editing flows into lessons, new language and unit work', as
 
   assert.equal((await admin('DELETE', `/api/admin/concepts/${firstId}`)).status, 200);
   assert.equal((await admin('DELETE', '/api/admin/units/space')).status, 200);
-  assert.equal((await admin('GET', '/api/admin/export')).data.units.length, 20);
+  assert.equal((await admin('GET', '/api/admin/export')).data.units.length, 60);
   app.close();
 });
 
@@ -764,4 +769,51 @@ test('unit: normalize and SRS', () => {
   const lapse = nextState(s3, false, 0);
   assert.equal(lapse.reps, 0);
   assert.equal(lapse.lapses, 1);
+});
+
+test('seed sync: legacy DB gets new units disabled, deleted units are not resurrected, bulk level enable works', async () => {
+  const { open } = require('../src/db');
+  const file = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'lf-sync-')), 'x.db');
+  dirs.push(path.dirname(file));
+  let db = open(file);
+  // simulate a database created before levels existed: only A1 units, no sync marker
+  db.exec("DELETE FROM units WHERE level != 'A1'; DELETE FROM settings WHERE key='seed_units_applied'");
+  db.prepare("DELETE FROM units WHERE key='greetings'").run(); // admin deleted a live unit
+  db.close();
+  db = open(file);
+  assert.equal(db.prepare("SELECT COUNT(*) n FROM units WHERE level='A2'").get().n, 20);
+  assert.equal(db.prepare("SELECT COUNT(*) n FROM units WHERE level!='A1' AND enabled=1").get().n, 0);
+  assert.equal(db.prepare("SELECT COUNT(*) n FROM units WHERE key='greetings'").get().n, 0);
+  assert.equal(db.prepare("SELECT COUNT(*) n FROM concepts WHERE unit_key='a2routine'").get().n, 10);
+  db.close();
+  db = open(file); // idempotent
+  assert.equal(db.prepare('SELECT COUNT(*) n FROM units').get().n, 59);
+  db.close();
+
+  const app = await boot();
+  const admin = app.client(); await reg(admin, 'Boss', 'sync@test.uz');
+  assert.equal((await admin('POST', '/api/admin/units-level/Z9', { enabled: true })).status, 400);
+  const on = await admin('POST', '/api/admin/units-level/A2', { enabled: true });
+  assert.equal(on.data.changed, 20);
+  assert.equal(app.content.units().filter((u) => u.enabled).length, 40);
+  const cur = (await admin('GET', '/api/curriculum?lang=en')).data.units;
+  assert.ok(cur.some((u) => u.stageLevel === 'A2') && cur.some((u) => u.stageLevel === 'A1'));
+  app.close();
+});
+
+test('import-items CLI validates, dry-runs and is idempotent', () => {
+  const { spawnSync } = require('node:child_process');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'lf-imp-'));
+  dirs.push(dir);
+  const good = { lang: 'en', skill: 'grammar', level: 'A2', type: 'gap', payload: { text: 'She ___ home.', answers: ['goes'] } };
+  const bad = { lang: 'xx', skill: 'grammar', level: 'A2', type: 'gap', payload: { text: 'no blank', answers: ['a'] } };
+  fs.writeFileSync(path.join(dir, 'a.json'), JSON.stringify([good]));
+  fs.writeFileSync(path.join(dir, 'b.json'), JSON.stringify([good, bad]));
+  const run = (...a) => spawnSync(process.execPath, ['--disable-warning=ExperimentalWarning', path.join(__dirname, '..', 'scripts', 'import-items.js'), ...a], { env: { ...process.env, DATA_DIR: dir }, encoding: 'utf8' });
+  assert.match(run('--dry-run', path.join(dir, 'a.json')).stdout, /qoralama: 1, takror: 0, xato: 0/);
+  assert.match(run(path.join(dir, 'a.json')).stdout, /qoralama: 1/);
+  assert.match(run(path.join(dir, 'a.json')).stdout, /qoralama: 0, takror: 1/);
+  const r = run(path.join(dir, 'b.json'));
+  assert.equal(r.status, 1);
+  assert.match(r.stdout, /xato: 1/);
 });

@@ -277,11 +277,18 @@
         h('td', {}, h('button', { class: 'btn btn-ghost btn-sm', onclick: () => langModal(l) }, 'Tahrirlash')))))));
 
     const unitList = h('div', { class: 'unit-list' },
-      units.map((u) => h('button', { class: 'unit-item' + (u.key === ED.unit ? ' on' : '') + (u.enabled ? '' : ' off'), onclick: () => { ED.unit = u.key; drawContent(active); } }, h('span', {}, u.emoji), h('span', {}, u.title), h('small', {}, `${u.concepts.length}`))),
+      units.map((u) => h('button', { class: 'unit-item' + (u.key === ED.unit ? ' on' : '') + (u.enabled ? '' : ' off'), onclick: () => { ED.unit = u.key; drawContent(active); } }, h('span', {}, u.emoji), h('span', {}, u.title), h('small', {}, `${u.level} · ${u.concepts.length}`))),
       h('button', { class: 'btn btn-ghost btn-sm', onclick: () => unitModal(null) }, "+ Yangi mavzu"));
 
     shell(active, h('h1', {}, 'Kontent'), h('p', { class: 'lead' }, `${units.length} mavzu · ${totals.concepts} so'z · ${totals.sentences} jumla. O'zgarishlar darhol saytda ko'rinadi.`),
       h('div', { class: 'toolbar' }, h('button', { class: 'btn btn-ghost btn-sm', onclick: () => langModal(null) }, "+ Til qo'shish"),
+        ...['A1', 'A2', 'B1'].flatMap((lv) => [true, false].map((on) => {
+          const n = units.filter((u) => u.level === lv).length;
+          return h('button', { class: 'btn btn-ghost btn-sm', disabled: !n, title: `${lv} darajadagi ${n} ta mavzu`, onclick: guard(async () => {
+            if (!confirm(`${lv} darajadagi ${n} ta mavzuni ${on ? 'FAOL qilish' : "O'CHIRISH"}? ${on ? "Faqat tekshiruvchilar tasdiqlagan kontent uchun!" : ''}`)) return;
+            const r = await api('POST', `/api/admin/units-level/${lv}`, { enabled: on }); toast(`${r.changed} ta mavzu yangilandi`); route();
+          }) }, `${lv}: ${on ? 'hammasini yoqish' : "hammasini o'chirish"}`);
+        })),
         h('button', { class: 'btn btn-ghost btn-sm', onclick: guard(exportContent) }, '⬇ JSON eksport')),
       langTable, h('h3', { class: 'sub' }, 'Mavzular'),
       h('div', { class: 'ed-layout' }, unitList, unit ? unitEditor(unit, langsAll, active) : h('div', { class: 'empty' }, "Mavzu yo'q")));

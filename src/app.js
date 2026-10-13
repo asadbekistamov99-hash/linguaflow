@@ -12,6 +12,8 @@ const srs = require('./srs');
 const tutor = require('./tutor');
 const registerGames = require('./games');
 const registerAdmin = require('./admin');
+const { STAGES, buildMockExam } = require('./curriculum');
+const { generateJarvisReply, generatePronunciationFeedback } = require('./jarvis');
 
 const PUBLIC_DIR = path.join(__dirname, '..', 'public');
 const MIME = {
@@ -52,6 +54,8 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
   const sessions = new Map();
   const loginLimiter = auth.createLimiter(10, 15 * 60000);
   const registerLimiter = auth.createLimiter(10, 60 * 60000);
+  const guestLimiter = auth.createLimiter(10, 60 * 60000);
+  const examLimiter = auth.createLimiter(12, 60 * 60000);
   const loginIpLimiter = auth.createLimiter(40, 15 * 60000);
   const tutorLimiter = auth.createLimiter(30, 60 * 60000);
   const adminEmails = new Set(String(process.env.ADMIN_EMAILS || '').split(',').map((s) => s.trim().toLowerCase()).filter(Boolean));
@@ -100,15 +104,66 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     const startMs = dayStartMs(today);
     const dailyXp = q.xpBetween.get(u.id, startMs, startMs + DAY).s;
     const streakAlive = u.last_active != null && (u.last_active === today || u.last_active === today - 1);
+    const currentStreak = streakAlive ? u.streak : 0;
+    const goal = u.daily_goal || 20;
+    const todayMet = dailyXp >= goal;
+
+    // Build 7-day history and calculate consecutive days daily goal met
+    const past7 = [];
+    const dayNames = ['Ya', 'Du', 'Se', 'Cho', 'Pa', 'Ju', 'Sha'];
+    let consecutiveMet = todayMet ? 1 : 0;
+    let chainAlive = true;
+
+    for (let i = 0; i < 7; i++) {
+      const dKey = today - i;
+      const dStart = dayStartMs(dKey);
+      const dayXp = (i === 0) ? dailyXp : q.xpBetween.get(u.id, dStart, dStart + DAY).s;
+      const met = dayXp >= goal || (i > 0 && currentStreak > i);
+      const dObj = new Date(dStart + 12 * 3600000);
+      const dayName = dayNames[dObj.getDay()];
+      past7.unshift({
+        key: dKey,
+        day: dayName,
+        xp: dayXp,
+        met,
+        isToday: i === 0,
+      });
+
+      if (i > 0 && chainAlive) {
+        if (met) {
+          consecutiveMet++;
+        } else {
+          chainAlive = false;
+        }
+      }
+    }
+
+    const goalStreak = Math.max(consecutiveMet, todayMet ? Math.max(1, currentStreak) : currentStreak);
+    const bestGoalStreak = Math.max(goalStreak, u.best_streak || 0);
+
     return {
       id: u.id, name: u.name, email: u.email, role: u.role, isAdmin: u.role === 'admin', xp: u.xp, level: levelOf(u.xp),
-      streak: streakAlive ? u.streak : 0, bestStreak: u.best_streak, dailyGoal: u.daily_goal,
+      streak: currentStreak, bestStreak: u.best_streak, dailyGoal: goal,
       dailyXp, doneToday: u.last_active === today, currentLang: validLang(u.current_lang),
+      goalMetToday: todayMet,
+      goalStreak,
+      bestGoalStreak,
+      goalHistory: past7,
     };
   }
 
+  function extractToken(req) {
+    const authHeader = req.headers && req.headers['authorization'];
+    if (authHeader && /^Bearer\s+/i.test(authHeader)) {
+      return authHeader.replace(/^Bearer\s+/i, '').trim();
+    }
+    const cookies = auth.parseCookies(req.headers && req.headers.cookie);
+    return cookies[auth.COOKIE];
+  }
+
   function requireUser(req) {
-    const tok = auth.verify(secret, auth.parseCookies(req.headers.cookie)[auth.COOKIE]);
+    const rawToken = extractToken(req);
+    const tok = auth.verify(secret, rawToken);
     const u = tok && q.userById.get(tok.uid);
     if (!u || u.created_at !== tok.ca) throw new HttpError(401, 'Tizimga kiring');
     if (u.banned) throw new HttpError(403, 'Hisobingiz bloklangan');
@@ -268,9 +323,9 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
 
   const baseHeaders = {
     'X-Content-Type-Options': 'nosniff',
-    'X-Frame-Options': 'DENY',
     'Referrer-Policy': 'strict-origin-when-cross-origin',
     'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+    'X-Frame-Options': 'DENY',
     'Content-Security-Policy': "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; frame-ancestors 'none'",
   };
 
@@ -291,8 +346,8 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
   const emailOk = (e) => typeof e === 'string' && e.length <= 120 && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e);
   const cleanName = (n) => String(n ?? '').replace(/\s+/g, ' ').trim().slice(0, 40);
   // Behind a reverse proxy set TRUST_PROXY=1 so the real client address (X-Forwarded-For) is rate-limited.
-  const ipOf = (req) => (process.env.TRUST_PROXY === '1' && req.headers['x-forwarded-for'] ? String(req.headers['x-forwarded-for']).split(',')[0].trim() : req.socket.remoteAddress || 'x');
-  const isSecure = (req) => req.headers['x-forwarded-proto'] === 'https';
+  const ipOf = (req) => (process.env.TRUST_PROXY === '1' && req.headers && req.headers['x-forwarded-for'] ? String(req.headers['x-forwarded-for']).split(',')[0].trim() : (req.socket && req.socket.remoteAddress) || 'x');
+  const isSecure = (req) => (req.headers && req.headers['x-forwarded-proto'] === 'https') || (req.socket && req.socket.encrypted === true);
 
   route('GET', '/api/health', async () => ({ ok: true }));
 
@@ -317,24 +372,46 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     const role = first || adminEmails.has(email) ? 'admin' : 'user';
     const info = q.insertUser.run(email, name, await auth.hashPasswordAsync(password), Date.now(), role);
     const u = q.userById.get(Number(info.lastInsertRowid));
-    res.setHeader('Set-Cookie', auth.sessionCookie(auth.sign(secret, u.id, u.created_at), { secure: isSecure(req) }));
-    return { user: publicUser(u) };
+    const token = auth.sign(secret, u.id, u.created_at);
+    res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
+    return { user: publicUser(u), token };
   });
 
   route('POST', '/api/auth/login', async ({ req, res, body }) => {
     const email = String(body.email ?? '').trim().toLowerCase();
+    const password = String(body.password ?? '');
     if (!loginIpLimiter(ipOf(req)) || !loginLimiter(`${ipOf(req)}|${email}`)) throw new HttpError(429, "Juda ko'p urinish, keyinroq qayta urinib ko'ring");
     let u = q.userByEmail.get(email);
-    const ok = (await auth.verifyPasswordAsync(String(body.password ?? ''), u ? u.pass_hash : auth.DUMMY_HASH)) && !!u;
-    if (!ok) throw new HttpError(401, "Email yoki parol noto'g'ri");
+
+    if (!u) throw new HttpError(401, "Email yoki parol noto'g'ri");
+
+    let ok = await auth.verifyPasswordAsync(password, u.pass_hash);
+    if (!ok && password.trim() !== password) {
+      ok = await auth.verifyPasswordAsync(password.trim(), u.pass_hash);
+    }
+    if (!ok) throw new HttpError(401, "Parol noto'g'ri. Agar parolni eslay olmasangiz, 'Parolni unutdingizmi?' orqali yangilang");
     if (u.banned) throw new HttpError(403, 'Hisobingiz bloklangan');
     if (adminEmails.has(email) && u.role !== 'admin') { db.prepare("UPDATE users SET role='admin' WHERE id=?").run(u.id); u = q.userById.get(u.id); }
-    res.setHeader('Set-Cookie', auth.sessionCookie(auth.sign(secret, u.id, u.created_at), { secure: isSecure(req) }));
-    return { user: publicUser(u) };
+    const token = auth.sign(secret, u.id, u.created_at);
+    res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
+    return { user: publicUser(u), token };
   });
 
-  route('POST', '/api/auth/logout', async ({ res }) => {
-    res.setHeader('Set-Cookie', auth.clearCookie());
+  route('POST', '/api/auth/guest', async ({ req, res }) => {
+    if (!guestLimiter(ipOf(req))) throw new HttpError(429, "Juda ko'p urinish, keyinroq qayta urinib ko'ring");
+    const guestId = Math.floor(1000 + Math.random() * 9000);
+    const email = `mehmon_${Date.now()}_${guestId}@linguaflow.uz`;
+    const name = `Mehmon #${guestId}`;
+    const hash = await auth.hashPasswordAsync(crypto.randomBytes(16).toString('hex'));
+    const info = q.insertUser.run(email, name, hash, Date.now(), 'user');
+    const u = q.userById.get(Number(info.lastInsertRowid));
+    const token = auth.sign(secret, u.id, u.created_at);
+    res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
+    return { user: publicUser(u), token };
+  });
+
+  route('POST', '/api/auth/logout', async ({ req, res }) => {
+    res.setHeader('Set-Cookie', auth.clearCookie({ secure: isSecure(req) }));
     return { ok: true };
   });
 
@@ -461,9 +538,261 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     return { badges: Object.entries(BADGES).map(([key, b]) => ({ key, ...b, earned: have.has(key), earnedAt: have.get(key) ?? null })) };
   });
 
+  route('GET', '/api/exams/summary', async ({ req, url }) => {
+    const u = requireUser(req);
+    const lang = url.searchParams.get('lang') || validLang(u.current_lang);
+    const L = content.lang(lang);
+    if (!L) throw new HttpError(400, "Noto'g'ri til");
+
+    const states = lessonStates(u.id, L.code);
+    const doneLessonsCount = states.filter((l) => l.kind === 'lesson' && l.state === 'done').length;
+    const allLessonsCount = states.filter((l) => l.kind === 'lesson').length || 40;
+
+    const stages = [
+      {
+        key: 'a1', level: 'A1', title: "A1: Boshlang'ich daraja",
+        examTarget: 'CEFR A1 Sertifikati',
+        equivalents: { en: 'A1 Beginner', de: 'Goethe A1', ru: 'ТРКИ Элементарный', fr: 'DELF A1', es: 'DELE A1', ar: 'ALPT A1' },
+        lessonsNeed: 8,
+      },
+      {
+        key: 'a2', level: 'A2', title: 'A2: Elementar muloqot',
+        examTarget: 'CEFR A2 · IELTS 4.0 Ekvivalenti',
+        equivalents: { en: 'IELTS 3.5 - 4.5', de: 'Goethe A2', ru: 'ТРКИ Базовый', fr: 'DELF A2', es: 'DELE A2', ar: 'ALPT A2' },
+        lessonsNeed: 16,
+      },
+      {
+        key: 'b1', level: 'B1', title: 'B1: Mustaqil muloqot (O\'rta)',
+        examTarget: 'CEFR B1 · IELTS 5.0 - 5.5',
+        equivalents: { en: 'IELTS 5.0 - 5.5', de: 'Goethe B1 (Zertifikat B1)', ru: 'ТРКИ-I (Первый)', fr: 'DELF B1', es: 'DELE B1', ar: 'ALPT B1' },
+        lessonsNeed: 24,
+      },
+      {
+        key: 'b2', level: 'B2', title: 'B2: O\'rtadan yuqori (Professional)',
+        examTarget: 'CEFR B2 · IELTS 6.0 - 6.5',
+        equivalents: { en: 'IELTS 6.0 - 6.5', de: 'Goethe B2 / TestDaF 3', ru: 'ТРКИ-II (Второй)', fr: 'DELF B2', es: 'DELE B2', ar: 'ALPT B2' },
+        lessonsNeed: 32,
+      },
+      {
+        key: 'c1', level: 'C1', title: 'C1: Ilg\'or & Akademik mukammallik',
+        examTarget: 'CEFR C1 · IELTS 7.0 - 8.5 Akademik',
+        equivalents: { en: 'IELTS 7.0 - 8.5 (C1 Academic)', de: 'Goethe C1 / TestDaF 4-5', ru: 'ТРКИ-III (Третий)', fr: 'DALF C1', es: 'DELE C1', ar: 'ALPT C1' },
+        lessonsNeed: 40,
+      },
+    ];
+
+    const enrichedStages = stages.map((st, i) => {
+      const prevNeed = i > 0 ? stages[i - 1].lessonsNeed : 0;
+      const stageDone = Math.max(0, Math.min(st.lessonsNeed - prevNeed, doneLessonsCount - prevNeed));
+      const totalInStage = st.lessonsNeed - prevNeed;
+      const completed = doneLessonsCount >= st.lessonsNeed;
+      return {
+        ...st,
+        doneInStage: stageDone,
+        totalInStage,
+        completed,
+        percent: Math.round((stageDone / totalInStage) * 100),
+      };
+    });
+
+    const certRows = db.prepare('SELECT * FROM user_certificates WHERE user_id=? AND lang=? ORDER BY issued_at DESC').all(u.id, L.code);
+
+    return {
+      lang: { code: L.code, name: L.name, native: L.native, flag: L.flag },
+      doneLessonsCount,
+      allLessonsCount,
+      stages: enrichedStages,
+      certificates: certRows,
+    };
+  });
+
+  const activeMockExams = new Map();
+
+  route('GET', '/api/curriculum', async ({ req, url }) => {
+    const u = requireUser(req);
+    const lang = url.searchParams.get('lang') || validLang(u.current_lang);
+    const L = content.lang(lang);
+    if (!L) throw new HttpError(400, "Noto'g'ri til");
+
+    const states = lessonStates(u.id, L.code);
+    const doneLessonsCount = states.filter((l) => l.kind === 'lesson' && l.state === 'done').length;
+
+    const units = content.units().filter((u) => u.enabled).map((un, idx) => ({
+      key: un.key,
+      title: un.title,
+      emoji: un.emoji,
+      position: idx + 1,
+      stageLevel: idx < 4 ? 'A1' : idx < 8 ? 'A2' : idx < 12 ? 'B1' : idx < 16 ? 'B2' : 'C1',
+      ieltsTarget: idx < 4 ? 'Band 3.5' : idx < 8 ? 'Band 4.5' : idx < 12 ? 'Band 5.5' : idx < 16 ? 'Band 6.5' : 'Band 7.5 - 8.5',
+      conceptsCount: un.concepts.filter((c) => c.t[L.code]).length,
+      sentencesCount: un.sentences.filter((s) => s.t[L.code]).length,
+    }));
+
+    return {
+      lang: { code: L.code, name: L.name, native: L.native, flag: L.flag, tts: L.tts, color: L.color },
+      stages: STAGES,
+      units,
+      userProgress: {
+        doneLessonsCount,
+        currentStage: doneLessonsCount < 8 ? 'A1' : doneLessonsCount < 16 ? 'A2' : doneLessonsCount < 24 ? 'B1' : doneLessonsCount < 32 ? 'B2' : 'C1',
+        ieltsTarget: doneLessonsCount < 8 ? '3.5 - 4.0' : doneLessonsCount < 16 ? '4.0 - 5.0' : doneLessonsCount < 24 ? '5.0 - 5.5' : doneLessonsCount < 32 ? '6.0 - 6.5' : '7.0 - 8.5+',
+      },
+    };
+  });
+
+  route('GET', '/api/exams/mock', async ({ req, url }) => {
+    const u = requireUser(req);
+    const lang = url.searchParams.get('lang') || validLang(u.current_lang);
+    const level = (url.searchParams.get('level') || 'B2').toUpperCase();
+    if (!['A1', 'A2', 'B1', 'B2', 'C1', 'C2'].includes(level)) throw new HttpError(400, "Noto'g'ri daraja");
+    const L = content.lang(lang);
+    if (!L) throw new HttpError(400, "Noto'g'ri til");
+    if (!examLimiter(String(u.id))) throw new HttpError(429, "Soatlik imtihon limiti tugadi");
+    const open = [...activeMockExams.entries()].filter(([, v]) => v.userId === u.id);
+    if (open.length >= 3) for (const [k] of open.slice(0, open.length - 2)) activeMockExams.delete(k);
+
+    const mock = buildMockExam(L.code, level, content);
+    const examToken = `exam_${Date.now()}_${crypto.randomBytes(6).toString('hex')}`;
+
+    // Store key in memory with 2 hour TTL
+    const answerKeys = {};
+    mock.gradedQuestions.forEach((q) => {
+      answerKeys[q.id] = q.correctAnswer;
+    });
+
+    activeMockExams.set(examToken, {
+      userId: u.id,
+      lang: L.code,
+      level,
+      meta: mock.meta,
+      answerKeys,
+      createdAt: Date.now(),
+    });
+
+    // Clean up stale tokens older than 2 hours
+    const staleCutoff = Date.now() - 2 * 3600000;
+    for (const [k, v] of activeMockExams.entries()) {
+      if (v.createdAt < staleCutoff) activeMockExams.delete(k);
+    }
+
+    // Strip answers from client payload
+    const safeListening = mock.listening.map(({ correctAnswer, ...rest }) => rest);
+    const safeReading = mock.reading.map(({ correctAnswer, ...rest }) => rest);
+    const safeGrammar = mock.grammar.map(({ correctAnswer, ...rest }) => rest);
+
+    return {
+      examToken,
+      meta: mock.meta,
+      stageMeta: mock.stageMeta,
+      listening: safeListening,
+      reading: safeReading,
+      grammar: safeGrammar,
+      writingPrompt: mock.writingPrompt,
+    };
+  });
+
+  route('POST', '/api/exams/submit', async ({ req, body }) => {
+    const u = requireUser(req);
+    const examToken = String(body.examToken || '');
+    const session = activeMockExams.get(examToken);
+    if (!session || session.userId !== u.id) {
+      throw new HttpError(400, "Imtihon sessiyasi topilmadi yoki muddati o'tgan. Iltimos, qayta boshlang.");
+    }
+
+    const userAnswers = body.answers && typeof body.answers === 'object' ? body.answers : {};
+    const keys = session.answerKeys;
+    const total = Object.keys(keys).length;
+    let correct = 0;
+    const sectionCounts = { listening: { total: 0, ok: 0 }, reading: { total: 0, ok: 0 }, grammar: { total: 0, ok: 0 } };
+
+    const review = {};
+    for (const [qid, correctAns] of Object.entries(keys)) {
+      const userAns = String(userAnswers[qid] || '').trim();
+      const isOk = userAns.toLowerCase() === String(correctAns).toLowerCase();
+      if (isOk) correct++;
+
+      const sec = qid.startsWith('l') ? 'listening' : qid.startsWith('r') ? 'reading' : 'grammar';
+      if (sectionCounts[sec]) {
+        sectionCounts[sec].total++;
+        if (isOk) sectionCounts[sec].ok++;
+      }
+
+      review[qid] = { isOk, userAns, correctAns };
+    }
+
+    const accuracy = total > 0 ? Math.round((correct / total) * 100) : 0;
+    const L = content.lang(session.lang) || content.lang('en');
+    const level = session.level;
+
+    // IELTS band score calculation
+    let bandScore = '5.0';
+    if (level === 'C1') {
+      bandScore = accuracy >= 90 ? '8.5' : accuracy >= 80 ? '8.0' : accuracy >= 70 ? '7.5' : accuracy >= 60 ? '7.0' : '6.5';
+    } else if (level === 'B2') {
+      bandScore = accuracy >= 90 ? '7.0' : accuracy >= 80 ? '6.5' : accuracy >= 70 ? '6.0' : accuracy >= 60 ? '5.5' : '5.0';
+    } else if (level === 'B1') {
+      bandScore = accuracy >= 85 ? '5.5' : accuracy >= 70 ? '5.0' : accuracy >= 55 ? '4.5' : '4.0';
+    } else if (level === 'A2') {
+      bandScore = accuracy >= 75 ? '4.5' : accuracy >= 60 ? '4.0' : '3.5';
+    } else {
+      bandScore = accuracy >= 70 ? '3.5' : '3.0';
+    }
+
+    const examTitle = L.code === 'en' ? `IELTS Band ${bandScore} Ekvivalenti` : `${L.name} ${level} Xalqaro Imtihoni`;
+    const passed = accuracy >= (session.meta.passThresholdPercent || 65);
+
+    let certificate = null;
+    if (passed) {
+      const certId = `LF-${Date.now().toString(36).toUpperCase()}-${crypto.randomBytes(3).toString('hex').toUpperCase()}`;
+      const now = Date.now();
+      db.prepare(`
+        INSERT INTO user_certificates (cert_id, user_id, user_name, lang, cefr_level, exam_title, band_score, accuracy, issued_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `).run(certId, u.id, u.name, L.code, level, examTitle, String(bandScore), accuracy, now);
+
+      const had = db.prepare('SELECT COUNT(*) n FROM user_certificates WHERE user_id=? AND lang=? AND cefr_level=? AND cert_id<>?').get(u.id, L.code, level, certId).n;
+      awardProgress(u, { xp: had ? 0 : 120, lang: L.code, source: 'certificate', ctx: { cert: true, level } });
+
+      certificate = {
+        certId,
+        userName: u.name,
+        lang: L.name,
+        langNative: L.native,
+        flag: L.flag,
+        cefrLevel: level,
+        examTitle,
+        bandScore,
+        accuracy,
+        issuedAt: now,
+      };
+    }
+
+    // Clean token after submission
+    activeMockExams.delete(examToken);
+
+    return {
+      ok: true,
+      passed,
+      accuracy,
+      correctCount: correct,
+      totalCount: total,
+      bandScore,
+      cefrLevel: level,
+      examTitle,
+      sectionBreakdown: {
+        listening: sectionCounts.listening.total ? Math.round((sectionCounts.listening.ok / sectionCounts.listening.total) * 100) : 100,
+        reading: sectionCounts.reading.total ? Math.round((sectionCounts.reading.ok / sectionCounts.reading.total) * 100) : 100,
+        grammar: sectionCounts.grammar.total ? Math.round((sectionCounts.grammar.ok / sectionCounts.grammar.total) * 100) : 100,
+      },
+      certificate,
+      review,
+    };
+  });
+
   route('POST', '/api/tutor', async ({ req, body }) => {
     const u = requireUser(req);
     if (!tutorLimiter(String(u.id))) throw new HttpError(429, 'Soatlik limit tugadi');
+    const uname = String(u.name).replace(/[^\p{L}\p{N} '.-]/gu, '').slice(0, 40) || 'student';
     const lang = content.lang(body.lang) ? body.lang : validLang(u.current_lang);
     const L = content.lang(lang);
     const msgs = (Array.isArray(body.messages) ? body.messages : []).slice(-12)
@@ -471,15 +800,58 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
       .map((m) => ({ role: m.role === 'assistant' ? 'assistant' : 'user', content: String(m.content ?? '').slice(0, 1000) }))
       .filter((m) => m.content.trim());
     if (!msgs.length || msgs[msgs.length - 1].role !== 'user') throw new HttpError(400, 'Xabar kerak');
-    const system = `Siz LinguaFlow ilovasining do'stona til ustozisiz. O'quvchi o'zbek tilida so'zlashadi va ${L.name} (${L.native}) ni o'rganyapti. ` +
-      `Qoidalar: 1) Asosan ${L.native} da qisqa (1-3 gap) va oddiy javob bering, A1-A2 darajada. 2) Agar o'quvchi xato qilsa, avval to'g'ri variantni, so'ng 1 gaplik izohni o'zbek tilida bering. ` +
-      "3) Oxirida suhbatni davom ettiruvchi bitta savol bering. 4) Til o'rganishdan boshqa mavzularga o'tmang.";
+
+    let system = `Siz LinguaFlow ilovasining professional til ustozisiz. O'quvchi o'zbek tilida so'zlashadi va ${L.name} (${L.native}) ni xalqaro sertifikat (IELTS, CEFR, Goethe, TRKI, DELF, DELE) darajasida o'rganmoqchi. `;
+    if (body.mode === 'jarvis') {
+      system = `You are J.A.R.V.I.S., Tony Stark's legendary hyper-intelligent AI companion, now serving as the elite voice tutor and spoken conversation mentor in LinguaFlow.
+You are conversing with ${uname} via real-time spoken audio VOICE.
+Target language: ${L.name} (${L.native}). The user's native tongue is Uzbek.
+JARVIS Spoken Voice Protocols:
+1. Persona: Highly intelligent, polite, witty, confident and supportive. Address the student with dignity (e.g. 'Sir' or by name '${uname.split(' ')[0]}').
+2. Voice Brevity: Keep responses concise (strictly 1 to 3 short sentences), as your answer is spoken out loud through speech synthesis. Long text ruins voice conversation.
+3. Language learning: Converse primarily in ${L.native}. If the student makes a language slip or speaks in Uzbek, understand them perfectly, provide the natural ${L.native} correction in 1 quick sentence, and keep the spoken dialogue moving with an engaging question.
+4. IELTS & Fluency: Integrate authentic natural idioms and clear sentence structures.`;
+    } else if (body.mode === 'ielts_speaking') {
+      system += `Siz rasmiy IELTS Speaking imtihonchisisiz. O'quvchiga IELTS Speaking (Part 1, 2 yoki 3) savollarini bering. O'quvchining nutqini baholang (Fluency, Lexical Resource, Grammar, Pronunciation), xatolarini to'g'rilang va taxminiy Band Score (masalan: 6.5 yoki 7.5) bering. O'zbek tilida qisqa tahlil bering.`;
+    } else if (body.mode === 'ielts_writing') {
+      system += `Siz rasmiy IELTS Writing bo'yicha mutaxassissiz. O'quvchi yozgan insho (Task 1 yoki Task 2) yoki jumlalarni tekshiring. 4 mezon bo'yicha tahlil bering: Task Response, Coherence & Cohesion, Lexical Resource, Grammatical Accuracy. Band Score bahosini va qanday qilib Band 7.5+ ga ko'tarish bo'yicha maslahat bering.`;
+    } else if (body.mode === 'pronunciation' || body.isAudioPractice) {
+      system += `Siz oliy toifali Fonetika va Talaffuz murabbiyisiz (Pronunciation & Accent Coach). O'quvchi MediaRecorder audio orqali yozib olingan o'z talaffuzini mashq qilmoqda.
+O'quvchining aytgan gapi yoki jumlasi: "${msgs[msgs.length - 1].content}".
+Vazifangiz:
+1. Talaffuz aniqligi (Accuracy: 0-100% va IELTS Speaking Pronunciation Band bahosi).
+2. Urg'u (Word stress), ohang (Intonation) va fonetika (IPA) bo'yicha professional, do'stona tahlil bering.
+3. Tovushlarni to'g'ri chiqarish bo'yicha 1-2 ta amaliy maslahat bering.
+4. O'quvchiga navbatdagi mashq uchun yangi, qiziqarli jumla tavsiya qiling.
+Javobni o'qishga qulay, tushunarli va ruhlantiruvchi qilib bering.`;
+    } else if (body.mode === 'exam') {
+      system += `Siz xalqaro til sertifikatlari (IELTS, Goethe, DELF, DELE, TRKI, ALPT) bo'yicha rasmiy imtihonchisisiz. O'quvchiga B2-C1 darajasida savollar bering, grammatik noaniqliklarni aniq tushuntiring va imtihonda yuqori ball olish sirlarini o'rgating.`;
+    } else {
+      system += `Qoidalar: 1) Asosan ${L.native} da javob bering (1-3 gap). 2) Agar o'quvchi xato qilsa, to'g'ri variantni va o'zbek tilida qisqa izohni bering. 3) Suhbatni davom ettiruvchi bitta savol bering. 4) Til o'rganishdan boshqa mavzularga o'tmang.`;
+    }
+
     try {
-      const reply = await tutor.ask({ system, messages: msgs });
-      if (reply == null) return { reply: "AI ustoz hozircha o'chiq. Serverda GEMINI_API_KEY, OPENAI_API_KEY yoki ANTHROPIC_API_KEY ni sozlang.", disabled: true };
+      let reply = await tutor.ask({ system, messages: msgs });
+      if (!reply) {
+        if (body.mode === 'jarvis') {
+          reply = generateJarvisReply({ lang, userName: uname, messages: msgs, mode: body.mode });
+        } else if (body.mode === 'pronunciation' || body.isAudioPractice) {
+          reply = generatePronunciationFeedback({ lang, userName: uname, userText: msgs[msgs.length - 1].content });
+        } else {
+          return { reply: "AI ustoz hozircha o'chiq. Serverda GEMINI_API_KEY, OPENAI_API_KEY yoki ANTHROPIC_API_KEY ni sozlang.", disabled: true };
+        }
+      }
       return { reply };
     } catch (e) {
       console.error('tutor error:', e.message);
+      if (body.mode === 'jarvis') {
+        const reply = generateJarvisReply({ lang, userName: uname, messages: msgs, mode: body.mode });
+        return { reply };
+      }
+      if (body.mode === 'pronunciation' || body.isAudioPractice) {
+        const reply = generatePronunciationFeedback({ lang, userName: uname, userText: msgs[msgs.length - 1].content });
+        return { reply };
+      }
       throw new HttpError(502, "AI ustoz hozir javob bera olmadi, keyinroq urinib ko'ring");
     }
   });

@@ -16,6 +16,7 @@ const { activeProvider } = require('./src/tutor');
 const port = Number(process.env.PORT) || 3000;
 const dataDir = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : path.join(__dirname, 'data');
 const { server } = createApp({ dataDir, dbFile: path.join(dataDir, 'linguaflow.db') });
-server.listen(port, () => console.log(`LinguaFlow: http://localhost:${port} | AI ustoz: ${activeProvider() || "o'chiq"}`));
+const host = '0.0.0.0';
+server.listen(port, host, () => console.log(`LinguaFlow: http://${host}:${port} | AI ustoz: ${activeProvider() || "o'chiq"}`));
 
 for (const sig of ['SIGINT', 'SIGTERM']) process.on(sig, () => server.close(() => process.exit(0)));

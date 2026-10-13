@@ -15,9 +15,11 @@ const GAMES = {
   memory: {
     title: 'Xotira',
     evaluate(b) {
-      const moves = int(b.moves, 8, 80), timeMs = int(b.timeMs, 6000, 900000);
-      if (b.pairs !== 8 || moves == null || timeMs == null) return null;
-      return { score: Math.max(0, 1000 - (moves - 8) * 25 - Math.floor(timeMs / 1000) * 4), xp: 8 + (moves <= 12 ? 8 : moves <= 16 ? 4 : 0) };
+      const pairs = int(b.pairs, 4, 16);
+      if (pairs == null) return null;
+      const moves = int(b.moves, pairs, 80), timeMs = int(b.timeMs, 3000, 900000);
+      if (moves == null || timeMs == null) return null;
+      return { score: Math.max(0, 1000 - (moves - pairs) * 25 - Math.floor(timeMs / 1000) * 4), xp: 8 + (moves <= pairs + 4 ? 8 : moves <= pairs + 8 ? 4 : 0) };
     },
   },
   blitz: {
@@ -42,6 +44,16 @@ const GAMES = {
       const solved = int(b.solved, 0, 10), timeMs = int(b.timeMs, 1000, 600000);
       if (solved == null || timeMs == null || timeMs < solved * 3000) return null;
       return { score: solved * 100, xp: Math.min(24, solved * 3) };
+    },
+  },
+  stage: {
+    title: "5 so'z bosqichi",
+    evaluate(b) {
+      const level = int(b.level, 1, 1000);
+      const solved = int(b.solved, 1, 15);
+      const timeMs = int(b.timeMs, 1000, 600000);
+      if (level == null || solved == null || timeMs == null) return null;
+      return { score: 500 + solved * 50, xp: 15 };
     },
   },
 };
@@ -81,11 +93,44 @@ module.exports = function registerGames({ db, route, content, HttpError, require
   route('GET', '/api/games/words', async ({ req, url }) => {
     const u = requireUser(req);
     const L = langFor(u, url);
-    const n = Math.min(60, Math.max(8, Number(url.searchParams.get('n')) || 24));
-    const { words } = pool(u, L.code);
+    const requestedN = url.searchParams.get('n');
+    const level = Math.max(1, Number(url.searchParams.get('level')) || 1);
+
+    const allUnits = content.units();
+    const allConcepts = allUnits.flatMap((un) => un.concepts).filter((c) => c && c.t[L.code]);
+    const totalLevels = Math.max(1, Math.ceil(allConcepts.length / 5));
+
+    if (requestedN && Number(requestedN) > 5) {
+      const n = Math.min(60, Math.max(8, Number(requestedN)));
+      const { words } = pool(u, L.code);
+      const sampleWords = words.length >= n ? sample(words, n) : allConcepts.slice(0, n);
+      return {
+        lang: { code: L.code, tts: L.tts, dir: L.dir, name: L.name },
+        level,
+        totalLevels,
+        words: sampleWords.map((c) => ({ id: c.id, target: c.t[L.code], uz: c.uz, tr: (c.tr || {})[L.code] || null })),
+      };
+    }
+
+    const n = 5;
+    const startIdx = ((level - 1) * n) % (allConcepts.length || 1);
+    let batch = allConcepts.slice(startIdx, startIdx + n);
+    if (batch.length < n && allConcepts.length >= n) {
+      batch = allConcepts.slice(Math.max(0, allConcepts.length - n));
+    }
+    const unitObj = allUnits.find((un) => un.concepts.some((c) => c.id === batch[0]?.id));
+    const unitTitle = unitObj ? unitObj.title : 'Mavzu';
+    const unitEmoji = unitObj ? unitObj.emoji : '📘';
+
     return {
       lang: { code: L.code, tts: L.tts, dir: L.dir, name: L.name },
-      words: sample(words, n).map((c) => ({ id: c.id, target: c.t[L.code], uz: c.uz, tr: (c.tr || {})[L.code] || null })),
+      level,
+      totalLevels,
+      unitTitle,
+      unitEmoji,
+      words: batch.map((c) => ({
+        id: c.id, target: c.t[L.code], uz: c.uz, tr: (c.tr || {})[L.code] || null,
+      })),
     };
   });
 

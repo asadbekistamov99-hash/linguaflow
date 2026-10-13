@@ -73,12 +73,12 @@ function parseCookies(header) {
   return out;
 }
 
-function sessionCookie(token, { secure }) {
+function sessionCookie(token, { secure } = {}) {
   const attrs = [`${COOKIE}=${token}`, 'Path=/', 'HttpOnly', 'SameSite=Lax', `Max-Age=${TTL_MS / 1000}`];
   if (secure) attrs.push('Secure');
   return attrs.join('; ');
 }
-const clearCookie = () => `${COOKIE}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0`;
+const clearCookie = ({ secure } = {}) => `${COOKIE}=; Path=/; HttpOnly; SameSite=Lax;${secure ? ' Secure;' : ''} Max-Age=0`;
 
 // Simple fixed-window limiter, in memory.
 function createLimiter(max, windowMs) {

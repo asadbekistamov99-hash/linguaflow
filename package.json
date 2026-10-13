@@ -4,8 +4,11 @@
   "description": "Multi-language learning platform",
   "main": "server.js",
   "scripts": {
+    "dev": "node --disable-warning=ExperimentalWarning server.js",
     "start": "node --disable-warning=ExperimentalWarning server.js",
+    "build": "node scripts/validate-seed.js",
     "test": "node --disable-warning=ExperimentalWarning --test",
+    "reset-password": "node --disable-warning=ExperimentalWarning scripts/reset-password.js",
     "make-admin": "node --disable-warning=ExperimentalWarning scripts/make-admin.js",
     "validate-seed": "node scripts/validate-seed.js"
   },

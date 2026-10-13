@@ -219,6 +219,17 @@ test('games: words, score validation, daily cap, rate limit, highscores', async 
   const w = await api('GET', '/api/games/words?lang=en&n=16');
   assert.equal(w.status, 200);
   assert.ok(w.data.words.length >= 8 && w.data.words[0].target && w.data.words[0].uz);
+
+  // 5-word level batching: level 1 and level 2 must have distinct words
+  const l1 = await api('GET', '/api/games/words?lang=en&level=1');
+  const l2 = await api('GET', '/api/games/words?lang=en&level=2');
+  assert.equal(l1.status, 200);
+  assert.equal(l2.status, 200);
+  assert.equal(l1.data.words.length, 5);
+  assert.equal(l2.data.words.length, 5);
+  const ids1 = new Set(l1.data.words.map((x) => x.id));
+  assert.ok(l2.data.words.every((x) => !ids1.has(x.id)), 'level 2 must contain different words than level 1');
+
   const sn = await api('GET', '/api/games/sentences?lang=en');
   assert.ok(sn.data.sentences.length >= 3);
   assert.deepEqual([...sn.data.sentences[0].words].sort(), [...sn.data.sentences[0].shuffled].sort());
@@ -262,6 +273,28 @@ test('tutor degrades gracefully without API key', async () => {
   const r = await api('POST', '/api/tutor', { lang: 'en', messages: [{ role: 'user', content: 'Hello' }] });
   assert.equal(r.status, 200);
   assert.equal(r.data.disabled, true);
+  app.close();
+});
+
+test('tutor: pronunciation practice mode and jarvis voice tutor', async () => {
+  const app = await boot();
+  const api = app.client(); await reg(api, 'Speaker', 'speaker@test.uz');
+  const rPronunc = await api('POST', '/api/tutor', {
+    lang: 'en',
+    mode: 'pronunciation',
+    isAudioPractice: true,
+    messages: [{ role: 'user', content: '🎙️ "Good morning, how are you today?"' }]
+  });
+  assert.equal(rPronunc.status, 200);
+  assert.ok(rPronunc.data.reply);
+
+  const rJarvis = await api('POST', '/api/tutor', {
+    lang: 'en',
+    mode: 'jarvis',
+    messages: [{ role: 'user', content: 'Hello Jarvis' }]
+  });
+  assert.equal(rJarvis.status, 200);
+  assert.ok(rJarvis.data.reply);
   app.close();
 });
 
@@ -411,12 +444,110 @@ test('review fixes: stale cookies, malformed input, replay limits, SRS, orphan c
   app.close();
 });
 
+test('AI Studio branch hardening: no open password reset, no auto-admin, framing blocked, limits', async () => {
+  const app = await boot();
+  const boss = app.client(); await reg(boss, 'Boss', 'boss@test.uz');
+  const victim = app.client(); await reg(victim, 'Victim', 'victim@test.uz');
+
+  // the unauthenticated reset endpoint is gone; the victim's password still works only for the victim
+  const attacker = app.client();
+  assert.equal((await attacker('POST', '/api/auth/reset-password', { email: 'victim@test.uz', newPassword: 'hacked1234' })).status, 404);
+  assert.equal((await app.client()('POST', '/api/auth/login', { email: 'victim@test.uz', password: 'hacked1234' })).status, 401);
+  assert.equal((await app.client()('POST', '/api/auth/login', { email: 'victim@test.uz', password: 'secret1234' })).status, 200);
+
+  // logging in with an unknown email never creates (admin) accounts
+  for (const email of ['nobody@test.uz', 'admin@example.com']) {
+    assert.equal((await app.client()('POST', '/api/auth/login', { email, password: 'whatever1234' })).status, 401);
+  }
+  assert.equal(app.db.prepare('SELECT COUNT(*) n FROM users').get().n, 2);
+
+  // admin can still set a password for someone (the supported recovery path)
+  const v = app.db.prepare("SELECT id FROM users WHERE email='victim@test.uz'").get();
+  assert.equal((await victim('POST', `/api/admin/users/${v.id}/password`, { password: 'newpass1234' })).status, 403);
+  assert.equal((await boss('POST', `/api/admin/users/${v.id}/password`, { password: 'newpass1234' })).status, 200);
+  assert.equal((await app.client()('POST', '/api/auth/login', { email: 'victim@test.uz', password: 'newpass1234' })).status, 200);
+
+  // headers and cookies
+  const r = await fetch(app.base + '/app');
+  assert.equal(r.headers.get('x-frame-options'), 'DENY');
+  assert.match(r.headers.get('content-security-policy'), /frame-ancestors 'none'/);
+  const lg = await fetch(app.base + '/api/auth/login', { method: 'POST', headers: { 'content-type': 'application/json', 'x-forwarded-proto': 'https' }, body: JSON.stringify({ email: 'victim@test.uz', password: 'newpass1234' }) });
+  const ck = lg.headers.get('set-cookie');
+  assert.match(ck, /SameSite=Lax/); assert.match(ck, /Secure/); assert.doesNotMatch(ck, /SameSite=None/);
+
+  // guests are rate limited per IP; X-Forwarded-For is ignored unless TRUST_PROXY=1
+  let last = 0;
+  for (let i = 0; i < 12; i++) { last = (await fetch(app.base + '/api/auth/guest', { method: 'POST', headers: { 'content-type': 'application/json', 'x-forwarded-for': `9.9.9.${i}` }, body: '{}' })).status; }
+  assert.equal(last, 429);
+
+  // exams: bad level rejected, certificate XP only once per language+level
+  assert.equal((await victim('GET', '/api/exams/mock?lang=en&level=ZZ')).status, 400);
+  app.close();
+});
+
 test('static pages are served', async () => {
   const app = await boot();
   assert.equal((await fetch(app.base + '/')).status, 200);
   assert.equal((await fetch(app.base + '/app')).status, 200);
   assert.equal((await fetch(app.base + '/admin')).status, 200);
   assert.equal((await fetch(app.base + '/nope.txt')).status, 404);
+  app.close();
+});
+
+test('curriculum and international certification exam flow', async () => {
+  const app = await boot();
+  const c = app.client();
+  await reg(c, 'Ielts Candidate', 'candidate@ielts.uz');
+
+  // Curriculum returns 5 CEFR stages and IELTS roadmap
+  const cur = await c('GET', '/api/curriculum?lang=en');
+  assert.equal(cur.status, 200);
+  assert.equal(cur.data.stages.length, 5);
+  assert.equal(cur.data.stages[0].level, 'A1');
+  assert.equal(cur.data.stages[4].level, 'C1');
+  assert.ok(cur.data.stages[4].ieltsBand.includes('7.0'));
+
+  // Exam summary
+  const sum = await c('GET', '/api/exams/summary?lang=en');
+  assert.equal(sum.status, 200);
+  assert.equal(sum.data.stages.length, 5);
+
+  // Mock exam generation
+  const mock = await c('GET', '/api/exams/mock?lang=en&level=B2');
+  assert.equal(mock.status, 200);
+  assert.ok(mock.data.examToken);
+  assert.ok(mock.data.listening.length > 0);
+  assert.ok(mock.data.reading.length > 0);
+  assert.ok(mock.data.grammar.length > 0);
+
+  // Submit exam answers
+  const answers = {};
+  [...mock.data.listening, ...mock.data.reading, ...mock.data.grammar].forEach((q) => {
+    answers[q.id] = q.options ? q.options[0] : 'Sample answer';
+  });
+  const sub = await c('POST', '/api/exams/submit', { examToken: mock.data.examToken, answers });
+  assert.equal(sub.status, 200);
+  assert.ok(typeof sub.data.accuracy === 'number');
+  assert.ok(sub.data.bandScore);
+
+  // Certificates cannot be minted by hand any more (they were forgeable)
+  const certRes = await c('POST', '/api/exams/certify', { lang: 'en', level: 'C1', accuracy: 99, bandScore: '9.0' });
+  assert.equal(certRes.status, 404);
+
+  const afterSum = await c('GET', '/api/exams/summary?lang=en');
+  // a certificate exists exactly when the (random) exam attempt was passed
+  assert.equal(afterSum.data.certificates.length, sub.data.passed ? 1 : 0);
+  assert.equal(Boolean(sub.data.certificate), sub.data.passed);
+
+  // JARVIS voice tutor mode
+  const jarvisRes = await c('POST', '/api/tutor', {
+    lang: 'en',
+    mode: 'jarvis',
+    messages: [{ role: 'user', content: 'Hello Jarvis, how are you?' }],
+  });
+  assert.equal(jarvisRes.status, 200);
+  assert.ok(typeof jarvisRes.data.reply === 'string' && jarvisRes.data.reply.length > 0);
+
   app.close();
 });
 

@@ -1,5 +1,6 @@
 'use strict';
 const { dateKey, dayStartMs, DAY, TZ_HOURS } = require('./db');
+const auth = require('./auth');
 
 const str = (v, max, name, { required = true } = {}) => {
   const s = String(v ?? '').replace(/\s+/g, ' ').trim();
@@ -108,6 +109,17 @@ module.exports = function registerAdmin({ db, q, route, content, HttpError, requ
       else { db.prepare('DELETE FROM xp_events WHERE user_id=?').run(u.id); db.prepare('DELETE FROM game_scores WHERE user_id=?').run(u.id); db.prepare('UPDATE users SET xp=0, streak=0, best_streak=0, last_active=NULL WHERE id=?').run(u.id); db.prepare('DELETE FROM badges WHERE user_id=?').run(u.id); }
     });
     logAudit(admin.id, 'user.reset', `#${u.id} ${u.email}: ${body.what}`);
+    return { ok: true };
+  }));
+
+  route('POST', '/api/admin/users/:id/password', adm(async ({ params, body, admin }) => {
+    const u = q.userById.get(Number(params.id));
+    if (!u) throw new HttpError(404, 'Foydalanuvchi topilmadi');
+    const newPass = String(body.password ?? '');
+    if (newPass.length < 8 || newPass.length > 100) throw bad("Parol kamida 8 belgidan iborat bo'lsin");
+    const hash = await auth.hashPasswordAsync(newPass);
+    db.prepare('UPDATE users SET pass_hash=? WHERE id=?').run(hash, u.id);
+    logAudit(admin.id, 'user.password_reset', `#${u.id} ${u.email}`);
     return { ok: true };
   }));
 

@@ -1,638 +1,640 @@
 [
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Wenn ich Zeit ___, würde ich reisen. (haben)",
-   "answers": [
-    "hätte"
-   ],
-   "explanation_uz": "Konjunktiv II: haben fe'li hätte shaklga o'tadi. Konjunktiv II shart gaplarda (wenn...) xayoliy yoki real bo'lmagan holatni bildiradi."
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Wenn ich Zeit ___, würde ich reisen. (haben)",
+      "answers": [
+        "hätte"
+      ],
+      "explanation_uz": "Konjunktiv II: haben fe'li hätte shaklga o'tadi. Konjunktiv II shart gaplarda (wenn...) xayoliy yoki real bo'lmagan holatni bildiradi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich wünschte, ich ___ besser Deutsch sprechen. (können)",
+      "answers": [
+        "könnte"
+      ],
+      "explanation_uz": "Istak (Wunsch) gapida Konjunktiv II ishlatiladi: können – könnte."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Wenn er mehr gelernt ___, hätte er die Prüfung bestanden. (haben)",
+      "answers": [
+        "hätte"
+      ],
+      "explanation_uz": "O'tmishdagi real bo'lmagan shart: Konjunktiv II Vergangenheit = hätte/wäre + Partizip II."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "An deiner Stelle ___ ich zum Arzt gehen.",
+      "answers": [
+        "würde"
+      ],
+      "explanation_uz": "Maslahat berishda Konjunktiv II: würde + Infinitiv."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Das Haus ___ letztes Jahr gebaut. (werden)",
+      "answers": [
+        "wurde"
+      ],
+      "explanation_uz": "Passiv Präteritum: wurde + Partizip II."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "In Deutschland ___ viel Bier getrunken. (werden)",
+      "answers": [
+        "wird"
+      ],
+      "explanation_uz": "Passiv Präsens: wird/werden + Partizip II; Bier birlik, shuning wird."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Das Mädchen, ___ dort steht, ist meine Schwester.",
+      "answers": [
+        "das"
+      ],
+      "explanation_uz": "Relativsatz: Mädchen (das) – Nominativ, shuning relativ olmosh 'das'."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Der Mann, mit ___ ich gesprochen habe, ist Lehrer.",
+      "answers": [
+        "dem"
+      ],
+      "explanation_uz": "Predlog 'mit' Dativ talab qiladi, Mann – maskulin, shuning 'dem'."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Das Auto ___ ist sehr alt. (mein Vater)",
+      "answers": [
+        "meines Vaters"
+      ],
+      "explanation_uz": "Genitiv egalik bildiradi: maskulin ismga -(e)s qo'shiladi, artikl/egalik olmoshi meines."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Wegen ___ Wetters bleiben wir zu Hause. (das schlechte Wetter)",
+      "answers": [
+        "des schlechten"
+      ],
+      "explanation_uz": "'wegen' Genitiv talab qiladi; neytral: des + sifat -en + ism -s."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Er hat sich über das ___ Geschenk gefreut. (schön)",
+      "answers": [
+        "schöne"
+      ],
+      "explanation_uz": "«sich freuen über» + Akkusativ; bestimmter artikl «das» + neytral Akkusativda sifat «-e» oladi: das schöne Geschenk."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Mit dem ___ Auto fahre ich zur Arbeit. (neu)",
+      "answers": [
+        "neuen"
+      ],
+      "explanation_uz": "Dativ neytral/maskulin: bestimmter artikldan keyin sifat -en oladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Nachdem ich gegessen ___, ging ich spazieren.",
+      "answers": [
+        "hatte"
+      ],
+      "explanation_uz": "Plusquamperfekt: 'nachdem' dan keyin oldingi harakat hatte/war + Partizip II bilan keladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Als wir ankamen, ___ der Zug schon abgefahren. (sein)",
+      "answers": [
+        "war"
+      ],
+      "explanation_uz": "Plusquamperfekt: abfahren harakat fe'li, shuning war + Partizip II."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Morgen ___ es wahrscheinlich regnen.",
+      "answers": [
+        "wird"
+      ],
+      "explanation_uz": "Futur I: werden + Infinitiv; es – 3-shaxs birlik, wird."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Er sagte, er ___ krank. (sein)",
+      "answers": [
+        "sei",
+        "wäre"
+      ],
+      "explanation_uz": "Indirekte Rede: Konjunktiv I (sei) ishlatiladi, wäre ham mumkin."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Sie sagte, sie ___ keine Zeit. (haben)",
+      "answers": [
+        "habe",
+        "hätte"
+      ],
+      "explanation_uz": "Indirekte Rede: haben – Konjunktiv I 'habe'; hätte ham qabul qilinadi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich lerne Deutsch, ___ in Berlin zu studieren.",
+      "answers": [
+        "um"
+      ],
+      "explanation_uz": "um ... zu + Infinitiv maqsadni bildiradi, bunda ikkala gapning subyekti bir xil."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich gebe dir meine Nummer, ___ du mich anrufen kannst.",
+      "answers": [
+        "damit"
+      ],
+      "explanation_uz": "Subyektlar har xil bo'lsa maqsad 'damit' bilan ifodalanadi (um ... zu emas)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ ich müde war, ging ich zur Party. (Gegensatz)",
+      "answers": [
+        "Obwohl"
+      ],
+      "explanation_uz": "'obwohl' – zidlov ergash gap; fe'l gap oxiriga o'tadi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ ich dusche, singe ich oft.",
+      "answers": [
+        "Während",
+        "Wenn"
+      ],
+      "explanation_uz": "'während' ikki harakat bir vaqtda sodir bo'lishini bildiradi; 'wenn' ham takrorlanuvchi harakatda mumkin. Fe'l gap oxiriga o'tadi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ruf mich an, ___ du abfährst. (zeitlich: vorher)",
+      "answers": [
+        "bevor",
+        "ehe"
+      ],
+      "explanation_uz": "'bevor' (yoki 'ehe') – keyingi harakatdan oldin sodir bo'ladigan voqea; fe'l gap oxirida."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich warte ___ den Bus.",
+      "answers": [
+        "auf"
+      ],
+      "explanation_uz": "warten auf + Akkusativ – fe'l bilan birga keladigan predlog."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Sie interessiert sich ___ Musik.",
+      "answers": [
+        "für"
+      ],
+      "explanation_uz": "sich interessieren für + Akkusativ – qat'iy fe'l-predlog birikmasi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich kenne den ___ gut. (der Student)",
+      "answers": [
+        "Studenten"
+      ],
+      "explanation_uz": "n-Deklination: der Student Akkusativda -en qo'shimchasini oladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ich habe vergessen, den Brief ___ schicken.",
+      "answers": [
+        "zu"
+      ],
+      "explanation_uz": "«vergessen» dan keyin «zu + Infinitiv» keladi: den Brief zu schicken. «zu» infinitivdan oldin turadi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Wenn ich Geld hätte, ___ ich ein Haus kaufen.",
+      "options": [
+        "würde",
+        "wurde",
+        "werde",
+        "wird"
+      ],
+      "answer": 0,
+      "explanation_uz": "Konjunktiv II: würde + Infinitiv; 'wurde' Passiv Präteritum uchun."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Das Fenster ___ gestern repariert.",
+      "options": [
+        "wird",
+        "wurde",
+        "hat",
+        "worden"
+      ],
+      "answer": 1,
+      "explanation_uz": "Passiv Präteritum: wurde + Partizip II; 'gestern' o'tgan zamonni bildiradi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Die Frau, ___ Tasche gestohlen wurde, ruft die Polizei.",
+      "options": [
+        "deren",
+        "die",
+        "der",
+        "dessen"
+      ],
+      "answer": 0,
+      "explanation_uz": "Relativ olmosh Genitiv: feminin uchun 'deren' (uning ... si)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Trotz ___ Regens gingen wir spazieren.",
+      "options": [
+        "des",
+        "dem",
+        "den",
+        "der"
+      ],
+      "answer": 0,
+      "explanation_uz": "'trotz' Genitiv talab qiladi; Regen maskulin, des Regens."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Das ist ein ___ Film.",
+      "options": [
+        "interessanter",
+        "interessante",
+        "interessanten",
+        "interessantes"
+      ],
+      "answer": 0,
+      "explanation_uz": "Nominativ maskulin, 'ein' dan keyin sifat -er qo'shimchasini oladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Ich trinke gern ___ Kaffee.",
+      "options": [
+        "starker",
+        "starken",
+        "starke",
+        "starkes"
+      ],
+      "answer": 1,
+      "explanation_uz": "Artiklsiz Akkusativ maskulin: sifat kuchli tuslanish -en oladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Nachdem sie die Hausaufgaben ___, sah sie fern.",
+      "options": [
+        "gemacht hatte",
+        "machte hatte",
+        "gemacht war",
+        "hat gemacht"
+      ],
+      "answer": 0,
+      "explanation_uz": "Plusquamperfekt: hatte + Partizip II; machen fe'li haben bilan tuslanadi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Nächstes Jahr ___ wir nach Wien ziehen.",
+      "options": [
+        "werden",
+        "wurden",
+        "sind",
+        "haben"
+      ],
+      "answer": 0,
+      "explanation_uz": "Futur I: werden + Infinitiv kelajak harakatni bildiradi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Er hat versucht, das Problem ___.",
+      "options": [
+        "zu lösen",
+        "lösen",
+        "zu gelöst",
+        "gelöst zu"
+      ],
+      "answer": 0,
+      "explanation_uz": "versuchen fe'lidan keyin 'zu + Infinitiv' keladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Es ist wichtig, pünktlich ___.",
+      "options": [
+        "aufzustehen",
+        "zu aufstehen",
+        "auf zu stehen",
+        "aufstehen"
+      ],
+      "answer": 0,
+      "explanation_uz": "Ajraladigan fe'llarda 'zu' prefiks va asos orasiga qo'shilib yoziladi: auf-zu-stehen."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Ich freue mich schon ___ die Ferien nächste Woche.",
+      "options": [
+        "auf",
+        "über",
+        "an",
+        "für"
+      ],
+      "answer": 0,
+      "explanation_uz": "sich freuen auf + Akkusativ – kelajakdagi voqea uchun (über – hozirgi/o'tgan)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Sie ärgert sich ___ den langen Stau.",
+      "options": [
+        "über",
+        "auf",
+        "für",
+        "um"
+      ],
+      "answer": 0,
+      "explanation_uz": "sich ärgern über + Akkusativ – qat'iy fe'l-predlog birikmasi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Welche Form ist richtig? Ich habe den ___ gefragt.",
+      "options": [
+        "Junge",
+        "Jungen",
+        "Jungens",
+        "Junges"
+      ],
+      "answer": 1,
+      "explanation_uz": "n-Deklination: der Junge Akkusativda -n oladi (den Jungen)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Wenn ich das gewusst ___, wäre ich nicht gekommen.",
+      "options": [
+        "hätte",
+        "wäre",
+        "würde",
+        "habe"
+      ],
+      "answer": 0,
+      "explanation_uz": "Konjunktiv II Vergangenheit: wissen fe'li hätte + Partizip II bilan keladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Sie fragt, ___ ich Zeit habe.",
+      "options": [
+        "ob",
+        "dass",
+        "weil",
+        "damit"
+      ],
+      "answer": 0,
+      "explanation_uz": "«fragen» dan keyin ha/yo'q savolini bildiruvchi ergash gap «ob» bilan boshlanadi; fe'l gap oxirida turadi."
+    }
   }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Ich wünschte, ich ___ besser Deutsch sprechen. (können)",
-   "answers": [
-    "könnte"
-   ],
-   "explanation_uz": "Istak (Wunsch) gapida Konjunktiv II ishlatiladi: können – könnte."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Wenn er mehr gelernt ___, hätte er die Prüfung bestanden. (haben)",
-   "answers": [
-    "hätte"
-   ],
-   "explanation_uz": "O'tmishdagi real bo'lmagan shart: Konjunktiv II Vergangenheit = hätte/wäre + Partizip II."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "An deiner Stelle ___ ich zum Arzt gehen.",
-   "answers": [
-    "würde"
-   ],
-   "explanation_uz": "Maslahat berishda Konjunktiv II: würde + Infinitiv."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Das Haus ___ letztes Jahr gebaut. (werden)",
-   "answers": [
-    "wurde"
-   ],
-   "explanation_uz": "Passiv Präteritum: wurde + Partizip II."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "In Deutschland ___ viel Bier getrunken. (werden)",
-   "answers": [
-    "wird"
-   ],
-   "explanation_uz": "Passiv Präsens: wird/werden + Partizip II; Bier birlik, shuning wird."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Das Mädchen, ___ dort steht, ist meine Schwester.",
-   "answers": [
-    "das"
-   ],
-   "explanation_uz": "Relativsatz: Mädchen (das) – Nominativ, shuning relativ olmosh 'das'."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Der Mann, mit ___ ich gesprochen habe, ist Lehrer.",
-   "answers": [
-    "dem"
-   ],
-   "explanation_uz": "Predlog 'mit' Dativ talab qiladi, Mann – maskulin, shuning 'dem'."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Das Auto ___ ist sehr alt. (mein Vater)",
-   "answers": [
-    "meines Vaters"
-   ],
-   "explanation_uz": "Genitiv egalik bildiradi: maskulin ismga -(e)s qo'shiladi, artikl/egalik olmoshi meines."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Wegen ___ Wetters bleiben wir zu Hause. (das schlechte Wetter)",
-   "answers": [
-    "des schlechten"
-   ],
-   "explanation_uz": "'wegen' Genitiv talab qiladi; neytral: des + sifat -en + ism -s."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Ich habe einen ___ Hund. (klein)",
-   "answers": [
-    "kleinen"
-   ],
-   "explanation_uz": "Akkusativ maskulin, 'einen' dan keyin sifat -en bilan tugaydi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Mit dem ___ Auto fahre ich zur Arbeit. (neu)",
-   "answers": [
-    "neuen"
-   ],
-   "explanation_uz": "Dativ neytral/maskulin: bestimmter artikldan keyin sifat -en oladi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Nachdem ich gegessen ___, ging ich spazieren.",
-   "answers": [
-    "hatte"
-   ],
-   "explanation_uz": "Plusquamperfekt: 'nachdem' dan keyin oldingi harakat hatte/war + Partizip II bilan keladi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Als wir ankamen, ___ der Zug schon abgefahren. (sein)",
-   "answers": [
-    "war"
-   ],
-   "explanation_uz": "Plusquamperfekt: abfahren harakat fe'li, shuning war + Partizip II."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Morgen ___ es wahrscheinlich regnen.",
-   "answers": [
-    "wird"
-   ],
-   "explanation_uz": "Futur I: werden + Infinitiv; es – 3-shaxs birlik, wird."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Er sagte, er ___ krank. (sein)",
-   "answers": [
-    "sei",
-    "wäre"
-   ],
-   "explanation_uz": "Indirekte Rede: Konjunktiv I (sei) ishlatiladi, wäre ham mumkin."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Sie sagte, sie ___ keine Zeit. (haben)",
-   "answers": [
-    "habe",
-    "hätte"
-   ],
-   "explanation_uz": "Indirekte Rede: haben – Konjunktiv I 'habe'; hätte ham qabul qilinadi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Ich lerne Deutsch, ___ in Berlin zu studieren.",
-   "answers": [
-    "um"
-   ],
-   "explanation_uz": "um ... zu + Infinitiv maqsadni bildiradi, bunda ikkala gapning subyekti bir xil."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Ich gebe dir meine Nummer, ___ du mich anrufen kannst.",
-   "answers": [
-    "damit"
-   ],
-   "explanation_uz": "Subyektlar har xil bo'lsa maqsad 'damit' bilan ifodalanadi (um ... zu emas)."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "___ ich müde war, ging ich zur Party. (Zid ma'no)",
-   "answers": [
-    "Obwohl"
-   ],
-   "explanation_uz": "'obwohl' – zidlov ergash gap; fe'l gap oxiriga o'tadi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "___ ich dusche, singe ich oft.",
-   "answers": [
-    "Während"
-   ],
-   "explanation_uz": "'während' ikki harakat bir vaqtda sodir bo'lishini bildiradi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Ruf mich an, ___ du abfährst.",
-   "answers": [
-    "bevor"
-   ],
-   "explanation_uz": "'bevor' – keyingi harakatdan oldin sodir bo'ladigan voqea; fe'l gap oxirida."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Ich warte ___ den Bus.",
-   "answers": [
-    "auf"
-   ],
-   "explanation_uz": "warten auf + Akkusativ – fe'l bilan birga keladigan predlog."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Sie interessiert sich ___ Musik.",
-   "answers": [
-    "für"
-   ],
-   "explanation_uz": "sich interessieren für + Akkusativ – qat'iy fe'l-predlog birikmasi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Ich kenne den ___ gut. (der Student)",
-   "answers": [
-    "Studenten"
-   ],
-   "explanation_uz": "n-Deklination: der Student Akkusativda -en qo'shimchasini oladi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Ich habe vergessen, den Brief ___ schicken.",
-   "answers": [
-    "zu"
-   ],
-   "explanation_uz": "Infinitiv mit zu: vergessen fe'lidan keyin 'zu' + Infinitiv; ajraladigan bo'lmagan fe'lda zu alohida."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Wenn ich Geld hätte, ___ ich ein Haus kaufen.",
-   "options": [
-    "würde",
-    "wurde",
-    "werde",
-    "wird"
-   ],
-   "answer": 0,
-   "explanation_uz": "Konjunktiv II: würde + Infinitiv; 'wurde' Passiv Präteritum uchun."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Das Fenster ___ gestern repariert.",
-   "options": [
-    "wird",
-    "wurde",
-    "war",
-    "worden"
-   ],
-   "answer": 1,
-   "explanation_uz": "Passiv Präteritum: wurde + Partizip II; 'gestern' o'tgan zamonni bildiradi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Die Frau, ___ Tasche gestohlen wurde, ruft die Polizei.",
-   "options": [
-    "deren",
-    "die",
-    "der",
-    "dessen"
-   ],
-   "answer": 0,
-   "explanation_uz": "Relativ olmosh Genitiv: feminin uchun 'deren' (uning ... si)."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Trotz ___ Regens gingen wir spazieren.",
-   "options": [
-    "des",
-    "dem",
-    "den",
-    "der"
-   ],
-   "answer": 0,
-   "explanation_uz": "'trotz' Genitiv talab qiladi; Regen maskulin, des Regens."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Das ist ein ___ Film.",
-   "options": [
-    "interessanter",
-    "interessante",
-    "interessanten",
-    "interessantes"
-   ],
-   "answer": 0,
-   "explanation_uz": "Nominativ maskulin, 'ein' dan keyin sifat -er qo'shimchasini oladi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Ich trinke gern ___ Kaffee.",
-   "options": [
-    "starker",
-    "starken",
-    "starke",
-    "starkes"
-   ],
-   "answer": 1,
-   "explanation_uz": "Artiklsiz Akkusativ maskulin: sifat kuchli tuslanish -en oladi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Nachdem sie die Hausaufgaben ___, sah sie fern.",
-   "options": [
-    "gemacht hatte",
-    "machte hatte",
-    "gemacht war",
-    "hat gemacht"
-   ],
-   "answer": 0,
-   "explanation_uz": "Plusquamperfekt: hatte + Partizip II; machen fe'li haben bilan tuslanadi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Nächstes Jahr ___ wir nach Wien ziehen.",
-   "options": [
-    "werden",
-    "wurden",
-    "sind",
-    "haben"
-   ],
-   "answer": 0,
-   "explanation_uz": "Futur I: werden + Infinitiv kelajak harakatni bildiradi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Er hat versucht, das Problem ___.",
-   "options": [
-    "zu lösen",
-    "lösen",
-    "zu gelöst",
-    "gelöst zu"
-   ],
-   "answer": 0,
-   "explanation_uz": "versuchen fe'lidan keyin 'zu + Infinitiv' keladi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Es ist wichtig, pünktlich ___.",
-   "options": [
-    "aufzustehen",
-    "zu aufstehen",
-    "auf zu stehen",
-    "aufstehen"
-   ],
-   "answer": 0,
-   "explanation_uz": "Ajraladigan fe'llarda 'zu' prefiks va asos orasiga qo'shilib yoziladi: auf-zu-stehen."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Ich freue mich schon ___ die Ferien nächste Woche.",
-   "options": [
-    "auf",
-    "über",
-    "an",
-    "für"
-   ],
-   "answer": 0,
-   "explanation_uz": "sich freuen auf + Akkusativ – kelajakdagi voqea uchun (über – hozirgi/o'tgan)."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Sie ärgert sich ___ den langen Stau.",
-   "options": [
-    "über",
-    "auf",
-    "für",
-    "um"
-   ],
-   "answer": 0,
-   "explanation_uz": "sich ärgern über + Akkusativ – qat'iy fe'l-predlog birikmasi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Welche Form ist richtig? Ich habe den ___ gefragt.",
-   "options": [
-    "Junge",
-    "Jungen",
-    "Jungens",
-    "Junges"
-   ],
-   "answer": 1,
-   "explanation_uz": "n-Deklination: der Junge Akkusativda -n oladi (den Jungen)."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Wenn ich das gewusst ___, wäre ich nicht gekommen.",
-   "options": [
-    "hätte",
-    "wäre",
-    "würde",
-    "habe"
-   ],
-   "answer": 0,
-   "explanation_uz": "Konjunktiv II Vergangenheit: wissen fe'li hätte + Partizip II bilan keladi."
-  }
- },
- {
-  "lang": "de",
-  "skill": "grammar",
-  "level": "B1",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Er sagte, er ___ müde. (indirekte Rede)",
-   "options": [
-    "sei",
-    "seist",
-    "seid",
-    "bin"
-   ],
-   "answer": 0,
-   "explanation_uz": "Indirekte Rede: 3-shaxs birlikda sein fe'lining Konjunktiv I shakli 'sei'."
-  }
- }
 ]

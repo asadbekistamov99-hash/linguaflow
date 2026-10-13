@@ -90,7 +90,7 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Er hat gestern sehr früh ___ (aufstehen).",
+      "text": "Er ist gestern sehr früh ___ (aufstehen).",
       "answers": [
         "aufgestanden"
       ],

@@ -48,11 +48,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Quand j'étais petit, je ___ (jouer) souvent au foot.",
+      "text": "Si j'avais su, je ne ___ pas venu. (être, conditionnel)",
       "answers": [
-        "jouais"
+        "serais"
       ],
-      "explanation_uz": "O'tmishdagi takrorlanuvchi odat imparfait bilan ifodalanadi."
+      "explanation_uz": "Si + plus-que-parfait bo'lsa, asosiy gapda conditionnel passé ishlatiladi: je ne serais pas venu."
     }
   },
   {
@@ -118,11 +118,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "L'année prochaine, nous ___ (avoir) un nouvel appartement.",
+      "text": "Quand tu ___ (arriver), appelle-moi.",
       "answers": [
-        "aurons"
+        "arriveras"
       ],
-      "explanation_uz": "Avoir fe'lining futur simple shakli: nous aurons."
+      "explanation_uz": "Kelajakka oid «quand» dan keyin futur simple ishlatiladi: quand tu arriveras."
     }
   },
   {
@@ -188,11 +188,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Tu vas à Paris ? — Oui, j'___ vais en juin.",
+      "text": "Tu penses à ton examen ? — Oui, j'___ pense souvent.",
       "answers": [
         "y"
       ],
-      "explanation_uz": "Joy bildiruvchi «à + joy» o'rniga olmosh «y» ishlatiladi."
+      "explanation_uz": "«Penser à» + narsa o'rniga olmosh «y» ishlatiladi: j'y pense."
     }
   },
   {
@@ -202,11 +202,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Tu veux du pain ? — Oui, j'___ veux.",
+      "text": "Tu as besoin de ces livres ? — Oui, j'___ ai besoin.",
       "answers": [
         "en"
       ],
-      "explanation_uz": "Bo'lak artikl «du/de la» o'rniga olmosh «en» ishlatiladi."
+      "explanation_uz": "«Avoir besoin de» + narsa o'rniga olmosh «en» ishlatiladi: j'en ai besoin."
     }
   },
   {
@@ -449,13 +449,14 @@
     "payload": {
       "question": "Tu as des frères ? — Oui, j'___ ai deux.",
       "options": [
-        "en",
-        "y",
-        "le",
-        "les"
+        "le lui",
+        "lui le",
+        "le leur",
+        "lui en"
       ],
       "answer": 0,
-      "explanation_uz": "Miqdor bilan kelgan ot o'rniga «en» olmoshi ishlatiladi."
+      "explanation_uz": "Ikki olmosh birga kelganda le/la/les (COD) lui/leur (COI) dan oldin turadi: je le lui donne.",
+      "text": "Tu donnes ce livre à Paul ? — Oui, je ___ donne."
     }
   },
   {
@@ -611,13 +612,14 @@
     "payload": {
       "question": "À ta place, je ___ le médecin.",
       "options": [
-        "consulterais",
-        "consulte",
-        "consulterai",
-        "consultais"
+        "fait",
+        "faire",
+        "faisant",
+        "fais"
       ],
       "answer": 0,
-      "explanation_uz": "Maslahat berishda conditionnel présent ishlatiladi: à ta place, je ...rais."
+      "explanation_uz": "Passé de l'infinitif: après avoir + participe passé — après avoir fait.",
+      "text": "Après avoir ___ ses courses, elle est rentrée."
     }
   }
 ]

@@ -26,5 +26,5 @@ if (!u) {
 }
 
 const hash = auth.hashPassword(password);
-db.prepare('UPDATE users SET pass_hash=? WHERE id=?').run(hash, u.id);
+db.prepare('UPDATE users SET pass_hash=?, session_ver=session_ver+1 WHERE id=?').run(hash, u.id);
 console.log(`Muvaffaqiyatli! ${email} foydalanuvchisi paroli yangilandi.`);

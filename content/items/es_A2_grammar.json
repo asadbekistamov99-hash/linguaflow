@@ -1,640 +1,641 @@
 [
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Ayer ___ (comer, yo) paella.",
-   "answers": [
-    "comí"
-   ],
-   "explanation_uz": "Pretérito indefinido: -er fe'llarida yo shakli -í bilan tugaydi (comí)."
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ayer ___ (comer, yo) paella.",
+      "answers": [
+        "comí"
+      ],
+      "explanation_uz": "Pretérito indefinido: -er fe'llarida yo shakli -í bilan tugaydi (comí)."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ayer ella ___ (escribir) una carta.",
+      "answers": [
+        "escribió"
+      ],
+      "explanation_uz": "Indefinido: -ir fe'llarida el/ella shakli -ió bilan tugaydi (escribió)."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Nosotros ___ (hablar) con el profesor ayer.",
+      "answers": [
+        "hablamos"
+      ],
+      "explanation_uz": "Indefinido: -ar fe'llarida nosotros shakli hozirgi zamon bilan bir xil: hablamos."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ayer ___ (ir, yo) al cine.",
+      "answers": [
+        "fui"
+      ],
+      "explanation_uz": "Ir fe'li indefinidoda tartibsiz: fui, fuiste, fue..."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "El sábado ellos ___ (tener) una fiesta.",
+      "answers": [
+        "tuvieron"
+      ],
+      "explanation_uz": "Tener indefinidoda tartibsiz o'zak tuv- oladi: tuvieron."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Tú ___ (hacer) la tarea anoche.",
+      "answers": [
+        "hiciste"
+      ],
+      "explanation_uz": "Hacer indefinidoda hic- o'zagini oladi: hiciste."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Cuando era niño, ___ (jugar, yo) en el parque.",
+      "answers": [
+        "jugaba"
+      ],
+      "explanation_uz": "Odat bo'lgan o'tgan harakat uchun imperfecto ishlatiladi: jugaba."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Cuando yo era niño, mi abuela siempre ___ (cocinar) los domingos.",
+      "answers": [
+        "cocinaba"
+      ],
+      "explanation_uz": "Cuando era niño va siempre odat bo'lgan o'tgan harakatni bildiradi, shuning uchun imperfecto: cocinaba."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "La fiesta ___ (ser) en mi casa mañana.",
+      "answers": [
+        "es",
+        "será"
+      ],
+      "explanation_uz": "Voqea o'tadigan joy ser bilan ifodalanadi: es."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Hoy el café ___ (estar) frío.",
+      "answers": [
+        "está"
+      ],
+      "explanation_uz": "Vaqtinchalik holat estar bilan ifodalanadi: está."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Compré este regalo ___ mi madre.",
+      "answers": [
+        "para"
+      ],
+      "explanation_uz": "Para qabul qiluvchini bildiradi: para mi madre."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Gracias ___ venir a mi fiesta.",
+      "answers": [
+        "por"
+      ],
+      "explanation_uz": "Gracias por + infinitivo: minnatdorchilik sababini bildiradi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Yo ___ (levantarse) a las siete.",
+      "answers": [
+        "me levanto"
+      ],
+      "explanation_uz": "Reflexiv fe'l: yo uchun olmosh me bo'ladi (me levanto)."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ellos ___ (ducharse) por la mañana.",
+      "answers": [
+        "se duchan"
+      ],
+      "explanation_uz": "Reflexiv fe'l: ellos uchun olmosh se bo'ladi (se duchan)."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "A mí me ___ (gustar) los gatos.",
+      "answers": [
+        "gustan"
+      ],
+      "explanation_uz": "Gustar gapning egasiga (ko'plik los gatos) moslashadi: gustan."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "A ella le ___ (encantar) bailar.",
+      "answers": [
+        "encanta"
+      ],
+      "explanation_uz": "Infinitiv bilan gustar-turi fe'llar birlikda keladi: encanta."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "¿Ves la película? Sí, ___ veo.",
+      "answers": [
+        "la"
+      ],
+      "explanation_uz": "To'g'ridan-to'g'ri to'ldiruvchi (la película) olmoshi: la."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Doy el libro a Ana. ___ doy el libro.",
+      "answers": [
+        "Le"
+      ],
+      "explanation_uz": "Egri to'ldiruvchi (a Ana) olmoshi birlikda le bo'ladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ (Abrir, tú) la ventana, por favor.",
+      "answers": [
+        "Abre"
+      ],
+      "explanation_uz": "Tú uchun tasdiq buyruq shakli hozirgi zamon él shakliga teng: abre."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ (Comer, tú) más verduras.",
+      "answers": [
+        "Come"
+      ],
+      "explanation_uz": "Tú uchun tasdiq buyruq: come (él shakli)."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Mañana voy ___ visitar a mi tío.",
+      "answers": [
+        "a"
+      ],
+      "explanation_uz": "Yaqin kelajak: ir + a + infinitivo."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Mi casa es más grande ___ la tuya.",
+      "answers": [
+        "que"
+      ],
+      "explanation_uz": "Qiyosiy darajada más + sifat dan keyin que keladi: más grande que."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Este libro es ___ que ese. (bueno)",
+      "answers": [
+        "mejor"
+      ],
+      "explanation_uz": "Bueno sifatining qiyosiy darajasi tartibsiz: mejor."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Esta es la casa de ellos: es ___ casa.",
+      "answers": [
+        "su"
+      ],
+      "explanation_uz": "Ellos egalik shakli: su (birlik ot oldidan)."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Hoy no ___ (querer, yo) salir porque llueve.",
+      "answers": [
+        "quiero"
+      ],
+      "explanation_uz": "Querer fe'lida e → ie o'zgaradi (yo quiero): quiero."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Ayer nosotros ___ al museo.",
+      "options": [
+        "fuimos",
+        "íbamos",
+        "vamos",
+        "iremos"
+      ],
+      "answer": 0,
+      "explanation_uz": "Tugagan bir martalik o'tgan harakat uchun indefinido: fuimos."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Ella ___ de México.",
+      "options": [
+        "es",
+        "está",
+        "hay",
+        "tiene"
+      ],
+      "answer": 0,
+      "explanation_uz": "Kelib chiqish ser bilan ifodalanadi: es de México."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "En mi ciudad ___ un parque grande.",
+      "options": [
+        "hay",
+        "está",
+        "es",
+        "son"
+      ],
+      "answer": 0,
+      "explanation_uz": "Noaniq narsaning mavjudligi hay bilan ifodalanadi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "El libro ___ en la mesa.",
+      "options": [
+        "hay",
+        "está",
+        "es",
+        "tiene"
+      ],
+      "answer": 1,
+      "explanation_uz": "Aniq narsaning joylashuvi estar bilan: el libro está."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Estudio español ___ viajar a Chile.",
+      "options": [
+        "por",
+        "para",
+        "de",
+        "en"
+      ],
+      "answer": 1,
+      "explanation_uz": "Maqsad uchun para + infinitivo ishlatiladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Llegué tarde ___ el tráfico.",
+      "options": [
+        "para",
+        "a",
+        "por",
+        "de"
+      ],
+      "answer": 2,
+      "explanation_uz": "Sabab uchun por ishlatiladi: por el tráfico."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Cuando yo ___ pequeño, vivía en un pueblo.",
+      "options": [
+        "fui",
+        "era",
+        "soy",
+        "seré"
+      ],
+      "answer": 1,
+      "explanation_uz": "Tavsif va fon uchun imperfecto: era."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "¿A qué hora ___ tú?",
+      "options": [
+        "te despiertas",
+        "despiertas",
+        "se despierta",
+        "me despierto"
+      ],
+      "answer": 0,
+      "explanation_uz": "Tú uchun reflexiv olmosh te: te despiertas."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "A nosotros ___ el chocolate.",
+      "options": [
+        "nos gusta",
+        "nosotros gusta",
+        "me gusta",
+        "nos gustan"
+      ],
+      "answer": 0,
+      "explanation_uz": "Nosotros uchun olmosh nos; el chocolate birlik: nos gusta."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "¿Compraste los billetes? Sí, ___ compré.",
+      "options": [
+        "los",
+        "les",
+        "las",
+        "lo"
+      ],
+      "answer": 0,
+      "explanation_uz": "Erkak ko'plik to'g'ridan-to'g'ri to'ldiruvchi: los."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Doy un regalo a mis padres: ___ doy un regalo.",
+      "options": [
+        "Los",
+        "Les",
+        "Le",
+        "Se los"
+      ],
+      "answer": 1,
+      "explanation_uz": "Ko'plik egri to'ldiruvchi (a mis padres): les."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Este coche es ___ rápido que aquel.",
+      "options": [
+        "muy",
+        "mucho",
+        "más",
+        "mejor"
+      ],
+      "answer": 2,
+      "explanation_uz": "Qiyosiy daraja: más + sifat + que."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "___ la puerta, por favor. (tú)",
+      "options": [
+        "Cierras",
+        "Cierra",
+        "Cerrar",
+        "Cerrado"
+      ],
+      "answer": 1,
+      "explanation_uz": "Tú uchun tasdiq buyruq: cierra."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Ellos viven con ___ abuelos.",
+      "options": [
+        "su",
+        "sus",
+        "sú",
+        "suyos"
+      ],
+      "answer": 1,
+      "explanation_uz": "Egalik olmoshi ot soniga mos: sus abuelos."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Me gusta ___ el fútbol.",
+      "options": [
+        "muy",
+        "mucho",
+        "mucha",
+        "muchos"
+      ],
+      "answer": 1,
+      "explanation_uz": "Fe'ldan keyin o'zgarmas mucho ishlatiladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Ayer ellos ___ la verdad.",
+      "options": [
+        "dijeron",
+        "dijieron",
+        "decían",
+        "dicieron"
+      ],
+      "answer": 0,
+      "explanation_uz": "Decir indefinidoda dij- o'zagini oladi va -eron bilan tugaydi: dijeron."
+    }
   }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Ella ___ (vivir) en Madrid el año pasado.",
-   "answers": [
-    "vivió"
-   ],
-   "explanation_uz": "Indefinido: -ir fe'llarida el/ella shakli -ió bilan tugaydi (vivió)."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Nosotros ___ (hablar) con el profesor ayer.",
-   "answers": [
-    "hablamos"
-   ],
-   "explanation_uz": "Indefinido: -ar fe'llarida nosotros shakli hozirgi zamon bilan bir xil: hablamos."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Ayer ___ (ir, yo) al cine.",
-   "answers": [
-    "fui"
-   ],
-   "explanation_uz": "Ir fe'li indefinidoda tartibsiz: fui, fuiste, fue..."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "El sábado ellos ___ (tener) una fiesta.",
-   "answers": [
-    "tuvieron"
-   ],
-   "explanation_uz": "Tener indefinidoda tartibsiz o'zak tuv- oladi: tuvieron."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Tú ___ (hacer) la tarea anoche.",
-   "answers": [
-    "hiciste"
-   ],
-   "explanation_uz": "Hacer indefinidoda hic- o'zagini oladi: hiciste."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Cuando era niño, ___ (jugar, yo) en el parque.",
-   "answers": [
-    "jugaba"
-   ],
-   "explanation_uz": "Odat bo'lgan o'tgan harakat uchun imperfecto ishlatiladi: jugaba."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Mi abuela siempre ___ (cocinar) los domingos.",
-   "answers": [
-    "cocinaba"
-   ],
-   "explanation_uz": "Siempre bilan takrorlanuvchi o'tgan harakat imperfectoda: cocinaba."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "La fiesta ___ (ser) en mi casa mañana.",
-   "answers": [
-    "es"
-   ],
-   "explanation_uz": "Voqea o'tadigan joy ser bilan ifodalanadi: es."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Hoy el café ___ (estar) frío.",
-   "answers": [
-    "está"
-   ],
-   "explanation_uz": "Vaqtinchalik holat estar bilan ifodalanadi: está."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Este regalo es ___ mi madre.",
-   "answers": [
-    "para"
-   ],
-   "explanation_uz": "Para qabul qiluvchini bildiradi: para mi madre."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Gracias ___ tu ayuda.",
-   "answers": [
-    "por"
-   ],
-   "explanation_uz": "Gracias por... sabab uchun minnatdorchilikni bildiradi."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Yo ___ (levantarse) a las siete.",
-   "answers": [
-    "me levanto"
-   ],
-   "explanation_uz": "Reflexiv fe'l: yo uchun olmosh me bo'ladi (me levanto)."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Ellos ___ (ducharse) por la mañana.",
-   "answers": [
-    "se duchan"
-   ],
-   "explanation_uz": "Reflexiv fe'l: ellos uchun olmosh se bo'ladi (se duchan)."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "A mí me ___ (gustar) los gatos.",
-   "answers": [
-    "gustan"
-   ],
-   "explanation_uz": "Gustar gapning egasiga (ko'plik los gatos) moslashadi: gustan."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "A ella le ___ (encantar) bailar.",
-   "answers": [
-    "encanta"
-   ],
-   "explanation_uz": "Infinitiv bilan gustar-turi fe'llar birlikda keladi: encanta."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "¿Ves la película? Sí, ___ veo.",
-   "answers": [
-    "la"
-   ],
-   "explanation_uz": "To'g'ridan-to'g'ri to'ldiruvchi (la película) olmoshi: la."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Doy el libro a Ana. ___ doy el libro.",
-   "answers": [
-    "Le"
-   ],
-   "explanation_uz": "Egri to'ldiruvchi (a Ana) olmoshi birlikda le bo'ladi."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "___ (Abrir, tú) la ventana, por favor.",
-   "answers": [
-    "Abre"
-   ],
-   "explanation_uz": "Tú uchun tasdiq buyruq shakli hozirgi zamon él shakliga teng: abre."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "___ (Comer, tú) más verduras.",
-   "answers": [
-    "Come"
-   ],
-   "explanation_uz": "Tú uchun tasdiq buyruq: come (él shakli)."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Mañana voy ___ visitar a mi tío.",
-   "answers": [
-    "a"
-   ],
-   "explanation_uz": "Yaqin kelajak: ir + a + infinitivo."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Mi casa es ___ grande que la tuya.",
-   "answers": [
-    "más"
-   ],
-   "explanation_uz": "Qiyosiy daraja: más + sifat + que."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Este libro es ___ que ese. (bueno)",
-   "answers": [
-    "mejor"
-   ],
-   "explanation_uz": "Bueno sifatining qiyosiy darajasi tartibsiz: mejor."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Esta es la casa de ellos: es ___ casa.",
-   "answers": [
-    "su"
-   ],
-   "explanation_uz": "Ellos egalik shakli: su (birlik ot oldidan)."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "gap",
-  "exam": "general",
-  "payload": {
-   "text": "Estoy ___ cansado.",
-   "answers": [
-    "muy"
-   ],
-   "explanation_uz": "Sifat oldida muy ishlatiladi, mucho emas."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Ayer nosotros ___ al museo.",
-   "options": [
-    "fuimos",
-    "íbamos",
-    "vamos",
-    "iremos"
-   ],
-   "answer": 0,
-   "explanation_uz": "Tugagan bir martalik o'tgan harakat uchun indefinido: fuimos."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Ella ___ de México.",
-   "options": [
-    "es",
-    "está",
-    "hay",
-    "tiene"
-   ],
-   "answer": 0,
-   "explanation_uz": "Kelib chiqish ser bilan ifodalanadi: es de México."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "En mi ciudad ___ un parque grande.",
-   "options": [
-    "hay",
-    "está",
-    "es",
-    "tiene ser"
-   ],
-   "answer": 0,
-   "explanation_uz": "Noaniq narsaning mavjudligi hay bilan ifodalanadi."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "El libro ___ en la mesa.",
-   "options": [
-    "hay",
-    "está",
-    "es",
-    "tiene"
-   ],
-   "answer": 1,
-   "explanation_uz": "Aniq narsaning joylashuvi estar bilan: el libro está."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Estudio español ___ viajar a Chile.",
-   "options": [
-    "por",
-    "para",
-    "de",
-    "en"
-   ],
-   "answer": 1,
-   "explanation_uz": "Maqsad uchun para + infinitivo ishlatiladi."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Llegué tarde ___ el tráfico.",
-   "options": [
-    "para",
-    "a",
-    "por",
-    "de"
-   ],
-   "answer": 2,
-   "explanation_uz": "Sabab uchun por ishlatiladi: por el tráfico."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Cuando yo ___ pequeño, vivía en un pueblo.",
-   "options": [
-    "fui",
-    "era",
-    "soy",
-    "seré"
-   ],
-   "answer": 1,
-   "explanation_uz": "Tavsif va fon uchun imperfecto: era."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "¿A qué hora ___ tú?",
-   "options": [
-    "te despiertas",
-    "despiertas",
-    "se despierta",
-    "me despierto"
-   ],
-   "answer": 0,
-   "explanation_uz": "Tú uchun reflexiv olmosh te: te despiertas."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "A nosotros ___ el chocolate.",
-   "options": [
-    "nos gusta",
-    "nosotros gusta",
-    "me gusta",
-    "nos gustan"
-   ],
-   "answer": 0,
-   "explanation_uz": "Nosotros uchun olmosh nos; el chocolate birlik: nos gusta."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "¿Compraste los billetes? Sí, ___ compré.",
-   "options": [
-    "los",
-    "les",
-    "las",
-    "lo"
-   ],
-   "answer": 0,
-   "explanation_uz": "Erkak ko'plik to'g'ridan-to'g'ri to'ldiruvchi: los."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Doy un regalo a mis padres: ___ doy un regalo.",
-   "options": [
-    "Los",
-    "Les",
-    "Le",
-    "Se los"
-   ],
-   "answer": 1,
-   "explanation_uz": "Ko'plik egri to'ldiruvchi (a mis padres): les."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Este coche es ___ rápido que aquel.",
-   "options": [
-    "muy",
-    "mucho",
-    "más",
-    "mejor"
-   ],
-   "answer": 2,
-   "explanation_uz": "Qiyosiy daraja: más + sifat + que."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "___ la puerta, por favor. (tú)",
-   "options": [
-    "Cierras",
-    "Cierra",
-    "Cerrar",
-    "Cerrado"
-   ],
-   "answer": 1,
-   "explanation_uz": "Tú uchun tasdiq buyruq: cierra."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Ellos viven con ___ abuelos.",
-   "options": [
-    "su",
-    "sus",
-    "sú",
-    "suyos"
-   ],
-   "answer": 1,
-   "explanation_uz": "Egalik olmoshi ot soniga mos: sus abuelos."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Me gusta ___ el fútbol.",
-   "options": [
-    "muy",
-    "mucho",
-    "mucha",
-    "muchos"
-   ],
-   "answer": 1,
-   "explanation_uz": "Fe'ldan keyin o'zgarmas mucho ishlatiladi."
-  }
- },
- {
-  "lang": "es",
-  "skill": "grammar",
-  "level": "A2",
-  "type": "mcq",
-  "exam": "general",
-  "payload": {
-   "question": "Ayer ellos ___ la verdad.",
-   "options": [
-    "dijeron",
-    "dijieron",
-    "decían",
-    "dicieron"
-   ],
-   "answer": 0,
-   "explanation_uz": "Decir indefinidoda dij- o'zagini oladi va -eron bilan tugaydi: dijeron."
-  }
- }
 ]

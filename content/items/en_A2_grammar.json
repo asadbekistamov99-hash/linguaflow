@@ -1,42 +1,631 @@
 [
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"She ___ to school every day.","answers":["goes"],"explanation_uz":"Present Simple'da he/she/it bilan fe'lga -s/-es qo'shiladi: go -> goes."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"Yesterday I ___ a good film. (watch)","answers":["watched"],"explanation_uz":"Past Simple'da muntazam fe'llarga -ed qo'shiladi: watch -> watched."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"They ___ to Samarkand last summer. (go)","answers":["went"],"explanation_uz":"Go noto'g'ri fe'l: Past Simple shakli went."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"Look! The children ___ in the garden. (play)","answers":["are playing"],"explanation_uz":"Hozir davom etayotgan harakat Present Continuous bilan ifodalanadi: am/is/are + fe'l-ing."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"My brother is ___ than me. (tall)","answers":["taller"],"explanation_uz":"Qisqa sifatlarda qiyosiy daraja -er qo'shimchasi bilan yasaladi: tall -> taller."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"This is the ___ book I have ever read. (good)","answers":["best"],"explanation_uz":"Good sifatining orttirma darajasi noto'g'ri shaklda: good - better - the best."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"I am ___ to visit my grandmother tomorrow.","answers":["going"],"explanation_uz":"Oldindan rejalashtirilgan ish am/is/are going to + fe'l bilan ifodalanadi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"Wait, I ___ help you with that heavy bag.","answers":["will"],"explanation_uz":"Gap paytida qabul qilingan qaror yoki taklif will + fe'l bilan ifodalanadi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"There isn't ___ milk in the fridge.","answers":["any"],"explanation_uz":"Inkor gaplarda sanalmaydigan otlar bilan any ishlatiladi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"How ___ people are there in the room?","answers":["many"],"explanation_uz":"Sanaladigan ko'plik otlar bilan how many ishlatiladi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"How ___ water do you drink every day?","answers":["much"],"explanation_uz":"Sanalmaydigan otlar (water) bilan how much ishlatiladi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"You ___ wear a seatbelt in the car. It is the law.","answers":["must","have to"],"explanation_uz":"Qonun yoki qat'iy majburiyatni must yoki have to bilan ifodalaymiz."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"I ___ swim when I was five years old.","answers":["could"],"explanation_uz":"O'tmishdagi qobiliyat can ning o'tgan zamon shakli could bilan ifodalanadi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"Anna is ill. She ___ see a doctor.","answers":["should"],"explanation_uz":"Maslahat berish uchun should + fe'l ishlatiladi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"My birthday is ___ May.","answers":["in"],"explanation_uz":"Oylar, yillar va fasllar oldidan in predlogi ishlatiladi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"The meeting is ___ Monday.","answers":["on"],"explanation_uz":"Hafta kunlari va sanalar oldidan on predlogi ishlatiladi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"The class starts ___ nine o'clock.","answers":["at"],"explanation_uz":"Aniq soat oldidan at predlogi ishlatiladi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"He ___ late for work. (always)","answers":["is always"],"explanation_uz":"Takrorlanish ravishlari to be fe'lidan keyin, boshqa fe'llardan oldin keladi: is always."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"This is Anna's bag. The bag is ___.","answers":["hers"],"explanation_uz":"Egalik olmoshining mustaqil shakli: she -> hers (keyin ot kelmaydi)."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"My parents have a new car. ___ car is red.","answers":["Their"],"explanation_uz":"Ot oldidan egalik sifatlari ishlatiladi: they -> their."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"I like tea, ___ I don't like coffee.","answers":["but"],"explanation_uz":"Qarama-qarshilikni bildirish uchun but bog'lovchisi ishlatiladi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"I was tired, ___ I went to bed early.","answers":["so"],"explanation_uz":"Natijani bildirish uchun so bog'lovchisi ishlatiladi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"We stayed at home ___ it was raining.","answers":["because"],"explanation_uz":"Sababni bildirish uchun because bog'lovchisi ishlatiladi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"I ___ TV when you called me. (watch)","answers":["was watching"],"explanation_uz":"O'tmishda boshqa voqea paytida davom etayotgan harakat Past Continuous bilan ifodalanadi: was/were + fe'l-ing."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"gap","exam":"general","payload":{"text":"She ___ fish. (not like)","answers":["doesn't like","does not like"],"explanation_uz":"Present Simple inkorida he/she/it bilan doesn't + fe'l ishlatiladi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"mcq","exam":"general","payload":{"question":"Which sentence is correct?","options":["He don't like pizza.","He doesn't likes pizza.","He doesn't like pizza.","He not like pizza."],"answer":2,"explanation_uz":"Doesn't dan keyin fe'l asosiy shaklda keladi, -s qo'shilmaydi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"mcq","exam":"general","payload":{"question":"She ___ her keys yesterday.","options":["lost","losed","loses","losted"],"answer":0,"explanation_uz":"Lose noto'g'ri fe'l: Past Simple shakli lost."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"mcq","exam":"general","payload":{"question":"What is the comparative form of \"good\"?","options":["gooder","better","best","more good"],"answer":1,"explanation_uz":"Good sifati noto'g'ri shakllanadi: good - better - best."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"mcq","exam":"general","payload":{"question":"Tom is ___ student in our class.","options":["the most intelligent","more intelligent","intelligentest","most intelligent"],"answer":0,"explanation_uz":"Uzun sifatlarning orttirma darajasi the most + sifat bilan yasaladi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"mcq","exam":"general","payload":{"question":"Which noun is uncountable?","options":["apple","chair","water","egg"],"answer":2,"explanation_uz":"Water sanalmaydigan ot, uni a/an bilan ishlatib bo'lmaydi va ko'plik shakli yo'q."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"mcq","exam":"general","payload":{"question":"Right now, Sara ___ a letter.","options":["writes","is writing","write","writing"],"answer":1,"explanation_uz":"Right now bilan hozir davom etayotgan harakat Present Continuous (is writing) da bo'ladi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"mcq","exam":"general","payload":{"question":"You ___ park here. It is forbidden.","options":["mustn't","don't have to","should","can"],"answer":0,"explanation_uz":"Mustn't taqiqni bildiradi, don't have to esa majburiy emasligini bildiradi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"mcq","exam":"general","payload":{"question":"Tomorrow is Sunday. We ___ get up early.","options":["don't have to","mustn't","can't","shouldn't"],"answer":0,"explanation_uz":"Don't have to biror ishni qilish shart emasligini bildiradi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"mcq","exam":"general","payload":{"question":"Which sentence has the correct word order?","options":["I always am happy.","I am always happy.","Always am I happy.","I happy am always."],"answer":1,"explanation_uz":"Takrorlanish ravishi to be fe'lidan keyin keladi: I am always happy."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"mcq","exam":"general","payload":{"question":"The two girls share a room. It is the ___ room.","options":["girl's","girls'","girls's","girl'"],"answer":1,"explanation_uz":"-s bilan tugagan ko'plik otlarda egalik faqat apostrof bilan yasaladi: girls'."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"mcq","exam":"general","payload":{"question":"There are ___ apples on the table.","options":["some","a","much","an"],"answer":0,"explanation_uz":"Darak gaplarda ko'plik otlar bilan some ishlatiladi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"mcq","exam":"general","payload":{"question":"Is there ___ sugar in your tea?","options":["any","a","many","few"],"answer":0,"explanation_uz":"Savol gaplarda sanalmaydigan otlar bilan any ishlatiladi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"mcq","exam":"general","payload":{"question":"Look at those black clouds! It ___ rain.","options":["is going to","will to","is go to","goes to"],"answer":0,"explanation_uz":"Hozirgi belgilarga asoslangan bashorat am/is/are going to bilan ifodalanadi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"mcq","exam":"general","payload":{"question":"The shop is ___ the bank and the post office.","options":["between","among","in","at"],"answer":0,"explanation_uz":"Ikki narsa o'rtasidagi joy between predlogi bilan ifodalanadi."}},
-{"lang":"en","skill":"grammar","level":"A2","type":"mcq","exam":"general","payload":{"question":"Where ___ you yesterday evening?","options":["were","was","did","are"],"answer":0,"explanation_uz":"You bilan to be ning o'tgan zamon shakli were ishlatiladi."}}
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "She ___ to school every day.",
+      "answers": [
+        "goes"
+      ],
+      "explanation_uz": "Present Simple'da he/she/it bilan fe'lga -s/-es qo'shiladi: go -> goes."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Yesterday I ___ a good film. (watch)",
+      "answers": [
+        "watched"
+      ],
+      "explanation_uz": "Past Simple'da muntazam fe'llarga -ed qo'shiladi: watch -> watched."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "They ___ to Samarkand last summer. (go)",
+      "answers": [
+        "went"
+      ],
+      "explanation_uz": "Go noto'g'ri fe'l: Past Simple shakli went."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Look! The children ___ in the garden. (play)",
+      "answers": [
+        "are playing"
+      ],
+      "explanation_uz": "Hozir davom etayotgan harakat Present Continuous bilan ifodalanadi: am/is/are + fe'l-ing."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "My brother is ___ than me. (tall)",
+      "answers": [
+        "taller"
+      ],
+      "explanation_uz": "Qisqa sifatlarda qiyosiy daraja -er qo'shimchasi bilan yasaladi: tall -> taller."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "This is the ___ book I have ever read. (good)",
+      "answers": [
+        "best"
+      ],
+      "explanation_uz": "Good sifatining orttirma darajasi tartibsiz shakllanadi: good - better - the best."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I am ___ to visit my grandmother tomorrow. (go)",
+      "answers": [
+        "going"
+      ],
+      "explanation_uz": "Oldindan rejalashtirilgan ish am/is/are going to + fe'l bilan ifodalanadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Don't worry, I promise I ___ call you tomorrow.",
+      "answers": [
+        "will",
+        "'ll"
+      ],
+      "explanation_uz": "Va'da yoki o'sha paytda qabul qilingan qaror will (qisqartmasi 'll) + fe'l bilan ifodalanadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "There isn't ___ milk in the fridge.",
+      "answers": [
+        "any",
+        "much"
+      ],
+      "explanation_uz": "Inkor gaplarda sanalmaydigan otlar (milk) bilan any yoki much ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "How ___ people are there in the room?",
+      "answers": [
+        "many"
+      ],
+      "explanation_uz": "Sanaladigan ko'plik otlar bilan how many ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "How ___ water do you drink every day?",
+      "answers": [
+        "much"
+      ],
+      "explanation_uz": "Sanalmaydigan otlar (water) bilan how much ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "You ___ wear a seatbelt in the car. It is the law.",
+      "answers": [
+        "must",
+        "have to"
+      ],
+      "explanation_uz": "Qonun yoki qat'iy majburiyatni must yoki have to bilan ifodalaymiz."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I ___ swim when I was five years old. (can)",
+      "answers": [
+        "could"
+      ],
+      "explanation_uz": "O'tmishdagi qobiliyat can ning o'tgan zamon shakli could bilan ifodalanadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Anna is ill. She ___ see a doctor.",
+      "answers": [
+        "should",
+        "must"
+      ],
+      "explanation_uz": "Maslahat yoki zarurlikni bildirish uchun should (yoki must) + fe'l ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "My birthday is ___ May.",
+      "answers": [
+        "in"
+      ],
+      "explanation_uz": "Oylar, yillar va fasllar oldidan in predlogi ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The meeting is ___ Monday.",
+      "answers": [
+        "on"
+      ],
+      "explanation_uz": "Hafta kunlari va sanalar oldidan on predlogi ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The class starts ___ nine o'clock.",
+      "answers": [
+        "at"
+      ],
+      "explanation_uz": "Aniq soat oldidan at predlogi ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "He ___ late for work. (always)",
+      "answers": [
+        "is always",
+        "'s always"
+      ],
+      "explanation_uz": "Takrorlanish ravishlari to be fe'lidan keyin, boshqa fe'llardan oldin keladi: is always."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "This is Anna's bag. The bag is ___.",
+      "answers": [
+        "hers"
+      ],
+      "explanation_uz": "Egalik olmoshining mustaqil shakli: she -> hers (keyin ot kelmaydi)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "My parents have a new car. ___ car is red.",
+      "answers": [
+        "Their",
+        "their"
+      ],
+      "explanation_uz": "Ot oldidan egalik sifatlari ishlatiladi: they -> their."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I like tea, ___ I don't like coffee.",
+      "answers": [
+        "but"
+      ],
+      "explanation_uz": "Qarama-qarshilikni bildirish uchun but bog'lovchisi ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I was tired, ___ I went to bed early.",
+      "answers": [
+        "so"
+      ],
+      "explanation_uz": "Natijani bildirish uchun so bog'lovchisi ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "We stayed at home ___ it was raining.",
+      "answers": [
+        "because",
+        "as",
+        "since"
+      ],
+      "explanation_uz": "Sababni bildirish uchun because (yoki as, since) bog'lovchisi ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I ___ TV when you called me. (watch)",
+      "answers": [
+        "was watching"
+      ],
+      "explanation_uz": "O'tmishda boshqa voqea paytida davom etayotgan harakat Past Continuous bilan ifodalanadi: was/were + fe'l-ing."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "She ___ fish. (not like)",
+      "answers": [
+        "doesn't like",
+        "does not like"
+      ],
+      "explanation_uz": "Present Simple inkorida he/she/it bilan doesn't + fe'l ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Which sentence is correct?",
+      "options": [
+        "He don't like pizza.",
+        "He doesn't likes pizza.",
+        "He doesn't like pizza.",
+        "He not like pizza."
+      ],
+      "answer": 2,
+      "explanation_uz": "Doesn't dan keyin fe'l asosiy shaklda keladi, -s qo'shilmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "She ___ her keys yesterday.",
+      "options": [
+        "lost",
+        "losed",
+        "loses",
+        "losted"
+      ],
+      "answer": 0,
+      "explanation_uz": "Lose noto'g'ri fe'l: Past Simple shakli lost."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "What is the comparative form of \"good\"?",
+      "options": [
+        "gooder",
+        "better",
+        "best",
+        "more good"
+      ],
+      "answer": 1,
+      "explanation_uz": "Good sifati noto'g'ri shakllanadi: good - better - best."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Tom is ___ student in our class.",
+      "options": [
+        "the most intelligent",
+        "more intelligent",
+        "intelligentest",
+        "most intelligent"
+      ],
+      "answer": 0,
+      "explanation_uz": "Uzun sifatlarning orttirma darajasi the most + sifat bilan yasaladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Which noun is uncountable?",
+      "options": [
+        "apple",
+        "chair",
+        "water",
+        "egg"
+      ],
+      "answer": 2,
+      "explanation_uz": "Water sanalmaydigan ot, uni a/an bilan ishlatib bo'lmaydi va ko'plik shakli yo'q."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Right now, Sara ___ a letter.",
+      "options": [
+        "writes",
+        "is writing",
+        "write",
+        "writing"
+      ],
+      "answer": 1,
+      "explanation_uz": "Right now bilan hozir davom etayotgan harakat Present Continuous (is writing) da bo'ladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "You ___ park here. It is forbidden.",
+      "options": [
+        "mustn't",
+        "don't have to",
+        "should",
+        "can"
+      ],
+      "answer": 0,
+      "explanation_uz": "Mustn't taqiqni bildiradi, don't have to esa majburiy emasligini bildiradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Tomorrow is Sunday. We ___ get up early.",
+      "options": [
+        "don't have to",
+        "mustn't",
+        "can't",
+        "shouldn't"
+      ],
+      "answer": 0,
+      "explanation_uz": "Don't have to biror ishni qilish shart emasligini bildiradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Which sentence has the correct word order?",
+      "options": [
+        "I always am happy.",
+        "I am always happy.",
+        "Always am I happy.",
+        "I happy am always."
+      ],
+      "answer": 1,
+      "explanation_uz": "Takrorlanish ravishi to be fe'lidan keyin keladi: I am always happy."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The two girls share a room. It is the ___ room.",
+      "options": [
+        "girl's",
+        "girls'",
+        "girls's",
+        "girl'"
+      ],
+      "answer": 1,
+      "explanation_uz": "-s bilan tugagan ko'plik otlarda egalik faqat apostrof bilan yasaladi: girls'."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "There are ___ apples on the table.",
+      "options": [
+        "some",
+        "a",
+        "much",
+        "an"
+      ],
+      "answer": 0,
+      "explanation_uz": "Darak gaplarda ko'plik otlar bilan some ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Is there ___ sugar in your tea?",
+      "options": [
+        "any",
+        "a",
+        "many",
+        "few"
+      ],
+      "answer": 0,
+      "explanation_uz": "Savol gaplarda sanalmaydigan otlar bilan any ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Look at those black clouds! It ___ rain.",
+      "options": [
+        "is going to",
+        "will to",
+        "is go to",
+        "goes to"
+      ],
+      "answer": 0,
+      "explanation_uz": "Hozirgi belgilarga asoslangan bashorat am/is/are going to bilan ifodalanadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The shop is ___ the bank and the post office.",
+      "options": [
+        "between",
+        "among",
+        "in",
+        "at"
+      ],
+      "answer": 0,
+      "explanation_uz": "Ikki narsa o'rtasidagi joy between predlogi bilan ifodalanadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "A2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Where ___ you yesterday evening?",
+      "options": [
+        "were",
+        "was",
+        "did",
+        "are"
+      ],
+      "answer": 0,
+      "explanation_uz": "You bilan to be ning o'tgan zamon shakli were ishlatiladi."
+    }
+  }
 ]

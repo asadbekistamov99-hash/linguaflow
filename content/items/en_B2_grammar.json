@@ -326,7 +326,8 @@
     "payload": {
       "text": "___ had she entered the room than the phone rang.",
       "answers": [
-        "No sooner"
+        "No sooner",
+        "no sooner"
       ],
       "explanation_uz": "Inversiya: 'No sooner + had + ega ... than' — 'tezda, shu zahoti' ma'nosida."
     }
@@ -358,10 +359,7 @@
         "Nevertheless",
         "Nonetheless",
         "Even so",
-        "Still",
-        "Yet",
-        "That said",
-        "All the same"
+        "Still"
       ],
       "explanation_uz": "Qarama-qarshilikni bildiruvchi bog'lovchi so'zlar: however, nevertheless, nonetheless, even so va h.k."
     }

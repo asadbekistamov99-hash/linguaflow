@@ -217,12 +217,39 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Er hat sich ___ den Job beworben.",
+      "text": "Der Erfolg hängt maßgeblich ___ der Planung ab.",
       "answers": [
-        "um",
+        "von"
+      ],
+      "explanation_uz": "Fe'l + predlog: abhängen von + Dativ (biror narsaga bog'liq bo'lmoq)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Der Politiker setzt sich entschieden ___ die Reform ein, weil er sie unterstützt.",
+      "answers": [
+        "für"
+      ],
+      "explanation_uz": "Fe'l + predlog: sich einsetzen für + Akkusativ (qo'llab-quvvatlash); \"gegen\" esa qarshilikni bildiradi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Der Anwalt verwies ___ das geltende Recht.",
+      "answers": [
         "auf"
       ],
-      "explanation_uz": "Fe'l + predlog: sich bewerben um/auf + Akkusativ."
+      "explanation_uz": "Fe'l + predlog: verweisen auf + Akkusativ (biror narsaga ishora qilmoq)."
     }
   },
   {
@@ -232,39 +259,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Ich kann mich heute nicht ___ die Arbeit konzentrieren.",
-      "answers": [
-        "auf"
-      ],
-      "explanation_uz": "Fe'l + predlog: sich konzentrieren auf + Akkusativ."
-    }
-  },
-  {
-    "lang": "de",
-    "skill": "grammar",
-    "level": "B2",
-    "type": "gap",
-    "exam": "general",
-    "payload": {
-      "text": "Sie hat sich ___ ihrem Kollegen für die Verspätung entschuldigt.",
-      "answers": [
-        "bei"
-      ],
-      "explanation_uz": "Fe'l + predlog: sich bei jemandem für etwas entschuldigen (odam — bei + Dativ)."
-    }
-  },
-  {
-    "lang": "de",
-    "skill": "grammar",
-    "level": "B2",
-    "type": "gap",
-    "exam": "general",
-    "payload": {
-      "text": "Sie lernt Vokabeln, ___ sie viele Filme auf Deutsch schaut.",
+      "text": "Sie verbessert ihr Deutsch, ___ sie jeden Tag eine deutsche Zeitung liest. (Mittel/Methode)",
       "answers": [
         "indem"
       ],
-      "explanation_uz": "\"indem\" — usulni bildiradi (\"qanday qilib?\"): gap oxirida fe'l turadi (Nebensatz)."
+      "explanation_uz": "\"indem\" — usul va vositani bildiradi (\"qanday qilib?\"): gap oxirida fe'l turadi (Nebensatz)."
     }
   },
   {
@@ -276,10 +275,9 @@
     "payload": {
       "text": "Er sprach so leise, ___ ihn niemand verstehen konnte.",
       "answers": [
-        "sodass",
-        "so dass"
+        "dass"
       ],
-      "explanation_uz": "\"sodass\" natijani bildiradi (Konsekutivsatz); fe'l gap oxirida."
+      "explanation_uz": "\"so ... dass\" — oqibat konstruksiyasi (Konsekutivsatz): so leise, dass ...; fe'l gap oxirida turadi."
     }
   },
   {
@@ -289,12 +287,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "___ du Hilfe brauchst, ruf mich an.",
+      "text": "___ es Probleme geben, melden Sie sich bitte sofort.",
       "answers": [
-        "Falls",
-        "Wenn"
+        "Sollte"
       ],
-      "explanation_uz": "\"falls\" — ehtimoliy shart (\"agar\"); shart gapida fe'l oxirida turadi."
+      "explanation_uz": "Wenn/falls tushib qolgan shart gapi: Sollte + ega + Infinitiv (inversiya) = \"Wenn es Probleme geben sollte\"."
     }
   },
   {
@@ -319,7 +316,7 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "___ seiner Krankheit ging er zur Arbeit. (Gegensatz)",
+      "text": "___ der hohen Kosten entschied sich die Stadt für den Neubau. (Gegensatz)",
       "answers": [
         "Trotz",
         "Ungeachtet"
@@ -348,7 +345,7 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Bis morgen ___ er das Projekt abgeschlossen haben.",
+      "text": "Bis morgen ___ er das Projekt abgeschlossen haben. (Futur II)",
       "answers": [
         "wird"
       ],
@@ -509,7 +506,7 @@
       "question": "Er rechnet fest ___ seine Beförderung.",
       "options": [
         "mit",
-        "auf",
+        "von",
         "an",
         "für"
       ],

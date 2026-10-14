@@ -6,11 +6,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Je pense qu'il ___ raison. (avoir)",
+      "text": "Pourvu qu'il ___ à l'heure ! (arriver)",
       "answers": [
-        "a"
+        "arrive"
       ],
-      "explanation_uz": "penser que (tasdiq) dan keyin Indicatif ishlatiladi, Subjonctif emas."
+      "explanation_uz": "Pourvu que (umid/istak) doim Subjonctif talab qiladi: il arrive."
     }
   },
   {
@@ -78,7 +78,8 @@
     "payload": {
       "text": "Si nous avions pris un taxi, nous ___ à l'heure. (arriver)",
       "answers": [
-        "serions arrivés"
+        "serions arrivés",
+        "serions arrivées"
       ],
       "explanation_uz": "Si + plus-que-parfait → conditionnel passé; arriver être bilan: nous serions arrivés (kelishuv bilan)."
     }
@@ -134,9 +135,11 @@
     "payload": {
       "text": "Les amis chez ___ nous avons dîné sont charmants.",
       "answers": [
-        "lesquels"
+        "qui",
+        "lesquels",
+        "lesquelles"
       ],
-      "explanation_uz": "Predlogdan keyin odamlar uchun relativ olmosh lequel/lesquels (ko'plik erkak: lesquels); chez lesquels."
+      "explanation_uz": "Odamlar uchun predlogdan keyin (chez) \"qui\" ishlatiladi: chez qui; chez lesquels ham to'g'ri, lekin kitobiyroq."
     }
   },
   {
@@ -162,9 +165,10 @@
     "payload": {
       "text": "Je ne comprends pas ___ tu parles.",
       "answers": [
-        "ce dont"
+        "ce dont",
+        "de quoi"
       ],
-      "explanation_uz": "Antecedentsiz holda \"ce dont\" ishlatiladi: parler de → ce dont."
+      "explanation_uz": "Antecedentsiz holda \"ce dont\" (yoki so'zlashuvda \"de quoi\") ishlatiladi: parler de → ce dont / de quoi."
     }
   },
   {
@@ -204,7 +208,8 @@
     "payload": {
       "text": "___ que tu étais malade, j'ai annulé la fête. (savoir)",
       "answers": [
-        "Sachant"
+        "Sachant",
+        "Ayant su"
       ],
       "explanation_uz": "Participe présent sabab ma'nosida: savoir → sachant (maxsus shakl)."
     }
@@ -216,11 +221,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Elle chante en ___ la vaisselle. (faire)",
+      "text": "Tout en ___ son café, il lisait le journal. (boire)",
       "answers": [
-        "faisant"
+        "buvant"
       ],
-      "explanation_uz": "Gérondif = en + participe présent: faire → en faisant (bir vaqtdagi harakat)."
+      "explanation_uz": "Gérondif = en + participe présent: boire → en buvant (tout en — bir vaqtdagi ikki harakat)."
     }
   },
   {
@@ -262,9 +267,11 @@
       "answers": [
         "pourtant",
         "cependant",
-        "néanmoins"
+        "néanmoins",
+        "toutefois",
+        "quand même"
       ],
-      "explanation_uz": "Concession (qarama-qarshilik) bog'lovchilari: pourtant, cependant, néanmoins."
+      "explanation_uz": "Concession (qarama-qarshilik) so'zlari: pourtant, cependant, néanmoins, toutefois, quand même."
     }
   },
   {

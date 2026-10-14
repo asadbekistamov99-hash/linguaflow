@@ -5,6 +5,7 @@ COPY package.json server.js ./
 COPY src ./src
 COPY public ./public
 COPY scripts ./scripts
+COPY content ./content
 RUN mkdir -p /data && chown -R node:node /data /app
 USER node
 VOLUME ["/data"]

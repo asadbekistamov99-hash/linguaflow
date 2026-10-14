@@ -965,3 +965,27 @@ test('mock exam: from approved items, answers hidden, scored server-side, one su
   assert.equal(hist[0].percent, 70);
   app.close();
 });
+
+test('bundled content import: admin only, drafts, idempotent', async () => {
+  const app = await boot();
+  const admin = app.client(); await reg(admin, 'Boss', 'bund@test.uz');
+  const user = app.client(); await reg(user, 'Student', 'bund-s@test.uz');
+  assert.equal((await user('GET', '/api/admin/items/bundled')).status, 403);
+  assert.equal((await user('POST', '/api/admin/items/import-bundled', {})).status, 403);
+  const info = (await admin('GET', '/api/admin/items/bundled')).data;
+  assert.ok(info.available >= 20 && info.preview.created > 1000 && info.preview.failed === 0);
+  assert.equal(app.db.prepare('SELECT COUNT(*) n FROM items').get().n, 0); // preview writes nothing
+  const dry = (await admin('POST', '/api/admin/items/import-bundled', { dryRun: true })).data;
+  assert.equal(dry.created, info.preview.created);
+  assert.equal(app.db.prepare('SELECT COUNT(*) n FROM items').get().n, 0);
+  const real = (await admin('POST', '/api/admin/items/import-bundled', {})).data;
+  assert.equal(real.created, info.preview.created);
+  const rows = app.db.prepare("SELECT status, source, author_id, COUNT(*) n FROM items GROUP BY status, source, author_id").all();
+  assert.deepEqual(rows.map((r) => [r.status, r.source, r.author_id]), [['draft', 'ai', null]]);
+  const again = (await admin('POST', '/api/admin/items/import-bundled', {})).data;
+  assert.equal(again.created, 0);
+  assert.equal(again.duplicates, real.created);
+  // nothing reaches learners until approved
+  assert.equal((await user('POST', '/api/practice/start', { lang: 'en', skill: 'grammar' })).status, 404);
+  app.close();
+});

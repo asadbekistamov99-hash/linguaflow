@@ -99,6 +99,8 @@ function normalizeItem(body, languages, defaults = {}) {
   return { lang: b.lang, skill: b.skill, level: b.level, exam, type: b.type, payload: normalizePayload(b.type, b.payload) };
 }
 
+const bundled = () => require('./bundled'); // lazy: bundled.js requires this module
+
 module.exports = function registerItems({ db, route, content, HttpError, requireUser, logAudit }) {
   const langSet = () => new Set(content.langs({ all: true }).map((l) => l.code));
   const val = (sql, ...p) => db.prepare(sql).get(...p);
@@ -177,6 +179,22 @@ module.exports = function registerItems({ db, route, content, HttpError, require
       logAudit(user.id, 'item.import', `${ok.length} ta qoralama, ${errors.length} ta xato`);
     }
     return { dryRun: !!body.dryRun, valid: ok.length, created: body.dryRun ? 0 : ok.length, failed: errors.length, errors: errors.slice(0, 50) };
+  }));
+
+  // Content drafts shipped with the app (content/items/*.json): admin-only, idempotent, always imported as drafts.
+  const adminOnly = (fn) => staff(async (c) => { if (c.user.role !== 'admin') throw new HttpError(403, 'Faqat adminlar uchun'); return fn(c); });
+  route('GET', '/api/admin/items/bundled', adminOnly(async () => {
+    const b = bundled();
+    const files = b.bundledFiles();
+    return { available: files.length, preview: files.length ? b.importFiles(db, files, { dryRun: true }) : null };
+  }));
+  route('POST', '/api/admin/items/import-bundled', adminOnly(async ({ user, body }) => {
+    const b = bundled();
+    const files = b.bundledFiles();
+    if (!files.length) throw new HttpError(404, "Tayyor kontent fayllari topilmadi (content/items)");
+    const r = tx(() => b.importFiles(db, files, { dryRun: !!body.dryRun }));
+    if (!body.dryRun) logAudit(user.id, 'item.import_bundled', `${r.created} ta qoralama, ${r.duplicates} ta takror, ${r.failed} ta xato`);
+    return { dryRun: !!body.dryRun, ...r };
   }));
 
   route('POST', '/api/admin/items', staff(async ({ user, body }) => {

@@ -128,3 +128,9 @@ xalqaro imtihon sertifikati emas. Ballar (masalan "IELTS taxminiy 6.5") faqat ta
   (Part 1–3) savollari, jami 304 ta. Mustaqil AI tekshiruvidan o'tgan, lekin **ona tilida so'zlashuvchi tekshiruvchi tasdiqlashi shart**.
 - Mock imtihon endi C2 darajasini ham, lug'at bo'limini ham qamraydi. Ingliz tilida B2+ darajada natijaga **taxminiy IELTS-uslubidagi ball**
   (0–9) qo'shiladi (IELTS Listening/Reading jadvaliga o'xshash, rasmiy emas).
+
+## Tayyor kontentni admin paneldan yuklash (Sprint 6)
+
+Serverga kirib `npm run import-items` ishlatish shart emas: **Admin → Savollar banki → "📦 Tayyor kontentni yuklash"**
+`content/items/*.json` dagi barcha qoralamalarni (hozir ~1500 ta savol) ko'rsatadi va bir tugma bilan qo'shadi.
+Faqat adminlar uchun; hammasi `draft` (manba `ai`) bo'lib tushadi; qayta bosish xavfsiz. Dockerfile `content/` papkasini ham nusxalaydi.

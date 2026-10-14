@@ -30,3 +30,7 @@ Oldiga HTTPS beradigan proksi (Caddy/nginx) qo'ying. `TRUST_PROXY=1` shunda to'g
 - [ ] `RECOVERY_KEY` o'rnatilgan (parol tiklash uchun maxfiy kalit, kamida 12 belgi) va xavfsiz joyda saqlanadi
 - [ ] **AI Studio'ning "GitHub'ga commit" tugmasini `main` ga ishlatmang**: u kodni (xavfsizlik tuzatishlarini ham) o'zining nusxasi bilan ustidan yozib yuboradi. O'zgarishlarni alohida branchga yuboring va PR orqali ko'rib chiqing
 - [ ] Parol unutilsa: admin panel → foydalanuvchi → yangi parol (yoki `npm run reset-password -- email yangiparol`)
+
+## Tayyor savollarni yuklash
+
+Deploydan keyin admin hisobi bilan `/admin` → Savollar banki → **📦 Tayyor kontentni yuklash**. Savollar qoralama bo'lib tushadi; ona tilida so'zlashuvchi tekshiruvchilar tasdiqlagach o'quvchilarga ko'rinadi.

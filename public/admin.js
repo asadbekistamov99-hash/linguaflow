@@ -436,7 +436,7 @@
 
     shell(active, h('h1', {}, 'Savollar banki'),
       h('p', { class: 'lead' }, "Imtihon formatidagi savollar: qoralama → tekshiruv → tasdiqlash. Faqat tasdiqlangan savollar o'quvchilarga chiqariladi (keyingi sprintlarda). Maqsad: ingliz tili C2 gacha, qolganlari B2 gacha."),
-      h('div', { class: 'toolbar' }, h('button', { class: 'btn btn-main btn-sm', onclick: () => itemModal(null, active) }, '+ Savol qo\'shish'), h('button', { class: 'btn btn-ghost btn-sm', onclick: () => importModal(active) }, '⬆ Ommaviy import (JSON)')),
+      h('div', { class: 'toolbar' }, h('button', { class: 'btn btn-main btn-sm', onclick: () => itemModal(null, active) }, '+ Savol qo\'shish'), h('button', { class: 'btn btn-ghost btn-sm', onclick: () => importModal(active) }, '⬆ Ommaviy import (JSON)'), S.me.isAdmin ? h('button', { class: 'btn btn-ghost btn-sm', onclick: guard(() => bundledModal()) }, '📦 Tayyor kontentni yuklash') : null),
       matrix, h('p', { class: 'muted' }, "Katakdagi son: tasdiqlangan/jami. Bosib shu til va daraja bo'yicha filtrlang."),
       h('div', { class: 'toolbar', style: { marginTop: '16px' } }, search,
         sel('lang', 'Til', meta.languages.map((l) => [l.code, `${l.flag} ${l.name}`])), sel('level', 'Daraja', meta.levels.map((x) => [x, x])),
@@ -527,6 +527,26 @@
         !isNew ? h('button', { class: 'btn btn-danger', onclick: guard(async () => { if (!confirm(`#${it.id} savol o'chirilsinmi?`)) return; await api('DELETE', `/api/admin/items/${it.id}`); done("O'chirildi"); }) }, "O'chirish") : null,
         h('button', { class: 'btn btn-ghost', onclick: () => m.close() }, 'Yopish')),
       flow);
+  }
+
+  async function bundledModal() {
+    const info = await api('GET', '/api/admin/items/bundled');
+    const m = modal();
+    m.el.firstChild.style.maxWidth = '720px';
+    const p = info.preview;
+    const run = guard(async () => {
+      const r = await api('POST', '/api/admin/items/import-bundled', {});
+      toast(`${r.created} ta qoralama qo'shildi`); m.close(); route();
+    });
+    m.el.firstChild.replaceChildren(h('h2', {}, '📦 Tayyor kontent (AI qoralamalari)'),
+      h('p', { class: 'muted' }, "Ilova bilan birga kelgan savollar qoralama holatida qo'shiladi. Ular AI yozgan va tekshirgan: ona tilida so'zlashuvchi tekshiruvchi tasdiqlamaguncha o'quvchilarga ko'rinmaydi. Qayta bosish xavfsiz (takrorlar o'tkazib yuboriladi)."),
+      p ? h('div', { class: 'tbl-wrap' }, h('table', { class: 'tbl' },
+        h('thead', {}, h('tr', {}, ['Fayl', 'Yangi', 'Takror', 'Xato'].map((x) => h('th', {}, x)))),
+        h('tbody', {}, p.files.map((f) => h('tr', {}, h('td', {}, f.file), h('td', {}, f.created), h('td', {}, f.duplicates), h('td', {}, f.failed)))))) : h('p', {}, 'Fayllar topilmadi.'),
+      p ? h('p', {}, h('b', {}, `Jami yangi: ${p.created}`), ` · takror: ${p.duplicates} · xato: ${p.failed}`) : null,
+      h('div', { style: { display: 'flex', gap: '10px', marginTop: '12px' } },
+        h('button', { class: 'btn btn-main', disabled: !p || !p.created, onclick: run }, `${p ? p.created : 0} ta qoralamani qo'shish`),
+        h('button', { class: 'btn btn-ghost', onclick: () => m.close() }, 'Yopish')));
   }
 
   function importModal(active) {

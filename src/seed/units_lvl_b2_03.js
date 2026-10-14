@@ -33,7 +33,7 @@ module.exports = [
       ["Mehnat shartnomasi", "Employment contract", "Трудовой договор", "Arbeitsvertrag", "Contrat de travail", "Contrato de trabajo", "عقد عمل", "aqd 'amal"],
       ["Kasbiy charchash", "Burnout", "Профессиональное выгорание", "Burnout", "Burn-out", "Agotamiento laboral", "إرهاق وظيفي", "irhaq wazifi"],
       ["Nomzod", "Candidate", "Кандидат", "Bewerber", "Candidat", "Candidato", "مرشح", "murashshah"],
-      ["Kasbiy rivojlanish", "Professional development", "Профессиональное развитие", "Berufliche Weiterbildung", "Développement professionnel", "Desarrollo profesional", "تطوير مهني", "tatwir mihni"],
+      ["Kasbiy rivojlanish", "Professional development", "Профессиональное развитие", "Berufliche Entwicklung", "Développement professionnel", "Desarrollo profesional", "تطوير مهني", "tatwir mihni"],
       ["Moslashuvchan ish jadvali", "Flexible hours", "Гибкий график", "Gleitzeit", "Horaires flexibles", "Horario flexible", "دوام مرن", "dawam marin"]
     ],
     sentences: [
@@ -65,7 +65,7 @@ module.exports = [
       ["Manbalarni to'g'ri keltirish zarur.", "It is essential to cite sources properly.", "Необходимо правильно цитировать источники.", "Es ist notwendig, Quellen korrekt zu zitieren.", "Il est essentiel de citer correctement les sources.", "Es esencial citar bien las fuentes.", "من الضروري الاقتباس من المصادر بشكل صحيح."],
       ["Plagiat universitetda qat'iyan taqiqlanadi.", "Plagiarism is strictly forbidden at university.", "Плагиат в университете строго запрещён.", "Plagiat ist an der Universität streng verboten.", "Le plagiat est strictement interdit à l'université.", "El plagio está estrictamente prohibido en la universidad.", "الانتحال ممنوع منعا باتا في الجامعة."],
       ["Ilmiy rahbarim menga qimmatli maslahat berdi.", "My supervisor gave me valuable advice.", "Мой научный руководитель дал мне ценный совет.", "Mein Betreuer gab mir wertvollen Rat.", "Mon directeur de thèse m'a donné un précieux conseil.", "Mi director de tesis me dio un consejo valioso.", "قدم لي مشرفي نصيحة قيمة."],
-      ["Loyiha tadqiqot granti hisobiga moliyalashtirildi.", "The project was funded by a research grant.", "Проект финансировался за счёт гранта.", "Das Projekt wurde durch Forschungsförderung finanziert.", "Le projet a été financé par une subvention de recherche.", "El proyecto fue financiado con una subvención de investigación.", "تم تمويل المشروع بمنحة بحثية."]
+      ["Loyiha tadqiqot granti hisobiga moliyalashtirildi.", "The project was funded by a research grant.", "Проект финансировался за счёт гранта.", "Das Projekt wurde durch Forschungsförderung finanziert.", "Le projet fut financé par une subvention de recherche.", "El proyecto fue financiado con una subvención de investigación.", "تم تمويل المشروع بمنحة بحثية."]
     ]
   },
   {
@@ -83,7 +83,7 @@ module.exports = [
       ["Yashil hudud", "Green space", "Зелёная зона", "Grünfläche", "Espace vert", "Zona verde", "مساحة خضراء", "misaha khadra'"]
     ],
     sentences: [
-      ["Katta shaharlarda tirbandlik jiddiy muammo.", "Traffic congestion is a serious problem in big cities.", "Пробки — серьёзная проблема больших городов.", "Verkehrsstau ist in Großstädten ein ernstes Problem.", "Les embouteillages sont un problème sérieux dans les grandes villes.", "Los atascos son un problema grave en las grandes ciudades.", "الازدحام المروري مشكلة خطيرة في المدن الكبرى."],
+      ["Katta shaharlarda tirbandlik jiddiy muammo.", "Traffic congestion is a serious problem in big cities.", "Пробки — серьёзная проблема больших городов.", "Verkehrsstau ist in Großstädten ein ernstes Problem.", "Les embouteillages sont un grave problème des grandes villes.", "Los atascos son un problema grave en las metrópolis.", "الازدحام المروري مشكلة خطيرة في المدن الكبرى."],
       ["Jamoat transportini yaxshilash zarur.", "Public transport needs to be improved.", "Необходимо улучшить общественный транспорт.", "Der öffentliche Nahverkehr muss verbessert werden.", "Il faut améliorer les transports en commun.", "Es necesario mejorar el transporte público.", "يجب تحسين النقل العام."],
       ["Havoning ifloslanishi aholi salomatligiga zarar yetkazadi.", "Air pollution harms public health.", "Загрязнение воздуха вредит здоровью населения.", "Luftverschmutzung schadet der Gesundheit der Bevölkerung.", "La pollution de l'air nuit à la santé publique.", "La contaminación del aire daña la salud pública.", "يضر تلوث الهواء بالصحة العامة."],
       ["Shaharga yashil hududlar ko'proq kerak.", "The city needs more green spaces.", "Городу нужно больше зелёных зон.", "Die Stadt braucht mehr Grünflächen.", "La ville a besoin de plus d'espaces verts.", "La ciudad necesita más zonas verdes.", "تحتاج المدينة إلى مساحات خضراء أكثر."],

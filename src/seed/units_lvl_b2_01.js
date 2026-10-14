@@ -6,8 +6,8 @@ module.exports = [
       ["Qonunchilik", "Legislation", "Законодательство", "Gesetzgebung", "Législation", "Legislación", "تشريع", "tashri'"],
       ["Muxolifat", "Opposition", "Оппозиция", "Opposition", "Opposition", "Oposición", "معارضة", "mu'arada"],
       ["Fuqarolik jamiyati", "Civil society", "Гражданское общество", "Zivilgesellschaft", "Société civile", "Sociedad civil", "مجتمع مدني", "mujtama' madani"],
-      ["Referendum", "Referendum", "Референдум", "Referendum", "Référendum", "Referéndum", "استفتاء", "istiftah"],
-      ["Islohot", "Reform", "Реформа", "Reform", "Réforme", "Reforma", "إصلاح", "islah"],
+      ["Referendum", "Referendum", "Референдум", "Referendum", "Référendum", "Referéndum", "استفتاء", "istifta'"],
+      ["Koalitsiya", "Coalition", "Коалиция", "Koalition", "Coalition", "Coalición", "ائتلاف", "i'tilaf"],
       ["Vakolat", "Mandate", "Мандат", "Mandat", "Mandat", "Mandato", "تفويض", "tafwid"],
       ["Diplomatiya", "Diplomacy", "Дипломатия", "Diplomatie", "Diplomatie", "Diplomacia", "دبلوماسية", "diblumasiyya"],
       ["Suverenitet", "Sovereignty", "Суверенитет", "Souveränität", "Souveraineté", "Soberanía", "سيادة", "siyada"],
@@ -15,7 +15,7 @@ module.exports = [
     ],
     sentences: [
       ["Muxolifat yangi qonunni tanqid qildi.", "The opposition criticized the new law.", "Оппозиция раскритиковала новый закон.", "Die Opposition kritisierte das neue Gesetz.", "L'opposition a critiqué la nouvelle loi.", "La oposición criticó la nueva ley.", "انتقدت المعارضة القانون الجديد."],
-      ["Referendum kelgusi oyda o'tkaziladi.", "The referendum will be held next month.", "Референдум пройдёт в следующем месяце.", "Das Referendum findet nächsten Monat statt.", "Le référendum aura lieu le mois prochain.", "El referéndum se celebrará el mes próximo.", "سيعقد الاستفتاء الشهر المقبل."],
+      ["Referendum kelgusi oyda o'tkaziladi.", "The referendum will be held next month.", "Референдум пройдёт в следующем месяце.", "Das Referendum findet nächsten Monat statt.", "Le référendum aura lieu le mois prochain.", "El referéndum se celebrará el mes que viene.", "سيعقد الاستفتاء الشهر المقبل."],
       ["Hukumat keng qamrovli islohotni e'lon qildi.", "The government announced a sweeping reform.", "Правительство объявило масштабную реформу.", "Die Regierung kündigte eine umfassende Reform an.", "Le gouvernement a annoncé une vaste réforme.", "El gobierno anunció una reforma de gran alcance.", "أعلنت الحكومة إصلاحا شاملا."],
       ["Diplomatiya mojarolarni hal qilishga yordam beradi.", "Diplomacy helps resolve conflicts.", "Дипломатия помогает разрешать конфликты.", "Diplomatie hilft, Konflikte zu lösen.", "La diplomatie aide à résoudre les conflits.", "La diplomacia ayuda a resolver conflictos.", "تساعد الدبلوماسية في حل النزاعات."],
       ["Davlat o'z suverenitetini himoya qiladi.", "The state defends its sovereignty.", "Государство защищает свой суверенитет.", "Der Staat verteidigt seine Souveränität.", "L'État défend sa souveraineté.", "El Estado defiende su soberanía.", "تدافع الدولة عن سيادتها."],
@@ -31,7 +31,7 @@ module.exports = [
       ["Guvoh", "Witness", "Свидетель", "Zeuge", "Témoin", "Testigo", "شاهد", "shahid"],
       ["Hukm", "Verdict", "Вердикт", "Urteil", "Verdict", "Veredicto", "حكم", "hukm"],
       ["Shartnomani buzmoq", "To breach a contract", "Нарушить договор", "Einen Vertrag brechen", "Rompre un contrat", "Incumplir un contrato", "نقض العقد", "naqada al-'aqd"],
-      ["Jarima", "Fine", "Штраф", "Geldstrafe", "Amende", "Multa", "غرامة", "gharama"],
+      ["Oqlamoq", "To acquit", "Оправдать", "Freisprechen", "Acquitter", "Absolver", "تبرئة", "tabri'a"],
       ["Apellyatsiya", "Appeal", "Апелляция", "Berufung", "Appel", "Apelación", "استئناف", "isti'naf"],
       ["Javobgarlik", "Liability", "Ответственность", "Haftung", "Responsabilité", "Responsabilidad", "مسؤولية", "mas'uliyya"],
       ["Da'vo qilmoq", "To sue", "Подать в суд", "Verklagen", "Poursuivre en justice", "Demandar", "رفع دعوى", "rafa'a da'wa"]
@@ -42,7 +42,7 @@ module.exports = [
       ["Advokat apellyatsiya berishga qaror qildi.", "The lawyer decided to appeal.", "Адвокат решил подать апелляцию.", "Der Anwalt beschloss, Berufung einzulegen.", "L'avocat a décidé de faire appel.", "El abogado decidió apelar.", "قرر المحامي تقديم استئناف."],
       ["Kompaniya katta jarima to'ladi.", "The company paid a large fine.", "Компания заплатила крупный штраф.", "Das Unternehmen zahlte eine hohe Geldstrafe.", "L'entreprise a payé une lourde amende.", "La empresa pagó una multa elevada.", "دفعت الشركة غرامة كبيرة."],
       ["Dalillar yetarli emas edi.", "The evidence was insufficient.", "Доказательств было недостаточно.", "Die Beweise reichten nicht aus.", "Les preuves étaient insuffisantes.", "Las pruebas eran insuficientes.", "كانت الأدلة غير كافية."],
-      ["U shartnomani buzgani uchun javobgar.", "He is liable for breaching the contract.", "Он несёт ответственность за нарушение договора.", "Er haftet für den Vertragsbruch.", "Il est responsable de la rupture du contrat.", "Es responsable de incumplir el contrato.", "هو مسؤول عن نقض العقد."]
+      ["U shartnomani buzgani uchun javobgar.", "He is liable for breaching the contract.", "Он несёт ответственность за нарушение договора.", "Er haftet für den Vertragsbruch.", "Il est responsable de la rupture du contrat.", "Es responsable por incumplir el contrato.", "هو مسؤول عن نقض العقد."]
     ]
   },
   {
@@ -51,12 +51,12 @@ module.exports = [
       ["Tashxis", "Diagnosis", "Диагноз", "Diagnose", "Diagnostic", "Diagnóstico", "تشخيص", "tashkhis"],
       ["Retsept", "Prescription", "Рецепт", "Rezept", "Ordonnance", "Receta", "وصفة طبية", "wasfa tibbiyya"],
       ["Yon ta'sir", "Side effect", "Побочный эффект", "Nebenwirkung", "Effet secondaire", "Efecto secundario", "أثر جانبي", "athar janibi"],
-      ["Jarrohlik amaliyoti", "Surgery", "Операция", "Operation", "Opération chirurgicale", "Cirugía", "عملية جراحية", "amaliyya jirahiyya"],
+      ["Jarrohlik amaliyoti", "Surgery", "Операция", "Operation", "Opération chirurgicale", "Cirugía", "عملية جراحية", "'amaliyya jirahiyya"],
       ["Emlash", "Vaccination", "Вакцинация", "Impfung", "Vaccination", "Vacunación", "تطعيم", "tat'im"],
       ["Surunkali kasallik", "Chronic illness", "Хроническое заболевание", "Chronische Krankheit", "Maladie chronique", "Enfermedad crónica", "مرض مزمن", "marad muzmin"],
       ["Tiklanish", "Recovery", "Выздоровление", "Genesung", "Rétablissement", "Recuperación", "تعاف", "ta'afi"],
       ["Immunitet", "Immunity", "Иммунитет", "Immunität", "Immunité", "Inmunidad", "مناعة", "mana'a"],
-      ["Infeksiya", "Infection", "Инфекция", "Infektion", "Infection", "Infección", "عدوى", "'adwa"],
+      ["Asorat", "Complication", "Осложнение", "Komplikation", "Complication", "Complicación", "مضاعفات", "mudha'afat"],
       ["Reabilitatsiya", "Rehabilitation", "Реабилитация", "Rehabilitation", "Rééducation", "Rehabilitación", "إعادة تأهيل", "i'adat ta'hil"]
     ],
     sentences: [
@@ -75,19 +75,19 @@ module.exports = [
       ["Investitsiya", "Investment", "Инвестиция", "Investition", "Investissement", "Inversión", "استثمار", "istithmar"],
       ["Foiz stavkasi", "Interest rate", "Процентная ставка", "Zinssatz", "Taux d'intérêt", "Tasa de interés", "سعر الفائدة", "si'r al-fa'ida"],
       ["Retsessiya", "Recession", "Рецессия", "Rezession", "Récession", "Recesión", "ركود", "rukud"],
-      ["Daromad", "Income", "Доход", "Einkommen", "Revenu", "Ingreso", "دخل", "dakhl"],
+      ["Defitsit", "Deficit", "Дефицит", "Defizit", "Déficit", "Déficit", "عجز", "'ajz"],
       ["Davlat qarzi", "Public debt", "Государственный долг", "Staatsverschuldung", "Dette publique", "Deuda pública", "دين عام", "dayn 'amm"],
       ["Monopoliya", "Monopoly", "Монополия", "Monopol", "Monopole", "Monopolio", "احتكار", "ihtikar"],
       ["Raqobat", "Competition", "Конкуренция", "Wettbewerb", "Concurrence", "Competencia", "منافسة", "munafasa"],
       ["Aktsiya", "Share", "Акция", "Aktie", "Action", "Acción", "سهم", "sahm"],
-      ["Bankrotlik", "Bankruptcy", "Банкротство", "Insolvenz", "Faillite", "Bancarrota", "إفلاس", "iflas"]
+      ["Bankrotlik", "Bankruptcy", "Банкротство", "Insolvenz", "Faillite", "Quiebra", "إفلاس", "iflas"]
     ],
     sentences: [
       ["Inflyatsiya narxlarning oshishiga olib keldi.", "Inflation led to rising prices.", "Инфляция привела к росту цен.", "Die Inflation führte zu steigenden Preisen.", "L'inflation a entraîné une hausse des prix.", "La inflación provocó una subida de precios.", "أدى التضخم إلى ارتفاع الأسعار."],
       ["Markaziy bank foiz stavkasini oshirdi.", "The central bank raised the interest rate.", "Центральный банк повысил процентную ставку.", "Die Zentralbank erhöhte den Zinssatz.", "La banque centrale a relevé le taux d'intérêt.", "El banco central subió la tasa de interés.", "رفع البنك المركزي سعر الفائدة."],
       ["Mamlakat retsessiyaga kirdi.", "The country entered a recession.", "Страна вошла в рецессию.", "Das Land geriet in eine Rezession.", "Le pays est entré en récession.", "El país entró en recesión.", "دخلت البلاد في ركود."],
       ["Investorlar yangi aktsiyalar sotib oldi.", "Investors bought new shares.", "Инвесторы купили новые акции.", "Investoren kauften neue Aktien.", "Les investisseurs ont acheté de nouvelles actions.", "Los inversores compraron nuevas acciones.", "اشترى المستثمرون أسهما جديدة."],
-      ["Kompaniya bankrotlikdan zo'rg'a qutuldi.", "The company barely avoided bankruptcy.", "Компания едва избежала банкротства.", "Das Unternehmen entging knapp der Insolvenz.", "L'entreprise a évité la faillite de justesse.", "La empresa evitó la bancarrota por poco.", "نجت الشركة من الإفلاس بصعوبة."],
+      ["Kompaniya bankrotlikdan zo'rg'a qutuldi.", "The company barely avoided bankruptcy.", "Компания едва избежала банкротства.", "Das Unternehmen entging knapp der Insolvenz.", "L'entreprise a évité la faillite de justesse.", "La empresa evitó la quiebra por poco.", "نجت الشركة من الإفلاس بصعوبة."],
       ["Monopoliya raqobatni cheklaydi.", "A monopoly restricts competition.", "Монополия ограничивает конкуренцию.", "Ein Monopol schränkt den Wettbewerb ein.", "Un monopole limite la concurrence.", "Un monopolio limita la competencia.", "يحد الاحتكار من المنافسة."]
     ]
   }

@@ -39,8 +39,9 @@ const INIT = `(() => {
   Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: {
     speak(u) { window.__spoken.push(u.text); setTimeout(() => u.onend && u.onend(), 500); }, cancel() {},
     getVoices() { return ['en-US', 'ru-RU', 'de-DE', 'fr-FR', 'es-ES', 'ar-SA'].map((l) => ({ lang: l, name: 'demo' })); }, onvoiceschanged: null } });
-  const css = '#__cap{opacity:0;position:fixed;left:0;right:0;bottom:0;z-index:2147483000;padding:22px 48px 26px;background:linear-gradient(transparent,rgba(5,6,12,.92) 38%);color:#fff;font:600 28px/1.35 Inter,system-ui,sans-serif;text-align:center;pointer-events:none;transition:opacity .4s}'
-    + '#__cap small{display:block;margin-top:6px;font:500 19px/1.4 Inter,system-ui,sans-serif;color:#c8cde0}'
+  const css = '#__cap{opacity:0;position:fixed;left:50%;bottom:16px;transform:translateX(-50%);width:min(1120px,92%);z-index:2147483000;padding:12px 26px 14px;background:rgba(6,8,18,.9);border:1px solid rgba(255,255,255,.14);border-radius:18px;color:#fff;font:700 25px/1.3 Inter,system-ui,sans-serif;text-align:center;pointer-events:none;transition:opacity .4s;box-shadow:0 10px 40px rgba(0,0,0,.5)}'
+    + '#__cap[data-pos=top]{bottom:auto;top:16px}'
++ '#__cap small{display:block;margin-top:6px;font:500 18px/1.4 Inter,system-ui,sans-serif;color:#c8cde0}'
     + '#__cap b{color:#7ee7ff}'
     + '#__card{opacity:0;position:fixed;inset:0;z-index:2147483100;display:grid;place-items:center;text-align:center;color:#fff;background:radial-gradient(circle at 30% 20%,#3b2a8f,#07080d 60%);font:700 64px/1.15 Inter,system-ui,sans-serif;transition:opacity .6s;pointer-events:none}'
     + '#__card small{display:block;margin-top:18px;font:500 26px/1.45 Inter,system-ui,sans-serif;color:#b9c0dc;max-width:900px}'
@@ -53,9 +54,9 @@ const INIT = `(() => {
     if (!document.getElementById('__style')) { const s = document.createElement('style'); s.id = '__style'; s.textContent = css; document.documentElement.appendChild(s); }
     for (const id of ['__cap', '__card', '__cur']) if (!document.getElementById(id)) { const d = document.createElement('div'); d.id = id; document.documentElement.appendChild(d); }
     const saved = sessionStorage.getItem('__capstate');
-    if (saved && !window.__restored) { window.__restored = true; const s = JSON.parse(saved); window.__cap(s.t, s.s); }
+    if (saved && !window.__restored) { window.__restored = true; const s = JSON.parse(saved); window.__cap(s.t, s.s, s.p); }
   }
-  window.__cap = (t, s) => { const c = document.getElementById('__cap'); if (!c) return; c.style.opacity = t ? 1 : 0; c.innerHTML = t ? t + (s ? '<small>' + s + '</small>' : '') : ''; sessionStorage.setItem('__capstate', JSON.stringify({ t, s })); };
+  window.__cap = (t, s, pos) => { const c = document.getElementById('__cap'); if (!c) return; c.dataset.pos = pos || 'bottom'; c.style.opacity = t ? 1 : 0; c.innerHTML = t ? t + (s ? '<small>' + s + '</small>' : '') : ''; sessionStorage.setItem('__capstate', JSON.stringify({ t, s, p: pos })); };
   window.__card = (t, s) => { const c = document.getElementById('__card'); if (!c) return; c.style.opacity = t ? 1 : 0; c.innerHTML = t ? '<div>' + t + (s ? '<small>' + s + '</small>' : '') + '</div>' : ''; };
   document.addEventListener('mousemove', (e) => { const c = document.getElementById('__cur'); if (c) c.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)'; }, true);
   document.addEventListener('mousedown', (e) => { const r = document.createElement('div'); r.className = '__rip'; r.style.left = e.clientX + 'px'; r.style.top = e.clientY + 'px'; document.documentElement.appendChild(r); setTimeout(() => r.remove(), 700); }, true);
@@ -80,9 +81,9 @@ async function main() {
   const timeline = [];
   let shots = 0;
 
-  const cap = async (text, sub = '', hold = 0) => {
+  const cap = async (text, sub = '', hold = 0, pos = 'bottom') => {
     timeline.push({ at: Date.now() - t0, text: text.replace(/<[^>]+>/g, ''), sub: sub.replace(/<[^>]+>/g, '') });
-    await page.evaluate(([t, s]) => window.__cap && window.__cap(t, s), [text, sub]);
+    await page.evaluate(([t, s, p]) => window.__cap && window.__cap(t, s, p), [text, sub, pos]);
     if (hold) await sleep(hold);
   };
   const card = async (t, s, ms) => { await page.evaluate(([a, b]) => window.__card && window.__card(a, b), [t, s]); await sleep(ms); await page.evaluate(() => window.__card(null)); await sleep(700); };
@@ -141,14 +142,14 @@ async function main() {
 
   // ===== 4. lesson =====
   await scene('lesson', async () => {
-    await cap("4-qadam. Dars", "Yangi so'zlar → test → eshitib topish → yozish → juftlash → jumla tuzish. Javoblar serverda tekshiriladi.", 0);
+    await cap("4-qadam. Dars", "Yangi so'zlar → test → eshitib topish → yozish → juftlash → jumla tuzish. Javoblar serverda tekshiriladi.", 0, 'top');
     await click(page.locator('.node-btn').first(), 1600);
     await shot('lesson-start');
     for (let step = 0; step < 40; step++) {
       const foot = page.locator('.p-foot button.btn');
       if (!(await foot.count())) {
         const done = page.locator('button.btn-block', { hasText: 'Davom etish' });
-        if (await done.count()) { await cap("Dars natijasi", "Yulduzlar, XP va kunlik seriya. Keyingi dars ochiladi.", 4200); await shot('lesson-result'); await click(done, 1500); break; }
+        if (await done.count()) { await cap("Dars natijasi", "Yulduzlar, XP va kunlik seriya. Keyingi dars ochiladi.", 4200, 'top'); await shot('lesson-result'); await click(done, 1500); break; }
         await sleep(500); continue;
       }
       const info = await page.evaluate(() => {
@@ -220,11 +221,11 @@ async function main() {
     await shot('practice');
     await click(page.locator('.btn-sm', { hasText: 'B1' }).first(), 500);
     await click(page.locator('.card', { hasText: "O'qish" }).locator('button', { hasText: 'Boshlash' }).first(), 1500);
-    await cap("O'qish mashqi", "Matnni o'qing va savolga javob bering: darhol izoh chiqadi.", 0);
+    await cap("O'qish mashqi", "Matnni o'qing va savolga javob bering: darhol izoh chiqadi.", 0, 'top');
     for (let i = 0; i < 3; i++) {
       await sleep(1500);
       const opt = page.locator('.opts .opt').first(); if (!(await opt.count())) break;
-      await click(opt, 1800); await shot(`practice-${i}`);
+      await click(opt, 1500); await page.evaluate(() => window.scrollBy({ top: 420, behavior: 'smooth' })); await sleep(2200); await shot(`practice-${i}`);
       const next = page.locator('button.btn-main', { hasText: /Keyingisi|Yakunlash/ }); if (await next.count()) await click(next.first(), 600);
     }
     await page.goto(`${BASE}/app#/practice`); await sleep(800);
@@ -265,7 +266,7 @@ async function main() {
     await shot('mock-start');
     const groups = await page.locator('.card .opts').count();
     for (let i = 0; i < Math.min(groups, 6); i++) await click(page.locator('.card .opts').nth(i).locator('.opt').nth(i % 3), 250);
-    await cap("Natija", "Bo'limlar bo'yicha ball va ingliz tilida taxminiy IELTS-uslubidagi ball. Rasmiy natija emas.", 0);
+    await cap("Natija", "Bo'limlar bo'yicha ball va ingliz tilida taxminiy IELTS-uslubidagi ball. Rasmiy natija emas.", 0, 'top');
     await click(page.locator('button', { hasText: 'Topshirish' }), 2500);
     await shot('mock-result'); await sleep(4200);
   });

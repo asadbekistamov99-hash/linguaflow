@@ -1,0 +1,734 @@
+[
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The minister's remarks were deliberately ___, allowing her to deny any specific commitment later.",
+      "options": [
+        "equivocal",
+        "emphatic",
+        "lucid",
+        "candid"
+      ],
+      "answer": 0,
+      "explanation_uz": "Equivocal — ikki ma'noli, noaniq. Emphatic (qat'iy), lucid (tushunarli) va candid (ochiq) esa aynan aksini bildiradi, shuning uchun majburiyatni keyin inkor etib bo'lmasdi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "After the scandal, the once-celebrated senator became a political ___, shunned by his former allies.",
+      "options": [
+        "paragon",
+        "pariah",
+        "patron",
+        "proxy"
+      ],
+      "answer": 1,
+      "explanation_uz": "Pariah — jamiyat chetlagan, quvilgan shaxs. Paragon (namuna), patron (homiy) va proxy (vakil) 'chetlangan' ma'nosiga mos kelmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "A ___ arbitrator, with no personal stake in the outcome, was appointed to settle the dispute.",
+      "options": [
+        "uninterested",
+        "unconcerned",
+        "disinterested",
+        "listless"
+      ],
+      "answer": 2,
+      "explanation_uz": "Disinterested — xolis, manfaatsiz. Uninterested (qiziqmaydigan), unconcerned (befarq) va listless (loqayd) xolislikni emas, qiziqishning yo'qligini bildiradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "After months of hype, the product launch proved a damp ___, revealing nothing new.",
+      "options": [
+        "cracker",
+        "flare",
+        "spark",
+        "squib"
+      ],
+      "answer": 3,
+      "explanation_uz": "Damp squib — kutilgan ta'sirni bermagan, puchga chiqqan voqea (idioma). Boshqa so'zlar bu barqaror birikmada ishlatilmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The judge issued an ___ preventing the company from disposing of its assets.",
+      "options": [
+        "injunction",
+        "indictment",
+        "affidavit",
+        "subpoena"
+      ],
+      "answer": 0,
+      "explanation_uz": "Injunction — sudning biror ishni taqiqlovchi qarori. Indictment (ayblov xulosasi), affidavit (qasamyod bilan guvohlik) va subpoena (chaqiruv qog'ozi) taqiq ma'nosini bermaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Unlike the chronic condition, the side effects were ___, vanishing within a few hours.",
+      "options": [
+        "latent",
+        "transient",
+        "pernicious",
+        "inherent"
+      ],
+      "answer": 1,
+      "explanation_uz": "Transient — o'tkinchi, qisqa muddatli. Latent (yashirin), pernicious (zararli) va inherent (tabiiy, ajralmas) tez yo'qolishni anglatmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Critics found the novel's ending ___, a tidy resolution that sat awkwardly with its morally ambiguous tone.",
+      "options": [
+        "cogent",
+        "nascent",
+        "contrived",
+        "seminal"
+      ],
+      "answer": 2,
+      "explanation_uz": "Contrived — sun'iy, uydirma. Cogent (ishonarli), nascent (endi tug'ilayotgan) va seminal (yo'l ochuvchi) 'o'rinsiz silliq yakun' fikriga mos emas."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The prime minister was accused of being ___, refusing to reconsider even as the evidence against his policy mounted.",
+      "options": [
+        "resolute",
+        "steadfast",
+        "tenacious",
+        "obdurate"
+      ],
+      "answer": 3,
+      "explanation_uz": "Obdurate — o'jar, qaysar (salbiy tus). Resolute, steadfast va tenacious deyarli sinonim, lekin ijobiy tusli ('qat'iyatli'), 'accused' bilan mos kelmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The company's ___ in the face of falling sales, its refusal to alter course, proved costly.",
+      "options": [
+        "intransigence",
+        "impetus",
+        "nonchalance",
+        "ingenuity"
+      ],
+      "answer": 0,
+      "explanation_uz": "Intransigence — murosasizlik, qaysarlik. Impetus (turtki), nonchalance (beparvolik) va ingenuity (zukkolik) 'yo'nalishni o'zgartirmaslik' ma'nosini bermaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The minister tried to ___ the regulation by routing the funds through an overseas subsidiary.",
+      "options": [
+        "contravene",
+        "circumvent",
+        "supersede",
+        "abrogate"
+      ],
+      "answer": 1,
+      "explanation_uz": "Circumvent — (qoidani) chetlab o'tmoq. Contravene (to'g'ridan-to'g'ri buzmoq), supersede (o'rnini bosmoq) va abrogate (bekor qilmoq) hiyla bilan aylanib o'tishni bildirmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Without any evidence, it is unfair to ___ aspersions on her integrity.",
+      "options": [
+        "lay",
+        "draw",
+        "cast",
+        "hold"
+      ],
+      "answer": 2,
+      "explanation_uz": "Cast aspersions on — birovga tuhmat qilmoq, obro'siga soya solmoq. Boshqa fe'llar bu turg'un birikmada ishlatilmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The reforms were largely ___, rearranging the deckchairs on the Titanic while the underlying problems went untouched.",
+      "options": [
+        "radical",
+        "systemic",
+        "seminal",
+        "cosmetic"
+      ],
+      "answer": 3,
+      "explanation_uz": "Cosmetic — yuzaki, tashqi ko'rinish uchun qilingan. Radical (tub), systemic (tizimli) va seminal (muhim) asosiy muammolar tegilmagan degan ma'noga zid."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The newspaper's editorial ___ the government's handling of the crisis, calling it negligent and incompetent.",
+      "options": [
+        "excoriated",
+        "exonerated",
+        "extolled",
+        "extrapolated"
+      ],
+      "answer": 0,
+      "explanation_uz": "Excoriated — qattiq tanqid qildi. Exonerated (oqladi) va extolled (maqtadi) aksini bildiradi; extrapolated (taxmin qildi) ma'noga umuman mos emas."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Her ___ rise from obscurity to international fame took barely eighteen months.",
+      "options": [
+        "gradual",
+        "meteoric",
+        "tentative",
+        "laborious"
+      ],
+      "answer": 1,
+      "explanation_uz": "Meteoric — meteordek tez ko'tarilgan. Gradual (asta-sekin), tentative (ikkilanib) va laborious (mashaqqatli) 'bir yarim yilda' tezligiga zid."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The new policy will ___ the gap between rich and poor unless it is offset by tax reform.",
+      "options": [
+        "exasperate",
+        "exaggerate",
+        "exacerbate",
+        "exhilarate"
+      ],
+      "answer": 2,
+      "explanation_uz": "Exacerbate — (muammoni) og'irlashtirmoq, kuchaytirmoq. Exasperate (jahlini chiqarmoq) odamga, exaggerate (bo'rttirmoq) va exhilarate (ruhlantirmoq) esa bu ma'noga mos emas."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The scheme was designed to ___ a fundamental change in how schools are funded.",
+      "options": [
+        "affect",
+        "infect",
+        "defect",
+        "effect"
+      ],
+      "answer": 3,
+      "explanation_uz": "Effect (fe'l) — amalga oshirmoq, yuzaga keltirmoq. Affect faqat ta'sir qilmoq degani, infect (yuqtirmoq), defect (qochib o'tmoq) mos emas."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The tabloid's remarks were plainly ___, exposing it to a libel suit.",
+      "options": [
+        "defamatory",
+        "deferential",
+        "derivative",
+        "defunct"
+      ],
+      "answer": 0,
+      "explanation_uz": "Defamatory — tuhmat qiluvchi, obro'ga putur yetkazuvchi. Deferential (hurmatli), derivative (taqlidiy) va defunct (tugatilgan) libel (tuhmat) da'vosiga olib kelmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Fleming's discovery of penicillin was ___: he noticed the mould on a discarded dish by pure chance.",
+      "options": [
+        "systematic",
+        "serendipitous",
+        "deliberate",
+        "ephemeral"
+      ],
+      "answer": 1,
+      "explanation_uz": "Serendipitous — tasodifan topilgan omadli. Systematic (tizimli) va deliberate (ataylab) 'tasodif' ga zid; ephemeral (o'tkinchi) mos emas."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "In his later years he grew ___, avoiding company and rarely leaving his study.",
+      "options": [
+        "loquacious",
+        "gregarious",
+        "reclusive",
+        "ebullient"
+      ],
+      "answer": 2,
+      "explanation_uz": "Reclusive — dunyodan chetlashgan, yolg'izlikni yoqtiradigan. Loquacious (gapdon), gregarious (odamovi emas, ko'pchilikni yoqtiradigan) va ebullient (shod-xurram) aksini bildiradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The ___ of reliable data makes any firm conclusion impossible.",
+      "options": [
+        "plethora",
+        "surfeit",
+        "profusion",
+        "paucity"
+      ],
+      "answer": 3,
+      "explanation_uz": "Paucity — kamlik, yetishmovchilik. Plethora, surfeit va profusion — 'ortiqcha, mo'l-ko'llik' bo'lib, 'xulosa qilib bo'lmaslik' bilan zid."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "He refused to ___ his words, telling the board bluntly that the project had failed.",
+      "options": [
+        "mince",
+        "chew",
+        "grind",
+        "shred"
+      ],
+      "answer": 0,
+      "explanation_uz": "Not to mince words — gapni yumshatmay, ochiq aytmoq (idioma). Chew, grind va shred bu birikmada ishlatilmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Defence counsel asked that the proceedings be ___ until fresh evidence could be examined.",
+      "options": [
+        "abdicated",
+        "adjourned",
+        "adjudged",
+        "adjured"
+      ],
+      "answer": 1,
+      "explanation_uz": "Adjourned — (majlis) keyinga qoldirildi. Abdicated (taxtdan voz kechdi), adjudged (hukm qilindi) va adjured (qattiq iltimos qildi) jarayonga mos emas."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "He is known for his ___ wit: cutting, unsparing, and capable of leaving its victims quietly humiliated.",
+      "options": [
+        "cordial",
+        "benign",
+        "caustic",
+        "whimsical"
+      ],
+      "answer": 2,
+      "explanation_uz": "Caustic — achchiq tilli, nish urgan. Cordial (samimiy), benign (zararsiz) va whimsical (hazil-mutoyiba) 'ayovsiz' ta'rifiga zid."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The drug is ___ in young children, so doctors must not prescribe it to under-twelves.",
+      "options": [
+        "counteracted",
+        "contradicted",
+        "contravened",
+        "contraindicated"
+      ],
+      "answer": 3,
+      "explanation_uz": "Contraindicated — qo'llash man etilgan (tibbiy atama). Boshqa so'zlar dori vositasi haqida bu ma'noni bermaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The scholar's ___ style, bloated with jargon, obscured otherwise valuable ideas.",
+      "options": [
+        "turgid",
+        "lucid",
+        "succinct",
+        "limpid"
+      ],
+      "answer": 0,
+      "explanation_uz": "Turgid — shishirilgan, dabdabali va og'ir uslub. Lucid (ravshan), succinct (lo'nda) va limpid (tiniq) aksini bildiradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Critics condemned the ___ of the wedding, with its gold-plated carriages and fireworks. (ostentatious)",
+      "answers": [
+        "ostentation",
+        "ostentatiousness"
+      ],
+      "explanation_uz": "Ostentation — dabdaba, ko'z-ko'z qilish. -ious sifatdan -ation oti hosil bo'ladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The ___ of his expression made negotiating with him exceptionally difficult. (inscrutable)",
+      "answers": [
+        "inscrutability"
+      ],
+      "explanation_uz": "Inscrutability — sirliligi, o'qib bo'lmasligi. Sifat inscrutable dan -ability qo'shimchasi bilan ot yasaladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The ___ in the clause allowed it to be read in two quite different ways. (ambiguous)",
+      "answers": [
+        "ambiguity"
+      ],
+      "explanation_uz": "Ambiguity — ikki ma'nolilik. -ous sifatdan -ity bilan ot yasaladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "It would be highly ___ to sign the contract without having it checked by a lawyer. (prudent)",
+      "answers": [
+        "imprudent"
+      ],
+      "explanation_uz": "Imprudent — ehtiyotsiz, oqilona emas. im- inkor prefiksi prudent (ehtiyotkor) ni teskarisiga o'giradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The tribunal remained ___ to the applicant's plight, rejecting her appeal without comment. (sympathy)",
+      "answers": [
+        "unsympathetic"
+      ],
+      "explanation_uz": "Unsympathetic — hamdardlik bildirmaydigan. Ot sympathy dan un- + -etic sifati yasaladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "After the flood, the flat was declared ___ and the tenants were rehoused. (inhabit)",
+      "answers": [
+        "uninhabitable"
+      ],
+      "explanation_uz": "Uninhabitable — yashashga yaroqsiz. un- + inhabit + -able."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The victor's ___ in sparing his rivals impressed even his enemies. (magnanimous)",
+      "answers": [
+        "magnanimity"
+      ],
+      "explanation_uz": "Magnanimity — olijanoblik, saxiylik. -ous sifat -ity ot ga aylanadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Statisticians questioned the ___ of the survey, since it relied on self-reported data. (reliable)",
+      "answers": [
+        "reliability"
+      ],
+      "explanation_uz": "Reliability — ishonchlilik. -able sifati -ability bilan ot bo'ladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The charity's ___ was beyond reproach; every donation was audited and published. (integral)",
+      "answers": [
+        "integrity"
+      ],
+      "explanation_uz": "Integrity — halollik, benuqsonlik. Integral so'zidan farqli, integrity ot bo'lib 'vijdonlilik' degani."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The long delay led to a further ___ of tensions between the two sides. (exacerbate)",
+      "answers": [
+        "exacerbation"
+      ],
+      "explanation_uz": "Exacerbation — (ziddiyatlarning) kuchayishi. Fe'l + -ation orqali ot yasaladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Her ___ in pursuing the case through three appeals finally secured justice. (tenacious)",
+      "answers": [
+        "tenacity"
+      ],
+      "explanation_uz": "Tenacity — qat'iyat, matonat. -ious sifati -ity bilan ot bo'ladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "It would be ___ of me to speak on her behalf without being asked. (presume)",
+      "answers": [
+        "presumptuous"
+      ],
+      "explanation_uz": "Presumptuous — o'zboshimcha, haddan oshgan. Presume (taxmin qilmoq) fe'lidan -uous sifati yasaladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "After the merger, over two hundred staff were made ___. (redundancy)",
+      "answers": [
+        "redundant"
+      ],
+      "explanation_uz": "Redundant — ortiqcha, ishdan bo'shatilgan. Redundancy otidan sifat shakli kerak."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Voters were angered by the ___ of a minister who preached austerity while claiming lavish expenses. (hypocrite)",
+      "answers": [
+        "hypocrisy"
+      ],
+      "explanation_uz": "Hypocrisy — riyokorlik. Hypocrite (riyokor odam) dan ot hypocrisy yasaladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Planned ___ forces consumers to replace perfectly good devices every few years. (obsolete)",
+      "answers": [
+        "obsolescence"
+      ],
+      "explanation_uz": "Obsolescence — eskirish, eskirib qolish. Obsolete sifatidan -escence bilan ot hosil bo'ladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "His ___ in refusing any compromise eventually cost him the election. (obstinate)",
+      "answers": [
+        "obstinacy"
+      ],
+      "explanation_uz": "Obstinacy – o'jarlik, qaysarlik. -ate sifati -acy bilan ot bo'ladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "She was accused of ___ after concealing the true scale of the losses from shareholders. (deceive)",
+      "answers": [
+        "deception",
+        "deceit"
+      ],
+      "explanation_uz": "Deception/deceit — aldov, yolg'on. Deceive (aldamoq) fe'lidan ikkala ot ham to'g'ri."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The proposal withstood close ___ by the committee. (scrutinise)",
+      "answers": [
+        "scrutiny"
+      ],
+      "explanation_uz": "Scrutiny — sinchkovlik bilan tekshirish. Fe'ldan farqli, ot shakli -y bilan tugaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The ___ of unregulated apps has alarmed consumer-protection agencies. (proliferate)",
+      "answers": [
+        "proliferation"
+      ],
+      "explanation_uz": "Proliferation — tez ko'payish. Fe'l + -ation orqali ot yasaladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "As a ___ objector, he refused military service on moral grounds. (conscience)",
+      "answers": [
+        "conscientious"
+      ],
+      "explanation_uz": "Conscientious objector — vijdoniy e'tiroz bildiruvchi (turg'un birikma). Conscience otidan -ious sifati yasaladi."
+    }
+  }
+]

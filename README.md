@@ -121,3 +121,10 @@ xalqaro imtihon sertifikati emas. Ballar (masalan "IELTS taxminiy 6.5") faqat ta
 - **Mock imtihon** (`#/mock`): tanlangan daraja uchun tasdiqlangan grammatika/o'qish/eshitish savollaridan vaqtli imtihon, server tomonda baholanadi
   (70%+ "tayyor", 50%+ "yaqin"). Natijalar `mock_results`. Barcha ballar taxminiy, rasmiy imtihon natijasi emas.
 - Kontent qoralamalari: `content/items/<til>_writing_speaking.json` (A2/B1/B2, har tilda 24 ta).
+
+## Ingliz tili C1–C2 (Sprint 5)
+
+- `content/items/en_C1_*.json`, `en_C2_*.json`, `en_C1C2_writing_speaking.json`: grammatika, lug'at (kontekstda), o'qish, eshitish, yozish (IELTS Task 2 uslubi) va gapirish
+  (Part 1–3) savollari, jami 304 ta. Mustaqil AI tekshiruvidan o'tgan, lekin **ona tilida so'zlashuvchi tekshiruvchi tasdiqlashi shart**.
+- Mock imtihon endi C2 darajasini ham, lug'at bo'limini ham qamraydi. Ingliz tilida B2+ darajada natijaga **taxminiy IELTS-uslubidagi ball**
+  (0–9) qo'shiladi (IELTS Listening/Reading jadvaliga o'xshash, rasmiy emas).

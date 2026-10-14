@@ -955,6 +955,7 @@ test('mock exam: from approved items, answers hidden, scored server-side, one su
   assert.equal(res.correct, 7);
   assert.equal(res.percent, 70);
   assert.equal(res.verdict, 'ready');
+  assert.equal(res.ielts.band, 6.5); // 70% -> indicative band, English B2+ only
   assert.equal(res.sections.grammar.total + res.sections.reading.total, 10);
   assert.equal(res.review.filter((r) => !r.answered).length, 1);
   assert.equal(res.xp, 21);

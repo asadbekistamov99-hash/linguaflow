@@ -1,0 +1,712 @@
+[
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Rarely ___ such a compelling case been made for radical reform.",
+      "answers": [
+        "has"
+      ],
+      "explanation_uz": "Rarely inversiyani talab qiladi: yordamchi fe'l ega oldidan keladi (Rarely has a case been made)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ it not been for her timely intervention, the merger would have collapsed.",
+      "answers": [
+        "Had"
+      ],
+      "explanation_uz": "Uchinchi tur shartning inversiyasi: Had it not been for... = If it had not been for..."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "He double-checked every figure lest he ___ a mistake.",
+      "answers": [
+        "should make",
+        "make"
+      ],
+      "explanation_uz": "'Lest' dan keyin 'should + fe'l' yoki subjunktiv (fe'lning oddiy shakli) ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The plan was approved, ___ with considerable reluctance.",
+      "answers": [
+        "albeit"
+      ],
+      "explanation_uz": "'Albeit' (= although it was) qisqartirilgan to'siqsiz gap hosil qiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The company runs a scheme ___ employees may purchase shares at a discount.",
+      "answers": [
+        "whereby"
+      ],
+      "explanation_uz": "'Whereby' = 'by which', rasmiy nutqda tizim yoki kelishuvni izohlaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "So absorbed ___ in his work that he forgot lunch entirely.",
+      "answers": [
+        "was he"
+      ],
+      "explanation_uz": "'So + sifat' gap boshida kelganda inversiya bo'ladi: So absorbed was he..."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Had I known about the risks, I ___ never have signed the contract.",
+      "answers": [
+        "would",
+        "should"
+      ],
+      "explanation_uz": "Uchinchi tur shart gapining inversiyasi: Had I known..., I would have + V3."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "It is imperative that every applicant ___ the form by Friday.",
+      "answers": [
+        "submit",
+        "should submit"
+      ],
+      "explanation_uz": "'Imperative that' dan keyin subjunktiv: ega har qanday shaxsda ham fe'l o'zak shaklida (submit)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Not for one moment ___ she doubt his sincerity.",
+      "answers": [
+        "did",
+        "would"
+      ],
+      "explanation_uz": "Not for one moment kabi inkor ibora gap boshida kelganda inversiya bo'ladi: did she doubt / would she doubt."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Nowhere in the report ___ any mention of the risks.",
+      "answers": [
+        "is there",
+        "was there"
+      ],
+      "explanation_uz": "Nowhere gap boshida kelganda inversiya bo'ladi: Nowhere is there... (there + to be inversiyasi)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "By next June the committee ___ (sit) for three years.",
+      "answers": [
+        "will have been sitting",
+        "will have sat"
+      ],
+      "explanation_uz": "Kelasi vaqtgacha davom etgan jarayon uchun Future Perfect Continuous ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I'd rather you ___ mention this to anyone just yet.",
+      "answers": [
+        "didn't",
+        "did not",
+        "wouldn't",
+        "would not"
+      ],
+      "explanation_uz": "'I'd rather + ega' dan keyin Past Simple ishlatiladi, ma'nosi hozirgi/kelasi zamon."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Try ___ he might, he could not open the jar.",
+      "answers": [
+        "as"
+      ],
+      "explanation_uz": "'Try as he might' = 'harchand urinmasin', 'as' orqali kelgan to'siqsiz konstruksiya."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Be that as it ___, we must proceed with the plan.",
+      "answers": [
+        "may"
+      ],
+      "explanation_uz": "'Be that as it may' qotib qolgan subjunktiv ibora (= shunday bo'lsa ham)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The more she thought about it, ___ she disliked the idea.",
+      "answers": [
+        "the more"
+      ],
+      "explanation_uz": "Qiyosiy korrelyativ konstruksiya: the + qiyosiy daraja ..., the + qiyosiy daraja."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "She is believed ___ destroyed the manuscript before fleeing the country.",
+      "answers": [
+        "to have"
+      ],
+      "explanation_uz": "Passiv taxminiy konstruksiya: is believed + to have + V3 (oldingi harakat uchun)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I didn't want to attend the ceremony, but I felt I ought ___.",
+      "answers": [
+        "to"
+      ],
+      "explanation_uz": "Ellipsis: 'ought' dan keyin takrorlanayotgan fe'l tushiriladi, faqat 'to' qoladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "If you are asked to speak, please do ___.",
+      "answers": [
+        "so"
+      ],
+      "explanation_uz": "'Do so' oldingi fe'l iborasining o'rnini bosuvchi (substitution) rasmiy shakl."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Scarcely ___ the meeting begun when the fire alarm sounded.",
+      "answers": [
+        "had"
+      ],
+      "explanation_uz": "'Scarcely/Hardly' bilan Past Perfect inversiyasi: Scarcely had + ega + V3 ... when."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Such ___ the force of the explosion that windows shattered a mile away.",
+      "answers": [
+        "was"
+      ],
+      "explanation_uz": "'Such' gap boshida kelganda 'to be' fe'li egadan oldin keladi: Such was the force..."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The report, ___ authors remain anonymous, was widely criticised.",
+      "answers": [
+        "whose"
+      ],
+      "explanation_uz": "Egalik ma'nosidagi nisbiy olmosh 'whose' (= uning mualliflari) ot oldidan keladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Should you ___ further assistance, do not hesitate to contact us.",
+      "answers": [
+        "require",
+        "need"
+      ],
+      "explanation_uz": "Rasmiy inversiyali shart: Should you + fe'l = If you should..."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Were he ___ resign, the party would be thrown into turmoil.",
+      "answers": [
+        "to"
+      ],
+      "explanation_uz": "'Were + ega + to + V' kam ehtimolli yoki farazli shartni bildiradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "It was her honesty, not her experience, ___ impressed the panel.",
+      "answers": [
+        "that",
+        "which"
+      ],
+      "explanation_uz": "Cleft gap: It was ... that/which ... qolipi ma'lum bir qismni ta'kidlaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Only by sustained effort ___ the team overcome the deficit.",
+      "answers": [
+        "did"
+      ],
+      "explanation_uz": "'Only + ravish iborasi' gap boshida kelsa, inversiya bo'ladi (did the team overcome)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "He talks as if he ___ the owner of the place.",
+      "answers": [
+        "were",
+        "was"
+      ],
+      "explanation_uz": "'As if' dan keyin nomaqbul holatda subjunktiv 'were' (norasmiy 'was' ham mumkin)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The results, few of ___ were surprising, were published in March.",
+      "answers": [
+        "which"
+      ],
+      "explanation_uz": "Miqdor so'zi + of + which: nisbiy gapda predlogli nisbiy olmosh ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Not only ___ the deadline missed, but the budget was also exceeded.",
+      "answers": [
+        "was"
+      ],
+      "explanation_uz": "'Not only' gap boshida kelganda inversiya bo'ladi: Not only was the deadline missed..."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "She felt deeply ___ about leaving, torn between duty and desire.",
+      "options": [
+        "ambiguous",
+        "equivocal",
+        "ambivalent",
+        "indifferent"
+      ],
+      "answer": 2,
+      "explanation_uz": "'Ambivalent' ichki qarama-qarshi tuyg'ularni bildiradi; 'ambiguous/equivocal' gap yoki bayonotga tegishli."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The tribunal's ruling set a ___ for all future cases.",
+      "options": [
+        "precedent",
+        "precedence",
+        "president",
+        "procedure"
+      ],
+      "answer": 0,
+      "explanation_uz": "'Precedent' = namuna bo'ladigan oldingi qaror; 'precedence' esa ustuvorlik."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Which sentence is grammatically correct?",
+      "options": [
+        "Having been told twice, the instructions still confused him.",
+        "Hardly she had left when the phone rang.",
+        "Were I to be offered the post, I would of accepted it.",
+        "Had the warnings been heeded, the disaster might have been averted."
+      ],
+      "answer": 3,
+      "explanation_uz": "Inversiyali uchinchi tur shart to'g'ri; boshqalarida osilib qolgan sifatdosh, noto'g'ri tartib va 'would of' xatolari bor."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Which verb is most appropriate in a formal academic register? 'The new data ___ the original hypothesis.'",
+      "options": [
+        "pan out",
+        "corroborate",
+        "tie up",
+        "stack up"
+      ],
+      "answer": 1,
+      "explanation_uz": "'Corroborate' akademik uslubdagi rasmiy fe'l (= tasdiqlamoq); qolganlari so'zlashuv uslubida."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "She decided to ___ a formal complaint with the regulator.",
+      "options": [
+        "do",
+        "lodge",
+        "carry",
+        "hold"
+      ],
+      "answer": 1,
+      "explanation_uz": "'Lodge a complaint' barqaror kollokatsiya (= rasman shikoyat topshirmoq)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The negotiations were ___ with difficulty from the very start.",
+      "options": [
+        "filled",
+        "loaded",
+        "packed",
+        "fraught"
+      ],
+      "answer": 3,
+      "explanation_uz": "'Fraught with' = (qiyinchilik, xavf) bilan to'la; barqaror kollokatsiya."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "If I ___ harder at school, I would be in a better job now.",
+      "options": [
+        "had worked",
+        "worked",
+        "would have worked",
+        "would work"
+      ],
+      "answer": 0,
+      "explanation_uz": "Aralash shart: o'tmishdagi sabab (had worked) + hozirgi natija (would be)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The scheme was costly; ___, it proved remarkably effective.",
+      "options": [
+        "Furthermore",
+        "Consequently",
+        "Nevertheless",
+        "Likewise"
+      ],
+      "answer": 2,
+      "explanation_uz": "Qarama-qarshilikni bildiruvchi bog'lovchi so'z 'Nevertheless' (= shunga qaramay)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Some critics praised the film; ___ dismissed it as derivative.",
+      "options": [
+        "other ones",
+        "another",
+        "each other",
+        "others"
+      ],
+      "answer": 3,
+      "explanation_uz": "Ko'plik 'some ... others' juftligi qismlarni qarama-qarshi qo'yadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The board demanded that the CEO ___ down immediately.",
+      "options": [
+        "stepped",
+        "step",
+        "is stepping",
+        "steps"
+      ],
+      "answer": 1,
+      "explanation_uz": "'Demand that' dan keyin subjunktiv: fe'l o'zak shaklida (step)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Which sentence is correct?",
+      "options": [
+        "Not only did the scheme fail, but it also bankrupted the council.",
+        "Not only the scheme failed, but it also bankrupted the council.",
+        "Not only failed the scheme, but it also bankrupted the council.",
+        "Not only did fail the scheme, but it also bankrupted the council."
+      ],
+      "answer": 0,
+      "explanation_uz": "'Not only' dan keyin yordamchi fe'l ega oldidan keladi, asosiy fe'l o'zak shaklida egadan keyin."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The judge was known for her ___ wit; she never wasted a word.",
+      "options": [
+        "verbose",
+        "prolix",
+        "laconic",
+        "garrulous"
+      ],
+      "answer": 2,
+      "explanation_uz": "'Laconic' = kam so'zli, lo'nda; boshqa variantlar ko'p gapirishni bildiradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "By the time you read this letter, I ___ Tashkent.",
+      "options": [
+        "will leave",
+        "have been leaving",
+        "will have left",
+        "am leaving"
+      ],
+      "answer": 2,
+      "explanation_uz": "Kelajakdagi ma'lum paytgacha tugagan harakat uchun Future Perfect ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Complete the sentence: 'Attached ___ the documents you requested.'",
+      "options": [
+        "are",
+        "is",
+        "do",
+        "have"
+      ],
+      "answer": 0,
+      "explanation_uz": "Fronting: fe'l (are) ko'plik ega 'the documents' bilan moslashadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The manager told him to stop ___ and answer the question directly.",
+      "options": [
+        "beating the air",
+        "hitting the nail",
+        "cutting corners",
+        "beating about the bush"
+      ],
+      "answer": 3,
+      "explanation_uz": "'Beat about the bush' = to'g'ridan-to'g'ri javob bermay aylanib yurmoq."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "___ the evidence, the jury acquitted him unanimously.",
+      "options": [
+        "Having been weighed",
+        "Having weighed",
+        "Weighed",
+        "To have weighed"
+      ],
+      "answer": 1,
+      "explanation_uz": "Sifatdosh egasi (the jury) fe'l bajaruvchisi bo'lgani uchun aktiv 'Having weighed' kerak."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "He is by no means averse ___ a challenge.",
+      "options": [
+        "to",
+        "for",
+        "with",
+        "at"
+      ],
+      "answer": 0,
+      "explanation_uz": "'Averse to' barqaror kollokatsiya (= qarshi emas); 'to' predlogi ishlatiladi."
+    }
+  }
+]

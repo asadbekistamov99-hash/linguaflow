@@ -1,0 +1,737 @@
+[
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Planting mangroves can help ___ the effects of coastal erosion.",
+      "options": [
+        "mitigate",
+        "mimic",
+        "migrate",
+        "mediate"
+      ],
+      "answer": 0,
+      "explanation_uz": "mitigate – yengillashtirmoq, zararni kamaytirmoq. Mimic (taqlid qilmoq), migrate (ko'chib o'tmoq) va mediate (vositachilik qilmoq) ma'no jihatidan mos kelmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The factory was fined for discharging toxic waste into the river, a clear ___ of environmental regulations.",
+      "options": [
+        "breakage",
+        "breach",
+        "break",
+        "breech"
+      ],
+      "answer": 1,
+      "explanation_uz": "breach of regulations – qoidalarni buzish (buzilish). Breakage jismoniy sinishni, breech esa miltiq qismini bildiradi; 'break of regulations' kollokatsiya emas."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The old system was ___ in favour of cloud-based software.",
+      "options": [
+        "phased in",
+        "faced out",
+        "phased out",
+        "put out"
+      ],
+      "answer": 2,
+      "explanation_uz": "phase out – bosqichma-bosqich to'xtatmoq (bekor qilmoq). Phase in – bosqichma-bosqich joriy qilish, aksi; 'faced out' mavjud emas; put out – o'chirmoq."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Early diagnosis significantly improves the ___ for patients with certain cancers.",
+      "options": [
+        "diagnosis",
+        "symptom",
+        "syndrome",
+        "prognosis"
+      ],
+      "answer": 3,
+      "explanation_uz": "prognosis – kasallik oqibati bo'yicha bashorat (prognoz). Diagnosis – tashxis qo'yish, symptom – alomat, syndrome – sindrom; ular kelajak bashoratini bildirmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Prohibitive fees act as a major ___ to wider participation in higher education.",
+      "options": [
+        "deterrent",
+        "detriment",
+        "deference",
+        "determinant"
+      ],
+      "answer": 0,
+      "explanation_uz": "deterrent – to'sqinlik qiluvchi omil, to'xtatuvchi vosita (deterrent to). Detriment – zarar (in detriment of), deference – hurmat-ehtirom, determinant – belgilovchi omil (determinant of); 'to' bilan mos kelmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Universities are under pressure to widen ___ for students from low-income backgrounds.",
+      "options": [
+        "admission",
+        "access",
+        "entrance",
+        "exit"
+      ],
+      "answer": 1,
+      "explanation_uz": "widen access – imkoniyatni kengaytirmoq (kirish imkoniyati). Admission – qabul qilish jarayoni, entrance – jismoniy kirish joyi, exit – chiqish; ma'noga mos emas."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The professor's lecture was so ___ that even specialists struggled to follow it.",
+      "options": [
+        "abrasive",
+        "abstinent",
+        "abstruse",
+        "obscene"
+      ],
+      "answer": 2,
+      "explanation_uz": "abstruse – tushunish qiyin, murakkab (chigal). Abrasive – qo'pol, shafqatsiz, abstinent – o'zini tiyadigan, obscene – odobsiz."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Rising inflation has eroded consumers' purchasing ___.",
+      "options": [
+        "strength",
+        "force",
+        "might",
+        "power"
+      ],
+      "answer": 3,
+      "explanation_uz": "purchasing power – xarid qobiliyati (barqaror birikma). Strength, force, might sinonim ko'rinsa-da, bu birikmada ishlatilmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The country's economy has been ___ since the collapse of its main export market.",
+      "options": [
+        "stagnant",
+        "stationary",
+        "stubborn",
+        "sturdy"
+      ],
+      "answer": 0,
+      "explanation_uz": "stagnant – turg'un, o'smayotgan (turg'unlikdagi). Stationary – joyidan qimirlamaydigan (jismoniy), stubborn – o'jar, sturdy – mustahkam."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Reducing the budget deficit will require us to ___ the bullet.",
+      "options": [
+        "chew",
+        "bite",
+        "hit",
+        "catch"
+      ],
+      "answer": 1,
+      "explanation_uz": "bite the bullet – qiyin ishga bel bog'lamoq (idioma). Boshqa fe'llar bu idiomada qo'llanmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Social media can ___ existing prejudices rather than challenge them.",
+      "options": [
+        "reform",
+        "relieve",
+        "reinforce",
+        "revoke"
+      ],
+      "answer": 2,
+      "explanation_uz": "reinforce – mustahkamlamoq, kuchaytirmoq. Reform – isloh qilmoq, relieve – yengillashtirmoq, revoke – bekor qilmoq; mazmunga zid."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Rural communities feel increasingly ___ by decision-makers in the capital.",
+      "options": [
+        "magnified",
+        "managed",
+        "mastered",
+        "marginalised"
+      ],
+      "answer": 3,
+      "explanation_uz": "marginalised – chetga surilgan, e'tibordan chetda qolgan. Magnified – kattalashtirilgan, managed – boshqarilgan, mastered – o'zlashtirilgan; kontekstga mos emas."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Prolonged stress can ___ anxiety disorders in vulnerable individuals.",
+      "options": [
+        "precipitate",
+        "precede",
+        "preclude",
+        "presume"
+      ],
+      "answer": 0,
+      "explanation_uz": "precipitate – (kasallikni) qo'zg'atmoq, tezlashtirmoq. Preclude – oldini olmoq (aksi), presume – taxmin qilmoq; precede – oldin kelmoq, sabab bo'lishni bildirmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "After the loss, she showed remarkable ___ and was back at work within a month.",
+      "options": [
+        "resistance",
+        "resilience",
+        "residence",
+        "resignation"
+      ],
+      "answer": 1,
+      "explanation_uz": "resilience – qiyinchilikdan tez tiklanish qobiliyati (chidamlilik). Resistance – qarshilik, residence – yashash joyi, resignation – iste'foga chiqish yoki taslim bo'lish."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The tabloid was accused of ___ the facts to create a more dramatic story.",
+      "options": [
+        "destroying",
+        "distracting",
+        "distorting",
+        "disturbing"
+      ],
+      "answer": 2,
+      "explanation_uz": "distort – buzib ko'rsatmoq, burmalamoq. Destroy – yo'q qilmoq, distract – chalg'itmoq, disturb – bezovta qilmoq; 'facts' bilan mantiqan mos emas."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "News outlets compete fiercely for ___, because advertising revenue depends on audience size.",
+      "options": [
+        "leadership",
+        "membership",
+        "ownership",
+        "readership"
+      ],
+      "answer": 3,
+      "explanation_uz": "readership – o'quvchilar auditoriyasi. Leadership – rahbarlik, membership – a'zolik, ownership – egalik; auditoriya hajmiga aloqador emas."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The scandal was ___ by officials at first, but it eventually leaked online.",
+      "options": [
+        "hushed up",
+        "hushed out",
+        "shut up",
+        "held up"
+      ],
+      "answer": 0,
+      "explanation_uz": "hush up – sir saqlamoq, yashirmoq (yopib qo'ymoq). 'Hushed out' mavjud emas; shut up – jim bo'l; hold up – kechiktirmoq yoki talon-taroj qilmoq."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Many critics question the ___ of such measures.",
+      "options": [
+        "effective",
+        "effectiveness",
+        "effectively",
+        "effectual"
+      ],
+      "answer": 1,
+      "explanation_uz": "effectiveness – samaradorlik (ot). Effective – sifat, effectively – ravish; 'the ... of' ot talab qiladi. Effectual kam qo'llanadigan sifat."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The minister's remarks were deliberately ___, allowing several interpretations.",
+      "options": [
+        "ambitious",
+        "amenable",
+        "ambiguous",
+        "amiable"
+      ],
+      "answer": 2,
+      "explanation_uz": "ambiguous – ikki xil ma'noli, noaniq. Ambitious – shuhratparast, amenable – ko'nadigan, bo'ysunuvchan, amiable – xushmuomala; so'zlarga tavsif bermaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Her ___ attitude to deadlines worried her manager.",
+      "options": [
+        "chivalrous",
+        "cordial",
+        "candid",
+        "cavalier"
+      ],
+      "answer": 3,
+      "explanation_uz": "cavalier – beparvo, mensimaydigan (e'tiborsiz). Chivalrous – olijanob, cordial – samimiy, candid – ochiq-oydin; muddatlarga beparvolikni bildirmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The company's lax approach to cybersecurity left customers' data ___ to attack.",
+      "options": [
+        "vulnerable",
+        "valuable",
+        "variable",
+        "vague"
+      ],
+      "answer": 0,
+      "explanation_uz": "vulnerable to – zaif, himoyasiz. Valuable – qimmatli, variable – o'zgaruvchan, vague – noaniq; 'to attack' bilan ishlatilmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Which word is closest in meaning to 'ubiquitous' in: 'Smartphones are now ubiquitous.'?",
+      "options": [
+        "expensive",
+        "widespread",
+        "obsolete",
+        "controversial"
+      ],
+      "answer": 1,
+      "explanation_uz": "ubiquitous – hamma joyda uchraydigan, keng tarqalgan (widespread). Expensive – qimmat, obsolete – eskirgan, controversial – munozarali."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "'The findings of the trial were inconclusive.' This means that the findings:",
+      "options": [
+        "were completely false",
+        "were widely accepted",
+        "did not give a definite answer",
+        "proved the treatment worked"
+      ],
+      "answer": 2,
+      "explanation_uz": "inconclusive – yakuniy xulosa bermaydigan, noaniq. Boshqa variantlar (yolg'on, keng qabul qilingan, isbotlangan) ma'noga zid."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The researchers ___ an unexpected pattern while analysing the data.",
+      "options": [
+        "came over",
+        "came round",
+        "came off",
+        "came across"
+      ],
+      "answer": 3,
+      "explanation_uz": "come across – tasodifan duch kelmoq, topmoq. Come over – kelib qolmoq, come round – hushiga kelmoq yoki mehmonga kelmoq, come off – muvaffaqiyatli chiqmoq."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The new law was criticised for placing a ___ burden on small businesses.",
+      "options": [
+        "disproportionate",
+        "disparate",
+        "dispassionate",
+        "disinterested"
+      ],
+      "answer": 0,
+      "explanation_uz": "disproportionate burden – nomutanosib, haddan ortiq yuk. Disparate – bir-biridan farq qiladigan, dispassionate – hissiz va xolis, disinterested – manfaatsiz xolis."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The ___ (sustain) of the scheme depends on long-term funding.",
+      "answers": [
+        "sustainability"
+      ],
+      "explanation_uz": "sustainability – barqarorlik (davomiylik). 'The ... of' ot talab qiladi; sustain fe'li, sustainable sifati mos kelmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Teachers must treat all pupils ___ (equal), regardless of background.",
+      "answers": [
+        "equally"
+      ],
+      "explanation_uz": "equally – teng, bir xilda (ravish). Fe'lni ravish aniqlaydi, shuning uchun sifat 'equal' mos emas."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Her ___ (reluctant) to speak in public held back her career.",
+      "answers": [
+        "reluctance"
+      ],
+      "explanation_uz": "reluctance – istamaslik, ikkilanish. Egalik olmoshidan keyin ot kerak; 'reluctant' sifat."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The report highlights the ___ (significant) of early intervention in education.",
+      "answers": [
+        "significance"
+      ],
+      "explanation_uz": "significance – ahamiyat, muhimlik (ot). 'The ... of' ot talab qiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The project proved financially ___ (viability).",
+      "answers": [
+        "viable"
+      ],
+      "explanation_uz": "viable – amalga oshirsa bo'ladigan, foydali (hayotiy). Ravishdan keyin sifat kerak, 'viability' esa ot."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Excessive screen time can have ___ (detriment) effects on children's sleep.",
+      "answers": [
+        "detrimental"
+      ],
+      "explanation_uz": "detrimental – zararli, salbiy ta'sir ko'rsatuvchi. 'Effects' otini sifat aniqlaydi; detriment (zarar) – ot."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The new law is intended to make companies more ___ (account) to their shareholders.",
+      "answers": [
+        "accountable"
+      ],
+      "explanation_uz": "accountable – javobgar. 'More' dan keyin sifat kerak; 'accountable to' – oldida javobgar."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Regular exercise brings ___ (number) benefits for both body and mind.",
+      "answers": [
+        "numerous"
+      ],
+      "explanation_uz": "numerous – juda ko'p, son-sanoqsiz. 'Benefits' otini sifat aniqlaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The campaign aims to raise a___ of mental health issues.",
+      "answers": [
+        "awareness"
+      ],
+      "explanation_uz": "raise awareness – xabardorlikni oshirmoq (barqaror birikma)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Governments must strike a b___ between economic growth and environmental protection.",
+      "answers": [
+        "balance"
+      ],
+      "explanation_uz": "strike a balance – muvozanatni topmoq (idioma-kollokatsiya)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The athlete was banned for using performance-e___ drugs.",
+      "answers": [
+        "enhancing"
+      ],
+      "explanation_uz": "performance-enhancing drugs – sport natijasini oshiruvchi (doping) preparatlar."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Many graduates struggle to make ends m___ in expensive cities.",
+      "answers": [
+        "meet"
+      ],
+      "explanation_uz": "make ends meet – kun ko'rmoq, daromadi zo'rg'a yetmoq (idioma)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Eating well and sleeping enough will help you f___ off a cold.",
+      "answers": [
+        "fight",
+        "fend"
+      ],
+      "explanation_uz": "fight off / fend off – (kasallik, hujumni) daf qilmoq, yengib o'tmoq (qaytarmoq)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The government has c___ down on tax evasion.",
+      "answers": [
+        "cracked",
+        "clamped"
+      ],
+      "explanation_uz": "crack down on / clamp down on – qattiq choralar ko'rmoq (qattiqqo'llik bilan kurashmoq). O'tgan zamon shakli kerak."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "It is time we got to the r___ of the problem rather than treating its symptoms.",
+      "answers": [
+        "root"
+      ],
+      "explanation_uz": "the root of the problem – muammoning ildizi (asl sababi)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "A diet r___ in vegetables and fibre lowers the risk of many diseases.",
+      "answers": [
+        "rich"
+      ],
+      "explanation_uz": "rich in – ... ga boy. 'A diet rich in' barqaror birikma."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The film received widespread critical a___, winning several international awards.",
+      "answers": [
+        "acclaim"
+      ],
+      "explanation_uz": "critical acclaim – tanqidchilar e'tirofi (yuksak baho)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Scientists remain ___ (sceptic) about the claim that the drug cures the disease.",
+      "answers": [
+        "sceptical",
+        "skeptical"
+      ],
+      "explanation_uz": "sceptical – shubhalanuvchi. 'Remain' dan keyin sifat kerak; 'sceptic' – shubhachi odam (ot)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Streaming services have ___ (revolution) the way people consume television.",
+      "answers": [
+        "revolutionised",
+        "revolutionized"
+      ],
+      "explanation_uz": "revolutionise – tubdan o'zgartirmoq (inqilob qilmoq). 'Have' dan keyin o'tgan zamon fe'li kerak."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "vocab",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Increased ___ (urban) has put enormous pressure on housing in major cities.",
+      "answers": [
+        "urbanisation",
+        "urbanization"
+      ],
+      "explanation_uz": "urbanisation – shaharlashuv. 'Increased' dan keyin ot kerak."
+    }
+  }
+]

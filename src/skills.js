@@ -8,7 +8,9 @@ const { shuffle } = require('./exercises');
 
 const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 const DISCLAIMER = "Bu LinguaFlow ichki tayyorgarlik bahosi (taxminiy). U rasmiy IELTS, CEFR yoki boshqa xalqaro imtihon natijasi emas.";
-const MOCK_SECTIONS = [['grammar', 12], ['reading', 10], ['listening', 8]];
+const MOCK_SECTIONS = [['grammar', 12], ['vocab', 6], ['reading', 10], ['listening', 8]];
+// Rough raw-score-to-band mapping inspired by public IELTS Listening/Reading tables; indicative only.
+const bandFor = (pct) => [[97.5, 9], [92.5, 8.5], [87.5, 8], [82.5, 7.5], [75, 7], [67.5, 6.5], [57.5, 6], [47.5, 5.5], [37.5, 5], [30, 4.5]].find(([t]) => pct >= t)?.[1] ?? 4;
 const wordCount = (s) => (String(s).trim().match(/\S+/g) || []).length;
 
 // Writing and speaking feedback (AI rubric, free-tier quota) and timed mock exams from approved bank items.
@@ -154,7 +156,8 @@ module.exports = function registerSkills({ db, route, content, HttpError, requir
     db.prepare('INSERT INTO mock_results (user_id,lang,level,total,correct,sections,created_at) VALUES (?,?,?,?,?,?,?)').run(u.id, s.lang, s.level, total, correct, JSON.stringify(sections), Date.now());
     const xp = xpFor(u, 'mock', Math.min(30, Math.round(pct * 0.3)), 60);
     const prog = awardProgress(u, { xp, lang: s.lang, source: 'mock' });
-    return { total, correct, percent: pct, sections, verdict, message, review, xp, elapsedMin: Math.round((Date.now() - s.startedAt) / 60000), user: prog.user, badges: prog.badges, disclaimer: DISCLAIMER };
+    const ielts = s.lang === 'en' && ['B2', 'C1', 'C2'].includes(s.level) ? { band: bandFor(pct), note: "IELTS Listening/Reading jadvaliga o'xshash taxminiy ball: rasmiy natija emas" } : null;
+    return { total, correct, percent: pct, sections, ielts, verdict, message, review, xp, elapsedMin: Math.round((Date.now() - s.startedAt) / 60000), user: prog.user, badges: prog.badges, disclaimer: DISCLAIMER };
   });
 
   route('GET', '/api/mock/history', async ({ req }) => {

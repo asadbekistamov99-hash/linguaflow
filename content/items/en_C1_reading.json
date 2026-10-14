@@ -1,0 +1,352 @@
+[
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "For much of the twentieth century, the engineers who managed Europe's lowland rivers pursued a single goal: to make water move quickly and predictably. Channels were straightened, banks were reinforced with concrete, and floodplains were drained for farming. The results seemed impressive until a series of damaging floods in the 1990s exposed a flaw in the approach. Water that is hurried through one town does not vanish; it arrives, faster and in greater volume, in the next. In recent years, a growing number of planners have therefore begun to reverse earlier decisions, reconnecting rivers with their floodplains and allowing meanders to re-form. The Vesna Basin scheme, which began a decade ago, illustrates both the promise and the difficulty of this shift. Engineers removed eleven kilometres of embankment and let the river spread across former pasture during wet seasons. Peak flood levels in the downstream town fell noticeably, and the restored wetlands attracted wading birds that had not nested in the area for generations. Yet the scheme was far from universally welcomed. Farmers who had lost grazing land complained that compensation was slow and calculated on the basis of outdated land values, and several residents argued that the town's flood defences should simply have been raised. Project managers conceded that communication had been poor in the early stages, when decisions were presented as settled rather than open to discussion. Interestingly, hostility softened considerably once landowners were invited to help monitor water levels and bird populations, suggesting that participation mattered as much as the engineering itself. Critics remain right to ask whether such schemes can be replicated where land is scarce and expensive. Nevertheless, the Vesna experience suggests that working with natural processes, rather than against them, can deliver protection at a lower long-term cost than rigid barriers, provided that those affected are treated as partners rather than obstacles.",
+      "question": "Which statement best summarises the passage as a whole?",
+      "options": [
+        "River engineering has been abandoned in favour of leaving waterways entirely untouched.",
+        "Floods in the 1990s proved that concrete embankments cannot protect any town.",
+        "Letting rivers behave more naturally can reduce flood risk, but success depends on involving local people.",
+        "Farmers have successfully blocked most attempts to restore Europe's rivers."
+      ],
+      "answer": 2,
+      "explanation_uz": "Matn xulosasi: daryoni tabiiy holatga qaytarish toshqin xavfini kamaytiradi, lekin muvaffaqiyat mahalliy aholini jalb qilishga bog'liq (\"participation mattered as much as the engineering itself\")."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "For much of the twentieth century, the engineers who managed Europe's lowland rivers pursued a single goal: to make water move quickly and predictably. Channels were straightened, banks were reinforced with concrete, and floodplains were drained for farming. The results seemed impressive until a series of damaging floods in the 1990s exposed a flaw in the approach. Water that is hurried through one town does not vanish; it arrives, faster and in greater volume, in the next. In recent years, a growing number of planners have therefore begun to reverse earlier decisions, reconnecting rivers with their floodplains and allowing meanders to re-form. The Vesna Basin scheme, which began a decade ago, illustrates both the promise and the difficulty of this shift. Engineers removed eleven kilometres of embankment and let the river spread across former pasture during wet seasons. Peak flood levels in the downstream town fell noticeably, and the restored wetlands attracted wading birds that had not nested in the area for generations. Yet the scheme was far from universally welcomed. Farmers who had lost grazing land complained that compensation was slow and calculated on the basis of outdated land values, and several residents argued that the town's flood defences should simply have been raised. Project managers conceded that communication had been poor in the early stages, when decisions were presented as settled rather than open to discussion. Interestingly, hostility softened considerably once landowners were invited to help monitor water levels and bird populations, suggesting that participation mattered as much as the engineering itself. Critics remain right to ask whether such schemes can be replicated where land is scarce and expensive. Nevertheless, the Vesna experience suggests that working with natural processes, rather than against them, can deliver protection at a lower long-term cost than rigid barriers, provided that those affected are treated as partners rather than obstacles.",
+      "question": "In the passage, the word \"conceded\" is closest in meaning to",
+      "options": [
+        "admitted",
+        "insisted",
+        "denied",
+        "suspected"
+      ],
+      "answer": 0,
+      "explanation_uz": "\"Project managers conceded that communication had been poor\" - ular kamchilikni tan olishdi, ya'ni \"admitted\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "For much of the twentieth century, the engineers who managed Europe's lowland rivers pursued a single goal: to make water move quickly and predictably. Channels were straightened, banks were reinforced with concrete, and floodplains were drained for farming. The results seemed impressive until a series of damaging floods in the 1990s exposed a flaw in the approach. Water that is hurried through one town does not vanish; it arrives, faster and in greater volume, in the next. In recent years, a growing number of planners have therefore begun to reverse earlier decisions, reconnecting rivers with their floodplains and allowing meanders to re-form. The Vesna Basin scheme, which began a decade ago, illustrates both the promise and the difficulty of this shift. Engineers removed eleven kilometres of embankment and let the river spread across former pasture during wet seasons. Peak flood levels in the downstream town fell noticeably, and the restored wetlands attracted wading birds that had not nested in the area for generations. Yet the scheme was far from universally welcomed. Farmers who had lost grazing land complained that compensation was slow and calculated on the basis of outdated land values, and several residents argued that the town's flood defences should simply have been raised. Project managers conceded that communication had been poor in the early stages, when decisions were presented as settled rather than open to discussion. Interestingly, hostility softened considerably once landowners were invited to help monitor water levels and bird populations, suggesting that participation mattered as much as the engineering itself. Critics remain right to ask whether such schemes can be replicated where land is scarce and expensive. Nevertheless, the Vesna experience suggests that working with natural processes, rather than against them, can deliver protection at a lower long-term cost than rigid barriers, provided that those affected are treated as partners rather than obstacles.",
+      "question": "The writer's attitude towards the critics of river restoration is best described as",
+      "options": [
+        "dismissive of all their objections",
+        "accepting that their central question is fair while still backing the approach",
+        "convinced that the Vesna results have proved them wrong",
+        "indifferent to whether the schemes are copied elsewhere"
+      ],
+      "answer": 1,
+      "explanation_uz": "\"Critics remain right to ask...\" va \"Nevertheless...\" - muallif tanqidchilarning savolini o'rinli deb biladi, ammo yondashuvni umuman qo'llab-quvvatlaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "tf_ng",
+    "exam": "ielts",
+    "payload": {
+      "passage": "For much of the twentieth century, the engineers who managed Europe's lowland rivers pursued a single goal: to make water move quickly and predictably. Channels were straightened, banks were reinforced with concrete, and floodplains were drained for farming. The results seemed impressive until a series of damaging floods in the 1990s exposed a flaw in the approach. Water that is hurried through one town does not vanish; it arrives, faster and in greater volume, in the next. In recent years, a growing number of planners have therefore begun to reverse earlier decisions, reconnecting rivers with their floodplains and allowing meanders to re-form. The Vesna Basin scheme, which began a decade ago, illustrates both the promise and the difficulty of this shift. Engineers removed eleven kilometres of embankment and let the river spread across former pasture during wet seasons. Peak flood levels in the downstream town fell noticeably, and the restored wetlands attracted wading birds that had not nested in the area for generations. Yet the scheme was far from universally welcomed. Farmers who had lost grazing land complained that compensation was slow and calculated on the basis of outdated land values, and several residents argued that the town's flood defences should simply have been raised. Project managers conceded that communication had been poor in the early stages, when decisions were presented as settled rather than open to discussion. Interestingly, hostility softened considerably once landowners were invited to help monitor water levels and bird populations, suggesting that participation mattered as much as the engineering itself. Critics remain right to ask whether such schemes can be replicated where land is scarce and expensive. Nevertheless, the Vesna experience suggests that working with natural processes, rather than against them, can deliver protection at a lower long-term cost than rigid barriers, provided that those affected are treated as partners rather than obstacles.",
+      "statement": "Opposition from landowners decreased when they took part in gathering data about the project.",
+      "answer": "true",
+      "explanation_uz": "Matnda: \"hostility softened considerably once landowners were invited to help monitor water levels and bird populations\" - ya'ni to'g'ri."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Economists have long described modern consumer goods as the products of a \"throwaway\" model: manufacture cheaply, sell widely, replace frequently. Yet a quiet shift is under way in several wealthy countries, where small repair businesses are multiplying after decades of decline. Part of the explanation is regulatory. Legislators in some jurisdictions now require manufacturers to supply spare parts and diagnostic manuals for a minimum number of years, which removes a barrier that previously made independent repair impractical. Part of it is cultural: younger consumers, more conscious of electronic waste, increasingly regard a repaired phone as a mark of good judgement rather than thrift. The financial logic, however, is more ambiguous than enthusiasts suggest. Repair workshops typically operate on thin margins, because skilled labour is expensive while the price of new goods keeps falling in real terms. A technician who spends three hours replacing a laptop's motherboard may charge nearly as much as a fresh machine costs, and customers, understandably, hesitate. Manufacturers, for their part, insist that their restrictions on third-party repair protect safety and data security, though sceptics point out that such arguments conveniently coincide with the firms' commercial interest in selling new units. What is less often noted is the effect on employment. Repair work is local by nature; it cannot be outsourced to a distant factory, and it tends to create jobs that demand practical expertise rather than formal qualifications. If policymakers wish repair to grow beyond a niche, they may need to reduce the tax burden on labour-intensive services, which currently penalises exactly the activity they say they want to encourage. Without such measures, the revival of repair risks remaining admirable in principle but marginal in practice, however sympathetic the public may be.",
+      "question": "It can be inferred from the passage that repair businesses struggle financially mainly because",
+      "options": [
+        "customers prefer to buy second-hand goods",
+        "manufacturers refuse to sell spare parts in any country",
+        "younger people consider repairs embarrassing",
+        "their labour costs are high compared with the falling price of new products"
+      ],
+      "answer": 3,
+      "explanation_uz": "\"skilled labour is expensive while the price of new goods keeps falling\" - malakali mehnat qimmat, yangi mahsulot narxi esa tushmoqda."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Economists have long described modern consumer goods as the products of a \"throwaway\" model: manufacture cheaply, sell widely, replace frequently. Yet a quiet shift is under way in several wealthy countries, where small repair businesses are multiplying after decades of decline. Part of the explanation is regulatory. Legislators in some jurisdictions now require manufacturers to supply spare parts and diagnostic manuals for a minimum number of years, which removes a barrier that previously made independent repair impractical. Part of it is cultural: younger consumers, more conscious of electronic waste, increasingly regard a repaired phone as a mark of good judgement rather than thrift. The financial logic, however, is more ambiguous than enthusiasts suggest. Repair workshops typically operate on thin margins, because skilled labour is expensive while the price of new goods keeps falling in real terms. A technician who spends three hours replacing a laptop's motherboard may charge nearly as much as a fresh machine costs, and customers, understandably, hesitate. Manufacturers, for their part, insist that their restrictions on third-party repair protect safety and data security, though sceptics point out that such arguments conveniently coincide with the firms' commercial interest in selling new units. What is less often noted is the effect on employment. Repair work is local by nature; it cannot be outsourced to a distant factory, and it tends to create jobs that demand practical expertise rather than formal qualifications. If policymakers wish repair to grow beyond a niche, they may need to reduce the tax burden on labour-intensive services, which currently penalises exactly the activity they say they want to encourage. Without such measures, the revival of repair risks remaining admirable in principle but marginal in practice, however sympathetic the public may be.",
+      "question": "In the final sentence, \"marginal\" most nearly means",
+      "options": [
+        "highly profitable",
+        "of limited importance",
+        "illegal",
+        "technically complex"
+      ],
+      "answer": 1,
+      "explanation_uz": "\"admirable in principle but marginal in practice\" - amalda ahamiyati kichik, ya'ni \"of limited importance\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Economists have long described modern consumer goods as the products of a \"throwaway\" model: manufacture cheaply, sell widely, replace frequently. Yet a quiet shift is under way in several wealthy countries, where small repair businesses are multiplying after decades of decline. Part of the explanation is regulatory. Legislators in some jurisdictions now require manufacturers to supply spare parts and diagnostic manuals for a minimum number of years, which removes a barrier that previously made independent repair impractical. Part of it is cultural: younger consumers, more conscious of electronic waste, increasingly regard a repaired phone as a mark of good judgement rather than thrift. The financial logic, however, is more ambiguous than enthusiasts suggest. Repair workshops typically operate on thin margins, because skilled labour is expensive while the price of new goods keeps falling in real terms. A technician who spends three hours replacing a laptop's motherboard may charge nearly as much as a fresh machine costs, and customers, understandably, hesitate. Manufacturers, for their part, insist that their restrictions on third-party repair protect safety and data security, though sceptics point out that such arguments conveniently coincide with the firms' commercial interest in selling new units. What is less often noted is the effect on employment. Repair work is local by nature; it cannot be outsourced to a distant factory, and it tends to create jobs that demand practical expertise rather than formal qualifications. If policymakers wish repair to grow beyond a niche, they may need to reduce the tax burden on labour-intensive services, which currently penalises exactly the activity they say they want to encourage. Without such measures, the revival of repair risks remaining admirable in principle but marginal in practice, however sympathetic the public may be.",
+      "question": "What is the main purpose of the passage?",
+      "options": [
+        "To examine why repair is growing again and to question whether it can become more than a niche without further policy change",
+        "To argue that manufacturers should be forced to close their repair departments",
+        "To prove that new goods are always cheaper than repaired ones",
+        "To describe how technicians are trained in wealthy countries"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matn ta'mirlash biznesi qayta o'sayotganini tushuntiradi va siyosiy choralarsiz u kichik soha bo'lib qolishi mumkinligini aytadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "tf_ng",
+    "exam": "ielts",
+    "payload": {
+      "passage": "Economists have long described modern consumer goods as the products of a \"throwaway\" model: manufacture cheaply, sell widely, replace frequently. Yet a quiet shift is under way in several wealthy countries, where small repair businesses are multiplying after decades of decline. Part of the explanation is regulatory. Legislators in some jurisdictions now require manufacturers to supply spare parts and diagnostic manuals for a minimum number of years, which removes a barrier that previously made independent repair impractical. Part of it is cultural: younger consumers, more conscious of electronic waste, increasingly regard a repaired phone as a mark of good judgement rather than thrift. The financial logic, however, is more ambiguous than enthusiasts suggest. Repair workshops typically operate on thin margins, because skilled labour is expensive while the price of new goods keeps falling in real terms. A technician who spends three hours replacing a laptop's motherboard may charge nearly as much as a fresh machine costs, and customers, understandably, hesitate. Manufacturers, for their part, insist that their restrictions on third-party repair protect safety and data security, though sceptics point out that such arguments conveniently coincide with the firms' commercial interest in selling new units. What is less often noted is the effect on employment. Repair work is local by nature; it cannot be outsourced to a distant factory, and it tends to create jobs that demand practical expertise rather than formal qualifications. If policymakers wish repair to grow beyond a niche, they may need to reduce the tax burden on labour-intensive services, which currently penalises exactly the activity they say they want to encourage. Without such measures, the revival of repair risks remaining admirable in principle but marginal in practice, however sympathetic the public may be.",
+      "statement": "Most repair businesses in wealthy countries are owned by former employees of manufacturers.",
+      "answer": "not_given",
+      "explanation_uz": "Matnda ta'mirlash korxonalari egalari kimligi haqida hech narsa aytilmagan - ma'lumot yo'q."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Historians of communication often treat the printing press as the decisive break between a world of rumour and a world of record, but this neat account overlooks the slower, messier developments that made printed news useful. In seventeenth-century Europe, a pamphlet or newssheet was of little value unless it could be distributed, discussed and checked against other sources. Coffeehouses, which spread rapidly through port cities and capitals, supplied precisely this infrastructure. For the price of a cup, a customer could read several papers, hear travellers' reports and challenge a stranger's version of events. Authorities were uneasy about the arrangement, and more than one government attempted to close such establishments, citing the danger of seditious talk. The attempts largely failed, partly because the venues were too popular and partly because officials themselves relied on them to learn what the public was thinking. It would be misleading, though, to romanticise these places as egalitarian forums. Women were seldom admitted, the poorest labourers could not afford regular visits, and many proprietors favoured particular political factions, so a customer's picture of the world depended heavily on which door he entered. Even so, the habit of weighing competing accounts, which coffeehouse conversation encouraged, arguably did more to shape public opinion than any single publication. Modern debates about digital media echo this earlier moment: the technology that distributes information matters less, perhaps, than the social settings in which people interrogate it. That insight should temper both the optimism of those who expect new platforms to enlighten citizens automatically and the pessimism of those who assume they will inevitably mislead them. Neither extreme, after all, takes seriously the ordinary people doing the reading and arguing.",
+      "question": "The writer's attitude towards the view that the printing press alone transformed communication is that it is",
+      "options": [
+        "entirely accurate and needs no qualification.",
+        "a fair summary of the seventeenth century.",
+        "too simple because it ignores slower developments.",
+        "irrelevant to modern debates."
+      ],
+      "answer": 2,
+      "explanation_uz": "\"this neat account overlooks the slower, messier developments\" - muallif bu qarashni haddan tashqari sodda deb hisoblaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Historians of communication often treat the printing press as the decisive break between a world of rumour and a world of record, but this neat account overlooks the slower, messier developments that made printed news useful. In seventeenth-century Europe, a pamphlet or newssheet was of little value unless it could be distributed, discussed and checked against other sources. Coffeehouses, which spread rapidly through port cities and capitals, supplied precisely this infrastructure. For the price of a cup, a customer could read several papers, hear travellers' reports and challenge a stranger's version of events. Authorities were uneasy about the arrangement, and more than one government attempted to close such establishments, citing the danger of seditious talk. The attempts largely failed, partly because the venues were too popular and partly because officials themselves relied on them to learn what the public was thinking. It would be misleading, though, to romanticise these places as egalitarian forums. Women were seldom admitted, the poorest labourers could not afford regular visits, and many proprietors favoured particular political factions, so a customer's picture of the world depended heavily on which door he entered. Even so, the habit of weighing competing accounts, which coffeehouse conversation encouraged, arguably did more to shape public opinion than any single publication. Modern debates about digital media echo this earlier moment: the technology that distributes information matters less, perhaps, than the social settings in which people interrogate it. That insight should temper both the optimism of those who expect new platforms to enlighten citizens automatically and the pessimism of those who assume they will inevitably mislead them. Neither extreme, after all, takes seriously the ordinary people doing the reading and arguing.",
+      "question": "What can be inferred about the officials who tried to close coffeehouses?",
+      "options": [
+        "Their attitude was inconsistent, since they also used these places for their own purposes.",
+        "They were unconcerned about political opposition.",
+        "They succeeded because few people visited the venues.",
+        "They were mostly customers who supported the factions."
+      ],
+      "answer": 0,
+      "explanation_uz": "\"officials themselves relied on them to learn what the public was thinking\" - rasmiylar ularni yopmoqchi bo'lgan, lekin o'zlari ham foydalangan."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Historians of communication often treat the printing press as the decisive break between a world of rumour and a world of record, but this neat account overlooks the slower, messier developments that made printed news useful. In seventeenth-century Europe, a pamphlet or newssheet was of little value unless it could be distributed, discussed and checked against other sources. Coffeehouses, which spread rapidly through port cities and capitals, supplied precisely this infrastructure. For the price of a cup, a customer could read several papers, hear travellers' reports and challenge a stranger's version of events. Authorities were uneasy about the arrangement, and more than one government attempted to close such establishments, citing the danger of seditious talk. The attempts largely failed, partly because the venues were too popular and partly because officials themselves relied on them to learn what the public was thinking. It would be misleading, though, to romanticise these places as egalitarian forums. Women were seldom admitted, the poorest labourers could not afford regular visits, and many proprietors favoured particular political factions, so a customer's picture of the world depended heavily on which door he entered. Even so, the habit of weighing competing accounts, which coffeehouse conversation encouraged, arguably did more to shape public opinion than any single publication. Modern debates about digital media echo this earlier moment: the technology that distributes information matters less, perhaps, than the social settings in which people interrogate it. That insight should temper both the optimism of those who expect new platforms to enlighten citizens automatically and the pessimism of those who assume they will inevitably mislead them. Neither extreme, after all, takes seriously the ordinary people doing the reading and arguing.",
+      "question": "The word \"interrogate\" in the passage is closest in meaning to",
+      "options": [
+        "ignore",
+        "publish",
+        "imitate",
+        "question closely"
+      ],
+      "answer": 3,
+      "explanation_uz": "\"the social settings in which people interrogate it\" - axborotni muhokama qilish, sinchiklab tekshirish, ya'ni \"question closely\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "tf_ng",
+    "exam": "ielts",
+    "payload": {
+      "passage": "Historians of communication often treat the printing press as the decisive break between a world of rumour and a world of record, but this neat account overlooks the slower, messier developments that made printed news useful. In seventeenth-century Europe, a pamphlet or newssheet was of little value unless it could be distributed, discussed and checked against other sources. Coffeehouses, which spread rapidly through port cities and capitals, supplied precisely this infrastructure. For the price of a cup, a customer could read several papers, hear travellers' reports and challenge a stranger's version of events. Authorities were uneasy about the arrangement, and more than one government attempted to close such establishments, citing the danger of seditious talk. The attempts largely failed, partly because the venues were too popular and partly because officials themselves relied on them to learn what the public was thinking. It would be misleading, though, to romanticise these places as egalitarian forums. Women were seldom admitted, the poorest labourers could not afford regular visits, and many proprietors favoured particular political factions, so a customer's picture of the world depended heavily on which door he entered. Even so, the habit of weighing competing accounts, which coffeehouse conversation encouraged, arguably did more to shape public opinion than any single publication. Modern debates about digital media echo this earlier moment: the technology that distributes information matters less, perhaps, than the social settings in which people interrogate it. That insight should temper both the optimism of those who expect new platforms to enlighten citizens automatically and the pessimism of those who assume they will inevitably mislead them. Neither extreme, after all, takes seriously the ordinary people doing the reading and arguing.",
+      "statement": "Few coffeehouse owners in the period supported any political faction.",
+      "answer": "false",
+      "explanation_uz": "Matnda: \"many proprietors favoured particular political factions\" - ko'pchilik egalari betaraf emas edi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Anyone who has estimated how long a report will take, only to work through the weekend to finish it, has encountered what psychologists call the planning fallacy: the persistent tendency to underestimate the time, cost and risk of future tasks, even when we know that similar tasks have overrun in the past. The phenomenon is not confined to individuals. Large public projects, from rail lines to software systems, routinely exceed their budgets, and the pattern recurs across cultures and eras. One explanation is that people plan by imagining a smooth sequence of steps, focusing on the specific features of the task in front of them while neglecting the broad class of comparable tasks, in which delays are common. Another is motivational: optimistic forecasts win approval and funding, so those who make them are rewarded for being unrealistic. Researchers who study the problem have proposed a remedy sometimes called reference class forecasting. Instead of building an estimate from the bottom up, the planner begins by asking how long similar projects have actually taken, and then adjusts that figure modestly for the particular circumstances. The method feels counterintuitive, since it asks people to treat their own project as ordinary, which many resist. Evidence for its effectiveness is encouraging but not conclusive; adoption has been uneven, and organisations that try it sometimes revert to old habits when deadlines tighten. A more modest conclusion may therefore be wiser: awareness of the bias does not cure it, but structured procedures that force comparison with past outcomes can narrow the gap between hope and reality. Those procedures work, in large part, because they relieve individuals of the need to be self-critical, a quality that is notoriously difficult to sustain under pressure. In that sense, good planning is less a matter of personal virtue than of institutional design.",
+      "question": "What is the main point of the passage?",
+      "options": [
+        "Public projects always fail because their managers are dishonest.",
+        "People underestimate future tasks, and comparing with similar past projects can partly correct this, though not completely.",
+        "Planning errors are a mystery that psychologists have fully explained.",
+        "Individuals should avoid making any estimates of their own."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matn rejalashtirish xatosini tushuntiradi va o'xshash loyihalar bilan solishtirish usulini, uning cheklovlari bilan, taklif qiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Anyone who has estimated how long a report will take, only to work through the weekend to finish it, has encountered what psychologists call the planning fallacy: the persistent tendency to underestimate the time, cost and risk of future tasks, even when we know that similar tasks have overrun in the past. The phenomenon is not confined to individuals. Large public projects, from rail lines to software systems, routinely exceed their budgets, and the pattern recurs across cultures and eras. One explanation is that people plan by imagining a smooth sequence of steps, focusing on the specific features of the task in front of them while neglecting the broad class of comparable tasks, in which delays are common. Another is motivational: optimistic forecasts win approval and funding, so those who make them are rewarded for being unrealistic. Researchers who study the problem have proposed a remedy sometimes called reference class forecasting. Instead of building an estimate from the bottom up, the planner begins by asking how long similar projects have actually taken, and then adjusts that figure modestly for the particular circumstances. The method feels counterintuitive, since it asks people to treat their own project as ordinary, which many resist. Evidence for its effectiveness is encouraging but not conclusive; adoption has been uneven, and organisations that try it sometimes revert to old habits when deadlines tighten. A more modest conclusion may therefore be wiser: awareness of the bias does not cure it, but structured procedures that force comparison with past outcomes can narrow the gap between hope and reality. Those procedures work, in large part, because they relieve individuals of the need to be self-critical, a quality that is notoriously difficult to sustain under pressure. In that sense, good planning is less a matter of personal virtue than of institutional design.",
+      "question": "As used in the passage, \"uneven\" in \"adoption has been uneven\" means",
+      "options": [
+        "slow but guaranteed",
+        "dishonest",
+        "inconsistent across organisations",
+        "unpopular with researchers"
+      ],
+      "answer": 2,
+      "explanation_uz": "Usul hamma tashkilotlarda bir xil qo'llanilmagan - \"inconsistent\"; ayrimlari eski odatlarga qaytadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Anyone who has estimated how long a report will take, only to work through the weekend to finish it, has encountered what psychologists call the planning fallacy: the persistent tendency to underestimate the time, cost and risk of future tasks, even when we know that similar tasks have overrun in the past. The phenomenon is not confined to individuals. Large public projects, from rail lines to software systems, routinely exceed their budgets, and the pattern recurs across cultures and eras. One explanation is that people plan by imagining a smooth sequence of steps, focusing on the specific features of the task in front of them while neglecting the broad class of comparable tasks, in which delays are common. Another is motivational: optimistic forecasts win approval and funding, so those who make them are rewarded for being unrealistic. Researchers who study the problem have proposed a remedy sometimes called reference class forecasting. Instead of building an estimate from the bottom up, the planner begins by asking how long similar projects have actually taken, and then adjusts that figure modestly for the particular circumstances. The method feels counterintuitive, since it asks people to treat their own project as ordinary, which many resist. Evidence for its effectiveness is encouraging but not conclusive; adoption has been uneven, and organisations that try it sometimes revert to old habits when deadlines tighten. A more modest conclusion may therefore be wiser: awareness of the bias does not cure it, but structured procedures that force comparison with past outcomes can narrow the gap between hope and reality. Those procedures work, in large part, because they relieve individuals of the need to be self-critical, a quality that is notoriously difficult to sustain under pressure. In that sense, good planning is less a matter of personal virtue than of institutional design.",
+      "question": "The writer's view of reference class forecasting can best be described as",
+      "options": [
+        "enthusiastic and certain of its success",
+        "dismissive of its value",
+        "puzzled by why anyone uses it",
+        "hopeful but careful about its limitations"
+      ],
+      "answer": 3,
+      "explanation_uz": "\"encouraging but not conclusive\" va \"more modest conclusion may be wiser\" - muallif umidli, ammo ehtiyotkor."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "tf_ng",
+    "exam": "ielts",
+    "payload": {
+      "passage": "Anyone who has estimated how long a report will take, only to work through the weekend to finish it, has encountered what psychologists call the planning fallacy: the persistent tendency to underestimate the time, cost and risk of future tasks, even when we know that similar tasks have overrun in the past. The phenomenon is not confined to individuals. Large public projects, from rail lines to software systems, routinely exceed their budgets, and the pattern recurs across cultures and eras. One explanation is that people plan by imagining a smooth sequence of steps, focusing on the specific features of the task in front of them while neglecting the broad class of comparable tasks, in which delays are common. Another is motivational: optimistic forecasts win approval and funding, so those who make them are rewarded for being unrealistic. Researchers who study the problem have proposed a remedy sometimes called reference class forecasting. Instead of building an estimate from the bottom up, the planner begins by asking how long similar projects have actually taken, and then adjusts that figure modestly for the particular circumstances. The method feels counterintuitive, since it asks people to treat their own project as ordinary, which many resist. Evidence for its effectiveness is encouraging but not conclusive; adoption has been uneven, and organisations that try it sometimes revert to old habits when deadlines tighten. A more modest conclusion may therefore be wiser: awareness of the bias does not cure it, but structured procedures that force comparison with past outcomes can narrow the gap between hope and reality. Those procedures work, in large part, because they relieve individuals of the need to be self-critical, a quality that is notoriously difficult to sustain under pressure. In that sense, good planning is less a matter of personal virtue than of institutional design.",
+      "statement": "Optimistic forecasts may be favoured because they help projects secure approval.",
+      "answer": "true",
+      "explanation_uz": "Matnda: \"optimistic forecasts win approval and funding\" - optimistik prognozlar tasdiq va moliyalashtirishga yordam beradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "When remote work became widespread, forecasters predicted the decline of the city centre. Offices would empty, they argued, workers would scatter to cheaper regions, and the dense downtown core, long considered the engine of innovation, would lose its purpose. Several years on, the picture is more complicated than either side anticipated. Occupancy of central offices has settled well below its earlier level in many cities, yet the places that people visit have changed in character rather than simply shrunk. Employees who come in two or three days a week tend to cluster their attendance on the same days, producing sharp peaks of congestion followed by quiet troughs that hurt restaurants and transport operators dependent on steady custom. Meanwhile, suburban high streets have enjoyed an unexpected revival as home-based workers spend their lunch breaks and daytime hours closer to where they live. Urban economists remain divided about the long-term consequences for productivity. Some argue that spontaneous encounters among colleagues generate ideas that scheduled video calls cannot, and that junior staff in particular lose valuable informal mentoring. Others counter that such claims are hard to test, since the benefits of proximity are easy to romanticise and rarely measured with care. What seems clear is that municipal authorities can no longer treat commuter flows as a predictable constant when planning transport and zoning. Some have begun converting surplus office space into housing, a response that addresses two problems at once but requires costly structural alterations, since deep office floors lack the windows and plumbing that homes need. Whether such conversions can happen quickly enough to matter is uncertain, and much will depend on whether employers continue to loosen their expectations about attendance.",
+      "question": "It can be inferred that city-centre restaurants suffer because",
+      "options": [
+        "demand is concentrated on certain days and weak on others",
+        "workers no longer enjoy eating out",
+        "suburban restaurants charge lower prices",
+        "commuters now travel by car only"
+      ],
+      "answer": 0,
+      "explanation_uz": "Xodimlar bir xil kunlarda keladi: \"sharp peaks of congestion followed by quiet troughs\" - talab notekis."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "When remote work became widespread, forecasters predicted the decline of the city centre. Offices would empty, they argued, workers would scatter to cheaper regions, and the dense downtown core, long considered the engine of innovation, would lose its purpose. Several years on, the picture is more complicated than either side anticipated. Occupancy of central offices has settled well below its earlier level in many cities, yet the places that people visit have changed in character rather than simply shrunk. Employees who come in two or three days a week tend to cluster their attendance on the same days, producing sharp peaks of congestion followed by quiet troughs that hurt restaurants and transport operators dependent on steady custom. Meanwhile, suburban high streets have enjoyed an unexpected revival as home-based workers spend their lunch breaks and daytime hours closer to where they live. Urban economists remain divided about the long-term consequences for productivity. Some argue that spontaneous encounters among colleagues generate ideas that scheduled video calls cannot, and that junior staff in particular lose valuable informal mentoring. Others counter that such claims are hard to test, since the benefits of proximity are easy to romanticise and rarely measured with care. What seems clear is that municipal authorities can no longer treat commuter flows as a predictable constant when planning transport and zoning. Some have begun converting surplus office space into housing, a response that addresses two problems at once but requires costly structural alterations, since deep office floors lack the windows and plumbing that homes need. Whether such conversions can happen quickly enough to matter is uncertain, and much will depend on whether employers continue to loosen their expectations about attendance.",
+      "question": "In the passage, \"romanticise\" is closest in meaning to",
+      "options": [
+        "measure accurately",
+        "reject completely",
+        "portray as better than reality",
+        "explain in detail"
+      ],
+      "answer": 2,
+      "explanation_uz": "\"easy to romanticise and rarely measured with care\" - haqiqatdan chiroyliroq ko'rsatish."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "When remote work became widespread, forecasters predicted the decline of the city centre. Offices would empty, they argued, workers would scatter to cheaper regions, and the dense downtown core, long considered the engine of innovation, would lose its purpose. Several years on, the picture is more complicated than either side anticipated. Occupancy of central offices has settled well below its earlier level in many cities, yet the places that people visit have changed in character rather than simply shrunk. Employees who come in two or three days a week tend to cluster their attendance on the same days, producing sharp peaks of congestion followed by quiet troughs that hurt restaurants and transport operators dependent on steady custom. Meanwhile, suburban high streets have enjoyed an unexpected revival as home-based workers spend their lunch breaks and daytime hours closer to where they live. Urban economists remain divided about the long-term consequences for productivity. Some argue that spontaneous encounters among colleagues generate ideas that scheduled video calls cannot, and that junior staff in particular lose valuable informal mentoring. Others counter that such claims are hard to test, since the benefits of proximity are easy to romanticise and rarely measured with care. What seems clear is that municipal authorities can no longer treat commuter flows as a predictable constant when planning transport and zoning. Some have begun converting surplus office space into housing, a response that addresses two problems at once but requires costly structural alterations, since deep office floors lack the windows and plumbing that homes need. Whether such conversions can happen quickly enough to matter is uncertain, and much will depend on whether employers continue to loosen their expectations about attendance.",
+      "question": "Which statement best expresses the main idea of the passage?",
+      "options": [
+        "City centres have recovered fully to their previous level of activity.",
+        "Remote work has changed city centres rather than destroyed them, creating new problems for planners.",
+        "Economists agree that remote work lowers productivity.",
+        "Suburban areas have replaced city centres as the main business districts."
+      ],
+      "answer": 1,
+      "explanation_uz": "Matn markazlar yo'q bo'lmaganini, balki o'zgarganini va rejalashtiruvchilar uchun yangi muammolar paydo bo'lganini aytadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "C1",
+    "type": "tf_ng",
+    "exam": "ielts",
+    "payload": {
+      "passage": "When remote work became widespread, forecasters predicted the decline of the city centre. Offices would empty, they argued, workers would scatter to cheaper regions, and the dense downtown core, long considered the engine of innovation, would lose its purpose. Several years on, the picture is more complicated than either side anticipated. Occupancy of central offices has settled well below its earlier level in many cities, yet the places that people visit have changed in character rather than simply shrunk. Employees who come in two or three days a week tend to cluster their attendance on the same days, producing sharp peaks of congestion followed by quiet troughs that hurt restaurants and transport operators dependent on steady custom. Meanwhile, suburban high streets have enjoyed an unexpected revival as home-based workers spend their lunch breaks and daytime hours closer to where they live. Urban economists remain divided about the long-term consequences for productivity. Some argue that spontaneous encounters among colleagues generate ideas that scheduled video calls cannot, and that junior staff in particular lose valuable informal mentoring. Others counter that such claims are hard to test, since the benefits of proximity are easy to romanticise and rarely measured with care. What seems clear is that municipal authorities can no longer treat commuter flows as a predictable constant when planning transport and zoning. Some have begun converting surplus office space into housing, a response that addresses two problems at once but requires costly structural alterations, since deep office floors lack the windows and plumbing that homes need. Whether such conversions can happen quickly enough to matter is uncertain, and much will depend on whether employers continue to loosen their expectations about attendance.",
+      "statement": "Most suburban restaurants have reported higher profits than city-centre ones.",
+      "answer": "not_given",
+      "explanation_uz": "Matnda shahar atrofidagi savdo ko'chalari jonlangani aytilgan, lekin restoranlar foydasi shahar markazidagilar bilan taqqoslanmagan - ma'lumot yo'q."
+    }
+  }
+]

@@ -11,7 +11,7 @@ module.exports = [
       ["Muzokara olib bormoq", "To negotiate", "Вести переговоры", "Verhandeln", "Négocier", "Negociar", "تفاوض", "tafawada"],
       ["Qochqinlar", "Refugees", "Беженцы", "Flüchtlinge", "Réfugiés", "Refugiados", "لاجئون", "laji'un"],
       ["Hamkorlik", "Cooperation", "Сотрудничество", "Zusammenarbeit", "Coopération", "Cooperación", "تعاون", "ta'awun"],
-      ["Tengsizlik", "Inequality", "Неравенство", "Ungleichheit", "Inégalité", "Desigualdad", "تفاوت", "tafawut"]
+      ["Tengsizlik", "Inequality", "Неравенство", "Ungleichheit", "Inégalité", "Desigualdad", "عدم المساواة", "adam al-musawat"]
     ],
     sentences: [
       ["Globallashuv iqtisodiyotlarni bir-biriga bog'ladi.", "Globalization has linked economies together.", "Глобализация связала экономики между собой.", "Die Globalisierung hat Volkswirtschaften miteinander verbunden.", "La mondialisation a lié les économies entre elles.", "La globalización ha vinculado las economías entre sí.", "ربطت العولمة الاقتصادات ببعضها."],
@@ -30,7 +30,7 @@ module.exports = [
       ["Vazifa topshirmoq", "To delegate", "Делегировать", "Delegieren", "Déléguer", "Delegar", "فوض", "fawwada"],
       ["Unumdorlik", "Productivity", "Производительность", "Produktivität", "Productivité", "Productividad", "إنتاجية", "intajiyya"],
       ["Ishdan bo'shatish", "Dismissal", "Увольнение", "Entlassung", "Licenciement", "Despido", "فصل", "fasl"],
-      ["Mehnat shartnomasi", "Employment contract", "Трудовой договор", "Arbeitsvertrag", "Contrat de travail", "Contrato de trabajo", "عقد عمل", "aqd amal"],
+      ["Mehnat shartnomasi", "Employment contract", "Трудовой договор", "Arbeitsvertrag", "Contrat de travail", "Contrato de trabajo", "عقد عمل", "aqd 'amal"],
       ["Kasbiy charchash", "Burnout", "Профессиональное выгорание", "Burnout", "Burn-out", "Agotamiento laboral", "إرهاق وظيفي", "irhaq wazifi"],
       ["Nomzod", "Candidate", "Кандидат", "Bewerber", "Candidat", "Candidato", "مرشح", "murashshah"],
       ["Kasbiy rivojlanish", "Professional development", "Профессиональное развитие", "Berufliche Weiterbildung", "Développement professionnel", "Desarrollo profesional", "تطوير مهني", "tatwir mihni"],
@@ -42,7 +42,7 @@ module.exports = [
       ["Moslashuvchan jadval unumdorlikni oshiradi.", "Flexible hours increase productivity.", "Гибкий график повышает производительность.", "Gleitzeit steigert die Produktivität.", "Les horaires flexibles augmentent la productivité.", "El horario flexible aumenta la productividad.", "الدوام المرن يزيد الإنتاجية."],
       ["Ko'p xodimlar kasbiy charchashdan aziyat chekadi.", "Many employees suffer from burnout.", "Многие сотрудники страдают от выгорания.", "Viele Angestellte leiden unter Burnout.", "Beaucoup d'employés souffrent de burn-out.", "Muchos empleados sufren agotamiento laboral.", "يعاني كثير من الموظفين من الإرهاق الوظيفي."],
       ["Mehnat shartnomasini diqqat bilan o'qing.", "Read the employment contract carefully.", "Внимательно прочитайте трудовой договор.", "Lesen Sie den Arbeitsvertrag sorgfältig.", "Lisez attentivement le contrat de travail.", "Lea con atención el contrato de trabajo.", "اقرأ عقد العمل بعناية."],
-      ["Kompaniya kasbiy rivojlanishni qo'llab-quvvatlaydi.", "The company supports professional development.", "Компания поддерживает профессиональное развитие.", "Das Unternehmen fördert die berufliche Weiterbildung.", "L'entreprise soutient le développement professionnel.", "La empresa apoya el desarrollo profesional.", "تدعم الشركة التطوير المهني."]
+      ["Kompaniya kasbiy rivojlanishni qo'llab-quvvatlaydi.", "The company supports professional development.", "Компания поддерживает профессиональное развитие.", "Das Unternehmen fördert die berufliche Entwicklung.", "L'entreprise soutient le développement professionnel.", "La empresa apoya el desarrollo profesional.", "تدعم الشركة التطوير المهني."]
     ]
   },
   {
@@ -62,10 +62,10 @@ module.exports = [
     sentences: [
       ["U dissertatsiyasini muvaffaqiyatli himoya qildi.", "She successfully defended her dissertation.", "Она успешно защитила диссертацию.", "Sie hat ihre Dissertation erfolgreich verteidigt.", "Elle a soutenu sa thèse avec succès.", "Defendió con éxito su tesis doctoral.", "دافعت عن أطروحتها بنجاح."],
       ["Tadqiqot gipotezani tasdiqlamadi.", "The study did not confirm the hypothesis.", "Исследование не подтвердило гипотезу.", "Die Studie bestätigte die Hypothese nicht.", "L'étude n'a pas confirmé l'hypothèse.", "El estudio no confirmó la hipótesis.", "لم تؤكد الدراسة الفرضية."],
-      ["Manbalarni to'g'ri keltirish juda muhim.", "It is essential to cite sources properly.", "Очень важно правильно цитировать источники.", "Es ist wichtig, Quellen korrekt zu zitieren.", "Il est essentiel de citer correctement les sources.", "Es esencial citar bien las fuentes.", "من الضروري الاقتباس من المصادر بشكل صحيح."],
+      ["Manbalarni to'g'ri keltirish zarur.", "It is essential to cite sources properly.", "Необходимо правильно цитировать источники.", "Es ist notwendig, Quellen korrekt zu zitieren.", "Il est essentiel de citer correctement les sources.", "Es esencial citar bien las fuentes.", "من الضروري الاقتباس من المصادر بشكل صحيح."],
       ["Plagiat universitetda qat'iyan taqiqlanadi.", "Plagiarism is strictly forbidden at university.", "Плагиат в университете строго запрещён.", "Plagiat ist an der Universität streng verboten.", "Le plagiat est strictement interdit à l'université.", "El plagio está estrictamente prohibido en la universidad.", "الانتحال ممنوع منعا باتا في الجامعة."],
       ["Ilmiy rahbarim menga qimmatli maslahat berdi.", "My supervisor gave me valuable advice.", "Мой научный руководитель дал мне ценный совет.", "Mein Betreuer gab mir wertvollen Rat.", "Mon directeur de thèse m'a donné un précieux conseil.", "Mi director de tesis me dio un consejo valioso.", "قدم لي مشرفي نصيحة قيمة."],
-      ["Loyiha tadqiqot granti hisobiga moliyalashtirildi.", "The project was funded by a research grant.", "Проект финансировался за счёт гранта.", "Das Projekt wurde durch Forschungsförderung finanziert.", "Le projet a reçu une subvention de recherche.", "El proyecto fue financiado con una subvención de investigación.", "تم تمويل المشروع بمنحة بحثية."]
+      ["Loyiha tadqiqot granti hisobiga moliyalashtirildi.", "The project was funded by a research grant.", "Проект финансировался за счёт гранта.", "Das Projekt wurde durch Forschungsförderung finanziert.", "Le projet a été financé par une subvention de recherche.", "El proyecto fue financiado con una subvención de investigación.", "تم تمويل المشروع بمنحة بحثية."]
     ]
   },
   {
@@ -83,11 +83,11 @@ module.exports = [
       ["Yashil hudud", "Green space", "Зелёная зона", "Grünfläche", "Espace vert", "Zona verde", "مساحة خضراء", "misaha khadra'"]
     ],
     sentences: [
-      ["Katta shaharlarda tirbandlik jiddiy muammo.", "Traffic congestion is a serious problem in big cities.", "Пробки — серьёзная проблема больших городов.", "Verkehrsstau ist in Großstädten ein ernstes Problem.", "Les embouteillages posent problème dans les grandes villes.", "Los atascos son un problema en las metrópolis.", "الازدحام المروري مشكلة خطيرة في المدن الكبرى."],
+      ["Katta shaharlarda tirbandlik jiddiy muammo.", "Traffic congestion is a serious problem in big cities.", "Пробки — серьёзная проблема больших городов.", "Verkehrsstau ist in Großstädten ein ernstes Problem.", "Les embouteillages sont un problème sérieux dans les grandes villes.", "Los atascos son un problema grave en las grandes ciudades.", "الازدحام المروري مشكلة خطيرة في المدن الكبرى."],
       ["Jamoat transportini yaxshilash zarur.", "Public transport needs to be improved.", "Необходимо улучшить общественный транспорт.", "Der öffentliche Nahverkehr muss verbessert werden.", "Il faut améliorer les transports en commun.", "Es necesario mejorar el transporte público.", "يجب تحسين النقل العام."],
       ["Havoning ifloslanishi aholi salomatligiga zarar yetkazadi.", "Air pollution harms public health.", "Загрязнение воздуха вредит здоровью населения.", "Luftverschmutzung schadet der Gesundheit der Bevölkerung.", "La pollution de l'air nuit à la santé publique.", "La contaminación del aire daña la salud pública.", "يضر تلوث الهواء بالصحة العامة."],
       ["Shaharga yashil hududlar ko'proq kerak.", "The city needs more green spaces.", "Городу нужно больше зелёных зон.", "Die Stadt braucht mehr Grünflächen.", "La ville a besoin de plus d'espaces verts.", "La ciudad necesita más zonas verdes.", "تحتاج المدينة إلى مساحات خضراء أكثر."],
-      ["Ko'plab odamlar shahar atrofida yashaydi.", "Many people live in the suburbs.", "Многие люди живут в пригороде.", "Viele Menschen leben in den Vororten.", "Beaucoup de gens vivent en banlieue.", "Mucha gente vive en las afueras.", "يعيش كثير من الناس في الضواحي."],
+      ["Ko'plab odamlar shahar atrofida yashaydi.", "Many people live in the suburbs.", "Многие люди живут в пригородах.", "Viele Menschen leben in den Vororten.", "Beaucoup de gens vivent en banlieue.", "Mucha gente vive en las afueras.", "يعيش كثير من الناس في الضواحي."],
       ["Eski infratuzilmani qayta qurish qimmatga tushadi.", "Renovating old infrastructure is expensive.", "Реконструкция старой инфраструктуры стоит дорого.", "Die Sanierung alter Infrastruktur ist teuer.", "Rénover les vieilles infrastructures coûte cher.", "Renovar la infraestructura antigua es caro.", "تجديد البنية التحتية القديمة مكلف."]
     ]
   }

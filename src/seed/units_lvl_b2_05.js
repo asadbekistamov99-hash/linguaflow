@@ -32,7 +32,7 @@ module.exports = [
       ["Tovar belgisi", "Brand", "Бренд", "Marke", "Marque", "Marca", "علامة تجارية", "'alama tijariyya"],
       ["Sarmoya kiritmoq", "To invest", "Инвестировать", "Investieren", "Investir", "Invertir", "استثمر", "istathmara"],
       ["Foyda me'yori", "Profit margin", "Норма прибыли", "Gewinnspanne", "Marge bénéficiaire", "Margen de beneficio", "هامش الربح", "hamish ar-ribh"],
-      ["Talab va taklif", "Supply and demand", "Спрос и предложение", "Angebot und Nachfrage", "L'offre et la demande", "Oferta y demanda", "العرض والطلب", "al-'ard wa-t-talab"],
+      ["Talab va taklif", "Supply and demand", "Спрос и предложение", "Angebot und Nachfrage", "Offre et demande", "Oferta y demanda", "العرض والطلب", "al-'ard wa-t-talab"],
       ["Reklama kampaniyasi", "Advertising campaign", "Рекламная кампания", "Werbekampagne", "Campagne publicitaire", "Campaña publicitaria", "حملة إعلانية", "hamla i'laniyya"],
       ["Tushum", "Revenue", "Выручка", "Umsatz", "Chiffre d'affaires", "Ingresos", "إيرادات", "iradat"]
     ],
@@ -48,7 +48,7 @@ module.exports = [
   {
     key: "b2language", title: "Til, muloqot va tarjima", emoji: "🗣️",
     rows: [
-      ["Tarjima qilmoq", "To translate", "Переводить", "Übersetzen", "Traduire", "Traducir", "ترجم", "tarjama"],
+      ["Qayta ifodalamoq", "To paraphrase", "Перефразировать", "Umformulieren", "Reformuler", "Parafrasear", "أعاد صياغة", "a'ada siyagha"],
       ["Talaffuz", "Pronunciation", "Произношение", "Aussprache", "Prononciation", "Pronunciación", "نطق", "nutq"],
       ["Sheva", "Dialect", "Диалект", "Dialekt", "Dialecte", "Dialecto", "لهجة", "lahja"],
       ["Ifoda", "Expression", "Выражение", "Ausdruck", "Expression", "Expresión", "تعبير", "ta'bir"],
@@ -61,7 +61,7 @@ module.exports = [
     ],
     sentences: [
       ["Uning ingliz tilidagi ravonligi hayratlanarli.", "His fluency in English is impressive.", "Его беглость в английском впечатляет.", "Seine Sprachgewandtheit im Englischen ist beeindruckend.", "Son aisance en anglais est impressionnante.", "Su fluidez en inglés es impresionante.", "طلاقته في الإنجليزية مثيرة للإعجاب."],
-      ["Bu iborani so'zma-so'z tarjima qilib bo'lmaydi.", "This idiom cannot be translated literally.", "Эту идиому нельзя перевести буквально.", "Diese Redewendung lässt sich nicht wörtlich übersetzen.", "Cette expression idiomatique ne se traduit pas littéralement.", "Este modismo no se puede traducir literalmente.", "لا يمكن ترجمة هذا التعبير الاصطلاحي حرفيا."],
+      ["Bu iborani so'zma-so'z tarjima qilib bo'lmaydi.", "This idiom cannot be translated literally.", "Эту идиому нельзя перевести буквально.", "Diese Redewendung lässt sich nicht wörtlich übersetzen.", "Cette expression idiomatique ne peut pas être traduite littéralement.", "Este modismo no se puede traducir literalmente.", "لا يمكن ترجمة هذا التعبير الاصطلاحي حرفيا."],
       ["Ular noto'g'ri tushunish tufayli janjallashdi.", "They argued because of a misunderstanding.", "Они поспорили из-за недопонимания.", "Sie stritten wegen eines Missverständnisses.", "Ils se sont disputés à cause d'un malentendu.", "Discutieron por un malentendido.", "تجادلوا بسبب سوء فهم."],
       ["Tarjimon matnning nozik ma'nolarini saqlab qoldi.", "The translator preserved the text's nuances.", "Переводчик сохранил нюансы текста.", "Der Übersetzer bewahrte die Nuancen des Textes.", "Le traducteur a préservé les nuances du texte.", "El traductor conservó los matices del texto.", "حافظ المترجم على فروق النص الدقيقة."],
       ["Men talaffuzimni yaxshilashim kerak.", "I need to improve my pronunciation.", "Мне нужно улучшить произношение.", "Ich muss meine Aussprache verbessern.", "Je dois améliorer ma prononciation.", "Necesito mejorar mi pronunciación.", "أحتاج إلى تحسين نطقي."],
@@ -86,7 +86,7 @@ module.exports = [
       ["Kompaniya ijtimoiy mas'uliyatni o'z zimmasiga oldi.", "The company took on social responsibility.", "Компания взяла на себя социальную ответственность.", "Das Unternehmen übernahm soziale Verantwortung.", "L'entreprise a assumé sa responsabilité sociale.", "La empresa asumió su responsabilidad social.", "تحملت الشركة المسؤولية الاجتماعية."],
       ["Faollar hamma uchun adolat talab qilmoqda.", "The activists demand justice for everyone.", "Активисты требуют справедливости для всех.", "Die Aktivisten fordern Gerechtigkeit für alle.", "Les militants réclament justice pour tous.", "Los activistas exigen justicia para todos.", "يطالب النشطاء بالعدالة للجميع."],
       ["Halollik ishonchning asosidir.", "Integrity is the basis of trust.", "Порядочность — основа доверия.", "Integrität ist die Grundlage des Vertrauens.", "L'intégrité est la base de la confiance.", "La integridad es la base de la confianza.", "النزاهة أساس الثقة."],
-      ["Ish joyida kamsitishga yo'l qo'yib bo'lmaydi.", "Discrimination at work cannot be tolerated.", "На работе нельзя мириться с дискриминацией.", "Diskriminierung am Arbeitsplatz darf nicht toleriert werden.", "La discrimination au travail est inacceptable.", "No se debe tolerar la discriminación en el trabajo.", "لا يجوز التسامح مع التمييز في العمل."],
+      ["Ish joyida kamsitishga yo'l qo'yib bo'lmaydi.", "Discrimination at work cannot be tolerated.", "На работе нельзя мириться с дискриминацией.", "Diskriminierung am Arbeitsplatz darf nicht toleriert werden.", "La discrimination au travail ne peut pas être tolérée.", "No se puede tolerar la discriminación en el trabajo.", "لا يجوز التسامح مع التمييز في العمل."],
       ["Siyosatchilarning ikkiyuzlamachiligi odamlarni g'azablantirdi.", "Politicians' hypocrisy angered people.", "Лицемерие политиков возмутило людей.", "Die Heuchelei der Politiker empörte die Menschen.", "L'hypocrisie des politiciens a indigné les gens.", "La hipocresía de los políticos indignó a la gente.", "أثار نفاق السياسيين غضب الناس."],
       ["Barqaror rivojlanish butun insoniyat uchun muhim.", "Sustainable development matters for all humanity.", "Устойчивое развитие важно для всего человечества.", "Nachhaltige Entwicklung ist für die ganze Menschheit wichtig.", "Le développement durable est important pour toute l'humanité.", "El desarrollo sostenible es importante para toda la humanidad.", "التنمية المستدامة مهمة للبشرية جمعاء."]
     ]

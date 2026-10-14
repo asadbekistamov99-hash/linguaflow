@@ -25,6 +25,8 @@ npm test                 # backend testlari
 | `TZ_OFFSET_HOURS` | kun chegarasi (standart 5 = O'zbekiston) |
 | `AI_PROVIDER`, `GEMINI_API_KEY`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `TUTOR_MODEL` | AI ustoz (kalit bo'lmasa o'chiq) |
 | `ADMIN_EMAILS`, `FIRST_USER_ADMIN` | admin tayinlash |
+| `CONTACT_EMAIL` | `/privacy` va `/terms` sahifalarida ko'rsatiladigan aloqa emaili |
+| `BACKUP_ENABLED` (`0` = o'chirish), `BACKUP_EVERY_HOURS` (24), `BACKUP_KEEP` (7) | kunlik zaxira nusxa: `DATA_DIR/backups/` |
 
 ## Imkoniyatlar
 
@@ -134,3 +136,13 @@ xalqaro imtihon sertifikati emas. Ballar (masalan "IELTS taxminiy 6.5") faqat ta
 Serverga kirib `npm run import-items` ishlatish shart emas: **Admin → Savollar banki → "📦 Tayyor kontentni yuklash"**
 `content/items/*.json` dagi barcha qoralamalarni (hozir ~1500 ta savol) ko'rsatadi va bir tugma bilan qo'shadi.
 Faqat adminlar uchun; hammasi `draft` (manba `ai`) bo'lib tushadi; qayta bosish xavfsiz. Dockerfile `content/` papkasini ham nusxalaydi.
+
+## Ishga tushirishga tayyorgarlik (Sprint 7)
+
+- **Zaxira nusxa:** server har 24 soatda `DATA_DIR/backups/` ga SQLite nusxasini oladi (oxirgi 7 tasi saqlanadi). Qo'lda: `npm run backup`.
+  Nusxani serverdan tashqariga ham ko'chirib turing (masalan, haftada bir marta o'z kompyuteringizga). Tiklash: serverni to'xtatib, nusxani `linguaflow.db` o'rniga qo'ying.
+- **Tizim holati:** Admin → Sozlamalar (AI yoqilganmi, oxirgi zaxira nusxa, baza hajmi, foydalanuvchilar soni).
+- **Maxfiylik:** `/privacy` va `/terms` sahifalari (namuna: yurist ko'rib chiqsin), foydalanuvchi hisobini o'zi o'chira oladi (Profil), sessiya faqat httpOnly cookie'da.
+- **Landing** sahifasi haqiqiy imkoniyatlarga moslab yozilgan (6 til, bepul, rasmiy sertifikat emas).
+- **B2 kontent:** 20 ta B2 lug'at mavzusi (yashirin, A2/B1 kabi yoqiladi) va 6 tilda B2 grammatika qoralamalari.
+- Pilot ro'yxati: `PILOT.md`.

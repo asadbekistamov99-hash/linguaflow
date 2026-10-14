@@ -1,0 +1,632 @@
+[
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Не нужно ___ документы по почте: их можно сдать лично. (отправлять/отправить)",
+      "answers": [
+        "отправлять"
+      ],
+      "explanation_uz": "'Не нужно/не надо' dan keyin ehtiyojsizlik bildirilganda nomukammal ko'rinish ishlatiladi: не нужно отправлять."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Когда я вошёл в комнату, брат ___ письмо. (писать/написать)",
+      "answers": [
+        "писал"
+      ],
+      "explanation_uz": "Boshqa voqea fonida davom etayotgan harakat nomukammal ko'rinishda ifodalanadi: писал."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Он ___ письмо и сразу отправил его. (писать/написать)",
+      "answers": [
+        "написал"
+      ],
+      "explanation_uz": "Ketma-ket tugallangan harakat va natija mukammal ko'rinishda: написал."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Каждый раз, когда я прихожу, она ___ мне чай. (предлагать/предложить, наст. вр.)",
+      "answers": [
+        "предлагает"
+      ],
+      "explanation_uz": "Takrorlanuvchi harakat nomukammal ko'rinishda: предлагает."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Автобус ___ от остановки, и я остался один. (отъехать, прош. вр.)",
+      "answers": [
+        "отъехал"
+      ],
+      "explanation_uz": "Приставка от- uzoqlashishni bildiradi; bir martalik natija — mukammal ko'rinish: отъехал."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Дети ___ через дорогу на зелёный свет. (перейти, прош. вр.)",
+      "answers": [
+        "перешли"
+      ],
+      "explanation_uz": "Приставка пере- 'bir tomondan ikkinchisiga o'tish' ma'nosini beradi: перешли."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Не ___ в комнату без стука! (входить/войти)",
+      "answers": [
+        "входи"
+      ],
+      "explanation_uz": "Umumiy taqiqda buyruq mayli nomukammal ko'rinishda ishlatiladi: не входи."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Он шёл по улице, ___ песню. (напевать, деепричастие)",
+      "answers": [
+        "напевая"
+      ],
+      "explanation_uz": "Bir vaqtda davom etayotgan qo'shimcha harakat nomukammal ravishdosh (деепричастие) bilan beriladi: напевая."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Книга, ___ на столе, принадлежит мне. (лежать)",
+      "answers": [
+        "лежащая"
+      ],
+      "explanation_uz": "Hozirgi zamon aniqlovchi sifatdosh (причастие): лежать -> лежащая."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Письмо, ___ вчера, ещё не пришло. (отправить, страдат. причастие)",
+      "answers": [
+        "отправленное"
+      ],
+      "explanation_uz": "O'tgan zamon majhul sifatdosh -нн- qo'shimchasi bilan yasaladi: отправленное."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Я хотел, ___ ты пришёл на вечер.",
+      "answers": [
+        "чтобы"
+      ],
+      "explanation_uz": "Istak bildiruvchi gapda ikkinchi qismda 'чтобы + o'tgan zamon' (shart-istak mayli) ishlatiladi."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ты ___ интересный доклад, если бы пришёл. (услышать)",
+      "answers": [
+        "бы услышал",
+        "услышал бы"
+      ],
+      "explanation_uz": "Shart mayli: o'tgan zamon shakli + частица бы."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Он сказал: «Я приду завтра». -> Он сказал, что ___ завтра. (прийти)",
+      "answers": [
+        "придёт",
+        "придет"
+      ],
+      "explanation_uz": "Ko'chirma gapni o'zlashtirma gapga aylantirganda zamon o'zgarmaydi, olmosh o'zgaradi: придёт."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Она спросила: «Ты любишь джаз?» -> Она спросила, ___ ли я джаз. (любить)",
+      "answers": [
+        "люблю"
+      ],
+      "explanation_uz": "Umumiy savol o'zlashtirma gapda 'ли' bilan beriladi; zamon saqlanadi, shaxs o'zgaradi: люблю."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Он сомневается ___ успехе нашего плана.",
+      "answers": [
+        "в"
+      ],
+      "explanation_uz": "Сомневаться в + predlog kelishigi (в успехе)."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Мы заботимся ___ окружающей среде.",
+      "answers": [
+        "о"
+      ],
+      "explanation_uz": "Заботиться о + predlog kelishigi (о среде)."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Она обратила внимание ___ ошибку в расчётах.",
+      "answers": [
+        "на"
+      ],
+      "explanation_uz": "Обратить внимание на + tushum kelishigi."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Это зависит ___ погоды.",
+      "answers": [
+        "от"
+      ],
+      "explanation_uz": "Зависеть от + qaratqich kelishigi."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Мы привыкли ___ раннему вставанию.",
+      "answers": [
+        "к"
+      ],
+      "explanation_uz": "Привыкнуть к + jo'nalish kelishigi."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Проект, над ___ мы работаем уже год, скоро завершится.",
+      "answers": [
+        "которым"
+      ],
+      "explanation_uz": "'Работать над + творительный падеж': над которым (ijodiy/vosita kelishigi)."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Женщина, сумку ___ я нашёл, оказалась врачом.",
+      "answers": [
+        "которой"
+      ],
+      "explanation_uz": "Egalikni bildirishda 'который' qaratqich kelishigida keladi: сумку которой."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Договор был ___ обеими сторонами. (подписать)",
+      "answers": [
+        "подписан"
+      ],
+      "explanation_uz": "Majhul nisbatning qisqa sifatdoshi: был подписан (erkak jins)."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ на то, что шёл дождь, мы пошли гулять.",
+      "answers": [
+        "Несмотря",
+        "несмотря",
+        "Невзирая",
+        "невзирая"
+      ],
+      "explanation_uz": "Qarshilik: 'несмотря на то что' = 'garchi'."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Мы остались дома, ___ на улице было очень холодно.",
+      "answers": [
+        "так как",
+        "потому что",
+        "поскольку",
+        "ибо",
+        "оттого что"
+      ],
+      "explanation_uz": "Sabab bog'lovchilari: так как, потому что, поскольку."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Он хорошо говорит по-русски, ___ изучает язык только год.",
+      "answers": [
+        "хотя",
+        "хоть"
+      ],
+      "explanation_uz": "Qarshilik bildiruvchi ergash gap bog'lovchisi: хотя (хоть)."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "В аудитории было около ___ человек.",
+      "options": [
+        "пятьсот",
+        "пятисот",
+        "пятистам",
+        "пятью сотнями"
+      ],
+      "answer": 1,
+      "explanation_uz": "'Около' predlogi qaratqich kelishigini talab qiladi: около пятисот."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Пожалуйста, ___ мне эту книгу на неделю.",
+      "options": [
+        "давай",
+        "дай",
+        "дал",
+        "давать"
+      ],
+      "answer": 1,
+      "explanation_uz": "Bir martalik iltimosda buyruq mayli mukammal ko'rinishda: дай."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Самолёт ___ из Ташкента в десять часов.",
+      "options": [
+        "приехал",
+        "пришёл",
+        "прилетел",
+        "прибежал"
+      ],
+      "answer": 2,
+      "explanation_uz": "Самолёт uchadi: при- + лететь = прилететь (kelib yetish)."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Она ___ в аудиторию и села за первую парту.",
+      "options": [
+        "вышла",
+        "ушла",
+        "отошла",
+        "вошла"
+      ],
+      "answer": 3,
+      "explanation_uz": "Приставка в- ichkariga kirishni bildiradi: войти — вошла."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Книга, ___ мной вчера, очень интересная.",
+      "options": [
+        "прочитанная",
+        "прочитавшая",
+        "читающая",
+        "читая"
+      ],
+      "answer": 0,
+      "explanation_uz": "Egalik/ijrochi (мной) bor — o'tgan zamon majhul sifatdosh: прочитанная."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "___ работу, он пошёл домой.",
+      "options": [
+        "Заканчивая",
+        "Закончив",
+        "Закончивший",
+        "Законченный"
+      ],
+      "answer": 1,
+      "explanation_uz": "Oldin tugagan harakat mukammal ravishdosh (деепричастие) bilan beriladi: закончив."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Чем больше он читал, ___ лучше понимал.",
+      "options": [
+        "тем",
+        "так",
+        "чем",
+        "то"
+      ],
+      "answer": 0,
+      "explanation_uz": "Qiyoslovchi bog'lanish 'чем ..., тем ...': чем больше, тем лучше."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Он вёл себя так, ___ ничего не случилось.",
+      "options": [
+        "как будто",
+        "чтобы",
+        "потому что",
+        "хотя"
+      ],
+      "answer": 0,
+      "explanation_uz": "Taqqoslash ergash gapi: 'как будто' (go'yo) bog'lovchisi."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Мы договорились ___ встрече на пятницу.",
+      "options": [
+        "о",
+        "об",
+        "про",
+        "на"
+      ],
+      "answer": 0,
+      "explanation_uz": "Договориться о + predlog kelishigi."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "У нас в группе учатся ___ студентки.",
+      "options": [
+        "двое",
+        "две",
+        "два",
+        "двух"
+      ],
+      "answer": 1,
+      "explanation_uz": "Ayol jinsidagi otlar bilan 'две' ishlatiladi: две студентки."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Благодаря ___ мы успели на поезд.",
+      "options": [
+        "помощь",
+        "помощью",
+        "помощи",
+        "о помощи"
+      ],
+      "answer": 2,
+      "explanation_uz": "Благодаря + jo'nalish kelishigi: помощи."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Это писатель, ___ книги я читаю уже много лет.",
+      "options": [
+        "которого",
+        "который",
+        "что",
+        "чьи"
+      ],
+      "answer": 3,
+      "explanation_uz": "Egalik ma'nosini 'чей' beradi: писатель, чьи книги."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Этот роман ___ известным писателем в 1990 году.",
+      "options": [
+        "был написан",
+        "написал",
+        "написали",
+        "писал"
+      ],
+      "answer": 0,
+      "explanation_uz": "Majhul nisbat: был + qisqa sifatdosh, ijrochi — vosita (творительный) kelishigida (писателем)."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Он не только хорошо поёт, ___ и прекрасно танцует.",
+      "options": [
+        "но",
+        "а",
+        "хотя",
+        "чтобы"
+      ],
+      "answer": 0,
+      "explanation_uz": "'Не только ..., но и ...' — takrorlovchi juft bog'lovchi."
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "___ того, что он болел, он не пришёл.",
+      "options": [
+        "Несмотря на",
+        "Вопреки",
+        "Из-за",
+        "Благодаря"
+      ],
+      "answer": 2,
+      "explanation_uz": "Sabab: из-за того что + salbiy oqibat; boshqa predloglar 'того' qaratqichi bilan mos emas."
+    }
+  }
+]

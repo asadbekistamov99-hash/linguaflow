@@ -24,6 +24,8 @@ services:
         sync: false
       - key: ADMIN_EMAILS    # o'zingizning emailingiz (vergul bilan bir nechta)
         sync: false
+      - key: CONTACT_EMAIL   # maxfiylik/shartlar sahifalarida ko'rsatiladigan aloqa emaili
+        sync: false
       - key: GEMINI_API_KEY  # AI ustoz uchun (ixtiyoriy)
         sync: false
       - key: AI_PROVIDER

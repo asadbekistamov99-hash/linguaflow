@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foydalanish shartlari — LinguaFlow</title>
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#07080d;--card:#12141f;--line:rgba(255,255,255,.12);--text:#eef0f7;--muted:#9aa0b4;--a1:#7c5cff}
+@media (prefers-color-scheme: light){:root{--bg:#f6f7fb;--card:#fff;--line:rgba(0,0,0,.12);--text:#161826;--muted:#5a6078}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:760px;margin:0 auto;padding:32px 20px 80px}
+a{color:var(--a1)}
+h1{font-size:1.8rem;margin:.4em 0}
+h2{font-size:1.2rem;margin:1.8em 0 .4em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin:18px 0}
+.muted{color:var(--muted);font-size:.92rem}
+li{margin:.3em 0}
+nav a{margin-right:14px}
+</style>
+</head>
+<body>
+<main>
+<nav><a href="/">← LinguaFlow</a><a href="/privacy">Maxfiylik</a><a href="/terms">Shartlar</a></nav>
+<h1>Foydalanish shartlari</h1>
+<p class="muted">Oxirgi yangilanish: 2026-yil oktabr. Namuna hujjat: ommaviy ishga tushirishdan oldin yurist ko'rib chiqishi tavsiya etiladi.</p>
+
+<h2>1. Xizmat haqida</h2>
+<p>LinguaFlow til o'rganish va imtihonga tayyorgarlik platformasi. Xizmat hozir <b>sinov (beta) bosqichida</b> va bepul: imkoniyatlar, kontent va limitlar o'zgarishi mumkin.</p>
+
+<h2>2. Rasmiy sertifikat emas</h2>
+<div class="card"><p>LinguaFlow bergan ball, daraja bahosi va sertifikatlar <b>ichki tayyorgarlik ko'rsatkichi</b> bo'lib, taxminiydir. Ular rasmiy IELTS, TOEFL, CEFR, Goethe, DELF, DELE, TORFL yoki boshqa xalqaro imtihon natijasi yoki sertifikati emas va ularning o'rnini bosmaydi.</p></div>
+
+<h2>3. AI va kontent</h2>
+<p>Kontent va AI baholash xato qilishi mumkin. Ularni yagona manba sifatida ishlatmang. Muhim qarorlar uchun ustoz yoki rasmiy imtihon markazi ma'lumotiga tayaning.</p>
+
+<h2>4. Hisob va xulq</h2>
+<ul>
+<li>Hisob ma'lumotlarining to'g'riligi va parol xavfsizligi uchun o'zingiz javobgarsiz.</li>
+<li>Xizmatga zarar yetkazish, avtomatik so'rovlar bilan yuklash, limitlarni aylanib o'tish, boshqalarning hisobiga kirish, noqonuniy yoki haqoratli kontent yuborish taqiqlanadi.</li>
+<li>Qoidabuzarlik bo'lsa, hisob cheklanishi yoki o'chirilishi mumkin.</li>
+</ul>
+
+<h2>5. Limitlar</h2>
+<p>AI imkoniyatlari kunlik bepul limit bilan beriladi. Limitlar o'zgarishi, kelajakda pullik rejalar kiritilishi mumkin: bu oldindan e'lon qilinadi.</p>
+
+<h2>6. Mas'uliyatni cheklash</h2>
+<p>Xizmat "mavjud holda" taqdim etiladi. Uzilishlar yoki ma'lumot yo'qolishi ehtimoli bor (biz zaxira nusxa olamiz, lekin kafolat bermaymiz). Qonun ruxsat etgan darajada, xizmatdan foydalanish natijasida yetgan zarar uchun mas'uliyat cheklanadi.</p>
+
+<h2>7. Maxfiylik</h2>
+<p>Ma'lumotlar qanday ishlatilishi <a href="/privacy">Maxfiylik siyosatida</a> yozilgan.</p>
+
+<p class="muted">Bog'lanish: <span id="contact">sayt administratori (ilova ichidagi e'lon orqali)</span></p>
+</main>
+<script>
+fetch('/api/config').then(function(r){return r.json()}).then(function(c){
+  if(c.contactEmail){var e=document.getElementById('contact');e.textContent='';var a=document.createElement('a');a.href='mailto:'+c.contactEmail;a.textContent=c.contactEmail;e.appendChild(a);}
+}).catch(function(){});
+</script>
+</body>
+</html>

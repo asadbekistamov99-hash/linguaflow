@@ -1,0 +1,632 @@
+[
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Pourvu qu'il ___ à l'heure ! (arriver)",
+      "answers": [
+        "arrive"
+      ],
+      "explanation_uz": "Pourvu que (umid/istak) doim Subjonctif talab qiladi: il arrive."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Il est peu probable qu'il ___ demain. (pleuvoir)",
+      "answers": [
+        "pleuve"
+      ],
+      "explanation_uz": "Il est peu probable que + Subjonctif (shubha/ehtimol past)."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "À condition que vous ___ avant midi. (finir)",
+      "answers": [
+        "finissiez"
+      ],
+      "explanation_uz": "À condition que + Subjonctif; finir — vous finissiez."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Tu ___ m'appeler hier. (devoir, conditionnel passé)",
+      "answers": [
+        "aurais dû"
+      ],
+      "explanation_uz": "Conditionnel passé = conditionnel présent (avoir/être) + participe passé: tu aurais dû."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "À ta place, j'___ cette offre. (accepter, conditionnel passé)",
+      "answers": [
+        "aurais accepté"
+      ],
+      "explanation_uz": "Conditionnel passé pushaymonlik/maslahat uchun: j'aurais + participe passé."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Si nous avions pris un taxi, nous ___ à l'heure. (arriver)",
+      "answers": [
+        "serions arrivés",
+        "serions arrivées"
+      ],
+      "explanation_uz": "Si + plus-que-parfait → conditionnel passé; arriver être bilan: nous serions arrivés (kelishuv bilan)."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "« J'ai terminé mon rapport. » → Elle a dit qu'elle ___ son rapport. (terminer)",
+      "answers": [
+        "avait terminé"
+      ],
+      "explanation_uz": "Concordance des temps: asosiy gap o'tgan zamonda bo'lsa, passé composé → plus-que-parfait."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "« Où habites-tu ? » → Il m'a demandé où j'___. (habiter, discours indirect)",
+      "answers": [
+        "habitais"
+      ],
+      "explanation_uz": "Discours indirect o'tgan zamonda: présent → imparfait; tu → je."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "« Qu'est-ce que tu veux boire ? » → Elle m'a demandé ___ je voulais boire.",
+      "answers": [
+        "ce que"
+      ],
+      "explanation_uz": "Egri so'roqda qu'est-ce que → ce que."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Les amis chez ___ nous avons dîné sont charmants.",
+      "answers": [
+        "qui",
+        "lesquels",
+        "lesquelles"
+      ],
+      "explanation_uz": "Odamlar uchun predlogdan keyin (chez) \"qui\" ishlatiladi: chez qui; chez lesquels ham to'g'ri, lekin kitobiyroq."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Voilà le livre ___ j'ai besoin.",
+      "answers": [
+        "dont"
+      ],
+      "explanation_uz": "avoir besoin de → relativ olmosh \"dont\" (de + ...) o'rniga keladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Je ne comprends pas ___ tu parles.",
+      "answers": [
+        "ce dont",
+        "de quoi"
+      ],
+      "explanation_uz": "Antecedentsiz holda \"ce dont\" (yoki so'zlashuvda \"de quoi\") ishlatiladi: parler de → ce dont / de quoi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Il a prêté sa voiture à ses amis : il la ___ a prêtée hier.",
+      "answers": [
+        "leur"
+      ],
+      "explanation_uz": "Pronoms doubles: COD (la) + COI 3-shaxs (leur) — tartib: le/la/les + lui/leur."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Donne ___-moi, s'il te plaît ! (ce stylo)",
+      "answers": [
+        "le"
+      ],
+      "explanation_uz": "Buyruq mayli (affirmatif)da tartib: COD + COI — donne-le-moi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ que tu étais malade, j'ai annulé la fête. (savoir)",
+      "answers": [
+        "Sachant",
+        "Ayant su"
+      ],
+      "explanation_uz": "Participe présent sabab ma'nosida: savoir → sachant (maxsus shakl)."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Tout en ___ son café, il lisait le journal. (boire)",
+      "answers": [
+        "buvant"
+      ],
+      "explanation_uz": "Gérondif = en + participe présent: boire → en buvant (tout en — bir vaqtdagi ikki harakat)."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Les résultats seront ___ demain. (annoncer)",
+      "answers": [
+        "annoncés"
+      ],
+      "explanation_uz": "Voix passive: être + participe passé, subyekt bilan moslashadi (résultats — m. pl.)."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "C'est Marie ___ a gagné le concours.",
+      "answers": [
+        "qui"
+      ],
+      "explanation_uz": "Mise en relief: c'est ... qui — ega ajratib ko'rsatilganda qui ishlatiladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Il n'a presque pas révisé ; ___, il a réussi son examen. (concession)",
+      "answers": [
+        "pourtant",
+        "cependant",
+        "néanmoins",
+        "toutefois",
+        "quand même"
+      ],
+      "explanation_uz": "Concession (qarama-qarshilik) so'zlari: pourtant, cependant, néanmoins, toutefois, quand même."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Faute ___ temps, nous n'avons pas pu visiter le musée.",
+      "answers": [
+        "de"
+      ],
+      "explanation_uz": "Faute de + ot = ... yetishmaganligi sababli (sabab ifodasi)."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Il y avait tant de monde ___ nous n'avons pas pu entrer.",
+      "answers": [
+        "que"
+      ],
+      "explanation_uz": "Oqibat: tant de + ot + que (shunchalik ... ki)."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Elle a accepté ce travail ___ le salaire soit faible.",
+      "answers": [
+        "bien que",
+        "quoique"
+      ],
+      "explanation_uz": "Bien que/quoique (concession) doim Subjonctif talab qiladi (soit)."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Quelle robe as-tu ___ ? (choisir)",
+      "answers": [
+        "choisie"
+      ],
+      "explanation_uz": "COD (quelle robe) fe'ldan oldin kelsa, participe passé avoir bilan ham moslashadi: choisie."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Nous nous sommes ___ hier. (téléphoner)",
+      "answers": [
+        "téléphoné"
+      ],
+      "explanation_uz": "Pronominal fe'l: se téléphoner — COI (à qqn), shuning uchun participe passé moslashmaydi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Je suis désolé que tu n'___ pas pu venir hier.",
+      "answers": [
+        "aies"
+      ],
+      "explanation_uz": "Je suis désolé que + Subjonctif passé: aies + participe passé (o'tmishdagi ish)."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Laquelle de ces phrases est correcte ?",
+      "options": [
+        "Il est évident qu'elle ait raison.",
+        "Il est évident qu'elle a raison.",
+        "Il est évident qu'elle avoir raison.",
+        "Il est évident qu'elle aie raison."
+      ],
+      "answer": 1,
+      "explanation_uz": "Il est évident que (aniqlik) + Indicatif; Subjonctif shubha va hissiyotda ishlatiladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Il est possible que nous ___ en retard.",
+      "options": [
+        "serons",
+        "sommes",
+        "serions",
+        "soyons"
+      ],
+      "answer": 3,
+      "explanation_uz": "Il est possible que + Subjonctif: nous soyons."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Si tu m'avais prévenu, je ___ avec toi.",
+      "options": [
+        "serais venu",
+        "viendrais",
+        "suis venu",
+        "étais venu"
+      ],
+      "answer": 0,
+      "explanation_uz": "Si + plus-que-parfait → conditionnel passé: je serais venu (venir — être bilan)."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Il pensait que tu ___ déjà parti.",
+      "options": [
+        "es",
+        "seras",
+        "étais",
+        "sois"
+      ],
+      "answer": 2,
+      "explanation_uz": "Concordance: asosiy gap o'tgan zamonda (pensait) bo'lsa, qaram gapda imparfait/plus-que-parfait ishlatiladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Ils ont dit qu'ils étaient arrivés ___.",
+      "options": [
+        "hier",
+        "la veille",
+        "demain",
+        "le lendemain"
+      ],
+      "answer": 1,
+      "explanation_uz": "Discours indirect o'tgan zamonda: hier → la veille."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Il t'a offert ces fleurs ? — Oui, il ___ a offertes.",
+      "options": [
+        "me les",
+        "les me",
+        "m'les",
+        "me le"
+      ],
+      "answer": 0,
+      "explanation_uz": "Pronoms doubles: me/te/nous/vous COI + le/la/les COD; offertes — les (f. pl.) bilan moslashgan."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Les raisons pour ___ il a démissionné sont personnelles.",
+      "options": [
+        "lesquels",
+        "lequel",
+        "lesquelles",
+        "laquelle"
+      ],
+      "answer": 2,
+      "explanation_uz": "Predlogdan keyin lequel moslashadi: raisons (f. pl.) → pour lesquelles."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "C'est un film ___ tout le monde parle.",
+      "options": [
+        "que",
+        "qui",
+        "où",
+        "dont"
+      ],
+      "answer": 3,
+      "explanation_uz": "parler de → relativ olmosh \"dont\"."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Laquelle utilise correctement le gérondif ?",
+      "options": [
+        "Elle est tombée en descendant l'escalier.",
+        "Elle est tombée en descendante l'escalier.",
+        "Elle est tombée en descendu l'escalier.",
+        "Elle est tombée en a descendu l'escalier."
+      ],
+      "answer": 0,
+      "explanation_uz": "Gérondif = en + participe présent (-ant), o'zgarmas."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Mettez à la voix passive : « Le directeur a signé le contrat. »",
+      "options": [
+        "Le contrat est signé par le directeur.",
+        "Le contrat a été signé par le directeur.",
+        "Le contrat a signé le directeur.",
+        "Le contrat avait été signé par le directeur."
+      ],
+      "answer": 1,
+      "explanation_uz": "Passé composé passivi: a été + participe passé + par; zamon saqlanadi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Mettez en relief le sujet : « Pierre a cassé la vitre. »",
+      "options": [
+        "C'est Pierre que a cassé la vitre.",
+        "Ce Pierre qui a cassé la vitre.",
+        "C'est la vitre qui Pierre a cassé.",
+        "C'est Pierre qui a cassé la vitre."
+      ],
+      "answer": 3,
+      "explanation_uz": "Ega ajratilganda: c'est + ega + qui + fe'l."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Laquelle exprime la cause ?",
+      "options": [
+        "Bien qu'il soit malade, il est sorti.",
+        "Il est malade si bien qu'il est resté chez lui.",
+        "Comme il était malade, il est resté chez lui.",
+        "Quoiqu'il soit malade, il est resté chez lui."
+      ],
+      "answer": 2,
+      "explanation_uz": "Comme gap boshida sabab bildiradi; bien que/quoique — qarama-qarshilik, si bien que — oqibat."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Elle est ___ fatiguée qu'elle s'est endormie.",
+      "options": [
+        "si",
+        "tant",
+        "autant",
+        "plus"
+      ],
+      "answer": 0,
+      "explanation_uz": "Sifat oldidan oqibat: si + sifat + que; tant ot/fe'l bilan ishlatiladi."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Laquelle est correcte ?",
+      "options": [
+        "Les pommes qu'elle a mangé étaient bonnes.",
+        "Les pommes qu'elle a mangées étaient bonnes.",
+        "Les pommes qu'elle a mangés étaient bonnes.",
+        "Les pommes qu'elle est mangées étaient bonnes."
+      ],
+      "answer": 1,
+      "explanation_uz": "COD (que = les pommes) fe'ldan oldin kelganda participe passé avoir bilan moslashadi: mangées."
+    }
+  },
+  {
+    "lang": "fr",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Elles se sont ___ pendant des heures. (parler)",
+      "options": [
+        "parlées",
+        "parlés",
+        "parlé",
+        "parlée"
+      ],
+      "answer": 2,
+      "explanation_uz": "se parler — COI, shuning uchun participe passé moslashmaydi."
+    }
+  }
+]

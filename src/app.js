@@ -357,12 +357,25 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
   const isSecure = (req) => (req.headers && req.headers['x-forwarded-proto'] === 'https') || (req.socket && req.socket.encrypted === true);
 
   route('GET', '/api/health', async () => ({ ok: true }));
+  const startedAt = Date.now();
+  route('GET', '/api/admin/system', async ({ req }) => {
+    requireAdmin(req);
+    const n = (sql, ...a) => db.prepare(sql).get(...a).n;
+    let dbSize = null;
+    try { if (dbFile && dbFile !== ':memory:') dbSize = fs.statSync(dbFile).size; } catch { /* unreadable */ }
+    return {
+      uptimeSec: Math.round((Date.now() - startedAt) / 1000), node: process.version, dbSize,
+      aiProvider: tutor.activeProvider() || null, lastBackup: require('./backup').lastBackup(db),
+      users: n('SELECT COUNT(*) n FROM users'), items: db.prepare('SELECT status, COUNT(*) n FROM items GROUP BY status').all(),
+      activeToday: n('SELECT COUNT(DISTINCT user_id) n FROM xp_events WHERE created_at>=?', dayStartMs(dateKey())),
+    };
+  });
 
   route('GET', '/api/config', async () => {
     let announcement = null;
     const row = q.setting.get('announcement');
     if (row) { try { const a = JSON.parse(row.value); if (a.enabled && a.text) announcement = { text: a.text, level: a.level === 'warn' ? 'warn' : 'info' }; } catch { /* ignore */ } }
-    return { announcement };
+    return { announcement, contactEmail: process.env.CONTACT_EMAIL || null };
   });
 
   route('POST', '/api/auth/register', async ({ req, res, body }) => {
@@ -381,7 +394,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     const u = q.userById.get(Number(info.lastInsertRowid));
     const token = auth.sign(secret, u.id, u.created_at, u.session_ver);
     res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
-    return { user: publicUser(u), token };
+    return { user: publicUser(u) };
   });
 
   route('POST', '/api/auth/login', async ({ req, res, body }) => {
@@ -401,7 +414,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     if (adminEmails.has(email) && u.role !== 'admin') { db.prepare("UPDATE users SET role='admin' WHERE id=?").run(u.id); u = q.userById.get(u.id); }
     const token = auth.sign(secret, u.id, u.created_at, u.session_ver);
     res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
-    return { user: publicUser(u), token };
+    return { user: publicUser(u) };
   });
 
   // Password recovery for people who are locked out. It only works with RECOVERY_KEY, a server-side secret that
@@ -422,6 +435,25 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     return { ok: true };
   });
 
+  // Self-service account deletion (privacy policy promise). Guest accounts have no known password, so they skip the check.
+  route('DELETE', '/api/me', async ({ req, res, body }) => {
+    const u = requireUser(req);
+    if (!loginLimiter(`${ipOf(req)}|del|${u.id}`)) throw new HttpError(429, "Juda ko'p urinish, keyinroq qayta urinib ko'ring");
+    const guest = /^mehmon_\d+_\d+@linguaflow\.uz$/.test(u.email);
+    if (!guest && !(await auth.verifyPasswordAsync(String(body.password ?? ''), u.pass_hash))) throw new HttpError(403, "Parol noto'g'ri");
+    if (u.role === 'admin' && db.prepare("SELECT COUNT(*) n FROM users WHERE role='admin'").get().n <= 1) throw new HttpError(400, "Oxirgi adminni o'chirib bo'lmaydi: avval boshqa admin tayinlang");
+    db.exec('BEGIN');
+    try {
+      db.prepare('UPDATE items SET author_id=NULL WHERE author_id=?').run(u.id);
+      db.prepare('UPDATE items SET reviewer_id=NULL WHERE reviewer_id=?').run(u.id);
+      db.prepare('DELETE FROM users WHERE id=?').run(u.id);
+      db.exec('COMMIT');
+    } catch (e) { db.exec('ROLLBACK'); throw e; }
+    logAudit(null, 'user.self_delete', `#${u.id}`);
+    res.setHeader('Set-Cookie', auth.clearCookie({ secure: isSecure(req) }));
+    return { ok: true };
+  });
+
   route('POST', '/api/auth/guest', async ({ req, res }) => {
     if (!guestLimiter(ipOf(req))) throw new HttpError(429, "Juda ko'p urinish, keyinroq qayta urinib ko'ring");
     const guestId = Math.floor(1000 + Math.random() * 9000);
@@ -432,7 +464,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     const u = q.userById.get(Number(info.lastInsertRowid));
     const token = auth.sign(secret, u.id, u.created_at, u.session_ver);
     res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
-    return { user: publicUser(u), token };
+    return { user: publicUser(u) };
   });
 
   route('POST', '/api/auth/logout', async ({ req, res }) => {
@@ -901,6 +933,7 @@ Javobni o'qishga qulay, tushunarli va ruhlantiruvchi qilib bering.`;
   // ---------- static ----------
   function serveStatic(req, res, pathname) {
     if (pathname === '/') pathname = '/index.html';
+    else if (pathname === '/privacy' || pathname === '/terms') pathname += '.html';
     else if (pathname === '/app' || pathname.startsWith('/app/')) pathname = '/app.html';
     else if (pathname === '/admin' || pathname.startsWith('/admin/')) pathname = '/admin.html';
     let rel;

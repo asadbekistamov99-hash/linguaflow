@@ -1,0 +1,625 @@
+[
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Wenn sie früher losgefahren ___, hätte sie den Zug erreicht.",
+      "answers": [
+        "wäre"
+      ],
+      "explanation_uz": "Konjunktiv II der Vergangenheit: irreale Bedingung = wäre/hätte + Partizip II; fahren bildet das Perfekt mit sein, shuning uchun \"wäre\"."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ohne deine Hilfe ___ ich die Prüfung nicht bestanden.",
+      "answers": [
+        "hätte"
+      ],
+      "explanation_uz": "O'tgan zamondagi irreal holat: Konjunktiv II Vergangenheit = hätte + Partizip II (bestehen — haben bilan)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Du ___ mich ruhig anrufen können.",
+      "answers": [
+        "hättest"
+      ],
+      "explanation_uz": "Modal fe'l bilan o'tgan zamon Konjunktiv II: hättest + Infinitiv + Modalverb-Infinitiv (\"hättest anrufen können\")."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Der Sprecher sagte, das Unternehmen ___ alle Verträge geprüft. (Konjunktiv I)",
+      "answers": [
+        "habe"
+      ],
+      "explanation_uz": "Egri nutq (indirekte Rede): 3-shaxs birlikda Konjunktiv I = habe/sei + Partizip II; \"hat\" emas."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Er behauptete, er ___ nie in Wien gewesen. (Konjunktiv I)",
+      "answers": [
+        "sei"
+      ],
+      "explanation_uz": "Konjunktiv I o'tgan zamon: sei/habe + Partizip II. sein fe'lining 3-shaxs shakli \"sei\"."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Die Zeugen gaben an, sie ___ den Mann nicht erkannt. (haben, indirekte Rede)",
+      "answers": [
+        "hätten"
+      ],
+      "explanation_uz": "Ko'plikda Konjunktiv I (\"haben\") indikativ bilan bir xil, shuning uchun Ersatzform Konjunktiv II (\"hätten\") ishlatiladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Der Reporter fragte den Politiker, ob er zurücktreten ___. (wollen, Konjunktiv I)",
+      "answers": [
+        "wolle"
+      ],
+      "explanation_uz": "Egri so'roq gapda ob + Konjunktiv I: er wolle (modal fe'llarda ham -e qo'shimchasi)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Die Hausaufgaben müssen bis Montag abgegeben ___.",
+      "answers": [
+        "werden"
+      ],
+      "explanation_uz": "Passiv + Modalverb: Modalverb + Partizip II + werden (Infinitiv)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Das Problem hätte früher gelöst ___ können.",
+      "answers": [
+        "werden"
+      ],
+      "explanation_uz": "Passiv + Modalverb o'tgan zamonda Konjunktiv II: hätte + Partizip II + werden + können."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Als wir ankamen, ___ das Fenster bereits geöffnet. (Zustandspassiv)",
+      "answers": [
+        "war"
+      ],
+      "explanation_uz": "Zustandspassiv (holat passivi) = sein + Partizip II; o'tgan zamonda \"war\". Jarayon passivi esa werden bilan."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Die von der Firma ___ Produkte sind sehr beliebt. (herstellen)",
+      "answers": [
+        "hergestellten"
+      ],
+      "explanation_uz": "Partizip II attribut sifatida: der Artikel + von ... + hergestellt + -en (Pl. nominativ, aniq artikl bilan -en)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Die immer häufiger ___ Probleme müssen gelöst werden. (auftreten, Partizip I)",
+      "answers": [
+        "auftretenden"
+      ],
+      "explanation_uz": "Partizip I attribut: Infinitiv + d + sifat qo'shimchasi (auftretend + en); jarayon davom etayotganini bildiradi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Nach der ___ des Vertrags begann die Zusammenarbeit. (unterzeichnen)",
+      "answers": [
+        "Unterzeichnung"
+      ],
+      "explanation_uz": "Nominalisierung: fe'l -ung qo'shimchasi bilan otga aylanadi (unterzeichnen → die Unterzeichnung); nach + Dativ."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Das ist das Projekt, an ___ wir seit Monaten arbeiten.",
+      "answers": [
+        "dem"
+      ],
+      "explanation_uz": "Predlogli relativ gap: arbeiten an + Dativ, shuning uchun \"an dem\" (das Projekt — neytral, Dativ)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Das Einzige, ___ ich mich ärgere, ist die Unpünktlichkeit.",
+      "answers": [
+        "worüber",
+        "über das"
+      ],
+      "explanation_uz": "das Einzige/alles/nichts dan keyin wo(r)- + predlog ishlatiladi: sich ärgern über → worüber."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Der Erfolg hängt maßgeblich ___ der Planung ab.",
+      "answers": [
+        "von"
+      ],
+      "explanation_uz": "Fe'l + predlog: abhängen von + Dativ (biror narsaga bog'liq bo'lmoq)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Der Politiker setzt sich entschieden ___ die Reform ein, weil er sie unterstützt.",
+      "answers": [
+        "für"
+      ],
+      "explanation_uz": "Fe'l + predlog: sich einsetzen für + Akkusativ (qo'llab-quvvatlash); \"gegen\" esa qarshilikni bildiradi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Der Anwalt verwies ___ das geltende Recht.",
+      "answers": [
+        "auf"
+      ],
+      "explanation_uz": "Fe'l + predlog: verweisen auf + Akkusativ (biror narsaga ishora qilmoq)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Sie verbessert ihr Deutsch, ___ sie jeden Tag eine deutsche Zeitung liest. (Mittel/Methode)",
+      "answers": [
+        "indem"
+      ],
+      "explanation_uz": "\"indem\" — usul va vositani bildiradi (\"qanday qilib?\"): gap oxirida fe'l turadi (Nebensatz)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Er sprach so leise, ___ ihn niemand verstehen konnte.",
+      "answers": [
+        "dass"
+      ],
+      "explanation_uz": "\"so ... dass\" — oqibat konstruksiyasi (Konsekutivsatz): so leise, dass ...; fe'l gap oxirida turadi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ es Probleme geben, melden Sie sich bitte sofort.",
+      "answers": [
+        "Sollte"
+      ],
+      "explanation_uz": "Wenn/falls tushib qolgan shart gapi: Sollte + ega + Infinitiv (inversiya) = \"Wenn es Probleme geben sollte\"."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Es regnete stark. ___ gingen wir spazieren.",
+      "answers": [
+        "Trotzdem",
+        "Dennoch"
+      ],
+      "explanation_uz": "Trotzdem/dennoch — qarama-qarshilik (Adverbkonnektor): keyin fe'l 2-o'rinda (inversiya)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ der hohen Kosten entschied sich die Stadt für den Neubau. (Gegensatz)",
+      "answers": [
+        "Trotz",
+        "Ungeachtet"
+      ],
+      "explanation_uz": "Trotz va ungeachtet Genitiv talab qiladigan predloglar (Genitivpräposition)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Wir danken allen ___ Helfern. (freiwillig)",
+      "answers": [
+        "freiwilligen"
+      ],
+      "explanation_uz": "allen dan keyin sifat zaif turlanishda Dativ ko'plikda -en oladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Bis morgen ___ er das Projekt abgeschlossen haben. (Futur II)",
+      "answers": [
+        "wird"
+      ],
+      "explanation_uz": "Futur II = werden + Partizip II + haben/sein; kelajakda tugallangan ish yoki taxmin."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Der Sprecher betonte, es ___ keine Entlassungen geplant.",
+      "options": [
+        "sind",
+        "waren",
+        "seien",
+        "würden"
+      ],
+      "answer": 2,
+      "explanation_uz": "Egri nutqda ko'plik: Konjunktiv I \"seien\" indikativ \"sind\" dan farq qiladi, shuning uchun ishlatiladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Welcher Satz drückt eine unerfüllte Bedingung in der Vergangenheit aus?",
+      "options": [
+        "Wenn ich Zeit gehabt hätte, wäre ich gekommen.",
+        "Wenn ich Zeit hätte, käme ich.",
+        "Wenn ich Zeit habe, komme ich.",
+        "Als ich Zeit hatte, kam ich."
+      ],
+      "answer": 0,
+      "explanation_uz": "Konjunktiv II Vergangenheit: hätte/wäre + Partizip II o'tmishdagi amalga oshmagan shartni bildiradi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Wie lautet der Satz im Präteritum? \"Das Paket muss heute geliefert werden.\"",
+      "options": [
+        "Das Paket wurde heute liefern müssen.",
+        "Das Paket musste heute geliefert worden.",
+        "Das Paket wurde heute geliefert müssen.",
+        "Das Paket musste heute geliefert werden."
+      ],
+      "answer": 3,
+      "explanation_uz": "Passiv + Modalverb Präteritumda: Modalverb o'tgan zamonda + Partizip II + werden."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Welcher Satz enthält ein Zustandspassiv?",
+      "options": [
+        "Die Tür wird geschlossen.",
+        "Die Tür ist geschlossen.",
+        "Die Tür wurde geschlossen.",
+        "Die Tür muss geschlossen werden."
+      ],
+      "answer": 1,
+      "explanation_uz": "Zustandspassiv = sein + Partizip II (holat); qolgan variantlar jarayon passivi (werden)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Welche Umformung ist richtig? \"Der Mann, der gerade das Haus verlässt, ist mein Nachbar.\"",
+      "options": [
+        "Der gerade das Haus verlassene Mann ist mein Nachbar.",
+        "Der das Haus gerade verlassen Mann ist mein Nachbar.",
+        "Der gerade das Haus verlassender Mann ist mein Nachbar.",
+        "Der gerade das Haus verlassende Mann ist mein Nachbar."
+      ],
+      "answer": 3,
+      "explanation_uz": "Davom etayotgan harakat — Partizip I + sifat qo'shimchasi (verlassend + e); Partizip II tugallangan harakat uchun."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Welche Variante ist eine korrekte Nominalisierung von \"Nachdem er die Prüfung bestanden hatte, feierte er.\"?",
+      "options": [
+        "Nach der bestandenen Prüfung feierte er.",
+        "Nach das Bestehen Prüfung feierte er.",
+        "Nachdem der bestandenen Prüfung feierte er.",
+        "Nach der Prüfung bestanden feierte er."
+      ],
+      "answer": 0,
+      "explanation_uz": "Nominalisierung: nachdem-gap → nach + Dativ + Partizip-attribut (nach der bestandenen Prüfung)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Der Plan, ___ wir uns geeinigt haben, ist realistisch.",
+      "options": [
+        "auf dem",
+        "mit dem",
+        "auf den",
+        "worauf den"
+      ],
+      "answer": 2,
+      "explanation_uz": "sich einigen auf + Akkusativ; der Plan (m.) → relativ olmosh \"auf den\"."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Alles, ___ er gesagt hat, stimmt.",
+      "options": [
+        "das",
+        "was",
+        "wo",
+        "wovon"
+      ],
+      "answer": 1,
+      "explanation_uz": "alles dan keyin relativ olmosh \"was\" ishlatiladi (\"das\" emas)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Er rechnet fest ___ seine Beförderung.",
+      "options": [
+        "mit",
+        "von",
+        "an",
+        "für"
+      ],
+      "answer": 0,
+      "explanation_uz": "Fe'l + predlog: rechnen mit + Dativ."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Das Gespräch drehte sich ___ die Klimapolitik.",
+      "options": [
+        "über",
+        "für",
+        "an",
+        "um"
+      ],
+      "answer": 3,
+      "explanation_uz": "Fe'l + predlog: sich drehen um + Akkusativ (mavzu haqida)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Er hat die Stelle bekommen, ___ er keine Erfahrung hatte.",
+      "options": [
+        "trotzdem",
+        "sodass",
+        "obwohl",
+        "falls"
+      ],
+      "answer": 2,
+      "explanation_uz": "\"obwohl\" — qarama-qarshilik bog'lovchisi, fe'l oxirida; \"trotzdem\" adverb bo'lib, fe'l 2-o'rinda turadi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Welcher Satz hat die richtige Wortstellung?",
+      "options": [
+        "Es regnete, trotzdem wir gingen spazieren.",
+        "Es regnete, trotzdem gingen wir spazieren.",
+        "Es regnete, trotzdem wir spazieren gingen.",
+        "Es regnete, trotzdem gehen wir spazieren gingen."
+      ],
+      "answer": 1,
+      "explanation_uz": "Trotzdem Hauptsatz bilan keladi: fe'l 2-o'rinda (trotzdem gingen wir)."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Welche Präposition verlangt den Genitiv?",
+      "options": [
+        "mit",
+        "nach",
+        "seit",
+        "während"
+      ],
+      "answer": 3,
+      "explanation_uz": "während (davomida) Genitiv bilan keladi: während der Ferien. Qolganlari Dativ."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Das ist das Auto meines ___ Bruders.",
+      "options": [
+        "älteren",
+        "älterer",
+        "älteres",
+        "ältere"
+      ],
+      "answer": 0,
+      "explanation_uz": "meines dan keyin Genitiv m. birlikda sifat zaif turlanishda -en oladi."
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Welcher Satz drückt eine Vermutung über die Vergangenheit aus?",
+      "options": [
+        "Er wird morgen krank sein.",
+        "Er wird gesund werden.",
+        "Er wird gestern wohl krank gewesen sein.",
+        "Er würde krank sein."
+      ],
+      "answer": 2,
+      "explanation_uz": "Futur II (werden + Partizip II + sein/haben) o'tmish haqidagi taxminni bildiradi."
+    }
+  }
+]

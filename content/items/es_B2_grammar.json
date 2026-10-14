@@ -1,0 +1,632 @@
+[
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Si hubiera sabido la verdad, no ___ (venir).",
+      "answers": [
+        "habría venido",
+        "hubiera venido",
+        "hubiese venido"
+      ],
+      "explanation_uz": "O'tgan zamondagi real bo'lmagan shart: si + pluscuamperfecto de subjuntivo, asosiy gapda condicional compuesto yoki -ra shakli."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "De haber llegado antes, ___ (nosotros, coger) el tren.",
+      "answers": [
+        "habríamos cogido",
+        "hubiéramos cogido",
+        "hubiésemos cogido"
+      ],
+      "explanation_uz": "De + infinitivo compuesto o'tmishdagi real bo'lmagan shartni bildiradi; natija condicional compuesto bilan beriladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Aunque ___ (llover) mañana, saldremos de excursión.",
+      "answers": [
+        "llueva"
+      ],
+      "explanation_uz": "Kelajakdagi noaniq holat bildirgan aunque bog'lovchisidan keyin presente de subjuntivo ishlatiladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Aunque ___ (hacer) mucho frío ayer, salimos a correr.",
+      "answers": [
+        "hizo",
+        "hacía"
+      ],
+      "explanation_uz": "Aunque haqiqiy, ma'lum fakt haqida bo'lsa, indicativo ishlatiladi (pretérito indefinido yoki imperfecto: hizo / hacía)."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Busco una secretaria que ___ (hablar) tres idiomas.",
+      "answers": [
+        "hable"
+      ],
+      "explanation_uz": "Noma'lum yoki mavjud bo'lmasligi mumkin bo'lgan shaxsni tasvirlovchi relative gapda subjuntivo ishlatiladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Me pidió que le ___ (llevar, yo) el informe antes del viernes.",
+      "answers": [
+        "llevara",
+        "llevase"
+      ],
+      "explanation_uz": "Asosiy fe'l o'tgan zamonda (pidió) bo'lsa, que dan keyin imperfecto de subjuntivo ishlatiladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "No creía que ___ (ser) tan difícil el examen.",
+      "answers": [
+        "fuera",
+        "fuese"
+      ],
+      "explanation_uz": "No creer que inkor shaklidan keyin subjuntivo, asosiy fe'l o'tgan zamonda bo'lgani uchun imperfecto de subjuntivo."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Lo haré con tal de que me ___ (tú, prometer) guardar el secreto.",
+      "answers": [
+        "prometas"
+      ],
+      "explanation_uz": "Con tal de que shart bog'lovchisi doim subjuntivo bilan keladi; kelasi zamon ma'nosida presente de subjuntivo ishlatiladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ojalá ___ (yo, tener) más tiempo libre ahora.",
+      "answers": [
+        "tuviera",
+        "tuviese"
+      ],
+      "explanation_uz": "Hozirgi zamondagi amalga oshmaydigan istak ojalá + imperfecto de subjuntivo bilan ifodalanadi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Me dijo: «Mañana vendré». → Me dijo que ___ (venir) al día siguiente.",
+      "answers": [
+        "vendría"
+      ],
+      "explanation_uz": "Egri nutqda o'tgan zamondagi gapdan keyin futuro condicional (condicional simple)ga o'zgaradi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ella preguntó: «¿Has visto a Luis?» → Ella preguntó si yo ___ (ver) a Luis.",
+      "answers": [
+        "había visto"
+      ],
+      "explanation_uz": "Egri nutqda pretérito perfecto pretérito pluscuamperfecto'ga o'zgaradi (has visto > había visto)."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Por mucho que ___ (estudiar, él), no aprobará el examen.",
+      "answers": [
+        "estudie"
+      ],
+      "explanation_uz": "Por mucho que + subjuntivo: qancha urinmasin ham, natija o'zgarmaydi (qarshilik ma'nosi)."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "La boda ___ en una iglesia del siglo XII. (ser/estar)",
+      "answers": [
+        "es"
+      ],
+      "explanation_uz": "Voqea (to'y, konsert) o'tadigan joy ser bilan ifodalanadi, estar esa narsa joylashgan joy uchun."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Ese chico ___ muy callado hoy, ¿le pasa algo? (ser/estar)",
+      "answers": [
+        "está"
+      ],
+      "explanation_uz": "Vaqtinchalik holat yoki odatdagidan farqli xulq estar bilan ifodalanadi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "En esta tienda ___ (vender) productos ecológicos.",
+      "answers": [
+        "se venden"
+      ],
+      "explanation_uz": "Passiva refleja: se + fe'l, fe'l ko'plikdagi mantiqiy ega bilan moslashadi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "En verano ___ (vivir) mejor en la costa.",
+      "answers": [
+        "se vive"
+      ],
+      "explanation_uz": "Umumiy ma'noli impersonal gapda se + fe'lning 3-shaxs birlik shakli ishlatiladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "—¿Le devolviste el libro a Marta? —Sí, ya ___ lo devolví.",
+      "answers": [
+        "se"
+      ],
+      "explanation_uz": "Le/les lo/la/los/las ketma-ketligida le o'rniga se ishlatiladi (le lo emas)."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "—¿Me prestas tu coche? —Claro, ___ presto esta tarde.",
+      "answers": [
+        "te lo"
+      ],
+      "explanation_uz": "Ikki olmosh birga kelsa tartib: bilvosita (te) oldin, to'g'ridan-to'g'ri (lo) keyin."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Con el frío que hace, ese abrigo es demasiado fino ___ diciembre.",
+      "answers": [
+        "para"
+      ],
+      "explanation_uz": "Para vaqt yoki sharoitga nisbatan taqqoslashni (…uchun xos bo'lgani holda) bildiradi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Si no hubiera estudiado más, ahora no ___ (tener) este trabajo.",
+      "answers": [
+        "tendría"
+      ],
+      "explanation_uz": "Aralash shart: o'tgan sabab (pluscuamperfecto) va hozirgi natija (condicional simple)."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Como si ___ (ser) el dueño, entró sin llamar.",
+      "answers": [
+        "fuera",
+        "fuese"
+      ],
+      "explanation_uz": "Como si doim imperfecto yoki pluscuamperfecto de subjuntivo bilan keladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Es probable que mañana ___ (nevar) en la sierra.",
+      "answers": [
+        "nieve"
+      ],
+      "explanation_uz": "Es probable que ehtimol ifodasidan keyin presente de subjuntivo; nevar o'zakdagi e>ie o'zgaradi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "No hay nadie que ___ (poder) resolver este problema.",
+      "answers": [
+        "pueda"
+      ],
+      "explanation_uz": "Inkor qilingan mavjudlikdan keyingi relative gapda subjuntivo ishlatiladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Nos advirtió: «No toquéis nada». → Nos advirtió que no ___ nada.",
+      "answers": [
+        "tocáramos",
+        "tocásemos"
+      ],
+      "explanation_uz": "Egri nutqda buyruq o'tgan zamon asosida imperfecto de subjuntivo ga o'tadi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Para cuando lleguemos, la película ya ___ (empezar).",
+      "answers": [
+        "habrá empezado"
+      ],
+      "explanation_uz": "Futuro perfecto (habrá + participio) kelajakdagi ma'lum paytgacha tugagan harakatni bildiradi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "No es que ___ cansado, es que no tengo ganas.",
+      "options": [
+        "estoy",
+        "esté",
+        "estaré",
+        "estuve"
+      ],
+      "answer": 1,
+      "explanation_uz": "No es que + subjuntivo: rad etilgan sabab (esté) ishlatiladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "En cuanto mañana lo ___, te diré el resultado.",
+      "options": [
+        "sepa",
+        "sé",
+        "sabré",
+        "supiera"
+      ],
+      "answer": 0,
+      "explanation_uz": "En cuanto kabi vaqt bog'lovchilari kelajak haqida gapirganda presente de subjuntivo bilan keladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "No quiero té, ___ café.",
+      "options": [
+        "sino",
+        "pero",
+        "sin",
+        "si no"
+      ],
+      "answer": 0,
+      "explanation_uz": "Inkor gapdan keyin qarama-qarshi tushuncha sino bilan beriladi (no ... sino ...)."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "¿Qué frase es correcta?",
+      "options": [
+        "Se alquila habitaciones.",
+        "Se alquilas habitaciones.",
+        "Se alquilamos habitaciones.",
+        "Se alquilan habitaciones."
+      ],
+      "answer": 3,
+      "explanation_uz": "Passiva refleja: fe'l mantiqiy ega (habitaciones) bilan sonda moslashadi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Mi hermano ___ aburrido porque no tiene nada que hacer.",
+      "options": [
+        "es",
+        "está",
+        "tiene",
+        "hace"
+      ],
+      "answer": 1,
+      "explanation_uz": "Estar + sifat vaqtinchalik holatni bildiradi (zerikkan); ser aburrido «zerikarli» degani."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "___ no te guste, tendrás que ir.",
+      "options": [
+        "Aunque",
+        "Porque",
+        "Puesto que",
+        "Ya que"
+      ],
+      "answer": 0,
+      "explanation_uz": "Subjuntivo bilan keladigan qarshilik bog'lovchisi aunque; boshqalari indicativo talab qiladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Te presto el coche ___ lo cuides.",
+      "options": [
+        "porque",
+        "puesto que",
+        "con tal de que",
+        "así que"
+      ],
+      "answer": 2,
+      "explanation_uz": "Con tal de que shart bildiradi va subjuntivo bilan keladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Necesito un libro que me ___ a entender la gramática.",
+      "options": [
+        "ayuda",
+        "ayudaba",
+        "ayudará",
+        "ayude"
+      ],
+      "answer": 3,
+      "explanation_uz": "Noma'lum narsani tasvirlovchi relative gapda subjuntivo kerak."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "—¿Le contaste el secreto a Juan? —No, no ___ conté.",
+      "options": [
+        "se lo",
+        "le lo",
+        "lo se",
+        "se la"
+      ],
+      "answer": 0,
+      "explanation_uz": "Le + lo birikmasi se lo ga aylanadi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Llevo dos horas ___ el informe.",
+      "options": [
+        "escribir",
+        "escribiendo",
+        "escrito",
+        "escribí"
+      ],
+      "answer": 1,
+      "explanation_uz": "Llevar + gerundio davomiylikni bildiradi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Tengo que entregar el trabajo ___ el viernes.",
+      "options": [
+        "para",
+        "por",
+        "a",
+        "de"
+      ],
+      "answer": 0,
+      "explanation_uz": "Para muddat (deadline) ni bildiradi: para el viernes."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Si me ___ el dinero, compraría la casa.",
+      "options": [
+        "daban",
+        "darían",
+        "den",
+        "dieran"
+      ],
+      "answer": 3,
+      "explanation_uz": "Si + imperfecto de subjuntivo, asosiy gapda condicional simple."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Ojalá ___ más atención en clase el año pasado.",
+      "options": [
+        "hubiera prestado",
+        "prestara",
+        "preste",
+        "prestaré"
+      ],
+      "answer": 0,
+      "explanation_uz": "O'tmishdagi afsus ojalá + pluscuamperfecto de subjuntivo bilan beriladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "El hotel en ___ nos alojamos era precioso.",
+      "options": [
+        "el que",
+        "que",
+        "donde el",
+        "cual"
+      ],
+      "answer": 0,
+      "explanation_uz": "Predlogdan keyin nisbiy olmosh artikl bilan keladi: en el que (en el cual)."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "No me extraña que ___ cansado después de tanto trabajo.",
+      "options": [
+        "está",
+        "esté",
+        "estaba",
+        "estará"
+      ],
+      "answer": 1,
+      "explanation_uz": "No me extraña que baho bildiradi va subjuntivo talab qiladi."
+    }
+  }
+]

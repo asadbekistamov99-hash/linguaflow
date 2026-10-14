@@ -15,8 +15,11 @@ const { activeProvider } = require('./src/tutor');
 
 const port = Number(process.env.PORT) || 3000;
 const dataDir = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : path.join(__dirname, 'data');
-const { server } = createApp({ dataDir, dbFile: path.join(dataDir, 'linguaflow.db') });
+const { server, db } = createApp({ dataDir, dbFile: path.join(dataDir, 'linguaflow.db') });
 const host = '0.0.0.0';
+if (process.env.BACKUP_ENABLED !== '0') {
+  require('./src/backup').scheduleBackups(db, path.join(dataDir, 'backups'), { everyHours: Number(process.env.BACKUP_EVERY_HOURS) || 24, keep: Number(process.env.BACKUP_KEEP) || 7 });
+}
 server.listen(port, host, () => console.log(`LinguaFlow: http://${host}:${port} | AI ustoz: ${activeProvider() || "o'chiq"}`));
 
 for (const sig of ['SIGINT', 'SIGTERM']) process.on(sig, () => server.close(() => process.exit(0)));

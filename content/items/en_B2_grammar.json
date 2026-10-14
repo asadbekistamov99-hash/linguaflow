@@ -1,0 +1,637 @@
+[
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "If I ___ the alarm, I wouldn't have missed the train. (hear)",
+      "answers": [
+        "had heard"
+      ],
+      "explanation_uz": "Uchinchi turdagi shart gapda (o'tgan zamondagi o'xshatilmagan holat) if-qismida Past Perfect ishlatiladi: had heard."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "If he ___ so much last night, he wouldn't be so tired now. (not / drink)",
+      "answers": [
+        "hadn't drunk",
+        "had not drunk"
+      ],
+      "explanation_uz": "Aralash shart gap: o'tgan sabab (Past Perfect) va hozirgi natija (would + infinitiv); if-qismida had not drunk kerak."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Had I known about the delay, I ___ earlier. (leave)",
+      "answers": [
+        "would have left",
+        "would've left"
+      ],
+      "explanation_uz": "Inversiyali uchinchi shart gap (Had I known = If I had known); asosiy qismda would have + V3 ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Supposing you ___ the lottery tomorrow, what would you do? (win)",
+      "answers": [
+        "won"
+      ],
+      "explanation_uz": "'Supposing' = 'if'; xayoliy (ikkinchi tur) shartda shart qismida Past Simple ishlatiladi: won."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I'd rather you ___ in here. (not / smoke)",
+      "answers": [
+        "didn't smoke",
+        "did not smoke"
+      ],
+      "explanation_uz": "'would rather + shaxs' konstruksiyasidan keyin hozirgi/kelasi zamonga nisbatan Past Simple ishlatiladi: didn't smoke."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The contract ought ___ by both parties before Friday. (sign)",
+      "answers": [
+        "to be signed"
+      ],
+      "explanation_uz": "Modal fe'l (ought to) majhul nisbatda: ought to + be + V3 (to be signed)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "He asked me whether I ___ the report the day before. (finish)",
+      "answers": [
+        "had finished"
+      ],
+      "explanation_uz": "Egri nutqda o'tgan zamon (Past Simple/Present Perfect) Past Perfect'ga o'tadi: had finished."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The car needs ___ before the long journey. (service)",
+      "answers": [
+        "servicing",
+        "to be serviced"
+      ],
+      "explanation_uz": "'need' + -ing yoki to be + V3 majhul ma'noda ishlatiladi: needs servicing = needs to be serviced."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "By this time next year, the new bridge ___. (complete)",
+      "answers": [
+        "will have been completed",
+        "'ll have been completed"
+      ],
+      "explanation_uz": "Kelasi zamonning aniq nuqtasigacha tugaydigan majhul harakat — Future Perfect Passive: will have been completed."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "When we were children, we ___ spend every summer at our grandparents' village.",
+      "answers": [
+        "would",
+        "used to"
+      ],
+      "explanation_uz": "O'tgan zamondagi odatiy harakat: would yoki used to + infinitiv."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I was just about ___ the house when the phone rang. (leave)",
+      "answers": [
+        "to leave"
+      ],
+      "explanation_uz": "'be about to + infinitiv' = ayni harakatni boshlash arafasida bo'lish: was about to leave."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The suspect is believed ___ the country last night. (leave)",
+      "answers": [
+        "to have left"
+      ],
+      "explanation_uz": "Majhul tuzilma 'is believed + to have + V3' o'tgan voqeani bildiradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I wish I ___ more time to prepare yesterday. (have)",
+      "answers": [
+        "had had"
+      ],
+      "explanation_uz": "O'tgan zamondagi afsus uchun wish + Past Perfect ishlatiladi: had had."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "If only I ___ how to fix this, but I have no idea. (know)",
+      "answers": [
+        "knew"
+      ],
+      "explanation_uz": "Hozirgi afsusni bildiruvchi 'if only' dan keyin Past Simple ishlatiladi: knew."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "She has two brothers, both of ___ are doctors.",
+      "answers": [
+        "whom"
+      ],
+      "explanation_uz": "Predlogdan keyin (both of) shaxs uchun non-defining relative clause'da 'whom' ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The house ___ roof was damaged in the storm has been repaired.",
+      "answers": [
+        "whose"
+      ],
+      "explanation_uz": "Egalikni bildiruvchi relative olmosh: whose + ot."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "She admitted ___ the vase. (break)",
+      "answers": [
+        "breaking",
+        "having broken"
+      ],
+      "explanation_uz": "'admit' fe'lidan keyin gerund (-ing) ishlatiladi; o'tgan voqea uchun having broken ham mumkin."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I regret ___ you that the flight has been cancelled. (tell)",
+      "answers": [
+        "to tell"
+      ],
+      "explanation_uz": "'regret to + infinitiv' = achinib xabar qilish (hozirgi harakat); 'regret + -ing' = o'tgan ishdan afsuslanish."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I remember ___ the door, so it can't be my fault. (lock)",
+      "answers": [
+        "locking",
+        "having locked"
+      ],
+      "explanation_uz": "'remember + -ing' = o'tgan ishni eslash; 'remember to + inf' = bajarishni unutmaslik."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "He looked shocked, so he must ___ the news yesterday. (hear)",
+      "answers": [
+        "have heard"
+      ],
+      "explanation_uz": "O'tgan zamonga oid taxmin (deduction): must + have + V3."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "By next June, they ___ married for twenty years. (be)",
+      "answers": [
+        "will have been",
+        "'ll have been"
+      ],
+      "explanation_uz": "Aniq muddat bilan kelasi zamonda tugallanadigan holat — Future Perfect: will have been."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "This time tomorrow I ___ on a beach. (lie)",
+      "answers": [
+        "will be lying",
+        "'ll be lying"
+      ],
+      "explanation_uz": "Kelasi zamonning aniq vaqtida davom etayotgan harakat — Future Continuous: will be lying."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ had she entered the room than the phone rang.",
+      "answers": [
+        "No sooner",
+        "no sooner"
+      ],
+      "explanation_uz": "Inversiya: 'No sooner + had + ega ... than' — 'tezda, shu zahoti' ma'nosida."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Not only ___ he late, but he also forgot the documents.",
+      "answers": [
+        "was"
+      ],
+      "explanation_uz": "Salbiy/cheklovchi ibora gap boshida kelganda inversiya bo'ladi: Not only was he ..."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Prices rose sharply. ___, demand did not fall.",
+      "answers": [
+        "However",
+        "Nevertheless",
+        "Nonetheless",
+        "Even so",
+        "Still"
+      ],
+      "explanation_uz": "Qarama-qarshilikni bildiruvchi bog'lovchi so'zlar: however, nevertheless, nonetheless, even so va h.k."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "If I had studied medicine, I ___ a doctor now.",
+      "options": [
+        "would be",
+        "would have been",
+        "will be",
+        "am"
+      ],
+      "answer": 0,
+      "explanation_uz": "Aralash shart gap: o'tgan shart (had studied) va hozirgi natija (would + infinitiv)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The ___ he practised, the better he played.",
+      "options": [
+        "more",
+        "most",
+        "much",
+        "many"
+      ],
+      "answer": 0,
+      "explanation_uz": "Qiyosiy bog'lanish 'the + comparative ..., the + comparative': the more ..., the better."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "We were made ___ our shoes at the door.",
+      "options": [
+        "take off",
+        "to take off",
+        "taking off",
+        "took off"
+      ],
+      "answer": 1,
+      "explanation_uz": "'make' majhul nisbatda to bilan infinitiv talab qiladi: were made to take off."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "I can't help ___ that he is lying.",
+      "options": [
+        "think",
+        "to think",
+        "thinking",
+        "thought"
+      ],
+      "answer": 2,
+      "explanation_uz": "'can't help' dan keyin gerund (-ing) keladi: can't help thinking."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The report, ___ I read yesterday, was very detailed.",
+      "options": [
+        "that",
+        "which",
+        "what",
+        "who"
+      ],
+      "answer": 1,
+      "explanation_uz": "Vergul bilan ajratilgan non-defining clause'da 'that' ishlatilmaydi; narsa uchun 'which'."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "He insisted ___ paying for dinner.",
+      "options": [
+        "on",
+        "to",
+        "at",
+        "for"
+      ],
+      "answer": 0,
+      "explanation_uz": "'insist on + gerund' birikmasi: insisted on paying."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "You ___ me earlier; I would have helped.",
+      "options": [
+        "should have told",
+        "must have told",
+        "can have told",
+        "would tell"
+      ],
+      "answer": 0,
+      "explanation_uz": "O'tgan zamondagi tanqid/maslahat: should have + V3."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The lights are on, so they ___ at home.",
+      "options": [
+        "must be",
+        "should have been",
+        "might have been",
+        "can't have been"
+      ],
+      "answer": 0,
+      "explanation_uz": "Hozirgi zamonda kuchli ishonch bilan taxmin: must + infinitiv."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Rarely ___ such a beautiful sunset.",
+      "options": [
+        "I have seen",
+        "I saw",
+        "did I have seen",
+        "have I seen"
+      ],
+      "answer": 3,
+      "explanation_uz": "Rarely kabi cheklovchi ravish gap boshida kelsa inversiya bo'ladi: have I seen."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "She spoke so quietly that I could ___ hear her.",
+      "options": [
+        "hardly",
+        "hard",
+        "harshly",
+        "scarce"
+      ],
+      "answer": 0,
+      "explanation_uz": "'hardly' = deyarli ... emas (inkor ma'noli ravish); 'hard' boshqa ma'no beradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "It's no use ___ over spilt milk.",
+      "options": [
+        "to cry",
+        "crying",
+        "cry",
+        "cried"
+      ],
+      "answer": 1,
+      "explanation_uz": "'It's no use' dan keyin gerund keladi: crying."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The number of students applying ___ risen steadily.",
+      "options": [
+        "have",
+        "has",
+        "are",
+        "were"
+      ],
+      "answer": 1,
+      "explanation_uz": "'The number of' birlikdagi ega: fe'l ham birlikda — has risen."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "By the time you arrive, I ___ dinner.",
+      "options": [
+        "will cook",
+        "will have cooked",
+        "am cooking",
+        "would cook"
+      ],
+      "answer": 1,
+      "explanation_uz": "Kelasi vaqtgacha tugallangan harakat — Future Perfect."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "He was too proud ___ for help.",
+      "options": [
+        "asking",
+        "to ask",
+        "ask",
+        "for asking"
+      ],
+      "answer": 1,
+      "explanation_uz": "'too + sifat + to + infinitiv' qurilmasi: too proud to ask."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "He denied ___ anything about the robbery.",
+      "options": [
+        "to know",
+        "knowing",
+        "know",
+        "to have known"
+      ],
+      "answer": 1,
+      "explanation_uz": "'deny' fe'lidan keyin gerund keladi: denied knowing."
+    }
+  }
+]

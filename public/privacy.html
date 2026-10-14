@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maxfiylik siyosati — LinguaFlow</title>
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#07080d;--card:#12141f;--line:rgba(255,255,255,.12);--text:#eef0f7;--muted:#9aa0b4;--a1:#7c5cff}
+@media (prefers-color-scheme: light){:root{--bg:#f6f7fb;--card:#fff;--line:rgba(0,0,0,.12);--text:#161826;--muted:#5a6078}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:760px;margin:0 auto;padding:32px 20px 80px}
+a{color:var(--a1)}
+h1{font-size:1.8rem;margin:.4em 0}
+h2{font-size:1.2rem;margin:1.8em 0 .4em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin:18px 0}
+.muted{color:var(--muted);font-size:.92rem}
+li{margin:.3em 0}
+nav a{margin-right:14px}
+</style>
+</head>
+<body>
+<main>
+<nav><a href="/">← LinguaFlow</a><a href="/privacy">Maxfiylik</a><a href="/terms">Shartlar</a></nav>
+<h1>Maxfiylik siyosati</h1>
+<p class="muted">Oxirgi yangilanish: 2026-yil oktabr. Bu hujjat namuna asosida yozilgan: ommaviy ishga tushirishdan oldin yurist ko'rib chiqishi tavsiya etiladi.</p>
+
+<h2>1. Qanday ma'lumotlarni to'playmiz</h2>
+<ul>
+<li><b>Hisob:</b> ism, email, parol (faqat shifrlangan ko'rinishda, parolni o'qib bo'lmaydi).</li>
+<li><b>O'rganish faoliyati:</b> darslar, javoblar natijalari, XP, kunlik seriya, takrorlash jadvali, o'yin natijalari, reyting.</li>
+<li><b>Yozish va gapirish mashqlari:</b> siz yuborgan matn (gapirishda nutqingiz matnga aylantirilgan holda) va AI bergan baho.</li>
+<li><b>Texnik ma'lumotlar:</b> sessiya cookie'si (kirish uchun), tema va til tanlovi (brauzer xotirasida), xavfsizlik uchun IP manzil bo'yicha urinishlar sonini cheklash.</li>
+</ul>
+
+<h2>2. Nima uchun ishlatamiz</h2>
+<p>Darslar va mashqlarni ko'rsatish, progressni saqlash, kunlik limitlarni qo'llash, xizmatni himoya qilish va yaxshilash uchun. Ma'lumotlaringizni sotmaymiz va reklama uchun uchinchi tomonlarga bermaymiz.</p>
+
+<h2>3. AI xizmatlari va uchinchi tomonlar</h2>
+<div class="card">
+<p><b>Muhim:</b> AI ustoz, yozish va gapirish tekshiruvi ishlaganda siz yuborgan matn tashqi AI provayderiga (masalan, Google Gemini, OpenAI yoki Anthropic: sayt egasi qaysi birini sozlagan bo'lsa) yuboriladi. Shaxsiy ma'lumot (parol, telefon raqami, hujjat raqami) yubormang. Bepul rejadagi AI xizmatlari ma'lumotni o'z modellarini yaxshilash uchun ishlatishi mumkin: ularning shartlari bilan tanishing.</p>
+<p><b>Ovozli javob:</b> gapirish mashqida ovozingiz brauzeringizning nutqni tanish xizmati orqali matnga aylantiriladi. Ko'p brauzerlarda (masalan, Chrome) bu audio brauzer ishlab chiqaruvchisining serveriga (masalan, Google) yuboriladi. LinguaFlow audio yozuvni saqlamaydi, faqat matnni oladi. Xohlamasangiz, javobni yozib yuborishingiz mumkin.</p>
+</div>
+
+<h2>4. Saqlash muddati va o'chirish</h2>
+<p>Ma'lumotlar hisobingiz mavjud ekan saqlanadi. Hisobingizni ilovada <b>Profil → Hisobni o'chirish</b> orqali o'zingiz o'chirishingiz mumkin: hisob, progress va yuborilgan mashq matnlari bazadan o'chadi. Xavfsizlik zaxira nusxalari bir necha kun ichida almashtirilib, o'chiriladi.</p>
+
+<h2>5. Xavfsizlik</h2>
+<p>Parollar zamonaviy shifrlash (scrypt) bilan saqlanadi, sessiya cookie'si httpOnly, ulanish HTTPS orqali bo'lishi kerak. Hech bir tizim 100% xavfsiz emas: parolingizni boshqa saytlarda ishlatmang.</p>
+
+<h2>6. Bolalar</h2>
+<p>Xizmat 13 yoshdan kichik bolalar uchun mo'ljallanmagan. Kichik yoshdagilar ota-onasi roziligi bilan foydalanishi kerak.</p>
+
+<h2>7. O'zgarishlar</h2>
+<p>Siyosat o'zgarsa, shu sahifada yangilanadi, muhim o'zgarishlar ilovada e'lon qilinadi.</p>
+
+<p class="muted">Bog'lanish: <span id="contact">sayt administratori (ilova ichidagi e'lon orqali)</span></p>
+</main>
+<script>
+fetch('/api/config').then(function(r){return r.json()}).then(function(c){
+  if(c.contactEmail){var e=document.getElementById('contact');e.textContent='';var a=document.createElement('a');a.href='mailto:'+c.contactEmail;a.textContent=c.contactEmail;e.appendChild(a);}
+}).catch(function(){});
+</script>
+</body>
+</html>

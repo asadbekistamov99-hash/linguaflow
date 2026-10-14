@@ -1,0 +1,278 @@
+[
+  {
+    "lang": "en",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Write an email to a friend about your weekend plans. Say where you will go, who you will meet, and what you will do.",
+      "min_words": 40
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Describe your daily morning routine. Write about what time you get up, what you eat, and how you get to work or school.",
+      "min_words": 40
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Write a short message to a neighbour who is new in your area. Tell them about two useful places nearby, such as a shop or a park.",
+      "min_words": 40
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Write about your favourite food. Say what it is, when you eat it, and why you like it.",
+      "min_words": 40
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Write an email to a friend about a trip you took. Describe where you went, what you did, and say what you liked or disliked most.",
+      "min_words": 80
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Some people think children should have a phone from the age of ten. Do you agree? Give your opinion with at least two reasons.",
+      "min_words": 80
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Write a story that begins with this sentence: 'I missed the last bus home, so I had to make a difficult decision.' Say what happened next and how it ended.",
+      "min_words": 80
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Describe a person who has helped you in your life. Explain who this person is, what they did, and why it was important to you.",
+      "min_words": 80
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Write an essay about the advantages and disadvantages of working from home. Give examples and finish with your own conclusion.",
+      "min_words": 150
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Write a report for your school or company on how to reduce waste in your community. Describe two problems, suggest solutions, and recommend one of them.",
+      "min_words": 150
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "If you could change one thing about the education system in your country, what would it be? Explain your idea, give reasons, and discuss possible problems.",
+      "min_words": 150
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Some people believe that technology makes us less social, while others say it brings us closer together. Discuss both views and give your own opinion.",
+      "min_words": 150
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Tell me about your family. How many people are in it?",
+      "part": 1,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Where do you live? Is it a big or small place?",
+      "part": 1,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Describe your best friend. What does he or she look like, and what do you do together?",
+      "part": 2,
+      "prep_seconds": 45
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "What do you usually do on Saturday? Who do you spend time with?",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "What kind of music do you like, and when do you listen to it?",
+      "part": 1,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Talk about a holiday or trip you remember well. Where did you go, who was with you, and what happened?",
+      "part": 2,
+      "prep_seconds": 45
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Describe a place in your town where you like to relax. Say what it looks like and why you enjoy it.",
+      "part": 2,
+      "prep_seconds": 45
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Do you think it is better to live in a city or in a village? Give reasons for your opinion.",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Talk about a time when you had to learn something difficult. Explain how you did it and what you learned from the experience.",
+      "part": 2,
+      "prep_seconds": 45
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "If you could live in any country for a year, where would you choose and why? Describe what you would do there.",
+      "part": 2,
+      "prep_seconds": 45
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Do you think social media has more advantages or disadvantages for young people? Explain your view with examples.",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "What would happen if people stopped using cars in big cities? Discuss the possible benefits and problems.",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  }
+]

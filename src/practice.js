@@ -9,6 +9,29 @@ const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 const DAILY_PRACTICE_XP_CAP = 60;
 const TF_LABEL = { true: "To'g'ri", false: "Noto'g'ri", not_given: 'Aytilmagan' };
 
+function present(row) {
+  const p = JSON.parse(row.payload);
+  const out = { id: row.id, type: row.type, level: row.level, skill: row.skill };
+  if (row.skill === 'reading' && p.passage) out.passage = p.passage;
+  if (row.skill === 'listening' && p.transcript) out.speak = p.transcript; // read aloud by the browser, not displayed
+  if (row.type === 'mcq') { out.question = p.question; out.options = p.options; }
+  else if (row.type === 'gap') out.text = p.text;
+  else if (row.type === 'tf_ng') { out.statement = p.statement; out.options = ['true', 'false', 'not_given'].map((v) => ({ value: v, label: TF_LABEL[v] })); }
+  else out.question = p.question;
+  return out;
+}
+
+function judge(row, answer) {
+  const p = JSON.parse(row.payload);
+  if (row.type === 'mcq') {
+    const idx = Number(answer);
+    return { correct: Number.isInteger(idx) && idx === p.answer, shown: p.options[p.answer], p };
+  }
+  if (row.type === 'tf_ng') return { correct: answer === p.answer, shown: TF_LABEL[p.answer], p };
+  const given = normalize(answer);
+  return { correct: !!given && p.answers.some((a) => normalize(a) === given), shown: p.answers[0], p };
+}
+
 // Learner-facing practice over APPROVED bank items. Answers stay on the server until a question is answered.
 module.exports = function registerPractice({ db, route, content, HttpError, requireUser, awardProgress, validLang }) {
   const sessions = new Map();
@@ -20,29 +43,6 @@ module.exports = function registerPractice({ db, route, content, HttpError, requ
     if (!L) throw new HttpError(400, "Noto'g'ri til");
     return L;
   };
-
-  function present(row) {
-    const p = JSON.parse(row.payload);
-    const out = { id: row.id, type: row.type, level: row.level, skill: row.skill };
-    if (row.skill === 'reading' && p.passage) out.passage = p.passage;
-    if (row.skill === 'listening' && p.transcript) out.speak = p.transcript; // read aloud by the browser, not displayed
-    if (row.type === 'mcq') { out.question = p.question; out.options = p.options; }
-    else if (row.type === 'gap') out.text = p.text;
-    else if (row.type === 'tf_ng') { out.statement = p.statement; out.options = ['true', 'false', 'not_given'].map((v) => ({ value: v, label: TF_LABEL[v] })); }
-    else out.question = p.question;
-    return out;
-  }
-
-  function judge(row, answer) {
-    const p = JSON.parse(row.payload);
-    if (row.type === 'mcq') {
-      const idx = Number(answer);
-      return { correct: Number.isInteger(idx) && idx === p.answer, shown: p.options[p.answer], p };
-    }
-    if (row.type === 'tf_ng') return { correct: answer === p.answer, shown: TF_LABEL[p.answer], p };
-    const given = normalize(answer);
-    return { correct: !!given && p.answers.some((a) => normalize(a) === given), shown: p.answers[0], p };
-  }
 
   route('GET', '/api/practice/summary', async ({ req, url }) => {
     const u = requireUser(req);
@@ -101,3 +101,7 @@ module.exports = function registerPractice({ db, route, content, HttpError, requ
     return { total, answered, correct, accuracy: answered ? correct / answered : 0, xp, streak: prog.streak, user: prog.user, badges: prog.badges };
   });
 };
+
+module.exports.present = present;
+module.exports.judge = judge;
+module.exports.CLOSED = CLOSED;

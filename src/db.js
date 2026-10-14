@@ -122,6 +122,20 @@ function open(file) {
       issued_at INTEGER NOT NULL
     );
     CREATE INDEX IF NOT EXISTS idx_cert_user ON user_certificates(user_id, lang);
+    CREATE TABLE IF NOT EXISTS skill_submissions (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      kind TEXT NOT NULL, lang TEXT NOT NULL, level TEXT NOT NULL, item_id INTEGER,
+      prompt TEXT NOT NULL, input TEXT NOT NULL, result TEXT NOT NULL, created_at INTEGER NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_skill_user ON skill_submissions(user_id, kind, created_at);
+    CREATE TABLE IF NOT EXISTS mock_results (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      lang TEXT NOT NULL, level TEXT NOT NULL, total INTEGER NOT NULL, correct INTEGER NOT NULL,
+      sections TEXT NOT NULL, created_at INTEGER NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_mock_user ON mock_results(user_id, created_at);
   `);
   ensureColumn(db, 'users', 'role', "TEXT NOT NULL DEFAULT 'user'");
   ensureColumn(db, 'users', 'banned', 'INTEGER NOT NULL DEFAULT 0');

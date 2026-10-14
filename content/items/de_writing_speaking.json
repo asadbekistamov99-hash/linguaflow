@@ -1,0 +1,278 @@
+[
+  {
+    "lang": "de",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Schreiben Sie eine E-Mail an einen Freund. Sie laden ihn zu Ihrem Geburtstag ein. Schreiben Sie, wann und wo die Feier ist und was er mitbringen soll.",
+      "min_words": 40
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Sie haben einen Deutschkurs gebucht, aber Sie sind krank. Schreiben Sie eine kurze E-Mail an Ihre Lehrerin: Sagen Sie, warum Sie nicht kommen, und fragen Sie nach den Hausaufgaben.",
+      "min_words": 45
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Ihre Nachbarin hilft Ihnen oft beim Einkaufen. Schreiben Sie ihr eine Nachricht: Bedanken Sie sich und laden Sie sie zum Tee am Samstag ein.",
+      "min_words": 50
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Sie suchen ein Zimmer in einer Wohngemeinschaft. Schreiben Sie eine E-Mail an den Vermieter: Stellen Sie sich kurz vor und fragen Sie nach dem Preis und dem Termin für eine Besichtigung.",
+      "min_words": 60
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Stellen Sie sich vor: Wie heißen Sie, woher kommen Sie und was machen Sie beruflich oder in Ihrer Freizeit?",
+      "part": 1,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Beschreiben Sie Ihren normalen Tag. Was machen Sie am Morgen, am Mittag und am Abend?",
+      "part": 2,
+      "prep_seconds": 30
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Sie sind im Restaurant und möchten bestellen. Sagen Sie dem Kellner, was Sie essen und trinken möchten, und fragen Sie nach der Rechnung.",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Erzählen Sie über Ihre Familie und Ihre Wohnung. Wer wohnt bei Ihnen und wie sieht Ihr Zimmer aus?",
+      "part": 2,
+      "prep_seconds": 30
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Sie waren letzte Woche im Urlaub. Schreiben Sie einer Freundin eine E-Mail: Erzählen Sie, wohin Sie gefahren sind, was Ihnen besonders gut gefallen hat und was nicht so schön war.",
+      "min_words": 80
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Im Forum einer Sprachschule wird diskutiert: \"Ist es besser, Deutsch im Kurs oder allein zu Hause zu lernen?\" Schreiben Sie einen Forumsbeitrag mit Ihrer Meinung und mindestens zwei Gründen.",
+      "min_words": 90
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Sie haben im Internet ein Fahrrad bestellt, aber es ist beschädigt angekommen. Schreiben Sie eine Beschwerde an den Verkäufer: Beschreiben Sie das Problem und sagen Sie, was Sie möchten.",
+      "min_words": 100
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Ihr deutscher Kollege zieht bald in eine neue Stadt und fragt Sie nach Tipps für Usbekistan-Reisen. Schreiben Sie ihm eine E-Mail mit drei Empfehlungen und begründen Sie diese.",
+      "min_words": 120
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Erzählen Sie von einem Urlaub oder Ausflug, an den Sie sich gern erinnern. Wo waren Sie, mit wem und was haben Sie gemacht?",
+      "part": 1,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Sie möchten mit Ihrem Freund gemeinsam eine Party planen. Besprechen Sie Ort, Zeit, Essen und Musik und einigen Sie sich auf einen Plan.",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Sprechen Sie über ein Hobby, das Ihnen wichtig ist. Warum gefällt es Ihnen und wie oft machen Sie es?",
+      "part": 2,
+      "prep_seconds": 60
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Soll man in der Stadt oder auf dem Land leben? Sagen Sie Ihre Meinung und nennen Sie Gründe.",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Eine Zeitung fragt ihre Leser: \"Sollten Kinder schon in der Grundschule ein eigenes Handy haben?\" Schreiben Sie einen Leserbrief, in dem Sie Vor- und Nachteile abwägen und Ihre eigene Meinung begründen.",
+      "min_words": 150
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Immer mehr Menschen arbeiten von zu Hause aus. Schreiben Sie einen Forumsbeitrag: Welche Folgen hat das für Arbeitnehmer und Unternehmen? Nennen Sie Beispiele und ziehen Sie ein Fazit.",
+      "min_words": 170
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Stellen Sie sich vor, Sie hätten ein Jahr Zeit und genug Geld, um im Ausland zu leben. Schreiben Sie einen Text darüber, was Sie tun würden und welche Schwierigkeiten dabei entstehen könnten.",
+      "min_words": 190
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Ihre Stadt plant, die Innenstadt für Autos zu sperren. Schreiben Sie eine Stellungnahme an die Stadtverwaltung, in der Sie Argumente für und gegen den Plan darstellen und einen Vorschlag machen.",
+      "min_words": 220
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Was wäre für Sie wichtiger bei der Berufswahl: ein hohes Gehalt oder Freude an der Arbeit? Begründen Sie Ihre Meinung mit Beispielen.",
+      "part": 2,
+      "prep_seconds": 60
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Stellen Sie sich vor, Sie könnten einen Tag lang Bürgermeister Ihrer Stadt sein. Was würden Sie ändern und warum?",
+      "part": 2,
+      "prep_seconds": 60
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Diskutieren Sie: Hat das Internet das Leben der Menschen eher verbessert oder verschlechtert? Nennen Sie Vor- und Nachteile.",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "de",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Sollten Studenten verpflichtet sein, ein Semester im Ausland zu verbringen? Argumentieren Sie und gehen Sie auch auf mögliche Gegenargumente ein.",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  }
+]

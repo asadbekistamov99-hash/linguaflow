@@ -109,3 +109,15 @@ xalqaro imtihon sertifikati emas. Ballar (masalan "IELTS taxminiy 6.5") faqat ta
 - API: `GET /api/practice/summary`, `POST /api/practice/start`, `POST /api/practice/:sid/answer`, `POST /api/practice/:sid/finish`.
 - Kontent qoralamalari: `content/items/<til>_B1B2_reading_listening.json` (har tilda 56 ta o'qish/eshitish savoli, B1 va B2).
   `npm run import-items` bilan yuklang, so'ng tekshiruvchi tasdiqlaydi.
+
+## Yozish, gapirish va mock imtihon (Sprint 4)
+
+- **Yozish** (`#/writing`) va **Gapirish** (`#/speaking`): AI ustoz 4 mezon bo'yicha 0–5 ball, taxminiy CEFR darajasi va tuzatishlar beradi
+  (`src/grading.js`; AI javobi qat'iy JSON sifatida tekshiriladi va chegaralanadi). Mavzular Savollar bankidagi **tasdiqlangan**
+  `essay_prompt` / `speaking_prompt` savollaridan, yoki o'quvchi o'z mavzusini yozadi. Kunlik AI limiti (`writing`, `speaking`) qo'llanadi;
+  kalit sozlanmagan bo'lsa 503 qaytadi va limit sarflanmaydi.
+- Gapirishda ovoz brauzerda matnga aylantiriladi (Web Speech API; brauzer ovozni tashqi xizmatga yuborishi mumkin). **Talaffuz baholanmaydi**,
+  faqat matn (ravonlik, bog'liqlik, lug'at, grammatika). Natijalar `skill_submissions` jadvalida, tarix: `GET /api/skills/history`.
+- **Mock imtihon** (`#/mock`): tanlangan daraja uchun tasdiqlangan grammatika/o'qish/eshitish savollaridan vaqtli imtihon, server tomonda baholanadi
+  (70%+ "tayyor", 50%+ "yaqin"). Natijalar `mock_results`. Barcha ballar taxminiy, rasmiy imtihon natijasi emas.
+- Kontent qoralamalari: `content/items/<til>_writing_speaking.json` (A2/B1/B2, har tilda 24 ta).

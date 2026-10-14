@@ -86,6 +86,7 @@ async function main() {
     await page.evaluate(([t, s, p]) => window.__cap && window.__cap(t, s, p), [text, sub, pos]);
     if (hold) await sleep(hold);
   };
+  const clearLater = (ms) => { setTimeout(() => page.evaluate(() => window.__cap && window.__cap('', '')).catch(() => {}), ms); };
   const card = async (t, s, ms) => { await page.evaluate(([a, b]) => window.__card && window.__card(a, b), [t, s]); await sleep(ms); await page.evaluate(() => window.__card(null)); await sleep(700); };
   const shot = async (name) => { if (DEBUG) await page.screenshot({ path: path.join(OUT, `dbg-${String(++shots).padStart(2, '0')}-${name}.png`) }); };
   const move = async (loc) => {
@@ -140,18 +141,17 @@ async function main() {
     await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'smooth' })); await sleep(1200);
   });
 
-  // ===== 4. lesson =====
-  await scene('lesson', async () => {
-    await cap("4-qadam. Dars", "Yangi so'zlar → test → eshitib topish → yozish → juftlash → jumla tuzish. Javoblar serverda tekshiriladi.", 0, 'top');
-    await click(page.locator('.node-btn').first(), 1600);
-    await shot('lesson-start');
-    for (let step = 0; step < 40; step++) {
+  // generic solver for the lesson/review player (answers correctly using the content DB)
+  async function playPlayer(maxExercises, resultCap) {
+    let answered = 0;
+    for (let step = 0; step < 80; step++) {
       const foot = page.locator('.p-foot button.btn');
       if (!(await foot.count())) {
         const done = page.locator('button.btn-block', { hasText: 'Davom etish' });
-        if (await done.count()) { await cap("Dars natijasi", "Yulduzlar, XP va kunlik seriya. Keyingi dars ochiladi.", 4200, 'top'); await shot('lesson-result'); await click(done, 1500); break; }
+        if (await done.count()) { if (resultCap) await cap(resultCap[0], resultCap[1], 4200, 'top'); await shot('player-result'); await click(done, 1500); return 'finished'; }
         await sleep(500); continue;
       }
+      if (maxExercises && answered >= maxExercises) { await click(page.locator('.p-close'), 1200); return 'closed'; }
       const info = await page.evaluate(() => {
         const b = document.querySelector('.p-body'); if (!b) return null;
         if (b.querySelector('.learn-card')) return { t: 'learn' };
@@ -192,16 +192,32 @@ async function main() {
         }
       }
       await click(mainBtn, 1100); // Tekshirish
-      if (step === 4) await shot('lesson-feedback');
+      answered++;
+      if (answered === 5) await shot('player-feedback');
       await click(page.locator('.p-foot button.btn').first(), 600); // Davom etish
     }
+    return 'timeout';
+  }
+
+  // ===== 4. lesson =====
+  await scene('lesson', async () => {
+    await cap("4-qadam. Dars", "Yangi so'zlar → test → eshitib topish → yozish → juftlash → jumla tuzish. Javoblar serverda tekshiriladi.", 0, 'top'); clearLater(7000);
+    await click(page.locator('.node-btn').first(), 1600);
+    await shot('lesson-start');
+    await playPlayer(0, ["Dars natijasi", "Yulduzlar, XP va kunlik seriya. Keyingi dars ochiladi."]);
   });
 
   // ===== 5. review + dictionary =====
   await scene('review', async () => {
+    // pretend a day passed so the learned words are due (demo database only)
+    const wdb = new DatabaseSync(path.join(DATA, 'linguaflow.db'));
+    wdb.prepare('UPDATE word_progress SET due_at=?').run(Date.now() - 3600000); wdb.close();
     await page.goto(`${BASE}/app#/review`); await sleep(1500);
-    await cap("5-qadam. Aqlli takrorlash", "O'rgangan so'zlar unutilishdan oldin qaytariladi (SM-2 jadvali). Faqat vaqti kelganlari so'raladi.", 4800);
+    await cap("5-qadam. Aqlli takrorlash", "O'rgangan so'zlar unutilishdan oldin qaytariladi (SM-2 jadvali). Faqat vaqti kelganlari so'raladi.", 4200);
     await shot('review');
+    await click(page.locator('button', { hasText: 'Takrorlashni boshlash' }), 1500);
+    await cap("Takrorlash mashqlari", "To'g'ri javob berilgan so'zlar keyinroq, xato qilinganlari tezroq qaytariladi.", 0, 'top'); clearLater(5000);
+    await playPlayer(4);
     await page.goto(`${BASE}/app#/dictionary`); await sleep(1500);
     await cap("Lug'at", "O'rgangan so'zlaringiz: qidirish, tinglash va mustahkamlik ko'rsatkichi.", 4200);
     await shot('dictionary');
@@ -221,7 +237,7 @@ async function main() {
     await shot('practice');
     await click(page.locator('.btn-sm', { hasText: 'B1' }).first(), 500);
     await click(page.locator('.card', { hasText: "O'qish" }).locator('button', { hasText: 'Boshlash' }).first(), 1500);
-    await cap("O'qish mashqi", "Matnni o'qing va savolga javob bering: darhol izoh chiqadi.", 0, 'top');
+    await cap("O'qish mashqi", "Matnni o'qing va savolga javob bering: darhol izoh chiqadi.", 0, 'top'); clearLater(5000);
     for (let i = 0; i < 3; i++) {
       await sleep(1500);
       const opt = page.locator('.opts .opt').first(); if (!(await opt.count())) break;
@@ -240,7 +256,7 @@ async function main() {
     await typeInto(page.locator('textarea'), essay, 12);
     await shot('writing-typed');
     await click(page.locator('button', { hasText: 'Baholash' }), 3500);
-    await cap("AI natijasi (namuna)", "Har mezon 0–5, taxminiy daraja, xatolar va tuzatishlar o'zbekcha. Bu rasmiy baho emas.", 0);
+    await cap("AI natijasi (namuna)", "Har mezon 0–5, taxminiy daraja, xatolar va tuzatishlar o'zbekcha. Bu rasmiy baho emas.", 0, 'top');
     await page.evaluate(() => window.scrollBy({ top: 520, behavior: 'smooth' })); await sleep(5200);
     await shot('writing-result');
   });
@@ -252,23 +268,38 @@ async function main() {
     await typeInto(page.locator('textarea'), "Last weekend I went to the park with my friends. We played football and then we had lunch together. I liked it because the weather was sunny and everybody was happy.", 18);
     await shot('speaking-typed');
     await click(page.locator('button', { hasText: 'Baholash' }), 3500);
-    await cap("AI natijasi (namuna)", "So'z/daqiqa tezligi ham hisoblanadi.", 0);
+    await cap("AI natijasi (namuna)", "So'z/daqiqa tezligi ham hisoblanadi.", 0, 'top');
     await page.evaluate(() => window.scrollBy({ top: 420, behavior: 'smooth' })); await sleep(4800);
     await shot('speaking-result');
   });
 
   // ===== 10. mock =====
   await scene('mock', async () => {
+    const idb = new DatabaseSync(path.join(DATA, 'linguaflow.db'), { readOnly: true });
+    const bank = idb.prepare("SELECT type,payload FROM items WHERE lang='en' AND status='approved'").all().map((r) => ({ type: r.type, p: JSON.parse(r.payload) }));
+    idb.close();
+    const find = (q) => bank.find((b) => b.p.question === q || b.p.statement === q || b.p.text === q);
     await page.goto(`${BASE}/app#/mock`); await sleep(1600);
     await cap("10-qadam. Mock imtihon", "Vaqtli imtihon: grammatika, lug'at, o'qish, eshitish. Server baholaydi.", 3600);
     await click(page.locator('button', { hasText: /^B2$/ }).first(), 400);
     await click(page.locator('button.btn-main', { hasText: 'Boshlash' }).first(), 1500);
     await shot('mock-start');
-    const groups = await page.locator('.card .opts').count();
-    for (let i = 0; i < Math.min(groups, 6); i++) await click(page.locator('.card .opts').nth(i).locator('.opt').nth(i % 3), 250);
-    await cap("Natija", "Bo'limlar bo'yicha ball va ingliz tilida taxminiy IELTS-uslubidagi ball. Rasmiy natija emas.", 0, 'top');
+    await cap("Imtihon jarayoni", "Taymer ishlaydi; javoblar topshirilgandan keyingina tekshiriladi.", 0, 'top'); clearLater(5000);
+    const cards = await page.evaluate(() => [...document.querySelectorAll('.card')].filter((c) => c.querySelector('h4')).map((c) => ({ prompt: c.querySelector('h4').textContent, opts: c.querySelectorAll('.opts .opt').length, input: !!c.querySelector('input.t-input') })));
+    for (let i = 0; i < cards.length; i++) {
+      const c = cards[i]; const it = find(c.prompt); const wrong = i % 4 === 3; // about 75% correct, so the result looks realistic
+      const card = page.locator('.card', { has: page.locator('h4') }).nth(i);
+      if (c.input) { const ans = it && it.p.answers ? it.p.answers[0] : 'x'; await typeInto(card.locator('input.t-input'), wrong ? 'x' : ans, 12); }
+      else if (c.opts) {
+        let idx = 0;
+        if (it && it.type === 'mcq') idx = it.p.answer; else if (it && it.type === 'tf_ng') idx = ['true', 'false', 'not_given'].indexOf(it.p.answer);
+        if (wrong) idx = (idx + 1) % c.opts;
+        await click(card.locator('.opts .opt').nth(idx), 150);
+      }
+    }
+    await cap("Natija (namuna)", "Bo'limlar bo'yicha ball va ingliz tilida taxminiy IELTS-uslubidagi ball. Rasmiy natija emas.", 0, 'top');
     await click(page.locator('button', { hasText: 'Topshirish' }), 2500);
-    await shot('mock-result'); await sleep(4200);
+    await shot('mock-result'); await sleep(5200);
   });
 
   // ===== 11. profile =====

@@ -1,0 +1,269 @@
+[
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Right, so let me turn to the vexed question of linguistic relativity. The strong version, that language determines thought, was largely abandoned by the nineteen sixties, and rightly so; it rested on anecdote and, frankly, on a certain romantic condescension towards other cultures. What survives is a far more modest claim, namely that habitual patterns of speech may nudge attention in particular directions. Consider the experiments on colour. Russian speakers, who must distinguish light blue from dark blue lexically, discriminate between those shades marginally faster than English speakers do. Marginally, mind you. The effect vanishes when participants are asked to repeat a string of digits while they perform the task, which suggests that language is operating online, as a kind of silent commentary, rather than reshaping perception itself. Now, some of my colleagues find this deflationary, even disappointing. I would argue the opposite. A modest effect that is robust and replicable is worth far more than a dramatic one that collapses under scrutiny. What I would caution against is the popular press tendency to inflate these findings into claims that, say, speakers of languages without a future tense save more money. That particular correlation, I suspect, owes more to economics than to grammar.",
+      "question": "What does the lecturer imply about the early supporters of the strong version of linguistic relativity?",
+      "options": [
+        "They manipulated experimental data to reach their conclusions.",
+        "They were correct but lacked the technology to prove it.",
+        "Their view was partly fuelled by an idealising, patronising attitude to other cultures.",
+        "They overlooked the research on colour perception."
+      ],
+      "answer": 2,
+      "explanation_uz": "Ma'ruzachi kuchli versiya \"anecdote\" va \"romantic condescension towards other cultures\"ga tayangan deydi, ya'ni boshqa madaniyatlarga nisbatan idealizatsiyalangan, past nazar bilan qarashga."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Right, so let me turn to the vexed question of linguistic relativity. The strong version, that language determines thought, was largely abandoned by the nineteen sixties, and rightly so; it rested on anecdote and, frankly, on a certain romantic condescension towards other cultures. What survives is a far more modest claim, namely that habitual patterns of speech may nudge attention in particular directions. Consider the experiments on colour. Russian speakers, who must distinguish light blue from dark blue lexically, discriminate between those shades marginally faster than English speakers do. Marginally, mind you. The effect vanishes when participants are asked to repeat a string of digits while they perform the task, which suggests that language is operating online, as a kind of silent commentary, rather than reshaping perception itself. Now, some of my colleagues find this deflationary, even disappointing. I would argue the opposite. A modest effect that is robust and replicable is worth far more than a dramatic one that collapses under scrutiny. What I would caution against is the popular press tendency to inflate these findings into claims that, say, speakers of languages without a future tense save more money. That particular correlation, I suspect, owes more to economics than to grammar.",
+      "text": "The lecturer describes the role of language in the colour experiments as a kind of silent ___.",
+      "answers": [
+        "commentary"
+      ],
+      "explanation_uz": "Matnda: \"language is operating online, as a kind of silent commentary, rather than reshaping perception itself.\""
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Right, so let me turn to the vexed question of linguistic relativity. The strong version, that language determines thought, was largely abandoned by the nineteen sixties, and rightly so; it rested on anecdote and, frankly, on a certain romantic condescension towards other cultures. What survives is a far more modest claim, namely that habitual patterns of speech may nudge attention in particular directions. Consider the experiments on colour. Russian speakers, who must distinguish light blue from dark blue lexically, discriminate between those shades marginally faster than English speakers do. Marginally, mind you. The effect vanishes when participants are asked to repeat a string of digits while they perform the task, which suggests that language is operating online, as a kind of silent commentary, rather than reshaping perception itself. Now, some of my colleagues find this deflationary, even disappointing. I would argue the opposite. A modest effect that is robust and replicable is worth far more than a dramatic one that collapses under scrutiny. What I would caution against is the popular press tendency to inflate these findings into claims that, say, speakers of languages without a future tense save more money. That particular correlation, I suspect, owes more to economics than to grammar.",
+      "question": "What is the purpose of the lecturer's remark \"Marginally, mind you\"?",
+      "options": [
+        "To concede that the experiments were badly designed.",
+        "To stress that the observed difference is genuinely small.",
+        "To introduce a study that contradicts the colour findings.",
+        "To correct a statistical error made earlier."
+      ],
+      "answer": 1,
+      "explanation_uz": "\"Marginally, mind you\" oldingi \"marginally faster\" so'zini takrorlab, farq juda kichik ekanini ta'kidlaydi; ma'ruzachi keyin ham \"modest effect\" haqida gapiradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: I'll be blunt: the four day week trials are being oversold. Every pilot I have seen recruited firms that were already enthusiastic, so of course the results glow. It is a bit like testing a diet on people who have just joined a gym.\nB: I understand the scepticism, but I think you're dismissing the evidence rather too breezily. Yes, there is selection bias, nobody denies that. But the sustained drop in resignations is hard to explain away, and several of the firms involved were, by their own admission, rather sceptical at the start.\nA: Sceptical managers, perhaps, but willing ones. And resignations fall whenever a company does anything novel; there is a honeymoon period. Come back in five years. My real worry, though, is for sectors where output cannot be compressed. A nurse cannot treat the same number of patients in four days simply by working faster.\nB: Agreed, and I would never claim otherwise. Healthcare and hospitality need a different conversation entirely. But that is an argument for tailoring the policy, not for abandoning it. Surely we can concede that office work has a great deal of slack, much of it spent in meetings nobody needs.\nA: Slack, yes. Whether you can capture it without it creeping back is another matter, and I remain unconvinced.",
+      "question": "What point is speaker A making with the comparison to a diet?",
+      "options": [
+        "The pilot results are flattering because the participants were already inclined to succeed.",
+        "Shorter working weeks are bad for employees' health.",
+        "Companies should adopt new policies gradually.",
+        "Trials of any kind are expensive and slow."
+      ],
+      "answer": 0,
+      "explanation_uz": "A: \"recruited firms that were already enthusiastic, so of course the results glow\" - dieta va sport zali o'xshatishi tanlov (selection) tomonidan buzilgan natijalarni bildiradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: I'll be blunt: the four day week trials are being oversold. Every pilot I have seen recruited firms that were already enthusiastic, so of course the results glow. It is a bit like testing a diet on people who have just joined a gym.\nB: I understand the scepticism, but I think you're dismissing the evidence rather too breezily. Yes, there is selection bias, nobody denies that. But the sustained drop in resignations is hard to explain away, and several of the firms involved were, by their own admission, rather sceptical at the start.\nA: Sceptical managers, perhaps, but willing ones. And resignations fall whenever a company does anything novel; there is a honeymoon period. Come back in five years. My real worry, though, is for sectors where output cannot be compressed. A nurse cannot treat the same number of patients in four days simply by working faster.\nB: Agreed, and I would never claim otherwise. Healthcare and hospitality need a different conversation entirely. But that is an argument for tailoring the policy, not for abandoning it. Surely we can concede that office work has a great deal of slack, much of it spent in meetings nobody needs.\nA: Slack, yes. Whether you can capture it without it creeping back is another matter, and I remain unconvinced.",
+      "question": "How does speaker B respond to A's concern about nurses?",
+      "options": [
+        "B argues that nurses already work as efficiently as office staff.",
+        "B dismisses the concern as irrelevant to the debate.",
+        "B suggests running a five year trial in hospitals first.",
+        "B accepts it but argues it justifies adapting the policy, not dropping it."
+      ],
+      "answer": 3,
+      "explanation_uz": "B: \"Agreed... But that is an argument for tailoring the policy, not for abandoning it.\" - B rozi, lekin siyosatni moslashtirishni taklif qiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: I'll be blunt: the four day week trials are being oversold. Every pilot I have seen recruited firms that were already enthusiastic, so of course the results glow. It is a bit like testing a diet on people who have just joined a gym.\nB: I understand the scepticism, but I think you're dismissing the evidence rather too breezily. Yes, there is selection bias, nobody denies that. But the sustained drop in resignations is hard to explain away, and several of the firms involved were, by their own admission, rather sceptical at the start.\nA: Sceptical managers, perhaps, but willing ones. And resignations fall whenever a company does anything novel; there is a honeymoon period. Come back in five years. My real worry, though, is for sectors where output cannot be compressed. A nurse cannot treat the same number of patients in four days simply by working faster.\nB: Agreed, and I would never claim otherwise. Healthcare and hospitality need a different conversation entirely. But that is an argument for tailoring the policy, not for abandoning it. Surely we can concede that office work has a great deal of slack, much of it spent in meetings nobody needs.\nA: Slack, yes. Whether you can capture it without it creeping back is another matter, and I remain unconvinced.",
+      "text": "Speaker A suspects that the fall in resignations may merely reflect a temporary ___ period.",
+      "answers": [
+        "honeymoon"
+      ],
+      "explanation_uz": "A: \"resignations fall whenever a company does anything novel; there is a honeymoon period.\""
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: You've spent thirty years restoring manuscripts. Is the aim to make them look new?\nB: Quite the opposite, and that is the most common misconception. A good conservator is, in a sense, aiming for invisibility, but not for erasure. We stabilise rather than repair. If a page has a tear, I will reinforce it with a fine Japanese tissue, but I will never paint over the loss, however tempting that might be.\nA: Why resist the temptation?\nB: Because the damage is part of the document's biography. A water stain tells you the library flooded in the seventeenth century; fill it in and you have quietly edited history. There is an ethical principle called reversibility: anything I do must be undoable by someone with better techniques in fifty years' time. I'm acutely aware that my predecessors, with the best intentions, glued pages with adhesives that are now practically impossible to remove.\nA: So you're also correcting past mistakes.\nB: Less correcting than living with them, I'd say. Which is humbling. One develops a certain scepticism about one's own confidence. I like to think that the highest compliment a colleague can pay my work is to fail to notice it, and the second highest is to be able to take it apart.",
+      "question": "What does the expert mean by saying he is \"less correcting than living with\" earlier mistakes?",
+      "options": [
+        "He prefers to leave all old repairs untouched out of laziness.",
+        "Past damage often cannot be undone, so he has to work around it.",
+        "He believes earlier conservators made no real mistakes.",
+        "He thinks mistakes are best hidden from the public."
+      ],
+      "answer": 1,
+      "explanation_uz": "B: predecessorlar yelimlari \"practically impossible to remove\" - xatolarni tuzatib bo'lmaydi, ular bilan ishlashga to'g'ri keladi (\"living with them\")."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: You've spent thirty years restoring manuscripts. Is the aim to make them look new?\nB: Quite the opposite, and that is the most common misconception. A good conservator is, in a sense, aiming for invisibility, but not for erasure. We stabilise rather than repair. If a page has a tear, I will reinforce it with a fine Japanese tissue, but I will never paint over the loss, however tempting that might be.\nA: Why resist the temptation?\nB: Because the damage is part of the document's biography. A water stain tells you the library flooded in the seventeenth century; fill it in and you have quietly edited history. There is an ethical principle called reversibility: anything I do must be undoable by someone with better techniques in fifty years' time. I'm acutely aware that my predecessors, with the best intentions, glued pages with adhesives that are now practically impossible to remove.\nA: So you're also correcting past mistakes.\nB: Less correcting than living with them, I'd say. Which is humbling. One develops a certain scepticism about one's own confidence. I like to think that the highest compliment a colleague can pay my work is to fail to notice it, and the second highest is to be able to take it apart.",
+      "text": "The expert says every intervention must be ___ so that future specialists can undo it.",
+      "answers": [
+        "reversible"
+      ],
+      "explanation_uz": "B: \"an ethical principle called reversibility: anything I do must be undoable by someone with better techniques...\""
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: You've spent thirty years restoring manuscripts. Is the aim to make them look new?\nB: Quite the opposite, and that is the most common misconception. A good conservator is, in a sense, aiming for invisibility, but not for erasure. We stabilise rather than repair. If a page has a tear, I will reinforce it with a fine Japanese tissue, but I will never paint over the loss, however tempting that might be.\nA: Why resist the temptation?\nB: Because the damage is part of the document's biography. A water stain tells you the library flooded in the seventeenth century; fill it in and you have quietly edited history. There is an ethical principle called reversibility: anything I do must be undoable by someone with better techniques in fifty years' time. I'm acutely aware that my predecessors, with the best intentions, glued pages with adhesives that are now practically impossible to remove.\nA: So you're also correcting past mistakes.\nB: Less correcting than living with them, I'd say. Which is humbling. One develops a certain scepticism about one's own confidence. I like to think that the highest compliment a colleague can pay my work is to fail to notice it, and the second highest is to be able to take it apart.",
+      "question": "Which attitude towards his own work does the expert express?",
+      "options": [
+        "Confidence that his techniques are the definitive standard.",
+        "Resentment of colleagues who criticise his methods.",
+        "Modest awareness that his methods may be superseded.",
+        "Indifference to how the work is judged."
+      ],
+      "answer": 2,
+      "explanation_uz": "B: \"humbling\", \"scepticism about one's own confidence\" va eng yuqori maqtov - ishini ajratib olish mumkin bo'lishi; bu kamtarlik va kelajak mutaxassislari yaxshiroq bo'lishi mumkinligini tan olishni bildiradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "By the time the first light reaches the delta, the fishermen have long since gone. Their boats, narrow and patched, slip between the reed beds with the unhurried economy of men who have done this every morning of their lives. For centuries the river deposited silt here faithfully, building the land beneath their feet grain by grain. But the dams upstream, constructed in the name of progress and electricity, have quietly interrupted that arrangement. The sediment now settles behind concrete, hundreds of kilometres away, and the sea, never one to waste an opportunity, is advancing. Villages that stood a kilometre from the shore within living memory now find the tide at their doorsteps. Officials speak of adaptation, a word that sounds reassuringly active until one notices how rarely it is accompanied by funding. In the meantime, the villagers do what they have always done: they adapt without being asked. They raise their houses on stilts, they plant salt-tolerant rice, they move the graveyard inland, though not without argument. One elderly woman told us she would sooner be buried in the sea beside her husband than in some inland cemetery among strangers. It is difficult to argue with her logic, although the planners have certainly tried.",
+      "question": "What does the narrator imply by saying adaptation \"sounds reassuringly active\"?",
+      "options": [
+        "The term gives an impression of action that official behaviour does not match.",
+        "Officials have launched an effective programme of action.",
+        "The word accurately describes what villagers are doing.",
+        "Adaptation is the best available solution for the delta."
+      ],
+      "answer": 0,
+      "explanation_uz": "Diktor: \"sounds reassuringly active until one notices how rarely it is accompanied by funding\" - so'z faollikni eslatadi, lekin amalda mablag' yo'q; bu istehzo."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "By the time the first light reaches the delta, the fishermen have long since gone. Their boats, narrow and patched, slip between the reed beds with the unhurried economy of men who have done this every morning of their lives. For centuries the river deposited silt here faithfully, building the land beneath their feet grain by grain. But the dams upstream, constructed in the name of progress and electricity, have quietly interrupted that arrangement. The sediment now settles behind concrete, hundreds of kilometres away, and the sea, never one to waste an opportunity, is advancing. Villages that stood a kilometre from the shore within living memory now find the tide at their doorsteps. Officials speak of adaptation, a word that sounds reassuringly active until one notices how rarely it is accompanied by funding. In the meantime, the villagers do what they have always done: they adapt without being asked. They raise their houses on stilts, they plant salt-tolerant rice, they move the graveyard inland, though not without argument. One elderly woman told us she would sooner be buried in the sea beside her husband than in some inland cemetery among strangers. It is difficult to argue with her logic, although the planners have certainly tried.",
+      "text": "The narrator hints that official talk of adaptation is rarely backed by ___.",
+      "answers": [
+        "funding",
+        "money",
+        "finance"
+      ],
+      "explanation_uz": "Matnda: \"how rarely it is accompanied by funding.\""
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "By the time the first light reaches the delta, the fishermen have long since gone. Their boats, narrow and patched, slip between the reed beds with the unhurried economy of men who have done this every morning of their lives. For centuries the river deposited silt here faithfully, building the land beneath their feet grain by grain. But the dams upstream, constructed in the name of progress and electricity, have quietly interrupted that arrangement. The sediment now settles behind concrete, hundreds of kilometres away, and the sea, never one to waste an opportunity, is advancing. Villages that stood a kilometre from the shore within living memory now find the tide at their doorsteps. Officials speak of adaptation, a word that sounds reassuringly active until one notices how rarely it is accompanied by funding. In the meantime, the villagers do what they have always done: they adapt without being asked. They raise their houses on stilts, they plant salt-tolerant rice, they move the graveyard inland, though not without argument. One elderly woman told us she would sooner be buried in the sea beside her husband than in some inland cemetery among strangers. It is difficult to argue with her logic, although the planners have certainly tried.",
+      "question": "What is implied by \"although the planners have certainly tried\"?",
+      "options": [
+        "The planners have successfully refuted her argument.",
+        "The narrator finds her reasoning illogical.",
+        "The planners have not yet been consulted about the graveyard.",
+        "The planners have failed to counter her reasoning convincingly."
+      ],
+      "answer": 3,
+      "explanation_uz": "\"It is difficult to argue with her logic, although the planners have certainly tried\" - diktor kampirning mantig'ini kuchli deb biladi; rejalovchilar uni rad eta olmagan."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Thank you, and good morning. I was asked to speak about productivity, which I accepted with some trepidation, given that I finished this talk at four o'clock this morning. I have, over the years, tried every system known to humanity. Colour coded calendars, the famous method involving index cards, an application that rewards you with a cartoon owl for completing tasks. The owl, I'm sorry to report, has been disappointed in me for months. What I have concluded, and I offer this tentatively, since my evidence is largely anecdotal, is that the planning itself has become a form of procrastination. One can spend an entire Sunday building an immaculate schedule and thereby avoid doing any of the things scheduled. Now, I'm not suggesting that organisation is worthless. That would be rather ungrateful of me, since my publisher is expecting a book on the subject. But I do wonder whether the people who write most eloquently about focus are quite as focused as they appear. They may simply be exceptionally good at looking busy, which, one could argue, is a skill in its own right and one that, to be fair, I have yet to master. So my advice, if one can call it that, is to pick a single method, tolerate its flaws, and then stop reading about methods. I recognise the irony of saying so in a keynote.",
+      "question": "What does the speaker suggest about elaborate planning?",
+      "options": [
+        "It is the only reliable route to productivity.",
+        "It can become a way of avoiding the actual work.",
+        "It is useful mainly for people with long-term goals.",
+        "It is harmful because it wastes money on software."
+      ],
+      "answer": 1,
+      "explanation_uz": "Nutq: \"the planning itself has become a form of procrastination\" - o'tkazib yuborishning bir shakli, ya'ni ishdan qochish."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Thank you, and good morning. I was asked to speak about productivity, which I accepted with some trepidation, given that I finished this talk at four o'clock this morning. I have, over the years, tried every system known to humanity. Colour coded calendars, the famous method involving index cards, an application that rewards you with a cartoon owl for completing tasks. The owl, I'm sorry to report, has been disappointed in me for months. What I have concluded, and I offer this tentatively, since my evidence is largely anecdotal, is that the planning itself has become a form of procrastination. One can spend an entire Sunday building an immaculate schedule and thereby avoid doing any of the things scheduled. Now, I'm not suggesting that organisation is worthless. That would be rather ungrateful of me, since my publisher is expecting a book on the subject. But I do wonder whether the people who write most eloquently about focus are quite as focused as they appear. They may simply be exceptionally good at looking busy, which, one could argue, is a skill in its own right and one that, to be fair, I have yet to master. So my advice, if one can call it that, is to pick a single method, tolerate its flaws, and then stop reading about methods. I recognise the irony of saying so in a keynote.",
+      "question": "Why does the speaker mention that his publisher is expecting a book?",
+      "options": [
+        "To boast about an upcoming publication.",
+        "To criticise his publisher for unrealistic deadlines.",
+        "To humorously explain why he cannot afford to dismiss organisation entirely.",
+        "To prove that he is more productive than most writers."
+      ],
+      "answer": 2,
+      "explanation_uz": "\"That would be rather ungrateful of me, since my publisher is expecting a book on the subject\" - o'zining manfaatini hazil bilan e'tirof qiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Thank you, and good morning. I was asked to speak about productivity, which I accepted with some trepidation, given that I finished this talk at four o'clock this morning. I have, over the years, tried every system known to humanity. Colour coded calendars, the famous method involving index cards, an application that rewards you with a cartoon owl for completing tasks. The owl, I'm sorry to report, has been disappointed in me for months. What I have concluded, and I offer this tentatively, since my evidence is largely anecdotal, is that the planning itself has become a form of procrastination. One can spend an entire Sunday building an immaculate schedule and thereby avoid doing any of the things scheduled. Now, I'm not suggesting that organisation is worthless. That would be rather ungrateful of me, since my publisher is expecting a book on the subject. But I do wonder whether the people who write most eloquently about focus are quite as focused as they appear. They may simply be exceptionally good at looking busy, which, one could argue, is a skill in its own right and one that, to be fair, I have yet to master. So my advice, if one can call it that, is to pick a single method, tolerate its flaws, and then stop reading about methods. I recognise the irony of saying so in a keynote.",
+      "text": "The speaker admits that the evidence for his conclusion is largely ___.",
+      "answers": [
+        "anecdotal"
+      ],
+      "explanation_uz": "Matnda: \"I offer this tentatively, since my evidence is largely anecdotal.\""
+    }
+  }
+]

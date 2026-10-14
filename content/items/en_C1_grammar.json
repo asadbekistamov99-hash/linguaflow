@@ -1,0 +1,710 @@
+[
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Not until the report was published ___ the scale of the problem become clear.",
+      "answers": [
+        "did"
+      ],
+      "explanation_uz": "Not until bilan boshlangan gapda inversiya bo'ladi: yordamchi fe'l (did) ega oldidan keladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Rarely ___ (I / hear) such a persuasive speech.",
+      "answers": [
+        "have I heard"
+      ],
+      "explanation_uz": "Rarely kabi inkor ma'noli ravish gap boshida kelsa, yordamchi fe'l ega oldiga o'tadi (have I heard)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Under no circumstances ___ employees disclose client data. (modal verb)",
+      "answers": [
+        "may",
+        "must",
+        "should"
+      ],
+      "explanation_uz": "Under no circumstances bilan boshlangan gapda inversiya bo'ladi; bu yerda modal fe'l ega oldida turadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "If I had taken that job in Dubai, I ___ (be) living there now.",
+      "answers": [
+        "would be"
+      ],
+      "explanation_uz": "Aralash shart gap: o'tgan sharti (had taken) va hozirgi natija (would be)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "If she weren't so stubborn, she ___ (accept) the offer last week.",
+      "answers": [
+        "would have accepted"
+      ],
+      "explanation_uz": "Aralash shart gap: hozirgi doimiy holat (weren't) va o'tgan natija (would have + V3)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The committee insisted that he ___ (resign) immediately.",
+      "answers": [
+        "resign",
+        "should resign"
+      ],
+      "explanation_uz": "insist that bilan rasmiy subjunktiv ishlatiladi: fe'l asosiy shaklda (resign), -s qo'shilmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I wish I ___ (not / say) those words yesterday.",
+      "answers": [
+        "hadn't said",
+        "had not said"
+      ],
+      "explanation_uz": "O'tmishdagi pushaymonlik wish + Past Perfect (had + V3) bilan ifodalanadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "It's high time we ___ (address) the issue of funding.",
+      "answers": [
+        "addressed"
+      ],
+      "explanation_uz": "It's high time + ega + Past Simple: hozirgi zamonda bajarilishi kerak bo'lgan ish haqida."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Would you rather he ___ (not / smoke) in the house?",
+      "answers": [
+        "didn't smoke",
+        "did not smoke"
+      ],
+      "explanation_uz": "would rather + boshqa ega bo'lsa, hozirgi/kelasi zamon uchun Past Simple ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "What really annoys me ___ the way he never apologises.",
+      "answers": [
+        "is"
+      ],
+      "explanation_uz": "What-cleft gapda 'What ... is ...' tuzilmasi urg'u beradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "It was not until 1990 ___ the company turned a profit.",
+      "answers": [
+        "that"
+      ],
+      "explanation_uz": "It was not until ... that ... tuzilmasi cleft gap bo'lib, vaqtni ta'kidlaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The treaty is believed ___ (sign) in secret back in 1842.",
+      "answers": [
+        "to have been signed"
+      ],
+      "explanation_uz": "Passiv believed + to have been + V3: o'tmishdagi voqea haqidagi taxmin."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "She had her passport ___ (steal) while travelling in Rome.",
+      "answers": [
+        "stolen"
+      ],
+      "explanation_uz": "have + narsa + V3 tuzilmasi: ish boshqa tomonidan bajarilgan yoki boshdan kechirilgan."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I'll get the technician ___ (fix) the printer tomorrow.",
+      "answers": [
+        "to fix"
+      ],
+      "explanation_uz": "get + shaxs + to-infinitive sababiy (causative) tuzilmasi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ (finish) her degree two years earlier, she was well qualified for the post.",
+      "answers": [
+        "Having finished"
+      ],
+      "explanation_uz": "Oldingi bajarilgan ish Having + V3 sifatdosh iborasi bilan ifodalanadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "No sooner had we sat down ___ the lights went out.",
+      "answers": [
+        "than"
+      ],
+      "explanation_uz": "No sooner ... than ... qolipi: ikki ketma-ket voqea; inversiya had + ega."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "She ___ have left yet; her coat is still on the chair.",
+      "answers": [
+        "can't",
+        "cannot",
+        "couldn't"
+      ],
+      "explanation_uz": "O'tmish haqidagi kuchli inkor xulosa can't have + V3 bilan beriladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I ___ have lent him the money; it was a foolish mistake. (criticising yourself)",
+      "answers": [
+        "shouldn't",
+        "should not",
+        "ought not to",
+        "oughtn't to"
+      ],
+      "explanation_uz": "O'tmishdagi xatoga pushaymonlik: shouldn't have + V3."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Anyone ___ (wish) to apply must submit the form by Friday.",
+      "answers": [
+        "wishing"
+      ],
+      "explanation_uz": "Qisqartirilgan nisbiy gap: who wishes o'rniga V-ing (wishing) ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I ___ lock the door; I distinctly remember doing it. (emphatic)",
+      "answers": [
+        "did"
+      ],
+      "explanation_uz": "Tasdiqni kuchaytirish uchun darak gapda yordamchi fe'l (did) + asosiy fe'l ishlatiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Little ___ she know that the letter would change her life.",
+      "answers": [
+        "did"
+      ],
+      "explanation_uz": "Little inkor ma'noli ravish sifatida gap boshida inversiyani talab qiladi (did she know)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "I didn't want to attend the meeting, but I had ___.",
+      "answers": [
+        "to"
+      ],
+      "explanation_uz": "Ellipsis: takrorlanmaslik uchun fe'l tushiriladi, faqat 'to' qoladi (had to)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The manager is accountable ___ the board for all decisions.",
+      "answers": [
+        "to"
+      ],
+      "explanation_uz": "accountable to (shaxs) for (narsa): qat'iy predlogli birikma."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "She took full advantage ___ the opportunity.",
+      "answers": [
+        "of"
+      ],
+      "explanation_uz": "take advantage of: qat'iy predlogli birikma."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ it not for your help, I would have failed.",
+      "answers": [
+        "Were"
+      ],
+      "explanation_uz": "Aralash/3-shart gapda if tushirilganda inversiya: Were it not for = If it were not for."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "He was reluctant to comply ___ the new regulations.",
+      "answers": [
+        "with"
+      ],
+      "explanation_uz": "comply with: qat'iy predlogli fe'l birikmasi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "The ___ (SUFFICIENT) of the evidence led to the case being dismissed.",
+      "answers": [
+        "insufficiency"
+      ],
+      "explanation_uz": "So'z yasash: in- old qo'shimchasi va -ency qo'shimchasi bilan ot hosil bo'ladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "Her ___ (RELUCTANT) to speak in public held back her career.",
+      "answers": [
+        "reluctance"
+      ],
+      "explanation_uz": "Sifatdan ot yasash: reluctant -> reluctance (-ant -> -ance)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The more she practised, ___ she became.",
+      "options": [
+        "the more confident",
+        "more confident",
+        "the most confident",
+        "most confident"
+      ],
+      "answer": 0,
+      "explanation_uz": "The + qiyosiy daraja ..., the + qiyosiy daraja ... qolipi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "___ the weather, we decided to go ahead with the picnic.",
+      "options": [
+        "Despite of",
+        "Notwithstanding",
+        "In spite",
+        "Although"
+      ],
+      "answer": 1,
+      "explanation_uz": "Notwithstanding rasmiy predlog bo'lib, ot oldidan keladi; despite of va in spite noto'g'ri."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The sculpture is thought ___ the country last year.",
+      "options": [
+        "to leave",
+        "to be leaving",
+        "to have left",
+        "having left"
+      ],
+      "answer": 2,
+      "explanation_uz": "O'tmishdagi voqea haqidagi passiv: is thought + to have + V3."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "If he hadn't missed the flight, he ___ in Tokyo now.",
+      "options": [
+        "would have been",
+        "will be",
+        "would be",
+        "had been"
+      ],
+      "answer": 2,
+      "explanation_uz": "Aralash shart gap: o'tgan sharti (hadn't missed) va hozirgi natija (would be)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "It is essential that every applicant ___ the form in person.",
+      "options": [
+        "submits",
+        "will submit",
+        "is submitting",
+        "submit"
+      ],
+      "answer": 3,
+      "explanation_uz": "essential that bilan subjunktiv: fe'l asosiy shaklda keladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The man ___ the speech is my uncle.",
+      "options": [
+        "gave",
+        "giving",
+        "given",
+        "give"
+      ],
+      "answer": 1,
+      "explanation_uz": "Qisqartirilgan nisbiy gap: who is giving o'rniga V-ing (giving)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The film was visually stunning. ___, the plot was thin.",
+      "options": [
+        "Moreover",
+        "Consequently",
+        "That said",
+        "Therefore"
+      ],
+      "answer": 2,
+      "explanation_uz": "That said qarama-qarshilik bildiruvchi diskurs bog'lovchisi; boshqalari qo'shish yoki sabab ma'nosida."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "___ I need is a long holiday.",
+      "options": [
+        "What",
+        "That",
+        "Which",
+        "It"
+      ],
+      "answer": 0,
+      "explanation_uz": "What-cleft: What I need is ... tuzilmasi ega vazifasidagi gapni hosil qiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "She has a real flair ___ languages.",
+      "options": [
+        "of",
+        "in",
+        "to",
+        "for"
+      ],
+      "answer": 3,
+      "explanation_uz": "a flair for: qat'iy predlogli birikma."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "The proposal met ___ fierce opposition.",
+      "options": [
+        "with",
+        "by",
+        "to",
+        "against"
+      ],
+      "answer": 0,
+      "explanation_uz": "meet with: (qarshilik, muvaffaqiyat) bilan to'qnash kelmoq, qat'iy birikma."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Which noun correctly completes the sentence? The ___ of the new law was delayed.",
+      "options": [
+        "implementate",
+        "implement",
+        "implemental",
+        "implementation"
+      ],
+      "answer": 3,
+      "explanation_uz": "Fe'ldan ot yasash: implement -> implementation (-ation qo'shimchasi)."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "She regrets ___ the opportunity to study abroad.",
+      "options": [
+        "to miss",
+        "miss",
+        "missing",
+        "to missing"
+      ],
+      "answer": 2,
+      "explanation_uz": "regret + V-ing o'tmishdagi ishga pushaymonlikni bildiradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "He ___ have seen me; he walked straight past.",
+      "options": [
+        "can't",
+        "mustn't",
+        "needn't",
+        "shouldn't"
+      ],
+      "answer": 0,
+      "explanation_uz": "O'tmish haqida kuchli inkor xulosa: can't have + V3."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "He had the builders ___ the wall twice.",
+      "options": [
+        "to rebuild",
+        "rebuilt",
+        "rebuilding",
+        "rebuild"
+      ],
+      "answer": 3,
+      "explanation_uz": "have + shaxs + infinitive (to'siz) sababiy tuzilma: had the builders rebuild."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "Seldom ___ such dedication.",
+      "options": [
+        "I have seen",
+        "have I seen",
+        "I saw",
+        "I did see"
+      ],
+      "answer": 1,
+      "explanation_uz": "Seldom gap boshida kelsa, inversiya bo'ladi: have I seen."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "He suggested that she ___ a doctor.",
+      "options": [
+        "sees",
+        "saw",
+        "seeing",
+        "see"
+      ],
+      "answer": 3,
+      "explanation_uz": "suggest that bilan subjunktiv: fe'l asosiy shaklda keladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "grammar",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "By the time the rescuers arrived, the climbers ___ for two days.",
+      "options": [
+        "were trapped",
+        "had been trapped",
+        "have been trapped",
+        "would be trapped"
+      ],
+      "answer": 1,
+      "explanation_uz": "Boshqa o'tmish payt oldidan davom etgan holat: Past Perfect (had been trapped)."
+    }
+  }
+]

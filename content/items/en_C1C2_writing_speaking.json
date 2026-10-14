@@ -1,0 +1,190 @@
+[
+  {
+    "lang": "en", "skill": "writing", "level": "C1", "type": "essay_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Some people believe that university education should be free for everyone and paid for through taxation. Others argue that students should contribute to the cost of their own studies.\n\nDiscuss both views and give your own opinion.\n\nGive reasons for your answer and include relevant examples from your own knowledge or experience. Organise your essay into clear paragraphs and avoid memorised phrases.",
+      "min_words": 250,
+      "task": "task2"
+    }
+  },
+  {
+    "lang": "en", "skill": "writing", "level": "C1", "type": "essay_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "In many countries, people now spend most of their working lives in a single city and rarely travel for their jobs. Some argue that governments should encourage young adults to work abroad for a few years.\n\nTo what extent do you agree or disagree?\n\nSupport your position with specific reasons and examples, and acknowledge at least one opposing point of view.",
+      "min_words": 250,
+      "task": "task2"
+    }
+  },
+  {
+    "lang": "en", "skill": "writing", "level": "C1", "type": "essay_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "In large cities around the world, more and more people depend on private cars, which leads to traffic jams, noise and air pollution.\n\nWhat problems does this trend cause, and what measures could governments and individuals take to reduce them?\n\nDevelop each idea fully with explanations and examples, and make sure your solutions clearly address the problems you describe.",
+      "min_words": 250,
+      "task": "task2"
+    }
+  },
+  {
+    "lang": "en", "skill": "writing", "level": "C1", "type": "essay_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Many young people today leave their home towns or villages to study or work in large cities or in other countries. Why do you think this is happening, and do the benefits of this trend outweigh the drawbacks for the places they leave behind?\n\nAnswer both parts of the question in a well-organised essay, using examples to support your ideas.",
+      "min_words": 250,
+      "task": "task2"
+    }
+  },
+  {
+    "lang": "en", "skill": "writing", "level": "C1", "type": "essay_prompt", "exam": "general",
+    "payload": {
+      "prompt": "You live in a residential area where the only public park has been closed for several months for repairs, and there is no sign that work will finish soon. Write a formal letter to the head of your local council.\n\nIn your letter you should:\n- explain how the closure is affecting residents, especially families and older people\n- ask for a clear timetable for the repairs\n- suggest a temporary alternative for the community\n\nUse a formal register and an appropriate opening and closing. Maintain a polite but firm tone.",
+      "min_words": 250
+    }
+  },
+  {
+    "lang": "en", "skill": "writing", "level": "C1", "type": "essay_prompt", "exam": "general",
+    "payload": {
+      "prompt": "You work as a student representative at a language school. The director has asked you to write a report on students' views about the school's evening courses, based on a recent survey.\n\nIn your report you should:\n- summarise what students like and dislike about the current courses\n- identify two or three main problems, such as timing, class size or materials\n- recommend specific improvements and justify them\n\nUse headings, a clear structure and a formal, objective style. You may invent reasonable survey findings.",
+      "min_words": 250
+    }
+  },
+  {
+    "lang": "en", "skill": "writing", "level": "C2", "type": "essay_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Some commentators claim that a government's primary responsibility is to promote economic growth, and that environmental and social concerns should come second. Others maintain that growth is meaningless if it erodes the well-being of citizens and the natural world.\n\nTo what extent do you agree or disagree?\n\nEvaluate the strongest arguments on each side, consider whether the two goals are really in conflict, and reach a nuanced, well-supported conclusion.",
+      "min_words": 300,
+      "task": "task2"
+    }
+  },
+  {
+    "lang": "en", "skill": "writing", "level": "C2", "type": "essay_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Artificial intelligence can now produce text, images and music that are difficult to distinguish from human work. Some argue that this threatens genuine creativity and devalues the effort of artists and writers; others see it as simply another tool in a long history of technological change.\n\nDiscuss both views and give your own opinion.\n\nGo beyond obvious points: consider what we actually mean by creativity, who benefits and who loses, and how society might respond.",
+      "min_words": 300,
+      "task": "task2"
+    }
+  },
+  {
+    "lang": "en", "skill": "writing", "level": "C2", "type": "essay_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "False or misleading information now spreads across social media faster than corrections can follow it, shaping public opinion on health, politics and science.\n\nWhat are the deeper causes of this problem, and what combination of responses by governments, technology companies and individuals would be most effective?\n\nWeigh the practical and ethical limits of the solutions you propose, such as the risk to freedom of expression.",
+      "min_words": 300,
+      "task": "task2"
+    }
+  },
+  {
+    "lang": "en", "skill": "writing", "level": "C2", "type": "essay_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "In many fast-developing cities, historic buildings are demolished to make way for modern housing and business districts. Why does this happen so often, and should the preservation of cultural heritage take priority over urban development?\n\nAddress both parts of the question. Consider competing interests, long-term consequences and what we might lose that cannot later be recovered.",
+      "min_words": 300,
+      "task": "task2"
+    }
+  },
+  {
+    "lang": "en", "skill": "writing", "level": "C2", "type": "essay_prompt", "exam": "general",
+    "payload": {
+      "prompt": "A university in your country wants to improve the experience of international students during their first year. You have been asked to write a proposal for the university board.\n\nIn your proposal you should:\n- outline the main difficulties that newly arrived international students typically face, both academic and social\n- put forward a realistic programme of support, with a rationale for each element\n- anticipate likely objections, such as cost, and respond to them\n- evaluate how the success of the programme could be measured\n\nUse a persuasive but measured professional tone, with clear headings and a logical progression of ideas.",
+      "min_words": 320
+    }
+  },
+  {
+    "lang": "en", "skill": "writing", "level": "C2", "type": "essay_prompt", "exam": "general",
+    "payload": {
+      "prompt": "A well-known magazine is running a series on the changing face of travel. Write an article for its readers on the question: does mass tourism ultimately help or harm the communities that host it?\n\nIn your article you should:\n- engage readers with an opening that draws on a specific scene or example\n- weigh economic benefits against cultural and environmental costs\n- challenge at least one common assumption about tourism\n- end with a thoughtful, memorable conclusion rather than a simple summary\n\nAdopt an engaging, intelligent voice, and vary your sentence structure and vocabulary.",
+      "min_words": 300
+    }
+  },
+  {
+    "lang": "en", "skill": "speaking", "level": "C1", "type": "speaking_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Let's talk about your daily routine and how you use your free time.\n- What is the busiest part of your day, and why?\n- Do you prefer to plan your free time or to do things spontaneously?\n- How has the way you spend your free time changed since you were a teenager?\n- Is there a hobby you would like to take up in the future?",
+      "part": 1,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "en", "skill": "speaking", "level": "C1", "type": "speaking_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Describe a skill that you found difficult to learn but are now proud of.\nYou should say:\n- what the skill is\n- why you decided to learn it\n- what made it difficult for you\nand explain how you feel about having mastered it.",
+      "part": 2,
+      "prep_seconds": 60
+    }
+  },
+  {
+    "lang": "en", "skill": "speaking", "level": "C1", "type": "speaking_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Describe a place in your country where you feel relaxed and at peace.\nYou should say:\n- where this place is\n- how often you go there\n- what you usually do there\nand explain why it helps you to relax.",
+      "part": 2,
+      "prep_seconds": 60
+    }
+  },
+  {
+    "lang": "en", "skill": "speaking", "level": "C1", "type": "speaking_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Let's discuss learning and education more broadly.\n- Why do some people learn new skills more quickly than others?\n- Do you think schools should focus more on practical skills than on academic knowledge?\n- How might the way people learn change over the next twenty years?",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "en", "skill": "speaking", "level": "C1", "type": "speaking_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Let's talk about cities and the natural environment.\n- What are the advantages and disadvantages of living in a large city compared with a small town?\n- Whose responsibility is it to protect green spaces in cities: the government or ordinary citizens?\n- Do you think people will become more or less connected to nature in the future? Why?",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "en", "skill": "speaking", "level": "C1", "type": "speaking_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Let's discuss work and success.\n- What qualities do you think make someone successful in their career?\n- Is job satisfaction more important than a high salary? Why?\n- In what ways might technology change the kinds of jobs available to young people?",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "en", "skill": "speaking", "level": "C2", "type": "speaking_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Let's talk about reading and the information you rely on.\n- How do you usually decide whether a piece of information is trustworthy?\n- Has your attitude towards reading changed as you have grown older? In what way?\n- If you could only keep one source of news or knowledge, what would you choose, and what would you be giving up?\n- Do you think people read less carefully now than in the past?",
+      "part": 1,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "en", "skill": "speaking", "level": "C2", "type": "speaking_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Describe a time when you changed your mind about something important.\nYou should say:\n- what you originally believed\n- what led you to reconsider\n- how other people reacted to your change of view\nand explain what the experience taught you about the way you think.",
+      "part": 2,
+      "prep_seconds": 60
+    }
+  },
+  {
+    "lang": "en", "skill": "speaking", "level": "C2", "type": "speaking_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Describe a tradition in your family or community that you think may disappear in the future.\nYou should say:\n- what the tradition is\n- how it is usually practised\n- why it might gradually die out\nand explain whether you think its loss would matter.",
+      "part": 2,
+      "prep_seconds": 60
+    }
+  },
+  {
+    "lang": "en", "skill": "speaking", "level": "C2", "type": "speaking_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Let's consider tradition and modernisation.\n- To what extent is it possible for a society to modernise rapidly without losing its cultural identity?\n- Who should decide which traditions are worth preserving: governments, communities or individuals?\n- If you could keep only one tradition from your culture for future generations, which would it be, and what would be the consequences of losing the others?",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "en", "skill": "speaking", "level": "C2", "type": "speaking_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Let's discuss technology and human attention.\n- Is constant access to information making people better informed, or merely more distracted?\n- Should companies be held accountable for designing products that are deliberately difficult to put down? Why or why not?\n- Imagine that smartphones had never been invented. In what ways might society be better or worse off today?",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "en", "skill": "speaking", "level": "C2", "type": "speaking_prompt", "exam": "ielts",
+    "payload": {
+      "prompt": "Let's explore trust and responsibility in society.\n- What do you think makes people trust public institutions, and how fragile is that trust?\n- Is it ever justifiable for a person to break a rule for the greater good? Where would you draw the line?\n- If wealthy countries were required to share their resources much more equally with poorer ones, what would the long-term implications be?",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  }
+]

@@ -1,0 +1,270 @@
+[
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Today I want to look at how cities manage heat. Urban areas are often several degrees warmer than the surrounding countryside, a phenomenon known as the heat island effect. The main culprit is not traffic or air conditioning, as many people assume, but the materials we build with. Dark asphalt and concrete absorb sunlight during the day and release it slowly after sunset, so nights remain uncomfortably warm. Some planners have responded by painting roofs white, which reflects light effectively and is cheap. However, my own view is that planting trees is the better long term investment, because shade also cools the pavement beneath it and trees add moisture to the air. The drawback is time. A sapling takes roughly twenty years to provide meaningful cover, whereas a coat of reflective paint works within a week. For that reason, I would argue that the sensible strategy combines both, using paint immediately and trees for the future. Next week we will turn to the question of water, and I will ask you to read the short paper on reservoirs before the seminar.",
+      "question": "According to the lecturer, what chiefly causes cities to stay warm at night?",
+      "options": [
+        "Heavy traffic on main roads",
+        "The use of air conditioning",
+        "Building materials that store and slowly release heat",
+        "A lack of rainfall in summer"
+      ],
+      "answer": 2,
+      "explanation_uz": "Ma'ruzachi sababni transport yoki konditsioner emas, balki qurilish materiallari deydi: asfalt va beton kunduzi issiqni yutib, kechasi sekin chiqaradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Today I want to look at how cities manage heat. Urban areas are often several degrees warmer than the surrounding countryside, a phenomenon known as the heat island effect. The main culprit is not traffic or air conditioning, as many people assume, but the materials we build with. Dark asphalt and concrete absorb sunlight during the day and release it slowly after sunset, so nights remain uncomfortably warm. Some planners have responded by painting roofs white, which reflects light effectively and is cheap. However, my own view is that planting trees is the better long term investment, because shade also cools the pavement beneath it and trees add moisture to the air. The drawback is time. A sapling takes roughly twenty years to provide meaningful cover, whereas a coat of reflective paint works within a week. For that reason, I would argue that the sensible strategy combines both, using paint immediately and trees for the future. Next week we will turn to the question of water, and I will ask you to read the short paper on reservoirs before the seminar.",
+      "text": "In the lecturer's view, trees are a better ___ than white roofs.",
+      "answers": [
+        "long term investment",
+        "long-term investment"
+      ],
+      "explanation_uz": "Ma'ruzachi: \"planting trees is the better long term investment\" deb aytadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Today I want to look at how cities manage heat. Urban areas are often several degrees warmer than the surrounding countryside, a phenomenon known as the heat island effect. The main culprit is not traffic or air conditioning, as many people assume, but the materials we build with. Dark asphalt and concrete absorb sunlight during the day and release it slowly after sunset, so nights remain uncomfortably warm. Some planners have responded by painting roofs white, which reflects light effectively and is cheap. However, my own view is that planting trees is the better long term investment, because shade also cools the pavement beneath it and trees add moisture to the air. The drawback is time. A sapling takes roughly twenty years to provide meaningful cover, whereas a coat of reflective paint works within a week. For that reason, I would argue that the sensible strategy combines both, using paint immediately and trees for the future. Next week we will turn to the question of water, and I will ask you to read the short paper on reservoirs before the seminar.",
+      "question": "Why does the lecturer suggest using both approaches together?",
+      "options": [
+        "Trees are too expensive to plant alone",
+        "Paint gives quick results while trees take many years to work",
+        "Reflective paint damages young trees",
+        "Planners are required to combine them"
+      ],
+      "answer": 1,
+      "explanation_uz": "Paint bir hafta ichida ishlaydi, ko'chat esa taxminan yigirma yil oladi; shuning uchun ikkalasini birga qo'llash tavsiya etiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Doctor Karim, your new book argues that teenagers should start school later. Why?\nB: Because adolescent body clocks shift. Around puberty the brain releases the sleep hormone about two hours later than in children, so asking a fifteen year old to concentrate at eight in the morning is like asking an adult to work at six.\nA: Some headteachers say a later start simply pushes everything back, and students stay up even later.\nB: That was my worry too, but a trial in twelve schools showed otherwise. Pupils slept an extra hour on average, and attendance rose noticeably.\nA: Were exam results better?\nB: Honestly, the improvement was modest, and I would not oversell it. What surprised me more was that teachers reported fewer arguments in the corridors.\nA: So what is your advice to parents who cannot change the school timetable?\nB: Keep screens out of the bedroom. Light from phones delays the hormone even further, and that is something families can control tonight.",
+      "question": "What did the trial in the schools show?",
+      "options": [
+        "Pupils went to bed later than before",
+        "Attendance fell slightly",
+        "Exam scores rose sharply",
+        "Pupils slept about an hour longer on average"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: \"Pupils slept an extra hour on average\" - o'quvchilar o'rtacha bir soat ko'proq uxlagan."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Doctor Karim, your new book argues that teenagers should start school later. Why?\nB: Because adolescent body clocks shift. Around puberty the brain releases the sleep hormone about two hours later than in children, so asking a fifteen year old to concentrate at eight in the morning is like asking an adult to work at six.\nA: Some headteachers say a later start simply pushes everything back, and students stay up even later.\nB: That was my worry too, but a trial in twelve schools showed otherwise. Pupils slept an extra hour on average, and attendance rose noticeably.\nA: Were exam results better?\nB: Honestly, the improvement was modest, and I would not oversell it. What surprised me more was that teachers reported fewer arguments in the corridors.\nA: So what is your advice to parents who cannot change the school timetable?\nB: Keep screens out of the bedroom. Light from phones delays the hormone even further, and that is something families can control tonight.",
+      "question": "How does Doctor Karim regard the effect on exam results?",
+      "options": [
+        "He is cautious and avoids overstating it",
+        "He is disappointed that it was so small to matter",
+        "He is confident it proves his theory",
+        "He thinks results were not measured"
+      ],
+      "answer": 0,
+      "explanation_uz": "U \"modest\" va \"I would not oversell it\" deydi - ehtiyotkor, natijani bo'rttirmaydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Doctor Karim, your new book argues that teenagers should start school later. Why?\nB: Because adolescent body clocks shift. Around puberty the brain releases the sleep hormone about two hours later than in children, so asking a fifteen year old to concentrate at eight in the morning is like asking an adult to work at six.\nA: Some headteachers say a later start simply pushes everything back, and students stay up even later.\nB: That was my worry too, but a trial in twelve schools showed otherwise. Pupils slept an extra hour on average, and attendance rose noticeably.\nA: Were exam results better?\nB: Honestly, the improvement was modest, and I would not oversell it. What surprised me more was that teachers reported fewer arguments in the corridors.\nA: So what is your advice to parents who cannot change the school timetable?\nB: Keep screens out of the bedroom. Light from phones delays the hormone even further, and that is something families can control tonight.",
+      "text": "The doctor advises parents to keep ___ out of the bedroom.",
+      "answers": [
+        "screens",
+        "phones"
+      ],
+      "explanation_uz": "Doktor: \"Keep screens out of the bedroom\" - ekranlarni yotoqxonadan chiqarish."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Have you decided on the topic for our joint presentation?\nB: I'm leaning towards microplastics, but I'm worried the literature is huge.\nA: That's exactly why I'd narrow it. What about plastics in drinking water only?\nB: Fair point. Though honestly, my supervisor warned that bottled water studies contradict each other, so we'd need to explain why.\nA: Which could actually be our strongest section. We compare the methods and show the disagreement comes from different filters.\nB: I like that. Who does the slides?\nA: I'll take them, if you handle the survey data. I've never been good with spreadsheets.\nB: Deal. Shall we book a room for Thursday afternoon?\nA: The library rooms are full until Friday, so let's meet in the cafe and run through it there.\nB: Fine, but bring your charger, because the sockets near the window never work.",
+      "text": "The first speaker suggests narrowing the topic to plastics in ___.",
+      "answers": [
+        "drinking water"
+      ],
+      "explanation_uz": "A: \"What about plastics in drinking water only?\" deb mavzuni toraytirishni taklif qiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Have you decided on the topic for our joint presentation?\nB: I'm leaning towards microplastics, but I'm worried the literature is huge.\nA: That's exactly why I'd narrow it. What about plastics in drinking water only?\nB: Fair point. Though honestly, my supervisor warned that bottled water studies contradict each other, so we'd need to explain why.\nA: Which could actually be our strongest section. We compare the methods and show the disagreement comes from different filters.\nB: I like that. Who does the slides?\nA: I'll take them, if you handle the survey data. I've never been good with spreadsheets.\nB: Deal. Shall we book a room for Thursday afternoon?\nA: The library rooms are full until Friday, so let's meet in the cafe and run through it there.\nB: Fine, but bring your charger, because the sockets near the window never work.",
+      "question": "Why do the students plan to meet in the cafe?",
+      "options": [
+        "They prefer working with coffee",
+        "The library rooms are unavailable until Friday",
+        "Their supervisor asked them to",
+        "The library is too noisy"
+      ],
+      "answer": 1,
+      "explanation_uz": "A: \"The library rooms are full until Friday\" - kutubxona xonalari juma kunigacha band."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Have you decided on the topic for our joint presentation?\nB: I'm leaning towards microplastics, but I'm worried the literature is huge.\nA: That's exactly why I'd narrow it. What about plastics in drinking water only?\nB: Fair point. Though honestly, my supervisor warned that bottled water studies contradict each other, so we'd need to explain why.\nA: Which could actually be our strongest section. We compare the methods and show the disagreement comes from different filters.\nB: I like that. Who does the slides?\nA: I'll take them, if you handle the survey data. I've never been good with spreadsheets.\nB: Deal. Shall we book a room for Thursday afternoon?\nA: The library rooms are full until Friday, so let's meet in the cafe and run through it there.\nB: Fine, but bring your charger, because the sockets near the window never work.",
+      "question": "What does the first speaker think about the contradictory studies?",
+      "options": [
+        "They make the topic too risky",
+        "They should be ignored in the talk",
+        "They could become the strongest part of the presentation",
+        "They prove the filters are faulty"
+      ],
+      "answer": 2,
+      "explanation_uz": "A: \"Which could actually be our strongest section\" - qarama-qarshi tadqiqotlarni eng kuchli bo'lim qilish mumkin."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Good morning. Commuters in the northern region face disruption this week as engineers begin replacing the railway bridge at Elmsworth. The work, which was originally planned for next spring, has been brought forward after inspectors found cracks in the central supports. Trains will not run between Harbridge and Dunmore until the end of the month, and replacement buses will leave every twenty minutes. The operator admits the buses will add roughly forty minutes to the average journey, and has urged passengers to consider working from home where possible. Local business owners are less than pleased. One cafe owner told us that she expects to lose a third of her trade, since most of her customers arrive by train. The transport minister, however, insisted that safety must come first and ruled out any compensation for shops. Meanwhile, cyclists have welcomed the news, as the council has promised to open a temporary path along the river by Friday. We will bring you updates throughout the day.",
+      "question": "Why was the bridge work brought forward?",
+      "options": [
+        "Commuters complained about delays",
+        "The budget was approved early",
+        "The council wanted a cycle path",
+        "Inspectors found damage to the supports"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: \"inspectors found cracks in the central supports\" - ustunlarda yoriqlar topilgan."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Good morning. Commuters in the northern region face disruption this week as engineers begin replacing the railway bridge at Elmsworth. The work, which was originally planned for next spring, has been brought forward after inspectors found cracks in the central supports. Trains will not run between Harbridge and Dunmore until the end of the month, and replacement buses will leave every twenty minutes. The operator admits the buses will add roughly forty minutes to the average journey, and has urged passengers to consider working from home where possible. Local business owners are less than pleased. One cafe owner told us that she expects to lose a third of her trade, since most of her customers arrive by train. The transport minister, however, insisted that safety must come first and ruled out any compensation for shops. Meanwhile, cyclists have welcomed the news, as the council has promised to open a temporary path along the river by Friday. We will bring you updates throughout the day.",
+      "text": "Replacement buses will leave every ___ minutes.",
+      "answers": [
+        "twenty",
+        "20"
+      ],
+      "explanation_uz": "Matnda: \"replacement buses will leave every twenty minutes\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Good morning. Commuters in the northern region face disruption this week as engineers begin replacing the railway bridge at Elmsworth. The work, which was originally planned for next spring, has been brought forward after inspectors found cracks in the central supports. Trains will not run between Harbridge and Dunmore until the end of the month, and replacement buses will leave every twenty minutes. The operator admits the buses will add roughly forty minutes to the average journey, and has urged passengers to consider working from home where possible. Local business owners are less than pleased. One cafe owner told us that she expects to lose a third of her trade, since most of her customers arrive by train. The transport minister, however, insisted that safety must come first and ruled out any compensation for shops. Meanwhile, cyclists have welcomed the news, as the council has promised to open a temporary path along the river by Friday. We will bring you updates throughout the day.",
+      "question": "What is the transport minister's position?",
+      "options": [
+        "Safety comes first, so shops will not be compensated",
+        "Shops will receive financial help",
+        "The work should have waited until spring",
+        "Buses are an adequate replacement"
+      ],
+      "answer": 0,
+      "explanation_uz": "Vazir: \"safety must come first\" va do'konlarga kompensatsiyani rad etdi (\"ruled out any compensation\")."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Good afternoon, how can I help?\nB: Hello, I booked a double room for three nights, but I've just realised I entered the wrong dates. I arrive on the fourteenth, not the twelfth.\nA: Let me see. Yes, I can amend that, though I should mention that the rate is lower for the earlier dates, so the new price will be slightly higher.\nB: How much higher?\nA: About fifteen pounds a night. Alternatively, there's a room with a garden view, which is still available at the original price.\nB: That sounds better. Is breakfast included?\nA: Only on the premium rate. Otherwise it's eight pounds per person.\nB: I'll skip breakfast, then. I'd rather find a cafe nearby.\nA: There's a good bakery two minutes down the road. Now, could I take a card number to hold the booking?\nB: Of course, but I'd prefer to pay on arrival.\nA: That's no problem, we only need the details as a guarantee.",
+      "question": "Why is the guest calling?",
+      "options": [
+        "To cancel the booking",
+        "To correct the dates of a reservation",
+        "To complain about the price",
+        "To ask for a breakfast discount"
+      ],
+      "answer": 1,
+      "explanation_uz": "Mehmon: \"I entered the wrong dates\" - sanalarni noto'g'ri kiritgan, shuning uchun tuzatmoqchi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Good afternoon, how can I help?\nB: Hello, I booked a double room for three nights, but I've just realised I entered the wrong dates. I arrive on the fourteenth, not the twelfth.\nA: Let me see. Yes, I can amend that, though I should mention that the rate is lower for the earlier dates, so the new price will be slightly higher.\nB: How much higher?\nA: About fifteen pounds a night. Alternatively, there's a room with a garden view, which is still available at the original price.\nB: That sounds better. Is breakfast included?\nA: Only on the premium rate. Otherwise it's eight pounds per person.\nB: I'll skip breakfast, then. I'd rather find a cafe nearby.\nA: There's a good bakery two minutes down the road. Now, could I take a card number to hold the booking?\nB: Of course, but I'd prefer to pay on arrival.\nA: That's no problem, we only need the details as a guarantee.",
+      "question": "Why does the guest prefer the garden view room?",
+      "options": [
+        "It includes breakfast",
+        "It is closer to the bakery",
+        "It costs the same as the original booking",
+        "It is quieter"
+      ],
+      "answer": 2,
+      "explanation_uz": "Xodim: garden view xonasi \"original price\"da mavjud, boshqasi esa kuniga taxminan o'n besh funt qimmat; mehmon \"That sounds better\" deydi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "C1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Good afternoon, how can I help?\nB: Hello, I booked a double room for three nights, but I've just realised I entered the wrong dates. I arrive on the fourteenth, not the twelfth.\nA: Let me see. Yes, I can amend that, though I should mention that the rate is lower for the earlier dates, so the new price will be slightly higher.\nB: How much higher?\nA: About fifteen pounds a night. Alternatively, there's a room with a garden view, which is still available at the original price.\nB: That sounds better. Is breakfast included?\nA: Only on the premium rate. Otherwise it's eight pounds per person.\nB: I'll skip breakfast, then. I'd rather find a cafe nearby.\nA: There's a good bakery two minutes down the road. Now, could I take a card number to hold the booking?\nB: Of course, but I'd prefer to pay on arrival.\nA: That's no problem, we only need the details as a guarantee.",
+      "text": "The hotel needs the card details only as a ___.",
+      "answers": [
+        "guarantee"
+      ],
+      "explanation_uz": "Xodim: \"we only need the details as a guarantee\"."
+    }
+  }
+]

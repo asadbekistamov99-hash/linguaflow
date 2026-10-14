@@ -100,3 +100,12 @@ xalqaro imtihon sertifikati emas. Ballar (masalan "IELTS taxminiy 6.5") faqat ta
   Bazaga qoralama sifatida yuklash: `npm run import-items -- --dry-run content/items/*.json`, so'ng `--dry-run`siz.
   Qayta ishga tushirish xavfsiz (takrorlar o'tkazib yuboriladi). Savollar **Savollar banki**da tekshiruvchi tasdiqlashini kutadi.
 - Kontent tekshiruvi: `npm run validate-seed`.
+
+## Imtihon mashqlari (Sprint 3)
+
+- **Mashq** bo'limi (`/app#/practice`): o'qish, eshitish, grammatika, lug'at. Faqat Savollar bankida **tasdiqlangan** (`approved`) savollar
+  ko'rsatiladi; to'g'ri javob javob berilgandan keyingina serverdan keladi. Eshitish matni brauzer ovozi bilan o'qiladi.
+  Kuniga mashqdan 60 XP gacha (`practice:*`).
+- API: `GET /api/practice/summary`, `POST /api/practice/start`, `POST /api/practice/:sid/answer`, `POST /api/practice/:sid/finish`.
+- Kontent qoralamalari: `content/items/<til>_B1B2_reading_listening.json` (har tilda 56 ta o'qish/eshitish savoli, B1 va B2).
+  `npm run import-items` bilan yuklang, so'ng tekshiruvchi tasdiqlaydi.

@@ -1,0 +1,994 @@
+[
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Hola Marta:\n\nTe escribo desde Valencia, donde llevo ya una semana. El curso de español empieza cada mañana a las nueve y termina a la una. Mi profesora se llama Elena y es muy simpática, aunque habla bastante rápido. Por las tardes suelo caminar por el centro con otros estudiantes. Ayer visitamos el mercado y probé una paella por primera vez; estaba deliciosa, pero era demasiado grande para mí. Vivo con una familia que tiene dos hijos pequeños, y con ellos practico mucho el idioma. Lo único que no me gusta es el calor: a veces no puedo dormir por la noche. El próximo fin de semana iremos a la playa, y me gustaría que vinieras a visitarme en agosto.\n\nUn abrazo,\nTomás",
+      "question": "¿Qué es lo que menos le gusta a Tomás de su estancia?",
+      "options": [
+        "La comida local",
+        "Las temperaturas altas",
+        "El horario de las clases",
+        "La familia con la que vive"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: «Lo único que no me gusta es el calor». Demak, unga yuqori harorat yoqmaydi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Hola Marta:\n\nTe escribo desde Valencia, donde llevo ya una semana. El curso de español empieza cada mañana a las nueve y termina a la una. Mi profesora se llama Elena y es muy simpática, aunque habla bastante rápido. Por las tardes suelo caminar por el centro con otros estudiantes. Ayer visitamos el mercado y probé una paella por primera vez; estaba deliciosa, pero era demasiado grande para mí. Vivo con una familia que tiene dos hijos pequeños, y con ellos practico mucho el idioma. Lo único que no me gusta es el calor: a veces no puedo dormir por la noche. El próximo fin de semana iremos a la playa, y me gustaría que vinieras a visitarme en agosto.\n\nUn abrazo,\nTomás",
+      "question": "¿Cómo es la profesora de Tomás?",
+      "options": [
+        "Seria y muy lenta",
+        "Joven y muy estricta",
+        "Valenciana y muy callada",
+        "Amable, aunque habla deprisa"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: «es muy simpática, aunque habla bastante rápido» — mehribon, lekin tez gapiradi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Hola Marta:\n\nTe escribo desde Valencia, donde llevo ya una semana. El curso de español empieza cada mañana a las nueve y termina a la una. Mi profesora se llama Elena y es muy simpática, aunque habla bastante rápido. Por las tardes suelo caminar por el centro con otros estudiantes. Ayer visitamos el mercado y probé una paella por primera vez; estaba deliciosa, pero era demasiado grande para mí. Vivo con una familia que tiene dos hijos pequeños, y con ellos practico mucho el idioma. Lo único que no me gusta es el calor: a veces no puedo dormir por la noche. El próximo fin de semana iremos a la playa, y me gustaría que vinieras a visitarme en agosto.\n\nUn abrazo,\nTomás",
+      "question": "¿Qué le propone Tomás a Marta?",
+      "options": [
+        "Que lo visite en verano",
+        "Que estudie en el mismo curso",
+        "Que se mude a Valencia",
+        "Que le envíe una receta"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: «me gustaría que vinieras a visitarme en agosto» — avgust yoz oyi, ya'ni uni yozda ziyorat qilishni taklif qiladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Hola Marta:\n\nTe escribo desde Valencia, donde llevo ya una semana. El curso de español empieza cada mañana a las nueve y termina a la una. Mi profesora se llama Elena y es muy simpática, aunque habla bastante rápido. Por las tardes suelo caminar por el centro con otros estudiantes. Ayer visitamos el mercado y probé una paella por primera vez; estaba deliciosa, pero era demasiado grande para mí. Vivo con una familia que tiene dos hijos pequeños, y con ellos practico mucho el idioma. Lo único que no me gusta es el calor: a veces no puedo dormir por la noche. El próximo fin de semana iremos a la playa, y me gustaría que vinieras a visitarme en agosto.\n\nUn abrazo,\nTomás",
+      "statement": "Marta ya conoce Valencia.",
+      "answer": "not_given",
+      "explanation_uz": "Matnda Martaning Valensiyada bo'lgan-bo'lmagani haqida hech narsa aytilmagan."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "El ayuntamiento de Sevilla ha anunciado que, a partir del próximo lunes, el centro histórico será una zona peatonal durante los fines de semana. Los coches no podrán entrar entre las diez de la mañana y las ocho de la tarde, salvo los vehículos de los vecinos y los servicios de emergencia. Según el alcalde, la medida quiere reducir el ruido y mejorar la calidad del aire. Los comerciantes tienen opiniones diferentes: algunos creen que habrá más clientes que pasean tranquilamente, pero otros temen que las personas mayores tengan problemas para llegar a las tiendas. Por eso, el ayuntamiento pondrá en marcha pequeños autobuses gratuitos que circularán cada quince minutos. La medida se revisará dentro de seis meses para decidir si continúa.",
+      "question": "¿Cuál es el propósito de la medida?",
+      "options": [
+        "Atraer a más turistas extranjeros",
+        "Aumentar el número de aparcamientos",
+        "Disminuir el ruido y la contaminación",
+        "Reducir el precio del transporte"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: «reducir el ruido y mejorar la calidad del aire»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "El ayuntamiento de Sevilla ha anunciado que, a partir del próximo lunes, el centro histórico será una zona peatonal durante los fines de semana. Los coches no podrán entrar entre las diez de la mañana y las ocho de la tarde, salvo los vehículos de los vecinos y los servicios de emergencia. Según el alcalde, la medida quiere reducir el ruido y mejorar la calidad del aire. Los comerciantes tienen opiniones diferentes: algunos creen que habrá más clientes que pasean tranquilamente, pero otros temen que las personas mayores tengan problemas para llegar a las tiendas. Por eso, el ayuntamiento pondrá en marcha pequeños autobuses gratuitos que circularán cada quince minutos. La medida se revisará dentro de seis meses para decidir si continúa.",
+      "question": "¿Quiénes podrán entrar en coche en el horario restringido?",
+      "options": [
+        "Los residentes y los servicios de emergencia",
+        "Solo los taxis y los autobuses turísticos",
+        "Los dueños de las tiendas del centro",
+        "Cualquier conductor que pague una tasa"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: «salvo los vehículos de los vecinos y los servicios de emergencia» — faqat yashovchilar va tez yordam mashinalari."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "El ayuntamiento de Sevilla ha anunciado que, a partir del próximo lunes, el centro histórico será una zona peatonal durante los fines de semana. Los coches no podrán entrar entre las diez de la mañana y las ocho de la tarde, salvo los vehículos de los vecinos y los servicios de emergencia. Según el alcalde, la medida quiere reducir el ruido y mejorar la calidad del aire. Los comerciantes tienen opiniones diferentes: algunos creen que habrá más clientes que pasean tranquilamente, pero otros temen que las personas mayores tengan problemas para llegar a las tiendas. Por eso, el ayuntamiento pondrá en marcha pequeños autobuses gratuitos que circularán cada quince minutos. La medida se revisará dentro de seis meses para decidir si continúa.",
+      "question": "¿Qué temen algunos comerciantes?",
+      "options": [
+        "Que suban los alquileres de los locales",
+        "Que haya demasiados turistas",
+        "Que los autobuses sean de pago",
+        "Que los mayores tengan dificultades para llegar"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: «otros temen que las personas mayores tengan problemas para llegar a las tiendas»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "El ayuntamiento de Sevilla ha anunciado que, a partir del próximo lunes, el centro histórico será una zona peatonal durante los fines de semana. Los coches no podrán entrar entre las diez de la mañana y las ocho de la tarde, salvo los vehículos de los vecinos y los servicios de emergencia. Según el alcalde, la medida quiere reducir el ruido y mejorar la calidad del aire. Los comerciantes tienen opiniones diferentes: algunos creen que habrá más clientes que pasean tranquilamente, pero otros temen que las personas mayores tengan problemas para llegar a las tiendas. Por eso, el ayuntamiento pondrá en marcha pequeños autobuses gratuitos que circularán cada quince minutos. La medida se revisará dentro de seis meses para decidir si continúa.",
+      "statement": "La restricción se aplicará todos los días de la semana.",
+      "answer": "false",
+      "explanation_uz": "Matnda cheklov faqat «durante los fines de semana» — dam olish kunlari amal qiladi, har kuni emas."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Hace un año decidí dejar de usar el coche para ir al trabajo y empecé a ir en bicicleta. Al principio fue difícil: vivo a ocho kilómetros de la oficina y hay una cuesta muy larga. Los primeros días llegaba agotado y con muchísima sed. Sin embargo, poco a poco mi cuerpo se acostumbró, y ahora tardo solo treinta minutos, casi lo mismo que en coche cuando hay tráfico. Además, he perdido cinco kilos y gasto mucho menos dinero en gasolina. Eso sí, los días de lluvia prefiero tomar el autobús, porque la ropa se moja y es peligroso. Si estás pensando en probar, mi consejo es que empieces con trayectos cortos y que compres un buen casco. Verás que merece la pena.",
+      "question": "¿Qué dificultad tuvo el autor al empezar?",
+      "options": [
+        "No tenía casco ni luces",
+        "Se cansaba mucho durante el trayecto",
+        "Se perdía por la ciudad",
+        "Su oficina cambió de lugar"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: «llegaba agotado y con muchísima sed» — boshida juda charchagan."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Hace un año decidí dejar de usar el coche para ir al trabajo y empecé a ir en bicicleta. Al principio fue difícil: vivo a ocho kilómetros de la oficina y hay una cuesta muy larga. Los primeros días llegaba agotado y con muchísima sed. Sin embargo, poco a poco mi cuerpo se acostumbró, y ahora tardo solo treinta minutos, casi lo mismo que en coche cuando hay tráfico. Además, he perdido cinco kilos y gasto mucho menos dinero en gasolina. Eso sí, los días de lluvia prefiero tomar el autobús, porque la ropa se moja y es peligroso. Si estás pensando en probar, mi consejo es que empieces con trayectos cortos y que compres un buen casco. Verás que merece la pena.",
+      "question": "¿Qué ventaja menciona el autor?",
+      "options": [
+        "Tiene más días de vacaciones",
+        "Llega mucho antes que antes",
+        "Gasta menos en combustible",
+        "Su empresa le paga el transporte"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: «gasto mucho menos dinero en gasolina»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Hace un año decidí dejar de usar el coche para ir al trabajo y empecé a ir en bicicleta. Al principio fue difícil: vivo a ocho kilómetros de la oficina y hay una cuesta muy larga. Los primeros días llegaba agotado y con muchísima sed. Sin embargo, poco a poco mi cuerpo se acostumbró, y ahora tardo solo treinta minutos, casi lo mismo que en coche cuando hay tráfico. Además, he perdido cinco kilos y gasto mucho menos dinero en gasolina. Eso sí, los días de lluvia prefiero tomar el autobús, porque la ropa se moja y es peligroso. Si estás pensando en probar, mi consejo es que empieces con trayectos cortos y que compres un buen casco. Verás que merece la pena.",
+      "question": "¿Qué hace el autor cuando llueve?",
+      "options": [
+        "Usa el transporte público",
+        "Trabaja desde su casa",
+        "Va igualmente en bicicleta",
+        "Duerme en la oficina"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: «los días de lluvia prefiero tomar el autobús»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Hace un año decidí dejar de usar el coche para ir al trabajo y empecé a ir en bicicleta. Al principio fue difícil: vivo a ocho kilómetros de la oficina y hay una cuesta muy larga. Los primeros días llegaba agotado y con muchísima sed. Sin embargo, poco a poco mi cuerpo se acostumbró, y ahora tardo solo treinta minutos, casi lo mismo que en coche cuando hay tráfico. Además, he perdido cinco kilos y gasto mucho menos dinero en gasolina. Eso sí, los días de lluvia prefiero tomar el autobús, porque la ropa se moja y es peligroso. Si estás pensando en probar, mi consejo es que empieces con trayectos cortos y que compres un buen casco. Verás que merece la pena.",
+      "statement": "El autor aconseja comprar un casco.",
+      "answer": "true",
+      "explanation_uz": "Matnda: «mi consejo es que ... compres un buen casco»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "AVISO A LOS VECINOS\n\nLes informamos de que el próximo sábado 14 se cortará el agua en todo el edificio de las 9:00 a las 14:00 horas por trabajos de reparación en las tuberías. Rogamos que guarden agua suficiente para cocinar y beber. El ascensor funcionará con normalidad, pero la puerta del garaje permanecerá cerrada hasta las 12:00 porque se pintará el suelo. Quienes necesiten sacar el coche por la mañana deben avisar al portero antes del viernes a las 18:00 y dejar el vehículo en la calle. Si tienen cualquier duda, pueden llamar al administrador, el señor Ramos, en horario de oficina. Gracias por su comprensión y disculpen las molestias.\n\nLa Administración",
+      "question": "¿Por qué no habrá agua el sábado?",
+      "options": [
+        "Se está pintando el garaje",
+        "El ayuntamiento ha cortado el suministro",
+        "Se instalará un nuevo ascensor",
+        "Van a arreglar las tuberías"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: «por trabajos de reparación en las tuberías»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "AVISO A LOS VECINOS\n\nLes informamos de que el próximo sábado 14 se cortará el agua en todo el edificio de las 9:00 a las 14:00 horas por trabajos de reparación en las tuberías. Rogamos que guarden agua suficiente para cocinar y beber. El ascensor funcionará con normalidad, pero la puerta del garaje permanecerá cerrada hasta las 12:00 porque se pintará el suelo. Quienes necesiten sacar el coche por la mañana deben avisar al portero antes del viernes a las 18:00 y dejar el vehículo en la calle. Si tienen cualquier duda, pueden llamar al administrador, el señor Ramos, en horario de oficina. Gracias por su comprensión y disculpen las molestias.\n\nLa Administración",
+      "question": "¿Qué deben hacer los vecinos que quieran sacar el coche por la mañana?",
+      "options": [
+        "Pedir permiso al administrador por escrito",
+        "Decírselo al portero con antelación y aparcar fuera",
+        "Esperar a que se seque la pintura",
+        "Usar el garaje de otro edificio"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: «deben avisar al portero antes del viernes ... y dejar el vehículo en la calle»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "AVISO A LOS VECINOS\n\nLes informamos de que el próximo sábado 14 se cortará el agua en todo el edificio de las 9:00 a las 14:00 horas por trabajos de reparación en las tuberías. Rogamos que guarden agua suficiente para cocinar y beber. El ascensor funcionará con normalidad, pero la puerta del garaje permanecerá cerrada hasta las 12:00 porque se pintará el suelo. Quienes necesiten sacar el coche por la mañana deben avisar al portero antes del viernes a las 18:00 y dejar el vehículo en la calle. Si tienen cualquier duda, pueden llamar al administrador, el señor Ramos, en horario de oficina. Gracias por su comprensión y disculpen las molestias.\n\nLa Administración",
+      "question": "¿Hasta qué hora no se podrá entrar en el garaje?",
+      "options": [
+        "Hasta las nueve de la mañana",
+        "Hasta las dos de la tarde",
+        "Hasta mediodía",
+        "Hasta las seis de la tarde"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: garaj eshigi «hasta las 12:00» yopiq bo'ladi, ya'ni tush vaqtigacha."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "AVISO A LOS VECINOS\n\nLes informamos de que el próximo sábado 14 se cortará el agua en todo el edificio de las 9:00 a las 14:00 horas por trabajos de reparación en las tuberías. Rogamos que guarden agua suficiente para cocinar y beber. El ascensor funcionará con normalidad, pero la puerta del garaje permanecerá cerrada hasta las 12:00 porque se pintará el suelo. Quienes necesiten sacar el coche por la mañana deben avisar al portero antes del viernes a las 18:00 y dejar el vehículo en la calle. Si tienen cualquier duda, pueden llamar al administrador, el señor Ramos, en horario de oficina. Gracias por su comprensión y disculpen las molestias.\n\nLa Administración",
+      "statement": "El ascensor no funcionará mientras no haya agua.",
+      "answer": "false",
+      "explanation_uz": "Matnda: «El ascensor funcionará con normalidad» — lift odatdagidek ishlaydi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "En los últimos años, el teletrabajo ha pasado de ser una excepción a convertirse en una práctica habitual en numerosas empresas españolas. Un reciente estudio de la Universidad de Navarra revela que el 62 % de los empleados que trabajan desde casa se siente más productivo, aunque casi la mitad reconoce tener dificultades para desconectar al terminar la jornada. Los investigadores señalan que la ausencia de una frontera clara entre la vida laboral y la personal provoca que muchos trabajadores respondan correos electrónicos fuera de su horario, lo que a la larga genera cansancio y estrés. Por otra parte, el ahorro de tiempo en desplazamientos se considera la ventaja más valorada. Ante este panorama, varias compañías han optado por un modelo híbrido, que combina tres días en casa con dos en la oficina. Según los autores del informe, esta fórmula no solo mejora el ambiente entre los compañeros, sino que también facilita la colaboración en proyectos complejos, algo que, a su juicio, resulta más complicado a distancia.",
+      "question": "Según el estudio, ¿qué problema afecta a muchos teletrabajadores?",
+      "options": [
+        "Se sienten menos productivos que en la oficina",
+        "Cobran un salario inferior al de sus compañeros",
+        "Les cuesta separar el trabajo del tiempo personal",
+        "No disponen de un ordenador adecuado"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: «dificultades para desconectar» va ish bilan shaxsiy hayot o'rtasida chegara yo'qligi aytilgan."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "En los últimos años, el teletrabajo ha pasado de ser una excepción a convertirse en una práctica habitual en numerosas empresas españolas. Un reciente estudio de la Universidad de Navarra revela que el 62 % de los empleados que trabajan desde casa se siente más productivo, aunque casi la mitad reconoce tener dificultades para desconectar al terminar la jornada. Los investigadores señalan que la ausencia de una frontera clara entre la vida laboral y la personal provoca que muchos trabajadores respondan correos electrónicos fuera de su horario, lo que a la larga genera cansancio y estrés. Por otra parte, el ahorro de tiempo en desplazamientos se considera la ventaja más valorada. Ante este panorama, varias compañías han optado por un modelo híbrido, que combina tres días en casa con dos en la oficina. Según los autores del informe, esta fórmula no solo mejora el ambiente entre los compañeros, sino que también facilita la colaboración en proyectos complejos, algo que, a su juicio, resulta más complicado a distancia.",
+      "question": "¿Qué aspecto del teletrabajo es el más apreciado?",
+      "options": [
+        "No perder tiempo en trayectos",
+        "El contacto diario con los compañeros",
+        "La posibilidad de cambiar de empresa",
+        "El menor número de reuniones"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: «el ahorro de tiempo en desplazamientos se considera la ventaja más valorada»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "En los últimos años, el teletrabajo ha pasado de ser una excepción a convertirse en una práctica habitual en numerosas empresas españolas. Un reciente estudio de la Universidad de Navarra revela que el 62 % de los empleados que trabajan desde casa se siente más productivo, aunque casi la mitad reconoce tener dificultades para desconectar al terminar la jornada. Los investigadores señalan que la ausencia de una frontera clara entre la vida laboral y la personal provoca que muchos trabajadores respondan correos electrónicos fuera de su horario, lo que a la larga genera cansancio y estrés. Por otra parte, el ahorro de tiempo en desplazamientos se considera la ventaja más valorada. Ante este panorama, varias compañías han optado por un modelo híbrido, que combina tres días en casa con dos en la oficina. Según los autores del informe, esta fórmula no solo mejora el ambiente entre los compañeros, sino que también facilita la colaboración en proyectos complejos, algo que, a su juicio, resulta más complicado a distancia.",
+      "question": "¿Por qué algunas empresas prefieren el modelo híbrido?",
+      "options": [
+        "Reduce el coste de los alquileres",
+        "Favorece las relaciones y el trabajo en equipo",
+        "Evita que se envíen correos fuera de horario",
+        "Lo exige la ley en España"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: bu model «mejora el ambiente entre los compañeros» va «facilita la colaboración»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "En los últimos años, el teletrabajo ha pasado de ser una excepción a convertirse en una práctica habitual en numerosas empresas españolas. Un reciente estudio de la Universidad de Navarra revela que el 62 % de los empleados que trabajan desde casa se siente más productivo, aunque casi la mitad reconoce tener dificultades para desconectar al terminar la jornada. Los investigadores señalan que la ausencia de una frontera clara entre la vida laboral y la personal provoca que muchos trabajadores respondan correos electrónicos fuera de su horario, lo que a la larga genera cansancio y estrés. Por otra parte, el ahorro de tiempo en desplazamientos se considera la ventaja más valorada. Ante este panorama, varias compañías han optado por un modelo híbrido, que combina tres días en casa con dos en la oficina. Según los autores del informe, esta fórmula no solo mejora el ambiente entre los compañeros, sino que también facilita la colaboración en proyectos complejos, algo que, a su juicio, resulta más complicado a distancia.",
+      "statement": "El estudio se realizó con trabajadores de varios países europeos.",
+      "answer": "not_given",
+      "explanation_uz": "Matnda tadqiqot qaysi mamlakatlarda o'tkazilgani aytilmagan; faqat Navarra universiteti tilga olingan."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "La Biblioteca Nacional ha inaugurado una exposición dedicada a las cartas manuscritas de escritores del siglo XX, con el objetivo de recordar un género que, según los organizadores, está desapareciendo. Entre las más de doscientas piezas figuran misivas de Federico García Lorca y de Gabriela Mistral, así como borradores con tachaduras que permiten seguir el proceso creativo de cada autor. La comisaria, Inés Cabrera, explicó que el proyecto nació tras descubrir un archivo olvidado en un sótano durante una reforma del edificio. «Nos sorprendió comprobar hasta qué punto la correspondencia revelaba aspectos íntimos que no aparecen en las obras publicadas», afirmó. La muestra, que permanecerá abierta hasta enero, incluye además talleres en los que los visitantes pueden escribir una carta a mano y enviarla por correo postal sin coste alguno. Los organizadores esperan recibir unos cuarenta mil visitantes, el doble que en la anterior exposición temporal.",
+      "question": "¿Cómo surgió la idea de la exposición?",
+      "options": [
+        "Por la donación de un coleccionista privado",
+        "A raíz de un concurso literario",
+        "Por petición de los familiares de los autores",
+        "Tras encontrar documentos olvidados durante unas obras"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: loyiha «tras descubrir un archivo olvidado ... durante una reforma del edificio» paydo bo'lgan."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "La Biblioteca Nacional ha inaugurado una exposición dedicada a las cartas manuscritas de escritores del siglo XX, con el objetivo de recordar un género que, según los organizadores, está desapareciendo. Entre las más de doscientas piezas figuran misivas de Federico García Lorca y de Gabriela Mistral, así como borradores con tachaduras que permiten seguir el proceso creativo de cada autor. La comisaria, Inés Cabrera, explicó que el proyecto nació tras descubrir un archivo olvidado en un sótano durante una reforma del edificio. «Nos sorprendió comprobar hasta qué punto la correspondencia revelaba aspectos íntimos que no aparecen en las obras publicadas», afirmó. La muestra, que permanecerá abierta hasta enero, incluye además talleres en los que los visitantes pueden escribir una carta a mano y enviarla por correo postal sin coste alguno. Los organizadores esperan recibir unos cuarenta mil visitantes, el doble que en la anterior exposición temporal.",
+      "question": "¿Qué permiten observar los borradores con tachaduras?",
+      "options": [
+        "La caligrafía de cada escritor",
+        "El modo en que los autores elaboraban sus textos",
+        "Los errores de imprenta de las obras",
+        "La relación de los autores con sus editores"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: ular «permiten seguir el proceso creativo de cada autor»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "La Biblioteca Nacional ha inaugurado una exposición dedicada a las cartas manuscritas de escritores del siglo XX, con el objetivo de recordar un género que, según los organizadores, está desapareciendo. Entre las más de doscientas piezas figuran misivas de Federico García Lorca y de Gabriela Mistral, así como borradores con tachaduras que permiten seguir el proceso creativo de cada autor. La comisaria, Inés Cabrera, explicó que el proyecto nació tras descubrir un archivo olvidado en un sótano durante una reforma del edificio. «Nos sorprendió comprobar hasta qué punto la correspondencia revelaba aspectos íntimos que no aparecen en las obras publicadas», afirmó. La muestra, que permanecerá abierta hasta enero, incluye además talleres en los que los visitantes pueden escribir una carta a mano y enviarla por correo postal sin coste alguno. Los organizadores esperan recibir unos cuarenta mil visitantes, el doble que en la anterior exposición temporal.",
+      "question": "¿Qué actividad se ofrece a los visitantes?",
+      "options": [
+        "Redactar una carta a mano que se enviará gratis",
+        "Leer en voz alta las cartas originales",
+        "Comprar copias de los manuscritos",
+        "Conocer a descendientes de los escritores"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: «escribir una carta a mano y enviarla por correo postal sin coste alguno»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "La Biblioteca Nacional ha inaugurado una exposición dedicada a las cartas manuscritas de escritores del siglo XX, con el objetivo de recordar un género que, según los organizadores, está desapareciendo. Entre las más de doscientas piezas figuran misivas de Federico García Lorca y de Gabriela Mistral, así como borradores con tachaduras que permiten seguir el proceso creativo de cada autor. La comisaria, Inés Cabrera, explicó que el proyecto nació tras descubrir un archivo olvidado en un sótano durante una reforma del edificio. «Nos sorprendió comprobar hasta qué punto la correspondencia revelaba aspectos íntimos que no aparecen en las obras publicadas», afirmó. La muestra, que permanecerá abierta hasta enero, incluye además talleres en los que los visitantes pueden escribir una carta a mano y enviarla por correo postal sin coste alguno. Los organizadores esperan recibir unos cuarenta mil visitantes, el doble que en la anterior exposición temporal.",
+      "statement": "Se prevé que esta muestra atraiga a más público que la anterior.",
+      "answer": "true",
+      "explanation_uz": "Matnda: «unos cuarenta mil visitantes, el doble que en la anterior exposición» — oldingisidan ikki baravar ko'p."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Cuando me mudé a Barcelona, pensaba que mi nivel de español era suficiente para vivir allí sin problemas. Me equivoqué. En la calle, la gente hablaba tan deprisa que apenas entendía la mitad y, además, en muchos bares y tiendas la conversación pasaba al catalán en cuanto notaban mi acento. Al principio me frustré y estuve a punto de rendirme, pero un vecino jubilado, don Anselmo, me propuso un trato: charlar una hora cada tarde en el portal, sin libros ni ejercicios. Aquellas conversaciones, llenas de refranes y anécdotas, me enseñaron más que dos años de academia. Descubrí que equivocarse no era un fracaso, sino la forma más rápida de aprender, y que los hablantes nativos valoran el esfuerzo más que la perfección. Hoy, aunque sigo cometiendo errores, ya no me da vergüenza hablar. Si algún día vuelvo a mi país, echaré de menos esas tardes, y por eso he decidido escribir un libro con las expresiones que me regaló.",
+      "question": "¿Qué dificultad tuvo el autor al llegar a Barcelona?",
+      "options": [
+        "No encontraba alojamiento",
+        "Entendía poco y a veces le contestaban en otro idioma",
+        "Nadie quería hablar con él",
+        "No podía pagar la academia"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: «apenas entendía la mitad» va «la conversación pasaba al catalán»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Cuando me mudé a Barcelona, pensaba que mi nivel de español era suficiente para vivir allí sin problemas. Me equivoqué. En la calle, la gente hablaba tan deprisa que apenas entendía la mitad y, además, en muchos bares y tiendas la conversación pasaba al catalán en cuanto notaban mi acento. Al principio me frustré y estuve a punto de rendirme, pero un vecino jubilado, don Anselmo, me propuso un trato: charlar una hora cada tarde en el portal, sin libros ni ejercicios. Aquellas conversaciones, llenas de refranes y anécdotas, me enseñaron más que dos años de academia. Descubrí que equivocarse no era un fracaso, sino la forma más rápida de aprender, y que los hablantes nativos valoran el esfuerzo más que la perfección. Hoy, aunque sigo cometiendo errores, ya no me da vergüenza hablar. Si algún día vuelvo a mi país, echaré de menos esas tardes, y por eso he decidido escribir un libro con las expresiones que me regaló.",
+      "question": "¿En qué consistía el acuerdo con don Anselmo?",
+      "options": [
+        "Corregirle los ejercicios de la academia",
+        "Enseñarle catalán a cambio de dinero",
+        "Acompañarlo en sus paseos por el barrio",
+        "Conversar un rato diario sin materiales de estudio"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: «charlar una hora cada tarde ..., sin libros ni ejercicios»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Cuando me mudé a Barcelona, pensaba que mi nivel de español era suficiente para vivir allí sin problemas. Me equivoqué. En la calle, la gente hablaba tan deprisa que apenas entendía la mitad y, además, en muchos bares y tiendas la conversación pasaba al catalán en cuanto notaban mi acento. Al principio me frustré y estuve a punto de rendirme, pero un vecino jubilado, don Anselmo, me propuso un trato: charlar una hora cada tarde en el portal, sin libros ni ejercicios. Aquellas conversaciones, llenas de refranes y anécdotas, me enseñaron más que dos años de academia. Descubrí que equivocarse no era un fracaso, sino la forma más rápida de aprender, y que los hablantes nativos valoran el esfuerzo más que la perfección. Hoy, aunque sigo cometiendo errores, ya no me da vergüenza hablar. Si algún día vuelvo a mi país, echaré de menos esas tardes, y por eso he decidido escribir un libro con las expresiones que me regaló.",
+      "question": "¿Qué ha aprendido el autor sobre los errores?",
+      "options": [
+        "Que hay que evitarlos a toda costa",
+        "Que molestan a los hablantes nativos",
+        "Que ayudan a progresar más rápido",
+        "Que solo se superan con libros"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: «equivocarse no era un fracaso, sino la forma más rápida de aprender»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Cuando me mudé a Barcelona, pensaba que mi nivel de español era suficiente para vivir allí sin problemas. Me equivoqué. En la calle, la gente hablaba tan deprisa que apenas entendía la mitad y, además, en muchos bares y tiendas la conversación pasaba al catalán en cuanto notaban mi acento. Al principio me frustré y estuve a punto de rendirme, pero un vecino jubilado, don Anselmo, me propuso un trato: charlar una hora cada tarde en el portal, sin libros ni ejercicios. Aquellas conversaciones, llenas de refranes y anécdotas, me enseñaron más que dos años de academia. Descubrí que equivocarse no era un fracaso, sino la forma más rápida de aprender, y que los hablantes nativos valoran el esfuerzo más que la perfección. Hoy, aunque sigo cometiendo errores, ya no me da vergüenza hablar. Si algún día vuelvo a mi país, echaré de menos esas tardes, y por eso he decidido escribir un libro con las expresiones que me regaló.",
+      "statement": "El autor aprendió más en la academia que en las charlas con don Anselmo.",
+      "answer": "false",
+      "explanation_uz": "Matnda: suhbatlar «me enseñaron más que dos años de academia» — suhbatlar akademiyadan ko'proq o'rgatgan."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "CONVOCATORIA DE BECAS DE INTERCAMBIO 2027\n\nLa Facultad de Filología abre el plazo para solicitar las becas de intercambio con universidades europeas durante el segundo cuatrimestre del próximo curso. Podrán presentarse los estudiantes de grado que hayan superado al menos el 50 % de los créditos y acrediten un nivel B2 del idioma del país de destino. La beca cubre el alojamiento y una ayuda mensual de 450 euros, pero no incluye el billete de viaje, que correrá por cuenta del beneficiario. Las solicitudes deben presentarse exclusivamente por la sede electrónica antes del 30 de noviembre; no se aceptarán documentos entregados en papel ni fuera de plazo. En caso de empate, se dará prioridad al expediente académico más alto. Los resultados se publicarán en la web de la facultad durante la primera quincena de diciembre, y los seleccionados dispondrán de diez días para aceptar la plaza.",
+      "question": "¿Quién puede solicitar la beca?",
+      "options": [
+        "Quien haya aprobado la mitad de los créditos y acredite el idioma",
+        "Cualquier estudiante de posgrado",
+        "Solo el estudiante con el mejor expediente",
+        "Únicamente los alumnos de último curso"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: talabalar kreditlarning kamida 50 % ini topshirgan va B2 darajasini tasdiqlagan bo'lishi kerak."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "CONVOCATORIA DE BECAS DE INTERCAMBIO 2027\n\nLa Facultad de Filología abre el plazo para solicitar las becas de intercambio con universidades europeas durante el segundo cuatrimestre del próximo curso. Podrán presentarse los estudiantes de grado que hayan superado al menos el 50 % de los créditos y acrediten un nivel B2 del idioma del país de destino. La beca cubre el alojamiento y una ayuda mensual de 450 euros, pero no incluye el billete de viaje, que correrá por cuenta del beneficiario. Las solicitudes deben presentarse exclusivamente por la sede electrónica antes del 30 de noviembre; no se aceptarán documentos entregados en papel ni fuera de plazo. En caso de empate, se dará prioridad al expediente académico más alto. Los resultados se publicarán en la web de la facultad durante la primera quincena de diciembre, y los seleccionados dispondrán de diez días para aceptar la plaza.",
+      "question": "¿Qué gasto no está cubierto por la beca?",
+      "options": [
+        "El alojamiento",
+        "La ayuda económica mensual",
+        "El desplazamiento hasta el destino",
+        "Ninguno, porque cubre todos los gastos"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: grant «no incluye el billete de viaje» — yo'l chiptasi qoplanmaydi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "CONVOCATORIA DE BECAS DE INTERCAMBIO 2027\n\nLa Facultad de Filología abre el plazo para solicitar las becas de intercambio con universidades europeas durante el segundo cuatrimestre del próximo curso. Podrán presentarse los estudiantes de grado que hayan superado al menos el 50 % de los créditos y acrediten un nivel B2 del idioma del país de destino. La beca cubre el alojamiento y una ayuda mensual de 450 euros, pero no incluye el billete de viaje, que correrá por cuenta del beneficiario. Las solicitudes deben presentarse exclusivamente por la sede electrónica antes del 30 de noviembre; no se aceptarán documentos entregados en papel ni fuera de plazo. En caso de empate, se dará prioridad al expediente académico más alto. Los resultados se publicarán en la web de la facultad durante la primera quincena de diciembre, y los seleccionados dispondrán de diez días para aceptar la plaza.",
+      "question": "¿Cómo se decide entre candidatos empatados?",
+      "options": [
+        "Se hace un sorteo público",
+        "Se elige al que presentó antes la solicitud",
+        "Se valora una entrevista personal",
+        "Se prefiere al de mejores calificaciones"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: «En caso de empate, se dará prioridad al expediente académico más alto»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "CONVOCATORIA DE BECAS DE INTERCAMBIO 2027\n\nLa Facultad de Filología abre el plazo para solicitar las becas de intercambio con universidades europeas durante el segundo cuatrimestre del próximo curso. Podrán presentarse los estudiantes de grado que hayan superado al menos el 50 % de los créditos y acrediten un nivel B2 del idioma del país de destino. La beca cubre el alojamiento y una ayuda mensual de 450 euros, pero no incluye el billete de viaje, que correrá por cuenta del beneficiario. Las solicitudes deben presentarse exclusivamente por la sede electrónica antes del 30 de noviembre; no se aceptarán documentos entregados en papel ni fuera de plazo. En caso de empate, se dará prioridad al expediente académico más alto. Los resultados se publicarán en la web de la facultad durante la primera quincena de diciembre, y los seleccionados dispondrán de diez días para aceptar la plaza.",
+      "statement": "Los seleccionados podrán escoger la universidad de destino.",
+      "answer": "not_given",
+      "explanation_uz": "Matnda tanlangan talabalar universitetni o'zi tanlay olishi haqida hech narsa aytilmagan."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Perdone, ¿sabe a qué hora sale el próximo tren para Zaragoza?\nB: Sí, sale a las cinco y veinte, pero hoy lleva un retraso de media hora.\nA: Vaya, qué fastidio. ¿Y desde qué andén sale?\nB: Del andén número seis. Tiene que bajar por las escaleras y cruzar el pasillo central.\nA: Gracias. Otra pregunta: ¿puedo comprar el billete en la máquina?\nB: Sí, aunque hay mucha cola. Es mejor que lo compre por la aplicación del móvil, así llega más rápido.\nA: Buena idea. Voy a descargarla ahora mismo.\nB: Y no olvide validar el billete antes de subir. Buen viaje.",
+      "question": "¿Qué problema hay con el tren?",
+      "options": [
+        "Saldrá más tarde de lo previsto",
+        "Ha sido cancelado",
+        "Cambia de destino",
+        "Va completo"
+      ],
+      "answer": 0,
+      "explanation_uz": "B: «hoy lleva un retraso de media hora» — poyezd kechikadi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Perdone, ¿sabe a qué hora sale el próximo tren para Zaragoza?\nB: Sí, sale a las cinco y veinte, pero hoy lleva un retraso de media hora.\nA: Vaya, qué fastidio. ¿Y desde qué andén sale?\nB: Del andén número seis. Tiene que bajar por las escaleras y cruzar el pasillo central.\nA: Gracias. Otra pregunta: ¿puedo comprar el billete en la máquina?\nB: Sí, aunque hay mucha cola. Es mejor que lo compre por la aplicación del móvil, así llega más rápido.\nA: Buena idea. Voy a descargarla ahora mismo.\nB: Y no olvide validar el billete antes de subir. Buen viaje.",
+      "text": "El tren sale del andén número ___.",
+      "answers": [
+        "seis",
+        "6"
+      ],
+      "explanation_uz": "B: «Del andén número seis»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Perdone, ¿sabe a qué hora sale el próximo tren para Zaragoza?\nB: Sí, sale a las cinco y veinte, pero hoy lleva un retraso de media hora.\nA: Vaya, qué fastidio. ¿Y desde qué andén sale?\nB: Del andén número seis. Tiene que bajar por las escaleras y cruzar el pasillo central.\nA: Gracias. Otra pregunta: ¿puedo comprar el billete en la máquina?\nB: Sí, aunque hay mucha cola. Es mejor que lo compre por la aplicación del móvil, así llega más rápido.\nA: Buena idea. Voy a descargarla ahora mismo.\nB: Y no olvide validar el billete antes de subir. Buen viaje.",
+      "question": "¿Qué le aconseja el empleado para comprar el billete?",
+      "options": [
+        "Esperar en la cola de la máquina",
+        "Pagar directamente al revisor",
+        "Usar una aplicación en el teléfono",
+        "Comprarlo en otra estación"
+      ],
+      "answer": 2,
+      "explanation_uz": "B: «Es mejor que lo compre por la aplicación del móvil»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Les damos el tiempo para este fin de semana. El sábado comenzará con cielos nublados en el norte, y por la tarde llegarán las lluvias, que serán fuertes en la costa. En el sur, en cambio, hará un día soleado, con temperaturas de hasta treinta grados. El domingo mejorará el tiempo en todo el país: las nubes se irán y el sol saldrá por la mañana, aunque soplará un viento fresco desde el oeste. Si piensan salir de excursión a la montaña, les aconsejamos que lo hagan el domingo y que lleven una chaqueta, porque por la noche bajará la temperatura hasta ocho grados.",
+      "question": "¿Qué tiempo hará el sábado por la tarde en el norte?",
+      "options": [
+        "Hará mucho calor",
+        "Lloverá",
+        "Habrá niebla",
+        "Nevará"
+      ],
+      "answer": 1,
+      "explanation_uz": "«por la tarde llegarán las lluvias» — shanba kuni tushdan keyin yomg'ir yog'adi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Les damos el tiempo para este fin de semana. El sábado comenzará con cielos nublados en el norte, y por la tarde llegarán las lluvias, que serán fuertes en la costa. En el sur, en cambio, hará un día soleado, con temperaturas de hasta treinta grados. El domingo mejorará el tiempo en todo el país: las nubes se irán y el sol saldrá por la mañana, aunque soplará un viento fresco desde el oeste. Si piensan salir de excursión a la montaña, les aconsejamos que lo hagan el domingo y que lleven una chaqueta, porque por la noche bajará la temperatura hasta ocho grados.",
+      "text": "En el sur habrá temperaturas de hasta ___ grados.",
+      "answers": [
+        "treinta",
+        "30"
+      ],
+      "explanation_uz": "«con temperaturas de hasta treinta grados»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Les damos el tiempo para este fin de semana. El sábado comenzará con cielos nublados en el norte, y por la tarde llegarán las lluvias, que serán fuertes en la costa. En el sur, en cambio, hará un día soleado, con temperaturas de hasta treinta grados. El domingo mejorará el tiempo en todo el país: las nubes se irán y el sol saldrá por la mañana, aunque soplará un viento fresco desde el oeste. Si piensan salir de excursión a la montaña, les aconsejamos que lo hagan el domingo y que lleven una chaqueta, porque por la noche bajará la temperatura hasta ocho grados.",
+      "question": "¿Por qué se recomienda llevar una chaqueta?",
+      "options": [
+        "Porque el domingo lloverá en la montaña",
+        "Porque hará mucho viento durante todo el día",
+        "Porque en el sur hará frío",
+        "Porque por la noche refrescará bastante"
+      ],
+      "answer": 3,
+      "explanation_uz": "«porque por la noche bajará la temperatura hasta ocho grados»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Oye, Lucía, el viernes es el cumpleaños de Pablo. ¿Qué te parece si le hacemos una fiesta sorpresa?\nB: Me encanta la idea. ¿Dónde la hacemos? En mi casa no cabe tanta gente.\nA: Podemos alquilar la terraza del bar de Mateo. Es barata y tiene música.\nB: Perfecto. Yo me encargo de la tarta; conozco una pastelería que las hace de chocolate y fresas.\nA: Estupendo. Yo compraré las bebidas y llamaré a sus amigos. Eso sí, hay que mantenerlo en secreto.\nB: Claro. Le diré que cenamos los dos en un restaurante, y le llevaremos a la terraza a las nueve.",
+      "question": "¿Por qué no hacen la fiesta en casa de Lucía?",
+      "options": [
+        "Porque está lejos del centro",
+        "Porque no tiene música",
+        "Porque sus vecinos se quejarían",
+        "Porque es demasiado pequeña para los invitados"
+      ],
+      "answer": 3,
+      "explanation_uz": "Lucía: «En mi casa no cabe tanta gente»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Oye, Lucía, el viernes es el cumpleaños de Pablo. ¿Qué te parece si le hacemos una fiesta sorpresa?\nB: Me encanta la idea. ¿Dónde la hacemos? En mi casa no cabe tanta gente.\nA: Podemos alquilar la terraza del bar de Mateo. Es barata y tiene música.\nB: Perfecto. Yo me encargo de la tarta; conozco una pastelería que las hace de chocolate y fresas.\nA: Estupendo. Yo compraré las bebidas y llamaré a sus amigos. Eso sí, hay que mantenerlo en secreto.\nB: Claro. Le diré que cenamos los dos en un restaurante, y le llevaremos a la terraza a las nueve.",
+      "question": "¿Quién se ocupará de la tarta?",
+      "options": [
+        "Lucía",
+        "Pablo",
+        "Mateo",
+        "El hombre que habla primero"
+      ],
+      "answer": 0,
+      "explanation_uz": "Lucía: «Yo me encargo de la tarta»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Oye, Lucía, el viernes es el cumpleaños de Pablo. ¿Qué te parece si le hacemos una fiesta sorpresa?\nB: Me encanta la idea. ¿Dónde la hacemos? En mi casa no cabe tanta gente.\nA: Podemos alquilar la terraza del bar de Mateo. Es barata y tiene música.\nB: Perfecto. Yo me encargo de la tarta; conozco una pastelería que las hace de chocolate y fresas.\nA: Estupendo. Yo compraré las bebidas y llamaré a sus amigos. Eso sí, hay que mantenerlo en secreto.\nB: Claro. Le diré que cenamos los dos en un restaurante, y le llevaremos a la terraza a las nueve.",
+      "text": "Llevarán a Pablo a la terraza a las ___.",
+      "answers": [
+        "nueve",
+        "9"
+      ],
+      "explanation_uz": "Lucía: «le llevaremos a la terraza a las nueve»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Bienvenidos al Museo del Mar. Mi nombre es Carmen y voy a acompañarles durante la visita, que dura aproximadamente una hora y media. Primero entraremos en la sala de los barcos antiguos, donde pueden ver modelos de más de quinientos años. Después bajaremos al acuario, que es la parte favorita de los niños. Les pido que no usen el flash al hacer fotografías, porque molesta a los peces. En el segundo piso hay una cafetería, pero hoy está cerrada por obras, así que si tienen hambre, hay un restaurante enfrente del museo. Al final de la visita, tendrán veinte minutos libres para pasar por la tienda de recuerdos.",
+      "question": "¿Qué se pide a los visitantes en el acuario?",
+      "options": [
+        "Que no hablen en voz alta",
+        "Que no toquen el cristal",
+        "Que no fotografíen con luz artificial",
+        "Que no entren con comida"
+      ],
+      "answer": 2,
+      "explanation_uz": "«no usen el flash al hacer fotografías, porque molesta a los peces»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Bienvenidos al Museo del Mar. Mi nombre es Carmen y voy a acompañarles durante la visita, que dura aproximadamente una hora y media. Primero entraremos en la sala de los barcos antiguos, donde pueden ver modelos de más de quinientos años. Después bajaremos al acuario, que es la parte favorita de los niños. Les pido que no usen el flash al hacer fotografías, porque molesta a los peces. En el segundo piso hay una cafetería, pero hoy está cerrada por obras, así que si tienen hambre, hay un restaurante enfrente del museo. Al final de la visita, tendrán veinte minutos libres para pasar por la tienda de recuerdos.",
+      "question": "¿Por qué no se puede usar la cafetería hoy?",
+      "options": [
+        "Porque es muy cara",
+        "Por trabajos de reparación en el museo",
+        "Porque solo abre por la tarde",
+        "Porque está en el acuario"
+      ],
+      "answer": 1,
+      "explanation_uz": "«hoy está cerrada por obras» — qurilish ishlari tufayli yopiq."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Bienvenidos al Museo del Mar. Mi nombre es Carmen y voy a acompañarles durante la visita, que dura aproximadamente una hora y media. Primero entraremos en la sala de los barcos antiguos, donde pueden ver modelos de más de quinientos años. Después bajaremos al acuario, que es la parte favorita de los niños. Les pido que no usen el flash al hacer fotografías, porque molesta a los peces. En el segundo piso hay una cafetería, pero hoy está cerrada por obras, así que si tienen hambre, hay un restaurante enfrente del museo. Al final de la visita, tendrán veinte minutos libres para pasar por la tienda de recuerdos.",
+      "text": "Al final de la visita habrá ___ minutos libres.",
+      "answers": [
+        "veinte",
+        "20"
+      ],
+      "explanation_uz": "«tendrán veinte minutos libres»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Hoy nos acompaña Rosa Vidal, chef de un restaurante que ha recibido recientemente una estrella en una guía gastronómica. Rosa, ¿esperabas este reconocimiento?\nB: Sinceramente, no. Llevamos solo tres años abiertos y nos consideramos un sitio modesto. Cuando me lo comunicaron, creí que era una broma.\nA: ¿A qué atribuyes el éxito?\nB: Sobre todo al equipo. Trabajamos solo con productores de la zona, y eso nos obliga a cambiar la carta cada mes según lo que haya en el mercado.\nA: ¿Cambiará algo a partir de ahora?\nB: Subirán un poco los precios, supongo, pero no pienso abrir otros locales.",
+      "question": "¿Cómo reaccionó Rosa al recibir la noticia?",
+      "options": [
+        "Se sintió decepcionada",
+        "No se lo creyó al principio",
+        "Ya lo esperaba desde hacía tiempo",
+        "Rechazó el premio"
+      ],
+      "answer": 1,
+      "explanation_uz": "Rosa: «creí que era una broma» — dastlab ishonmagan."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Hoy nos acompaña Rosa Vidal, chef de un restaurante que ha recibido recientemente una estrella en una guía gastronómica. Rosa, ¿esperabas este reconocimiento?\nB: Sinceramente, no. Llevamos solo tres años abiertos y nos consideramos un sitio modesto. Cuando me lo comunicaron, creí que era una broma.\nA: ¿A qué atribuyes el éxito?\nB: Sobre todo al equipo. Trabajamos solo con productores de la zona, y eso nos obliga a cambiar la carta cada mes según lo que haya en el mercado.\nA: ¿Cambiará algo a partir de ahora?\nB: Subirán un poco los precios, supongo, pero no pienso abrir otros locales.",
+      "question": "¿Por qué cambian la carta con frecuencia?",
+      "options": [
+        "Porque los clientes lo piden",
+        "Porque la guía lo exige",
+        "Porque contratan chefs nuevos cada mes",
+        "Porque utilizan productos locales según la disponibilidad"
+      ],
+      "answer": 3,
+      "explanation_uz": "Rosa: «Trabajamos solo con productores de la zona, y eso nos obliga a cambiar la carta cada mes»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Hoy nos acompaña Rosa Vidal, chef de un restaurante que ha recibido recientemente una estrella en una guía gastronómica. Rosa, ¿esperabas este reconocimiento?\nB: Sinceramente, no. Llevamos solo tres años abiertos y nos consideramos un sitio modesto. Cuando me lo comunicaron, creí que era una broma.\nA: ¿A qué atribuyes el éxito?\nB: Sobre todo al equipo. Trabajamos solo con productores de la zona, y eso nos obliga a cambiar la carta cada mes según lo que haya en el mercado.\nA: ¿Cambiará algo a partir de ahora?\nB: Subirán un poco los precios, supongo, pero no pienso abrir otros locales.",
+      "text": "Rosa no piensa abrir otros ___.",
+      "answers": [
+        "locales",
+        "restaurantes"
+      ],
+      "explanation_uz": "Rosa: «no pienso abrir otros locales»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Muchas personas creen que dormir menos de seis horas no tiene consecuencias, pero los expertos opinan lo contrario. Según un estudio, quienes duermen poco tienen peor memoria y más probabilidades de sufrir ansiedad. Lo curioso es que, al cabo de un tiempo, el cuerpo se acostumbra a la falta de sueño y la persona deja de notar el cansancio, aunque su rendimiento siga siendo bajo. Los especialistas recomiendan acostarse siempre a la misma hora y no tomar café después de las cuatro de la tarde. Eso sí, advierten de que las siestas largas pueden empeorar el sueño nocturno, de modo que lo ideal es que no superen los veinte minutos.",
+      "question": "¿Qué resulta curioso, según el locutor?",
+      "options": [
+        "Que uno no percibe el cansancio aunque rinda peor",
+        "Que la memoria mejora con poco sueño",
+        "Que la ansiedad desaparece con el tiempo",
+        "Que seis horas bastan para todos"
+      ],
+      "answer": 0,
+      "explanation_uz": "«deja de notar el cansancio, aunque su rendimiento siga siendo bajo»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Muchas personas creen que dormir menos de seis horas no tiene consecuencias, pero los expertos opinan lo contrario. Según un estudio, quienes duermen poco tienen peor memoria y más probabilidades de sufrir ansiedad. Lo curioso es que, al cabo de un tiempo, el cuerpo se acostumbra a la falta de sueño y la persona deja de notar el cansancio, aunque su rendimiento siga siendo bajo. Los especialistas recomiendan acostarse siempre a la misma hora y no tomar café después de las cuatro de la tarde. Eso sí, advierten de que las siestas largas pueden empeorar el sueño nocturno, de modo que lo ideal es que no superen los veinte minutos.",
+      "question": "¿Qué se aconseja sobre la siesta?",
+      "options": [
+        "Que se evite por completo",
+        "Que dure al menos una hora",
+        "Que sea breve",
+        "Que se haga después de cenar"
+      ],
+      "answer": 2,
+      "explanation_uz": "«las siestas largas pueden empeorar el sueño ... no superen los veinte minutos»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Muchas personas creen que dormir menos de seis horas no tiene consecuencias, pero los expertos opinan lo contrario. Según un estudio, quienes duermen poco tienen peor memoria y más probabilidades de sufrir ansiedad. Lo curioso es que, al cabo de un tiempo, el cuerpo se acostumbra a la falta de sueño y la persona deja de notar el cansancio, aunque su rendimiento siga siendo bajo. Los especialistas recomiendan acostarse siempre a la misma hora y no tomar café después de las cuatro de la tarde. Eso sí, advierten de que las siestas largas pueden empeorar el sueño nocturno, de modo que lo ideal es que no superen los veinte minutos.",
+      "text": "Conviene no tomar café después de las ___ de la tarde.",
+      "answers": [
+        "cuatro",
+        "4"
+      ],
+      "explanation_uz": "«no tomar café después de las cuatro de la tarde»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Laura, ¿has visto el correo del cliente? Quieren adelantar la entrega una semana.\nB: Sí, y me parece una locura, porque todavía no hemos terminado las pruebas.\nA: Lo sé, pero si nos negamos, podrían cancelar el contrato. ¿Y si contratamos a un técnico externo para acelerar?\nB: Saldría caro y, además, tardaría días en conocer el sistema. Yo propondría entregar una versión básica en la fecha pedida y completar el resto después.\nA: No está mal. Así cumplimos sin sacrificar la calidad.\nB: Exacto. Redacto yo una respuesta para el cliente y se la paso a Víctor para que la revise antes de enviarla.",
+      "question": "¿Por qué Laura rechaza contratar a un técnico externo?",
+      "options": [
+        "Porque el cliente no lo permitiría",
+        "Porque las pruebas ya han terminado",
+        "Costaría mucho y necesitaría tiempo para adaptarse",
+        "Porque Víctor se opone"
+      ],
+      "answer": 2,
+      "explanation_uz": "Laura: «Saldría caro y, además, tardaría días en conocer el sistema»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Laura, ¿has visto el correo del cliente? Quieren adelantar la entrega una semana.\nB: Sí, y me parece una locura, porque todavía no hemos terminado las pruebas.\nA: Lo sé, pero si nos negamos, podrían cancelar el contrato. ¿Y si contratamos a un técnico externo para acelerar?\nB: Saldría caro y, además, tardaría días en conocer el sistema. Yo propondría entregar una versión básica en la fecha pedida y completar el resto después.\nA: No está mal. Así cumplimos sin sacrificar la calidad.\nB: Exacto. Redacto yo una respuesta para el cliente y se la paso a Víctor para que la revise antes de enviarla.",
+      "question": "¿Qué solución acuerdan?",
+      "options": [
+        "Rechazar la petición del cliente",
+        "Entregar una versión simple a tiempo y acabar el resto más tarde",
+        "Pedir más plazo para las pruebas",
+        "Cancelar el contrato"
+      ],
+      "answer": 1,
+      "explanation_uz": "Laura: «entregar una versión básica en la fecha pedida y completar el resto después»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Laura, ¿has visto el correo del cliente? Quieren adelantar la entrega una semana.\nB: Sí, y me parece una locura, porque todavía no hemos terminado las pruebas.\nA: Lo sé, pero si nos negamos, podrían cancelar el contrato. ¿Y si contratamos a un técnico externo para acelerar?\nB: Saldría caro y, además, tardaría días en conocer el sistema. Yo propondría entregar una versión básica en la fecha pedida y completar el resto después.\nA: No está mal. Así cumplimos sin sacrificar la calidad.\nB: Exacto. Redacto yo una respuesta para el cliente y se la paso a Víctor para que la revise antes de enviarla.",
+      "text": "Laura escribirá la respuesta y se la pasará a ___ para que la revise.",
+      "answers": [
+        "Víctor",
+        "Victor"
+      ],
+      "explanation_uz": "Laura: «se la paso a Víctor para que la revise»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Cada septiembre, mi pueblo celebra la fiesta de la vendimia. Durante tres días, los vecinos pisan la uva en grandes lagares de madera. Aunque hoy casi nadie trabaja así en el campo, la tradición se mantiene gracias a las asociaciones juveniles. Lo que más sorprende a los visitantes es el desfile del domingo, en el que cada barrio construye una carroza con materiales reciclados. Este año, además, habrá un concurso de cocina con productos de la huerta. Si piensan venir, les recomiendo reservar alojamiento con antelación, ya que las pocas pensiones que hay se llenan en cuanto se anuncian las fechas.",
+      "question": "¿Por qué sigue viva la tradición?",
+      "options": [
+        "Porque todavía se pisa la uva en el campo",
+        "Porque lo exige el ayuntamiento",
+        "Porque atrae a muchos turistas extranjeros",
+        "Gracias al trabajo de grupos de jóvenes"
+      ],
+      "answer": 3,
+      "explanation_uz": "«la tradición se mantiene gracias a las asociaciones juveniles»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Cada septiembre, mi pueblo celebra la fiesta de la vendimia. Durante tres días, los vecinos pisan la uva en grandes lagares de madera. Aunque hoy casi nadie trabaja así en el campo, la tradición se mantiene gracias a las asociaciones juveniles. Lo que más sorprende a los visitantes es el desfile del domingo, en el que cada barrio construye una carroza con materiales reciclados. Este año, además, habrá un concurso de cocina con productos de la huerta. Si piensan venir, les recomiendo reservar alojamiento con antelación, ya que las pocas pensiones que hay se llenan en cuanto se anuncian las fechas.",
+      "question": "¿Qué es lo que más llama la atención de los visitantes?",
+      "options": [
+        "El desfile de carrozas hechas con material reciclado",
+        "El concurso de cocina",
+        "La música de las calles",
+        "La visita a las bodegas"
+      ],
+      "answer": 0,
+      "explanation_uz": "«Lo que más sorprende ... es el desfile del domingo ... carroza con materiales reciclados»."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Cada septiembre, mi pueblo celebra la fiesta de la vendimia. Durante tres días, los vecinos pisan la uva en grandes lagares de madera. Aunque hoy casi nadie trabaja así en el campo, la tradición se mantiene gracias a las asociaciones juveniles. Lo que más sorprende a los visitantes es el desfile del domingo, en el que cada barrio construye una carroza con materiales reciclados. Este año, además, habrá un concurso de cocina con productos de la huerta. Si piensan venir, les recomiendo reservar alojamiento con antelación, ya que las pocas pensiones que hay se llenan en cuanto se anuncian las fechas.",
+      "text": "El hablante recomienda reservar el ___ con antelación.",
+      "answers": [
+        "alojamiento",
+        "hospedaje"
+      ],
+      "explanation_uz": "«les recomiendo reservar alojamiento con antelación»."
+    }
+  }
+]

@@ -1,0 +1,997 @@
+[
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Hi Dilya, I hope you are well. I'm writing to tell you about my new job. Last month I started working at a small travel agency in the city centre. The office is only ten minutes from my flat, so I walk there every morning. My boss, Mr Kent, is very friendly, but we are really busy because summer is our most popular season. I usually finish at six, though on Fridays I leave at four. Next Saturday I'm having a small party at my flat to celebrate. Can you come? Bring your sister if she is free. Let me know by Wednesday so I can buy enough food. Best wishes, Aziza",
+      "question": "How does Aziza get to her office each day?",
+      "options": [
+        "By bus",
+        "On foot",
+        "By bicycle",
+        "By car"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: \"I walk there every morning\" - Aziza ishga piyoda boradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Hi Dilya, I hope you are well. I'm writing to tell you about my new job. Last month I started working at a small travel agency in the city centre. The office is only ten minutes from my flat, so I walk there every morning. My boss, Mr Kent, is very friendly, but we are really busy because summer is our most popular season. I usually finish at six, though on Fridays I leave at four. Next Saturday I'm having a small party at my flat to celebrate. Can you come? Bring your sister if she is free. Let me know by Wednesday so I can buy enough food. Best wishes, Aziza",
+      "question": "Why is the agency so busy at the moment?",
+      "options": [
+        "A new boss has arrived",
+        "Some staff are on holiday",
+        "The office is moving",
+        "Many people book trips in summer"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: \"summer is our most popular season\" - yoz eng gavjum mavsum."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Hi Dilya, I hope you are well. I'm writing to tell you about my new job. Last month I started working at a small travel agency in the city centre. The office is only ten minutes from my flat, so I walk there every morning. My boss, Mr Kent, is very friendly, but we are really busy because summer is our most popular season. I usually finish at six, though on Fridays I leave at four. Next Saturday I'm having a small party at my flat to celebrate. Can you come? Bring your sister if she is free. Let me know by Wednesday so I can buy enough food. Best wishes, Aziza",
+      "question": "What does Aziza want Dilya to do before Wednesday?",
+      "options": [
+        "Bring some food",
+        "Visit the travel agency",
+        "Say whether she can come to the party",
+        "Meet Mr Kent"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: \"Let me know by Wednesday\" - Dilya kelish-kelmasligini bildirishi kerak."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Hi Dilya, I hope you are well. I'm writing to tell you about my new job. Last month I started working at a small travel agency in the city centre. The office is only ten minutes from my flat, so I walk there every morning. My boss, Mr Kent, is very friendly, but we are really busy because summer is our most popular season. I usually finish at six, though on Fridays I leave at four. Next Saturday I'm having a small party at my flat to celebrate. Can you come? Bring your sister if she is free. Let me know by Wednesday so I can buy enough food. Best wishes, Aziza",
+      "statement": "Aziza finishes work at four o'clock every day.",
+      "answer": "false",
+      "explanation_uz": "Matnda: odatda oltida tugatadi, faqat juma kuni to'rtda ketadi - har kuni emas."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Greenfield Library will close for three weeks this autumn while workers build a new children's section. The council announced the plan on Monday. The work will cost about 200,000 pounds, and most of the money comes from a local business, Hartley Foods. During the closure, readers can borrow books from a mobile library, a van that will park outside the town hall every weekday morning. Library manager Sue Park said the changes were needed because the old children's area was too small. \"On Saturdays, families often have to wait outside,\" she said. \"The new room will have space for 60 children and a reading garden.\" The library will reopen on 4 November.",
+      "question": "Why will the library close for a while?",
+      "options": [
+        "To repair the roof",
+        "To add a section for young readers",
+        "To move to another building",
+        "To hold a book festival"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: \"build a new children's section\" - bolalar bo'limi quriladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Greenfield Library will close for three weeks this autumn while workers build a new children's section. The council announced the plan on Monday. The work will cost about 200,000 pounds, and most of the money comes from a local business, Hartley Foods. During the closure, readers can borrow books from a mobile library, a van that will park outside the town hall every weekday morning. Library manager Sue Park said the changes were needed because the old children's area was too small. \"On Saturdays, families often have to wait outside,\" she said. \"The new room will have space for 60 children and a reading garden.\" The library will reopen on 4 November.",
+      "question": "Where will people find the mobile library?",
+      "options": [
+        "Outside the town hall",
+        "In the library car park",
+        "At the local school",
+        "Next to the Hartley Foods shop"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: \"park outside the town hall\" - shahar hokimiyati oldida."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Greenfield Library will close for three weeks this autumn while workers build a new children's section. The council announced the plan on Monday. The work will cost about 200,000 pounds, and most of the money comes from a local business, Hartley Foods. During the closure, readers can borrow books from a mobile library, a van that will park outside the town hall every weekday morning. Library manager Sue Park said the changes were needed because the old children's area was too small. \"On Saturdays, families often have to wait outside,\" she said. \"The new room will have space for 60 children and a reading garden.\" The library will reopen on 4 November.",
+      "question": "Who is paying for most of the building work?",
+      "options": [
+        "The council",
+        "Families who use the library",
+        "A local company",
+        "The library manager"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: \"most of the money comes from a local business\" - mablag'ning ko'p qismini mahalliy kompaniya beradi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Greenfield Library will close for three weeks this autumn while workers build a new children's section. The council announced the plan on Monday. The work will cost about 200,000 pounds, and most of the money comes from a local business, Hartley Foods. During the closure, readers can borrow books from a mobile library, a van that will park outside the town hall every weekday morning. Library manager Sue Park said the changes were needed because the old children's area was too small. \"On Saturdays, families often have to wait outside,\" she said. \"The new room will have space for 60 children and a reading garden.\" The library will reopen on 4 November.",
+      "statement": "Sue Park has managed the library for ten years.",
+      "answer": "not_given",
+      "explanation_uz": "Matnda Sue Parkning necha yil ishlagani haqida hech narsa aytilmagan."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Three months ago I could only make toast and boiled eggs. My friends laughed at me, so I decided to learn to cook properly. At first I followed videos online, but they went too fast and I burned a lot of food. Then I joined a Tuesday evening class at the community centre. Our teacher, Marco, shows us each step slowly and lets us taste everything. Last week I made a vegetable soup for my parents, and my dad asked for a second bowl! I still can't make good bread, which is my next goal. If you're thinking about learning something new, my advice is simple: find a real person to learn from. It's much easier than watching a screen.",
+      "question": "What made the writer decide to learn to cook?",
+      "options": [
+        "A doctor's advice",
+        "Friends joking about his or her skills",
+        "A cooking competition",
+        "A wish to save money"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: \"My friends laughed at me, so I decided...\" - do'stlari kulgani sabab bo'ldi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Three months ago I could only make toast and boiled eggs. My friends laughed at me, so I decided to learn to cook properly. At first I followed videos online, but they went too fast and I burned a lot of food. Then I joined a Tuesday evening class at the community centre. Our teacher, Marco, shows us each step slowly and lets us taste everything. Last week I made a vegetable soup for my parents, and my dad asked for a second bowl! I still can't make good bread, which is my next goal. If you're thinking about learning something new, my advice is simple: find a real person to learn from. It's much easier than watching a screen.",
+      "question": "Why did the online videos not work well?",
+      "options": [
+        "They were too expensive",
+        "They were in another language",
+        "They moved too quickly",
+        "They showed very difficult food"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: \"they went too fast\" - videolar juda tez edi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Three months ago I could only make toast and boiled eggs. My friends laughed at me, so I decided to learn to cook properly. At first I followed videos online, but they went too fast and I burned a lot of food. Then I joined a Tuesday evening class at the community centre. Our teacher, Marco, shows us each step slowly and lets us taste everything. Last week I made a vegetable soup for my parents, and my dad asked for a second bowl! I still can't make good bread, which is my next goal. If you're thinking about learning something new, my advice is simple: find a real person to learn from. It's much easier than watching a screen.",
+      "question": "What is the writer's next aim?",
+      "options": [
+        "To cook in a restaurant",
+        "To make soup for friends",
+        "To teach a class",
+        "To bake good bread"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: \"I still can't make good bread, which is my next goal\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Three months ago I could only make toast and boiled eggs. My friends laughed at me, so I decided to learn to cook properly. At first I followed videos online, but they went too fast and I burned a lot of food. Then I joined a Tuesday evening class at the community centre. Our teacher, Marco, shows us each step slowly and lets us taste everything. Last week I made a vegetable soup for my parents, and my dad asked for a second bowl! I still can't make good bread, which is my next goal. If you're thinking about learning something new, my advice is simple: find a real person to learn from. It's much easier than watching a screen.",
+      "statement": "The writer's father liked the soup.",
+      "answer": "true",
+      "explanation_uz": "Matnda: \"my dad asked for a second bowl\" - otasi yana so'ragan, ya'ni sho'rva yoqqan."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "NOTICE TO ALL MEMBERS - Riverside Sports Centre. From Monday 6 May, the swimming pool will have new opening hours. The pool will open at 7 a.m. instead of 6 a.m., but it will stay open until 10 p.m. on weekdays. On weekends, the opening times will not change. Please note that the pool will be closed on Wednesday afternoons for school lessons. Children under eight must always swim with an adult. Members must take a shower before entering the pool, and glass bottles are not allowed. Lockers now cost one pound, which you get back when you return the key. If you have any questions, please ask at the front desk or call 555 0142. Thank you for your understanding.",
+      "question": "What change will members notice early in the day?",
+      "options": [
+        "The pool will open an hour later",
+        "The pool will open an hour earlier",
+        "The pool will be free to enter",
+        "Swimming lessons will start"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: 7 a.m. \"instead of 6 a.m.\" - basseyn bir soat kechroq ochiladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "NOTICE TO ALL MEMBERS - Riverside Sports Centre. From Monday 6 May, the swimming pool will have new opening hours. The pool will open at 7 a.m. instead of 6 a.m., but it will stay open until 10 p.m. on weekdays. On weekends, the opening times will not change. Please note that the pool will be closed on Wednesday afternoons for school lessons. Children under eight must always swim with an adult. Members must take a shower before entering the pool, and glass bottles are not allowed. Lockers now cost one pound, which you get back when you return the key. If you have any questions, please ask at the front desk or call 555 0142. Thank you for your understanding.",
+      "question": "When can members NOT use the pool?",
+      "options": [
+        "On Wednesday afternoons",
+        "On Saturday mornings",
+        "Every evening after eight",
+        "On Monday mornings"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: \"closed on Wednesday afternoons for school lessons\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "NOTICE TO ALL MEMBERS - Riverside Sports Centre. From Monday 6 May, the swimming pool will have new opening hours. The pool will open at 7 a.m. instead of 6 a.m., but it will stay open until 10 p.m. on weekdays. On weekends, the opening times will not change. Please note that the pool will be closed on Wednesday afternoons for school lessons. Children under eight must always swim with an adult. Members must take a shower before entering the pool, and glass bottles are not allowed. Lockers now cost one pound, which you get back when you return the key. If you have any questions, please ask at the front desk or call 555 0142. Thank you for your understanding.",
+      "question": "What happens to the money paid for a locker?",
+      "options": [
+        "The centre keeps it",
+        "It is given to charity",
+        "It is added to the membership fee",
+        "It is returned when the key is brought back"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: \"which you get back when you return the key\" - kalit qaytarilganda pul qaytariladi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B1",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "NOTICE TO ALL MEMBERS - Riverside Sports Centre. From Monday 6 May, the swimming pool will have new opening hours. The pool will open at 7 a.m. instead of 6 a.m., but it will stay open until 10 p.m. on weekdays. On weekends, the opening times will not change. Please note that the pool will be closed on Wednesday afternoons for school lessons. Children under eight must always swim with an adult. Members must take a shower before entering the pool, and glass bottles are not allowed. Lockers now cost one pound, which you get back when you return the key. If you have any questions, please ask at the front desk or call 555 0142. Thank you for your understanding.",
+      "statement": "A seven-year-old child may swim without an adult.",
+      "answer": "false",
+      "explanation_uz": "Matnda: \"Children under eight must always swim with an adult\" - yetti yoshli bola kattasiz suzishi mumkin emas."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Excuse me, what time is the next train to Bukhara?\nB: Let me check. The 9:15 has just left, I'm afraid. The next one is at 10:40.\nA: Oh no. Is there a faster option? I need to be there in the afternoon.\nB: The 10:40 is the express, so it only takes three hours. It arrives at 1:40.\nA: That's fine. How much is a ticket?\nB: A standard seat is thirty thousand soums, and a first-class seat is fifty.\nA: I'll take a standard one, please.\nB: Of course. Platform four, and please be there ten minutes early.",
+      "question": "Why can't the man take the first train mentioned?",
+      "options": [
+        "It is full",
+        "It has already left",
+        "It goes to a different city",
+        "It costs too much"
+      ],
+      "answer": 1,
+      "explanation_uz": "Dialogda: \"The 9:15 has just left\" - poyezd allaqachon jo'nab ketgan."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Excuse me, what time is the next train to Bukhara?\nB: Let me check. The 9:15 has just left, I'm afraid. The next one is at 10:40.\nA: Oh no. Is there a faster option? I need to be there in the afternoon.\nB: The 10:40 is the express, so it only takes three hours. It arrives at 1:40.\nA: That's fine. How much is a ticket?\nB: A standard seat is thirty thousand soums, and a first-class seat is fifty.\nA: I'll take a standard one, please.\nB: Of course. Platform four, and please be there ten minutes early.",
+      "text": "The express train to Bukhara arrives at ___ in the afternoon.",
+      "answers": [
+        "1:40",
+        "1.40",
+        "one forty",
+        "1:40 p.m."
+      ],
+      "explanation_uz": "Dialogda: \"It arrives at 1:40\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Excuse me, what time is the next train to Bukhara?\nB: Let me check. The 9:15 has just left, I'm afraid. The next one is at 10:40.\nA: Oh no. Is there a faster option? I need to be there in the afternoon.\nB: The 10:40 is the express, so it only takes three hours. It arrives at 1:40.\nA: That's fine. How much is a ticket?\nB: A standard seat is thirty thousand soums, and a first-class seat is fifty.\nA: I'll take a standard one, please.\nB: Of course. Platform four, and please be there ten minutes early.",
+      "question": "What ticket does the man decide to buy?",
+      "options": [
+        "A first-class seat",
+        "A return ticket",
+        "A standard seat",
+        "Two tickets"
+      ],
+      "answer": 2,
+      "explanation_uz": "Dialogda: \"I'll take a standard one\" - oddiy o'rindiq."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Good morning, everyone, and welcome to the city museum tour. My name is Helen, and I'll be your guide today. The tour lasts about ninety minutes, and we'll visit four rooms: ancient coins, old maps, clothing from the nineteenth century, and the new photography exhibition. Please don't use flash when you take photos, and keep your bags with you at all times. There is a short break halfway through, when you can buy a drink at the café on the second floor. After the tour, you're welcome to stay longer, but the museum closes at five o'clock. If you have any questions, just ask me. Shall we begin?",
+      "question": "How long does the tour last?",
+      "options": [
+        "About forty-five minutes",
+        "About one hour",
+        "About an hour and a half",
+        "About two hours"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: \"about ninety minutes\" - taxminan bir yarim soat."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Good morning, everyone, and welcome to the city museum tour. My name is Helen, and I'll be your guide today. The tour lasts about ninety minutes, and we'll visit four rooms: ancient coins, old maps, clothing from the nineteenth century, and the new photography exhibition. Please don't use flash when you take photos, and keep your bags with you at all times. There is a short break halfway through, when you can buy a drink at the café on the second floor. After the tour, you're welcome to stay longer, but the museum closes at five o'clock. If you have any questions, just ask me. Shall we begin?",
+      "text": "Visitors can buy a drink at the café on the ___ floor.",
+      "answers": [
+        "second",
+        "2nd"
+      ],
+      "explanation_uz": "Matnda: \"the café on the second floor\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Good morning, everyone, and welcome to the city museum tour. My name is Helen, and I'll be your guide today. The tour lasts about ninety minutes, and we'll visit four rooms: ancient coins, old maps, clothing from the nineteenth century, and the new photography exhibition. Please don't use flash when you take photos, and keep your bags with you at all times. There is a short break halfway through, when you can buy a drink at the café on the second floor. After the tour, you're welcome to stay longer, but the museum closes at five o'clock. If you have any questions, just ask me. Shall we begin?",
+      "question": "What are visitors asked NOT to do?",
+      "options": [
+        "Use a flash when taking photos",
+        "Carry their bags",
+        "Ask the guide questions",
+        "Visit the café"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: \"Please don't use flash when you take photos\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Are you doing anything this weekend, Tom?\nB: Not much. I was going to go hiking on Saturday, but the forecast says rain.\nA: That's a shame. Why don't we go to the cinema instead? There's a new comedy at the Plaza.\nB: Good idea. What time does it start?\nA: There's a show at four and another at seven.\nB: Let's go to the seven o'clock one. I have football practice until five thirty, and I'll need to eat something first.\nA: Fine. Shall I book the tickets online?\nB: Yes, please. I'll pay you back on Saturday.",
+      "question": "Why does Tom give up his plan for Saturday?",
+      "options": [
+        "He is ill",
+        "He has to work",
+        "He has no money",
+        "The weather will be wet"
+      ],
+      "answer": 3,
+      "explanation_uz": "Dialogda: \"the forecast says rain\" - yomg'ir kutilmoqda."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Are you doing anything this weekend, Tom?\nB: Not much. I was going to go hiking on Saturday, but the forecast says rain.\nA: That's a shame. Why don't we go to the cinema instead? There's a new comedy at the Plaza.\nB: Good idea. What time does it start?\nA: There's a show at four and another at seven.\nB: Let's go to the seven o'clock one. I have football practice until five thirty, and I'll need to eat something first.\nA: Fine. Shall I book the tickets online?\nB: Yes, please. I'll pay you back on Saturday.",
+      "text": "They decide to see the film at ___ o'clock.",
+      "answers": [
+        "seven",
+        "7"
+      ],
+      "explanation_uz": "Dialogda: \"Let's go to the seven o'clock one\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Are you doing anything this weekend, Tom?\nB: Not much. I was going to go hiking on Saturday, but the forecast says rain.\nA: That's a shame. Why don't we go to the cinema instead? There's a new comedy at the Plaza.\nB: Good idea. What time does it start?\nA: There's a show at four and another at seven.\nB: Let's go to the seven o'clock one. I have football practice until five thirty, and I'll need to eat something first.\nA: Fine. Shall I book the tickets online?\nB: Yes, please. I'll pay you back on Saturday.",
+      "question": "What will Tom's friend do?",
+      "options": [
+        "Reserve the cinema tickets",
+        "Buy food for Tom",
+        "Drive Tom to the Plaza",
+        "Cancel football practice"
+      ],
+      "answer": 0,
+      "explanation_uz": "Dialogda: \"Shall I book the tickets online?\" - \"Yes, please\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Are you tired of studying English alone? Come to Bright Future Language School! We offer small classes of no more than eight students, so every learner gets plenty of attention. Our teachers come from five different countries, and all of them have at least three years of experience. Morning classes start at nine, and evening classes begin at six thirty, so you can study before or after work. This month only, new students get a ten per cent discount on their first course. To register, visit our website or come to our office on Navoi Street, next to the post office. Don't wait - spaces are limited!",
+      "question": "What is special about the classes?",
+      "options": [
+        "They are held online",
+        "They are free of charge",
+        "They only take place at weekends",
+        "There are few students in each one"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: \"no more than eight students\" - guruhlar kichik."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B1",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Are you tired of studying English alone? Come to Bright Future Language School! We offer small classes of no more than eight students, so every learner gets plenty of attention. Our teachers come from five different countries, and all of them have at least three years of experience. Morning classes start at nine, and evening classes begin at six thirty, so you can study before or after work. This month only, new students get a ten per cent discount on their first course. To register, visit our website or come to our office on Navoi Street, next to the post office. Don't wait - spaces are limited!",
+      "text": "This month, new students pay ___ per cent less for their first course.",
+      "answers": [
+        "ten",
+        "10"
+      ],
+      "explanation_uz": "Matnda: \"a ten per cent discount\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B1",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Are you tired of studying English alone? Come to Bright Future Language School! We offer small classes of no more than eight students, so every learner gets plenty of attention. Our teachers come from five different countries, and all of them have at least three years of experience. Morning classes start at nine, and evening classes begin at six thirty, so you can study before or after work. This month only, new students get a ten per cent discount on their first course. To register, visit our website or come to our office on Navoi Street, next to the post office. Don't wait - spaces are limited!",
+      "question": "Where is the school's office?",
+      "options": [
+        "Opposite the station",
+        "Beside the post office",
+        "Behind the market",
+        "Near the university"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: \"on Navoi Street, next to the post office\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Several companies in Britain have recently been testing a four-day working week, and the early results are surprising. In one trial involving more than sixty firms, employees kept their full salaries but worked only thirty-two hours instead of forty. Many managers had expected productivity to fall. In fact, most companies reported that output stayed the same, and a few even saw it rise. Workers said they felt less stressed and slept better, and the number of people calling in sick dropped noticeably. However, the scheme did not suit everyone. Some employers in customer service found it hard to keep their offices staffed on the days when customers needed help, and a handful of employees admitted that the compressed schedule left them exhausted by the end of the week. Researchers stress that the results come from voluntary participants, who were probably already positive about the idea. They therefore advise caution before drawing wider conclusions, although most of the firms involved have decided to continue with the new schedule.",
+      "question": "What did many managers anticipate before the trial began?",
+      "options": [
+        "Absence through illness would fall",
+        "Salaries would have to be raised",
+        "Their companies would produce less work",
+        "Workers would ask for longer holidays"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: \"Many managers had expected productivity to fall\" - ish unumdorligi tushadi deb kutishgan."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Several companies in Britain have recently been testing a four-day working week, and the early results are surprising. In one trial involving more than sixty firms, employees kept their full salaries but worked only thirty-two hours instead of forty. Many managers had expected productivity to fall. In fact, most companies reported that output stayed the same, and a few even saw it rise. Workers said they felt less stressed and slept better, and the number of people calling in sick dropped noticeably. However, the scheme did not suit everyone. Some employers in customer service found it hard to keep their offices staffed on the days when customers needed help, and a handful of employees admitted that the compressed schedule left them exhausted by the end of the week. Researchers stress that the results come from voluntary participants, who were probably already positive about the idea. They therefore advise caution before drawing wider conclusions, although most of the firms involved have decided to continue with the new schedule.",
+      "question": "What problem did some customer-service employers report?",
+      "options": [
+        "Keeping enough staff in the office when clients needed help",
+        "Persuading employees to accept lower pay",
+        "Finding workers willing to join the trial",
+        "Dealing with a rise in sick leave"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: \"hard to keep their offices staffed on the days when customers needed help\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Several companies in Britain have recently been testing a four-day working week, and the early results are surprising. In one trial involving more than sixty firms, employees kept their full salaries but worked only thirty-two hours instead of forty. Many managers had expected productivity to fall. In fact, most companies reported that output stayed the same, and a few even saw it rise. Workers said they felt less stressed and slept better, and the number of people calling in sick dropped noticeably. However, the scheme did not suit everyone. Some employers in customer service found it hard to keep their offices staffed on the days when customers needed help, and a handful of employees admitted that the compressed schedule left them exhausted by the end of the week. Researchers stress that the results come from voluntary participants, who were probably already positive about the idea. They therefore advise caution before drawing wider conclusions, although most of the firms involved have decided to continue with the new schedule.",
+      "question": "Why do the researchers recommend caution?",
+      "options": [
+        "The trial lasted only a few weeks",
+        "Most firms refused to share their figures",
+        "Employees were paid less than before",
+        "The participants chose to take part and were probably in favour"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: \"results come from voluntary participants, who were probably already positive\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Several companies in Britain have recently been testing a four-day working week, and the early results are surprising. In one trial involving more than sixty firms, employees kept their full salaries but worked only thirty-two hours instead of forty. Many managers had expected productivity to fall. In fact, most companies reported that output stayed the same, and a few even saw it rise. Workers said they felt less stressed and slept better, and the number of people calling in sick dropped noticeably. However, the scheme did not suit everyone. Some employers in customer service found it hard to keep their offices staffed on the days when customers needed help, and a handful of employees admitted that the compressed schedule left them exhausted by the end of the week. Researchers stress that the results come from voluntary participants, who were probably already positive about the idea. They therefore advise caution before drawing wider conclusions, although most of the firms involved have decided to continue with the new schedule.",
+      "statement": "Most of the firms in the trial plan to keep the new schedule.",
+      "answer": "true",
+      "explanation_uz": "Matnda: \"most of the firms involved have decided to continue with the new schedule\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Dear Ms Rahimova, Thank you for your email of 14 March regarding your recent stay at the Lakeside Hotel. I was sorry to learn that your room was not ready when you arrived and that you waited almost two hours at reception. This should not have happened. Unfortunately, a burst pipe on the third floor forced us to move several guests at short notice, and our team did not communicate the delay as clearly as they should have. I have spoken to the staff concerned and we are reviewing how we handle such situations. As a gesture of apology, I would like to offer you a complimentary dinner for two in our restaurant, which you may use at any time during the next six months. I would also be happy to refund the cost of your first night if you send me a copy of your booking confirmation. Once again, please accept my sincere apologies for the inconvenience. Yours sincerely, Daniel Wright, General Manager",
+      "question": "What caused the difficulty with Ms Rahimova's room?",
+      "options": [
+        "Her booking was lost by mistake",
+        "Damage to the building led to guests being moved",
+        "Too many guests arrived at once",
+        "The cleaning staff were on strike"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: \"a burst pipe on the third floor forced us to move several guests\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Dear Ms Rahimova, Thank you for your email of 14 March regarding your recent stay at the Lakeside Hotel. I was sorry to learn that your room was not ready when you arrived and that you waited almost two hours at reception. This should not have happened. Unfortunately, a burst pipe on the third floor forced us to move several guests at short notice, and our team did not communicate the delay as clearly as they should have. I have spoken to the staff concerned and we are reviewing how we handle such situations. As a gesture of apology, I would like to offer you a complimentary dinner for two in our restaurant, which you may use at any time during the next six months. I would also be happy to refund the cost of your first night if you send me a copy of your booking confirmation. Once again, please accept my sincere apologies for the inconvenience. Yours sincerely, Daniel Wright, General Manager",
+      "question": "What does Mr Wright admit about his staff?",
+      "options": [
+        "They were rude to the guest",
+        "They had forgotten the booking",
+        "They refused to offer a room",
+        "They did not explain the delay clearly enough"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: \"our team did not communicate the delay as clearly as they should have\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "Dear Ms Rahimova, Thank you for your email of 14 March regarding your recent stay at the Lakeside Hotel. I was sorry to learn that your room was not ready when you arrived and that you waited almost two hours at reception. This should not have happened. Unfortunately, a burst pipe on the third floor forced us to move several guests at short notice, and our team did not communicate the delay as clearly as they should have. I have spoken to the staff concerned and we are reviewing how we handle such situations. As a gesture of apology, I would like to offer you a complimentary dinner for two in our restaurant, which you may use at any time during the next six months. I would also be happy to refund the cost of your first night if you send me a copy of your booking confirmation. Once again, please accept my sincere apologies for the inconvenience. Yours sincerely, Daniel Wright, General Manager",
+      "question": "What must Ms Rahimova do to receive a refund for the first night?",
+      "options": [
+        "Send a copy of her booking confirmation",
+        "Call the manager in person",
+        "Return to the hotel within six months",
+        "Write a second complaint"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: \"refund ... if you send me a copy of your booking confirmation\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "Dear Ms Rahimova, Thank you for your email of 14 March regarding your recent stay at the Lakeside Hotel. I was sorry to learn that your room was not ready when you arrived and that you waited almost two hours at reception. This should not have happened. Unfortunately, a burst pipe on the third floor forced us to move several guests at short notice, and our team did not communicate the delay as clearly as they should have. I have spoken to the staff concerned and we are reviewing how we handle such situations. As a gesture of apology, I would like to offer you a complimentary dinner for two in our restaurant, which you may use at any time during the next six months. I would also be happy to refund the cost of your first night if you send me a copy of your booking confirmation. Once again, please accept my sincere apologies for the inconvenience. Yours sincerely, Daniel Wright, General Manager",
+      "statement": "Ms Rahimova stayed at the hotel for three nights.",
+      "answer": "not_given",
+      "explanation_uz": "Matnda mehmon necha kecha qolgani aytilmagan."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "When I moved to Canada for my master's degree, I assumed my English was good enough. I had passed my exams with high marks, after all. Within a week, I realised how wrong I was. People spoke quickly, used slang I had never met, and seemed to leave half of every sentence unfinished. In seminars I understood the words but missed the jokes, which made me feel strangely invisible. What changed things was not a course or an app, but a part-time job in a bookshop. Customers asked me for recommendations, and I was forced to improvise, explain and sometimes admit I hadn't understood. My colleagues corrected me gently, and within three months I stopped translating in my head. I still make mistakes, and I still get nervous on the phone, but I no longer think of fluency as a finish line. It is more like a path that keeps stretching ahead, and the best way to walk it is among people who are happy to talk.",
+      "question": "What did the writer believe before arriving in Canada?",
+      "options": [
+        "Canadian slang would be easy to learn",
+        "They would need a course immediately",
+        "Their English was already sufficient",
+        "Seminars would be mostly in writing"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: \"I assumed my English was good enough\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "When I moved to Canada for my master's degree, I assumed my English was good enough. I had passed my exams with high marks, after all. Within a week, I realised how wrong I was. People spoke quickly, used slang I had never met, and seemed to leave half of every sentence unfinished. In seminars I understood the words but missed the jokes, which made me feel strangely invisible. What changed things was not a course or an app, but a part-time job in a bookshop. Customers asked me for recommendations, and I was forced to improvise, explain and sometimes admit I hadn't understood. My colleagues corrected me gently, and within three months I stopped translating in my head. I still make mistakes, and I still get nervous on the phone, but I no longer think of fluency as a finish line. It is more like a path that keeps stretching ahead, and the best way to walk it is among people who are happy to talk.",
+      "question": "What was the writer's problem in seminars?",
+      "options": [
+        "Following the vocabulary",
+        "Understanding the humour",
+        "Speaking in front of a group",
+        "Taking notes quickly enough"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: \"I understood the words but missed the jokes\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "When I moved to Canada for my master's degree, I assumed my English was good enough. I had passed my exams with high marks, after all. Within a week, I realised how wrong I was. People spoke quickly, used slang I had never met, and seemed to leave half of every sentence unfinished. In seminars I understood the words but missed the jokes, which made me feel strangely invisible. What changed things was not a course or an app, but a part-time job in a bookshop. Customers asked me for recommendations, and I was forced to improvise, explain and sometimes admit I hadn't understood. My colleagues corrected me gently, and within three months I stopped translating in my head. I still make mistakes, and I still get nervous on the phone, but I no longer think of fluency as a finish line. It is more like a path that keeps stretching ahead, and the best way to walk it is among people who are happy to talk.",
+      "question": "According to the writer, what helped their English most?",
+      "options": [
+        "Dealing with customers in a part-time job",
+        "Using a language app",
+        "Attending an extra course",
+        "Reading novels in the bookshop"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: \"What changed things was ... a part-time job in a bookshop\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "When I moved to Canada for my master's degree, I assumed my English was good enough. I had passed my exams with high marks, after all. Within a week, I realised how wrong I was. People spoke quickly, used slang I had never met, and seemed to leave half of every sentence unfinished. In seminars I understood the words but missed the jokes, which made me feel strangely invisible. What changed things was not a course or an app, but a part-time job in a bookshop. Customers asked me for recommendations, and I was forced to improvise, explain and sometimes admit I hadn't understood. My colleagues corrected me gently, and within three months I stopped translating in my head. I still make mistakes, and I still get nervous on the phone, but I no longer think of fluency as a finish line. It is more like a path that keeps stretching ahead, and the best way to walk it is among people who are happy to talk.",
+      "statement": "The writer now feels completely confident when using the phone.",
+      "answer": "false",
+      "explanation_uz": "Matnda: \"I still get nervous on the phone\" - hali ham xavotirlanadi."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "In recent years, a growing number of cities have encouraged residents to keep bees on rooftops and balconies. At first glance this may seem risky, but experts say that urban hives often produce more honey than those in the countryside. The reason is variety: gardens, parks and even window boxes provide flowers throughout the year, whereas farmland dominated by a single crop offers food for only a few weeks. Pesticides are also used less intensively in town. Nevertheless, some biologists warn that the trend has a downside. Honeybees compete for nectar with wild species such as bumblebees, which are already in decline and cannot be managed by humans. Dr Karen Holt, who studies pollinators, argues that planting more flowers matters more than adding more hives. \"If we simply increase the number of honeybees without increasing food, we help the species that needs help least,\" she says. Several councils are now rethinking their schemes, offering free seeds instead of subsidised hives.",
+      "question": "Why do city hives often produce more honey than rural ones?",
+      "options": [
+        "City bees are a stronger species",
+        "Beekeepers in towns are better trained",
+        "The weather in cities is warmer",
+        "Flowers are available over a much longer period"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: shaharda gullar yil bo'yi bor, dalada esa \"only a few weeks\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "In recent years, a growing number of cities have encouraged residents to keep bees on rooftops and balconies. At first glance this may seem risky, but experts say that urban hives often produce more honey than those in the countryside. The reason is variety: gardens, parks and even window boxes provide flowers throughout the year, whereas farmland dominated by a single crop offers food for only a few weeks. Pesticides are also used less intensively in town. Nevertheless, some biologists warn that the trend has a downside. Honeybees compete for nectar with wild species such as bumblebees, which are already in decline and cannot be managed by humans. Dr Karen Holt, who studies pollinators, argues that planting more flowers matters more than adding more hives. \"If we simply increase the number of honeybees without increasing food, we help the species that needs help least,\" she says. Several councils are now rethinking their schemes, offering free seeds instead of subsidised hives.",
+      "question": "What concern do some biologists have?",
+      "options": [
+        "Rooftop hives are dangerous for residents",
+        "Urban honey is of poor quality",
+        "Honeybees may take food from wild bees",
+        "Pesticides are harming city bees"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: \"Honeybees compete for nectar with wild species\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "passage": "In recent years, a growing number of cities have encouraged residents to keep bees on rooftops and balconies. At first glance this may seem risky, but experts say that urban hives often produce more honey than those in the countryside. The reason is variety: gardens, parks and even window boxes provide flowers throughout the year, whereas farmland dominated by a single crop offers food for only a few weeks. Pesticides are also used less intensively in town. Nevertheless, some biologists warn that the trend has a downside. Honeybees compete for nectar with wild species such as bumblebees, which are already in decline and cannot be managed by humans. Dr Karen Holt, who studies pollinators, argues that planting more flowers matters more than adding more hives. \"If we simply increase the number of honeybees without increasing food, we help the species that needs help least,\" she says. Several councils are now rethinking their schemes, offering free seeds instead of subsidised hives.",
+      "question": "What is Dr Holt's view?",
+      "options": [
+        "Cities should ban rooftop hives",
+        "Providing more flowers is more important than adding hives",
+        "Honeybees need more protection than bumblebees",
+        "Councils should pay for more hives"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: \"planting more flowers matters more than adding more hives\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "reading",
+    "level": "B2",
+    "type": "tf_ng",
+    "exam": "general",
+    "payload": {
+      "passage": "In recent years, a growing number of cities have encouraged residents to keep bees on rooftops and balconies. At first glance this may seem risky, but experts say that urban hives often produce more honey than those in the countryside. The reason is variety: gardens, parks and even window boxes provide flowers throughout the year, whereas farmland dominated by a single crop offers food for only a few weeks. Pesticides are also used less intensively in town. Nevertheless, some biologists warn that the trend has a downside. Honeybees compete for nectar with wild species such as bumblebees, which are already in decline and cannot be managed by humans. Dr Karen Holt, who studies pollinators, argues that planting more flowers matters more than adding more hives. \"If we simply increase the number of honeybees without increasing food, we help the species that needs help least,\" she says. Several councils are now rethinking their schemes, offering free seeds instead of subsidised hives.",
+      "statement": "Some councils are changing the way they support bees.",
+      "answer": "true",
+      "explanation_uz": "Matnda: \"Several councils are now rethinking their schemes\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Have you seen the schedule for the website launch? It's been moved again.\nB: Again? I thought we agreed on the twelfth.\nA: We did, but the design team found a security problem in the payment page. They say fixing it will take at least a week.\nB: That's frustrating. The client has already announced the date.\nA: I know. Mark wants to call them this afternoon and suggest the nineteenth instead.\nB: Wouldn't it be better to launch the main pages on the twelfth and add payments later?\nA: That's what I proposed, but Mark thinks it would confuse customers.\nB: Fair enough. I'll prepare a report for the call.",
+      "question": "Why has the launch been put back?",
+      "options": [
+        "The client asked for new designs",
+        "A fault was discovered in the payment page",
+        "Several staff members are ill",
+        "The website was too slow"
+      ],
+      "answer": 1,
+      "explanation_uz": "Dialogda: \"found a security problem in the payment page\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Have you seen the schedule for the website launch? It's been moved again.\nB: Again? I thought we agreed on the twelfth.\nA: We did, but the design team found a security problem in the payment page. They say fixing it will take at least a week.\nB: That's frustrating. The client has already announced the date.\nA: I know. Mark wants to call them this afternoon and suggest the nineteenth instead.\nB: Wouldn't it be better to launch the main pages on the twelfth and add payments later?\nA: That's what I proposed, but Mark thinks it would confuse customers.\nB: Fair enough. I'll prepare a report for the call.",
+      "text": "Mark will suggest launching on the ___ instead.",
+      "answers": [
+        "nineteenth",
+        "19th",
+        "19"
+      ],
+      "explanation_uz": "Dialogda: \"suggest the nineteenth instead\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: Have you seen the schedule for the website launch? It's been moved again.\nB: Again? I thought we agreed on the twelfth.\nA: We did, but the design team found a security problem in the payment page. They say fixing it will take at least a week.\nB: That's frustrating. The client has already announced the date.\nA: I know. Mark wants to call them this afternoon and suggest the nineteenth instead.\nB: Wouldn't it be better to launch the main pages on the twelfth and add payments later?\nA: That's what I proposed, but Mark thinks it would confuse customers.\nB: Fair enough. I'll prepare a report for the call.",
+      "question": "What is Mark's objection to a partial launch?",
+      "options": [
+        "It would cost too much",
+        "The client has refused it",
+        "The design team is unavailable",
+        "It might puzzle customers"
+      ],
+      "answer": 3,
+      "explanation_uz": "Dialogda: \"Mark thinks it would confuse customers\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Welcome back to Healthy Habits. Today I want to challenge a popular myth: that we can catch up on lost sleep at weekends. Many of us sleep five or six hours on weekdays, then stay in bed until noon on Saturday, believing the debt is paid. Research from a Colorado university suggests otherwise. People who slept late at weekends still showed poorer concentration on Monday. The better strategy, the scientists say, is consistency: going to bed and getting up at roughly the same time every day. If that's impossible, a nap in the early afternoon can help, but keep it to twenty minutes, or you may wake up groggy.",
+      "question": "Which belief does the speaker question?",
+      "options": [
+        "Extra sleep at weekends makes up for short nights",
+        "Everyone needs exactly eight hours",
+        "Napping is always harmful",
+        "Late nights improve concentration"
+      ],
+      "answer": 0,
+      "explanation_uz": "Matnda: \"we can catch up on lost sleep at weekends\" - bu afsona deyilgan."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Welcome back to Healthy Habits. Today I want to challenge a popular myth: that we can catch up on lost sleep at weekends. Many of us sleep five or six hours on weekdays, then stay in bed until noon on Saturday, believing the debt is paid. Research from a Colorado university suggests otherwise. People who slept late at weekends still showed poorer concentration on Monday. The better strategy, the scientists say, is consistency: going to bed and getting up at roughly the same time every day. If that's impossible, a nap in the early afternoon can help, but keep it to twenty minutes, or you may wake up groggy.",
+      "text": "The scientists say the best approach is ___ in your bedtime and wake-up time.",
+      "answers": [
+        "consistency",
+        "being consistent"
+      ],
+      "explanation_uz": "Matnda: \"The better strategy ... is consistency\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Welcome back to Healthy Habits. Today I want to challenge a popular myth: that we can catch up on lost sleep at weekends. Many of us sleep five or six hours on weekdays, then stay in bed until noon on Saturday, believing the debt is paid. Research from a Colorado university suggests otherwise. People who slept late at weekends still showed poorer concentration on Monday. The better strategy, the scientists say, is consistency: going to bed and getting up at roughly the same time every day. If that's impossible, a nap in the early afternoon can help, but keep it to twenty minutes, or you may wake up groggy.",
+      "question": "How long should an afternoon nap be?",
+      "options": [
+        "About ten minutes",
+        "Around an hour",
+        "No more than twenty minutes",
+        "As long as you like"
+      ],
+      "answer": 2,
+      "explanation_uz": "Matnda: \"keep it to twenty minutes\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: So, Amina, have you decided which elective to take next semester?\nB: I'm torn between marketing and statistics. Marketing sounds more fun, but my brother says statistics will help me find a job.\nA: He has a point. But the statistics module has an exam worth seventy per cent, while marketing is assessed through group projects.\nB: I'm not great at exams, to be honest. I get really nervous.\nA: Then why not take marketing now and statistics next year? You'd have more time to prepare.\nB: That's sensible. Could I still switch if I change my mind?\nA: Yes, until the end of the second week.",
+      "question": "Why is Amina unsure about statistics?",
+      "options": [
+        "It seems less useful",
+        "Her brother disliked it",
+        "Exams make her anxious",
+        "It is taught in groups"
+      ],
+      "answer": 2,
+      "explanation_uz": "Dialogda: \"I'm not great at exams ... I get really nervous\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: So, Amina, have you decided which elective to take next semester?\nB: I'm torn between marketing and statistics. Marketing sounds more fun, but my brother says statistics will help me find a job.\nA: He has a point. But the statistics module has an exam worth seventy per cent, while marketing is assessed through group projects.\nB: I'm not great at exams, to be honest. I get really nervous.\nA: Then why not take marketing now and statistics next year? You'd have more time to prepare.\nB: That's sensible. Could I still switch if I change my mind?\nA: Yes, until the end of the second week.",
+      "text": "Students may change their module until the end of the ___ week.",
+      "answers": [
+        "second",
+        "2nd"
+      ],
+      "explanation_uz": "Dialogda: \"until the end of the second week\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "A: So, Amina, have you decided which elective to take next semester?\nB: I'm torn between marketing and statistics. Marketing sounds more fun, but my brother says statistics will help me find a job.\nA: He has a point. But the statistics module has an exam worth seventy per cent, while marketing is assessed through group projects.\nB: I'm not great at exams, to be honest. I get really nervous.\nA: Then why not take marketing now and statistics next year? You'd have more time to prepare.\nB: That's sensible. Could I still switch if I change my mind?\nA: Yes, until the end of the second week.",
+      "question": "What does the adviser recommend?",
+      "options": [
+        "Marketing first and statistics later",
+        "Statistics first and marketing later",
+        "Taking both together",
+        "Asking the dean for advice"
+      ],
+      "answer": 0,
+      "explanation_uz": "Dialogda: \"take marketing now and statistics next year\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Good evening, neighbours, and thank you for coming. The empty plot behind the school has been abandoned for years. Last spring we asked the council if we could turn it into a community garden, and last week they finally agreed, on one condition: we must raise two thousand pounds for fencing and tools. So far we've collected nine hundred. We plan to divide the land into twenty small beds, which families can rent for a small yearly fee. One large area will grow vegetables for the local food bank. Work begins in March, so please leave your name on the list by the door.",
+      "question": "What condition did the council set?",
+      "options": [
+        "The garden must open to everyone daily",
+        "The school must supervise the work",
+        "Local families must sign a petition",
+        "The group must collect a certain sum of money"
+      ],
+      "answer": 3,
+      "explanation_uz": "Matnda: \"we must raise two thousand pounds for fencing and tools\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "transcript": "Good evening, neighbours, and thank you for coming. The empty plot behind the school has been abandoned for years. Last spring we asked the council if we could turn it into a community garden, and last week they finally agreed, on one condition: we must raise two thousand pounds for fencing and tools. So far we've collected nine hundred. We plan to divide the land into twenty small beds, which families can rent for a small yearly fee. One large area will grow vegetables for the local food bank. Work begins in March, so please leave your name on the list by the door.",
+      "text": "So far the group has raised ___ pounds.",
+      "answers": [
+        "900",
+        "nine hundred"
+      ],
+      "explanation_uz": "Matnda: \"So far we've collected nine hundred\"."
+    }
+  },
+  {
+    "lang": "en",
+    "skill": "listening",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "transcript": "Good evening, neighbours, and thank you for coming. The empty plot behind the school has been abandoned for years. Last spring we asked the council if we could turn it into a community garden, and last week they finally agreed, on one condition: we must raise two thousand pounds for fencing and tools. So far we've collected nine hundred. We plan to divide the land into twenty small beds, which families can rent for a small yearly fee. One large area will grow vegetables for the local food bank. Work begins in March, so please leave your name on the list by the door.",
+      "question": "What will happen to the vegetables from the large area?",
+      "options": [
+        "They will be sold at a market",
+        "They will go to a food bank",
+        "They will be shared among renters",
+        "They will be used by the school"
+      ],
+      "answer": 1,
+      "explanation_uz": "Matnda: \"One large area will grow vegetables for the local food bank\"."
+    }
+  }
+]

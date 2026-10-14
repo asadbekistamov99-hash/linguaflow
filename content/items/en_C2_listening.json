@@ -26,7 +26,7 @@
     "exam": "general",
     "payload": {
       "transcript": "Right, so let me turn to the vexed question of linguistic relativity. The strong version, that language determines thought, was largely abandoned by the nineteen sixties, and rightly so; it rested on anecdote and, frankly, on a certain romantic condescension towards other cultures. What survives is a far more modest claim, namely that habitual patterns of speech may nudge attention in particular directions. Consider the experiments on colour. Russian speakers, who must distinguish light blue from dark blue lexically, discriminate between those shades marginally faster than English speakers do. Marginally, mind you. The effect vanishes when participants are asked to repeat a string of digits while they perform the task, which suggests that language is operating online, as a kind of silent commentary, rather than reshaping perception itself. Now, some of my colleagues find this deflationary, even disappointing. I would argue the opposite. A modest effect that is robust and replicable is worth far more than a dramatic one that collapses under scrutiny. What I would caution against is the popular press tendency to inflate these findings into claims that, say, speakers of languages without a future tense save more money. That particular correlation, I suspect, owes more to economics than to grammar.",
-      "text": "The lecturer describes the role of language in the colour experiments as a kind of silent ___.",
+      "text": "The lecturer suggests that in the colour experiments language works like a silent ___ on what we see.",
       "answers": [
         "commentary"
       ],
@@ -121,7 +121,7 @@
         "He thinks mistakes are best hidden from the public."
       ],
       "answer": 1,
-      "explanation_uz": "B: predecessorlar yelimlari \"practically impossible to remove\" - xatolarni tuzatib bo'lmaydi, ular bilan ishlashga to'g'ri keladi (\"living with them\")."
+      "explanation_uz": "B: avvalgi konservatorlar ishlatgan yelimlar \"practically impossible to remove\" - xatolarni tuzatib bo'lmaydi, ular bilan ishlashga to'g'ri keladi (\"living with them\")."
     }
   },
   {
@@ -134,7 +134,8 @@
       "transcript": "A: You've spent thirty years restoring manuscripts. Is the aim to make them look new?\nB: Quite the opposite, and that is the most common misconception. A good conservator is, in a sense, aiming for invisibility, but not for erasure. We stabilise rather than repair. If a page has a tear, I will reinforce it with a fine Japanese tissue, but I will never paint over the loss, however tempting that might be.\nA: Why resist the temptation?\nB: Because the damage is part of the document's biography. A water stain tells you the library flooded in the seventeenth century; fill it in and you have quietly edited history. There is an ethical principle called reversibility: anything I do must be undoable by someone with better techniques in fifty years' time. I'm acutely aware that my predecessors, with the best intentions, glued pages with adhesives that are now practically impossible to remove.\nA: So you're also correcting past mistakes.\nB: Less correcting than living with them, I'd say. Which is humbling. One develops a certain scepticism about one's own confidence. I like to think that the highest compliment a colleague can pay my work is to fail to notice it, and the second highest is to be able to take it apart.",
       "text": "The expert says every intervention must be ___ so that future specialists can undo it.",
       "answers": [
-        "reversible"
+        "reversible",
+        "undoable"
       ],
       "explanation_uz": "B: \"an ethical principle called reversibility: anything I do must be undoable by someone with better techniques...\""
     }
@@ -189,7 +190,8 @@
       "answers": [
         "funding",
         "money",
-        "finance"
+        "finance",
+        "funds"
       ],
       "explanation_uz": "Matnda: \"how rarely it is accompanied by funding.\""
     }
@@ -259,7 +261,7 @@
     "exam": "general",
     "payload": {
       "transcript": "Thank you, and good morning. I was asked to speak about productivity, which I accepted with some trepidation, given that I finished this talk at four o'clock this morning. I have, over the years, tried every system known to humanity. Colour coded calendars, the famous method involving index cards, an application that rewards you with a cartoon owl for completing tasks. The owl, I'm sorry to report, has been disappointed in me for months. What I have concluded, and I offer this tentatively, since my evidence is largely anecdotal, is that the planning itself has become a form of procrastination. One can spend an entire Sunday building an immaculate schedule and thereby avoid doing any of the things scheduled. Now, I'm not suggesting that organisation is worthless. That would be rather ungrateful of me, since my publisher is expecting a book on the subject. But I do wonder whether the people who write most eloquently about focus are quite as focused as they appear. They may simply be exceptionally good at looking busy, which, one could argue, is a skill in its own right and one that, to be fair, I have yet to master. So my advice, if one can call it that, is to pick a single method, tolerate its flaws, and then stop reading about methods. I recognise the irony of saying so in a keynote.",
-      "text": "The speaker admits that the evidence for his conclusion is largely ___.",
+      "text": "The speaker admits that the evidence for his conclusion is mainly ___.",
       "answers": [
         "anecdotal"
       ],

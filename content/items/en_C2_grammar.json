@@ -20,11 +20,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "___ it not for her timely intervention, the merger would have collapsed.",
+      "text": "___ it not been for her timely intervention, the merger would have collapsed.",
       "answers": [
-        "Were"
+        "Had"
       ],
-      "explanation_uz": "Rasmiy inversiyali shart: 'Were it not for...' = 'If it were not for...'."
+      "explanation_uz": "Uchinchi tur shartning inversiyasi: Had it not been for... = If it had not been for..."
     }
   },
   {
@@ -93,7 +93,8 @@
     "payload": {
       "text": "Had I known about the risks, I ___ never have signed the contract.",
       "answers": [
-        "would"
+        "would",
+        "should"
       ],
       "explanation_uz": "Uchinchi tur shart gapining inversiyasi: Had I known..., I would have + V3."
     }
@@ -120,13 +121,12 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Under no circumstances ___ the doors be left unlocked overnight.",
+      "text": "Not for one moment ___ she doubt his sincerity.",
       "answers": [
-        "should",
-        "must",
-        "may"
+        "did",
+        "would"
       ],
-      "explanation_uz": "Salbiy qayd bilan boshlangan gapda inversiya bo'ladi: Under no circumstances should/must..."
+      "explanation_uz": "Not for one moment kabi inkor ibora gap boshida kelganda inversiya bo'ladi: did she doubt / would she doubt."
     }
   },
   {
@@ -136,11 +136,12 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Little ___ she suspect that the letter would change her life.",
+      "text": "Nowhere in the report ___ any mention of the risks.",
       "answers": [
-        "did"
+        "is there",
+        "was there"
       ],
-      "explanation_uz": "'Little' (= umuman emas) gap boshida kelsa, yordamchi fe'l bilan inversiya bo'ladi."
+      "explanation_uz": "Nowhere gap boshida kelganda inversiya bo'ladi: Nowhere is there... (there + to be inversiyasi)."
     }
   },
   {
@@ -152,7 +153,8 @@
     "payload": {
       "text": "By next June the committee ___ (sit) for three years.",
       "answers": [
-        "will have been sitting"
+        "will have been sitting",
+        "will have sat"
       ],
       "explanation_uz": "Kelasi vaqtgacha davom etgan jarayon uchun Future Perfect Continuous ishlatiladi."
     }
@@ -166,7 +168,10 @@
     "payload": {
       "text": "I'd rather you ___ mention this to anyone just yet.",
       "answers": [
-        "didn't"
+        "didn't",
+        "did not",
+        "wouldn't",
+        "would not"
       ],
       "explanation_uz": "'I'd rather + ega' dan keyin Past Simple ishlatiladi, ma'nosi hozirgi/kelasi zamon."
     }
@@ -290,11 +295,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "No sooner had she sat down ___ the phone rang.",
+      "text": "The report, ___ authors remain anonymous, was widely criticised.",
       "answers": [
-        "than"
+        "whose"
       ],
-      "explanation_uz": "'No sooner' faqat 'than' bilan keladi (Hardly/Scarcely esa 'when' bilan)."
+      "explanation_uz": "Egalik ma'nosidagi nisbiy olmosh 'whose' (= uning mualliflari) ot oldidan keladi."
     }
   },
   {
@@ -333,11 +338,12 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "It was not until 1990 ___ the law was finally repealed.",
+      "text": "It was her honesty, not her experience, ___ impressed the panel.",
       "answers": [
-        "that"
+        "that",
+        "which"
       ],
-      "explanation_uz": "Ajratuvchi (cleft) gap: It was not until ... that ..."
+      "explanation_uz": "Cleft gap: It was ... that/which ... qolipi ma'lum bir qismni ta'kidlaydi."
     }
   },
   {

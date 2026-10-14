@@ -38,7 +38,9 @@
       "answers": [
         "may",
         "must",
-        "should"
+        "should",
+        "can",
+        "will"
       ],
       "explanation_uz": "Under no circumstances bilan boshlangan gapda inversiya bo'ladi; bu yerda modal fe'l ega oldida turadi."
     }
@@ -352,11 +354,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "___ it not for your help, I would have failed.",
+      "text": "The strike, ___ led to widespread disruption, ended last week.",
       "answers": [
-        "Were"
+        "which"
       ],
-      "explanation_uz": "Aralash/3-shart gapda if tushirilganda inversiya: Were it not for = If it were not for."
+      "explanation_uz": "Vergul bilan ajratilgan noaniqlovchi nisbiy gapda 'that' ishlatilmaydi, faqat 'which' keladi."
     }
   },
   {
@@ -408,15 +410,15 @@
     "type": "mcq",
     "exam": "general",
     "payload": {
-      "question": "The more she practised, ___ she became.",
+      "question": "___ the circumstances, her decision was entirely understandable.",
       "options": [
-        "the more confident",
-        "more confident",
-        "the most confident",
-        "most confident"
+        "Given",
+        "Giving",
+        "Having given",
+        "To give"
       ],
       "answer": 0,
-      "explanation_uz": "The + qiyosiy daraja ..., the + qiyosiy daraja ... qolipi."
+      "explanation_uz": "Given + ot predlog vazifasida (= ...ni hisobga olganda): Given the circumstances. Boshqa shakllar bu ma'noda ishlatilmaydi."
     }
   },
   {

@@ -78,15 +78,15 @@
     "type": "mcq",
     "exam": "general",
     "payload": {
-      "question": "A sedentary lifestyle is a major ___ factor for heart disease.",
+      "question": "Prohibitive fees act as a major ___ to wider participation in higher education.",
       "options": [
-        "risk",
-        "danger",
-        "threat",
-        "peril"
+        "deterrent",
+        "detriment",
+        "deference",
+        "determinant"
       ],
       "answer": 0,
-      "explanation_uz": "risk factor – xavf omili (barqaror birikma). Danger, threat va peril ma'nosi yaqin, lekin 'factor' bilan birga ishlatilmaydi."
+      "explanation_uz": "deterrent – to'sqinlik qiluvchi omil, to'xtatuvchi vosita (deterrent to). Detriment – zarar (in detriment of), deference – hurmat-ehtirom, determinant – belgilovchi omil (determinant of); 'to' bilan mos kelmaydi."
     }
   },
   {
@@ -116,13 +116,13 @@
     "payload": {
       "question": "The professor's lecture was so ___ that even specialists struggled to follow it.",
       "options": [
-        "obtuse",
+        "abrasive",
         "abstinent",
         "abstruse",
         "obscene"
       ],
       "answer": 2,
-      "explanation_uz": "abstruse – tushunish qiyin, murakkab (chigal). Obtuse – (odam haqida) sust fikrlaydigan, abstinent – o'zini tiyadigan, obscene – odobsiz."
+      "explanation_uz": "abstruse – tushunish qiyin, murakkab (chigal). Abrasive – qo'pol, shafqatsiz, abstinent – o'zini tiyadigan, obscene – odobsiz."
     }
   },
   {
@@ -333,12 +333,12 @@
       "question": "The minister's remarks were deliberately ___, allowing several interpretations.",
       "options": [
         "ambitious",
-        "ambivalent",
+        "amenable",
         "ambiguous",
         "amiable"
       ],
       "answer": 2,
-      "explanation_uz": "ambiguous – ikki xil ma'noli, noaniq. Ambitious – shuhratparast, ambivalent – (odam) ikkilangan his-tuyg'uli, amiable – xushmuomala; so'zlarga tavsif bermaydi."
+      "explanation_uz": "ambiguous – ikki xil ma'noli, noaniq. Ambitious – shuhratparast, amenable – ko'nadigan, bo'ysunuvchan, amiable – xushmuomala; so'zlarga tavsif bermaydi."
     }
   },
   {
@@ -526,11 +526,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Excessive screen time can have ___ (harm) effects on children's sleep.",
+      "text": "Excessive screen time can have ___ (detriment) effects on children's sleep.",
       "answers": [
-        "harmful"
+        "detrimental"
       ],
-      "explanation_uz": "harmful – zararli. 'Effects' otini sifat aniqlaydi."
+      "explanation_uz": "detrimental – zararli, salbiy ta'sir ko'rsatuvchi. 'Effects' otini sifat aniqlaydi; detriment (zarar) – ot."
     }
   },
   {
@@ -641,9 +641,10 @@
     "payload": {
       "text": "The government has c___ down on tax evasion.",
       "answers": [
-        "cracked"
+        "cracked",
+        "clamped"
       ],
-      "explanation_uz": "crack down on – qattiq choralar ko'rmoq (qattiqqo'llik bilan kurashmoq). O'tgan zamon shakli kerak."
+      "explanation_uz": "crack down on / clamp down on – qattiq choralar ko'rmoq (qattiqqo'llik bilan kurashmoq). O'tgan zamon shakli kerak."
     }
   },
   {

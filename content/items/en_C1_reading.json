@@ -48,7 +48,7 @@
       "question": "The writer's attitude towards the critics of river restoration is best described as",
       "options": [
         "dismissive of all their objections",
-        "willing to accept that their central question is legitimate while remaining broadly supportive of the approach",
+        "accepting that their central question is fair while still backing the approach",
         "convinced that the Vesna results have proved them wrong",
         "indifferent to whether the schemes are copied elsewhere"
       ],
@@ -85,7 +85,7 @@
         "their labour costs are high compared with the falling price of new products"
       ],
       "answer": 3,
-      "explanation_uz": "\"skilled labour is expensive while the price of new goods keeps falling\" - ish haqi qimmat, yangi mahsulot narxi esa tushmoqda."
+      "explanation_uz": "\"skilled labour is expensive while the price of new goods keeps falling\" - malakali mehnat qimmat, yangi mahsulot narxi esa tushmoqda."
     }
   },
   {
@@ -204,7 +204,7 @@
     "exam": "ielts",
     "payload": {
       "passage": "Historians of communication often treat the printing press as the decisive break between a world of rumour and a world of record, but this neat account overlooks the slower, messier developments that made printed news useful. In seventeenth-century Europe, a pamphlet or newssheet was of little value unless it could be distributed, discussed and checked against other sources. Coffeehouses, which spread rapidly through port cities and capitals, supplied precisely this infrastructure. For the price of a cup, a customer could read several papers, hear travellers' reports and challenge a stranger's version of events. Authorities were uneasy about the arrangement, and more than one government attempted to close such establishments, citing the danger of seditious talk. The attempts largely failed, partly because the venues were too popular and partly because officials themselves relied on them to learn what the public was thinking. It would be misleading, though, to romanticise these places as egalitarian forums. Women were seldom admitted, the poorest labourers could not afford regular visits, and many proprietors favoured particular political factions, so a customer's picture of the world depended heavily on which door he entered. Even so, the habit of weighing competing accounts, which coffeehouse conversation encouraged, arguably did more to shape public opinion than any single publication. Modern debates about digital media echo this earlier moment: the technology that distributes information matters less, perhaps, than the social settings in which people interrogate it. That insight should temper both the optimism of those who expect new platforms to enlighten citizens automatically and the pessimism of those who assume they will inevitably mislead them. Neither extreme, after all, takes seriously the ordinary people doing the reading and arguing.",
-      "statement": "Coffeehouse owners in the period were generally politically neutral.",
+      "statement": "Few coffeehouse owners in the period supported any political faction.",
       "answer": "false",
       "explanation_uz": "Matnda: \"many proprietors favoured particular political factions\" - ko'pchilik egalari betaraf emas edi."
     }
@@ -346,7 +346,7 @@
       "passage": "When remote work became widespread, forecasters predicted the decline of the city centre. Offices would empty, they argued, workers would scatter to cheaper regions, and the dense downtown core, long considered the engine of innovation, would lose its purpose. Several years on, the picture is more complicated than either side anticipated. Occupancy of central offices has settled well below its earlier level in many cities, yet the places that people visit have changed in character rather than simply shrunk. Employees who come in two or three days a week tend to cluster their attendance on the same days, producing sharp peaks of congestion followed by quiet troughs that hurt restaurants and transport operators dependent on steady custom. Meanwhile, suburban high streets have enjoyed an unexpected revival as home-based workers spend their lunch breaks and daytime hours closer to where they live. Urban economists remain divided about the long-term consequences for productivity. Some argue that spontaneous encounters among colleagues generate ideas that scheduled video calls cannot, and that junior staff in particular lose valuable informal mentoring. Others counter that such claims are hard to test, since the benefits of proximity are easy to romanticise and rarely measured with care. What seems clear is that municipal authorities can no longer treat commuter flows as a predictable constant when planning transport and zoning. Some have begun converting surplus office space into housing, a response that addresses two problems at once but requires costly structural alterations, since deep office floors lack the windows and plumbing that homes need. Whether such conversions can happen quickly enough to matter is uncertain, and much will depend on whether employers continue to loosen their expectations about attendance.",
       "statement": "Most suburban restaurants have reported higher profits than city-centre ones.",
       "answer": "not_given",
-      "explanation_uz": "Matnda faqat chekka ko'chalar jonlangani aytilgan; foyda taqqoslanmagan - ma'lumot yo'q."
+      "explanation_uz": "Matnda shahar atrofidagi savdo ko'chalari jonlangani aytilgan, lekin restoranlar foydasi shahar markazidagilar bilan taqqoslanmagan - ma'lumot yo'q."
     }
   }
 ]

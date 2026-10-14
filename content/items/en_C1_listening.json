@@ -26,12 +26,11 @@
     "exam": "general",
     "payload": {
       "transcript": "Today I want to look at how cities manage heat. Urban areas are often several degrees warmer than the surrounding countryside, a phenomenon known as the heat island effect. The main culprit is not traffic or air conditioning, as many people assume, but the materials we build with. Dark asphalt and concrete absorb sunlight during the day and release it slowly after sunset, so nights remain uncomfortably warm. Some planners have responded by painting roofs white, which reflects light effectively and is cheap. However, my own view is that planting trees is the better long term investment, because shade also cools the pavement beneath it and trees add moisture to the air. The drawback is time. A sapling takes roughly twenty years to provide meaningful cover, whereas a coat of reflective paint works within a week. For that reason, I would argue that the sensible strategy combines both, using paint immediately and trees for the future. Next week we will turn to the question of water, and I will ask you to read the short paper on reservoirs before the seminar.",
-      "text": "In the lecturer's view, trees are a better ___ than white roofs.",
+      "text": "In the lecturer's view, trees are a better long-term ___ than white roofs.",
       "answers": [
-        "long term investment",
-        "long-term investment"
+        "investment"
       ],
-      "explanation_uz": "Ma'ruzachi: \"planting trees is the better long term investment\" deb aytadi."
+      "explanation_uz": "Ma'ruzachi: \"planting trees is the better long term investment\" deydi, ya'ni daraxt ekish uzoq muddatli foydali sarmoyadir."
     }
   },
   {
@@ -50,7 +49,7 @@
         "Planners are required to combine them"
       ],
       "answer": 1,
-      "explanation_uz": "Paint bir hafta ichida ishlaydi, ko'chat esa taxminan yigirma yil oladi; shuning uchun ikkalasini birga qo'llash tavsiya etiladi."
+      "explanation_uz": "Bo'yoq bir hafta ichida ishlaydi, ko'chat esa taxminan yigirma yil oladi; shuning uchun ikkalasini birga qo'llash tavsiya etiladi."
     }
   },
   {
@@ -83,7 +82,7 @@
       "question": "How does Doctor Karim regard the effect on exam results?",
       "options": [
         "He is cautious and avoids overstating it",
-        "He is disappointed that it was so small to matter",
+        "He is disappointed that the effect was so small",
         "He is confident it proves his theory",
         "He thinks results were not measured"
       ],

@@ -458,7 +458,8 @@
     "payload": {
       "text": "Critics condemned the ___ of the wedding, with its gold-plated carriages and fireworks. (ostentatious)",
       "answers": [
-        "ostentation"
+        "ostentation",
+        "ostentatiousness"
       ],
       "explanation_uz": "Ostentation — dabdaba, ko'z-ko'z qilish. -ious sifatdan -ation oti hosil bo'ladi."
     }
@@ -666,11 +667,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "He agreed with evident ___, having made his misgivings plain from the start. (reluctant)",
+      "text": "His ___ in refusing any compromise eventually cost him the election. (obstinate)",
       "answers": [
-        "reluctance"
+        "obstinacy"
       ],
-      "explanation_uz": "Reluctance — istamaslik. -ant sifati -ance bilan ot bo'ladi."
+      "explanation_uz": "Obstinacy – o'jarlik, qaysarlik. -ate sifati -acy bilan ot bo'ladi."
     }
   },
   {

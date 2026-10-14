@@ -11,6 +11,7 @@
     "reset-password": "node --disable-warning=ExperimentalWarning scripts/reset-password.js",
     "make-admin": "node --disable-warning=ExperimentalWarning scripts/make-admin.js",
     "validate-seed": "node scripts/validate-seed.js",
+    "backup": "node --disable-warning=ExperimentalWarning scripts/backup.js",
     "import-items": "node --disable-warning=ExperimentalWarning scripts/import-items.js"
   },
   "keywords": [],

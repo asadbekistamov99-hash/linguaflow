@@ -1,0 +1,638 @@
+[
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "جاء ___ إلى البيت. (أخ + هم)",
+      "answers": [
+        "أخوهم"
+      ],
+      "explanation_uz": "الأسماء الخمسة ترفع بالواو، وتضاف إلى الضمير: أخوهم. Beshta ism marfu' holatda vov bilan keladi."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "إنّ ___ كريمٌ. (أب + ك)",
+      "answers": [
+        "أباك"
+      ],
+      "explanation_uz": "Inna ismi mansub, beshta ism mansub holatda alif bilan: أباك."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "رأيتُ ___ في الممر. (معلم، مثنى)",
+      "answers": [
+        "معلمين"
+      ],
+      "explanation_uz": "Mutanno mansub va majrur holatda ya bilan keladi: معلمين."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "جاء ___ إلى الاجتماع. (مهندس، جمع مذكر سالم)",
+      "answers": [
+        "مهندسون",
+        "المهندسون"
+      ],
+      "explanation_uz": "Jam' mudhakkar solim marfu' holatda vov va nun bilan keladi."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "ما زالت المدينةُ ___. (نائم)",
+      "answers": [
+        "نائمةً",
+        "نائمة"
+      ],
+      "explanation_uz": "ما زال kabi kana singillarining xabari mansub bo'ladi: نائمةً."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "كاد المريضُ ___ من التعب. (مات)",
+      "answers": [
+        "يموت",
+        "أن يموت"
+      ],
+      "explanation_uz": "Afol al-muqoraba (كاد) dan keyin muzori' fe'l keladi, xabar vazifasida."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "إنّ الطالبين ___ في الصف. (جالس)",
+      "answers": [
+        "جالسان"
+      ],
+      "explanation_uz": "Inna xabari marfu', mutanno bo'lgani uchun alif bilan: جالسان."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "أحببتُ الكتابَ لكنّ لغتَه ___. (صعب)",
+      "answers": [
+        "صعبةٌ",
+        "صعبة"
+      ],
+      "explanation_uz": "لكنّ ismi mansub, xabari marfu' va ismga (لغة, muannas) mos: صعبةٌ."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "أحبُّ ___ في المساء. (مصدر قرأ)",
+      "answers": [
+        "القراءة",
+        "قراءة"
+      ],
+      "explanation_uz": "Masdar harakat nomini beradi va fe'lning maf'uli sifatida kela oladi: القراءة."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "يجب ___ الكبار. (مصدر احترم)",
+      "answers": [
+        "احترامُ",
+        "احترام"
+      ],
+      "explanation_uz": "Masdar (احترام) fe'l o'rniga ega vazifasida keladi va keyingi ism unga muzof ilayh."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ النفط مهمّ للاقتصاد. (مصدر استخرج)",
+      "answers": [
+        "استخراج",
+        "استخراجُ"
+      ],
+      "explanation_uz": "Af'ola fe'lining masdari: istaf'ala > istif'ol, ya'ni استخراج."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "اسم الفاعل من الفعل «سافر» هو ___.",
+      "answers": [
+        "مسافر"
+      ],
+      "explanation_uz": "Uch harfdan ortiq fe'lning ism foili mu- old qo'shimchasi bilan: مسافر."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "اسم المفعول من الفعل «باع» هو ___.",
+      "answers": [
+        "مبيع",
+        "مَبيع"
+      ],
+      "explanation_uz": "Ajvaf fe'lning ism maf'uli maf'ul vazni bilan: مبيع."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "صيغة المبالغة من «كذب» على وزن فعّال هي ___.",
+      "answers": [
+        "كذاب",
+        "كذّاب"
+      ],
+      "explanation_uz": "Mubolag'a shakllari (fa''al) ism foilning ma'nosini kuchaytiradi: كذّاب."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "عاد الجنودُ من المعركة ___. (منتصر، جمع مذكر)",
+      "answers": [
+        "منتصرين"
+      ],
+      "explanation_uz": "Hol mansub bo'ladi, jam' mudhakkar solim mansubda ya va nun bilan: منتصرين."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "اشتريتُ لترًا ___. (حليب، تمييز)",
+      "answers": [
+        "حليبًا",
+        "حليبا"
+      ],
+      "explanation_uz": "Tamyiz o'lchov birligidan keyin mansub holda keladi: حليبًا."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "ما رأيتُ أحدًا إلا ___. (خالد)",
+      "answers": [
+        "خالدًا"
+      ],
+      "explanation_uz": "Inkorli gapda to'liq istisno bo'lsa, mustasno oldingi so'zga tobe' bo'ladi; ya'ni badal bo'lib mansub."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "لولا المطرُ ___ إلى الحديقة. (ذهب، نحن)",
+      "answers": [
+        "لذهبنا",
+        "ذهبنا"
+      ],
+      "explanation_uz": "لولا dan keyin ism marfu' (mubtado), javobi ko'pincha lam bilan keladi: لذهبنا."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "مَن يجتهدْ ___. (نجح، هو)",
+      "answers": [
+        "ينجحْ",
+        "ينجح"
+      ],
+      "explanation_uz": "Shart fe'li majzum bo'lsa, javobi ham majzum muzori' bo'ladi: ينجحْ."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "حضر ___ طالبًا إلى الحفلة. (11)",
+      "answers": [
+        "أحدَ عشرَ",
+        "أحد عشر"
+      ],
+      "explanation_uz": "11–19 sonlari birinchi qismi mabniy fathada; 11 muzakkar uchun أحدَ عشرَ, ma'dud mansub birlikda."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "في الفصل ___ طالبةً. (13)",
+      "answers": [
+        "ثلاثَ عشرةَ",
+        "ثلاث عشرة"
+      ],
+      "explanation_uz": "13–19 sonlarida birlik qismi ma'dudga teskari: muannas ma'dud uchun ثلاث (muzakkar shakl) va عشرة."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "جاء ___ رجلًا. (12)",
+      "answers": [
+        "اثنا عشر",
+        "اثنا عشرَ"
+      ],
+      "explanation_uz": "12 sonining birinchi qismi mutanno kabi marfu'da alif bilan: اثنا عشر."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ البابُ أمس. (فتح، مبني للمجهول)",
+      "answers": [
+        "فُتح"
+      ],
+      "explanation_uz": "Majhul nisbatda fe'lning birinchi harfi dammali, ikkinchisi oldidan kasra: فُتح."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "___ الكتابُ في القاهرة. (طبع، مضارع مبني للمجهول)",
+      "answers": [
+        "يُطبع"
+      ],
+      "explanation_uz": "Muzori' majhulda birinchi harf dammali, oxirgi harfdan oldin fatha: يُطبَع."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "gap",
+    "exam": "general",
+    "payload": {
+      "text": "أوشكت الشمسُ ___. (غرب)",
+      "answers": [
+        "أن تغرب",
+        "تغرب"
+      ],
+      "explanation_uz": "Afol al-muqoraba (أوشك) dan keyin muzori' fe'l keladi, ko'pincha أن bilan."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "رأيتُ ___ في الحديقة.",
+      "options": [
+        "الطالبان",
+        "الطالبون",
+        "الطالبين",
+        "الطالبُ"
+      ],
+      "answer": 2,
+      "explanation_uz": "Mutanno mansub holatda ya bilan keladi: الطالبين."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "ما علامة رفع «أبوك» في «جاء أبوك»؟",
+      "options": [
+        "الواو",
+        "الضمة",
+        "الألف",
+        "الياء"
+      ],
+      "answer": 0,
+      "explanation_uz": "Beshta ism marfu' holda vov bilan keladi."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "إنّ الطالباتِ ___",
+      "options": [
+        "مجتهداتٍ",
+        "مجتهداتَ",
+        "مجتهدين",
+        "مجتهداتٌ"
+      ],
+      "answer": 3,
+      "explanation_uz": "Inna xabari marfu' va mubtado jinsiga mos: مجتهداتٌ."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "أكمل: أصبحتِ الفتاتان ___",
+      "options": [
+        "طبيبتان",
+        "طبيبتين",
+        "طبيبات",
+        "طبيبةً"
+      ],
+      "answer": 1,
+      "explanation_uz": "Kana singillarining xabari mansub; mutanno mansubda ya bilan: طبيبتين."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "ما مصدر الفعل «استقبل»؟",
+      "options": [
+        "تقبّل",
+        "قبول",
+        "استقبال",
+        "مقابلة"
+      ],
+      "answer": 2,
+      "explanation_uz": "Istaf'ala vaznidagi fe'l masdari istif'ol: استقبال."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "سرّني ___ الطالب في الامتحان.",
+      "options": [
+        "نجح",
+        "ينجح",
+        "ناجح",
+        "نجاحُ"
+      ],
+      "answer": 3,
+      "explanation_uz": "Masdar fe'l o'rniga ega vazifasida keladi: نجاحُ."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "اسم المفعول من «استخدم» هو:",
+      "options": [
+        "مستخدَم",
+        "مستخدِم",
+        "استخدام",
+        "مخدوم"
+      ],
+      "answer": 0,
+      "explanation_uz": "Ism maf'ul uch harfdan ortiq fe'llarda mu- + oxirgidan oldin fatha: مستخدَم."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "أيّ كلمة هي صيغة مبالغة؟",
+      "options": [
+        "غافر",
+        "غفّار",
+        "مغفور",
+        "مغفرة"
+      ],
+      "answer": 1,
+      "explanation_uz": "Fa''al mubolag'a shakli: غفّار."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "ما الحال في «دخل الأستاذ الصفَّ مبتسمًا»؟",
+      "options": [
+        "الأستاذ",
+        "الصفَّ",
+        "دخل",
+        "مبتسمًا"
+      ],
+      "answer": 3,
+      "explanation_uz": "Hol – ega yoki maf'ul holatini bildiruvchi mansub sifat."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "ما التمييز في «اشتريتُ كيلو تفاحًا»؟",
+      "options": [
+        "اشتريتُ",
+        "كيلو",
+        "تفاحًا",
+        "لا يوجد"
+      ],
+      "answer": 2,
+      "explanation_uz": "O'lchovdan keyingi mansub aniqlovchi so'z tamyiz."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "نجح الطلابُ إلا ___",
+      "options": [
+        "خالدٌ",
+        "خالدًا",
+        "خالدٍ",
+        "خالدان"
+      ],
+      "answer": 1,
+      "explanation_uz": "Ijobiy to'liq gapda istisno mustasno mansub bo'ladi."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "ما نجح إلا ___",
+      "options": [
+        "خالدًا",
+        "خالدٌ",
+        "خالدٍ",
+        "خالدَ"
+      ],
+      "answer": 1,
+      "explanation_uz": "Istisno mufarragh: mustasno gapdagi vazifasiga qarab (bu yerda ega) marfu'."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "لولا الدواءُ ___ المريضُ.",
+      "options": [
+        "سيموت",
+        "يموت",
+        "ليموت",
+        "لمات"
+      ],
+      "answer": 3,
+      "explanation_uz": "لولا ning javobi o'tgan fe'l bo'lsa, odatda lam bilan keladi."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "ما نائب الفاعل في «فُتح البابُ»؟",
+      "options": [
+        "فُتح",
+        "لا يوجد",
+        "البابُ",
+        "فاعل مستتر"
+      ],
+      "answer": 2,
+      "explanation_uz": "Majhul nisbatda maf'ul ega o'rnini egallaydi, naibu foil bo'ladi."
+    }
+  },
+  {
+    "lang": "ar",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "عندي ___ كتابًا.",
+      "options": [
+        "أحدَ عشرَ",
+        "إحدى عشرةَ",
+        "أحدَ عشرةَ",
+        "أحدُ عشرٍ"
+      ],
+      "answer": 0,
+      "explanation_uz": "11 muzakkar: أحدَ عشرَ, ikkala qism fathada."
+    }
+  }
+]

@@ -7,9 +7,9 @@
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>LinguaFlow — Tillarni mukammal o'rganing</title>
-<meta name="description" content="Ingliz, rus, nemis, fransuz, ispan, arab va boshqa tillarni A1 dan C2 gacha o'rganing.">
+<meta name="description" content="Ingliz, rus, nemis, fransuz, ispan va arab tillarini A1 dan boshlab o'rganing: darslar, mashqlar, AI yozish va gapirish tekshiruvi. Bepul.">
 <meta property="og:title" content="LinguaFlow — Tillarni mukammal o'rganing">
-<meta property="og:description" content="Ingliz, rus, nemis, fransuz, ispan, arab va boshqa tillarni A1 dan C2 gacha o'rganing.">
+<meta property="og:description" content="Ingliz, rus, nemis, fransuz, ispan va arab tillarini A1 dan boshlab o'rganing: darslar, mashqlar, AI yozish va gapirish tekshiruvi. Bepul.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -565,17 +565,12 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
     <div>
       <div class="pill"><b>YANGI</b> AI suhbatdosh bilan jonli nutq amaliyoti</div>
       <h1><span class="rotator grad-text" id="rotator">Hello</span><br>Har qanday tilni mukammal o'rganing</h1>
-      <p class="lead">Ingliz, rus, nemis, fransuz, ispan, arab va yana 14 ta til — A1 dan C2 gacha. Sun'iy intellekt, jonli ustozlar va shaxsiy o'quv rejasi bir joyda.</p>
+      <p class="lead">Ingliz, rus, nemis, fransuz, ispan va arab tillari — A1 dan boshlab (ingliz tilida C2 gacha). Darslar, mashqlar va AI yozish/gapirish tekshiruvi bir joyda.</p>
       <div class="hero-actions">
         <a href="/app#/start" class="btn btn-main">Bepul boshlash →</a>
         <a href="#demo" class="btn btn-ghost">▶ Darsni sinab ko'rish</a>
       </div>
-      <div class="trust">
-        <div class="avatars">
-          <span style="background:#7c5cff">A</span><span style="background:#00b3d6">D</span><span style="background:#ff4fa3">M</span><span style="background:#22b583">S</span>
-        </div>
-        <div><span class="stars">★★★★★</span><br>O'quvchilar tomonidan 4.9 baho</div>
-      </div>
+      <div class="trust"><div>Ro'yxatdan o'tish bepul, karta kerak emas.<br><span style="color:var(--muted)">Ilova hozir sinov bosqichida.</span></div></div>
     </div>
 
     <div class="hero-card reveal" id="demo">
@@ -608,8 +603,8 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="eyebrow">Tillar</div>
-      <h2>20+ til. Har biri <span class="grad-text">ona tili egalari</span> bilan tuzilgan.</h2>
-      <p>Har bir kurs CEFR standarti asosida qurilgan va xalqaro imtihonlarga (IELTS, TOEFL, TORFL, Goethe, DELF, DELE) tayyorlaydi.</p>
+      <h2>6 til. <span class="grad-text">Ingliz tili C2 gacha</span>, qolganlari B2 gacha.</h2>
+      <p>Kurslar CEFR darajalari asosida tuzilgan va xalqaro imtihonlar uslubidagi (IELTS, Goethe, DELF, DELE, TORFL) mashqlar beradi. Bu tayyorgarlik: rasmiy imtihon sertifikati emas.</p>
     </div>
 
     <!-- Daily XP Goal Section & Habit Tracker -->
@@ -619,7 +614,7 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
         <div class="ldg-badge" id="ldgCurrentBadge">🎯 Maqsad: <b id="ldgGoalDisplay">50 XP/kun</b></div>
       </div>
       <div class="ldg-desc">
-        Tilda erkin so'zlashish siri har kungi muntazam mashg'ulotda. Kunlik maqsadni tanlang va birinchi darsdan doimiy natijaga erishing.
+        Tilda erkin so'zlashish siri har kungi muntazam mashg'ulotda. Kunlik maqsadni tanlang. (Quyidagi seriya va rekord namuna sifatida ko'rsatilgan.)
       </div>
       <div class="ldg-meter">
         <div class="ldg-meter-head">
@@ -670,19 +665,19 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
       </div>
     </div>
 
-    <div class="lang-search-bar">
+    <div class="lang-search-bar" style="display:none">
       <span class="lang-search-icon">🔍</span>
       <input type="text" id="landingLangSearchInput" class="lang-search-input" placeholder="🔍 Til nomini kiriting (masalan: Ingliz, Koreys, Turk, Nemis, Arab...)" aria-label="Tilni qidirish">
       <button type="button" id="landingLangSearchClear" class="lang-search-clear" style="display:none" title="Tozalash">✕</button>
     </div>
-    <div class="lang-filter-bar" id="landingLangFilterBar">
+    <div class="lang-filter-bar" id="landingLangFilterBar" style="display:none">
       <button class="lang-filter-btn active" data-cat="all">🌟 Barchasi <span class="lang-filter-count">15</span></button>
       <button class="lang-filter-btn" data-cat="saved">📌 Saqlanganlar <span class="lang-filter-count" id="landingSavedCount">2</span></button>
       <button class="lang-filter-btn" data-cat="european">🇪🇺 Yevropa <span class="lang-filter-count">8</span></button>
       <button class="lang-filter-btn" data-cat="asian">🌏 Osiyo <span class="lang-filter-count">4</span></button>
       <button class="lang-filter-btn" data-cat="middle_eastern">🕌 Yaqin Sharq <span class="lang-filter-count">3</span></button>
     </div>
-    <div id="landingSavedSection" class="saved-langs-section"></div>
+    <div id="landingSavedSection" class="saved-langs-section" style="display:none"></div>
     <div class="lang-grid" id="langGrid"></div>
   </div>
 </section>
@@ -698,8 +693,8 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
     <div class="bento">
       <div class="tile t-ai reveal">
         <div class="ico">🤖</div>
-        <h3>AI suhbatdosh — 24/7</h3>
-        <p>Istalgan mavzuda erkin gaplashing. AI xatolaringizni darhol tuzatadi va tushuntiradi.</p>
+        <h3>AI ustoz</h3>
+        <p>Savol bering va yozing: AI xatolaringizni tuzatadi va tushuntiradi (kunlik bepul limit bilan).</p>
         <div class="chat">
           <div class="msg ai">Hi! What did you do last weekend? 😊</div>
           <div class="msg me">I go to the cinema with my friends.</div>
@@ -708,15 +703,15 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
       </div>
       <div class="tile t-2 reveal">
         <div class="ico">🎙️</div>
-        <h3>Talaffuz tahlili</h3>
-        <p>Har bir tovushingiz baholanadi.</p>
+        <h3>Gapirish mashqi</h3>
+        <p>Nutqingiz matnga aylantiriladi, AI ravonlik, lug'at va grammatikani baholaydi. Talaffuz baholanmaydi.</p>
         <div class="wave" id="wave"></div>
-        <div class="score"><b>94%</b><span style="color:var(--muted)">aniqlik</span></div>
+        <div class="score"><span style="color:var(--muted)">ravonlik · lug'at · grammatika</span></div>
       </div>
       <div class="tile t-3 reveal">
         <div class="ico">👩‍🏫</div>
-        <h3>Jonli ustozlar</h3>
-        <p>Sertifikatlangan ustozlar bilan 1:1 video darslar — o'zingizga qulay vaqtda.</p>
+        <h3>Yozish tekshiruvi</h3>
+        <p>Insho yozing: AI 4 mezon bo'yicha 0–5 ball, taxminiy daraja va tuzatishlarni beradi.</p>
       </div>
       <div class="tile t-4 reveal">
         <div class="ico">🧠</div>
@@ -726,12 +721,12 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
       <div class="tile t-5 reveal">
         <div class="ico">📝</div>
         <h3>Imtihonga tayyorgarlik</h3>
-        <p>IELTS, TOEFL, DELF va boshqalar uchun mock testlar va band score bashorati.</p>
+        <p>Vaqtli mock imtihonlar (grammatika, o'qish, eshitish) va ingliz tilida taxminiy IELTS-uslubidagi ball. Rasmiy natija emas.</p>
       </div>
       <div class="tile t-6 reveal">
         <div class="ico">🏆</div>
         <h3>Liga va mukofotlar</h3>
-        <p>XP, seriyalar va haftalik ligalar motivatsiyani yo'qotmaslikka yordam beradi.</p>
+        <p>XP, kunlik seriyalar va haftalik reyting motivatsiyani saqlashga yordam beradi.</p>
       </div>
     </div>
   </div>
@@ -742,8 +737,8 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
   <div class="wrap">
     <div class="sec-head center reveal">
       <div class="eyebrow">Daraja yo'li</div>
-      <h2>Noldan <span class="grad-text">C2 gacha</span> aniq yo'l xaritasi</h2>
-      <p>Har bir bosqich oxirida sertifikat. Darajangizni 10 daqiqalik test bilan aniqlang.</p>
+      <h2>Noldan <span class="grad-text">B2 gacha</span> aniq yo'l xaritasi</h2>
+      <p>Ingliz tilida C2 gacha. Mavzu testlari va ichki tayyorgarlik sertifikati (rasmiy emas). Darajangizni kirish testi bilan aniqlang.</p>
     </div>
     <div class="path reveal">
       <div class="step"><div class="dot">A1</div><h4>Boshlang'ich</h4><p>IELTS 3.5 · CEFR A1<br>Tanishuv, oddiy iboralar</p></div>
@@ -751,7 +746,7 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
       <div class="step"><div class="dot">B1</div><h4>O'rta (Mustaqil)</h4><p>IELTS 5.5 · PET · Goethe B1<br>Erkin suhbat, insho va ish</p></div>
       <div class="step"><div class="dot">B2</div><h4>O'rtadan yuqori</h4><p>IELTS 6.5 · Universitetlar<br>FCE · Akademik tahlil</p></div>
       <div class="step"><div class="dot">C1</div><h4>Ilg'or & Akademik</h4><p>IELTS 7.5 - 8.5+ · CAE<br>Xalqaro magistratura va karyera</p></div>
-      <div class="step"><div class="dot">C2</div><h4>Mukammal</h4><p>IELTS 9.0 · Mutaxassis<br>Ona tili darajasidagi ravonlik</p></div>
+      <div class="step"><div class="dot">C2</div><h4>Mukammal</h4><p>IELTS 9.0 · Mutaxassis<br>Ona tili darajasidagi ravonlik (hozircha faqat ingliz tili)</p></div>
     </div>
   </div>
 </section>
@@ -760,59 +755,37 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
 <section style="padding-top:0">
   <div class="wrap">
     <div class="stats reveal">
-      <div class="stat"><b data-count="20" data-suffix="+">0</b><span>til</span></div>
-      <div class="stat"><b data-count="12000" data-suffix="+">0</b><span>interaktiv dars</span></div>
-      <div class="stat"><b data-count="350" data-suffix="+">0</b><span>jonli ustoz</span></div>
-      <div class="stat"><b data-count="98" data-suffix="%">0</b><span>mamnun o'quvchi</span></div>
+      <div class="stat"><b data-count="6">0</b><span>til</span></div>
+      <div class="stat"><b data-count="6">0</b><span>CEFR darajasi (A1–C2)</span></div>
+      <div class="stat"><b data-count="4">0</b><span>ko'nikma: o'qish, eshitish, yozish, gapirish</span></div>
+      <div class="stat"><b data-count="100" data-suffix="%">0</b><span>bepul (hozircha)</span></div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <div class="eyebrow">Fikrlar</div>
-      <h2>O'quvchilarimiz <span class="grad-text">nima deydi</span></h2>
-    </div>
-  </div>
-  <div class="t-wrap"><div class="t-track" id="tTrack"></div></div>
-</section>
+<div id="tTrack" hidden></div>
 
 <!-- PRICING -->
 <section id="narxlar">
-  <div class="wrap" style="text-align:center">
+  <div class="wrap">
     <div class="sec-head center reveal">
       <div class="eyebrow">Narxlar</div>
-      <h2>Sodda va <span class="grad-text">shaffof</span> narxlar</h2>
-      <p>Start tarifi doimo bepul. Istalgan vaqtda tarifni o'zgartirish mumkin.</p>
+      <h2>Hozircha <span class="grad-text">butunlay bepul</span></h2>
+      <p>To'lov tizimi yo'q. AI imkoniyatlari (AI ustoz, yozish va gapirish tekshiruvi) kunlik bepul limit bilan ishlaydi. Kelajakda foydalanuvchilar soniga qarab limitlar yoki pullik rejalar kiritilishi mumkin: oldindan e'lon qilinadi.</p>
     </div>
-    <div class="toggle" id="toggle">
-      <button class="on" data-p="m">Oylik</button>
-      <button data-p="y">Yillik <small>−40%</small></button>
-    </div>
-    <div class="plans" style="text-align:left">
-      <div class="plan reveal">
-        <h3>Start</h3>
-        <div class="desc">Tanishib chiqish uchun</div>
-        <div class="amount">0 <small>so'm</small></div>
-        <ul><li>1 ta til</li><li>Kuniga 5 ta dars</li><li>Asosiy mashqlar</li><li>Hamjamiyat forumi</li></ul>
-        <a href="/app#/start" class="btn btn-ghost">Boshlash</a>
-      </div>
-      <div class="plan hot reveal">
-        <span class="tag">ENG MASHHUR</span>
-        <h3>Pro</h3>
-        <div class="desc">Jiddiy o'rganuvchilar uchun</div>
-        <div class="amount" data-m="99 000" data-y="59 000"><span class="v">99 000</span> <small>so'm/oy</small></div>
-        <ul><li>Barcha 20+ til</li><li>Cheksiz darslar</li><li>AI suhbatdosh 24/7</li><li>Talaffuz tahlili</li><li>Oflayn rejim</li><li>Daraja sertifikatlari</li></ul>
-        <a href="/app#/start" class="btn btn-main">Bepul boshlash</a>
-      </div>
-      <div class="plan reveal">
-        <h3>Ustoz+</h3>
-        <div class="desc">Tez natija xohlaganlar uchun</div>
-        <div class="amount" data-m="349 000" data-y="209 000"><span class="v">349 000</span> <small>so'm/oy</small></div>
-        <ul><li>Pro'dagi hammasi</li><li>Oyiga 8 ta jonli dars</li><li>IELTS / TOEFL mock testlar</li><li>Shaxsiy o'quv rejasi</li><li>Ustuvor yordam</li></ul>
-        <a href="/app#/start" class="btn btn-ghost">Tanlash</a>
+    <div class="plans" style="text-align:left;grid-template-columns:minmax(0,520px);justify-content:center">
+      <div class="plan featured reveal">
+        <h3>Bepul</h3>
+        <div class="desc">Hamma narsa ochiq</div>
+        <div class="amount"><span class="v">0 so'm</span></div>
+        <ul>
+          <li>6 til, barcha darslar va mavzu testlari</li>
+          <li>Takrorlash, o'yinlar, kunlik seriya va reyting</li>
+          <li>Mashq va mock imtihonlar</li>
+          <li>AI ustoz, yozish va gapirish tekshiruvi (kunlik limit bilan)</li>
+        </ul>
+        <a class="btn btn-main" href="/app#/register">Bepul boshlash</a>
       </div>
     </div>
   </div>
@@ -826,11 +799,12 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
       <h2>Ko'p beriladigan <span class="grad-text">savollar</span></h2>
     </div>
     <div class="faq reveal">
-      <details open><summary>Haqiqatan ham noldan C2 gacha o'rganish mumkinmi?</summary><p>Ha. Kurslar CEFR standartiga asoslangan va har bir darajada 4 ko'nikma — tinglash, gapirish, o'qish, yozish — muvozanatli rivojlantiriladi. Kuniga 20–30 daqiqa bilan B1 darajasiga odatda 6–9 oyda yetiladi.</p></details>
-      <details><summary>Bir vaqtda bir nechta tilni o'rgansam bo'ladimi?</summary><p>Albatta. Pro va Ustoz+ tariflarida barcha tillar ochiq, har biri uchun alohida progress yuritiladi.</p></details>
-      <details><summary>IELTS imtihoniga tayyorlay olasizmi?</summary><p>Ha. Alohida IELTS yo'nalishida Listening, Reading, Writing va Speaking bo'yicha mock testlar, AI tomonidan Writing baholash va band score bashorati mavjud.</p></details>
-      <details><summary>Internet bo'lmasa ham o'qish mumkinmi?</summary><p>Pro tarifida darslarni yuklab olib, oflayn rejimda o'rganishingiz mumkin. Progress internet ulanganda sinxronlanadi.</p></details>
-      <details><summary>To'lovni qanday amalga oshiraman?</summary><p>Payme, Click, Uzcard, Humo va Visa/Mastercard orqali. Obunani istalgan vaqtda bir tugma bilan bekor qilasiz.</p></details>
+      <details open><summary>Nolidan C2 gacha o'rganish mumkinmi?</summary><p>Ingliz tili uchun C2 gacha, boshqa tillar uchun B2 gacha kontent rejalashtirilgan va bosqichma-bosqich ochiladi. Har darajada o'qish, eshitish, yozish va gapirish mashqlari bor. Natija sizning mashg'ulot hajmingizga bog'liq: va'da bermaymiz.</p></details>
+      <details><summary>Bir vaqtda bir nechta tilni o'rgansam bo'ladimi?</summary><p>Ha. Hamma tillar ochiq, har biri uchun alohida progress yuritiladi.</p></details>
+      <details><summary>IELTS yoki boshqa imtihonga tayyorlay olasizmi?</summary><p>Imtihon uslubidagi mashqlar, vaqtli mock testlar va ingliz tilida AI yozish/gapirish tekshiruvi bor. Mock natija taxminiy ball beradi. Bu <b>rasmiy IELTS, CEFR yoki boshqa imtihon natijasi emas</b> va rasmiy sertifikat o'rnini bosmaydi.</p></details>
+      <details><summary>Sertifikat beriladimi?</summary><p>Faqat LinguaFlow ichki tayyorgarlik sertifikati: u rasmiy imtihon sertifikati emas. Rasmiy sertifikat uchun tegishli imtihon markazida topshirishingiz kerak.</p></details>
+      <details><summary>AI baholash qanchalik aniq?</summary><p>AI taxminiy baho va tuzatishlar beradi, xato qilishi mumkin. Gapirishda faqat matnga aylantirilgan nutq tahlil qilinadi, talaffuz baholanmaydi. Muhim qarorlar uchun ustoz yoki rasmiy imtihon natijasiga tayaning.</p></details>
+      <details><summary>Ma'lumotlarim xavfsizmi?</summary><p>Parollar shifrlangan holda saqlanadi. Yozish va gapirish matnlari baholash uchun AI xizmatiga yuboriladi. Batafsil: <a href="/privacy">Maxfiylik siyosati</a>.</p></details>
     </div>
   </div>
 </section>
@@ -856,15 +830,15 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
     <div class="f-grid">
       <div>
         <a href="#" class="logo"><span class="logo-mark">L</span>LinguaFlow</a>
-        <p>Dunyo tillarini har kim uchun ochiq va qiziqarli qilamiz.</p>
+        <p>Tillarni bepul va tartibli o'rganish uchun platforma.</p>
       </div>
-      <div><h5>Platforma</h5><ul><li><a href="#tillar">Tillar</a></li><li><a href="#imkoniyatlar">Imkoniyatlar</a></li><li><a href="#narxlar">Narxlar</a></li><li><a href="#">Mobil ilova</a></li></ul></div>
-      <div><h5>Kompaniya</h5><ul><li><a href="#">Biz haqimizda</a></li><li><a href="#">Ustoz bo'lish</a></li><li><a href="#">Blog</a></li><li><a href="#">Bog'lanish</a></li></ul></div>
-      <div><h5>Yordam</h5><ul><li><a href="#savollar">FAQ</a></li><li><a href="#">Maxfiylik siyosati</a></li><li><a href="#">Foydalanish shartlari</a></li></ul></div>
+      <div><h5>Platforma</h5><ul><li><a href="#tillar">Tillar</a></li><li><a href="#imkoniyatlar">Imkoniyatlar</a></li><li><a href="#narxlar">Narxlar</a></li></ul></div>
+      
+      <div><h5>Yordam</h5><ul><li><a href="#savollar">FAQ</a></li><li><a href="/privacy">Maxfiylik siyosati</a></li><li><a href="/terms">Foydalanish shartlari</a></li></ul></div>
     </div>
     <div class="f-bot">
       <span>© 2026 LinguaFlow. Barcha huquqlar himoyalangan.</span>
-      <div class="socials"><a href="#" aria-label="Telegram">TG</a><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="YouTube">YT</a></div>
+      
     </div>
   </div>
 </footer>
@@ -877,26 +851,12 @@ setInterval(()=>{rot.classList.add("out");setTimeout(()=>{gi=(gi+1)%greets.lengt
 
 // Data
 const langs=[
-  // European (8)
-  {f:"🇬🇧",n:"Ingliz tili",nat:"English",l:"1 240",c:"#7c5cff",code:"en-GB",cat:"european",catName:"Yevropa",cert:"IELTS Band 4.0 - 8.5+"},
-  {f:"🇩🇪",n:"Nemis tili",nat:"Deutsch",l:"860",c:"#ffc94d",code:"de-DE",cat:"european",catName:"Yevropa",cert:"Goethe & TestDaF"},
-  {f:"🇷🇺",n:"Rus tili",nat:"Русский",l:"980",c:"#00d4ff",code:"ru-RU",cat:"european",catName:"Yevropa",cert:"ТРКИ / TORFL"},
-  {f:"🇫🇷",n:"Fransuz tili",nat:"Français",l:"820",c:"#4f8bff",code:"fr-FR",cat:"european",catName:"Yevropa",cert:"DELF / DALF"},
-  {f:"🇪🇸",n:"Ispan tili",nat:"Español",l:"790",c:"#ff4fa3",code:"es-ES",cat:"european",catName:"Yevropa",cert:"DELE / SIELE"},
-  {f:"🇮🇹",n:"Italyan tili",nat:"Italiano",l:"540",c:"#9dff5c",code:"it-IT",cat:"european",catName:"Yevropa",cert:"CILS / CELI"},
-  {f:"🇵🇹",n:"Portugal tili",nat:"Português",l:"510",c:"#38bdf8",code:"pt-PT",cat:"european",catName:"Yevropa",cert:"CAPLE"},
-  {f:"🇵🇱",n:"Polyak tili",nat:"Polski",l:"480",c:"#fb7185",code:"pl-PL",cat:"european",catName:"Yevropa",cert:"Certyfikat Polski"},
-
-  // Asian (4)
-  {f:"🇹🇷",n:"Turk tili",nat:"Türkçe",l:"640",c:"#ff5d6c",code:"tr-TR",cat:"asian",catName:"Osiyo",cert:"TÖMER / Yunus Emre"},
-  {f:"🇰🇷",n:"Koreys tili",nat:"한국어",l:"580",c:"#5cffd6",code:"ko-KR",cat:"asian",catName:"Osiyo",cert:"TOPIK I & II"},
-  {f:"🇯🇵",n:"Yapon tili",nat:"日本語",l:"610",c:"#e45cff",code:"ja-JP",cat:"asian",catName:"Osiyo",cert:"JLPT N5 - N1"},
-  {f:"🇨🇳",n:"Xitoy tili",nat:"中文",l:"690",c:"#ff8a3d",code:"zh-CN",cat:"asian",catName:"Osiyo",cert:"HSK 1 - 6"},
-
-  // Middle Eastern (3)
-  {f:"🇸🇦",n:"Arab tili",nat:"العربية",l:"710",c:"#22d39a",code:"ar-SA",cat:"middle_eastern",catName:"Yaqin Sharq",cert:"ALPT & Fasih"},
-  {f:"🇮🇷",n:"Fors tili",nat:"فارسی",l:"420",c:"#f59e0b",code:"fa-IR",cat:"middle_eastern",catName:"Yaqin Sharq",cert:"AMFA Attestatsiya"},
-  {f:"🇦🇿",n:"Ozarbayjon tili",nat:"Azərbaycan",l:"460",c:"#06b6d4",code:"az-AZ",cat:"middle_eastern",catName:"Yaqin Sharq",cert:"Attestatsiyaga tayyorgarlik"},
+  {f:"🇬🇧",n:"Ingliz tili",nat:"English",l:"",c:"#7c5cff",code:"en-GB",cat:"european",catName:"A1–C2",cert:"IELTS uslubidagi tayyorgarlik"},
+  {f:"🇩🇪",n:"Nemis tili",nat:"Deutsch",l:"",c:"#ffc94d",code:"de-DE",cat:"european",catName:"A1–B2",cert:"Goethe uslubidagi tayyorgarlik"},
+  {f:"🇷🇺",n:"Rus tili",nat:"Русский",l:"",c:"#00d4ff",code:"ru-RU",cat:"european",catName:"A1–B2",cert:"ТРКИ uslubidagi tayyorgarlik"},
+  {f:"🇫🇷",n:"Fransuz tili",nat:"Français",l:"",c:"#4f8bff",code:"fr-FR",cat:"european",catName:"A1–B2",cert:"DELF uslubidagi tayyorgarlik"},
+  {f:"🇪🇸",n:"Ispan tili",nat:"Español",l:"",c:"#ff4fa3",code:"es-ES",cat:"european",catName:"A1–B2",cert:"DELE uslubidagi tayyorgarlik"},
+  {f:"🇸🇦",n:"Arab tili",nat:"العربية",l:"",c:"#22d39a",code:"ar-SA",cat:"middle_eastern",catName:"A1–B2",cert:"Fasih (MSA) tayyorgarlik"},
 ];
 
 const supportedMap = {
@@ -1284,18 +1244,7 @@ const track=document.getElementById("track");
 const tItems=langs.map(x=>`<span><em>${x.f}</em>${x.nat}</span>`).join("");
 track.innerHTML=tItems+tItems;
 
-// Reviews (namuna matnlar — real fikrlar bilan almashtiring)
-const reviews=[
- ["Dilnoza R.","IELTS 7.5","#7c5cff","3 oyda IELTS'dan 6.0 dan 7.5 ga chiqdim. Writing'ni AI tekshirishi juda foydali bo'ldi."],
- ["Aziz K.","Nemis tili · B2","#00b3d6","Germaniyaga ishga ketish uchun nemis tilini noldan o'rgandim. Jonli ustozlar zo'r!"],
- ["Madina S.","Arab tili · B1","#ff4fa3","Arab yozuvini o'rganish qo'rqinchli edi, lekin bosqichma-bosqich darslar hammasini oson qildi."],
- ["Jasur T.","Rus tili · C1","#22b583","AI suhbatdosh bilan har kuni gaplashaman — nutqim ancha erkin bo'ldi."],
- ["Nilufar A.","Fransuz tili · A2","#ff8a3d","Seriya va ligalar meni har kuni o'qishga majbur qiladi. 90 kun ketma-ket!"],
- ["Bekzod M.","Ispan tili · B1","#4f8bff","Talaffuz tahlili aksentimni ancha yaxshiladi. Ispanlar endi tushunishadi :)"],
-];
-const tTrack=document.getElementById("tTrack");
-const rHTML=reviews.map(r=>`<div class="review"><span class="stars">★★★★★</span><p>"${r[3]}"</p><div class="who"><div class="av" style="background:${r[2]}">${r[0][0]}</div><div><b>${r[0]}</b><small>${r[1]}</small></div></div></div>`).join("");
-tTrack.innerHTML=rHTML+rHTML;
+
 
 // Waveform
 const wave=document.getElementById("wave");

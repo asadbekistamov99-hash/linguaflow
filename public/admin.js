@@ -27,11 +27,11 @@
     remove: (k) => { try { localStorage.removeItem(k); } catch {} memStore.delete(k); },
   };
 
+  try { localStorage.removeItem('lf_token'); } catch { /* storage unavailable */ }
+
   async function api(method, url, body) {
     const headers = {};
     if (method !== 'GET') headers['content-type'] = 'application/json';
-    const token = LS.get('lf_token');
-    if (token) headers['authorization'] = `Bearer ${token}`;
     const r = await fetch(url, {
       method,
       headers,
@@ -64,7 +64,6 @@
           e.preventDefault(); err.textContent = '';
           try {
             const res = await api('POST', '/api/auth/login', { email: email.value, password: pass.value });
-            if (res.token) LS.set('lf_token', res.token);
             boot();
           } catch (ex) { err.textContent = ex.message; }
         },
@@ -360,7 +359,7 @@
 
   // ---------- settings & audit ----------
   async function pageSettings(active) {
-    const [{ announcement: a }, lim] = await Promise.all([api('GET', '/api/admin/settings'), api('GET', '/api/admin/limits')]);
+    const [{ announcement: a }, lim, sys] = await Promise.all([api('GET', '/api/admin/settings'), api('GET', '/api/admin/limits'), api('GET', '/api/admin/system')]);
     const en = h('input', { type: 'checkbox', checked: a.enabled });
     const text = h('textarea', { class: 't-input', rows: 3, maxlength: 240, placeholder: "Masalan: Yangi darslar qo'shildi! 🎉", style: { width: '100%', fontSize: '1rem' } }, a.text || '');
     const level = h('select', { class: 'sel' }, [['info', "Oddiy (ko'k)"], ['warn', 'Muhim (sariq)']].map(([v, t]) => h('option', { value: v, selected: a.level === v }, t)));
@@ -373,7 +372,19 @@
       h('h3', { class: 'sub', style: { margin: '6px 0 0' } }, 'Bugungi foydalanish'),
       lim.features.length ? h('div', { class: 'mini-list' }, lim.features.map((f) => h('div', {}, `${(FEATURE[f.feature] || [f.feature])[0]}: ${f.calls} ta so'rov, ${f.users} ta foydalanuvchi`))) : h('p', { class: 'muted', style: { margin: 0 } }, "Bugun hali foydalanilmagan"),
       lim.top.length ? h('div', { class: 'mini-list' }, h('b', {}, 'Eng faol:'), lim.top.map((u) => h('div', {}, `${u.name} (${u.email}): ${u.calls} ta`))) : null);
-    shell(active, h('h1', {}, 'Sozlamalar'), h('p', { class: 'lead' }, "E'lon banneri va AI limitlari."),
+    const fmtSize = (b) => (b == null ? '—' : b > 1048576 ? `${(b / 1048576).toFixed(1)} MB` : `${Math.round(b / 1024)} KB`);
+    const ago = (t) => { const m = Math.round((Date.now() - t) / 60000); return m < 60 ? `${m} daqiqa oldin` : m < 2880 ? `${Math.round(m / 60)} soat oldin` : `${Math.round(m / 1440)} kun oldin`; };
+    const lb = sys.lastBackup;
+    const itemTxt = sys.items.length ? sys.items.map((i) => `${i.status}: ${i.n}`).join(', ') : 'savollar yo\'q';
+    const sysCard = h('div', { class: 'card', style: { display: 'grid', gap: '6px', maxWidth: '640px', marginBottom: '18px' } },
+      h('h3', { style: { margin: 0 } }, 'Tizim holati'),
+      h('div', { class: 'mini-list' },
+        h('div', {}, `AI: ${sys.aiProvider ? '✅ ' + sys.aiProvider : "❌ o'chiq (API kalit sozlanmagan)"}`),
+        h('div', {}, `Zaxira nusxa: ${lb ? `✅ ${ago(lb.at)} (${fmtSize(lb.size)})` : "⚠️ hali olinmagan (ishga tushgandan 30 soniya keyin olinadi)"}`),
+        h('div', {}, `Baza hajmi: ${fmtSize(sys.dbSize)} · foydalanuvchilar: ${sys.users} · bugun faol: ${sys.activeToday}`),
+        h('div', {}, `Savollar bankida: ${itemTxt}`),
+        h('div', {}, `Server ishlagan vaqt: ${Math.round(sys.uptimeSec / 3600)} soat · Node ${sys.node}`)));
+    shell(active, h('h1', {}, 'Sozlamalar'), h('p', { class: 'lead' }, "Tizim holati, e'lon banneri va AI limitlari."), sysCard,
       h('div', { class: 'card', style: { display: 'grid', gap: '14px', maxWidth: '640px' } },
         h('label', { class: 'switch' }, en, "E'lon faol"), h('label', { class: 'field' }, h('span', {}, 'Matn (240 belgigacha)'), text), h('label', { class: 'field' }, h('span', {}, 'Turi'), level),
         h('div', {}, h('button', { class: 'btn btn-main', onclick: guard(async () => { await api('PUT', '/api/admin/settings', { announcement: { enabled: en.checked, text: text.value, level: level.value } }); toast('Saqlandi ✓'); }) }, 'Saqlash'))),

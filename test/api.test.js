@@ -10,6 +10,8 @@ const { nextState } = require('../src/srs');
 
 for (const k of ['ANTHROPIC_API_KEY', 'OPENAI_API_KEY', 'GEMINI_API_KEY', 'AI_PROVIDER', 'ADMIN_EMAILS', 'FIRST_USER_ADMIN']) delete process.env[k];
 
+const SEED_UNITS = require('../src/seed').loadSeed().units;
+const seedLevel = (lv) => SEED_UNITS.filter((u) => (u.level || 'A1') === lv).length;
 const dirs = [];
 async function boot() {
   const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'lf-'));
@@ -65,14 +67,13 @@ async function play(app, api, lessonId, { wrong = false } = {}) {
   return api('POST', `/api/sessions/${start.data.sid}/finish`, {});
 }
 
-test('content: 60 units (20 live A1, A2/B1 hidden), 6 languages, lessons and tests per unit', async () => {
+test('content: seed units (A1 live, higher levels hidden), 6 languages, lessons and tests per unit', async () => {
   const app = await boot();
-  assert.equal(app.content.units().length, 60);
+  assert.equal(app.content.units().length, SEED_UNITS.length);
   const live = app.content.units().filter((u) => u.enabled);
   assert.equal(live.length, 20);
   assert.ok(live.every((u) => u.level === 'A1'));
-  assert.equal(app.content.units().filter((u) => u.level === 'A2' && !u.enabled).length, 20);
-  assert.equal(app.content.units().filter((u) => u.level === 'B1' && !u.enabled).length, 20);
+  for (const lv of ['A2', 'B1', 'B2']) assert.equal(app.content.units().filter((u) => u.level === lv && !u.enabled).length, seedLevel(lv));
   assert.equal(app.content.langs().length, 6);
   for (const l of app.content.langs()) {
     const ls = app.content.lessons(l.code);
@@ -353,8 +354,8 @@ test('admin: content editing flows into lessons, new language and unit work', as
   const u = app.client(); await reg(u, 'Student', 'student@test.uz');
 
   const content = (await admin('GET', '/api/admin/content')).data;
-  assert.equal(content.units.length, 60);
-  assert.equal(content.languages.find((l) => l.code === 'en').concepts, 600);
+  assert.equal(content.units.length, SEED_UNITS.length);
+  assert.equal(content.languages.find((l) => l.code === 'en').concepts, SEED_UNITS.length * 10);
 
   // new unit + concepts: 6 words -> 1 lesson (+ test), 12 words -> 2 lessons
   assert.equal((await admin('POST', '/api/admin/units', { key: 'space', title: 'Kosmos', emoji: '🚀' })).status, 200);
@@ -380,7 +381,7 @@ test('admin: content editing flows into lessons, new language and unit work', as
 
   // reorder + disable
   assert.equal((await admin('POST', '/api/admin/units/space/move', { dir: 'up' })).status, 200);
-  assert.equal(app.content.units().findIndex((x) => x.key === 'space'), 59);
+  assert.equal(app.content.units().findIndex((x) => x.key === 'space'), SEED_UNITS.length - 1);
   assert.equal((await admin('PATCH', '/api/admin/units/space', { enabled: false })).status, 200);
   assert.ok(!(await u('GET', '/api/courses/en')).data.units.some((x) => x.key === 'space'));
 
@@ -394,7 +395,7 @@ test('admin: content editing flows into lessons, new language and unit work', as
 
   assert.equal((await admin('DELETE', `/api/admin/concepts/${firstId}`)).status, 200);
   assert.equal((await admin('DELETE', '/api/admin/units/space')).status, 200);
-  assert.equal((await admin('GET', '/api/admin/export')).data.units.length, 60);
+  assert.equal((await admin('GET', '/api/admin/export')).data.units.length, SEED_UNITS.length);
   app.close();
 });
 
@@ -781,21 +782,21 @@ test('seed sync: legacy DB gets new units disabled, deleted units are not resurr
   db.prepare("DELETE FROM units WHERE key='greetings'").run(); // admin deleted a live unit
   db.close();
   db = open(file);
-  assert.equal(db.prepare("SELECT COUNT(*) n FROM units WHERE level='A2'").get().n, 20);
+  assert.equal(db.prepare("SELECT COUNT(*) n FROM units WHERE level='A2'").get().n, seedLevel('A2'));
   assert.equal(db.prepare("SELECT COUNT(*) n FROM units WHERE level!='A1' AND enabled=1").get().n, 0);
   assert.equal(db.prepare("SELECT COUNT(*) n FROM units WHERE key='greetings'").get().n, 0);
   assert.equal(db.prepare("SELECT COUNT(*) n FROM concepts WHERE unit_key='a2routine'").get().n, 10);
   db.close();
   db = open(file); // idempotent
-  assert.equal(db.prepare('SELECT COUNT(*) n FROM units').get().n, 59);
+  assert.equal(db.prepare('SELECT COUNT(*) n FROM units').get().n, SEED_UNITS.length - 1);
   db.close();
 
   const app = await boot();
   const admin = app.client(); await reg(admin, 'Boss', 'sync@test.uz');
   assert.equal((await admin('POST', '/api/admin/units-level/Z9', { enabled: true })).status, 400);
   const on = await admin('POST', '/api/admin/units-level/A2', { enabled: true });
-  assert.equal(on.data.changed, 20);
-  assert.equal(app.content.units().filter((u) => u.enabled).length, 40);
+  assert.equal(on.data.changed, seedLevel('A2'));
+  assert.equal(app.content.units().filter((u) => u.enabled).length, 20 + seedLevel('A2'));
   const cur = (await admin('GET', '/api/curriculum?lang=en')).data.units;
   assert.ok(cur.some((u) => u.stageLevel === 'A2') && cur.some((u) => u.stageLevel === 'A1'));
   app.close();
@@ -987,5 +988,45 @@ test('bundled content import: admin only, drafts, idempotent', async () => {
   assert.equal(again.duplicates, real.created);
   // nothing reaches learners until approved
   assert.equal((await user('POST', '/api/practice/start', { lang: 'en', skill: 'grammar' })).status, 404);
+  app.close();
+});
+
+test('backup: consistent snapshot, rotation, status endpoint; legal pages; account deletion', async () => {
+  const { backupNow, lastBackup } = require('../src/backup');
+  const { open } = require('../src/db');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'lf-bk-'));
+  dirs.push(dir);
+  const db = open(path.join(dir, 'live.db'));
+  db.prepare("INSERT INTO users (email,name,pass_hash,created_at) VALUES ('a@b.c','A','x',1)").run();
+  for (let i = 0; i < 4; i++) backupNow(db, path.join(dir, 'bk'), { keep: 2, now: new Date(Date.UTC(2026, 0, 1 + i)) });
+  const files = fs.readdirSync(path.join(dir, 'bk')).sort();
+  assert.equal(files.length, 2);
+  assert.match(files[1], /2026-01-04/);
+  const copy = open(path.join(dir, 'bk', files[1]));
+  assert.equal(copy.prepare('SELECT COUNT(*) n FROM users').get().n, 1);
+  assert.equal(copy.prepare('SELECT COUNT(*) n FROM units').get().n, db.prepare('SELECT COUNT(*) n FROM units').get().n);
+  assert.equal(lastBackup(db).file, files[1]);
+  copy.close(); db.close();
+
+  const app = await boot();
+  const admin = app.client(); await reg(admin, 'Boss', 'sys@test.uz');
+  const user = app.client(); await reg(user, 'Student', 'sys-s@test.uz');
+  assert.equal((await user('GET', '/api/admin/system')).status, 403);
+  const sys = (await admin('GET', '/api/admin/system')).data;
+  assert.equal(sys.users, 2);
+  assert.equal(sys.lastBackup, null);
+  for (const p of ['/privacy', '/terms']) { const r = await fetch(`${app.base}${p}`); assert.equal(r.status, 200); assert.match(await r.text(), /LinguaFlow/); }
+
+  // no token in JSON any more (cookie only)
+  const r = await fetch(`${app.base}/api/auth/login`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email: 'sys-s@test.uz', password: 'secret1234' }) });
+  assert.equal((await r.json()).token, undefined);
+
+  // self-service deletion: wrong password rejected, last admin protected, user data gone
+  await user('POST', '/api/practice/start', { skill: 'grammar' });
+  assert.equal((await user('DELETE', '/api/me', { password: 'wrong-password' })).status, 403);
+  assert.equal((await admin('DELETE', '/api/me', { password: 'secret1234' })).status, 400);
+  assert.equal((await user('DELETE', '/api/me', { password: 'secret1234' })).status, 200);
+  assert.equal(app.db.prepare("SELECT COUNT(*) n FROM users WHERE email='sys-s@test.uz'").get().n, 0);
+  assert.equal((await user('GET', '/api/me')).status, 401);
   app.close();
 });

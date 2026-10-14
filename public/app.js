@@ -34,11 +34,12 @@
     remove: (k) => { try { localStorage.removeItem(k); } catch {} memStore.delete(k); },
   };
 
+  // Sessions live only in the httpOnly cookie; drop any token an older version left in localStorage.
+  try { localStorage.removeItem('lf_token'); } catch { /* storage unavailable */ }
+
   async function api(method, url, body) {
     const headers = {};
     if (method !== 'GET') headers['content-type'] = 'application/json';
-    const token = LS.get('lf_token');
-    if (token) headers['authorization'] = `Bearer ${token}`;
     const r = await fetch(url, {
       method,
       headers,
@@ -130,13 +131,20 @@
     u.lang = lang;
     u.rate = opts.rate || 0.9;
     if (opts.pitch) u.pitch = opts.pitch;
-    const v = speechSynthesis.getVoices().find((x) => x.lang === lang) || speechSynthesis.getVoices().find((x) => x.lang.startsWith(lang.slice(0, 2)));
+    const voices = speechSynthesis.getVoices();
+    const v = voices.find((x) => x.lang === lang) || voices.find((x) => x.lang.startsWith(lang.slice(0, 2)));
     if (v) u.voice = v;
+    else if (voices.length && !speak.warned.has(lang.slice(0, 2))) {
+      speak.warned.add(lang.slice(0, 2));
+      toast("Qurilmangizda bu til uchun ovoz topilmadi: eshitish mashqlari to'g'ri eshitilmasligi mumkin. Telefon sozlamalaridan 'Matndan nutqqa' tilini qo'shing.");
+    }
     if (opts.onStart) u.onstart = opts.onStart;
     if (opts.onEnd) u.onend = opts.onEnd;
     speechSynthesis.cancel();
     speechSynthesis.speak(u);
   }
+
+  speak.warned = new Set();
 
   // ---------- state ----------
   const S = { user: null, langs: [], course: null, config: null };
@@ -228,25 +236,16 @@
 
   const LANG_CATALOG = [
     // European (8 languages)
-    { code: 'en', category: 'european', categoryName: 'Yevropa', cert: '🎓 IELTS Band 4.0 - 8.5+ · CEFR A1 - C1', sub: 'IELTS imtihoni, xalqaro ta\'lim va kasbiy til', badge: 'IELTS / CEFR', name: 'Ingliz tili', native: 'English', flag: '🇬🇧', color: '#7c5cff', lessons: 30, active: true },
-    { code: 'de', category: 'european', categoryName: 'Yevropa', cert: '🎓 Goethe-Zertifikat · TestDaF (A1 - C1)', sub: 'Germaniyada bepul oliy ta\'lim va Ausbildung', badge: 'Goethe / TestDaF', name: 'Nemis tili', native: 'Deutsch', flag: '🇩🇪', color: '#ffc94d', lessons: 30, active: true },
-    { code: 'ru', category: 'european', categoryName: 'Yevropa', cert: '🎓 TRKI / TORFL (A1 - C1)', sub: 'Xalqaro standartdagi rasmiy rus tili attestatsiyasi', badge: 'TRKI / TORFL', name: 'Rus tili', native: 'Русский', flag: '🇷🇺', color: '#00d4ff', lessons: 30, active: true },
-    { code: 'fr', category: 'european', categoryName: 'Yevropa', cert: '🎓 DELF / DALF (A1 - C1)', sub: 'Fransiya oliygohlari va Yevropa ta\'lim grantlari', badge: 'DELF / DALF', name: 'Fransuz tili', native: 'Français', flag: '🇫🇷', color: '#4f8bff', lessons: 30, active: true },
-    { code: 'es', category: 'european', categoryName: 'Yevropa', cert: '🎓 DELE / SIELE (A1 - C1)', sub: 'Ispaniya va Lotin Amerikasi rasmiy sertifikati', badge: 'DELE / SIELE', name: 'Ispan tili', native: 'Español', flag: '🇪🇸', color: '#ff4fa3', lessons: 30, active: true },
-    { code: 'it', category: 'european', categoryName: 'Yevropa', cert: '🎓 CILS / CELI (A1 - C1)', sub: 'Italiya madaniyati, arxitektura va san\'at tili', badge: 'CILS / CELI', name: 'Italyan tili', native: 'Italiano', flag: '🇮🇹', color: '#9dff5c', lessons: 24, active: false },
-    { code: 'pt', category: 'european', categoryName: 'Yevropa', cert: '🎓 CAPLE / Celpe-Bras', sub: 'Portugaliya va Braziliya rasmiy muloqot tili', badge: 'CAPLE', name: 'Portugal tili', native: 'Português', flag: '🇵🇹', color: '#38bdf8', lessons: 22, active: false },
-    { code: 'pl', category: 'european', categoryName: 'Yevropa', cert: '🎓 Certyfikat Polski', sub: 'Polsha oliygohlari va Yevropa Karta Polaka', badge: 'Polski', name: 'Polyak tili', native: 'Polski', flag: '🇵🇱', color: '#fb7185', lessons: 20, active: false },
+    { code: 'en', category: 'european', categoryName: 'Yevropa', cert: '🎓 IELTS uslubidagi tayyorgarlik · A1 – C2', sub: 'Ingliz tili: IELTS uslubidagi mashqlar, AI yozish va gapirish tekshiruvi', badge: 'Tayyorgarlik', name: 'Ingliz tili', native: 'English', flag: '🇬🇧', color: '#7c5cff', lessons: 30, active: true },
+    { code: 'de', category: 'european', categoryName: 'Yevropa', cert: '🎓 Goethe uslubidagi tayyorgarlik · A1 – B2', sub: 'Nemis tili: darslar, grammatika va imtihon uslubidagi mashqlar', badge: 'Tayyorgarlik', name: 'Nemis tili', native: 'Deutsch', flag: '🇩🇪', color: '#ffc94d', lessons: 30, active: true },
+    { code: 'ru', category: 'european', categoryName: 'Yevropa', cert: '🎓 ТРКИ uslubidagi tayyorgarlik · A1 – B2', sub: 'Rus tili: darslar, grammatika va imtihon uslubidagi mashqlar', badge: 'Tayyorgarlik', name: 'Rus tili', native: 'Русский', flag: '🇷🇺', color: '#00d4ff', lessons: 30, active: true },
+    { code: 'fr', category: 'european', categoryName: 'Yevropa', cert: '🎓 DELF uslubidagi tayyorgarlik · A1 – B2', sub: 'Fransuz tili: darslar, grammatika va imtihon uslubidagi mashqlar', badge: 'Tayyorgarlik', name: 'Fransuz tili', native: 'Français', flag: '🇫🇷', color: '#4f8bff', lessons: 30, active: true },
+    { code: 'es', category: 'european', categoryName: 'Yevropa', cert: '🎓 DELE uslubidagi tayyorgarlik · A1 – B2', sub: 'Ispan tili: darslar, grammatika va imtihon uslubidagi mashqlar', badge: 'Tayyorgarlik', name: 'Ispan tili', native: 'Español', flag: '🇪🇸', color: '#ff4fa3', lessons: 30, active: true },
 
     // Asian (4 languages)
-    { code: 'tr', category: 'asian', categoryName: 'Osiyo', cert: '🎓 TÖMER / Yunus Emre (A1 - C1)', sub: 'Turkiya grantlari, sayohat va biznes tili', badge: 'TÖMER', name: 'Turk tili', native: 'Türkçe', flag: '🇹🇷', color: '#ff5d6c', lessons: 30, active: false },
-    { code: 'ko', category: 'asian', categoryName: 'Osiyo', cert: '🎓 TOPIK I & II (1 - 6-daraja)', sub: 'Janubiy Koreya universitetlari (GKS) va EPS imtihoni', badge: 'TOPIK', name: 'Koreys tili', native: '한국어', flag: '🇰🇷', color: '#5cffd6', lessons: 32, active: false },
-    { code: 'ja', category: 'asian', categoryName: 'Osiyo', cert: '🎓 JLPT (N5 - N1 darajalar)', sub: 'Yaponiya texnologiya, anime va ish vizalari', badge: 'JLPT', name: 'Yapon tili', native: '日本語', flag: '🇯🇵', color: '#e45cff', lessons: 28, active: false },
-    { code: 'zh', category: 'asian', categoryName: 'Osiyo', cert: '🎓 HSK (1 - 6-darajalar)', sub: 'Xitoy biznesi, savdo va xalqaro stipendiyalar', badge: 'HSK', name: 'Xitoy tili', native: '中文', flag: '🇨🇳', color: '#ff8a3d', lessons: 34, active: false },
 
     // Middle Eastern (3 languages)
-    { code: 'ar', category: 'middle_eastern', categoryName: 'Yaqin Sharq', cert: '🎓 ALPT / Fasih Arab tili (A1 - C1)', sub: 'Fasih arab tili, Yaqin Sharq va xalqaro attestatsiya', badge: 'ALPT / Fasih', name: 'Arab tili', native: 'العربية', flag: '🇸🇦', color: '#22d39a', lessons: 30, active: true },
-    { code: 'fa', category: 'middle_eastern', categoryName: 'Yaqin Sharq', cert: '🎓 AMFA / Samt Attestatsiya', sub: 'Sharq adabiyoti, Fors tarixi va mumtoz madaniyati', badge: 'AMFA', name: 'Fors tili', native: 'فارسی', flag: '🇮🇷', color: '#f59e0b', lessons: 18, active: false },
-    { code: 'az', category: 'middle_eastern', categoryName: 'Yaqin Sharq', cert: '🎓 Sertifikatga tayyorgarlik', sub: 'Qardosh turkiy til, Kavkaz va Kasbiy muloqot', badge: 'Azərbaycan', name: 'Ozarbayjon tili', native: 'Azərbaycan', flag: '🇦🇿', color: '#06b6d4', lessons: 18, active: false },
+    { code: 'ar', category: 'middle_eastern', categoryName: 'Yaqin Sharq', cert: '🎓 Fasih (MSA) tayyorgarlik · A1 – B2', sub: 'Arab tili: darslar, grammatika va imtihon uslubidagi mashqlar', badge: 'Tayyorgarlik', name: 'Arab tili', native: 'العربية', flag: '🇸🇦', color: '#22d39a', lessons: 30, active: true },
   ];
 
   const getLangObj = (code) => {
@@ -781,7 +780,6 @@
           const l = getLangObj(chosenLang);
           if (!S.user) {
             const guestRes = await api('POST', '/api/auth/guest', {});
-            if (guestRes.token) LS.set('lf_token', guestRes.token);
             S.user = guestRes.user;
           }
           const pendingGoal = Number(LS.get('lf_daily_goal'));
@@ -886,6 +884,7 @@
     const recoveryKey = h('input', { type: 'password', autocomplete: 'off', required: true, placeholder: 'Tiklash kaliti (sayt egasidan)' });
     const submitText = isReg ? "Ro'yxatdan o'tish" : isReset ? "Parolni yangilash" : 'Kirish';
     const btn = h('button', { class: 'btn btn-main btn-block', type: 'submit' }, submitText);
+    const consentNote = isReg ? h('p', { class: 'muted', style: { fontSize: '.8rem', margin: '10px 0 0', textAlign: 'center' } }, "Ro'yxatdan o'tish orqali ", h('a', { href: '/terms', target: '_blank' }, 'Foydalanish shartlari'), ' va ', h('a', { href: '/privacy', target: '_blank' }, 'Maxfiylik siyosati'), 'ga rozilik bildirasiz.') : null;
 
     // Language selector badge for auth
     const authLangIcon = h('span', { class: 'fl' }, langMeta(chosenLang)?.flag || '🇬🇧');
@@ -912,7 +911,6 @@
       h('span', { class: 'curr' }, authLangIcon, authLangName));
 
     const onAuthSuccess = async (res) => {
-      if (res.token) LS.set('lf_token', res.token);
       S.user = res.user;
       await loadLangs();
       if (chosenLang && chosenLang !== S.user.currentLang) {
@@ -989,7 +987,7 @@
       h('label', { class: 'field' }, h('span', {}, 'Email'), email),
       h('label', { class: 'field' }, h('span', {}, isReset ? 'Yangi parol' : 'Parol'), pass),
       isReset ? h('label', { class: 'field' }, h('span', {}, 'Tiklash kaliti'), recoveryKey) : null,
-      err, btn, (!isReg && !isReset) ? guestBtn : null);
+      err, btn, consentNote, (!isReg && !isReset) ? guestBtn : null);
 
     const title = isReg ? 'Hisob yarating' : isReset ? 'Parolni tiklash' : 'Xush kelibsiz!';
     const sub = isReg ? "Bepul boshlang va 6 ta tilni o'rganing." : isReset ? "Tiklash kaliti faqat sayt egasida bor. Oddiy foydalanuvchilar administratorga murojaat qilsin: u admin paneldan yangi parol beradi." : 'Davom etish uchun hisobingizga kiring.';
@@ -2209,7 +2207,7 @@
       } catch (e) { toast(e.message); } finally { submit.disabled = false; submit.textContent = 'Baholash'; }
     } }, 'Baholash');
     await shell('/practice', [backBtn(), h('h1', {}, '✍️ Yozish'),
-      h('p', { class: 'lead' }, `${S.course.lang.flag} ${S.course.lang.name}: matn yozing, AI ustoz 4 mezon bo'yicha baholaydi.`),
+      h('p', { class: 'lead' }, `${S.course.lang.flag} ${S.course.lang.name}: matn yozing, AI ustoz 4 mezon bo'yicha baholaydi. Matn baholash uchun AI xizmatiga yuboriladi: shaxsiy ma'lumot (parol, telefon, hujjat raqami) yozmang.`),
       data.aiEnabled ? null : h('div', { class: 'announce warn' }, "AI baholash hozircha o'chiq (serverda API kalit sozlanmagan)."),
       list, promptBox, customInp, area, counter, h('div', { style: { marginTop: '10px' } }, submit), resultBox], { wide: true });
   }
@@ -2252,7 +2250,7 @@
       } catch (e) { toast(e.message); } finally { submit.disabled = false; submit.textContent = 'Baholash'; }
     } }, 'Baholash');
     await shell('/practice', [backBtn(), h('h1', {}, '🎤 Gapirish'),
-      h('p', { class: 'lead' }, `${S.course.lang.flag} ${S.course.lang.name}: savolga javob bering. Ovozingiz brauzerda matnga aylantiriladi (brauzer ovozni tashqi xizmatga yuborishi mumkin).`),
+      h('p', { class: 'lead' }, `${S.course.lang.flag} ${S.course.lang.name}: savolga javob bering. Ovozingiz brauzerda matnga aylantiriladi: Chrome kabi brauzerlar audioni o'z serveriga (masalan, Google) yuboradi. Xohlamasangiz, javobni yozing. Matn baholash uchun AI xizmatiga yuboriladi.`),
       data.aiEnabled ? null : h('div', { class: 'announce warn' }, "AI baholash hozircha o'chiq (serverda API kalit sozlanmagan)."),
       list, promptBox, h('div', { style: { display: 'flex', gap: '10px', alignItems: 'center', margin: '10px 0' } }, recBtn, timer), area, h('div', { style: { marginTop: '10px' } }, submit), resultBox], { wide: true });
   }
@@ -3791,7 +3789,16 @@
           LS.remove('lf_token');
           try { await api('POST', '/api/auth/logout', {}); } catch {}
           S.user = null; S.course = null; location.hash = '#/login'; route();
-        } }, 'Chiqish')),
+        } }, 'Chiqish'),
+        h('button', { class: 'btn btn-ghost', style: { color: 'var(--bad)' }, onclick: async () => {
+          const guest = /^mehmon_\d+_\d+@linguaflow\.uz$/.test(u.email);
+          if (!confirm("Hisobingiz, progress va yuborgan mashq matnlaringiz butunlay o'chadi. Davom etasizmi?")) return;
+          const password = guest ? '' : prompt('Tasdiqlash uchun parolingizni kiriting:');
+          if (!guest && !password) return;
+          try { await api('DELETE', '/api/me', { password }); } catch (e) { toast(e.message); return; }
+          S.user = null; S.course = null; toast("Hisob o'chirildi"); location.hash = '#/start'; route();
+        } }, "🗑 Hisobni o'chirish"),
+        h('p', { class: 'muted', style: { margin: 0, fontSize: '.85rem' } }, h('a', { href: '/privacy', target: '_blank' }, 'Maxfiylik siyosati'), ' · ', h('a', { href: '/terms', target: '_blank' }, 'Foydalanish shartlari'))),
     ]);
   }
 

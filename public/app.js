@@ -2161,7 +2161,7 @@
   }
 
   // ---------- shared helpers for writing / speaking / mock ----------
-  const LEVEL_LIST = ['A2', 'B1', 'B2', 'C1'];
+  const LEVEL_LIST = ['A2', 'B1', 'B2', 'C1', 'C2'];
   function rubricView(res, labels) {
     const bar = (k) => h('div', { style: { display: 'grid', gridTemplateColumns: '120px 1fr 30px', gap: '10px', alignItems: 'center', margin: '6px 0' } },
       h('span', {}, labels[k] || k),
@@ -2283,6 +2283,7 @@
         const secs = Object.entries(r.sections).map(([k, v]) => `${k}: ${v.correct}/${v.total}`).join(' · ');
         mount(h('div', { style: { padding: '24px 12px', maxWidth: '760px', margin: '0 auto' } }, h('div', { class: 'card' },
           h('h2', {}, `${r.percent}% · ${r.correct}/${r.total}`), h('p', { class: 'lead' }, r.message), h('p', { class: 'muted' }, `${secs} · +${r.xp} XP`),
+          r.ielts ? h('p', {}, h('b', {}, `Taxminiy IELTS-uslubidagi ball: ${r.ielts.band}`), h('span', { class: 'muted' }, ` — ${r.ielts.note}`)) : null,
           h('p', { class: 'muted' }, r.disclaimer),
           h('button', { class: 'btn btn-main', onclick: () => { location.hash = '#/practice'; route(); } }, 'Tugatish'))));
       } catch (e) { toast(e.message); }

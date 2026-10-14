@@ -297,7 +297,7 @@ async function main() {
         await click(card.locator('.opts .opt').nth(idx), 150);
       }
     }
-    await cap("Natija (namuna)", "Bo'limlar bo'yicha ball va ingliz tilida taxminiy IELTS-uslubidagi ball. Rasmiy natija emas.", 0, 'top');
+    await cap("Natija (namuna)", "Bo'limlar bo'yicha ball va ingliz tilida taxminiy IELTS-uslubidagi ball. Rasmiy natija emas.", 0, 'bottom');
     await click(page.locator('button', { hasText: 'Topshirish' }), 2500);
     await shot('mock-result'); await sleep(5200);
   });

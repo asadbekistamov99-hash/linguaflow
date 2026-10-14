@@ -54,9 +54,10 @@
     "payload": {
       "text": "Aunque ___ (hacer) mucho frío ayer, salimos a correr.",
       "answers": [
-        "hizo"
+        "hizo",
+        "hacía"
       ],
-      "explanation_uz": "Aunque haqiqiy, ma'lum fakt haqida bo'lsa, indicativo (pretérito indefinido) ishlatiladi."
+      "explanation_uz": "Aunque haqiqiy, ma'lum fakt haqida bo'lsa, indicativo ishlatiladi (pretérito indefinido yoki imperfecto: hizo / hacía)."
     }
   },
   {
@@ -114,7 +115,7 @@
       "answers": [
         "prometas"
       ],
-      "explanation_uz": "Con tal de que shart bog'lovchisi doim presente de subjuntivo bilan keladi."
+      "explanation_uz": "Con tal de que shart bog'lovchisi doim subjuntivo bilan keladi; kelasi zamon ma'nosida presente de subjuntivo ishlatiladi."
     }
   },
   {
@@ -157,7 +158,7 @@
       "answers": [
         "había visto"
       ],
-      "explanation_uz": "Egri nutqda pretérito perfecto pretérito pluscuamperfecto ga o'zgaradi."
+      "explanation_uz": "Egri nutqda pretérito perfecto pretérito pluscuamperfecto'ga o'zgaradi (has visto > había visto)."
     }
   },
   {
@@ -167,11 +168,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Se echó a ___ (llorar) al oír la noticia.",
+      "text": "Por mucho que ___ (estudiar, él), no aprobará el examen.",
       "answers": [
-        "llorar"
+        "estudie"
       ],
-      "explanation_uz": "Echarse a + infinitivo boshlanish perifrazasi bo'lib, to'satdan boshlangan harakatni bildiradi."
+      "explanation_uz": "Por mucho que + subjuntivo: qancha urinmasin ham, natija o'zgarmaydi (qarshilik ma'nosi)."
     }
   },
   {
@@ -223,9 +224,9 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "En España ___ (cenar) tarde.",
+      "text": "En verano ___ (vivir) mejor en la costa.",
       "answers": [
-        "se cena"
+        "se vive"
       ],
       "explanation_uz": "Umumiy ma'noli impersonal gapda se + fe'lning 3-shaxs birlik shakli ishlatiladi."
     }
@@ -351,11 +352,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Mañana ___ (haber) una huelga de trenes.",
+      "text": "Para cuando lleguemos, la película ya ___ (empezar).",
       "answers": [
-        "habrá"
+        "habrá empezado"
       ],
-      "explanation_uz": "Haber fe'li voqea mavjudligini bildirsa, 3-shaxs birlik bo'lib qoladi; kelasi zamon: habrá."
+      "explanation_uz": "Futuro perfecto (habrá + participio) kelajakdagi ma'lum paytgacha tugagan harakatni bildiradi."
     }
   },
   {
@@ -365,15 +366,15 @@
     "type": "mcq",
     "exam": "general",
     "payload": {
-      "question": "Espero que mañana ___ buen tiempo.",
+      "question": "No es que ___ cansado, es que no tengo ganas.",
       "options": [
-        "hace",
-        "haga",
-        "hará",
-        "hiciera"
+        "estoy",
+        "esté",
+        "estaré",
+        "estuve"
       ],
       "answer": 1,
-      "explanation_uz": "Esperar que dan keyin presente de subjuntivo ishlatiladi."
+      "explanation_uz": "No es que + subjuntivo: rad etilgan sabab (esté) ishlatiladi."
     }
   },
   {
@@ -383,33 +384,33 @@
     "type": "mcq",
     "exam": "general",
     "payload": {
-      "question": "No pensé que ___ tan tarde.",
+      "question": "En cuanto mañana lo ___, te diré el resultado.",
       "options": [
-        "es",
-        "era",
-        "fuera",
-        "será"
-      ],
-      "answer": 2,
-      "explanation_uz": "No pensé que inkori va o'tgan zamon asosiy fe'li imperfecto de subjuntivo ni talab qiladi."
-    }
-  },
-  {
-    "lang": "es",
-    "skill": "grammar",
-    "level": "B2",
-    "type": "mcq",
-    "exam": "general",
-    "payload": {
-      "question": "Ana dijo: «Estoy trabajando». → Ana dijo que ___ trabajando.",
-      "options": [
-        "estaba",
-        "estoy",
-        "estuve",
-        "estará"
+        "sepa",
+        "sé",
+        "sabré",
+        "supiera"
       ],
       "answer": 0,
-      "explanation_uz": "Egri nutqda presente imperfecto ga o'zgaradi."
+      "explanation_uz": "En cuanto kabi vaqt bog'lovchilari kelajak haqida gapirganda presente de subjuntivo bilan keladi."
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "grammar",
+    "level": "B2",
+    "type": "mcq",
+    "exam": "general",
+    "payload": {
+      "question": "No quiero té, ___ café.",
+      "options": [
+        "sino",
+        "pero",
+        "sin",
+        "si no"
+      ],
+      "answer": 0,
+      "explanation_uz": "Inkor gapdan keyin qarama-qarshi tushuncha sino bilan beriladi (no ... sino ...)."
     }
   },
   {
@@ -545,15 +546,15 @@
     "type": "mcq",
     "exam": "general",
     "payload": {
-      "question": "Mañana salgo ___ Madrid.",
+      "question": "Tengo que entregar el trabajo ___ el viernes.",
       "options": [
+        "para",
         "por",
         "a",
-        "para",
-        "en"
+        "de"
       ],
-      "answer": 2,
-      "explanation_uz": "Salir para yo'nalish/manzilni bildiradi."
+      "answer": 0,
+      "explanation_uz": "Para muddat (deadline) ni bildiradi: para el viernes."
     }
   },
   {
@@ -599,15 +600,15 @@
     "type": "mcq",
     "exam": "general",
     "payload": {
-      "question": "El concierto ___ en el estadio a las nueve.",
+      "question": "El hotel en ___ nos alojamos era precioso.",
       "options": [
-        "está",
-        "hay",
-        "sea",
-        "es"
+        "el que",
+        "que",
+        "donde el",
+        "cual"
       ],
-      "answer": 3,
-      "explanation_uz": "Voqea o'tadigan joy ser bilan ifodalanadi."
+      "answer": 0,
+      "explanation_uz": "Predlogdan keyin nisbiy olmosh artikl bilan keladi: en el que (en el cual)."
     }
   },
   {

@@ -6,11 +6,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Вчера я долго ___ эту задачу, но так и не решил. (решать/решить)",
+      "text": "Не нужно ___ документы по почте: их можно сдать лично. (отправлять/отправить)",
       "answers": [
-        "решал"
+        "отправлять"
       ],
-      "explanation_uz": "Davomiylik (долго) va natijasiz harakat — nomukammal ko'rinish: решал."
+      "explanation_uz": "'Не нужно/не надо' dan keyin ehtiyojsizlik bildirilganda nomukammal ko'rinish ishlatiladi: не нужно отправлять."
     }
   },
   {
@@ -104,11 +104,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Мы ___ к дому и позвонили в дверь. (подойти, прош. вр.)",
+      "text": "Он шёл по улице, ___ песню. (напевать, деепричастие)",
       "answers": [
-        "подошли"
+        "напевая"
       ],
-      "explanation_uz": "Приставка по(д)- yaqinlashishni bildiradi: подойти — подошли."
+      "explanation_uz": "Bir vaqtda davom etayotgan qo'shimcha harakat nomukammal ravishdosh (деепричастие) bilan beriladi: напевая."
     }
   },
   {
@@ -177,7 +177,8 @@
     "payload": {
       "text": "Он сказал: «Я приду завтра». -> Он сказал, что ___ завтра. (прийти)",
       "answers": [
-        "придёт"
+        "придёт",
+        "придет"
       ],
       "explanation_uz": "Ko'chirma gapni o'zlashtirma gapga aylantirganda zamon o'zgarmaydi, olmosh o'zgaradi: придёт."
     }
@@ -273,11 +274,11 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "Город, в ___ я вырос, сильно изменился.",
+      "text": "Проект, над ___ мы работаем уже год, скоро завершится.",
       "answers": [
-        "котором"
+        "которым"
       ],
-      "explanation_uz": "Который so'zi predlog bilan kelganda jins/sonda bosh gapdagi otga moslashadi, kelishigi esa predlogga bog'liq: в котором."
+      "explanation_uz": "'Работать над + творительный падеж': над которым (ijodiy/vosita kelishigi)."
     }
   },
   {
@@ -315,10 +316,12 @@
     "type": "gap",
     "exam": "general",
     "payload": {
-      "text": "___ на то что шёл дождь, мы пошли гулять.",
+      "text": "___ на то, что шёл дождь, мы пошли гулять.",
       "answers": [
         "Несмотря",
-        "несмотря"
+        "несмотря",
+        "Невзирая",
+        "невзирая"
       ],
       "explanation_uz": "Qarshilik: 'несмотря на то что' = 'garchi'."
     }
@@ -334,7 +337,9 @@
       "answers": [
         "так как",
         "потому что",
-        "поскольку"
+        "поскольку",
+        "ибо",
+        "оттого что"
       ],
       "explanation_uz": "Sabab bog'lovchilari: так как, потому что, поскольку."
     }
@@ -348,9 +353,10 @@
     "payload": {
       "text": "Он хорошо говорит по-русски, ___ изучает язык только год.",
       "answers": [
-        "хотя"
+        "хотя",
+        "хоть"
       ],
-      "explanation_uz": "Qarshilik bildiruvchi ergash gap bog'lovchisi: хотя."
+      "explanation_uz": "Qarshilik bildiruvchi ergash gap bog'lovchisi: хотя (хоть)."
     }
   },
   {
@@ -360,15 +366,15 @@
     "type": "mcq",
     "exam": "general",
     "payload": {
-      "question": "Вчера он три часа ___ телевизор.",
+      "question": "В аудитории было около ___ человек.",
       "options": [
-        "смотрел",
-        "посмотрел",
-        "посмотрит",
-        "смотрит"
+        "пятьсот",
+        "пятисот",
+        "пятистам",
+        "пятью сотнями"
       ],
-      "answer": 0,
-      "explanation_uz": "Davomiylik (три часа) — nomukammal ko'rinish: смотрел."
+      "answer": 1,
+      "explanation_uz": "'Около' predlogi qaratqich kelishigini talab qiladi: около пятисот."
     }
   },
   {
@@ -468,15 +474,15 @@
     "type": "mcq",
     "exam": "general",
     "payload": {
-      "question": "Мне бы хотелось, ___ вы пришли пораньше.",
+      "question": "Чем больше он читал, ___ лучше понимал.",
       "options": [
-        "что",
-        "если",
-        "чтобы",
-        "как"
+        "тем",
+        "так",
+        "чем",
+        "то"
       ],
-      "answer": 2,
-      "explanation_uz": "Istak/iltimosda 'чтобы + o'tgan zamon' ishlatiladi."
+      "answer": 0,
+      "explanation_uz": "Qiyoslovchi bog'lanish 'чем ..., тем ...': чем больше, тем лучше."
     }
   },
   {
@@ -486,15 +492,15 @@
     "type": "mcq",
     "exam": "general",
     "payload": {
-      "question": "Если бы не дождь, мы ___ на пикник.",
+      "question": "Он вёл себя так, ___ ничего не случилось.",
       "options": [
-        "поедем",
-        "поехали",
-        "едем",
-        "поехали бы"
+        "как будто",
+        "чтобы",
+        "потому что",
+        "хотя"
       ],
-      "answer": 3,
-      "explanation_uz": "Haqiqatga to'g'ri kelmaydigan shart: o'tgan zamon + бы."
+      "answer": 0,
+      "explanation_uz": "Taqqoslash ergash gapi: 'как будто' (go'yo) bog'lovchisi."
     }
   },
   {
@@ -522,15 +528,15 @@
     "type": "mcq",
     "exam": "general",
     "payload": {
-      "question": "Не ___ окно, здесь холодно!",
+      "question": "У нас в группе учатся ___ студентки.",
       "options": [
-        "открой",
-        "открывай",
-        "откроешь",
-        "открыть"
+        "двое",
+        "две",
+        "два",
+        "двух"
       ],
       "answer": 1,
-      "explanation_uz": "Taqiqda buyruq mayli nomukammal ko'rinishda: не открывай."
+      "explanation_uz": "Ayol jinsidagi otlar bilan 'две' ishlatiladi: две студентки."
     }
   },
   {
@@ -584,7 +590,7 @@
         "писал"
       ],
       "answer": 0,
-      "explanation_uz": "Majhul nisbat: был + qisqa sifatdosh, ijrochi — orttirma kelishikda (писателем)."
+      "explanation_uz": "Majhul nisbat: был + qisqa sifatdosh, ijrochi — vosita (творительный) kelishigida (писателем)."
     }
   },
   {
@@ -594,15 +600,15 @@
     "type": "mcq",
     "exam": "general",
     "payload": {
-      "question": "Мы пошли гулять, ___ шёл сильный дождь.",
+      "question": "Он не только хорошо поёт, ___ и прекрасно танцует.",
       "options": [
-        "поэтому",
+        "но",
+        "а",
         "хотя",
-        "так как",
         "чтобы"
       ],
-      "answer": 1,
-      "explanation_uz": "Qarama-qarshilik bog'lovchisi: хотя."
+      "answer": 0,
+      "explanation_uz": "'Не только ..., но и ...' — takrorlovchi juft bog'lovchi."
     }
   },
   {
@@ -612,7 +618,7 @@
     "type": "mcq",
     "exam": "general",
     "payload": {
-      "question": "___ того что он болел, он не пришёл.",
+      "question": "___ того, что он болел, он не пришёл.",
       "options": [
         "Несмотря на",
         "Вопреки",

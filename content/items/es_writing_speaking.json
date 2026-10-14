@@ -1,0 +1,278 @@
+[
+  {
+    "lang": "es",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Escribe un correo a un amigo español para invitarlo a tu cumpleaños. Di cuándo y dónde es la fiesta, qué vais a comer y qué hora empieza.",
+      "min_words": 40
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Describe tu casa o tu apartamento. Escribe cuántas habitaciones tiene, cómo es tu habitación favorita y qué cosas hay en ella.",
+      "min_words": 45
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Escribe un mensaje a tu profesor de español. Explica por qué no puedes ir a clase mañana y pregunta qué tarea tienes que hacer.",
+      "min_words": 40
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Cuenta cómo es un día normal en tu vida. Escribe a qué hora te levantas, qué haces por la mañana y por la tarde y qué haces los fines de semana.",
+      "min_words": 60
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Escribe un correo a un amigo para contarle un viaje que hiciste el año pasado. Explica adónde fuiste, con quién, qué fue lo mejor y lo peor del viaje, y si volverías.",
+      "min_words": 90
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Hoy muchas personas piensan que es mejor vivir en la ciudad que en el campo. Escribe tu opinión y da al menos dos razones y un ejemplo personal.",
+      "min_words": 100
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Has comprado un teléfono por internet y llegó con la pantalla rota. Escribe una carta de reclamación a la tienda: explica el problema, cuenta qué pasó y pide una solución.",
+      "min_words": 90
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Describe a una persona importante en tu vida. Explica cómo es físicamente y de carácter, cómo os conocisteis y por qué es especial para ti.",
+      "min_words": 100
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Escribe un texto de opinión sobre las ventajas y desventajas de estudiar o trabajar desde casa. Presenta ambos puntos de vista y termina con tu conclusión personal.",
+      "min_words": 170
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Algunas personas creen que los jóvenes pasan demasiado tiempo en las redes sociales. Redacta un artículo para una revista juvenil en el que analices las causas, las consecuencias y propongas posibles soluciones.",
+      "min_words": 180
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Imagina que te ofrecen un trabajo muy bien pagado en otro país, lejos de tu familia. Escribe una carta a un amigo contándole qué harías, qué factores tendrías en cuenta y por qué.",
+      "min_words": 160
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Escribe una carta formal al director de una empresa para proponer medidas que reduzcan la contaminación en tu ciudad. Justifica tus propuestas con argumentos claros y utiliza un registro adecuado.",
+      "min_words": 200
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "¿Cómo te llamas? ¿De dónde eres y a qué te dedicas? ¿Qué te gusta hacer en tu tiempo libre?",
+      "part": 1,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Describe tu comida favorita. Di qué ingredientes tiene, quién la prepara y cuándo la comes normalmente.",
+      "part": 2,
+      "prep_seconds": 30
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Habla de tu familia. Di cuántas personas hay, cómo se llaman y qué hace cada una.",
+      "part": 2,
+      "prep_seconds": 30
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Estás en una tienda de ropa y quieres comprar una camisa. Pregunta el precio, la talla y si hay otro color. ¿Qué dices?",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "¿Prefieres pasar las vacaciones en la playa o en la montaña? Explica por qué y cuéntame dónde las pasaste el último año.",
+      "part": 1,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Cuenta una experiencia que te gustó mucho, por ejemplo un viaje, una fiesta o un evento. Explica qué pasó, con quién estabas y cómo te sentiste.",
+      "part": 2,
+      "prep_seconds": 45
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Habla de un libro, una película o una serie que recomendarías a un amigo. Explica de qué trata y por qué te parece buena.",
+      "part": 2,
+      "prep_seconds": 45
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "¿Crees que es importante aprender idiomas extranjeros? Da tu opinión con razones y ejemplos de tu experiencia.",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "¿Qué cambios ha traído internet a la forma en que trabajamos y estudiamos? Menciona ventajas y desventajas.",
+      "part": 1,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Si pudieras cambiar una cosa de tu ciudad o de tu país, ¿qué cambiarías? Describe el problema, explica cómo lo resolverías y qué consecuencias tendría.",
+      "part": 2,
+      "prep_seconds": 60
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Imagina que ganas un premio de un millón de dólares. Explica qué harías con el dinero y cómo crees que cambiaría tu vida.",
+      "part": 2,
+      "prep_seconds": 60
+    }
+  },
+  {
+    "lang": "es",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Mucha gente dice que la tecnología nos hace más aislados en lugar de unirnos más. ¿Estás de acuerdo? Defiende tu postura con argumentos y considera también la opinión contraria.",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  }
+]

@@ -14,6 +14,7 @@ const registerGames = require('./games');
 const registerAdmin = require('./admin');
 const registerItems = require('./items');
 const registerPractice = require('./practice');
+const registerSkills = require('./skills');
 const { createQuota } = require('./quota');
 const { STAGES, buildMockExam } = require('./curriculum');
 const { generateJarvisReply, generatePronunciationFeedback } = require('./jarvis');
@@ -895,6 +896,7 @@ Javobni o'qishga qulay, tushunarli va ruhlantiruvchi qilib bering.`;
   registerAdmin(ctx);
   registerItems(ctx);
   registerPractice(ctx);
+  registerSkills(ctx);
 
   // ---------- static ----------
   function serveStatic(req, res, pathname) {

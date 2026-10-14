@@ -153,7 +153,7 @@
   // ---------- router ----------
   const routes = {
     '/start': renderStart,
-    '/learn': renderLearn, '/exams': renderExams, '/review': renderReview, '/games': renderGames, '/practice': renderPractice, '/dictionary': renderDictionary,
+    '/learn': renderLearn, '/exams': renderExams, '/review': renderReview, '/games': renderGames, '/practice': renderPractice, '/writing': renderWriting, '/speaking': renderSpeaking, '/mock': renderMock, '/dictionary': renderDictionary,
     '/tutor': renderTutor, '/leaderboard': renderLeaderboard, '/profile': renderProfile,
   };
   const NAV = [
@@ -2151,7 +2151,162 @@
       h('h1', {}, 'Imtihon mashqlari'),
       h('p', { class: 'lead' }, `${S.course.lang.flag} ${S.course.lang.name}: tekshiruvchilar tasdiqlagan imtihon formatidagi savollar. Kuniga 60 XP gacha.`),
       levelBar, grid,
+      h('h3', { class: 'section-title', style: { marginTop: '32px' } }, "Imtihon ko'nikmalari (AI baholaydi)"),
+      h('div', { class: 'games-grid' },
+        [['/writing', '✍️', 'Yozish', 'Insho yozing: AI 4 mezon bo\'yicha baholaydi va xatolarni tuzatadi.'],
+          ['/speaking', '🎤', 'Gapirish', 'Savolga ovoz bilan javob bering: nutqingiz matnga aylantirilib baholanadi.'],
+          ['/mock', '🎓', 'Mock imtihon', "Vaqtli imtihon: grammatika, o'qish, eshitish. Natija darhol."]]
+          .map(([href, emoji, title, desc]) => h('div', { class: 'card' }, h('div', { style: { fontSize: '2rem' } }, emoji), h('h3', {}, title), h('p', { class: 'muted' }, desc), h('a', { class: 'btn btn-main', href: '#' + href }, 'Ochish')))),
     ], { wide: true });
+  }
+
+  // ---------- shared helpers for writing / speaking / mock ----------
+  const LEVEL_LIST = ['A2', 'B1', 'B2', 'C1'];
+  function rubricView(res, labels) {
+    const bar = (k) => h('div', { style: { display: 'grid', gridTemplateColumns: '120px 1fr 30px', gap: '10px', alignItems: 'center', margin: '6px 0' } },
+      h('span', {}, labels[k] || k),
+      h('div', { class: 'cov', style: { height: '8px', background: 'var(--soft2)', borderRadius: '99px', overflow: 'hidden' } }, h('i', { style: { display: 'block', height: '100%', width: `${res.scores[k] * 20}%`, background: 'var(--ok)' } })),
+      h('b', {}, `${res.scores[k]}/5`));
+    return h('div', { class: 'card', style: { marginTop: '16px' } },
+      h('h3', {}, `Taxminiy daraja: ${res.cefr || '—'} · o'rtacha ${res.average}/5`),
+      ...Object.keys(res.scores).map(bar),
+      res.summary ? h('p', { style: { marginTop: '10px' } }, res.summary) : null,
+      res.strengths.length ? h('div', {}, h('b', {}, '✓ Yaxshi tomonlar'), h('ul', {}, res.strengths.map((x) => h('li', {}, x)))) : null,
+      res.fixes.length ? h('div', {}, h('b', {}, '✎ Tuzatishlar'), res.fixes.map((f) => h('div', { style: { margin: '8px 0', padding: '10px', borderRadius: '10px', background: 'var(--soft)' } },
+        h('div', { style: { color: 'var(--bad)', textDecoration: 'line-through' } }, f.original), h('div', { style: { color: 'var(--ok)' } }, f.better), h('div', { class: 'muted' }, f.why)))) : null,
+      res.next ? h('p', { class: 'muted' }, '➡ ' + res.next) : null);
+  }
+  const DISCLAIMER_TXT = "Bu LinguaFlow ichki tayyorgarlik bahosi (taxminiy), rasmiy IELTS/CEFR natijasi emas.";
+  const backBtn = () => h('a', { class: 'btn btn-ghost btn-sm', href: '#/practice' }, '← Orqaga');
+
+  async function promptPicker(kind, title, lead) {
+    await loadCourse();
+    const lang = S.user.currentLang;
+    const data = await api('GET', `/api/${kind}/prompts?lang=${lang}`);
+    return { lang, data };
+  }
+
+  async function renderWriting() {
+    const { lang, data } = await promptPicker('writing');
+    let chosen = data.prompts[0] || null;
+    const resultBox = h('div', {});
+    const area = h('textarea', { class: 't-input', rows: 10, dir: data.lang.dir, placeholder: 'Shu yerga yozing...', style: { width: '100%' } });
+    const counter = h('div', { class: 'muted' }, '0 so\'z');
+    area.addEventListener('input', () => { counter.textContent = `${(area.value.trim().match(/\S+/g) || []).length} so'z`; });
+    const promptBox = h('div', { class: 'card', style: { background: 'var(--soft)', margin: '12px 0' } });
+    const customInp = h('input', { class: 't-input', placeholder: "Yoki o'z mavzuingiz (5-300 belgi)", style: { width: '100%', marginTop: '8px' } });
+    const drawPrompt = () => { promptBox.replaceChildren(chosen ? h('div', {}, h('b', {}, `${chosen.level} · `), chosen.prompt, h('div', { class: 'muted' }, `Kamida ${chosen.min_words || 80} ta so'z`)) : h('div', { class: 'muted' }, "Tasdiqlangan mavzu yo'q: o'z mavzuingizni yozing.")); };
+    drawPrompt();
+    const list = h('div', { style: { display: 'flex', gap: '6px', flexWrap: 'wrap' } }, data.prompts.map((p, i) => h('button', { class: 'btn btn-ghost btn-sm', onclick: () => { chosen = p; customInp.value = ''; drawPrompt(); } }, `${p.level} #${i + 1}`)));
+    const submit = h('button', { class: 'btn btn-main', onclick: async () => {
+      submit.disabled = true; submit.textContent = 'Baholanmoqda...';
+      try {
+        const body = { lang, text: area.value };
+        if (customInp.value.trim()) { body.prompt = customInp.value.trim(); } else if (chosen) body.itemId = chosen.id; else { toast('Mavzu tanlang'); return; }
+        const r = await api('POST', '/api/writing/submit', body);
+        if (r.user) S.user = r.user;
+        resultBox.replaceChildren(rubricView(r.result, { task: 'Vazifa', coherence: 'Bog\'liqlik', vocabulary: "Lug'at", grammar: 'Grammatika' }), h('p', { class: 'muted' }, `+${r.xp} XP · ${DISCLAIMER_TXT}`));
+      } catch (e) { toast(e.message); } finally { submit.disabled = false; submit.textContent = 'Baholash'; }
+    } }, 'Baholash');
+    await shell('/practice', [backBtn(), h('h1', {}, '✍️ Yozish'),
+      h('p', { class: 'lead' }, `${S.course.lang.flag} ${S.course.lang.name}: matn yozing, AI ustoz 4 mezon bo'yicha baholaydi.`),
+      data.aiEnabled ? null : h('div', { class: 'announce warn' }, "AI baholash hozircha o'chiq (serverda API kalit sozlanmagan)."),
+      list, promptBox, customInp, area, counter, h('div', { style: { marginTop: '10px' } }, submit), resultBox], { wide: true });
+  }
+
+  async function renderSpeaking() {
+    const { lang, data } = await promptPicker('speaking');
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    let chosen = data.prompts[0] || null;
+    let rec = null, startedAt = 0, seconds = 0;
+    const resultBox = h('div', {});
+    const area = h('textarea', { class: 't-input', rows: 6, dir: data.lang.dir, placeholder: SR ? 'Gapirganingiz shu yerda matn bo\'lib chiqadi (tuzatishingiz mumkin)...' : "Brauzeringiz nutqni tanimaydi: javobingizni shu yerga yozing.", style: { width: '100%' } });
+    const promptBox = h('div', { class: 'card', style: { background: 'var(--soft)', margin: '12px 0' } });
+    const timer = h('span', { class: 'muted' }, '');
+    const drawPrompt = () => promptBox.replaceChildren(chosen ? h('div', {}, h('b', {}, `${chosen.level}${chosen.part ? ' · Part ' + chosen.part : ''} · `), chosen.prompt, chosen.prep_seconds ? h('div', { class: 'muted' }, `Tayyorlanish: ${chosen.prep_seconds} soniya`) : null) : h('div', { class: 'muted' }, "Tasdiqlangan savol yo'q."));
+    drawPrompt();
+    const list = h('div', { style: { display: 'flex', gap: '6px', flexWrap: 'wrap' } }, data.prompts.map((p, i) => h('button', { class: 'btn btn-ghost btn-sm', onclick: () => { chosen = p; drawPrompt(); } }, `${p.level} #${i + 1}`)));
+    let tick = null;
+    const recBtn = h('button', { class: 'btn btn-main', onclick: () => {
+      if (rec) { rec.stop(); return; }
+      if (!SR) { toast('Bu brauzerda ovoz yozish yo\'q'); return; }
+      rec = new SR(); rec.lang = data.lang.tts; rec.continuous = true; rec.interimResults = false;
+      const base = area.value ? area.value + ' ' : '';
+      let acc = '';
+      rec.onresult = (ev) => { acc = ''; for (const r of ev.results) acc += r[0].transcript + ' '; area.value = (base + acc).trim(); };
+      rec.onend = () => { rec = null; clearInterval(tick); seconds += Math.round((Date.now() - startedAt) / 1000); recBtn.textContent = '🎙️ Yozishni boshlash'; };
+      rec.onerror = () => { toast('Mikrofon xatosi yoki ruxsat berilmadi'); };
+      startedAt = Date.now(); rec.start(); recBtn.textContent = '⏹ To\'xtatish';
+      tick = setInterval(() => { timer.textContent = `${Math.round((Date.now() - startedAt) / 1000)} s`; }, 500);
+    } }, SR ? '🎙️ Yozishni boshlash' : "🎙️ (brauzer qo'llamaydi)");
+    const submit = h('button', { class: 'btn btn-main', onclick: async () => {
+      if (rec) rec.stop();
+      const secs = seconds || Math.max(5, Math.round((area.value.trim().split(/\s+/).length / 120) * 60)); // typed fallback: assume ~120 wpm
+      submit.disabled = true; submit.textContent = 'Baholanmoqda...';
+      try {
+        const body = { lang, transcript: area.value, seconds: secs };
+        if (chosen) body.itemId = chosen.id; else { toast('Savol tanlang'); return; }
+        const r = await api('POST', '/api/speaking/submit', body);
+        if (r.user) S.user = r.user;
+        resultBox.replaceChildren(rubricView(r.result, { fluency: 'Ravonlik', coherence: 'Bog\'liqlik', vocabulary: "Lug'at", grammar: 'Grammatika' }), h('p', { class: 'muted' }, `${r.wpm} so'z/daqiqa · +${r.xp} XP · ${r.note} ${DISCLAIMER_TXT}`));
+      } catch (e) { toast(e.message); } finally { submit.disabled = false; submit.textContent = 'Baholash'; }
+    } }, 'Baholash');
+    await shell('/practice', [backBtn(), h('h1', {}, '🎤 Gapirish'),
+      h('p', { class: 'lead' }, `${S.course.lang.flag} ${S.course.lang.name}: savolga javob bering. Ovozingiz brauzerda matnga aylantiriladi (brauzer ovozni tashqi xizmatga yuborishi mumkin).`),
+      data.aiEnabled ? null : h('div', { class: 'announce warn' }, "AI baholash hozircha o'chiq (serverda API kalit sozlanmagan)."),
+      list, promptBox, h('div', { style: { display: 'flex', gap: '10px', alignItems: 'center', margin: '10px 0' } }, recBtn, timer), area, h('div', { style: { marginTop: '10px' } }, submit), resultBox], { wide: true });
+  }
+
+  async function renderMock() {
+    await loadCourse();
+    const lang = S.user.currentLang;
+    let level = 'B2';
+    const levelBtns = h('div', { style: { display: 'flex', gap: '8px', margin: '14px 0' } }, LEVEL_LIST.map((lv) => h('button', { class: 'btn btn-sm ' + (lv === level ? 'btn-main' : 'btn-ghost'), onclick: (e) => { level = lv; levelBtns.querySelectorAll('button').forEach((b) => { b.className = 'btn btn-sm btn-ghost'; }); e.currentTarget.className = 'btn btn-sm btn-main'; } }, lv)));
+    const hist = await api('GET', '/api/mock/history').catch(() => ({ history: [] }));
+    await shell('/practice', [backBtn(), h('h1', {}, '🎓 Mock imtihon'),
+      h('p', { class: 'lead' }, "Tasdiqlangan savollardan vaqtli imtihon (grammatika, o'qish, eshitish). Yozish va gapirish alohida mashq qilinadi."),
+      levelBtns, h('button', { class: 'btn btn-main', onclick: () => runMock(lang, level) }, 'Boshlash'),
+      hist.history.length ? h('div', { style: { marginTop: '24px' } }, h('h3', {}, 'Oldingi natijalar'), hist.history.map((r) => h('div', { class: 'muted' }, `${new Date(r.createdAt).toLocaleDateString()} · ${r.lang.toUpperCase()} ${r.level} · ${r.percent}% (${r.correct}/${r.total})`))) : null], { wide: true });
+  }
+
+  async function runMock(lang, level) {
+    let m;
+    try { m = await api('POST', '/api/mock/start', { lang, level }); } catch (e) { toast(e.message); return; }
+    const answers = {};
+    let left = m.durationMin * 60, done = false;
+    const clock = h('b', {});
+    const finish = async () => {
+      if (done) return; done = true; clearInterval(iv);
+      try {
+        const r = await api('POST', `/api/mock/${m.sessionId}/submit`, { answers });
+        if (r.user) S.user = r.user;
+        const secs = Object.entries(r.sections).map(([k, v]) => `${k}: ${v.correct}/${v.total}`).join(' · ');
+        mount(h('div', { style: { padding: '24px 12px', maxWidth: '760px', margin: '0 auto' } }, h('div', { class: 'card' },
+          h('h2', {}, `${r.percent}% · ${r.correct}/${r.total}`), h('p', { class: 'lead' }, r.message), h('p', { class: 'muted' }, `${secs} · +${r.xp} XP`),
+          h('p', { class: 'muted' }, r.disclaimer),
+          h('button', { class: 'btn btn-main', onclick: () => { location.hash = '#/practice'; route(); } }, 'Tugatish'))));
+      } catch (e) { toast(e.message); }
+    };
+    const iv = setInterval(() => { left--; const mm = Math.floor(left / 60), ss = String(left % 60).padStart(2, '0'); clock.textContent = `⏱ ${mm}:${ss}`; if (left <= 0) finish(); }, 1000);
+    const cards = m.items.map((it, n) => {
+      const prompt = it.question || it.statement || it.text;
+      let input;
+      if (it.type === 'mcq' || it.type === 'tf_ng') {
+        const opts = it.type === 'mcq' ? it.options.map((o, i) => ({ value: i, label: o })) : it.options;
+        const btns = opts.map((o) => h('button', { class: 'opt', dir: it.type === 'mcq' ? m.lang.dir : 'ltr', onclick: () => { answers[it.id] = o.value; btns.forEach((b) => b.classList.remove('sel')); btns[opts.indexOf(o)].classList.add('sel'); } }, o.label));
+        input = h('div', { class: 'opts' }, btns);
+      } else {
+        input = h('input', { class: 't-input', dir: m.lang.dir, autocomplete: 'off', oninput: (e) => { answers[it.id] = e.target.value; } });
+      }
+      return h('div', { class: 'card', style: { marginBottom: '14px' } },
+        h('div', { class: 'muted' }, `${n + 1}. ${it.skill}`),
+        it.passage ? h('div', { style: { background: 'var(--soft)', padding: '12px', borderRadius: '12px', margin: '8px 0', whiteSpace: 'pre-wrap' }, dir: m.lang.dir }, it.passage) : null,
+        it.speak ? h('button', { class: 'btn btn-ghost btn-sm', onclick: () => speak(it.speak, m.lang.tts, { rate: 0.85 }) }, '🔊 Tinglash') : null,
+        h('h4', { dir: m.lang.dir, style: { margin: '8px 0' } }, prompt), input);
+    });
+    mount(h('div', { style: { padding: '24px 12px', maxWidth: '760px', margin: '0 auto' } },
+      h('div', { style: { position: 'sticky', top: 0, background: 'var(--bg)', padding: '8px 0', zIndex: 5, display: 'flex', justifyContent: 'space-between' } }, h('b', {}, `${level} mock imtihon`), clock),
+      cards, h('button', { class: 'btn btn-main', onclick: finish }, 'Topshirish')));
   }
 
   async function startPractice(skill, level) {

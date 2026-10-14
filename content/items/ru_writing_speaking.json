@@ -1,0 +1,278 @@
+[
+  {
+    "lang": "ru",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Напишите короткое письмо другу. Расскажите, где вы живёте, с кем вы живёте и что вы любите делать по выходным. Напишите 4–5 предложений.",
+      "min_words": 40
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Опишите свой обычный день. Что вы делаете утром, днём и вечером? Напишите не менее пяти предложений.",
+      "min_words": 45
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Вы хотите пригласить друга на день рождения. Напишите ему сообщение: скажите, когда и где будет праздник, и спросите, сможет ли он прийти.",
+      "min_words": 50
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "writing",
+    "level": "A2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Опишите вашу семью или вашего лучшего друга. Как его зовут, сколько ему лет, чем он занимается и что он любит?",
+      "min_words": 55
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Расскажите о себе: как вас зовут, откуда вы и чем вы занимаетесь?",
+      "part": 1,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Что вы обычно едите на завтрак? Что вы любите готовить?",
+      "part": 1,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Расскажите о вашем доме или квартире. Сколько в ней комнат и что в них есть? Какая комната вам нравится больше всего?",
+      "part": 2,
+      "prep_seconds": 45
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "speaking",
+    "level": "A2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Вы в магазине и хотите купить куртку. Поговорите с продавцом: скажите, какой размер и цвет вам нужен, и спросите о цене.",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Расскажите о поездке, которая вам запомнилась. Куда вы ездили, с кем, что вам понравилось, а что нет? Объясните, почему эта поездка была особенной.",
+      "min_words": 80
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Вы хотите записаться на курсы иностранного языка. Напишите письмо в школу: представьтесь, объясните, зачем вам нужен язык, и задайте три вопроса о занятиях.",
+      "min_words": 93
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Некоторые люди считают, что лучше жить в большом городе, а другие предпочитают небольшой город или село. Напишите, что вы думаете, и приведите две-три причины.",
+      "min_words": 106
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "writing",
+    "level": "B1",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Напишите отзыв о книге, фильме или ресторане, который вы недавно посетили. Опишите, что вам понравилось и что нет, и скажите, порекомендуете ли вы это друзьям.",
+      "min_words": 120
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Что вы любите делать в свободное время? Как часто вы этим занимаетесь?",
+      "part": 1,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Расскажите о человеке, который сильно повлиял на вас. Кто это, как вы познакомились и чему он вас научил?",
+      "part": 2,
+      "prep_seconds": 45
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Расскажите о случае, когда вы потеряли что-то важное или опоздали. Что произошло и как вы решили проблему?",
+      "part": 2,
+      "prep_seconds": 45
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "speaking",
+    "level": "B1",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Как вы думаете, нужно ли учить иностранные языки, если есть переводчики в телефоне? Объясните своё мнение.",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Многие считают, что дети должны как можно раньше начинать пользоваться компьютерами и смартфонами. Выскажите своё мнение: назовите преимущества и недостатки и сделайте вывод.",
+      "min_words": 150
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Вы получили предложение работать за границей в течение двух лет. Напишите эссе: какие плюсы и минусы у такого решения и как бы вы поступили на самом деле?",
+      "min_words": 173
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Напишите официальное письмо в администрацию города с жалобой на состояние парка или общественного транспорта. Опишите проблему, объясните её последствия и предложите решения.",
+      "min_words": 196
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "writing",
+    "level": "B2",
+    "type": "essay_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Что изменилось бы в обществе, если бы все люди работали удалённо? Рассмотрите последствия для экономики, семьи и городов и выскажите собственную позицию.",
+      "min_words": 220
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Какие качества, по вашему мнению, нужны хорошему руководителю? Почему?",
+      "part": 1,
+      "prep_seconds": 0
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Опишите ситуацию, когда вам пришлось принять трудное решение. Какие у него были плюсы и минусы и довольны ли вы результатом?",
+      "part": 2,
+      "prep_seconds": 45
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Что бы вы сделали, если бы выиграли большую сумму денег? Объясните, почему вы выбрали бы именно это.",
+      "part": 2,
+      "prep_seconds": 45
+    }
+  },
+  {
+    "lang": "ru",
+    "skill": "speaking",
+    "level": "B2",
+    "type": "speaking_prompt",
+    "exam": "general",
+    "payload": {
+      "prompt": "Какие плюсы и минусы у массового туризма для страны и местных жителей? Как можно решить связанные с ним проблемы?",
+      "part": 3,
+      "prep_seconds": 0
+    }
+  }
+]

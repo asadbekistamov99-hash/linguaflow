@@ -858,3 +858,109 @@ test('practice: only approved items, answers hidden until answered, XP capped, n
   assert.equal(sum.counts.find((c) => c.skill === 'reading' && c.level === 'B1').n, 5);
   app.close();
 });
+
+test('writing/speaking grading: AI rubric normalized, quota per feature, validation, history', async () => {
+  const realFetch = global.fetch;
+  let aiCalls = 0, aiReply = null;
+  global.fetch = async (url, opts) => {
+    if (String(url).includes('generativelanguage.googleapis.com')) {
+      aiCalls++;
+      return { ok: true, status: 200, json: async () => ({ candidates: [{ content: { parts: [{ text: aiReply }] } }] }) };
+    }
+    return realFetch(url, opts);
+  };
+  process.env.GEMINI_API_KEY = 'test-key';
+  try {
+    const app = await boot();
+    const admin = app.client(); await reg(admin, 'Boss', 'gr@test.uz');
+    const u = app.client(); await reg(u, 'Student', 'gr-s@test.uz');
+    const mk = async (skill, type, payload) => {
+      const id = (await admin('POST', '/api/admin/items', { lang: 'en', skill, level: 'B1', type, payload })).data.id;
+      for (const status of ['review', 'approved']) await admin('POST', `/api/admin/items/${id}/status`, { status });
+      return id;
+    };
+    const essayId = await mk('writing', 'essay_prompt', { prompt: 'Describe your city.', min_words: 40 });
+    const speakId = await mk('speaking', 'speaking_prompt', { prompt: 'Talk about your weekend.' });
+    const essay = 'My city is big and old. '.repeat(6);
+    const good = JSON.stringify({ scores: { task: 4, coherence: 3, vocabulary: 9, grammar: -2 }, cefr: 'B1', summary_uz: 'Yaxshi.', strengths_uz: ['Aniq'], fixes: [{ original: 'is big', better: 'is large', why_uz: 'Sinonim' }, { original: '', better: 'x' }], next_step_uz: 'Ko\'proq yozing' });
+
+    assert.equal((await u('GET', '/api/writing/prompts?lang=en')).data.prompts.length, 1);
+    assert.equal((await u('POST', '/api/writing/submit', { lang: 'en', itemId: essayId, text: 'too short' })).status, 400);
+    assert.equal((await u('POST', '/api/writing/submit', { lang: 'en', itemId: 99999, text: essay })).status, 400);
+
+    aiReply = 'garbage, not json';
+    assert.equal((await u('POST', '/api/writing/submit', { lang: 'en', itemId: essayId, text: essay })).status, 502);
+
+    aiReply = '```json\n' + good + '\n```';
+    const w = await u('POST', '/api/writing/submit', { lang: 'en', itemId: essayId, text: essay });
+    assert.equal(w.status, 200);
+    assert.deepEqual(w.data.result.scores, { task: 4, coherence: 3, vocabulary: 5, grammar: 0 });
+    assert.equal(w.data.result.fixes.length, 1);
+    assert.equal(w.data.result.cefr, 'B1');
+    assert.equal(w.data.xp, 10);
+    assert.match(w.data.disclaimer, /rasmiy/);
+
+    // speaking
+    const sp = (extra) => u('POST', '/api/speaking/submit', { lang: 'en', itemId: speakId, transcript: 'I went to the park with my friends and we played football all afternoon yesterday.', seconds: 20, ...extra });
+    assert.equal((await sp({ transcript: 'too short' })).status, 400);
+    assert.equal((await sp({ seconds: 1 })).status, 400);
+    assert.equal((await sp({ seconds: 5, transcript: 'word '.repeat(60) })).status, 400); // implausible speed
+    const speakGood = JSON.stringify({ scores: { fluency: 3, coherence: 3, vocabulary: 3, grammar: 4 }, cefr: 'A2', summary_uz: 'Yaxshi', strengths_uz: [], fixes: [], next_step_uz: '' });
+    aiReply = speakGood;
+    const s1 = await sp({});
+    assert.equal(s1.status, 200);
+    assert.equal(s1.data.wpm, 45);
+
+    const hist = (await u('GET', '/api/skills/history')).data.history;
+    assert.deepEqual(hist.map((h) => h.kind).sort(), ['speaking', 'writing']);
+
+    // per-feature quotas: writing limit 1 does not block speaking
+    assert.equal((await admin('PUT', '/api/admin/limits', { limits: { writing: 2 } })).status, 200);
+    const before = aiCalls;
+    aiReply = good;
+    assert.equal((await u('POST', '/api/writing/submit', { lang: 'en', itemId: essayId, text: essay })).status, 429); // 2 used (1 failed parse + 1 ok)
+    assert.equal(aiCalls, before);
+    aiReply = speakGood;
+    assert.equal((await sp({})).status, 200);
+    // admins exempt, and disabled provider => 503 without consuming
+    delete process.env.GEMINI_API_KEY;
+    assert.equal((await u('POST', '/api/writing/submit', { lang: 'en', itemId: essayId, text: essay })).status, 503);
+    app.close();
+  } finally {
+    global.fetch = realFetch;
+    delete process.env.GEMINI_API_KEY;
+  }
+});
+
+test('mock exam: from approved items, answers hidden, scored server-side, one submit', async () => {
+  const app = await boot();
+  const admin = app.client(); await reg(admin, 'Boss', 'mock@test.uz');
+  const u = app.client(); await reg(u, 'Student', 'mock-s@test.uz');
+  for (let i = 0; i < 10; i++) {
+    const skill = i < 5 ? 'grammar' : 'reading';
+    const id = (await admin('POST', '/api/admin/items', { lang: 'en', skill, level: 'B2', type: 'mcq', payload: { passage: skill === 'reading' ? 'Some text.' : undefined, question: `Q${i}?`, options: ['a', 'b', 'c'], answer: 2, explanation_uz: 'Izoh' } })).data.id;
+    for (const status of ['review', 'approved']) await admin('POST', `/api/admin/items/${id}/status`, { status });
+  }
+  assert.equal((await u('POST', '/api/mock/start', { lang: 'en', level: 'C1' })).status, 404);
+  assert.equal((await u('POST', '/api/mock/start', { lang: 'en', level: 'Z9' })).status, 400);
+  const st = (await u('POST', '/api/mock/start', { lang: 'en', level: 'B2' })).data;
+  assert.equal(st.items.length, 10);
+  assert.ok(st.durationMin >= 10);
+  assert.ok(st.items.every((i) => i.answer === undefined));
+  const intruder = app.client(); await reg(intruder, 'Eve', 'mock-e@test.uz');
+  assert.equal((await intruder('POST', `/api/mock/${st.sessionId}/submit`, { answers: {} })).status, 404);
+  const answers = Object.fromEntries(st.items.map((it, k) => [it.id, k < 7 ? 2 : 0])); // 7 right of 10
+  answers[st.items[9].id] = ''; // unanswered
+  const res = (await u('POST', `/api/mock/${st.sessionId}/submit`, { answers })).data;
+  assert.equal(res.correct, 7);
+  assert.equal(res.percent, 70);
+  assert.equal(res.verdict, 'ready');
+  assert.equal(res.sections.grammar.total + res.sections.reading.total, 10);
+  assert.equal(res.review.filter((r) => !r.answered).length, 1);
+  assert.equal(res.xp, 21);
+  assert.equal((await u('POST', `/api/mock/${st.sessionId}/submit`, { answers })).status, 404);
+  const hist = (await u('GET', '/api/mock/history')).data.history;
+  assert.equal(hist.length, 1);
+  assert.equal(hist[0].percent, 70);
+  app.close();
+});

@@ -1,0 +1,52 @@
+LinguaFlow tanishuv videosi: ovoz yozish matni
+
+[00:06] Bosh sahifa. Ingliz, rus, nemis, fransuz, ispan va arab tillari. Hozircha butunlay bepul, karta kerak emas.
+
+[00:13] Tillar. Ingliz tili C2 gacha, qolgan 5 til B2 gacha. Mashqlar imtihon uslubida (IELTS, Goethe, DELF, DELE, TORFL). Bu tayyorgarlik: rasmiy sertifikat emas.
+
+[00:21] Imkoniyatlar. AI ustoz, gapirish mashqi, yozish tekshiruvi, aqlli takrorlash, imtihonga tayyorgarlik, XP va reyting.
+
+[00:29] Daraja yo'li A1 → C2. Har bir bosqichda mavzu testlari va ichki tayyorgarlik sertifikati (rasmiy emas).
+
+[00:36] Narxlar. Hozircha hammasi bepul. AI imkoniyatlari kunlik bepul limit bilan ishlaydi.
+
+[00:44] Ko'p beriladigan savollar. Sertifikat, AI aniqligi va ma'lumotlar xavfsizligi haqida ochiq javoblar.
+
+[00:48] 1-qadam. Ro'yxatdan o'tish. Ism, email va parol: bir daqiqa. Parol shifrlanadi, kirish xavfsiz cookie orqali.
+
+[00:58] 2-qadam. Tilni tanlang. Istalgan vaqt boshqa tilga o'tish mumkin: har til uchun alohida progress.
+
+[01:03] 3-qadam. O'rganish yo'li. Mavzular ketma-ket. Har 5 ta so'z — bitta dars, mavzu oxirida test (80% dan o'tish kerak).
+
+[01:10] 4-qadam. Dars. Yangi so'zlar → test → eshitib topish → yozish → juftlash → jumla tuzish. Javoblar serverda tekshiriladi.
+
+[03:36] Dars natijasi. Yulduzlar, XP va kunlik seriya. Keyingi dars ochiladi.
+
+[03:44] 5-qadam. Aqlli takrorlash. O'rgangan so'zlar unutilishdan oldin qaytariladi (SM-2 jadvali). Faqat vaqti kelganlari so'raladi.
+
+[03:50] Takrorlash mashqlari. To'g'ri javob berilgan so'zlar keyinroq, xato qilinganlari tezroq qaytariladi.
+
+[04:14] Lug'at. O'rgangan so'zlaringiz: qidirish, tinglash va mustahkamlik ko'rsatkichi.
+
+[04:20] 6-qadam. O'yinlar. Xotira, Blitz, So'z tuzish, Jumla quruvchi. Natijalar serverda tekshiriladi, kuniga 80 XP gacha; haftalik reyting bor.
+
+[04:27] 7-qadam. Imtihon mashqlari. O'qish, eshitish, grammatika, lug'at: faqat tekshiruvchilar tasdiqlagan savollar. To'g'ri javob javob berilgandan keyin ko'rinadi.
+
+[04:35] O'qish mashqi. Matnni o'qing va savolga javob bering: darhol izoh chiqadi.
+
+[04:59] 8-qadam. Yozish (AI tekshiruvi). Mavzu tanlang yoki o'zingiznikini yozing. AI 4 mezon bo'yicha baholaydi. Quyidagi natija NAMUNA.
+
+[05:14] AI natijasi (namuna). Har mezon 0–5, taxminiy daraja, xatolar va tuzatishlar o'zbekcha. Bu rasmiy baho emas.
+
+[05:21] 9-qadam. Gapirish. Mikrofonda javob bering: nutq brauzerda matnga aylantiriladi. Talaffuz baholanmaydi; matn ravonlik, lug'at va grammatika bo'yicha tekshiriladi.
+
+[05:29] AI natijasi (namuna). So'z/daqiqa tezligi ham hisoblanadi.
+
+[05:36] 10-qadam. Mock imtihon. Vaqtli imtihon: grammatika, lug'at, o'qish, eshitish. Server baholaydi.
+
+[05:43] Imtihon jarayoni. Taymer ishlaydi; javoblar topshirilgandan keyingina tekshiriladi.
+
+[06:12] Natija (namuna). Bo'limlar bo'yicha ball va ingliz tilida taxminiy IELTS-uslubidagi ball. Rasmiy natija emas.
+
+[06:22] 11-qadam. Profil. XP, daraja, kunlik seriya, nishonlar va kunlik maqsad. Tungi/kunduzgi tema. Hisobni istalgan vaqt o'chirish mumkin.
+

@@ -1,7 +1,18 @@
 {
   "version": 2,
   "functions": {
-    "api/index.js": { "maxDuration": 30, "includeFiles": "{public,content,src}/**" }
+    "api/index.js": {
+      "maxDuration": 30,
+      "includeFiles": "{public,content,src}/**"
+    }
   },
-  "rewrites": [{ "source": "/(.*)", "destination": "/api/index" }]
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index"
+    }
+  ],
+  "framework": null,
+  "buildCommand": "",
+  "installCommand": ""
 }

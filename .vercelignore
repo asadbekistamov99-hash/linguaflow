@@ -3,3 +3,5 @@ test
 data
 .env
 *.md
+# the long-running server entry is for VPS/Render; on Vercel only api/index.js must be the entry
+server.js

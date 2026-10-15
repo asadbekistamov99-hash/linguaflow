@@ -25,6 +25,7 @@ npm test                 # backend testlari
 | `TZ_OFFSET_HOURS` | kun chegarasi (standart 5 = O'zbekiston) |
 | `AI_PROVIDER`, `GEMINI_API_KEY`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `TUTOR_MODEL` | AI ustoz (kalit bo'lmasa o'chiq) |
 | `ADMIN_EMAILS`, `FIRST_USER_ADMIN` | admin tayinlash |
+| `GOOGLE_CLIENT_ID` | Google orqali kirish (`GOOGLE-LOGIN.md`) |
 | `CONTACT_EMAIL` | `/privacy` va `/terms` sahifalarida ko'rsatiladigan aloqa emaili |
 | `BACKUP_ENABLED` (`0` = o'chirish), `BACKUP_EVERY_HOURS` (24), `BACKUP_KEEP` (7) | kunlik zaxira nusxa: `DATA_DIR/backups/` |
 

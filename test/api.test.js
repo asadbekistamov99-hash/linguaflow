@@ -1050,3 +1050,61 @@ test('vercel entry: handler serves the app, demo content seeded, first user is n
   const out = JSON.parse(r.stdout.trim().split('\n').pop());
   assert.deepEqual(out, { health: true, landing: 200, role: 'user', banner: true });
 });
+
+test('google sign-in: verified token creates/reuses account, rejects wrong audience, unverified email, banned; mic allowed', async () => {
+  const realFetch = global.fetch;
+  const tokens = {
+    good: { aud: 'client-123', iss: 'https://accounts.google.com', email: 'Student@Gmail.com', email_verified: 'true', name: 'Dilnoza R', exp: String(Math.floor(Date.now() / 1000) + 3600) },
+    wrongaud: { aud: 'other-client', iss: 'accounts.google.com', email: 'x@gmail.com', email_verified: 'true', exp: String(Math.floor(Date.now() / 1000) + 3600) },
+    unverified: { aud: 'client-123', iss: 'accounts.google.com', email: 'u@gmail.com', email_verified: 'false', exp: String(Math.floor(Date.now() / 1000) + 3600) },
+    expired: { aud: 'client-123', iss: 'accounts.google.com', email: 'e@gmail.com', email_verified: 'true', exp: String(Math.floor(Date.now() / 1000) - 10) },
+    adminmail: { aud: 'client-123', iss: 'accounts.google.com', email: 'boss@gmail.com', email_verified: 'true', name: 'Boss', exp: String(Math.floor(Date.now() / 1000) + 3600) },
+  };
+  global.fetch = async (url, opts) => {
+    if (String(url).startsWith('https://oauth2.googleapis.com/tokeninfo')) {
+      const id = new URL(url).searchParams.get('id_token').replace(/^t_/, '').replace(/_+$/, '');
+      const t = tokens[id];
+      return t ? { ok: true, status: 200, json: async () => t } : { ok: false, status: 400, json: async () => ({ error: 'invalid_token' }) };
+    }
+    return realFetch(url, opts);
+  };
+  const cred = (name) => `t_${name}`.padEnd(30, '_');
+  try {
+    const app = await boot();
+    const api = app.client();
+    assert.equal((await api('POST', '/api/auth/google', { credential: cred('good') })).status, 404); // not configured
+    process.env.GOOGLE_CLIENT_ID = 'client-123';
+    process.env.ADMIN_EMAILS = 'boss@gmail.com';
+    process.env.FIRST_USER_ADMIN = '0';
+    // adminEmails is read at startup: boot a second app that sees the env
+    const app2 = await boot();
+    const c = app2.client();
+    assert.equal((await c('GET', '/api/config')).data.googleClientId, 'client-123');
+    assert.equal((await c('POST', '/api/auth/google', { credential: 'short' })).status, 400);
+    assert.equal((await c('POST', '/api/auth/google', { credential: cred('nope') })).status, 401);
+    assert.equal((await c('POST', '/api/auth/google', { credential: cred('wrongaud') })).status, 401);
+    assert.equal((await c('POST', '/api/auth/google', { credential: cred('unverified') })).status, 401);
+    assert.equal((await c('POST', '/api/auth/google', { credential: cred('expired') })).status, 401);
+    const ok = await c('POST', '/api/auth/google', { credential: cred('good') });
+    assert.equal(ok.status, 200);
+    assert.equal(ok.data.user.email, 'student@gmail.com');
+    assert.equal(ok.data.user.name, 'Dilnoza R');
+    assert.equal(ok.data.user.role, 'user');
+    assert.equal((await c('GET', '/api/me')).status, 200); // session cookie works
+    const again = app2.client();
+    assert.equal((await again('POST', '/api/auth/google', { credential: cred('good') })).status, 200);
+    assert.equal(app2.db.prepare("SELECT COUNT(*) n FROM users WHERE email='student@gmail.com'").get().n, 1);
+    const boss = await app2.client()('POST', '/api/auth/google', { credential: cred('adminmail') });
+    assert.equal(boss.data.user.role, 'admin');
+    app2.db.prepare("UPDATE users SET banned=1 WHERE email='student@gmail.com'").run();
+    assert.equal((await app2.client()('POST', '/api/auth/google', { credential: cred('good') })).status, 403);
+    // microphone must stay allowed for the speaking exercise; Google script/frame allowed by the CSP
+    const h = await fetch(`${app2.base}/app`);
+    assert.match(h.headers.get('permissions-policy'), /microphone=\(self\)/);
+    assert.match(h.headers.get('content-security-policy'), /accounts\.google\.com/);
+    app.close(); app2.close();
+  } finally {
+    global.fetch = realFetch;
+    delete process.env.GOOGLE_CLIENT_ID; delete process.env.ADMIN_EMAILS; delete process.env.FIRST_USER_ADMIN;
+  }
+});

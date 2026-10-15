@@ -6,7 +6,7 @@ const { LANGS, RAW_UNITS } = require('./base');
 // Seed = base units + every units_*.js file, with sentences merged in by unit key.
 function loadSeed() {
   const units = RAW_UNITS.map((u) => ({ key: u.key, title: u.title, emoji: u.emoji, level: 'A1', rows: u.rows, sentences: [] }));
-  const extra = fs.readdirSync(__dirname).filter((f) => /^units_.*\.js$/.test(f)).sort();
+  const extra = fs.readdirSync(__dirname).filter((f) => /^units_.*\.c?js$/.test(f)).sort();
   for (const f of extra) {
     const m = /^units_lvl_([a-c][12])_/.exec(f);
     const level = m ? m[1].toUpperCase() : 'A1';

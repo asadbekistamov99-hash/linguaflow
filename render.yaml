@@ -26,6 +26,8 @@ services:
         sync: false
       - key: CONTACT_EMAIL   # maxfiylik/shartlar sahifalarida ko'rsatiladigan aloqa emaili
         sync: false
+      - key: GOOGLE_CLIENT_ID   # Google orqali kirish (ixtiyoriy), GOOGLE-LOGIN.md
+        sync: false
       - key: GEMINI_API_KEY  # AI ustoz uchun (ixtiyoriy)
         sync: false
       - key: AI_PROVIDER

@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "functions": {
+    "api/index.js": { "maxDuration": 30, "includeFiles": "{public,content,src}/**" }
+  },
+  "rewrites": [{ "source": "/(.*)", "destination": "/api/index" }]
+}

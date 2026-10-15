@@ -1030,3 +1030,23 @@ test('backup: consistent snapshot, rotation, status endpoint; legal pages; accou
   assert.equal((await user('GET', '/api/me')).status, 401);
   app.close();
 });
+
+test('vercel entry: handler serves the app, demo content seeded, first user is not admin', () => {
+  const { spawnSync } = require('node:child_process');
+  const script = `
+    const http = require('node:http');
+    process.env.DATA_DIR = ${JSON.stringify(path.join(os.tmpdir(), 'lf-vercel-' + Date.now()))};
+    const handler = require(${JSON.stringify(path.join(__dirname, '..', 'api', 'index.js'))});
+    const srv = http.createServer(handler).listen(0, async () => {
+      const base = 'http://127.0.0.1:' + srv.address().port, out = {};
+      out.health = (await (await fetch(base + '/api/health')).json()).ok;
+      out.landing = (await fetch(base + '/')).status;
+      const r = await fetch(base + '/api/auth/register', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ name: 'Demo', email: 'd@x.uz', password: 'secret1234' }) });
+      out.role = (await r.json()).user.role;
+      out.banner = !!(await (await fetch(base + '/api/config')).json()).announcement;
+      console.log(JSON.stringify(out)); srv.close(); process.exit(0);
+    });`;
+  const r = spawnSync(process.execPath, ['--disable-warning=ExperimentalWarning', '-e', script], { encoding: 'utf8', env: { ...process.env, DEMO_MODE: '1', ADMIN_EMAILS: '' } });
+  const out = JSON.parse(r.stdout.trim().split('\n').pop());
+  assert.deepEqual(out, { health: true, landing: 200, role: 'user', banner: true });
+});

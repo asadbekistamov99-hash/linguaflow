@@ -1,6 +1,6 @@
 'use strict';
 const LANGS = {
-  en: { code: 'en', name: 'Ingliz tili', native: 'English', flag: '🇬🇧', tts: 'en-GB', dir: 'ltr', color: '#7c5cff' },
+  en: { code: 'en', name: 'Ingliz tili', native: 'English', flag: 'EN', tts: 'en-US', dir: 'ltr', color: '#7c5cff' },
   ru: { code: 'ru', name: 'Rus tili', native: 'Русский', flag: '🇷🇺', tts: 'ru-RU', dir: 'ltr', color: '#00d4ff' },
   de: { code: 'de', name: 'Nemis tili', native: 'Deutsch', flag: '🇩🇪', tts: 'de-DE', dir: 'ltr', color: '#ffc94d' },
   fr: { code: 'fr', name: 'Fransuz tili', native: 'Français', flag: '🇫🇷', tts: 'fr-FR', dir: 'ltr', color: '#4f8bff' },

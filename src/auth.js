@@ -51,6 +51,25 @@ function sign(secret, userId, createdAt, ver = 0) {
   return `${payload}.${mac}`;
 }
 
+function sign2fa(secret, userId) {
+  const payload = b64(JSON.stringify({ uid: userId, type: '2fa_pending', exp: Date.now() + 5 * 60000 }));
+  const mac = crypto.createHmac('sha256', secret).update(payload).digest('base64url');
+  return `${payload}.${mac}`;
+}
+
+function verify2fa(secret, token) {
+  if (typeof token !== 'string') return null;
+  const [payload, mac] = token.split('.');
+  if (!payload || !mac) return null;
+  const expected = crypto.createHmac('sha256', secret).update(payload).digest();
+  const given = Buffer.from(mac, 'base64url');
+  if (given.length !== expected.length || !crypto.timingSafeEqual(given, expected)) return null;
+  try {
+    const data = JSON.parse(Buffer.from(payload, 'base64url').toString());
+    return (data.exp > Date.now() && data.type === '2fa_pending') ? { uid: data.uid } : null;
+  } catch { return null; }
+}
+
 function verify(secret, token) {
   if (typeof token !== 'string') return null;
   const [payload, mac] = token.split('.');
@@ -93,4 +112,4 @@ function createLimiter(max, windowMs) {
   };
 }
 
-module.exports = { COOKIE, DUMMY_HASH, loadSecret, hashPassword, verifyPassword, hashPasswordAsync, verifyPasswordAsync, sign, verify, parseCookies, sessionCookie, clearCookie, createLimiter };
+module.exports = { COOKIE, DUMMY_HASH, loadSecret, hashPassword, verifyPassword, hashPasswordAsync, verifyPasswordAsync, sign, verify, sign2fa, verify2fa, parseCookies, sessionCookie, clearCookie, createLimiter };

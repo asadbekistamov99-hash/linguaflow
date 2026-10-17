@@ -23,7 +23,7 @@ npm test                 # backend testlari
 | `PORT`, `DATA_DIR` | port; baza va maxfiy kalit saqlanadigan papka (standart `./data`) |
 | `SESSION_SECRET` | cookie imzosi uchun (bo'lmasa `data/.secret` yaratiladi) |
 | `TZ_OFFSET_HOURS` | kun chegarasi (standart 5 = O'zbekiston) |
-| `AI_PROVIDER`, `GEMINI_API_KEY`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `TUTOR_MODEL` | AI ustoz (kalit bo'lmasa o'chiq) |
+| `AI_PROVIDER`, `GEMINI_API_KEY`, `OPENAI_API_KEY`, `TUTOR_MODEL` | AI ustoz (kalit bo'lmasa o'chiq) |
 | `ADMIN_EMAILS`, `FIRST_USER_ADMIN` | admin tayinlash |
 | `GOOGLE_CLIENT_ID` | Google orqali kirish (`GOOGLE-LOGIN.md`) |
 | `CONTACT_EMAIL` | `/privacy` va `/terms` sahifalarida ko'rsatiladigan aloqa emaili |

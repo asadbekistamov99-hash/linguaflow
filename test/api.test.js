@@ -1050,3 +1050,70 @@ test('vercel entry: handler serves the app, demo content seeded, first user is n
   const out = JSON.parse(r.stdout.trim().split('\n').pop());
   assert.deepEqual(out, { health: true, landing: 200, role: 'user', banner: true });
 });
+
+test('learning loop: mistake notebook, skill stats, today plan, question reports auto-hide', async () => {
+  const app = await boot();
+  const admin = app.client(); await reg(admin, 'Boss', 'll@test.uz');
+  const u = app.client(); await reg(u, 'Student', 'll-s@test.uz');
+  const mk = async (skill, q) => {
+    const id = (await admin('POST', '/api/admin/items', { lang: 'en', skill, level: 'B1', type: 'mcq', payload: { question: q, options: ['a', 'b', 'c'], answer: 1, explanation_uz: 'Izoh' } })).data.id;
+    for (const status of ['review', 'approved']) await admin('POST', `/api/admin/items/${id}/status`, { status });
+    return id;
+  };
+  const ids = [];
+  for (let i = 0; i < 8; i++) ids.push(await mk(i < 6 ? 'grammar' : 'reading', `Q${i}?`));
+
+  // wrong answers go to the notebook, correct ones are logged
+  const start = async () => (await u('POST', '/api/practice/start', { skill: 'grammar', lang: 'en', count: 6 })).data;
+  let st = await start();
+  for (const it of st.items) await u('POST', `/api/practice/${st.sessionId}/answer`, { itemId: it.id, answer: 0 }); // all wrong (answer is 1)
+  const nb = (await u('GET', '/api/mistakes?lang=en')).data;
+  assert.equal(nb.count, 6);
+  assert.ok(nb.items.every((i) => i.skill === 'grammar' && i.preview && i.wrongCount === 1));
+  assert.ok(nb.items.every((i) => i.answer === undefined && i.options === undefined)); // never leaks answers
+
+  // plan: mistakes + a weak skill suggestion
+  const plan = (await u('GET', '/api/plan/today?lang=en')).data;
+  const kinds = plan.steps.map((s) => s.kind);
+  assert.ok(kinds.includes('mistakes') && kinds.includes('practice'));
+  assert.equal(plan.weakest, 'grammar');
+  const stats = (await u('GET', '/api/stats/skills?lang=en')).data.skills.find((s) => s.skill === 'grammar');
+  assert.deepEqual([stats.answered, stats.correct, stats.accuracy], [6, 0, 0]);
+
+  // notebook practice: two correct answers in a row clear a question
+  for (let round = 0; round < 2; round++) {
+    const ns = (await u('POST', '/api/practice/start', { skill: 'mistakes', lang: 'en', count: 15 })).data;
+    assert.ok(ns.items.length > 0);
+    for (const it of ns.items) await u('POST', `/api/practice/${ns.sessionId}/answer`, { itemId: it.id, answer: 1 });
+  }
+  assert.equal((await u('GET', '/api/mistakes?lang=en')).data.count, 0);
+  assert.equal((await u('POST', '/api/practice/start', { skill: 'mistakes', lang: 'en' })).status, 404);
+
+  // reports: validation, one vote per user, 3 independent users pull it back to review
+  const target = ids[0];
+  assert.equal((await u('POST', `/api/items/${target}/report`, { reason: 'bogus' })).status, 400);
+  assert.equal((await u('POST', '/api/items/99999/report', { reason: 'typo' })).status, 404);
+  assert.equal((await u('POST', `/api/items/${target}/report`, { reason: 'wrong_answer', note: 'Javob xato' })).data.hidden, false);
+  assert.equal((await u('POST', `/api/items/${target}/report`, { reason: 'wrong_answer' })).data.hidden, false); // same user again: still 1 vote
+  assert.equal(app.db.prepare("SELECT COUNT(*) n FROM item_reports WHERE item_id=?").get(target).n, 1);
+  const u2 = app.client(); await reg(u2, 'S2', 'll-2@test.uz');
+  const u3 = app.client(); await reg(u3, 'S3', 'll-3@test.uz');
+  assert.equal((await u2('POST', `/api/items/${target}/report`, { reason: 'unclear' })).data.hidden, false);
+  assert.equal((await u3('POST', `/api/items/${target}/report`, { reason: 'typo' })).data.hidden, true);
+  assert.equal(app.db.prepare('SELECT status FROM items WHERE id=?').get(target).status, 'review');
+  assert.equal((await u3('POST', `/api/items/${target}/report`, { reason: 'typo' })).status, 404); // no longer approved
+  const left = (await u('POST', '/api/practice/start', { skill: 'grammar', lang: 'en', count: 15 })).data.items.map((i) => i.id);
+  assert.ok(!left.includes(target));
+
+  // reviewers see the reports and can close them
+  const listed = (await admin('GET', '/api/admin/items?reported=1')).data;
+  assert.equal(listed.items.length, 1);
+  assert.equal(listed.items[0].reports, 3);
+  const detail = (await admin('GET', `/api/admin/items/${target}`)).data;
+  assert.equal(detail.reports.length, 3);
+  assert.ok(detail.reports.some((r) => r.note === 'Javob xato'));
+  assert.equal((await u('POST', `/api/admin/items/${target}/reports/resolve`, {})).status, 403);
+  assert.equal((await admin('POST', `/api/admin/items/${target}/reports/resolve`, {})).data.resolved, 3);
+  assert.equal((await admin('GET', '/api/admin/items?reported=1')).data.items.length, 0);
+  app.close();
+});

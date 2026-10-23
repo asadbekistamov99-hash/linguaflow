@@ -443,7 +443,7 @@
 
     const rows = data.items.map((it) => h('tr', { class: 'click', onclick: () => itemModal(it, active) },
       h('td', { class: 'muted' }, `#${it.id}`), h('td', {}, it.lang.toUpperCase()), h('td', {}, h('span', { class: 'tag' }, it.level)), h('td', {}, SKILL_LABEL[it.skill] || it.skill),
-      h('td', { class: 'muted' }, it.type), h('td', {}, statusTag(it.status)), h('td', {}, snippet(it)), h('td', { class: 'muted' }, it.author || '—')));
+      h('td', { class: 'muted' }, it.type), h('td', {}, statusTag(it.status), it.reports ? h('span', { class: 'tag ban', title: "O'quvchilar xato haqida xabar bergan", style: { marginLeft: '6px' } }, `⚑ ${it.reports}`) : null), h('td', {}, snippet(it)), h('td', { class: 'muted' }, it.author || '—')));
 
     shell(active, h('h1', {}, 'Savollar banki'),
       h('p', { class: 'lead' }, "Imtihon formatidagi savollar: qoralama → tekshiruv → tasdiqlash. Faqat tasdiqlangan savollar o'quvchilarga chiqariladi (keyingi sprintlarda). Maqsad: ingliz tili C2 gacha, qolganlari B2 gacha."),
@@ -451,7 +451,7 @@
       matrix, h('p', { class: 'muted' }, "Katakdagi son: tasdiqlangan/jami. Bosib shu til va daraja bo'yicha filtrlang."),
       h('div', { class: 'toolbar', style: { marginTop: '16px' } }, search,
         sel('lang', 'Til', meta.languages.map((l) => [l.code, `${l.flag} ${l.name}`])), sel('level', 'Daraja', meta.levels.map((x) => [x, x])),
-        sel('skill', "Ko'nikma", meta.skills.map((x) => [x, SKILL_LABEL[x]])), sel('status', 'Holat', meta.statuses.map((x) => [x, STATUS_LABEL[x]])),
+        sel('skill', "Ko'nikma", meta.skills.map((x) => [x, SKILL_LABEL[x]])), sel('status', 'Holat', meta.statuses.map((x) => [x, STATUS_LABEL[x]])), sel('reported', 'Xabarlar', [['1', '⚑ Xato haqida xabar berilgan']]),
         h('button', { class: 'btn btn-ghost btn-sm', onclick: () => { IT.f = { lang: '', level: '', skill: '', status: '', q: '', page: 1 }; pageItems(active); } }, 'Tozalash')),
       h('div', { class: 'tbl-wrap' }, h('table', { class: 'tbl' }, h('thead', {}, h('tr', {}, ['ID', 'Til', 'Daraja', "Ko'nikma", 'Tur', 'Holat', 'Savol', 'Muallif'].map((x) => h('th', {}, x)))),
         h('tbody', {}, rows.length ? rows : h('tr', {}, h('td', { colspan: 8, class: 'center muted', style: { padding: '30px' } }, `Savollar yo'q (jami ${data.total})`))))),
@@ -530,6 +530,7 @@
         it.status === 'rejected' ? move('draft', 'Qoralamaga qaytarish') : null),
       own && it.status === 'review' ? h('p', { class: 'muted' }, "Bu sizning savolingiz: uni boshqa tekshiruvchi yoki admin tasdiqlaydi.") : null);
 
+    const reportsBox = h('div');
     m.el.firstChild.replaceChildren(h('h2', {}, isNew ? 'Yangi savol' : `Savol #${it.id}`),
       h('div', { class: 'form-grid' }, field('Til', lang), field('Daraja (CEFR)', level), field("Ko'nikma", skill), field('Imtihon formati', exam)),
       field('Savol turi', type), box,
@@ -537,7 +538,19 @@
       h('div', { style: { display: 'flex', gap: '10px', marginTop: '10px', flexWrap: 'wrap' } }, h('button', { class: 'btn btn-main', onclick: save }, 'Saqlash'),
         !isNew ? h('button', { class: 'btn btn-danger', onclick: guard(async () => { if (!confirm(`#${it.id} savol o'chirilsinmi?`)) return; await api('DELETE', `/api/admin/items/${it.id}`); done("O'chirildi"); }) }, "O'chirish") : null,
         h('button', { class: 'btn btn-ghost', onclick: () => m.close() }, 'Yopish')),
-      flow);
+      flow,
+      reportsBox);
+    if (it && it.reports) {
+      api('GET', `/api/admin/items/${it.id}`).then((d) => {
+        const REASON = { wrong_answer: "Javob noto'g'ri", unclear: 'Savol tushunarsiz', typo: 'Imlo/grammatika xatosi', other: 'Boshqa' };
+        const open = d.reports.filter((r) => r.status === 'open');
+        reportsBox.replaceChildren(h('h3', { style: { margin: '0 0 8px' } }, `⚑ O'quvchilar xabarlari (${open.length})`),
+          d.reports.map((r) => h('div', { style: { padding: '8px 10px', borderRadius: '10px', background: 'var(--soft)', margin: '6px 0', opacity: r.status === 'open' ? 1 : 0.5 } },
+            h('b', {}, REASON[r.reason] || r.reason), r.note ? ` — ${r.note}` : '', h('span', { class: 'muted' }, ` · ${r.by} · ${new Date(r.createdAt).toLocaleDateString()}${r.status === 'open' ? '' : ' (yopilgan)'}`))),
+          open.length ? h('button', { class: 'btn btn-ghost btn-sm', onclick: guard(async () => { await api('POST', `/api/admin/items/${it.id}/reports/resolve`, {}); toast('Xabarlar yopildi'); m.close(); route(); }) }, '✓ Hammasini ko\'rib chiqdim') : null);
+        reportsBox.className = 'card'; reportsBox.style.marginTop = '14px';
+      }).catch(() => {});
+    }
   }
 
   async function bundledModal() {

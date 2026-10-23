@@ -161,7 +161,7 @@
   // ---------- router ----------
   const routes = {
     '/start': renderStart,
-    '/learn': renderLearn, '/exams': renderExams, '/review': renderReview, '/games': renderGames, '/practice': renderPractice, '/writing': renderWriting, '/speaking': renderSpeaking, '/mock': renderMock, '/dictionary': renderDictionary,
+    '/learn': renderLearn, '/exams': renderExams, '/review': renderReview, '/games': renderGames, '/practice': renderPractice, '/mistakes': renderMistakes, '/writing': renderWriting, '/speaking': renderSpeaking, '/mock': renderMock, '/dictionary': renderDictionary,
     '/tutor': renderTutor, '/leaderboard': renderLeaderboard, '/profile': renderProfile,
   };
   const NAV = [
@@ -1232,12 +1232,12 @@
 
     const goalMsg = u.dailyXp >= u.dailyGoal ? 'Kunlik maqsad bajarildi! 🎉' : `Bugun yana ${u.dailyGoal - u.dailyXp} XP to'plang`;
 
-    const certBadge = c.lang.code === 'en' ? '🎓 IELTS (Band 4.0 - 8.5+) & CEFR (A1 - C1)'
-      : c.lang.code === 'de' ? '🎓 Goethe-Zertifikat · TestDaF (A1 - C1)'
-      : c.lang.code === 'ru' ? '🎓 TRKI / TORFL (A1 - C1)'
-      : c.lang.code === 'fr' ? '🎓 DELF / DALF (A1 - C1)'
-      : c.lang.code === 'es' ? '🎓 DELE / SIELE (A1 - C1)'
-      : '🎓 ALPT & Fasih arab tili (A1 - C1)';
+    const certBadge = c.lang.code === 'en' ? '🎓 IELTS uslubidagi tayyorgarlik · A1 – C2'
+      : c.lang.code === 'de' ? '🎓 Goethe uslubidagi tayyorgarlik · A1 – B2'
+      : c.lang.code === 'ru' ? '🎓 ТРКИ uslubidagi tayyorgarlik · A1 – B2'
+      : c.lang.code === 'fr' ? '🎓 DELF uslubidagi tayyorgarlik · A1 – B2'
+      : c.lang.code === 'es' ? '🎓 DELE uslubidagi tayyorgarlik · A1 – B2'
+      : '🎓 Fasih (MSA) tayyorgarlik · A1 – B2';
 
     const langStrip = h('div', { class: 'learn-lang-strip' },
       h('div', { class: 'learn-lang-left' },
@@ -1394,7 +1394,8 @@
       return h('div', { class: 'cefr-stage-wrapper' }, header, unitNodes);
     }).filter(Boolean);
 
-    await shell('/learn', [langStrip, hero, learnGoalBar, quick, placeBanner, banner, stageElements]);
+    const todayPlan = await planCard(c.lang.code);
+    await shell('/learn', [langStrip, hero, learnGoalBar, todayPlan, quick, placeBanner, banner, stageElements]);
   }
 
   // ---------- practice player ----------
@@ -2121,6 +2122,48 @@
   }
 
 
+  // ---------- question reports, mistake notebook, today's plan ----------
+  function openReport(itemId) {
+    const reasons = [['wrong_answer', "Javob noto'g'ri"], ['unclear', 'Savol tushunarsiz'], ['typo', 'Imlo yoki grammatika xatosi'], ['other', 'Boshqa']];
+    let reason = 'wrong_answer';
+    const note = h('textarea', { class: 't-input', rows: 3, maxlength: 300, placeholder: 'Qisqacha izoh (ixtiyoriy)', style: { width: '100%' } });
+    const bg = h('div', { style: { position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,.6)', zIndex: 9999, display: 'grid', placeItems: 'center' }, onclick: (e) => { if (e.target === bg) bg.remove(); } });
+    bg.append(h('div', { class: 'card', style: { maxWidth: '420px', width: '92%' } },
+      h('h3', {}, 'Savolda xato bor'),
+      ...reasons.map(([v, t]) => h('label', { style: { display: 'flex', gap: '8px', margin: '8px 0', alignItems: 'center' } }, h('input', { type: 'radio', name: 'report-reason', checked: v === reason, onchange: () => { reason = v; } }), t)),
+      note,
+      h('div', { style: { display: 'flex', gap: '8px', marginTop: '12px' } },
+        h('button', { class: 'btn btn-main', onclick: async () => { try { await api('POST', `/api/items/${itemId}/report`, { reason, note: note.value }); bg.remove(); toast("Rahmat! Xabar tekshiruvchilarga yuborildi."); } catch (e) { toast(e.message); } } }, 'Yuborish'),
+        h('button', { class: 'btn btn-ghost', onclick: () => bg.remove() }, 'Bekor qilish'))));
+    document.body.append(bg);
+  }
+
+  const SKILL_UZ = { reading: "O'qish", listening: 'Eshitish', grammar: 'Grammatika', vocab: "Lug'at", mistakes: 'Xatolar' };
+
+  async function renderMistakes() {
+    await loadCourse();
+    const d = await api('GET', `/api/mistakes?lang=${S.user.currentLang}`);
+    await shell('/practice', [h('a', { class: 'btn btn-ghost btn-sm', href: '#/practice' }, '← Orqaga'), h('h1', {}, '📒 Xatolar daftari'),
+      h('p', { class: 'lead' }, `${S.course.lang.flag} ${S.course.lang.name}: noto'g'ri javob bergan savollaringiz shu yerda yig'iladi. Ketma-ket 2 marta to'g'ri javob bersangiz, savol daftardan chiqadi.`),
+      d.count ? h('button', { class: 'btn btn-main', onclick: () => startPractice('mistakes') }, `Xatolarni qayta ishlash (${d.count})`) : h('p', {}, '🎉 Hozircha xato yo\'q. Mashq qiling, xatolar shu yerda paydo bo\'ladi.'),
+      d.count ? h('div', { style: { marginTop: '18px' } }, d.items.map((i) => h('div', { class: 'card', style: { margin: '8px 0', padding: '12px 16px' } },
+        h('span', { class: 'tag' }, `${SKILL_UZ[i.skill] || i.skill} · ${i.level}`), ' ', i.preview, h('span', { class: 'muted' }, ` · ${i.wrongCount} marta xato`)))) : null,
+      d.words.length ? h('div', { style: { marginTop: '24px' } }, h('h3', {}, "Qiyin so'zlar"), h('p', { class: 'muted' }, "Darslarda ko'p adashgan so'zlaringiz. Ularni Takrorlash bo'limida mustahkamlang."),
+        h('div', { style: { display: 'flex', flexWrap: 'wrap', gap: '8px' } }, d.words.map((w) => h('span', { class: 'tag', title: `${w.lapses} marta unutilgan` }, `${w.target} — ${w.uz}`))),
+        h('p', {}, h('a', { class: 'btn btn-ghost btn-sm', href: '#/review' }, 'Takrorlashga o\'tish'))) : null], { wide: true });
+  }
+
+  async function planCard(lang) {
+    const plan = await api('GET', `/api/plan/today?lang=${lang}`).catch(() => null);
+    if (!plan || !plan.steps.length) return null;
+    return h('div', { class: 'card', style: { margin: '16px 0' } },
+      h('h3', { style: { margin: '0 0 4px' } }, '📋 Bugungi reja'),
+      h('p', { class: 'muted', style: { margin: '0 0 8px' } }, `${plan.doneCount} / ${plan.steps.length} bajarildi`),
+      plan.steps.map((s) => h('a', { href: s.href, style: { display: 'flex', gap: '10px', alignItems: 'center', padding: '10px 12px', borderRadius: '12px', background: 'var(--soft)', margin: '6px 0', textDecoration: 'none', color: 'inherit' } },
+        h('span', {}, s.done ? '✅' : '⬜'), h('span', { style: { flex: 1 } }, s.title), h('span', { class: 'muted' }, '→'))),
+      plan.skills.length ? h('p', { class: 'muted', style: { margin: '10px 0 0', fontSize: '.85rem' } }, "Ko'nikmalar (30 kun): " + plan.skills.map((k) => `${SKILL_UZ[k.skill] || k.skill} ${k.accuracy}%`).join(' · ')) : null);
+  }
+
   // ---------- exam-style practice (approved item bank) ----------
   const PRACTICE_SKILLS = [
     ['reading', '📖', "O'qish"], ['listening', '🎧', 'Eshitish'], ['grammar', '✍️', 'Grammatika'], ['vocab', '🔤', "Lug'at"],
@@ -2153,7 +2196,8 @@
       h('div', { class: 'games-grid' },
         [['/writing', '✍️', 'Yozish', 'Insho yozing: AI 4 mezon bo\'yicha baholaydi va xatolarni tuzatadi.'],
           ['/speaking', '🎤', 'Gapirish', 'Savolga ovoz bilan javob bering: nutqingiz matnga aylantirilib baholanadi.'],
-          ['/mock', '🎓', 'Mock imtihon', "Vaqtli imtihon: grammatika, o'qish, eshitish. Natija darhol."]]
+          ['/mock', '🎓', 'Mock imtihon', "Vaqtli imtihon: grammatika, o'qish, eshitish. Natija darhol."],
+          ['/mistakes', '📒', 'Xatolar daftari', "Adashgan savollaringizni qayta ishlang: 2 marta to'g'ri javobdan keyin daftardan chiqadi."]]
           .map(([href, emoji, title, desc]) => h('div', { class: 'card' }, h('div', { style: { fontSize: '2rem' } }, emoji), h('h3', {}, title), h('p', { class: 'muted' }, desc), h('a', { class: 'btn btn-main', href: '#' + href }, 'Ochish')))),
     ], { wide: true });
   }
@@ -2339,7 +2383,8 @@
         catch (e) { toast(e.message); state.done = false; return; }
         (r.correct ? sfx.ok : sfx.bad)();
         if (mark) mark(r);
-        fb.replaceChildren(h('b', { style: { color: r.correct ? 'var(--ok)' : 'var(--bad)' } }, r.correct ? "✓ To'g'ri" : `✗ To'g'ri javob: ${r.answer}`), r.explanation ? h('p', { class: 'muted' }, r.explanation) : null);
+        fb.replaceChildren(h('b', { style: { color: r.correct ? 'var(--ok)' : 'var(--bad)' } }, r.correct ? "✓ To'g'ri" : `✗ To'g'ri javob: ${r.answer}`), r.explanation ? h('p', { class: 'muted' }, r.explanation) : null,
+          h('button', { class: 'btn btn-ghost btn-sm', style: { marginTop: '6px' }, onclick: () => openReport(it.id) }, '⚑ Savolda xato bor'));
         nextBtn.style.display = '';
       };
       const body = [];

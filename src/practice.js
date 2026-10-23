@@ -2,6 +2,7 @@
 const crypto = require('node:crypto');
 const { dateKey, dayStartMs } = require('./db');
 const { normalize, shuffle } = require('./exercises');
+const { recordAnswer } = require('./learning');
 
 const CLOSED = ['mcq', 'gap', 'tf_ng', 'short'];
 const SKILLS = ['vocab', 'grammar', 'reading', 'listening'];
@@ -54,14 +55,21 @@ module.exports = function registerPractice({ db, route, content, HttpError, requ
   route('POST', '/api/practice/start', async ({ req, body }) => {
     const u = requireUser(req);
     const L = langOf(u, body.lang);
-    if (!SKILLS.includes(body.skill)) throw new HttpError(400, "Noto'g'ri ko'nikma");
+    const notebook = body.skill === 'mistakes';
+    if (!notebook && !SKILLS.includes(body.skill)) throw new HttpError(400, "Noto'g'ri ko'nikma");
     if (body.level !== undefined && !LEVELS.includes(body.level)) throw new HttpError(400, "Noto'g'ri daraja");
     const count = Math.min(15, Math.max(3, Number(body.count) || 10));
-    const args = [L.code, body.skill, ...CLOSED];
-    let sql = `SELECT * FROM items WHERE lang=? AND status='approved' AND skill=? AND type IN (${CLOSED.map(() => '?').join(',')})`;
-    if (body.level) { sql += ' AND level=?'; args.push(body.level); }
-    const rows = shuffle(db.prepare(sql).all(...args)).slice(0, count);
-    if (!rows.length) throw new HttpError(404, "Bu bo'lim uchun tasdiqlangan savollar hali yo'q");
+    let rows;
+    if (notebook) { // the learner's own mistake notebook (only questions that are still approved)
+      rows = shuffle(db.prepare(`SELECT i.* FROM mistakes m JOIN items i ON i.id=m.item_id WHERE m.user_id=? AND m.lang=? AND i.status='approved' AND i.type IN (${CLOSED.map(() => '?').join(',')})`).all(u.id, L.code, ...CLOSED)).slice(0, count);
+      if (!rows.length) throw new HttpError(404, "Xatolar daftari bo'sh: ajoyib!");
+    } else {
+      const args = [L.code, body.skill, ...CLOSED];
+      let sql = `SELECT * FROM items WHERE lang=? AND status='approved' AND skill=? AND type IN (${CLOSED.map(() => '?').join(',')})`;
+      if (body.level) { sql += ' AND level=?'; args.push(body.level); }
+      rows = shuffle(db.prepare(sql).all(...args)).slice(0, count);
+      if (!rows.length) throw new HttpError(404, "Bu bo'lim uchun tasdiqlangan savollar hali yo'q");
+    }
     for (const [k, v] of sessions) if (v.exp < Date.now()) sessions.delete(k);
     const mine = [...sessions.entries()].filter(([, v]) => v.userId === u.id);
     if (mine.length >= 3) for (const [k] of mine.slice(0, mine.length - 2)) sessions.delete(k);
@@ -78,12 +86,13 @@ module.exports = function registerPractice({ db, route, content, HttpError, requ
   }
 
   route('POST', '/api/practice/:sid/answer', async ({ req, params, body }) => {
-    const { s } = sessionOf(req, params.sid);
+    const { u, s } = sessionOf(req, params.sid);
     const row = s.rows.get(Number(body.itemId));
     if (!row) throw new HttpError(400, 'Savol topilmadi');
     if (s.results.has(row.id)) throw new HttpError(409, 'Bu savolga javob berilgan');
     const j = judge(row, body.answer);
     s.results.set(row.id, j.correct);
+    recordAnswer(db, u.id, s.lang, row, j.correct);
     return { correct: j.correct, answer: j.shown, explanation: j.p.explanation_uz || null };
   });
 

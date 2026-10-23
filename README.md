@@ -147,3 +147,13 @@ Faqat adminlar uchun; hammasi `draft` (manba `ai`) bo'lib tushadi; qayta bosish 
 - **Landing** sahifasi haqiqiy imkoniyatlarga moslab yozilgan (6 til, bepul, rasmiy sertifikat emas).
 - **B2 kontent:** 20 ta B2 lug'at mavzusi (yashirin, A2/B1 kabi yoqiladi) va 6 tilda B2 grammatika qoralamalari.
 - Pilot ro'yxati: `PILOT.md`.
+
+## O'rganish halqasi: xatolar daftari, bugungi reja, xato haqida xabar
+
+- **Xatolar daftari** (`#/mistakes`, Mashq bo'limida): mashq va mock imtihonda adashilgan savollar yig'iladi; ketma-ket 2 marta to'g'ri javob bersangiz, daftardan chiqadi.
+  Darslarda ko'p unutilgan so'zlar ham ko'rsatiladi (Takrorlash bilan mustahkamlanadi). `POST /api/practice/start` ga `skill: "mistakes"` yuboriladi.
+- **Bugungi reja** (O'rganish sahifasi): takrorlash, xatolar, keyingi dars va eng zaif ko'nikma bo'yicha mashq; bajarilganlari belgilanadi.
+  Ko'nikmalar bo'yicha aniqlik oxirgi 30 kun uchun hisoblanadi (`GET /api/plan/today`, `GET /api/stats/skills`).
+- **"Savolda xato bor"**: mashqda javobdan keyin o'quvchi savol haqida xabar beradi (`POST /api/items/:id/report`). Bir foydalanuvchi bir savolga bitta ovoz; **3 ta mustaqil xabar**
+  (`REPORT_THRESHOLD`, kamida 2) tasdiqlangan savolni avtomatik "tekshiruvda" holatiga qaytaradi va o'quvchilardan yashiradi. Admin panelda savol qatorida ⚑ belgisi, "Xabarlar" filtri
+  va savol oynasida xabarlar ro'yxati bor; ko'rib chiqilgach "Hammasini ko'rib chiqdim" bilan yopiladi.

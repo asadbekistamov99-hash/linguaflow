@@ -123,7 +123,7 @@ module.exports = function registerItems({ db, route, content, HttpError, require
   const out = (r) => ({
     id: r.id, lang: r.lang, skill: r.skill, level: r.level, exam: r.exam, type: r.type, payload: JSON.parse(r.payload),
     status: r.status, source: r.source, authorId: r.author_id, author: r.author || null, reviewerId: r.reviewer_id, reviewNote: r.review_note,
-    createdAt: r.created_at, updatedAt: r.updated_at,
+    createdAt: r.created_at, updatedAt: r.updated_at, reports: r.reports || 0,
   });
   const getItem = (id) => db.prepare('SELECT i.*, u.name author FROM items i LEFT JOIN users u ON u.id=i.author_id WHERE i.id=?').get(id);
 
@@ -154,11 +154,12 @@ module.exports = function registerItems({ db, route, content, HttpError, require
       if (list && !list.includes(v)) throw new HttpError(400, `Noto'g'ri ${param}`);
       where.push(`i.${col}=?`); args.push(v);
     }
+    if (url.searchParams.get('reported') === '1') where.push("EXISTS (SELECT 1 FROM item_reports r WHERE r.item_id=i.id AND r.status='open')");
     const qtext = String(url.searchParams.get('q') || '').trim();
     if (qtext) { where.push("i.payload LIKE ? ESCAPE '\\'"); args.push(`%${qtext.replace(/[%_\\]/g, (m) => `\\${m}`)}%`); }
     const w = where.length ? `WHERE ${where.join(' AND ')}` : '';
     const total = val(`SELECT COUNT(*) n FROM items i ${w}`, ...args).n;
-    const rows = db.prepare(`SELECT i.*, u.name author FROM items i LEFT JOIN users u ON u.id=i.author_id ${w} ORDER BY i.id DESC LIMIT ? OFFSET ?`).all(...args, size, (page - 1) * size);
+    const rows = db.prepare(`SELECT i.*, u.name author, (SELECT COUNT(*) FROM item_reports r WHERE r.item_id=i.id AND r.status='open') reports FROM items i LEFT JOIN users u ON u.id=i.author_id ${w} ORDER BY i.id DESC LIMIT ? OFFSET ?`).all(...args, size, (page - 1) * size);
     return { items: rows.map(out), total, page, pages: Math.max(1, Math.ceil(total / size)) };
   }));
 
@@ -211,7 +212,19 @@ module.exports = function registerItems({ db, route, content, HttpError, require
     const r = getItem(Number(params.id));
     if (!r) throw new HttpError(404, 'Savol topilmadi');
     guardLang(user, r.lang);
-    return { item: out(r) };
+    const reports = db.prepare("SELECT r.id, r.reason, r.note, r.status, r.created_at, u.name FROM item_reports r JOIN users u ON u.id=r.user_id WHERE r.item_id=? ORDER BY r.status, r.created_at DESC LIMIT 50").all(r.id)
+      .map((x) => ({ id: x.id, reason: x.reason, note: x.note, status: x.status, createdAt: x.created_at, by: x.name }));
+    return { item: { ...out(r), reports: reports.filter((x) => x.status === 'open').length }, reports };
+  }));
+
+  // A reviewer has looked at the reports (fixed the item or judged it fine): close them.
+  route('POST', '/api/admin/items/:id/reports/resolve', staff(async ({ user, params }) => {
+    const r = getItem(Number(params.id));
+    if (!r) throw new HttpError(404, 'Savol topilmadi');
+    guardLang(user, r.lang);
+    const info = db.prepare("UPDATE item_reports SET status='resolved' WHERE item_id=? AND status='open'").run(r.id);
+    logAudit(user.id, 'item.reports_resolved', `#${r.id} x${info.changes}`);
+    return { ok: true, resolved: Number(info.changes) };
   }));
 
   route('PATCH', '/api/admin/items/:id', staff(async ({ user, params, body }) => {

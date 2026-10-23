@@ -5,6 +5,7 @@ const grading = require('./grading');
 const { present, judge, CLOSED } = require('./practice');
 const { dateKey, dayStartMs } = require('./db');
 const { shuffle } = require('./exercises');
+const { recordAnswer } = require('./learning');
 
 const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
 const DISCLAIMER = "Bu LinguaFlow ichki tayyorgarlik bahosi (taxminiy). U rasmiy IELTS, CEFR yoki boshqa xalqaro imtihon natijasi emas.";
@@ -147,6 +148,7 @@ module.exports = function registerSkills({ db, route, content, HttpError, requir
       const j = given === undefined || given === null || given === '' ? { correct: false, shown: judge(row, '').shown, p: JSON.parse(row.payload) } : judge(row, given);
       const sec = (sections[row.skill] ||= { total: 0, correct: 0 });
       sec.total++; if (j.correct) sec.correct++;
+      if (given !== undefined && given !== null && given !== '') recordAnswer(db, u.id, s.lang, row, j.correct);
       review.push({ id: row.id, correct: j.correct, answered: given !== undefined && given !== null && given !== '', answer: j.shown, explanation: j.p.explanation_uz || null });
     }
     const total = s.rows.size, correct = review.filter((r) => r.correct).length;

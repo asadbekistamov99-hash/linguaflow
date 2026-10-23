@@ -136,6 +136,27 @@ function open(file) {
       sections TEXT NOT NULL, created_at INTEGER NOT NULL
     );
     CREATE INDEX IF NOT EXISTS idx_mock_user ON mock_results(user_id, created_at);
+    CREATE TABLE IF NOT EXISTS practice_log (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      lang TEXT NOT NULL, skill TEXT NOT NULL, level TEXT NOT NULL, item_id INTEGER,
+      correct INTEGER NOT NULL, created_at INTEGER NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_plog_user ON practice_log(user_id, lang, created_at);
+    CREATE TABLE IF NOT EXISTS mistakes (
+      user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      item_id INTEGER NOT NULL, lang TEXT NOT NULL,
+      wrong_count INTEGER NOT NULL DEFAULT 1, streak_ok INTEGER NOT NULL DEFAULT 0, last_wrong_at INTEGER NOT NULL,
+      PRIMARY KEY (user_id, item_id)
+    );
+    CREATE TABLE IF NOT EXISTS item_reports (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      item_id INTEGER NOT NULL REFERENCES items(id) ON DELETE CASCADE,
+      user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      reason TEXT NOT NULL, note TEXT, status TEXT NOT NULL DEFAULT 'open', created_at INTEGER NOT NULL,
+      UNIQUE (item_id, user_id)
+    );
+    CREATE INDEX IF NOT EXISTS idx_reports_item ON item_reports(item_id, status);
   `);
   ensureColumn(db, 'users', 'role', "TEXT NOT NULL DEFAULT 'user'");
   ensureColumn(db, 'users', 'banned', 'INTEGER NOT NULL DEFAULT 0');

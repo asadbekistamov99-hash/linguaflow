@@ -332,9 +332,9 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
   const baseHeaders = {
     'X-Content-Type-Options': 'nosniff',
     'Referrer-Policy': 'strict-origin-when-cross-origin',
-    'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+    'Permissions-Policy': 'camera=(), microphone=(self), geolocation=()',
     'X-Frame-Options': 'DENY',
-    'Content-Security-Policy': "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; frame-ancestors 'none'",
+    'Content-Security-Policy': "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://accounts.google.com; frame-src https://accounts.google.com; img-src 'self' data:; connect-src 'self' https://accounts.google.com; manifest-src 'self'; frame-ancestors 'none'",
   };
 
   function send(res, status, body, extra = {}) {
@@ -376,7 +376,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     let announcement = null;
     const row = q.setting.get('announcement');
     if (row) { try { const a = JSON.parse(row.value); if (a.enabled && a.text) announcement = { text: a.text, level: a.level === 'warn' ? 'warn' : 'info' }; } catch { /* ignore */ } }
-    return { announcement, contactEmail: process.env.CONTACT_EMAIL || null };
+    return { announcement, contactEmail: process.env.CONTACT_EMAIL || null, googleClientId: process.env.GOOGLE_CLIENT_ID || null };
   });
 
   route('POST', '/api/auth/register', async ({ req, res, body }) => {
@@ -434,6 +434,47 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     db.prepare('UPDATE users SET pass_hash=?, session_ver=session_ver+1 WHERE id=?').run(await auth.hashPasswordAsync(newPassword), u.id);
     logAudit(u.id, 'auth.password_recovery', u.email);
     return { ok: true };
+  });
+
+  // Sign in with Google: the browser gets an ID token from Google Identity Services; Google's tokeninfo endpoint verifies it.
+  // Accounts are matched by (Google-verified) email. Passwords stay available for existing users.
+  const googleLimiter = auth.createLimiter(30, 15 * 60000);
+  route('POST', '/api/auth/google', async ({ req, res, body }) => {
+    const clientId = process.env.GOOGLE_CLIENT_ID;
+    if (!clientId) throw new HttpError(404, 'Google orqali kirish sozlanmagan');
+    if (!googleLimiter(ipOf(req))) throw new HttpError(429, "Juda ko'p urinish, keyinroq qayta urinib ko'ring");
+    const credential = String(body.credential ?? '');
+    if (credential.length < 20 || credential.length > 4000) throw new HttpError(400, "Google tokeni noto'g'ri");
+    let info;
+    try {
+      const r = await fetch(`https://oauth2.googleapis.com/tokeninfo?id_token=${encodeURIComponent(credential)}`, { signal: AbortSignal.timeout(8000) });
+      if (!r.ok) throw new Error(`tokeninfo ${r.status}`);
+      info = await r.json();
+    } catch (e) {
+      console.warn('[google] token check failed:', e.message);
+      throw new HttpError(401, 'Google tekshiruvi muvaffaqiyatsiz, qayta urinib ko\'ring');
+    }
+    const email = String(info.email ?? '').trim().toLowerCase();
+    const issuerOk = info.iss === 'accounts.google.com' || info.iss === 'https://accounts.google.com';
+    if (info.aud !== clientId || !issuerOk || String(info.email_verified) !== 'true' || !emailOk(email) || Number(info.exp) * 1000 < Date.now()) {
+      throw new HttpError(401, "Google hisobi tasdiqlanmadi");
+    }
+    let u = q.userByEmail.get(email);
+    if (!u) {
+      const first = q.userCount.get().n === 0 && process.env.FIRST_USER_ADMIN !== '0';
+      const role = first || adminEmails.has(email) ? 'admin' : 'user';
+      const name = cleanName(info.name || email.split('@')[0]) || email.split('@')[0].slice(0, 40);
+      const hash = await auth.hashPasswordAsync(crypto.randomBytes(24).toString('hex')); // no password: Google only (reset one via the admin if needed)
+      const ins = q.insertUser.run(email, name.length >= 2 ? name : `${name}_`, hash, Date.now(), role);
+      u = q.userById.get(Number(ins.lastInsertRowid));
+    } else if (adminEmails.has(email) && u.role !== 'admin') {
+      db.prepare("UPDATE users SET role='admin' WHERE id=?").run(u.id);
+      u = q.userById.get(u.id);
+    }
+    if (u.banned) throw new HttpError(403, 'Hisobingiz bloklangan');
+    const token = auth.sign(secret, u.id, u.created_at, u.session_ver);
+    res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
+    return { user: publicUser(u) };
   });
 
   // Self-service account deletion (privacy policy promise). Guest accounts have no known password, so they skip the check.

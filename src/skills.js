@@ -54,7 +54,7 @@ module.exports = function registerSkills({ db, route, content, HttpError, requir
   }
 
   async function runAi(user, feature, fn) {
-    if (!tutor.activeProvider()) throw new HttpError(503, "AI baholash hozircha o'chiq. Serverda GEMINI_API_KEY, OPENAI_API_KEY yoki ANTHROPIC_API_KEY ni sozlang.");
+    if (!tutor.activeProvider()) throw new HttpError(503, "AI baholash hozircha o'chiq. Serverda GEMINI_API_KEY ni sozlang.");
     const qr = quota.consume(user, feature);
     if (!qr.ok) throw new HttpError(429, qr.limit === 0 ? "Bu imkoniyat hozircha o'chirilgan." : `Bugungi bepul limit tugadi (${qr.limit} ta). Ertaga qayta urinib ko'ring.`);
     try { return await fn(); } catch (e) {

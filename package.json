@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node --disable-warning=ExperimentalWarning server.js",
     "start": "node --disable-warning=ExperimentalWarning server.js",
-    "build": "node scripts/validate-seed.js",
+    "build": "node scripts/validate-seed.js && node scripts/build-chart.js",
     "test": "node --disable-warning=ExperimentalWarning --test",
     "reset-password": "node --disable-warning=ExperimentalWarning scripts/reset-password.js",
     "make-admin": "node --disable-warning=ExperimentalWarning scripts/make-admin.js",
@@ -20,5 +20,14 @@
   "private": true,
   "engines": {
     "node": ">=22.5"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "recharts": "^3.10.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
   }
 }

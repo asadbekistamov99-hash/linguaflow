@@ -873,6 +873,31 @@
     return null;
   }
 
+  // ---------- sign in with Google (Google Identity Services) ----------
+  let gsiLoading = null;
+  const loadGsi = () => gsiLoading || (gsiLoading = new Promise((resolve, reject) => {
+    if (window.google && window.google.accounts) return resolve();
+    const el = document.createElement('script');
+    el.src = 'https://accounts.google.com/gsi/client'; el.async = true;
+    el.onload = () => resolve(); el.onerror = () => { gsiLoading = null; reject(new Error('gsi')); };
+    document.head.appendChild(el);
+  }));
+  async function setupGoogleButton(box, onSuccess) {
+    try {
+      if (!S.config) S.config = await api('GET', '/api/config');
+      const clientId = S.config && S.config.googleClientId;
+      if (!clientId) return;
+      await loadGsi();
+      google.accounts.id.initialize({
+        client_id: clientId,
+        callback: async (resp) => { try { onSuccess(await api('POST', '/api/auth/google', { credential: resp.credential })); } catch (e) { toast(e.message); } },
+      });
+      box.replaceChildren();
+      google.accounts.id.renderButton(box, { theme: 'filled_black', size: 'large', text: 'continue_with', shape: 'pill', width: 300 });
+      box.before(h('div', { class: 'muted', style: { textAlign: 'center', margin: '14px 0 8px', fontSize: '.85rem' } }, 'yoki'));
+    } catch { /* Google unavailable: email and password still work */ }
+  }
+
   function renderAuth(mode, presetEmail = '') {
     const isReg = mode === 'register';
     const isReset = mode === 'reset';
@@ -1003,6 +1028,7 @@
       switchContent = ["Hisobingiz yo'qmi? ", h('a', { href: '#/register' }, "Ro'yxatdan o'tish")];
     }
 
+    const googleBox = h('div', { style: { display: 'flex', justifyContent: 'center', minHeight: '0' } });
     const startLink = h('div', { style: { textAlign: 'center', marginTop: '16px', paddingTop: '14px', borderTop: '1px solid var(--line)' } },
       h('a', { href: '#/start', style: { fontSize: '.86rem', color: 'var(--brand)', textDecoration: 'none', fontWeight: '700' } }, '🌍 Barcha tillarni ko\'rish va noldan boshlash →'));
 
@@ -1012,10 +1038,12 @@
       h('p', { class: 'sub' }, sub),
       langChips,
       form,
+      googleBox,
       forgotLink,
       h('div', { class: 'auth-switch' }, ...switchContent),
       startLink)));
     (isReg ? name : email).focus();
+    if (!isReset) setupGoogleButton(googleBox, onAuthSuccess);
   }
 
   // ---------- shell ----------

@@ -55,8 +55,8 @@ module.exports = function registerAdmin({ quota, db, q, route, content, HttpErro
     const sort = { new: 'created_at DESC', xp: 'xp DESC', active: 'last_active DESC' }[url.searchParams.get('sort')] || 'created_at DESC';
     const where = "(name LIKE ? ESCAPE '\\' OR email LIKE ? ESCAPE '\\')";
     const total = val(`SELECT COUNT(*) n FROM users WHERE ${where}`, like, like).n;
-    const users = db.prepare(`SELECT id,name,email,role,banned,xp,streak,created_at,last_active FROM users WHERE ${where} ORDER BY ${sort}, id DESC LIMIT ? OFFSET ?`).all(like, like, size, (page - 1) * size);
-    return { users: users.map((u) => ({ ...u, banned: !!u.banned })), total, page, pages: Math.max(1, Math.ceil(total / size)) };
+    const users = db.prepare(`SELECT id,name,email,role,banned,xp,streak,created_at,last_active,totp_enabled FROM users WHERE ${where} ORDER BY ${sort}, id DESC LIMIT ? OFFSET ?`).all(like, like, size, (page - 1) * size);
+    return { users: users.map((u) => ({ ...u, banned: !!u.banned, twoFactorEnabled: !!u.totp_enabled })), total, page, pages: Math.max(1, Math.ceil(total / size)) };
   }));
 
   route('GET', '/api/admin/users/:id', adm(async ({ params }) => {
@@ -130,6 +130,14 @@ module.exports = function registerAdmin({ quota, db, q, route, content, HttpErro
     db.prepare('UPDATE users SET pass_hash=?, session_ver=session_ver+1 WHERE id=?').run(hash, u.id);
     logAudit(admin.id, 'user.password_reset', `#${u.id} ${u.email}`);
     return { ok: true };
+  }));
+
+  route('POST', '/api/admin/users/:id/reset-2fa', adm(async ({ params, admin }) => {
+    const u = q.userById.get(Number(params.id));
+    if (!u) throw new HttpError(404, 'Foydalanuvchi topilmadi');
+    db.prepare('UPDATE users SET totp_secret=NULL, totp_enabled=0, totp_backup_codes=NULL WHERE id=?').run(u.id);
+    logAudit(admin.id, 'user.reset_2fa', `#${u.id} ${u.email}`);
+    return { ok: true, message: "Foydalanuvchining Google Authenticator himoyasi o'chirildi" };
   }));
 
   route('DELETE', '/api/admin/users/:id', adm(async ({ params, admin }) => {

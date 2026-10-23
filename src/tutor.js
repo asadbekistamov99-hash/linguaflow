@@ -38,19 +38,6 @@ const PROVIDERS = {
       return d.choices?.[0]?.message?.content || '';
     },
   },
-  anthropic: {
-    key: () => process.env.ANTHROPIC_API_KEY,
-    async call({ key, system, messages, signal, maxTokens = 400 }) {
-      const r = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST', signal,
-        headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
-        body: JSON.stringify({ model: process.env.TUTOR_MODEL || 'claude-haiku-4-5-20251001', max_tokens: maxTokens, system, messages }),
-      });
-      if (!r.ok) throw new Error(`anthropic ${r.status}`);
-      const d = await r.json();
-      return (d.content || []).filter((c) => c.type === 'text').map((c) => c.text).join('\n');
-    },
-  },
 };
 
 // Available providers ordered with preference

@@ -605,7 +605,7 @@ button.chip:hover{border-color:var(--line2);background:var(--card2)}
 .start-card:hover{border-color:var(--c, #7c5cff);transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.35)}
 .start-card.active{border-color:var(--c, #7c5cff);background:linear-gradient(180deg,rgba(124,92,255,.08),rgba(20,24,38,.9));box-shadow:0 0 30px rgba(124,92,255,.25),0 10px 30px rgba(0,0,0,.5)}
 .start-card-top{display:flex;justify-content:space-between;align-items:flex-start}
-.start-flag{font-size:2.8rem;line-height:1;filter:drop-shadow(0 4px 10px rgba(0,0,0,.3))}
+.start-flag{font-size:2.8rem;line-height:1;font-weight:800;font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-0.5px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.3))}
 .start-check{width:26px;height:26px;border-radius:50%;border:2px solid var(--line2);display:grid;place-items:center;font-size:.85rem;color:#fff;transition:.2s}
 .start-card.active .start-check{background:var(--c, #7c5cff);border-color:var(--c, #7c5cff)}
 .start-card-name{font-size:1.35rem;font-weight:800;color:var(--text);margin-bottom:2px}
@@ -630,7 +630,7 @@ button.chip:hover{border-color:var(--line2);background:var(--card2)}
 /* Learn page top language bar */
 .learn-lang-strip{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-radius:18px;background:linear-gradient(90deg,rgba(124,92,255,.12),rgba(0,212,255,.08));border:1px solid rgba(124,92,255,.25);margin-bottom:22px;flex-wrap:wrap;gap:12px}
 .learn-lang-left{display:flex;align-items:center;gap:12px}
-.learn-lang-flag{font-size:2rem;line-height:1}
+.learn-lang-flag{font-size:2rem;line-height:1;font-weight:800;font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-0.5px}
 .learn-lang-title{font-size:1.1rem;font-weight:800;color:var(--text)}
 .learn-lang-tag{font-size:.8rem;color:#00d4ff;font-weight:700}
 .learn-lang-btn{padding:8px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:var(--text);font-weight:700;font-size:.85rem;cursor:pointer;transition:.2s}
@@ -706,7 +706,7 @@ button.chip:hover{border-color:var(--line2);background:var(--card2)}
 .saved-card-compact:hover{background:rgba(255,255,255,.1);border-color:var(--c,#00d4ff);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.3)}
 .saved-card-compact.active{border-color:#00d4ff;background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(124,92,255,.12));box-shadow:0 0 16px rgba(0,212,255,.25)}
 .saved-card-left{display:flex;align-items:center;gap:10px;min-width:0}
-.saved-card-flag{font-size:1.8rem;line-height:1}
+.saved-card-flag{font-size:1.8rem;line-height:1;font-weight:800;font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-0.5px}
 .saved-card-info{display:flex;flex-direction:column;min-width:0}
 .saved-card-name{font-weight:700;font-size:.95rem;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .saved-card-meta{font-size:.76rem;color:var(--muted);display:flex;gap:6px;align-items:center}
@@ -724,30 +724,56 @@ button.chip:hover{border-color:var(--line2);background:var(--card2)}
 .saved-empty-box button:hover{background:rgba(0,212,255,.28);color:#fff}
 
 /* ===== Visual Progress Bar in Language Cards ===== */
-.lang-card-progress{display:flex;flex-direction:column;gap:7px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:10px 12px;margin:4px 0 2px}
+.lang-card-progress{display:flex;flex-direction:column;gap:7px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:10px 12px;margin:4px 0 2px;transition:border-color .25s ease,background .25s ease}
 .lang-progress-head{display:flex;justify-content:space-between;align-items:center;font-size:.82rem}
 .lang-progress-label{color:var(--muted);font-weight:600;display:flex;align-items:center;gap:6px}
-.lang-progress-badge{font-size:.76rem;font-weight:800;padding:2px 8px;border-radius:8px;display:inline-flex;align-items:center;gap:4px;letter-spacing:.02em}
+.lang-progress-badge{font-size:.76rem;font-weight:800;padding:2px 8px;border-radius:8px;display:inline-flex;align-items:center;gap:4px;letter-spacing:.02em;transition:transform .3s ease,background .3s ease}
 .lang-progress-badge.started{background:rgba(0,212,255,.16);color:#00d4ff;border:1px solid rgba(0,212,255,.35)}
 .lang-progress-badge.done{background:rgba(34,211,154,.18);color:#22d39a;border:1px solid rgba(34,211,154,.38)}
 .lang-progress-badge.not-started{background:rgba(255,255,255,.06);color:var(--muted);border:1px solid rgba(255,255,255,.1)}
-.lang-progress-track{width:100%;height:8px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;position:relative}
-.lang-progress-fill{height:100%;border-radius:999px;transition:width .6s cubic-bezier(.4,0,.2,1);position:relative}
-.lang-progress-fill.glow{box-shadow:0 0 10px rgba(0,212,255,.45)}
+.lang-progress-track{width:100%;height:8px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;position:relative;box-shadow:inset 0 1px 2px rgba(0,0,0,.25)}
+.lang-progress-fill{
+  height:100%;
+  border-radius:999px;
+  position:relative;
+  overflow:hidden;
+  transition:width 1s cubic-bezier(.22,1,.36,1),box-shadow .4s ease,filter .3s ease;
+  will-change:width;
+}
+.lang-progress-fill.glow{box-shadow:0 0 12px rgba(0,212,255,.5),0 0 4px rgba(0,212,255,.3)}
+.lang-progress-fill.done{box-shadow:0 0 12px rgba(34,211,154,.55),0 0 4px rgba(34,211,154,.3)}
+.lang-progress-fill.glow::after, .lang-progress-fill.done::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.35) 50%,transparent 100%);
+  transform:translateX(-100%);
+  animation:langProgressGleam 2.8s cubic-bezier(.4,0,.2,1) infinite;
+  pointer-events:none;
+  border-radius:inherit;
+}
+@keyframes langProgressGleam{
+  0%{transform:translateX(-100%)}
+  50%,100%{transform:translateX(200%)}
+}
 .lang-progress-foot{display:flex;justify-content:space-between;align-items:center;font-size:.74rem;color:var(--dim)}
 .lang-progress-motive{font-weight:700;color:var(--muted)}
 .start-card:hover .lang-card-progress{border-color:rgba(255,255,255,.14);background:rgba(255,255,255,.05)}
+.start-card:hover .lang-progress-fill{filter:brightness(1.12)}
 
 /* Saved Cards mini progress */
 .saved-card-progress-bar{display:flex;align-items:center;gap:8px;margin-top:4px}
-.saved-progress-track{flex:1;height:5px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden}
-.saved-progress-fill{height:100%;border-radius:999px;transition:width .4s ease}
+.saved-progress-track{flex:1;height:6px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;position:relative}
+.saved-progress-fill{height:100%;border-radius:999px;transition:width 1s cubic-bezier(.22,1,.36,1);will-change:width}
 .saved-progress-pct{font-size:.72rem;font-weight:800;color:var(--text);min-width:32px;text-align:right}
 
 /* Modal language picker mini progress */
 .modal-card-progress{display:flex;align-items:center;gap:8px;width:100%;margin-top:6px}
-.modal-progress-track{flex:1;height:5px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden}
-.modal-progress-fill{height:100%;border-radius:999px}
+.modal-progress-track{flex:1;height:6px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;position:relative}
+.modal-progress-fill{height:100%;border-radius:999px;transition:width 1s cubic-bezier(.22,1,.36,1);will-change:width}
 .modal-progress-pct{font-size:.72rem;font-weight:700;color:var(--muted);min-width:28px}
 
 /* ===== Daily XP Goal Section & Tracker ===== */
@@ -767,7 +793,7 @@ button.chip:hover{border-color:var(--line2);background:var(--card2)}
 .daily-goal-meter-pct.done{color:#22d39a}
 .daily-goal-meter-pct.in-progress{color:#00d4ff}
 .daily-goal-track{height:10px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;position:relative;margin-bottom:8px;box-shadow:inset 0 1px 3px rgba(0,0,0,.3)}
-.daily-goal-fill{height:100%;border-radius:999px;transition:width .5s cubic-bezier(.4,0,.2,1);position:relative}
+.daily-goal-fill{height:100%;border-radius:999px;transition:width 1s cubic-bezier(.22,1,.36,1);position:relative;will-change:width}
 .daily-goal-fill.done{background:linear-gradient(90deg,#22d39a,#10b981);box-shadow:0 0 12px rgba(34,211,154,.5)}
 .daily-goal-fill.in-progress{background:linear-gradient(90deg,#7c5cff,#00d4ff);box-shadow:0 0 12px rgba(0,212,255,.45)}
 .daily-goal-meter-foot{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--muted);gap:10px}
@@ -1375,3 +1401,18 @@ button.chip:hover{border-color:var(--line2);background:var(--card2)}
 
 
 .cert-disclaimer{font-size:.78rem;color:var(--muted);line-height:1.4;margin:10px 0 0;text-align:center}
+
+/* Google Authenticator (2FA) */
+.twofa-card{background:var(--card);border:1px solid var(--line2);border-radius:20px;padding:22px 24px;display:grid;gap:14px;transition:border-color .2s ease}
+.twofa-card.enabled{border-color:rgba(16,185,129,.4);background:linear-gradient(135deg,rgba(16,185,129,.08),var(--card))}
+.twofa-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.twofa-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:9999px;font-size:.82rem;font-weight:700}
+.twofa-badge.on{background:rgba(16,185,129,.15);color:#10b981;border:1px solid rgba(16,185,129,.3)}
+.twofa-badge.off{background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3)}
+.twofa-step-box{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:.92rem;line-height:1.5}
+
+/* Language Proficiency Progress Component (Recharts) */
+.proficiency-progress-card{border-radius:20px;background:var(--card);border:1px solid var(--line2);box-shadow:0 10px 30px rgba(0,0,0,.18);margin-bottom:22px}
+:root[data-theme=light] .proficiency-progress-card{background:#ffffff;border-color:rgba(15,23,42,.12);box-shadow:0 8px 24px rgba(15,23,42,.06)}
+
+

@@ -161,6 +161,9 @@ function open(file) {
   ensureColumn(db, 'users', 'role', "TEXT NOT NULL DEFAULT 'user'");
   ensureColumn(db, 'users', 'banned', 'INTEGER NOT NULL DEFAULT 0');
   ensureColumn(db, 'users', 'session_ver', 'INTEGER NOT NULL DEFAULT 0');
+  ensureColumn(db, 'users', 'totp_secret', 'TEXT');
+  ensureColumn(db, 'users', 'totp_enabled', 'INTEGER NOT NULL DEFAULT 0');
+  ensureColumn(db, 'users', 'totp_backup_codes', 'TEXT');
   ensureColumn(db, 'units', 'level', "TEXT NOT NULL DEFAULT 'A1'");
   seedIfEmpty(db);
   syncSeed(db);

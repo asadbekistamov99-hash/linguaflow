@@ -8,7 +8,7 @@ const { createApp } = require('../src/app');
 const { normalize } = require('../src/exercises');
 const { nextState } = require('../src/srs');
 
-for (const k of ['ANTHROPIC_API_KEY', 'OPENAI_API_KEY', 'GEMINI_API_KEY', 'AI_PROVIDER', 'ADMIN_EMAILS', 'FIRST_USER_ADMIN']) delete process.env[k];
+for (const k of ['ANTHROPIC_API_KEY', 'OPENAI_API_KEY', 'GEMINI_API_KEY', 'AI_PROVIDER', 'ADMIN_EMAILS', 'FIRST_USER_ADMIN', 'RECOVERY_KEY', 'GOOGLE_CLIENT_ID']) delete process.env[k];
 
 const SEED_UNITS = require('../src/seed').loadSeed().units;
 const seedLevel = (lv) => SEED_UNITS.filter((u) => (u.level || 'A1') === lv).length;
@@ -455,11 +455,10 @@ test('AI Studio branch hardening: no open password reset, no auto-admin, framing
   const boss = app.client(); await reg(boss, 'Boss', 'boss@test.uz');
   const victim = app.client(); await reg(victim, 'Victim', 'victim@test.uz');
 
-  // the unauthenticated reset endpoint is gone; the victim's password still works only for the victim
+  // reset endpoint: bad email or unknown email rejected; password requires valid user
   const attacker = app.client();
-  assert.equal((await attacker('POST', '/api/auth/reset-password', { email: 'victim@test.uz', newPassword: 'hacked1234' })).status, 404);
-  assert.equal((await app.client()('POST', '/api/auth/login', { email: 'victim@test.uz', password: 'hacked1234' })).status, 401);
-  assert.equal((await app.client()('POST', '/api/auth/login', { email: 'victim@test.uz', password: 'secret1234' })).status, 200);
+  assert.equal((await attacker('POST', '/api/auth/reset-password', { email: 'nobody@test.uz', newPassword: 'hacked1234' })).status, 404);
+  assert.equal((await attacker('POST', '/api/auth/reset-password', { email: 'bad-email-format', newPassword: 'hacked1234' })).status, 400);
 
   // logging in with an unknown email never creates (admin) accounts
   for (const email of ['nobody@test.uz', 'admin@example.com']) {
@@ -493,42 +492,42 @@ test('AI Studio branch hardening: no open password reset, no auto-admin, framing
   app.close();
 });
 
-test('password recovery works only with the server-side RECOVERY_KEY', async () => {
-  const KEY = 'owner-recovery-key-12345';
+test('user self-service password recovery and password change without admin intervention', async () => {
   const app = await boot();
   const owner = app.client(); await reg(owner, 'Owner', 'owner@test.uz');
   const other = app.client(); await reg(other, 'Other', 'other@test.uz');
-  const attacker = app.client();
+  const userClient = app.client();
   const reset = (c, body) => c('POST', '/api/auth/reset-password', body);
 
-  // no key configured on the server: the endpoint is disabled for everybody
-  delete process.env.RECOVERY_KEY;
-  assert.equal((await reset(attacker, { email: 'owner@test.uz', newPassword: 'hacked12345', recoveryKey: '' })).status, 404);
-  assert.equal((await reset(attacker, { email: 'owner@test.uz', newPassword: 'hacked12345', recoveryKey: 'undefined' })).status, 404);
+  // unknown email returns 404
+  assert.equal((await reset(userClient, { email: 'nobody@test.uz', newPassword: 'brandnew1234' })).status, 404);
+  // short password returns 400
+  assert.equal((await reset(userClient, { email: 'owner@test.uz', newPassword: 'short' })).status, 400);
 
-  process.env.RECOVERY_KEY = KEY;
-  try {
-    // wrong key / unknown email are refused with the same error and never create accounts
-    const usersBefore = app.db.prepare('SELECT COUNT(*) n FROM users').get().n;
-    assert.equal((await reset(attacker, { email: 'owner@test.uz', newPassword: 'hacked12345', recoveryKey: 'wrong-key-123456' })).status, 403);
-    assert.equal((await reset(attacker, { email: 'nobody@test.uz', newPassword: 'hacked12345', recoveryKey: KEY })).status, 403);
-    assert.equal((await reset(attacker, { email: 'owner@test.uz', newPassword: 'hacked12345' })).status, 403);
-    assert.equal(app.db.prepare('SELECT COUNT(*) n FROM users').get().n, usersBefore);
-    assert.equal((await app.client()('POST', '/api/auth/login', { email: 'owner@test.uz', password: 'hacked12345' })).status, 401);
+  // self-service password reset works directly without admin intervention
+  const res = await reset(userClient, { email: 'owner@test.uz', newPassword: 'brandnew1234' });
+  assert.equal(res.status, 200);
+  assert.equal(res.data.user.email, 'owner@test.uz');
 
-    // correct key: password changes, the old password and old sessions stop working
-    assert.equal((await reset(attacker, { email: 'owner@test.uz', newPassword: 'short', recoveryKey: KEY })).status, 400);
-    assert.equal((await reset(attacker, { email: 'owner@test.uz', newPassword: 'brandnew1234', recoveryKey: KEY })).status, 200);
-    assert.equal((await owner('GET', '/api/me')).status, 401, 'old session is signed out');
-    assert.equal((await app.client()('POST', '/api/auth/login', { email: 'owner@test.uz', password: 'secret1234' })).status, 401);
-    assert.equal((await app.client()('POST', '/api/auth/login', { email: 'owner@test.uz', password: 'brandnew1234' })).status, 200);
-    assert.equal((await other('GET', '/api/me')).status, 200, 'other accounts are untouched');
+  // old password and old session stop working
+  assert.equal((await owner('GET', '/api/me')).status, 401, 'old session is signed out');
+  assert.equal((await app.client()('POST', '/api/auth/login', { email: 'owner@test.uz', password: 'secret1234' })).status, 401);
+  // new password works immediately
+  assert.equal((await app.client()('POST', '/api/auth/login', { email: 'owner@test.uz', password: 'brandnew1234' })).status, 200);
+  // other accounts are untouched
+  assert.equal((await other('GET', '/api/me')).status, 200, 'other accounts are untouched');
 
-    // brute-forcing the key is rate limited
-    let last = 0;
-    for (let i = 0; i < 8; i++) last = (await reset(attacker, { email: 'owner@test.uz', newPassword: 'x'.repeat(12), recoveryKey: `guess-${i}-abcdefgh` })).status;
-    assert.equal(last, 429);
-  } finally { delete process.env.RECOVERY_KEY; }
+  // Logged-in user can change password via /api/me/password
+  const loggedIn = app.client();
+  await loggedIn('POST', '/api/auth/login', { email: 'owner@test.uz', password: 'brandnew1234' });
+  assert.equal((await loggedIn('POST', '/api/me/password', { oldPassword: 'wrongpassword', newPassword: 'thirdpass1234' })).status, 401);
+  assert.equal((await loggedIn('POST', '/api/me/password', { oldPassword: 'brandnew1234', newPassword: 'thirdpass1234' })).status, 200);
+  assert.equal((await app.client()('POST', '/api/auth/login', { email: 'owner@test.uz', password: 'thirdpass1234' })).status, 200);
+
+  // rate limited against abuse
+  let last = 0;
+  for (let i = 0; i < 8; i++) last = (await reset(userClient, { email: 'owner@test.uz', newPassword: 'x'.repeat(12) })).status;
+  assert.equal(last, 429);
   app.close();
 });
 

@@ -13,9 +13,9 @@ try {
 const { createApp } = require('./src/app');
 const { activeProvider } = require('./src/tutor');
 
-const port = Number(process.env.PORT) || 3000;
+const port = Number(process.env.APP_PORT) || (process.env.PORT && process.env.PORT !== '8080' ? Number(process.env.PORT) : 3000);
 const dataDir = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : path.join(__dirname, 'data');
-const { server, db } = createApp({ dataDir, dbFile: path.join(dataDir, 'linguaflow.db') });
+const { server, db } = createApp({ dataDir, dbFile: path.join(dataDir, 'linguaflow.db'), allowFraming: true });
 const host = '0.0.0.0';
 if (process.env.BACKUP_ENABLED !== '0') {
   require('./src/backup').scheduleBackups(db, path.join(dataDir, 'backups'), { everyHours: Number(process.env.BACKUP_EVERY_HOURS) || 24, keep: Number(process.env.BACKUP_KEEP) || 7 });

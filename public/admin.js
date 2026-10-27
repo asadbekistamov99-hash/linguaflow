@@ -27,11 +27,12 @@
     remove: (k) => { try { localStorage.removeItem(k); } catch {} memStore.delete(k); },
   };
 
-  try { localStorage.removeItem('lf_token'); } catch { /* storage unavailable */ }
-
   async function api(method, url, body) {
     const headers = {};
     if (method !== 'GET') headers['content-type'] = 'application/json';
+    headers['x-client-session'] = '1';
+    const tok = LS.get('lf_session_token') || LS.get('lf_token');
+    if (tok) headers['authorization'] = `Bearer ${tok}`;
     const r = await fetch(url, {
       method,
       headers,
@@ -56,18 +57,48 @@
     const err = h('div', { class: 'form-err', role: 'alert' }, msg || '');
     const email = h('input', { type: 'email', required: true, placeholder: 'admin@example.com', autocomplete: 'email' });
     const pass = h('input', { type: 'password', required: true, placeholder: 'Parol', autocomplete: 'current-password' });
+    const totpInp = h('input', { type: 'text', placeholder: '000 000 yoki zaxira kodi', autocomplete: 'one-time-code', style: { letterSpacing: '4px', textAlign: 'center', fontSize: '1.2rem', fontWeight: 'bold' } });
+    const totpField = h('label', { class: 'field', style: { display: 'none' } }, h('span', {}, 'Google Authenticator kodi'), totpInp);
+    const passField = h('label', { class: 'field' }, h('span', {}, 'Parol'), pass);
+    const emailField = h('label', { class: 'field' }, h('span', {}, 'Email'), email);
+    const submitBtn = h('button', { class: 'btn btn-main btn-block', type: 'submit' }, 'Kirish');
+    let tempToken = null;
+
     mount(h('div', { class: 'auth-wrap' }, h('div', { class: 'auth-card' },
       h('div', { class: 'logo' }, h('span', { class: 'logo-mark' }, 'L'), 'LinguaFlow Admin'),
       h('h1', {}, 'Admin panelga kirish'), h('p', { class: 'sub' }, 'Faqat administratorlar uchun.'),
       h('form', {
         onsubmit: async (e) => {
           e.preventDefault(); err.textContent = '';
+          submitBtn.disabled = true;
           try {
+            if (tempToken) {
+              await api('POST', '/api/auth/login-2fa', { tempToken, code: totpInp.value.trim() });
+              boot();
+              return;
+            }
             const res = await api('POST', '/api/auth/login', { email: email.value, password: pass.value });
+            if (res && res.token) {
+              LS.set('lf_session_token', res.token);
+              LS.set('lf_token', res.token);
+            }
+            if (res.require2fa) {
+              tempToken = res.tempToken;
+              passField.style.display = 'none';
+              emailField.style.display = 'none';
+              totpField.style.display = 'block';
+              submitBtn.textContent = 'Kodni tasdiqlash';
+              totpInp.focus();
+              return;
+            }
             boot();
-          } catch (ex) { err.textContent = ex.message; }
+          } catch (ex) {
+            err.textContent = ex.message;
+          } finally {
+            submitBtn.disabled = false;
+          }
         },
-      }, h('label', { class: 'field' }, h('span', {}, 'Email'), email), h('label', { class: 'field' }, h('span', {}, 'Parol'), pass), err, h('button', { class: 'btn btn-main btn-block', type: 'submit' }, 'Kirish')),
+      }, emailField, passField, totpField, err, submitBtn),
       h('div', { class: 'auth-switch' }, h('a', { href: '/app' }, '← Ilovaga qaytish')))));
   }
 
@@ -186,7 +217,7 @@
     const act = (label, cls, fn) => h('button', { class: `btn btn-sm ${cls}`, onclick: guard(async () => { await fn(); m.close(); toast('Bajarildi ✓'); route(); }) }, label);
     m.el.firstChild.replaceChildren(
       h('div', { style: { display: 'flex', alignItems: 'center', gap: '14px' } }, h('div', { class: 'avatar', style: { width: '54px', height: '54px', fontSize: '1.4rem' } }, u.name[0].toUpperCase()),
-        h('div', {}, h('h2', { style: { marginBottom: 0 } }, u.name, ' ', u.isAdmin ? h('span', { class: 'tag admin' }, 'admin') : null, u.role === 'reviewer' ? h('span', { class: 'tag review' }, 'tekshiruvchi ' + (u.reviewerLangs || []).join('/').toUpperCase()) : null, u.banned ? h('span', { class: 'tag ban' }, 'bloklangan') : null), h('div', { class: 'muted' }, u.email))),
+        h('div', {}, h('h2', { style: { marginBottom: 0 } }, u.name, ' ', u.isAdmin ? h('span', { class: 'tag admin' }, 'admin') : null, u.role === 'reviewer' ? h('span', { class: 'tag review' }, 'tekshiruvchi ' + (u.reviewerLangs || []).join('/').toUpperCase()) : null, u.banned ? h('span', { class: 'tag ban' }, 'bloklangan') : null, u.twoFactorEnabled ? h('span', { class: 'tag ok' }, '🔐 2FA') : null), h('div', { class: 'muted' }, u.email))),
       h('div', { class: 'detail-grid' },
         h('div', { class: 'stat-tile' }, h('b', {}, u.level), h('span', {}, 'Daraja')), h('div', { class: 'stat-tile' }, h('b', {}, num(u.xp)), h('span', {}, 'XP')),
         h('div', { class: 'stat-tile' }, h('b', {}, u.streak), h('span', {}, 'Seriya')), h('div', { class: 'stat-tile' }, h('b', {}, d.words), h('span', {}, "So'zlar"))),
@@ -202,6 +233,7 @@
         !self && !u.isAdmin ? h('button', { class: 'btn btn-sm btn-ghost', onclick: () => { m.close(); reviewerModal(u); } }, u.role === 'reviewer' ? 'Tekshiruvchi tillarini o\'zgartirish' : 'Tekshiruvchi qilish') : null,
         !self && u.role === 'reviewer' ? act('Tekshiruvchilikni olib tashlash', 'btn-ghost', () => api('PATCH', `/api/admin/users/${u.id}`, { role: 'user' })) : null,
         !self && !u.isAdmin ? act(u.banned ? 'Blokdan chiqarish' : 'Bloklash', 'btn-ghost', () => api('PATCH', `/api/admin/users/${u.id}`, { banned: !u.banned })) : null,
+        u.twoFactorEnabled ? act("2FA ni o'chirish (reset)", 'btn-ghost', () => api('POST', `/api/admin/users/${u.id}/reset-2fa`)) : null,
         act('Progressni tozalash', 'btn-ghost', async () => { await api('POST', `/api/admin/users/${u.id}/reset`, { what: 'progress' }); }),
         act('XP va nishonlarni tozalash', 'btn-ghost', async () => { await api('POST', `/api/admin/users/${u.id}/reset`, { what: 'xp' }); }),
         !self && !u.isAdmin ? act("Hisobni o'chirish", 'btn-danger', async () => { await api('DELETE', `/api/admin/users/${u.id}`); }) : null),

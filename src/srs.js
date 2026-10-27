@@ -18,6 +18,38 @@ function nextState(prev, ok, now = Date.now()) {
   return { reps, ease, interval_days: interval, lapses, due_at };
 }
 
+function scheduleRating(prev, rating, now = Date.now()) {
+  let { reps = 0, ease = 2.3, interval_days: interval = 0, lapses = 0 } = prev || {};
+  let r = String(rating).toLowerCase();
+  let due_at;
+
+  if (r === '0' || r === 'again' || r === 'fail' || r === 'false' || r === 'no') {
+    reps = 0;
+    lapses += 1;
+    interval = 0;
+    ease = Math.max(1.3, ease - 0.2);
+    due_at = now + 10 * 60000; // 10 minutes
+  } else if (r === '2' || r === 'hard') {
+    reps += 1;
+    interval = reps <= 1 ? 1 : Math.max(1, Math.round((interval || 1) * 1.2));
+    ease = Math.max(1.3, ease - 0.15);
+    due_at = now + interval * DAY;
+  } else if (r === '5' || r === 'easy') {
+    reps += 1;
+    interval = reps === 1 ? 2 : reps === 2 ? 4 : Math.max(2, Math.round((interval || 1) * ease * 1.3));
+    ease = Math.min(2.8, ease + 0.15);
+    due_at = now + interval * DAY;
+  } else {
+    // Default: 'good' / '4' / 'pass' / 'true' / 'yes'
+    reps += 1;
+    interval = reps === 1 ? 1 : reps === 2 ? 3 : Math.max(1, Math.round((interval || 1) * ease));
+    ease = Math.min(2.8, ease + 0.05);
+    due_at = now + interval * DAY;
+  }
+
+  return { reps, ease, interval_days: interval, lapses, due_at };
+}
+
 function recordResults(db, userId, lang, results, now = Date.now()) {
   const get = db.prepare('SELECT reps, ease, interval_days, lapses, due_at FROM word_progress WHERE user_id=? AND lang=? AND concept_id=?');
   const upsert = db.prepare(`
@@ -43,4 +75,4 @@ function dueCount(db, userId, lang, now = Date.now()) {
   return db.prepare('SELECT COUNT(*) n FROM word_progress WHERE user_id=? AND lang=? AND due_at<=?').get(userId, lang, now).n;
 }
 
-module.exports = { nextState, recordResults, dueConcepts, dueCount };
+module.exports = { nextState, scheduleRating, recordResults, dueConcepts, dueCount };

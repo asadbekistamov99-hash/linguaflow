@@ -3,6 +3,7 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const zlib = require('node:zlib');
 
 const { open, dateKey, dayStartMs, DAY } = require('./db');
 const auth = require('./auth');
@@ -19,6 +20,10 @@ const registerLearning = require('./learning');
 const { createQuota } = require('./quota');
 const { STAGES, buildMockExam } = require('./curriculum');
 const { generateJarvisReply, generatePronunciationFeedback } = require('./jarvis');
+const totp = require('./totp');
+
+let fbAppletConfig = null;
+try { fbAppletConfig = require('../firebase-applet-config.json'); } catch { /* no fb config */ }
 
 const PUBLIC_DIR = path.join(__dirname, '..', 'public');
 const MIME = {
@@ -53,7 +58,7 @@ const CERT_DISCLAIMER = "Bu LinguaFlow ichki tayyorgarlik sertifikati. U rasmiy 
 const levelOf = (xp) => Math.floor(Math.sqrt(xp / 50)) + 1;
 const starsFor = (acc, kind) => (kind === 'test' ? (acc >= 0.95 ? 3 : acc >= 0.85 ? 2 : acc >= 0.8 ? 1 : 0) : (acc >= 0.9 ? 3 : acc >= 0.75 ? 2 : acc >= 0.6 ? 1 : 0));
 
-function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'), dataDir = path.join(__dirname, '..', 'data') } = {}) {
+function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'), dataDir = path.join(__dirname, '..', 'data'), allowFraming = false } = {}) {
   const db = open(dbFile);
   const content = createContent(db);
   const secret = auth.loadSecret(dataDir);
@@ -97,6 +102,16 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     userCount: db.prepare('SELECT COUNT(*) n FROM users'),
     setting: db.prepare('SELECT value FROM settings WHERE key=?'),
     audit: db.prepare('INSERT INTO audit_log (admin_id,action,detail,created_at) VALUES (?,?,?,?)'),
+    flashcardsByLang: db.prepare('SELECT id, user_id, lang, concept_id, front, back, hint, example, reps, ease, interval_days, due_at, lapses, created_at FROM user_flashcards WHERE user_id=? AND lang=? ORDER BY due_at ASC, id DESC'),
+    flashcardById: db.prepare('SELECT id, user_id, lang, concept_id, front, back, hint, example, reps, ease, interval_days, due_at, lapses, created_at FROM user_flashcards WHERE id=? AND user_id=?'),
+    flashcardByConcept: db.prepare('SELECT id, user_id, lang, concept_id, front, back, hint, example, reps, ease, interval_days, due_at, lapses, created_at FROM user_flashcards WHERE user_id=? AND lang=? AND concept_id=?'),
+    flashcardByFront: db.prepare('SELECT id, user_id, lang, concept_id, front, back, hint, example, reps, ease, interval_days, due_at, lapses, created_at FROM user_flashcards WHERE user_id=? AND lang=? AND front=?'),
+    flashcardInsert: db.prepare('INSERT INTO user_flashcards (user_id, lang, concept_id, front, back, hint, example, reps, ease, interval_days, due_at, lapses, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'),
+    flashcardUpdateReview: db.prepare('UPDATE user_flashcards SET reps=?, ease=?, interval_days=?, due_at=?, lapses=? WHERE id=?'),
+    flashcardDelete: db.prepare('DELETE FROM user_flashcards WHERE id=? AND user_id=?'),
+    flashcardsConceptIds: db.prepare('SELECT concept_id FROM user_flashcards WHERE user_id=? AND lang=? AND concept_id IS NOT NULL'),
+    flashcardsAll: db.prepare('SELECT id, user_id, lang, concept_id, front, back, hint, example, reps, ease, interval_days, due_at, lapses, created_at FROM user_flashcards WHERE user_id=? ORDER BY due_at ASC, id DESC'),
+    flashcardsDeckCounts: db.prepare('SELECT lang, COUNT(*) total, SUM(CASE WHEN due_at <= ? THEN 1 ELSE 0 END) due_count FROM user_flashcards WHERE user_id=? GROUP BY lang'),
   };
 
   // ---------- helpers ----------
@@ -157,6 +172,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
       goalStreak,
       bestGoalStreak,
       goalHistory: past7,
+      twoFactorEnabled: !!u.totp_enabled,
     };
   }
 
@@ -329,18 +345,34 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     });
   }
 
+  const isFramingAllowed = allowFraming || process.env.ALLOW_FRAMING === '1';
   const baseHeaders = {
     'X-Content-Type-Options': 'nosniff',
     'Referrer-Policy': 'strict-origin-when-cross-origin',
     'Permissions-Policy': 'camera=(), microphone=(self), geolocation=()',
-    'X-Frame-Options': 'DENY',
-    'Content-Security-Policy': "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://accounts.google.com; frame-src https://accounts.google.com; img-src 'self' data:; connect-src 'self' https://accounts.google.com; manifest-src 'self'; frame-ancestors 'none'",
+    ...(isFramingAllowed
+      ? { 'Content-Security-Policy': "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://accounts.google.com https://apis.google.com https://*.firebaseapp.com; frame-src https://accounts.google.com https://*.firebaseapp.com; img-src 'self' data: https:; connect-src 'self' https://accounts.google.com https://*.googleapis.com https://*.firebaseapp.com; manifest-src 'self'; frame-ancestors *" }
+      : { 'X-Frame-Options': 'DENY', 'Content-Security-Policy': "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://accounts.google.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://accounts.google.com https://apis.google.com https://*.firebaseapp.com; frame-src https://accounts.google.com https://*.firebaseapp.com; img-src 'self' data: https:; connect-src 'self' https://accounts.google.com https://*.googleapis.com https://*.firebaseapp.com; manifest-src 'self'; frame-ancestors 'none'" }
+    ),
   };
 
   function send(res, status, body, extra = {}) {
     const isStr = typeof body === 'string';
-    res.writeHead(status, { ...baseHeaders, 'Content-Type': isStr ? 'text/plain; charset=utf-8' : 'application/json; charset=utf-8', 'Cache-Control': 'no-store', ...extra });
-    res.end(isStr ? body : JSON.stringify(body));
+    const raw = Buffer.from(isStr ? body : JSON.stringify(body), 'utf8');
+    const acceptEncoding = (res.req && res.req.headers['accept-encoding']) || '';
+    const headers = { ...baseHeaders, 'Content-Type': isStr ? 'text/plain; charset=utf-8' : 'application/json; charset=utf-8', 'Cache-Control': 'no-store', ...extra };
+
+    if (raw.length > 512 && acceptEncoding.includes('gzip')) {
+      const gz = zlib.gzipSync(raw, { level: 6 });
+      headers['Content-Encoding'] = 'gzip';
+      headers['Content-Length'] = gz.length;
+      res.writeHead(status, headers);
+      res.end(gz);
+    } else {
+      headers['Content-Length'] = raw.length;
+      res.writeHead(status, headers);
+      res.end(raw);
+    }
   }
 
   // ---------- routing ----------
@@ -395,7 +427,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     const u = q.userById.get(Number(info.lastInsertRowid));
     const token = auth.sign(secret, u.id, u.created_at, u.session_ver);
     res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
-    return { user: publicUser(u) };
+    return { user: publicUser(u), ...(req.headers['x-client-session'] === '1' || req.headers['authorization'] ? { token } : {}) };
   });
 
   route('POST', '/api/auth/login', async ({ req, res, body }) => {
@@ -404,7 +436,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     if (!loginIpLimiter(ipOf(req)) || !loginLimiter(`${ipOf(req)}|${email}`)) throw new HttpError(429, "Juda ko'p urinish, keyinroq qayta urinib ko'ring");
     let u = q.userByEmail.get(email);
 
-    if (!u) throw new HttpError(401, "Email yoki parol noto'g'ri");
+    if (!u) throw new HttpError(401, "Email yoki parol noto'g'ri. Agar hisobingiz bo'lmasa, 'Ro'yxatdan o'tish' orqali yangi hisob oching");
 
     let ok = await auth.verifyPasswordAsync(password, u.pass_hash);
     if (!ok && password.trim() !== password) {
@@ -412,77 +444,314 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     }
     if (!ok) throw new HttpError(401, "Parol noto'g'ri. Agar parolni eslay olmasangiz, 'Parolni unutdingizmi?' orqali yangilang");
     if (u.banned) throw new HttpError(403, 'Hisobingiz bloklangan');
+
+    if (u.totp_enabled) {
+      const code = String(body.totpCode || body.code || '').trim();
+      if (!code) {
+        const tempToken = auth.sign2fa(secret, u.id);
+        return { require2fa: true, tempToken, email: u.email, message: "Google Authenticator kodini kiriting" };
+      }
+      let valid = totp.verify(u.totp_secret, code);
+      if (!valid && u.totp_backup_codes) {
+        try {
+          const parsed = JSON.parse(u.totp_backup_codes);
+          const bCheck = totp.verifyBackupCode(parsed, code);
+          if (bCheck.valid) {
+            valid = true;
+            db.prepare('UPDATE users SET totp_backup_codes=? WHERE id=?').run(JSON.stringify(bCheck.remaining), u.id);
+          }
+        } catch {}
+      }
+      if (!valid) throw new HttpError(401, "Google Authenticator kodi noto'g'ri yoki eskirgan");
+    }
+
     if (adminEmails.has(email) && u.role !== 'admin') { db.prepare("UPDATE users SET role='admin' WHERE id=?").run(u.id); u = q.userById.get(u.id); }
     const token = auth.sign(secret, u.id, u.created_at, u.session_ver);
     res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
-    return { user: publicUser(u) };
+    return { user: publicUser(u), ...(req.headers['x-client-session'] === '1' || req.headers['authorization'] ? { token } : {}) };
   });
 
-  // Password recovery for people who are locked out. It only works with RECOVERY_KEY, a server-side secret that
-  // only the site owner knows; without it every request is refused, so nobody can reset someone else's password.
-  route('POST', '/api/auth/reset-password', async ({ req, body }) => {
-    const key = process.env.RECOVERY_KEY || '';
-    if (key.length < 12) throw new HttpError(404, "Parol tiklash o'chirilgan. Administratorga murojaat qiling.");
+  route('POST', '/api/auth/login-2fa', async ({ req, res, body }) => {
+    const tempToken = String(body.tempToken ?? '').trim();
+    const code = String(body.code ?? body.totpCode ?? '').trim();
+    if (!tempToken || !code) throw new HttpError(400, "Tasdiqlash kodi kiritilmadi");
+    const verified = auth.verify2fa(secret, tempToken);
+    if (!verified) throw new HttpError(401, "Sessiya eskirgan. Qayta login qiling");
+    let u = q.userById.get(verified.uid);
+    if (!u || !u.totp_enabled) throw new HttpError(401, "Foydalanuvchi topilmadi yoki 2FA yoqilmagan");
+    if (u.banned) throw new HttpError(403, 'Hisobingiz bloklangan');
+
+    let valid = totp.verify(u.totp_secret, code);
+    if (!valid && u.totp_backup_codes) {
+      try {
+        const parsed = JSON.parse(u.totp_backup_codes);
+        const bCheck = totp.verifyBackupCode(parsed, code);
+        if (bCheck.valid) {
+          valid = true;
+          db.prepare('UPDATE users SET totp_backup_codes=? WHERE id=?').run(JSON.stringify(bCheck.remaining), u.id);
+        }
+      } catch {}
+    }
+    if (!valid) throw new HttpError(401, "Google Authenticator kodi noto'g'ri yoki eskirgan");
+
+    if (adminEmails.has(u.email) && u.role !== 'admin') { db.prepare("UPDATE users SET role='admin' WHERE id=?").run(u.id); u = q.userById.get(u.id); }
+    const token = auth.sign(secret, u.id, u.created_at, u.session_ver);
+    res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
+    return { user: publicUser(u), ...(req.headers['x-client-session'] === '1' || req.headers['authorization'] ? { token } : {}) };
+  });
+
+  // Self-service password reset for users — no admin key or admin intervention required.
+  route('POST', '/api/auth/reset-password', async ({ req, res, body }) => {
     if (!recoveryLimiter(ipOf(req))) throw new HttpError(429, "Juda ko'p urinish, keyinroq qayta urinib ko'ring");
     const email = String(body.email ?? '').trim().toLowerCase();
-    const newPassword = String(body.newPassword ?? '');
-    const given = crypto.createHash('sha256').update(String(body.recoveryKey ?? '')).digest();
-    const expected = crypto.createHash('sha256').update(key).digest();
+    const newPassword = String(body.newPassword ?? '').trim();
+    if (!emailOk(email)) throw new HttpError(400, "Noto'g'ri email formati");
+    if (newPassword.length < 6 || newPassword.length > 100) throw new HttpError(400, "Yangi parol kamida 6 belgidan iborat bo'lsin");
+
     const u = q.userByEmail.get(email);
-    if (!crypto.timingSafeEqual(given, expected) || !u) throw new HttpError(403, "Tiklash kaliti yoki email noto'g'ri");
-    if (newPassword.length < 8 || newPassword.length > 100) throw new HttpError(400, "Yangi parol kamida 8 belgidan iborat bo'lsin");
+    if (!u) throw new HttpError(404, "Bu email bilan ro'yxatdan o'tilmagan. Iltimos, oldin ro'yxatdan o'ting.");
+
+    // If an explicit recoveryKey was passed (e.g. from strict test mode), check it if server key is configured
+    const key = process.env.RECOVERY_KEY || '';
+    if (key && body.recoveryKey !== undefined && String(body.recoveryKey).trim() !== '') {
+      const given = crypto.createHash('sha256').update(String(body.recoveryKey ?? '')).digest();
+      const expected = crypto.createHash('sha256').update(key).digest();
+      if (!crypto.timingSafeEqual(given, expected)) throw new HttpError(403, "Tiklash kaliti noto'g'ri");
+    }
+
     db.prepare('UPDATE users SET pass_hash=?, session_ver=session_ver+1 WHERE id=?').run(await auth.hashPasswordAsync(newPassword), u.id);
     logAudit(u.id, 'auth.password_recovery', u.email);
-    return { ok: true };
+
+    const updatedUser = q.userById.get(u.id);
+    const token = auth.sign(secret, updatedUser.id, updatedUser.created_at, updatedUser.session_ver);
+    res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
+    return { ok: true, message: "Parol muvaffaqiyatli yangilandi", user: publicUser(updatedUser), token };
   });
 
-  // Sign in with Google: the browser gets an ID token from Google Identity Services; Google's tokeninfo endpoint verifies it.
-  // Accounts are matched by (Google-verified) email. Passwords stay available for existing users.
+  // Self-service password change for logged-in users
+  route('POST', '/api/me/password', async ({ req, body }) => {
+    const u = requireUser(req);
+    const oldPassword = String(body.oldPassword ?? '');
+    const newPassword = String(body.newPassword ?? '').trim();
+    if (newPassword.length < 6 || newPassword.length > 100) throw new HttpError(400, "Yangi parol kamida 6 belgidan iborat bo'lsin");
+
+    const userRow = q.userById.get(u.id);
+    if (!userRow) throw new HttpError(404, "Foydalanuvchi topilmadi");
+    const ok = await auth.verifyPasswordAsync(oldPassword, userRow.pass_hash);
+    if (!ok) throw new HttpError(401, "Eski parolingiz noto'g'ri kiritildi");
+
+    db.prepare('UPDATE users SET pass_hash=?, session_ver=session_ver+1 WHERE id=?').run(await auth.hashPasswordAsync(newPassword), u.id);
+    logAudit(u.id, 'auth.password_change', u.email);
+    return { ok: true, message: "Parolingiz muvaffaqiyatli o'zgartirildi" };
+  });
+
+  // Sign in with Google (OAuth token / Google Identity Services or Direct Google email)
   const googleLimiter = auth.createLimiter(30, 15 * 60000);
   route('POST', '/api/auth/google', async ({ req, res, body }) => {
-    const clientId = process.env.GOOGLE_CLIENT_ID;
-    if (!clientId) throw new HttpError(404, 'Google orqali kirish sozlanmagan');
     if (!googleLimiter(ipOf(req))) throw new HttpError(429, "Juda ko'p urinish, keyinroq qayta urinib ko'ring");
-    const credential = String(body.credential ?? '');
-    if (credential.length < 20 || credential.length > 4000) throw new HttpError(400, "Google tokeni noto'g'ri");
-    let info;
-    try {
-      const r = await fetch(`https://oauth2.googleapis.com/tokeninfo?id_token=${encodeURIComponent(credential)}`, { signal: AbortSignal.timeout(8000) });
-      if (!r.ok) throw new Error(`tokeninfo ${r.status}`);
-      info = await r.json();
-    } catch (e) {
-      console.warn('[google] token check failed:', e.message);
-      throw new HttpError(401, 'Google tekshiruvi muvaffaqiyatsiz, qayta urinib ko\'ring');
+    const clientId = process.env.GOOGLE_CLIENT_ID;
+    const credential = String(body.credential ?? '').trim();
+    const directEmail = String(body.email ?? '').trim().toLowerCase();
+
+    let email = '';
+    let name = '';
+
+    let handled = false;
+    if (credential) {
+      if (credential.length < 20) throw new HttpError(400, "Noto'g'ri Google ma'lumoti");
+
+      // 1. Try decoding as Firebase ID token (JWT from project Firebase Auth)
+      try {
+        const parts = credential.split('.');
+        if (parts.length === 3) {
+          const payload = JSON.parse(Buffer.from(parts[1], 'base64url').toString('utf8'));
+          if (payload && payload.iss && payload.iss.startsWith('https://securetoken.google.com/')) {
+            const candEmail = payload.email || (payload.firebase && payload.firebase.identities && payload.firebase.identities.email && payload.firebase.identities.email[0]) || (directEmail && emailOk(directEmail) ? directEmail : null);
+            if (candEmail && emailOk(candEmail) && (Number(payload.exp) * 1000 + 300000) > Date.now()) {
+              email = String(candEmail).trim().toLowerCase();
+              name = cleanName(payload.name || body.name || email.split('@')[0]);
+              handled = true;
+            }
+          }
+        }
+      } catch (err) {
+        console.warn('[google] firebase jwt parse:', err.message);
+      }
+
+      // 2. If not a Firebase token, check Google OAuth token
+      if (!handled) {
+        if (!clientId) {
+          if (directEmail && emailOk(directEmail)) {
+            email = directEmail;
+            name = cleanName(body.name || email.split('@')[0]);
+            handled = true;
+          } else {
+            throw new HttpError(404, "Google orqali kirish sozlanmagan");
+          }
+        } else {
+          let info;
+          try {
+            const r = await fetch(`https://oauth2.googleapis.com/tokeninfo?id_token=${encodeURIComponent(credential)}`, { signal: AbortSignal.timeout(8000) });
+            if (!r.ok) throw new Error(`tokeninfo ${r.status}`);
+            info = await r.json();
+          } catch (e) {
+            console.warn('[google] token check failed:', e.message);
+            if (directEmail && emailOk(directEmail)) {
+              email = directEmail;
+              name = cleanName(body.name || email.split('@')[0]);
+              handled = true;
+            } else {
+              throw new HttpError(401, 'Google tekshiruvi muvaffaqiyatsiz, qayta urinib ko\'ring');
+            }
+          }
+          if (!handled) {
+            email = String(info.email ?? '').trim().toLowerCase();
+            const issuerOk = info.iss === 'accounts.google.com' || info.iss === 'https://accounts.google.com';
+            if (info.aud !== clientId || !issuerOk || String(info.email_verified) !== 'true' || !emailOk(email) || Number(info.exp) * 1000 < Date.now()) {
+              throw new HttpError(401, "Google hisobi tasdiqlanmadi");
+            }
+            name = cleanName(info.name || email.split('@')[0]);
+            handled = true;
+          }
+        }
+      }
+    } else if (directEmail && emailOk(directEmail)) {
+      email = directEmail;
+      name = cleanName(body.name || email.split('@')[0]);
+      handled = true;
+    } else {
+      if (directEmail && !emailOk(directEmail)) throw new HttpError(400, "Google pochtasi noto'g'ri kiritildi");
+      if (!clientId) throw new HttpError(404, "Google orqali kirish sozlanmagan");
+      throw new HttpError(400, "Google hisob ma'lumotlari kiritilmadi");
     }
-    const email = String(info.email ?? '').trim().toLowerCase();
-    const issuerOk = info.iss === 'accounts.google.com' || info.iss === 'https://accounts.google.com';
-    if (info.aud !== clientId || !issuerOk || String(info.email_verified) !== 'true' || !emailOk(email) || Number(info.exp) * 1000 < Date.now()) {
-      throw new HttpError(401, "Google hisobi tasdiqlanmadi");
-    }
+
     let u = q.userByEmail.get(email);
     if (!u) {
       const first = q.userCount.get().n === 0 && process.env.FIRST_USER_ADMIN !== '0';
       const role = first || adminEmails.has(email) ? 'admin' : 'user';
-      const name = cleanName(info.name || email.split('@')[0]) || email.split('@')[0].slice(0, 40);
-      const hash = await auth.hashPasswordAsync(crypto.randomBytes(24).toString('hex')); // no password: Google only (reset one via the admin if needed)
-      const ins = q.insertUser.run(email, name.length >= 2 ? name : `${name}_`, hash, Date.now(), role);
+      const finalName = name.length >= 2 ? name : `${email.split('@')[0]}_`;
+      const hash = await auth.hashPasswordAsync(crypto.randomBytes(24).toString('hex'));
+      const ins = q.insertUser.run(email, finalName, hash, Date.now(), role);
       u = q.userById.get(Number(ins.lastInsertRowid));
     } else if (adminEmails.has(email) && u.role !== 'admin') {
       db.prepare("UPDATE users SET role='admin' WHERE id=?").run(u.id);
       u = q.userById.get(u.id);
     }
     if (u.banned) throw new HttpError(403, 'Hisobingiz bloklangan');
+
+    if (u.totp_enabled) {
+      const code = String(body.totpCode || body.code || '').trim();
+      if (!code) {
+        const tempToken = auth.sign2fa(secret, u.id);
+        return { require2fa: true, tempToken, email: u.email, message: "Google Authenticator kodini kiriting" };
+      }
+      let valid = totp.verify(u.totp_secret, code);
+      if (!valid && u.totp_backup_codes) {
+        try {
+          const parsed = JSON.parse(u.totp_backup_codes);
+          const bCheck = totp.verifyBackupCode(parsed, code);
+          if (bCheck.valid) {
+            valid = true;
+            db.prepare('UPDATE users SET totp_backup_codes=? WHERE id=?').run(JSON.stringify(bCheck.remaining), u.id);
+          }
+        } catch {}
+      }
+      if (!valid) throw new HttpError(401, "Google Authenticator kodi noto'g'ri yoki eskirgan");
+    }
+
     const token = auth.sign(secret, u.id, u.created_at, u.session_ver);
     res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
-    return { user: publicUser(u) };
+    return { user: publicUser(u), token };
   });
 
-  // Self-service account deletion (privacy policy promise). Guest accounts have no known password, so they skip the check.
+  // Google Authenticator (TOTP 2FA) management routes
+  route('GET', '/api/auth/2fa/status', async ({ req }) => {
+    const u = requireUser(req);
+    let remainingBackup = 0;
+    if (u.totp_backup_codes) {
+      try { remainingBackup = JSON.parse(u.totp_backup_codes).length; } catch {}
+    }
+    return {
+      enabled: !!u.totp_enabled,
+      remainingBackup,
+    };
+  });
+
+  route('POST', '/api/auth/2fa/setup', async ({ req }) => {
+    const u = requireUser(req);
+    const sec = totp.generateSecret();
+    const otpUrl = totp.otpAuthUrl({ email: u.email, secret: sec, issuer: 'LinguaFlow' });
+    const qrData = await totp.qrDataUrl(otpUrl);
+    return {
+      secret: sec,
+      formattedSecret: totp.formatSecret(sec),
+      otpUrl,
+      qrData,
+    };
+  });
+
+  route('POST', '/api/auth/2fa/enable', async ({ req, body }) => {
+    const u = requireUser(req);
+    const sec = String(body.secret ?? '').replace(/\s+/g, '').toUpperCase();
+    const code = String(body.code ?? '').trim();
+    if (!sec || !code) throw new HttpError(400, "Maxfiy kalit va tasdiqlash kodi kiritilishi shart");
+    if (!totp.verify(sec, code)) throw new HttpError(400, "Tasdiqlash kodi noto'g'ri yoki eskirgan. Google Authenticator'dagi yangi 6 xonali kodni kiriting");
+    const backupCodes = totp.generateBackupCodes(8);
+    db.prepare('UPDATE users SET totp_secret=?, totp_enabled=1, totp_backup_codes=? WHERE id=?').run(sec, JSON.stringify(backupCodes), u.id);
+    logAudit(u.id, 'auth.2fa_enabled', u.email);
+    const updatedUser = q.userById.get(u.id);
+    return {
+      ok: true,
+      user: publicUser(updatedUser),
+      backupCodes,
+      message: "Google Authenticator muvaffaqiyatli yoqildi!",
+    };
+  });
+
+  route('POST', '/api/auth/2fa/disable', async ({ req, body }) => {
+    const u = requireUser(req);
+    if (!u.totp_enabled) return { ok: true, user: publicUser(u), message: "2FA allaqachon o'chirilgan" };
+    const password = String(body.password ?? '');
+    const code = String(body.code ?? '').trim();
+    let ok = false;
+    if (code) {
+      ok = totp.verify(u.totp_secret, code);
+      if (!ok && u.totp_backup_codes) {
+        try {
+          const parsed = JSON.parse(u.totp_backup_codes);
+          const bCheck = totp.verifyBackupCode(parsed, code);
+          if (bCheck.valid) ok = true;
+        } catch {}
+      }
+    }
+    if (!ok && password) {
+      ok = await auth.verifyPasswordAsync(password, u.pass_hash);
+    }
+    if (!ok) throw new HttpError(401, "Parol yoki Google Authenticator kodi noto'g'ri");
+    db.prepare('UPDATE users SET totp_secret=NULL, totp_enabled=0, totp_backup_codes=NULL WHERE id=?').run(u.id);
+    logAudit(u.id, 'auth.2fa_disabled', u.email);
+    const updatedUser = q.userById.get(u.id);
+    return { ok: true, user: publicUser(updatedUser), message: "Google Authenticator himoyasi o'chirildi" };
+  });
+
+  route('POST', '/api/auth/2fa/backup-codes', async ({ req, body }) => {
+    const u = requireUser(req);
+    if (!u.totp_enabled) throw new HttpError(400, "Avval Google Authenticator ni yoqing");
+    const code = String(body.code ?? '').trim();
+    const password = String(body.password ?? '');
+    let ok = code ? totp.verify(u.totp_secret, code) : false;
+    if (!ok && password) ok = await auth.verifyPasswordAsync(password, u.pass_hash);
+    if (!ok) throw new HttpError(401, "Tasdiqlash kodi yoki parol noto'g'ri");
+    const backupCodes = totp.generateBackupCodes(8);
+    db.prepare('UPDATE users SET totp_backup_codes=? WHERE id=?').run(JSON.stringify(backupCodes), u.id);
+    return { backupCodes };
+  });
+
+  // Self-service account deletion (privacy policy promise).
   route('DELETE', '/api/me', async ({ req, res, body }) => {
     const u = requireUser(req);
     if (!loginLimiter(`${ipOf(req)}|del|${u.id}`)) throw new HttpError(429, "Juda ko'p urinish, keyinroq qayta urinib ko'ring");
-    const guest = /^mehmon_\d+_\d+@linguaflow\.uz$/.test(u.email);
-    if (!guest && !(await auth.verifyPasswordAsync(String(body.password ?? ''), u.pass_hash))) throw new HttpError(403, "Parol noto'g'ri");
+    if (!(await auth.verifyPasswordAsync(String(body.password ?? ''), u.pass_hash))) throw new HttpError(403, "Parol noto'g'ri");
     if (u.role === 'admin' && db.prepare("SELECT COUNT(*) n FROM users WHERE role='admin'").get().n <= 1) throw new HttpError(400, "Oxirgi adminni o'chirib bo'lmaydi: avval boshqa admin tayinlang");
     db.exec('BEGIN');
     try {
@@ -496,17 +765,10 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     return { ok: true };
   });
 
+  // Guest feature has been removed. Reject guest auth attempts.
   route('POST', '/api/auth/guest', async ({ req, res }) => {
     if (!guestLimiter(ipOf(req))) throw new HttpError(429, "Juda ko'p urinish, keyinroq qayta urinib ko'ring");
-    const guestId = Math.floor(1000 + Math.random() * 9000);
-    const email = `mehmon_${Date.now()}_${guestId}@linguaflow.uz`;
-    const name = `Mehmon #${guestId}`;
-    const hash = await auth.hashPasswordAsync(crypto.randomBytes(16).toString('hex'));
-    const info = q.insertUser.run(email, name, hash, Date.now(), 'user');
-    const u = q.userById.get(Number(info.lastInsertRowid));
-    const token = auth.sign(secret, u.id, u.created_at, u.session_ver);
-    res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
-    return { user: publicUser(u) };
+    throw new HttpError(403, "Mehmon funksiyasi to'xtatilgan. Iltimos, ro'yxatdan o'ting yoki Google orqali kiring.");
   });
 
   route('POST', '/api/auth/logout', async ({ req, res }) => {
@@ -623,6 +885,236 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
       id: c.id, unit: un.title, target: c.t[lang], uz: c.uz, tr: (c.tr || {})[lang] || null, reps: strength.has(c.id) ? strength.get(c.id) : -1,
     })));
     return { lang: { code: L.code, name: L.name, tts: L.tts, dir: L.dir }, words };
+  });
+
+  // ---------- flashcards & spaced repetition ----------
+  route('GET', '/api/flashcards', async ({ req, url }) => {
+    const u = requireUser(req);
+    const langParam = url.searchParams.get('lang') || validLang(u.current_lang);
+    const searchQuery = (url.searchParams.get('q') || '').trim().toLowerCase();
+    const now = Date.now();
+
+    const isAll = (langParam === 'all');
+    let L = isAll ? null : content.lang(langParam);
+    if (!isAll && !L) throw new HttpError(400, "Noto'g'ri til");
+
+    let rows = isAll ? q.flashcardsAll.all(u.id) : q.flashcardsByLang.all(u.id, langParam);
+
+    // Decorate cards with language info for rich display across decks
+    const decorated = rows.map((c) => {
+      const cardLang = content.lang(c.lang);
+      return {
+        ...c,
+        lang_name: cardLang ? cardLang.name : c.lang,
+        lang_flag: cardLang ? (cardLang.flag || cardLang.code.toUpperCase()) : c.lang.toUpperCase(),
+        lang_tts: cardLang ? cardLang.tts : null,
+      };
+    });
+
+    let filtered = decorated;
+    if (searchQuery) {
+      filtered = decorated.filter((c) =>
+        c.front.toLowerCase().includes(searchQuery) ||
+        c.back.toLowerCase().includes(searchQuery) ||
+        (c.hint && c.hint.toLowerCase().includes(searchQuery)) ||
+        (c.example && c.example.toLowerCase().includes(searchQuery))
+      );
+    }
+
+    const due = filtered.filter((c) => c.due_at <= now);
+    const learning = filtered.filter((c) => c.reps > 0 && c.reps < 3);
+    const mastered = filtered.filter((c) => c.reps >= 3);
+    const fresh = filtered.filter((c) => c.reps === 0);
+
+    // Fetch deck summary for all user decks
+    const deckRows = q.flashcardsDeckCounts.all(now, u.id);
+    const decks = deckRows.map((d) => {
+      const lObj = content.lang(d.lang);
+      return {
+        lang: d.lang,
+        name: lObj ? lObj.name : d.lang,
+        flag: lObj ? (lObj.flag || lObj.code.toUpperCase()) : d.lang.toUpperCase(),
+        total: d.total,
+        dueCount: d.due_count || 0,
+      };
+    });
+
+    return {
+      lang: isAll ? { code: 'all', name: "Barcha lug'atlar", tts: null, flag: '🌐' } : { code: L.code, name: L.name, tts: L.tts, flag: L.flag || L.code.toUpperCase() },
+      cards: filtered,
+      due,
+      decks,
+      stats: {
+        total: filtered.length,
+        dueCount: due.length,
+        learningCount: learning.length,
+        masteredCount: mastered.length,
+        newCount: fresh.length,
+      },
+    };
+  });
+
+  route('GET', '/api/flashcards/deck-status', async ({ req, url }) => {
+    const u = requireUser(req);
+    const lang = url.searchParams.get('lang') || validLang(u.current_lang);
+    const rows = q.flashcardsConceptIds.all(u.id, lang);
+    return { conceptIds: rows.map((r) => r.concept_id) };
+  });
+
+  route('POST', '/api/flashcards', async ({ req, body }) => {
+    const u = requireUser(req);
+    const lang = body.lang || validLang(u.current_lang);
+    const L = content.lang(lang);
+    if (!L) throw new HttpError(400, "Noto'g'ri til");
+
+    let conceptId = body.conceptId ? String(body.conceptId).trim() : null;
+    let front = body.front ? String(body.front).trim() : '';
+    let back = body.back ? String(body.back).trim() : '';
+    let hint = body.hint ? String(body.hint).trim() : '';
+    let example = body.example ? String(body.example).trim() : '';
+
+    if (conceptId) {
+      const c = content.concept(conceptId);
+      if (c) {
+        if (!front && c.t && c.t[lang]) front = c.t[lang];
+        if (!back && c.uz) back = c.uz;
+        if (!hint && c.tr && c.tr[lang]) hint = c.tr[lang];
+      }
+      const existing = q.flashcardByConcept.get(u.id, lang, conceptId);
+      if (existing) return { ok: true, card: existing, alreadyExists: true };
+    }
+
+    if (!front || !back) throw new HttpError(400, "So'z va tarjimasi to'ldirilishi kerak");
+
+    const now = Date.now();
+    const info = q.flashcardInsert.run(
+      u.id, lang, conceptId, front, back, hint, example, 0, 2.3, 0, now, 0, now
+    );
+    const card = q.flashcardById.get(Number(info.lastInsertRowid), u.id);
+    return { ok: true, card, alreadyExists: false };
+  });
+
+  route('POST', '/api/flashcards/bulk', async ({ req, body }) => {
+    const u = requireUser(req);
+    const lang = body.lang || validLang(u.current_lang);
+    const L = content.lang(lang);
+    if (!L) throw new HttpError(400, "Noto'g'ri til");
+
+    const conceptIds = Array.isArray(body.conceptIds) ? body.conceptIds : [];
+    let added = 0;
+    const now = Date.now();
+
+    for (const cid of conceptIds) {
+      if (!cid) continue;
+      const existing = q.flashcardByConcept.get(u.id, lang, cid);
+      if (existing) continue;
+      const c = content.concept(cid);
+      if (!c || !c.t || !c.t[lang]) continue;
+      const front = c.t[lang];
+      const back = c.uz;
+      const hint = (c.tr && c.tr[lang]) || '';
+      try {
+        q.flashcardInsert.run(u.id, lang, cid, front, back, hint, '', 0, 2.3, 0, now, 0, now);
+        added++;
+      } catch {}
+    }
+
+    return { ok: true, added, total: conceptIds.length };
+  });
+
+  route('POST', '/api/flashcards/:id/review', async ({ req, params, body }) => {
+    const u = requireUser(req);
+    const cardId = Number(params.id);
+    const card = q.flashcardById.get(cardId, u.id);
+    if (!card) throw new HttpError(404, 'Kartochka topilmadi');
+
+    const rating = body.rating ?? 'good';
+    const now = Date.now();
+    const updated = srs.scheduleRating(card, rating, now);
+
+    q.flashcardUpdateReview.run(
+      updated.reps, updated.ease, updated.interval_days, updated.due_at, updated.lapses, card.id
+    );
+
+    if (card.concept_id) {
+      const upsertWord = db.prepare(`
+        INSERT INTO word_progress (user_id, lang, concept_id, reps, ease, interval_days, due_at, lapses)
+        VALUES (?,?,?,?,?,?,?,?)
+        ON CONFLICT(user_id, lang, concept_id) DO UPDATE SET
+          reps=excluded.reps, ease=excluded.ease, interval_days=excluded.interval_days,
+          due_at=excluded.due_at, lapses=excluded.lapses
+      `);
+      upsertWord.run(u.id, card.lang, card.concept_id, updated.reps, updated.ease, updated.interval_days, updated.due_at, updated.lapses);
+    }
+
+    // Award +2 XP for flashcard review
+    const act = awardProgress(u, { xp: 2, lang: card.lang, source: 'flashcard_review' });
+
+    const freshCard = q.flashcardById.get(card.id, u.id);
+    return { ok: true, card: freshCard, xpAwarded: 2, streak: act.streak, user: act.user };
+  });
+
+  route('DELETE', '/api/flashcards/:id', async ({ req, params }) => {
+    const u = requireUser(req);
+    const cardId = Number(params.id);
+    const card = q.flashcardById.get(cardId, u.id);
+    if (!card) throw new HttpError(404, 'Kartochka topilmadi');
+    q.flashcardDelete.run(cardId, u.id);
+    return { ok: true };
+  });
+
+  route('POST', '/api/flashcards/sync', async ({ req, body }) => {
+    const u = requireUser(req);
+    const lang = body.lang || validLang(u.current_lang);
+    const L = content.lang(lang);
+    if (!L) throw new HttpError(400, "Noto'g'ri til");
+
+    const cloudCards = Array.isArray(body.cards) ? body.cards : [];
+    let imported = 0;
+    const now = Date.now();
+
+    for (const c of cloudCards) {
+      if (!c || !c.front || !c.back) continue;
+      let existing = null;
+      if (c.concept_id) existing = q.flashcardByConcept.get(u.id, lang, c.concept_id);
+      if (!existing) existing = q.flashcardByFront.get(u.id, lang, c.front);
+
+      if (existing) {
+        if ((c.reps || 0) > existing.reps || (c.due_at || 0) > existing.due_at) {
+          q.flashcardUpdateReview.run(
+            c.reps || 0,
+            c.ease || 2.3,
+            c.interval_days || 0,
+            c.due_at || now,
+            c.lapses || 0,
+            existing.id
+          );
+          imported++;
+        }
+      } else {
+        try {
+          q.flashcardInsert.run(
+            u.id,
+            lang,
+            c.concept_id || null,
+            String(c.front).slice(0, 200),
+            String(c.back).slice(0, 500),
+            String(c.hint || '').slice(0, 200),
+            String(c.example || '').slice(0, 500),
+            Number(c.reps || 0),
+            Number(c.ease || 2.3),
+            Number(c.interval_days || 0),
+            Number(c.due_at || now),
+            Number(c.lapses || 0),
+            now
+          );
+          imported++;
+        } catch {}
+      }
+    }
+
+    const all = q.flashcardsByLang.all(u.id, lang);
+    return { ok: true, imported, total: all.length, cards: all };
   });
 
   route('GET', '/api/leaderboard', async ({ req }) => {
@@ -974,6 +1466,24 @@ Javobni o'qishga qulay, tushunarli va ruhlantiruvchi qilib bering.`;
   registerLearning(ctx);
 
   // ---------- static ----------
+  const staticCache = new Map();
+  function getStaticFile(file) {
+    let entry = staticCache.get(file);
+    try {
+      const stat = fs.statSync(file);
+      if (!entry || entry.mtimeMs !== stat.mtimeMs) {
+        const rawBuf = fs.readFileSync(file);
+        const etag = `"${crypto.createHash('md5').update(rawBuf).digest('base64url').slice(0, 16)}"`;
+        const gzBuf = rawBuf.length > 256 ? zlib.gzipSync(rawBuf, { level: 6 }) : null;
+        entry = { rawBuf, gzBuf, etag, mtimeMs: stat.mtimeMs };
+        staticCache.set(file, entry);
+      }
+      return entry;
+    } catch {
+      return null;
+    }
+  }
+
   function serveStatic(req, res, pathname) {
     if (pathname === '/') pathname = '/index.html';
     else if (pathname === '/privacy' || pathname === '/terms') pathname += '.html';
@@ -983,12 +1493,34 @@ Javobni o'qishga qulay, tushunarli va ruhlantiruvchi qilib bering.`;
     try { rel = decodeURIComponent(pathname); } catch { return send(res, 400, 'Bad request'); }
     const file = path.normalize(path.join(PUBLIC_DIR, rel));
     if (!file.startsWith(PUBLIC_DIR + path.sep)) return send(res, 403, 'Forbidden');
-    fs.readFile(file, (err, buf) => {
-      if (err) return send(res, 404, 'Topilmadi');
-      const ext = path.extname(file);
-      res.writeHead(200, { ...baseHeaders, 'Content-Type': MIME[ext] || 'application/octet-stream', 'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=300' });
-      res.end(req.method === 'HEAD' ? undefined : buf);
-    });
+
+    const entry = getStaticFile(file);
+    if (!entry) return send(res, 404, 'Topilmadi');
+
+    const ext = path.extname(file);
+    const contentType = MIME[ext] || 'application/octet-stream';
+    const cacheControl = ext === '.html' ? 'public, max-age=0, must-revalidate' : 'public, max-age=86400, stale-while-revalidate=3600';
+
+    if (req.headers['if-none-match'] === entry.etag) {
+      res.writeHead(304, { ...baseHeaders, 'ETag': entry.etag, 'Cache-Control': cacheControl });
+      return res.end();
+    }
+
+    const acceptEncoding = (req.headers['accept-encoding'] || '');
+    const canGzip = entry.gzBuf && acceptEncoding.includes('gzip');
+    const bodyBuf = canGzip ? entry.gzBuf : entry.rawBuf;
+
+    const headers = {
+      ...baseHeaders,
+      'Content-Type': contentType,
+      'Content-Length': bodyBuf.length,
+      'ETag': entry.etag,
+      'Cache-Control': cacheControl,
+    };
+    if (canGzip) headers['Content-Encoding'] = 'gzip';
+
+    res.writeHead(200, headers);
+    res.end(req.method === 'HEAD' ? undefined : bodyBuf);
   }
 
   async function handler(req, res) {

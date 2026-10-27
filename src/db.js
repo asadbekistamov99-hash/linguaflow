@@ -14,7 +14,11 @@ function open(file) {
   const db = new DatabaseSync(file);
   db.exec(`
     PRAGMA journal_mode = WAL;
+    PRAGMA synchronous = NORMAL;
     PRAGMA foreign_keys = ON;
+    PRAGMA cache_size = -64000;
+    PRAGMA temp_store = MEMORY;
+    PRAGMA mmap_size = 268435456;
     CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       email TEXT NOT NULL UNIQUE,
@@ -49,6 +53,24 @@ function open(file) {
       PRIMARY KEY (user_id, lang, concept_id)
     );
     CREATE INDEX IF NOT EXISTS idx_word_due ON word_progress(user_id, lang, due_at);
+    CREATE TABLE IF NOT EXISTS user_flashcards (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+      lang TEXT NOT NULL,
+      concept_id TEXT,
+      front TEXT NOT NULL,
+      back TEXT NOT NULL,
+      hint TEXT DEFAULT '',
+      example TEXT DEFAULT '',
+      reps INTEGER NOT NULL DEFAULT 0,
+      ease REAL NOT NULL DEFAULT 2.3,
+      interval_days REAL NOT NULL DEFAULT 0,
+      due_at INTEGER NOT NULL,
+      lapses INTEGER NOT NULL DEFAULT 0,
+      created_at INTEGER NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_flashcards_user_lang_due ON user_flashcards(user_id, lang, due_at);
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_flashcards_user_lang_concept ON user_flashcards(user_id, lang, concept_id) WHERE concept_id IS NOT NULL;
     CREATE TABLE IF NOT EXISTS xp_events (
       id INTEGER PRIMARY KEY,
       user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -167,6 +189,7 @@ function open(file) {
   ensureColumn(db, 'units', 'level', "TEXT NOT NULL DEFAULT 'A1'");
   seedIfEmpty(db);
   syncSeed(db);
+  try { db.prepare("UPDATE languages SET flag='EN' WHERE code='en'").run(); } catch {}
   return db;
 }
 

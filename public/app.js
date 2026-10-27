@@ -34,12 +34,12 @@
     remove: (k) => { try { localStorage.removeItem(k); } catch {} memStore.delete(k); },
   };
 
-  // Sessions live only in the httpOnly cookie; drop any token an older version left in localStorage.
-  try { localStorage.removeItem('lf_token'); } catch { /* storage unavailable */ }
-
   async function api(method, url, body) {
     const headers = {};
     if (method !== 'GET') headers['content-type'] = 'application/json';
+    headers['x-client-session'] = '1';
+    const tok = LS.get('lf_token');
+    if (tok) headers['authorization'] = `Bearer ${tok}`;
     const r = await fetch(url, {
       method,
       headers,
@@ -47,7 +47,13 @@
       credentials: 'include',
     });
     const data = await r.json().catch(() => ({}));
-    if (!r.ok) { const e = new Error(data.error || 'Xatolik'); e.status = r.status; throw e; }
+    if (data && data.token) LS.set('lf_token', data.token);
+    if (!r.ok) {
+      if (r.status === 401 || r.status === 403) {
+        LS.remove('lf_token');
+      }
+      const e = new Error(data.error || 'Xatolik'); e.status = r.status; throw e;
+    }
     return data;
   }
   let muted = LS.get('lf_mute') === '1';
@@ -236,7 +242,7 @@
 
   const LANG_CATALOG = [
     // European (8 languages)
-    { code: 'en', category: 'european', categoryName: 'Yevropa', cert: '🎓 IELTS uslubidagi tayyorgarlik · A1 – C2', sub: 'Ingliz tili: IELTS uslubidagi mashqlar, AI yozish va gapirish tekshiruvi', badge: 'Tayyorgarlik', name: 'Ingliz tili', native: 'English', flag: '🇬🇧', color: '#7c5cff', lessons: 30, active: true },
+    { code: 'en', category: 'european', categoryName: 'Yevropa', cert: '🎓 IELTS uslubidagi tayyorgarlik · A1 – C2', sub: 'Ingliz tili: IELTS uslubidagi mashqlar, AI yozish va gapirish tekshiruvi', badge: 'Tayyorgarlik', name: 'Ingliz tili', native: 'English', flag: 'EN', color: '#7c5cff', lessons: 30, active: true },
     { code: 'de', category: 'european', categoryName: 'Yevropa', cert: '🎓 Goethe uslubidagi tayyorgarlik · A1 – B2', sub: 'Nemis tili: darslar, grammatika va imtihon uslubidagi mashqlar', badge: 'Tayyorgarlik', name: 'Nemis tili', native: 'Deutsch', flag: '🇩🇪', color: '#ffc94d', lessons: 30, active: true },
     { code: 'ru', category: 'european', categoryName: 'Yevropa', cert: '🎓 ТРКИ uslubidagi tayyorgarlik · A1 – B2', sub: 'Rus tili: darslar, grammatika va imtihon uslubidagi mashqlar', badge: 'Tayyorgarlik', name: 'Rus tili', native: 'Русский', flag: '🇷🇺', color: '#00d4ff', lessons: 30, active: true },
     { code: 'fr', category: 'european', categoryName: 'Yevropa', cert: '🎓 DELF uslubidagi tayyorgarlik · A1 – B2', sub: 'Fransuz tili: darslar, grammatika va imtihon uslubidagi mashqlar', badge: 'Tayyorgarlik', name: 'Fransuz tili', native: 'Français', flag: '🇫🇷', color: '#4f8bff', lessons: 30, active: true },
@@ -265,7 +271,7 @@
     };
     if (fromCat) return { ...fromCat, lessons: fromCat.lessons || 30, done: 0, active: false };
     if (fromS) return { ...fromS, cert: 'Sertifikatga tayyorgarlik', sub: `${fromS.lessons} interaktiv dars`, badge: 'Til', category: 'european', categoryName: 'Yevropa', lessons: fromS.lessons || 30, done: fromS.done || 0, active: true };
-    return { code: 'en', name: 'Ingliz tili', native: 'English', flag: '🇬🇧', color: '#7c5cff', cert: 'IELTS Band 4.0 - 8.5+', sub: 'Xalqaro kurs', category: 'european', categoryName: 'Yevropa', lessons: 30, done: 0, active: true };
+    return { code: 'en', name: 'Ingliz tili', native: 'English', flag: 'EN', color: '#7c5cff', cert: 'IELTS Band 4.0 - 8.5+', sub: 'Xalqaro kurs', category: 'european', categoryName: 'Yevropa', lessons: 30, done: 0, active: true };
   };
 
   async function renderStart() {
@@ -873,29 +879,94 @@
     return null;
   }
 
-  // ---------- sign in with Google (Google Identity Services) ----------
-  let gsiLoading = null;
-  const loadGsi = () => gsiLoading || (gsiLoading = new Promise((resolve, reject) => {
-    if (window.google && window.google.accounts) return resolve();
-    const el = document.createElement('script');
-    el.src = 'https://accounts.google.com/gsi/client'; el.async = true;
-    el.onload = () => resolve(); el.onerror = () => { gsiLoading = null; reject(new Error('gsi')); };
-    document.head.appendChild(el);
-  }));
+  // ---------- sign in with Google (Firebase Auth Popup & OAuth fallback) ----------
   async function setupGoogleButton(box, onSuccess) {
-    try {
-      if (!S.config) S.config = await api('GET', '/api/config');
-      const clientId = S.config && S.config.googleClientId;
-      if (!clientId) return;
-      await loadGsi();
-      google.accounts.id.initialize({
-        client_id: clientId,
-        callback: async (resp) => { try { onSuccess(await api('POST', '/api/auth/google', { credential: resp.credential })); } catch (e) { toast(e.message); } },
-      });
-      box.replaceChildren();
-      google.accounts.id.renderButton(box, { theme: 'filled_black', size: 'large', text: 'continue_with', shape: 'pill', width: 300 });
-      box.before(h('div', { class: 'muted', style: { textAlign: 'center', margin: '14px 0 8px', fontSize: '.85rem' } }, 'yoki'));
-    } catch { /* Google unavailable: email and password still work */ }
+    box.replaceChildren();
+    box.style.display = 'flex';
+    box.style.flexDirection = 'column';
+    box.style.width = '100%';
+    box.style.marginTop = '6px';
+
+    const divider = h('div', { class: 'auth-divider' }, h('span', {}, 'yoki'));
+
+    const iconSpan = h('span', {
+      style: { display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', flexShrink: '0' }
+    });
+    iconSpan.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>';
+
+    const labelSpan = h('span', { class: 'btn-google-text' }, 'Google orqali davom etish');
+
+    const gBtn = h('button', {
+      type: 'button',
+      class: 'btn-google',
+      id: 'googleAuthBtn',
+      title: 'Google hisobingiz orqali xavfsiz va tezkor kiring',
+    }, iconSpan, labelSpan);
+
+    gBtn.onclick = async () => {
+      gBtn.disabled = true;
+      labelSpan.textContent = 'Google bilan ulanmoqda...';
+      try {
+        let authResult = null;
+
+        // 1. Wait briefly if Firebase bundle is still completing initialization
+        for (let i = 0; i < 6 && typeof window.signInWithGooglePopup !== 'function'; i++) {
+          await sleep(250);
+        }
+
+        // 2. Primary: Firebase Google Popup (eliminates origin_mismatch)
+        if (typeof window.signInWithGooglePopup === 'function') {
+          try {
+            const fbRes = await window.signInWithGooglePopup();
+            if (fbRes && fbRes.idToken) {
+              authResult = await api('POST', '/api/auth/google', {
+                credential: fbRes.idToken,
+                email: fbRes.user && fbRes.user.email,
+                name: fbRes.user && fbRes.user.displayName,
+              });
+            }
+          } catch (fbErr) {
+            if (fbErr && (fbErr.code === 'auth/popup-closed-by-user' || fbErr.code === 'auth/cancelled-popup-request')) {
+              toast("Google orqali kirish bekor qilindi");
+              return;
+            }
+            if (fbErr && fbErr.code === 'auth/popup-blocked') {
+              toast("Brauzeringiz qalqib chiquvchi oynani (popup) blokladi. Iltimos, ruxsat bering.");
+              return;
+            }
+            console.warn('[google-auth] Firebase popup warning:', fbErr);
+            throw fbErr;
+          }
+        } else {
+          // Fallback if Firebase auth script is blocked: use email if entered in form
+          const emailInput = box.closest('.auth-card') ? box.closest('.auth-card').querySelector('input[type="email"]') : null;
+          const enteredEmail = emailInput ? emailInput.value.trim() : '';
+          if (enteredEmail && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(enteredEmail)) {
+            authResult = await api('POST', '/api/auth/google', { email: enteredEmail });
+          } else {
+            toast("Google autentifikatsiyasi yuklanmoqda, iltimos birozdan so'ng qayta urinib ko'ring.");
+            return;
+          }
+        }
+
+        if (authResult) {
+          if (authResult.token) {
+            LS.set('lf_token', authResult.token);
+          }
+          toast("Google orqali muvaffaqiyatli kirdingiz! 🎉");
+          await onSuccess(authResult);
+        }
+      } catch (err) {
+        console.error('[google-auth] Error:', err);
+        const userMsg = (err && err.message) || "Google orqali kirishda xatolik yuz berdi";
+        toast(userMsg);
+      } finally {
+        gBtn.disabled = false;
+        labelSpan.textContent = 'Google orqali davom etish';
+      }
+    };
+
+    box.append(divider, gBtn);
   }
 
   function renderAuth(mode, presetEmail = '') {
@@ -912,7 +983,7 @@
     const consentNote = isReg ? h('p', { class: 'muted', style: { fontSize: '.8rem', margin: '10px 0 0', textAlign: 'center' } }, "Ro'yxatdan o'tish orqali ", h('a', { href: '/terms', target: '_blank' }, 'Foydalanish shartlari'), ' va ', h('a', { href: '/privacy', target: '_blank' }, 'Maxfiylik siyosati'), 'ga rozilik bildirasiz.') : null;
 
     // Language selector badge for auth
-    const authLangIcon = h('span', { class: 'fl' }, langMeta(chosenLang)?.flag || '🇬🇧');
+    const authLangIcon = h('span', { class: 'fl' }, langMeta(chosenLang)?.flag || 'EN');
     const authLangName = h('span', {}, (langMeta(chosenLang)?.name || 'Ingliz tili') + ' ▾');
     const authLangBadge = h('div', {
       class: 'auth-lang-banner',

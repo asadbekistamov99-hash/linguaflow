@@ -1,0 +1,54 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile with language learning statistics",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Unique user ID" },
+        "email": { "type": "string", "description": "User email address" },
+        "displayName": { "type": "string", "description": "User display name" },
+        "photoURL": { "type": "string", "description": "User profile photo URL" },
+        "role": { "type": "string", "description": "Role: user or admin" },
+        "currentLang": { "type": "string", "description": "Currently active language code" },
+        "xp": { "type": "number", "description": "Total earned XP" },
+        "streak": { "type": "number", "description": "Current active daily streak" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Account creation timestamp" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Last update timestamp" }
+      },
+      "required": ["uid", "email", "createdAt"]
+    },
+    "Flashcard": {
+      "title": "Flashcard",
+      "description": "Saved vocabulary flashcard with spaced repetition parameters",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique flashcard ID" },
+        "userId": { "type": "string", "description": "Owner user ID" },
+        "lang": { "type": "string", "description": "Language code" },
+        "conceptId": { "type": "string", "description": "Optional curriculum concept reference" },
+        "front": { "type": "string", "description": "Word or phrase in learning language" },
+        "back": { "type": "string", "description": "Uzbek translation or meaning" },
+        "hint": { "type": "string", "description": "Pronunciation or transcription hint" },
+        "example": { "type": "string", "description": "Example usage sentence" },
+        "reps": { "type": "number", "description": "Repetition count" },
+        "ease": { "type": "number", "description": "SM-2 ease factor" },
+        "intervalDays": { "type": "number", "description": "Scheduled interval in days" },
+        "dueAt": { "type": "number", "description": "Timestamp ms when card is next due" },
+        "lapses": { "type": "number", "description": "Number of times card was forgotten" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Last sync or review timestamp" }
+      },
+      "required": ["id", "userId", "lang", "front", "back", "dueAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Collection of user profile documents indexed by user ID"
+    },
+    "/users/{userId}/flashcards/{flashcardId}": {
+      "schema": "Flashcard",
+      "description": "User flashcards synchronized across devices with SM-2 spaced repetition status"
+    }
+  }
+}

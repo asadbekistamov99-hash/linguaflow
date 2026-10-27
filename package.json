@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node --disable-warning=ExperimentalWarning server.js",
     "start": "node --disable-warning=ExperimentalWarning server.js",
-    "build": "node scripts/validate-seed.js && node scripts/build-chart.js",
+    "build": "node scripts/validate-seed.js && node scripts/build-chart.js && node scripts/build-firebase.js",
     "test": "node --disable-warning=ExperimentalWarning --test",
     "reset-password": "node --disable-warning=ExperimentalWarning scripts/reset-password.js",
     "make-admin": "node --disable-warning=ExperimentalWarning scripts/make-admin.js",
@@ -22,6 +22,7 @@
     "node": ">=22.5"
   },
   "dependencies": {
+    "firebase": "^13.0.0",
     "qrcode": "^1.5.4",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",

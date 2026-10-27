@@ -97,7 +97,9 @@ function sessionCookie(token, { secure } = {}) {
   if (secure) attrs.push('Secure');
   return attrs.join('; ');
 }
-const clearCookie = ({ secure } = {}) => `${COOKIE}=; Path=/; HttpOnly; SameSite=Lax;${secure ? ' Secure;' : ''} Max-Age=0`;
+const clearCookie = ({ secure } = {}) => {
+  return `${COOKIE}=; Path=/; HttpOnly; SameSite=Lax;${secure ? ' Secure;' : ''} Max-Age=0`;
+};
 
 // Simple fixed-window limiter, in memory.
 function createLimiter(max, windowMs) {

@@ -1013,23 +1013,21 @@
     const onAuthSuccess = async (res) => {
       S.user = res.user;
       await loadLangs();
-      if (chosenLang && chosenLang !== S.user.currentLang) {
-        try { S.user = (await api('PATCH', '/api/me', { currentLang: chosenLang })).user; } catch {}
+      const targetLang = chosenLang || (S.user && S.user.currentLang) || 'en';
+      if (targetLang && targetLang !== S.user.currentLang) {
+        try { S.user = (await api('PATCH', '/api/me', { currentLang: targetLang })).user; } catch {}
       }
-      // Saytga kirish paytida birinchi navbatda o'rganmoqchi bo'lgan tilni tanlashi kerak:
-      const hasChosen = getQueryLang() || sessionStorage.getItem('lf_entered_lang_' + S.user.id) || LS.get('lf_lang_selected_' + S.user.id);
-      if (!hasChosen) {
-        openLangPicker({
-          mustPick: true,
-          title: "Xush kelibsiz! Tilni tanlang",
-          subtitle: "LinguaFlow bilan o'rganishni boshlash uchun avvalo tilni tanlang:"
-        });
-      } else {
-        LS.set('lf_lang_selected_' + S.user.id, S.user.currentLang);
-        sessionStorage.setItem('lf_entered_lang_' + S.user.id, '1');
+      LS.set('lf_lang_selected_' + S.user.id, targetLang);
+      sessionStorage.setItem('lf_entered_lang_' + S.user.id, '1');
+      try {
         await loadCourse();
+      } catch (e) {
+        console.warn('loadCourse warning:', e);
+      }
+      if (location.hash === '#/learn') {
+        await route();
+      } else {
         location.hash = '#/learn';
-        route();
       }
     };
 
@@ -3967,9 +3965,34 @@
     try {
       S.user = (await api('GET', '/api/me')).user;
       await loadLangs();
+      if (S.user && S.user.currentLang) {
+        LS.set('lf_lang_selected_' + S.user.id, S.user.currentLang);
+        sessionStorage.setItem('lf_entered_lang_' + S.user.id, '1');
+      }
     } catch {
-      S.user = null;
-      LS.remove('lf_token');
+      let reAuthed = false;
+      if (typeof window.getFirebaseAuth === 'function') {
+        try {
+          const fbAuth = window.getFirebaseAuth();
+          if (fbAuth && fbAuth.currentUser) {
+            const idTok = await fbAuth.currentUser.getIdToken(true);
+            const res = await api('POST', '/api/auth/google', {
+              credential: idTok,
+              email: fbAuth.currentUser.email,
+              name: fbAuth.currentUser.displayName
+            });
+            if (res && res.user) {
+              S.user = res.user;
+              await loadLangs();
+              reAuthed = true;
+            }
+          }
+        } catch {}
+      }
+      if (!reAuthed) {
+        S.user = null;
+        LS.remove('lf_token');
+      }
     }
     const qLang = getQueryLang();
     if (S.user && qLang && qLang !== S.user.currentLang) {
@@ -3981,14 +4004,5 @@
     }
     if (!location.hash) location.hash = S.user ? '#/learn' : '#/start';
     await route();
-
-    // Saytga kirish paytida birinchi navbatda til tanlashi kerak:
-    if (S.user && !qLang && !sessionStorage.getItem('lf_entered_lang_' + S.user.id) && !LS.get('lf_lang_selected_' + S.user.id)) {
-      openLangPicker({
-        mustPick: true,
-        title: "O'rganmoqchi bo'lgan tilingizni tanlang",
-        subtitle: "LinguaFlow bilan o'rganishni boshlash uchun avvalo tilni tanlang:"
-      });
-    }
   })();
 })();

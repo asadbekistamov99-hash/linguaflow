@@ -6,14 +6,26 @@ const path = require('node:path');
 const COOKIE = 'lf_session';
 const TTL_MS = 30 * 86400000;
 
+const FALLBACK_SECRET = 'linguaflow-session-secret-v1-stable-serverless-2026';
+
 function loadSecret(dataDir) {
   if (process.env.SESSION_SECRET) return Buffer.from(process.env.SESSION_SECRET);
-  const f = path.join(dataDir, '.secret');
-  try { return fs.readFileSync(f); } catch { /* generate below */ }
-  fs.mkdirSync(dataDir, { recursive: true });
-  const s = crypto.randomBytes(48);
-  fs.writeFileSync(f, s, { mode: 0o600 });
-  return s;
+  if (process.env.VERCEL || process.env.NOW_REGION || process.env.AWS_LAMBDA_FUNCTION_NAME) {
+    return Buffer.from(FALLBACK_SECRET);
+  }
+  const f = dataDir ? path.join(dataDir, '.secret') : null;
+  if (f) {
+    try { return fs.readFileSync(f); } catch { /* generate below */ }
+  }
+  try {
+    if (f) {
+      fs.mkdirSync(dataDir, { recursive: true });
+      const s = crypto.randomBytes(48);
+      fs.writeFileSync(f, s, { mode: 0o600 });
+      return s;
+    }
+  } catch {}
+  return Buffer.from(FALLBACK_SECRET);
 }
 
 function hashPassword(pw) {
@@ -45,8 +57,17 @@ function verifyPassword(pw, stored) {
 
 const b64 = (b) => Buffer.from(b).toString('base64url');
 
-function sign(secret, userId, createdAt, ver = 0) {
-  const payload = b64(JSON.stringify({ uid: userId, ca: createdAt, sv: ver, exp: Date.now() + TTL_MS }));
+function sign(secret, userId, createdAt, ver = 0, extra = {}) {
+  const payload = b64(JSON.stringify({
+    uid: userId,
+    ca: createdAt,
+    sv: ver,
+    em: extra && extra.email ? String(extra.email).toLowerCase() : undefined,
+    nm: extra && extra.name ? String(extra.name) : undefined,
+    role: extra && extra.role ? String(extra.role) : undefined,
+    ig: extra && extra.isGoogle ? 1 : undefined,
+    exp: Date.now() + TTL_MS,
+  }));
   const mac = crypto.createHmac('sha256', secret).update(payload).digest('base64url');
   return `${payload}.${mac}`;
 }
@@ -79,7 +100,15 @@ function verify(secret, token) {
   if (given.length !== expected.length || !crypto.timingSafeEqual(given, expected)) return null;
   try {
     const data = JSON.parse(Buffer.from(payload, 'base64url').toString());
-    return data.exp > Date.now() ? { uid: data.uid, ca: data.ca, sv: data.sv || 0 } : null;
+    return data.exp > Date.now() ? {
+      uid: data.uid,
+      ca: data.ca,
+      sv: data.sv || 0,
+      email: data.em,
+      name: data.nm,
+      role: data.role,
+      isGoogle: !!data.ig,
+    } : null;
   } catch { return null; }
 }
 

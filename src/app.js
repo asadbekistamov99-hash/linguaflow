@@ -187,9 +187,45 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
 
   function requireUser(req) {
     const rawToken = extractToken(req);
-    const tok = auth.verify(secret, rawToken);
-    const u = tok && q.userById.get(tok.uid);
-    if (!u || u.created_at !== tok.ca || (u.session_ver || 0) !== (tok.sv || 0)) throw new HttpError(401, 'Tizimga kiring');
+    let tok = auth.verify(secret, rawToken);
+
+    // Also support verifying Firebase ID Token directly if rawToken is a Firebase JWT
+    if (!tok && rawToken && rawToken.split('.').length === 3) {
+      try {
+        const parts = rawToken.split('.');
+        const payload = JSON.parse(Buffer.from(parts[1], 'base64url').toString('utf8'));
+        if (payload && payload.iss && payload.iss.startsWith('https://securetoken.google.com/')) {
+          const candEmail = payload.email || (payload.firebase && payload.firebase.identities && payload.firebase.identities.email && payload.firebase.identities.email[0]);
+          if (candEmail && (Number(payload.exp) * 1000 + 300000) > Date.now()) {
+            tok = {
+              email: candEmail.toLowerCase(),
+              name: payload.name || candEmail.split('@')[0],
+              ca: Number(payload.auth_time || payload.iat || 0) * 1000,
+              sv: 0,
+            };
+          }
+        }
+      } catch {}
+    }
+
+    if (!tok) throw new HttpError(401, 'Tizimga kiring');
+
+    let u = tok.uid ? q.userById.get(tok.uid) : null;
+    if (!u && tok.isGoogle && tok.email) {
+      u = q.userByEmail.get(tok.email);
+      if (!u) {
+        const role = adminEmails.has(tok.email) ? 'admin' : (tok.role || 'user');
+        const finalName = tok.name && tok.name.length >= 2 ? tok.name : `${tok.email.split('@')[0]}_`;
+        const createdAt = tok.ca || Date.now();
+        const hash = auth.DUMMY_HASH;
+        const ins = q.insertUser.run(tok.email, finalName, hash, createdAt, role);
+        u = q.userById.get(Number(ins.lastInsertRowid));
+      }
+    }
+
+    if (!u) throw new HttpError(401, 'Tizimga kiring');
+    if (tok.ca && u.created_at !== tok.ca && !tok.isGoogle) throw new HttpError(401, 'Tizimga kiring');
+    if ((u.session_ver || 0) !== (tok.sv || 0)) throw new HttpError(401, 'Tizimga kiring');
     if (u.banned) throw new HttpError(403, 'Hisobingiz bloklangan');
     return u;
   }
@@ -425,7 +461,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     const role = first || adminEmails.has(email) ? 'admin' : 'user';
     const info = q.insertUser.run(email, name, await auth.hashPasswordAsync(password), Date.now(), role);
     const u = q.userById.get(Number(info.lastInsertRowid));
-    const token = auth.sign(secret, u.id, u.created_at, u.session_ver);
+    const token = auth.sign(secret, u.id, u.created_at, u.session_ver, { email: u.email, name: u.name, role: u.role });
     res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
     return { user: publicUser(u), ...(req.headers['x-client-session'] === '1' || req.headers['authorization'] ? { token } : {}) };
   });
@@ -466,7 +502,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     }
 
     if (adminEmails.has(email) && u.role !== 'admin') { db.prepare("UPDATE users SET role='admin' WHERE id=?").run(u.id); u = q.userById.get(u.id); }
-    const token = auth.sign(secret, u.id, u.created_at, u.session_ver);
+    const token = auth.sign(secret, u.id, u.created_at, u.session_ver, { email: u.email, name: u.name, role: u.role });
     res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
     return { user: publicUser(u), ...(req.headers['x-client-session'] === '1' || req.headers['authorization'] ? { token } : {}) };
   });
@@ -495,7 +531,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     if (!valid) throw new HttpError(401, "Google Authenticator kodi noto'g'ri yoki eskirgan");
 
     if (adminEmails.has(u.email) && u.role !== 'admin') { db.prepare("UPDATE users SET role='admin' WHERE id=?").run(u.id); u = q.userById.get(u.id); }
-    const token = auth.sign(secret, u.id, u.created_at, u.session_ver);
+    const token = auth.sign(secret, u.id, u.created_at, u.session_ver, { email: u.email, name: u.name, role: u.role });
     res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
     return { user: publicUser(u), ...(req.headers['x-client-session'] === '1' || req.headers['authorization'] ? { token } : {}) };
   });
@@ -523,7 +559,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
     logAudit(u.id, 'auth.password_recovery', u.email);
 
     const updatedUser = q.userById.get(u.id);
-    const token = auth.sign(secret, updatedUser.id, updatedUser.created_at, updatedUser.session_ver);
+    const token = auth.sign(secret, updatedUser.id, updatedUser.created_at, updatedUser.session_ver, { email: updatedUser.email, name: updatedUser.name, role: updatedUser.role });
     res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
     return { ok: true, message: "Parol muvaffaqiyatli yangilandi", user: publicUser(updatedUser), token };
   });
@@ -659,7 +695,7 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
       if (!valid) throw new HttpError(401, "Google Authenticator kodi noto'g'ri yoki eskirgan");
     }
 
-    const token = auth.sign(secret, u.id, u.created_at, u.session_ver);
+    const token = auth.sign(secret, u.id, u.created_at, u.session_ver, { email: u.email, name: u.name, role: u.role, isGoogle: true });
     res.setHeader('Set-Cookie', auth.sessionCookie(token, { secure: isSecure(req) }));
     return { user: publicUser(u), token };
   });

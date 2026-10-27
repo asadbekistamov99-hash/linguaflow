@@ -7,7 +7,9 @@ process.env.DATA_DIR = process.env.DATA_DIR || '/tmp/linguaflow';
 process.env.TRUST_PROXY = process.env.TRUST_PROXY || '1';
 process.env.FIRST_USER_ADMIN = process.env.FIRST_USER_ADMIN || '0'; // admin only via ADMIN_EMAILS (admins skip AI limits)
 
-if (!process.env.SESSION_SECRET) console.warn('[linguaflow] SESSION_SECRET is not set: logins will break between serverless instances. Set it in Vercel > Settings > Environment Variables.');
+if (!process.env.SESSION_SECRET) {
+  process.env.SESSION_SECRET = 'linguaflow-session-secret-v1-stable-serverless-2026';
+}
 
 let app;
 let initError;

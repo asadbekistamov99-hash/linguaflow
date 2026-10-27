@@ -934,6 +934,10 @@
               toast("Brauzeringiz qalqib chiquvchi oynani (popup) blokladi. Iltimos, ruxsat bering.");
               return;
             }
+            if (fbErr && (fbErr.code === 'auth/unauthorized-domain' || (fbErr.message && fbErr.message.includes('auth/unauthorized-domain')))) {
+              toast("Domen ruxsat etilmagan: " + window.location.hostname + " domenini Firebase Console > Authentication > Settings > Authorized domains bo'limiga qo'shing.");
+              return;
+            }
             console.warn('[google-auth] Firebase popup warning:', fbErr);
             throw fbErr;
           }

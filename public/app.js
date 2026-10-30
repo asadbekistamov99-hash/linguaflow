@@ -241,17 +241,23 @@
   };
 
   const LANG_CATALOG = [
-    // European (8 languages)
+    // European
     { code: 'en', category: 'european', categoryName: 'Yevropa', cert: '🎓 IELTS uslubidagi tayyorgarlik · A1 – C2', sub: 'Ingliz tili: IELTS uslubidagi mashqlar, AI yozish va gapirish tekshiruvi', badge: 'Tayyorgarlik', name: 'Ingliz tili', native: 'English', flag: 'EN', color: '#7c5cff', lessons: 30, active: true },
     { code: 'de', category: 'european', categoryName: 'Yevropa', cert: '🎓 Goethe uslubidagi tayyorgarlik · A1 – B2', sub: 'Nemis tili: darslar, grammatika va imtihon uslubidagi mashqlar', badge: 'Tayyorgarlik', name: 'Nemis tili', native: 'Deutsch', flag: '🇩🇪', color: '#ffc94d', lessons: 30, active: true },
     { code: 'ru', category: 'european', categoryName: 'Yevropa', cert: '🎓 ТРКИ uslubidagi tayyorgarlik · A1 – B2', sub: 'Rus tili: darslar, grammatika va imtihon uslubidagi mashqlar', badge: 'Tayyorgarlik', name: 'Rus tili', native: 'Русский', flag: '🇷🇺', color: '#00d4ff', lessons: 30, active: true },
     { code: 'fr', category: 'european', categoryName: 'Yevropa', cert: '🎓 DELF uslubidagi tayyorgarlik · A1 – B2', sub: 'Fransuz tili: darslar, grammatika va imtihon uslubidagi mashqlar', badge: 'Tayyorgarlik', name: 'Fransuz tili', native: 'Français', flag: '🇫🇷', color: '#4f8bff', lessons: 30, active: true },
     { code: 'es', category: 'european', categoryName: 'Yevropa', cert: '🎓 DELE uslubidagi tayyorgarlik · A1 – B2', sub: 'Ispan tili: darslar, grammatika va imtihon uslubidagi mashqlar', badge: 'Tayyorgarlik', name: 'Ispan tili', native: 'Español', flag: '🇪🇸', color: '#ff4fa3', lessons: 30, active: true },
+    { code: 'it', category: 'european', categoryName: 'Yevropa', cert: '🎓 CILS uslubidagi tayyorgarlik · A1 – B2', sub: 'Italyan tili: grammatika, nutq amaliyoti va xalqaro sertifikatga tayyorgarlik', badge: 'Tayyorgarlik', name: 'Italyan tili', native: 'Italiano', flag: '🇮🇹', color: '#00b894', lessons: 30, active: true },
+    { code: 'pt', category: 'european', categoryName: 'Yevropa', cert: '🎓 CAPLE uslubidagi tayyorgarlik · A1 – B2', sub: 'Portugal tili: darslar, audio talaffuz va boy so\'z boyligi', badge: 'Tayyorgarlik', name: 'Portugal tili', native: 'Português', flag: '🇵🇹', color: '#6c5ce7', lessons: 30, active: true },
 
-    // Asian (4 languages)
+    // Asian
+    { code: 'ja', category: 'asian', categoryName: 'Osiyo', cert: '🎓 JLPT (N5–N2) tayyorgarlik · A1 – B2', sub: 'Yapon tili: Hiragana, Katakana, Kanji va jonli audio muloqot', badge: 'Tayyorgarlik', name: 'Yapon tili', native: '日本語', flag: '🇯🇵', color: '#ff7675', lessons: 30, active: true },
+    { code: 'zh', category: 'asian', categoryName: 'Osiyo', cert: '🎓 HSK (1–4) tayyorgarlik · A1 – B2', sub: 'Xitoy tili: Pinyin, iyerogliflar, ohanglar va kundalik iboralar', badge: 'Tayyorgarlik', name: 'Xitoy tili', native: '中文', flag: '🇨🇳', color: '#e17055', lessons: 30, active: true },
+    { code: 'ko', category: 'asian', categoryName: 'Osiyo', cert: '🎓 TOPIK (I–II) tayyorgarlik · A1 – B2', sub: 'Koreys tili: Hangul, grammatika qoidalari va tinglab tushunish', badge: 'Tayyorgarlik', name: 'Koreys tili', native: '한국어', flag: '🇰🇷', color: '#0984e3', lessons: 30, active: true },
 
-    // Middle Eastern (3 languages)
+    // Middle Eastern
     { code: 'ar', category: 'middle_eastern', categoryName: 'Yaqin Sharq', cert: '🎓 Fasih (MSA) tayyorgarlik · A1 – B2', sub: 'Arab tili: darslar, grammatika va imtihon uslubidagi mashqlar', badge: 'Tayyorgarlik', name: 'Arab tili', native: 'العربية', flag: '🇸🇦', color: '#22d39a', lessons: 30, active: true },
+    { code: 'tr', category: 'middle_eastern', categoryName: 'Yaqin Sharq', cert: '🎓 TÖMER uslubidagi tayyorgarlik · A1 – B2', sub: 'Turk tili: o\'zbek tiliga yaqin qulay grammatika va amaliy nutq', badge: 'Tayyorgarlik', name: 'Turk tili', native: 'Türkçe', flag: '🇹🇷', color: '#e84393', lessons: 30, active: true },
   ];
 
   const getLangObj = (code) => {
@@ -1338,7 +1344,14 @@
       : c.lang.code === 'ru' ? '🎓 ТРКИ uslubidagi tayyorgarlik · A1 – B2'
       : c.lang.code === 'fr' ? '🎓 DELF uslubidagi tayyorgarlik · A1 – B2'
       : c.lang.code === 'es' ? '🎓 DELE uslubidagi tayyorgarlik · A1 – B2'
-      : '🎓 Fasih (MSA) tayyorgarlik · A1 – B2';
+      : c.lang.code === 'ar' ? '🎓 Fasih (MSA) tayyorgarlik · A1 – B2'
+      : c.lang.code === 'it' ? '🎓 CILS uslubidagi tayyorgarlik · A1 – B2'
+      : c.lang.code === 'ja' ? '🎓 JLPT (N5–N2) tayyorgarlik · A1 – B2'
+      : c.lang.code === 'zh' ? '🎓 HSK (1–4) tayyorgarlik · A1 – B2'
+      : c.lang.code === 'pt' ? '🎓 CAPLE uslubidagi tayyorgarlik · A1 – B2'
+      : c.lang.code === 'tr' ? '🎓 TÖMER uslubidagi tayyorgarlik · A1 – B2'
+      : c.lang.code === 'ko' ? '🎓 TOPIK (I–II) tayyorgarlik · A1 – B2'
+      : (LANG_CATALOG.find((x) => x.code === c.lang.code)?.cert || '🎓 Xalqaro tayyorgarlik · A1 – B2');
 
     const langStrip = h('div', { class: 'learn-lang-strip' },
       h('div', { class: 'learn-lang-left' },

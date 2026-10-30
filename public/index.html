@@ -596,7 +596,7 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
     <div>
       <div class="pill"><b>YANGI</b> AI suhbatdosh bilan jonli nutq amaliyoti</div>
       <h1><span class="rotator grad-text" id="rotator">Hello</span><br>Har qanday tilni mukammal o'rganing</h1>
-      <p class="lead">Ingliz, rus, nemis, fransuz, ispan va arab tillari — A1 dan boshlab (ingliz tilida C2 gacha). Darslar, mashqlar va AI yozish/gapirish tekshiruvi bir joyda.</p>
+      <p class="lead">12 ta dunyo tili — A1 dan boshlab (ingliz tilida C2 gacha). Interaktiv darslar, audio talaffuz, mashqlar va JARVIS AI murabbiyi bir joyda.</p>
       <div class="hero-actions">
         <a href="/app#/start" class="btn btn-main">Bepul boshlash →</a>
         <a href="#demo" class="btn btn-ghost">▶ Darsni sinab ko'rish</a>
@@ -634,8 +634,8 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="eyebrow">Tillar</div>
-      <h2>6 til. <span class="grad-text">Ingliz tili C2 gacha</span>, qolganlari B2 gacha.</h2>
-      <p>Kurslar CEFR darajalari asosida tuzilgan va xalqaro imtihonlar uslubidagi (IELTS, Goethe, DELF, DELE, TORFL) mashqlar beradi. Bu tayyorgarlik: rasmiy imtihon sertifikati emas.</p>
+      <h2>12 ta til. <span class="grad-text">Ingliz tili C2 gacha</span>, qolganlari B2 gacha.</h2>
+      <p>Kurslar CEFR darajalari asosida tuzilgan va xalqaro imtihonlar uslubidagi (IELTS, Goethe, DELF, DELE, TORFL, JLPT, HSK, TOPIK, TÖMER, CILS, CAPLE) mashqlar beradi. Bu tayyorgarlik: rasmiy imtihon sertifikati emas.</p>
     </div>
 
     <!-- Daily XP Goal Section & Habit Tracker -->
@@ -786,7 +786,7 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
 <section style="padding-top:0">
   <div class="wrap">
     <div class="stats reveal">
-      <div class="stat"><b data-count="6">0</b><span>til</span></div>
+      <div class="stat"><b data-count="12">0</b><span>til</span></div>
       <div class="stat"><b data-count="6">0</b><span>CEFR darajasi (A1–C2)</span></div>
       <div class="stat"><b data-count="4">0</b><span>ko'nikma: o'qish, eshitish, yozish, gapirish</span></div>
       <div class="stat"><b data-count="100" data-suffix="%">0</b><span>bepul (hozircha)</span></div>
@@ -811,7 +811,7 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);margin-top:110px}
         <div class="desc">Hamma narsa ochiq</div>
         <div class="amount"><span class="v">0 so'm</span></div>
         <ul>
-          <li>6 til, barcha darslar va mavzu testlari</li>
+          <li>12 ta til, barcha darslar va mavzu testlari</li>
           <li>Takrorlash, o'yinlar, kunlik seriya va reyting</li>
           <li>Mashq va mock imtihonlar</li>
           <li>AI ustoz, yozish va gapirish tekshiruvi (kunlik limit bilan)</li>
@@ -888,6 +888,12 @@ const langs=[
   {f:"🇫🇷",n:"Fransuz tili",nat:"Français",l:"",c:"#4f8bff",code:"fr-FR",cat:"european",catName:"A1–B2",cert:"DELF uslubidagi tayyorgarlik"},
   {f:"🇪🇸",n:"Ispan tili",nat:"Español",l:"",c:"#ff4fa3",code:"es-ES",cat:"european",catName:"A1–B2",cert:"DELE uslubidagi tayyorgarlik"},
   {f:"🇸🇦",n:"Arab tili",nat:"العربية",l:"",c:"#22d39a",code:"ar-SA",cat:"middle_eastern",catName:"A1–B2",cert:"Fasih (MSA) tayyorgarlik"},
+  {f:"🇮🇹",n:"Italyan tili",nat:"Italiano",l:"",c:"#00b894",code:"it-IT",cat:"european",catName:"A1–B2",cert:"CILS uslubidagi tayyorgarlik"},
+  {f:"🇯🇵",n:"Yapon tili",nat:"日本語",l:"",c:"#ff7675",code:"ja-JP",cat:"asian",catName:"A1–B2",cert:"JLPT (N5–N2) tayyorgarlik"},
+  {f:"🇨🇳",n:"Xitoy tili",nat:"中文",l:"",c:"#e17055",code:"zh-CN",cat:"asian",catName:"A1–B2",cert:"HSK (1–4) tayyorgarlik"},
+  {f:"🇵🇹",n:"Portugal tili",nat:"Português",l:"",c:"#6c5ce7",code:"pt-PT",cat:"european",catName:"A1–B2",cert:"CAPLE uslubidagi tayyorgarlik"},
+  {f:"🇹🇷",n:"Turk tili",nat:"Türkçe",l:"",c:"#e84393",code:"tr-TR",cat:"middle_eastern",catName:"A1–B2",cert:"TÖMER uslubidagi tayyorgarlik"},
+  {f:"🇰🇷",n:"Koreys tili",nat:"한국어",l:"",c:"#0984e3",code:"ko-KR",cat:"asian",catName:"A1–B2",cert:"TOPIK (I–II) tayyorgarlik"},
 ];
 
 const supportedMap = {
@@ -1394,6 +1400,12 @@ const quiz=[
  {f:"🇫🇷",lang:"Fransuz tili · A1",code:"fr-FR",w:"Bibliothèque",a:"Kutubxona",o:["Kutubxona","Bog'","Kasalxona","Maktab"]},
  {f:"🇪🇸",lang:"Ispan tili · A1",code:"es-ES",w:"Mariposa",a:"Kapalak",o:["Gul","Daryo","Kapalak","Quyosh"]},
  {f:"🇸🇦",lang:"Arab tili · A1",code:"ar-SA",w:"كتاب",a:"Kitob",o:["Qalam","Kitob","Eshik","Suv"]},
+ {f:"🇮🇹",lang:"Italyan tili · A1",code:"it-IT",w:"Buonanotte",a:"Xayrli tun",o:["Xayrli tong","Xayrli tun","Rahmat","Iltimos"]},
+ {f:"🇯🇵",lang:"Yapon tili · A1",code:"ja-JP",w:"ありがとう",a:"Rahmat",o:["Rahmat","Salom","Xayr","Kechirasiz"]},
+ {f:"🇨🇳",lang:"Xitoy tili · A1",code:"zh-CN",w:"朋友",a:"Do'st",o:["Oila","Do'st","Maktab","Kitob"]},
+ {f:"🇵🇹",lang:"Portugal tili · A1",code:"pt-PT",w:"Esperança",a:"Umid",o:["Umid","Kechikish","Quyosh","Dengiz"]},
+ {f:"🇹🇷",lang:"Turk tili · A1",code:"tr-TR",w:"Gelecek",a:"Kelajak",o:["O'tmish","Kelajak","Hozir","Doim"]},
+ {f:"🇰🇷",lang:"Koreys tili · A1",code:"ko-KR",w:"사랑",a:"Sevgi",o:["Sevgi","Do'stlik","Umid","Oila"]},
 ];
 let qi=0,right=0,total=0;
 const $=id=>document.getElementById(id);

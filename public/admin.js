@@ -64,9 +64,93 @@
     const submitBtn = h('button', { class: 'btn btn-main btn-block', type: 'submit' }, 'Kirish');
     let tempToken = null;
 
+    const googleBtn = h('button', {
+      type: 'button',
+      class: 'btn-google',
+      style: { width: '100%', marginBottom: '16px' },
+      onclick: async () => {
+        err.textContent = '';
+        googleBtn.disabled = true;
+        googleBtn.textContent = 'Google bilan ulanmoqda...';
+        try {
+          for (let i = 0; i < 6 && typeof window.signInWithGooglePopup !== 'function'; i++) {
+            await new Promise((r) => setTimeout(r, 250));
+          }
+          if (typeof window.signInWithGooglePopup !== 'function') {
+            throw new Error("Google autentifikatsiyasi yuklanmoqda, iltimos sahifani yangilang yoki birozdan so'ng qayta urinib ko'ring");
+          }
+          const fbRes = await window.signInWithGooglePopup();
+          if (!fbRes || !fbRes.idToken) throw new Error("Google ma'lumotlari olinmadi");
+          const res = await api('POST', '/api/auth/google', {
+            credential: fbRes.idToken,
+            email: fbRes.user && fbRes.user.email,
+            name: fbRes.user && fbRes.user.displayName,
+          });
+          if (res && res.token) {
+            LS.set('lf_session_token', res.token);
+            LS.set('lf_token', res.token);
+          }
+          if (res && res.require2fa) {
+            tempToken = res.tempToken;
+            passField.style.display = 'none';
+            emailField.style.display = 'none';
+            totpField.style.display = 'block';
+            submitBtn.textContent = 'Kodni tasdiqlash';
+            totpInp.focus();
+            return;
+          }
+          toast("Google orqali muvaffaqiyatli kirdingiz! 🎉");
+          boot();
+        } catch (ex) {
+          if (ex && (ex.code === 'auth/popup-closed-by-user' || ex.code === 'auth/cancelled-popup-request')) {
+            toast("Google orqali kirish bekor qilindi");
+            return;
+          }
+          if (ex && ex.code === 'auth/popup-blocked') {
+            toast("Brauzeringiz qalqib chiquvchi oynani (popup) blokladi. Iltimos, ruxsat bering.");
+            return;
+          }
+          if (ex && (ex.code === 'auth/unauthorized-domain' || (ex.message && ex.message.includes('auth/unauthorized-domain')))) {
+            toast("Domen ruxsat etilmagan: " + window.location.hostname + " domenini Firebase Console > Authentication > Settings > Authorized domains bo'limiga qo'shing.");
+            return;
+          }
+          err.textContent = ex.message || "Google orqali kirishda xatolik";
+        } finally {
+          googleBtn.disabled = false;
+          googleBtn.replaceChildren(
+            svgEl('svg', { width: '18', height: '18', viewBox: '0 0 24 24', style: 'margin-right:8px;vertical-align:middle' },
+              svgEl('path', { fill: '#4285F4', d: 'M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z' }),
+              svgEl('path', { fill: '#34A853', d: 'M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z' }),
+              svgEl('path', { fill: '#FBBC05', d: 'M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z' }),
+              svgEl('path', { fill: '#EA4335', d: 'M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z' })
+            ),
+            document.createTextNode('Google orqali kirish')
+          );
+        }
+      }
+    });
+
+    // Initial button text & icon
+    googleBtn.replaceChildren(
+      svgEl('svg', { width: '18', height: '18', viewBox: '0 0 24 24', style: 'margin-right:8px;vertical-align:middle' },
+        svgEl('path', { fill: '#4285F4', d: 'M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z' }),
+        svgEl('path', { fill: '#34A853', d: 'M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z' }),
+        svgEl('path', { fill: '#FBBC05', d: 'M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z' }),
+        svgEl('path', { fill: '#EA4335', d: 'M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z' })
+      ),
+      document.createTextNode('Google orqali kirish')
+    );
+
+    const divider = h('div', { class: 'auth-divider', style: { display: 'flex', alignItems: 'center', margin: '14px 0', color: 'var(--dim)', fontSize: '.84rem' } },
+      h('span', { style: { flex: 1, height: '1px', background: 'var(--line)' } }),
+      h('span', { style: { padding: '0 10px' } }, 'yoki parol bilan'),
+      h('span', { style: { flex: 1, height: '1px', background: 'var(--line)' } }));
+
     mount(h('div', { class: 'auth-wrap' }, h('div', { class: 'auth-card' },
       h('div', { class: 'logo' }, h('span', { class: 'logo-mark' }, 'L'), 'LinguaFlow Admin'),
       h('h1', {}, 'Admin panelga kirish'), h('p', { class: 'sub' }, 'Faqat administratorlar uchun.'),
+      googleBtn,
+      divider,
       h('form', {
         onsubmit: async (e) => {
           e.preventDefault(); err.textContent = '';

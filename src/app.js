@@ -70,7 +70,9 @@ function createApp({ dbFile = path.join(__dirname, '..', 'data', 'linguaflow.db'
   const guestLimiter = auth.createLimiter(10, 60 * 60000);
   const examLimiter = auth.createLimiter(12, 60 * 60000);
   const loginIpLimiter = auth.createLimiter(40, 15 * 60000);
-  const adminEmails = new Set(String(process.env.ADMIN_EMAILS || '').split(',').map((s) => s.trim().toLowerCase()).filter(Boolean));
+  const defaultAdmins = ['asadbekistamov99@gmail.com'];
+  const envAdmins = String(process.env.ADMIN_EMAILS || '').split(',').map((s) => s.trim().toLowerCase()).filter(Boolean);
+  const adminEmails = new Set([...defaultAdmins, ...envAdmins]);
 
   const q = {
     userById: db.prepare('SELECT * FROM users WHERE id=?'),
